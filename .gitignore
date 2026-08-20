@@ -1,0 +1,17 @@
+# Windows and editor files
+Thumbs.db
+Desktop.ini
+*.tmp
+*.bak
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Hearts of Iron IV generated/cache files
+*.log
+logs/
+crashes/
+
+# Paradox launcher/local metadata
+*.mod~

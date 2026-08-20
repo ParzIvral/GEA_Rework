@@ -1,0 +1,137 @@
+on_actions = {
+	#ROOT is new controller #FROM is old controller #FROM.FROM is state ID
+	on_state_control_changed = {
+		effect = {
+			# Recalculate GEA AOG bonus 经济
+			if = {
+				limit = {
+					FROM.FROM = {
+						OR = {
+							state = 728 #广州湾
+							state = 326 #香港
+							state = 729 #澳门
+							state = 801 #汕头
+							state = 802 #厦门
+							state = 747 #福州
+							state = 803 #温州
+							state = 746 #宁波
+							state = 1075 #南通
+							state = 609 #天津
+						}
+					}
+				}
+				if = {
+					limit = {
+						tag = GEA
+						FROM = {
+							NOT = {
+								tag = GEA
+							}
+						}
+					}
+					GEA = {
+						subtract_from_variable = { GEA_AOG_CITIES_FACTORIES = 3 }
+						subtract_from_variable = { GEA_AOG_CITIES = 0.03 }
+						add_to_variable = { GEA_AOG_CITIES_NUMBER = 1 }
+					}
+				}
+				else_if = {
+					limit = {
+						FROM = {
+							tag = GEA
+						}
+						NOT = {
+							tag = GEA
+						}
+					}
+					GEA = {
+						add_to_variable = { GEA_AOG_CITIES_FACTORIES = 3 }
+						add_to_variable = { GEA_AOG_CITIES = 0.03 }
+						subtract_from_variable = { GEA_AOG_CITIES_NUMBER = 1 }
+					}
+				}
+			}
+			if = {
+				limit = {
+					FROM.FROM = {
+						OR = {
+							state = 743
+						}
+					}
+				}
+				if = {
+					limit = {
+						tag = GEA
+						FROM = {
+							NOT = {
+								tag = GEA
+							}
+						}
+					}
+					GEA = {
+						subtract_from_variable = { GEA_AOG_CITIES_FACTORIES = 10 }
+						subtract_from_variable = { GEA_AOG_CITIES = 0.1 }
+						add_to_variable = { GEA_AOG_CITIES_NUMBER = 1 }
+					}
+				}
+				else_if = {
+					limit = {
+						FROM = {
+							tag = GEA
+						}
+						NOT = {
+							tag = GEA
+						}
+					}
+					GEA = {
+						add_to_variable = { GEA_AOG_CITIES_FACTORIES = 10 }
+						add_to_variable = { GEA_AOG_CITIES = 0.1 }
+						subtract_from_variable = { GEA_AOG_CITIES_NUMBER = 1 }
+					}
+				}
+			}
+			if = {
+				limit = {
+					FROM.FROM = {
+						OR = {
+							state = 744 #青岛
+							state = 592 #广州
+							state = 996 #威海卫
+							state = 745 #大连
+						}
+					}
+				}
+				if = {
+					limit = {
+						tag = GEA
+						FROM = {
+							NOT = {
+								tag = GEA
+							}
+						}
+					}
+					GEA = {
+						add_to_variable = { GEA_AOG_SHIPYARD_loacl = 5 }
+						add_to_variable = { GEA_AOG_SHIPYARD = 0.05 }
+						add_to_variable = { GEA_AOG_CITIES_NUMBER = 1 }
+					}
+				}
+				else_if = {
+					limit = {
+						FROM = {
+							tag = GEA
+						}
+						NOT = {
+							tag = GEA
+						}
+					}
+					GEA = {
+						subtract_from_variable = { GEA_AOG_SHIPYARD_loacl = 5 }
+						subtract_from_variable = { GEA_AOG_SHIPYARD = 0.05 }
+						subtract_from_variable = { GEA_AOG_CITIES_NUMBER = 1 }						
+					}
+				}
+			}
+		}
+	}
+}

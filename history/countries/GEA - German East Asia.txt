@@ -1,0 +1,334 @@
+capital = 336
+
+oob = "GEA"
+set_naval_oob= "GEA_naval"
+
+if = {
+	limit = {
+		NOT = { has_dlc = "No Step Back" }
+	}
+	set_technology = {
+		gwtank = 1
+		basic_light_tank = 1
+		basic_heavy_tank = 1
+	}
+}
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	set_technology = {
+		gwtank_chassis = 1
+		basic_light_tank_chassis = 1
+		improved_light_tank_chassis = 1
+		basic_heavy_tank_chassis = 1
+		engine_tech_1 = 1
+	}
+	create_equipment_variant = {
+		name = "Kätzchen"
+		type = light_tank_chassis_1
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_heavy_machine_gun
+			turret_type_slot = tank_light_one_man_tank_turret
+			suspension_type_slot = tank_christie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 5
+			tank_nsb_armor_upgrade = 1
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Ozelot"
+		type = light_tank_chassis_2
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_auto_cannon
+			turret_type_slot = tank_light_two_man_tank_turret
+			suspension_type_slot = tank_christie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 5
+			tank_nsb_armor_upgrade = 2
+		}
+	}
+}
+set_technology = {
+	### General ###
+	electronic_mechanical_engineering = 1
+	basic_train = 1
+	
+	### Infantry ###
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1
+	tech_recon = 1
+	tech_engineers = 1
+	marines = 1
+	tech_mountaineers = 1
+	tech_trucks = 1
+	motorised_infantry = 1
+	gw_artillery = 1
+
+}
+
+if = {
+	limit = { has_dlc = "By Blood Alone" }
+	set_air_oob = "GEA_air_bba" 
+
+	set_technology = {
+		aa_lmg = 1
+		engines_1 = 1
+		engines_2 = 1
+		early_bombs = 1
+		aircraft_construction = 1
+		basic_small_airframe = 1
+		iw_small_airframe = 1
+		iw_medium_airframe = 1
+		basic_medium_airframe = 1
+		iw_large_airframe = 1
+		air_torpedoe_1 = 1
+	}
+	GEA_BBA_air_variants = yes
+}
+
+if = {
+	limit = { 
+		NOT = { has_dlc = "By Blood Alone" }
+	}
+	set_air_oob = "GEA_air_legacy"
+	set_technology = {
+		early_fighter = 1
+		fighter1 = 1
+		naval_bomber1 = 1
+		early_bomber = 1
+		tactical_bomber1 = 1
+		CAS1 = 1
+		cv_early_fighter = 1
+		cv_naval_bomber1 = 1
+		cv_CAS1 = 1
+	}
+}
+
+### Navy - MtG ###
+set_technology = {
+	early_ship_hull_light = 1
+	basic_ship_hull_light = 1
+	early_ship_hull_cruiser = 1
+	basic_ship_hull_cruiser = 1
+	panzerschiffe = 1
+	early_ship_hull_submarine = 1
+	basic_ship_hull_submarine = 1
+	cruiser_submarines = 1
+	early_ship_hull_carrier = 1
+	basic_ship_hull_carrier = 1
+	early_ship_hull_heavy = 1
+	basic_ship_hull_heavy = 1
+	pre_dreadnoughts = 1
+	ship_hull_super_heavy = 1
+	
+	basic_naval_mines = 1
+
+	## Modules##
+	basic_battery = 1
+	basic_light_battery = 1
+	
+	basic_heavy_battery = 1
+	basic_depth_charges = 1
+	basic_torpedo = 1
+	improved_ship_torpedo_launcher = 1
+	basic_cruiser_armor_scheme = 1
+	basic_heavy_armor_scheme = 1
+
+	### Transport ###
+	mtg_transport = 1
+}
+
+complete_special_project = {
+	project = sp:sp_naval_cruiser_submarine
+}
+complete_special_project = {
+	project = sp:sp_naval_super_heavy_battleship
+}
+
+LEC = { give_military_access = GEA }
+give_guarantee = LEC
+set_country_flag = legation_council_member
+
+set_research_slots = 3
+set_convoys = 150
+set_stability = 0.45
+set_war_support = 0.3
+starting_train_buffer = 1
+
+country_event = {
+	id = GEA.0
+	days = 1
+}
+country_event = {
+	id = GEA.5
+	days = 36
+}
+
+country_event = {
+	id = Ostasien.36
+	days = 22
+}
+
+country_event = { 
+	id = Ostasien.29 
+	days = 137
+}
+
+country_event = { 
+	id = Ostasien.6 
+	days = 161 
+}
+
+country_event = { 
+	id = Ostasien.24 
+	days = 175
+}
+
+country_event = { 
+	id = Ostasien.25
+	days = 204
+}
+
+
+country_event = { 
+	id = Ostasien.10
+	days = 260 
+}
+
+set_politics = {
+	ruling_party = authoritarian_democrat
+	last_election = "1930.11.9"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	totalist = 0
+	radical_socialist = 0
+	syndicalist = 0
+	social_democrat = 5
+	social_liberal = 5
+	market_liberal = 5
+	social_conservative = 20
+	authoritarian_democrat = 30
+	paternal_autocrat = 20
+	national_populist = 15
+}
+
+add_ideas = {
+	GEA_colonial_question
+	GEA_admirality
+	free_trade
+	GEA_Paul_Koenig_hog_pau
+	GEA_Rudolph_Firle_for_pau
+	GEA_Paul_Koenig_eco_pau
+	GEA_Josias_zu_Waldeck_und_Pyrmont_sec_pau
+	GEA_AOG_profit_idea
+	GEA_The_quagmire_of_Indochina
+	GEA_The_garden_of_the_cartel
+}
+
+if = {
+	limit = {
+		NOT  = {
+			has_dlc = "Together for Victory"
+		}
+	}
+	add_ideas = GEA_Colonial_Nation
+}
+
+add_dynamic_modifier = { modifier = GEA_gea_army }
+set_variable = { GEA_army_conscription_factor = -0.85 }
+set_variable = { GEA_army_conscription = 0.05 }
+set_variable = { GEA_army_army_org_factor = 0.10 }
+set_variable = { GEA_army_army_morale_factor = -0.1 }
+set_variable = { GEA_army_command_power_gain_mult = 0.1 }
+add_dynamic_modifier = { modifier = GEA_AOG_BONUS }
+set_variable = { GEA_AOG_CITIES = -0.12  }
+set_variable = { GEA_AOG_CITIES_FACTORIES = -12  }
+set_variable = { GEA_AOG_CITIES_NUMBER = 7  }
+set_variable = { GEA_AOG_SHIPYARD = 0.15  }
+set_variable = { GEA_AOG_SHIPYARD_loacl = 15  }
+set_variable = { GEA_BEST_COLONIAL_stability = 0.10 }
+set_country_flag = GEA_owner_of_wenzhou
+set_country_flag = GEA_owner_of_xiamen
+set_country_flag = GEA_owner_of_guangzhou
+set_country_flag = GEA_owner_of_nantong
+set_country_flag = GEA_owner_of_weihaiwei
+set_country_flag = GEA_owner_of_qingdao
+set_country_flag = GEA_finish_mission_1
+set_country_flag = GEA_finish_mission_2
+set_country_flag = GEA_finish_mission_3
+set_country_flag = GEA_finish_mission_4
+set_country_flag = GEA_finish_mission_5
+set_country_flag = GEA_finish_mission_6
+add_to_tech_sharing_group = german_research
+set_variable = { GEA_josias_effect_political = 0.3}
+set_variable = { GEA_josias_effect_economy = 0.3}
+set_variable = { GEA_indochina_stab = 2}
+set_variable = { GEA_indochina_control = 3}
+set_variable = { GEA_singapore_development = 0.5}
+set_variable = { GEA_malaya_development = 0.2}
+set_variable = { GEA_Borneo_development = 0.1}
+set_variable = { GEA_Guinea_development = 0}
+set_variable = { GEA_dei_integration_degree = 0.2}
+set_variable = { GEA_brm_integration_degree = 0.2}
+set_variable = { renovation_times = 0}
+set_variable = { GEA_Progress_of_reform = 0}
+set_variable = { GEA_socialist_power = 35}
+set_variable = { GEA_nationalist_power = 20}
+set_variable = { GEA_mucke_reform_stability = 0.05}
+set_variable = { GEA_mucke_reform_war_support = 0.05}
+set_variable = { GEA_Defend_indochina_stability = 0.1}
+set_variable = { GEA_Defend_indochina_production_speed_buildings_factor = 0.05}
+set_variable = { GEA_Defend_indochina_industrial_capacity_factory = 0.05}
+
+add_equipment_to_stockpile = { type = infantry_equipment_0 amount = 4000 producer = GEA }
+add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 1000 producer = GEA }
+add_equipment_to_stockpile = { type = gw_tank_equipment amount = 220 producer = GER }
+add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 600 producer = GEA }
+add_manpower = 35000
+
+### Commanders ###
+recruit_character = GEA_Prinz_Oskar_von_Preussen
+recruit_character = GEA_Prinz_Josias_zu_Waldeck_und_Pyrmont
+recruit_character = GEA_Friedrich_von_Kessinger
+recruit_character = GEA_Emil_Krebs
+recruit_character = GEA_Claus_von_Stauffenberg
+recruit_character = GEA_Henning_von_Tresckow
+recruit_character = GEA_Hermann_Voigt_Ruscheweyh
+recruit_character = GEA_Dietrich_von_Saucken
+recruit_character = GEA_Fritz_Sachsse
+recruit_character = GEA_Hermann_Ehrhardt
+recruit_character = GEA_Heinz_Trettner
+recruit_character = GEA_Erich_Friderici
+recruit_character = GEA_Ernst_Scheurlen
+recruit_character = GEA_Ernst_von_Leyser
+recruit_character = GEA_Fritz_Neidholdt
+recruit_character = GEA_Hermann_Wilck
+recruit_character = GEA_Karl_von_Klewitz
+recruit_character = GEA_Walther_Krause
+recruit_character = GEA_Wilhelm_Henningsen
+recruit_character = GEA_Otto_Ciliax
+recruit_character = GEA_Felix_von_Luckner
+recruit_character = GEA_Rudolph_Firle
+recruit_character = GEA_Gunther_Pluschow
+recruit_character = GEA_Hellmuth_Heye
+recruit_character = GEA_Conrad_Patzig
+recruit_character = GEA_Ernst_von_Weizsacker
+GEA_start_naval_variant = yes
+recruit_character = GEA_Albert_Ballin
+recruit_character = GEA_Wilhelm_Heye
+recruit_character = GEA_Hellmuth_von_Mucke
+recruit_character = GEA_Ferdinand_Schorner
