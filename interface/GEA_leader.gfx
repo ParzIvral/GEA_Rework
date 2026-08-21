@@ -18,7 +18,7 @@ spriteTypes = {
 	}
 	spriteType = {
 		name = "GFX_portrait_Portrait_GEA_Albert_Hahl"
-		texturefile = "gfx/leaders/AST/Portrait_AST_Albert_Hahl.png"
+		texturefile = "gfx/leaders/GEA/Portrait_GEA_Albert_Hahl.png"
 	}
 	spriteType = {
 		name = "GFX_portrait_Portrait_GEA_Tilo_Freiherr_von_Wilmowsky"

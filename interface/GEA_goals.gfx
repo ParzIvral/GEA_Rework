@@ -538,92 +538,122 @@ SpriteTypes = {
 	SpriteType = {
 		name = "GFX_GEA_Governor_Hahl"
 		texturefile = "gfx/interface/goals/GEA_Governor_Hahl.png"
-	}	SpriteType = {
+	}	
+	SpriteType = {
 		name = "GFX_GEA_The_troublesome_Indochina_region"
 		texturefile = "gfx/interface/goals/GEA_The_troublesome_Indochina_region.png"
-	}	SpriteType = {
+	}	
+	SpriteType = {
 		name = "GFX_GEA_Our_white_glave"
 		texturefile = "gfx/interface/goals/GEA_Our_white_glave.png"
-	}	SpriteType = {
+	}	
+	SpriteType = {
 		name = "GFX_GEA_Banquet_of_the_Elite"
 		texturefile = "gfx/interface/goals/GEA_Banquet_of_the_Elite.png"
-	}	SpriteType = {
+	}	
+	SpriteType = {
 		name = "GFX_GEA_Return_to_the_Vietnamese_court"
 		texturefile = "gfx/interface/goals/GEA_Return_to_the_Vietnamese_court.png"
-	}	SpriteType = {
+	}	
+	SpriteType = {
 		name = "GFX_GEA_Monarchical_colonial_rule"
 		texturefile = "gfx/interface/goals/GEA_Monarchical_colonial_rule.png"
-	}	SpriteType = {
+	}	
+	SpriteType = {
 		name = "GFX_GEA_Revive_The_Luluai_Principle"
 		texturefile = "gfx/interface/goals/GEA_Revive_The_Luluai_Principle.png"
-	}	SpriteType = {
+	}	
+	SpriteType = {
 		name = "GFX_GEA_German-style_organization_local_employees"
 		texturefile = "gfx/interface/goals/GEA_German-style_organization_local_employees.png"
-	}	SpriteType = {
+	}	
+	SpriteType = {
 		name = "GFX_GEA_Small_farmers_Chinese_merchants_and_exiles"
 		texturefile = "gfx/interface/goals/GEA_Small_farmers_Chinese_merchants_and_exiles.png"
-	}	SpriteType = {
+	}	
+	SpriteType = {
 		name = "GFX_GEA_Domesticating_the_unrestrained_countryside"
 		texturefile = "gfx/interface/goals/GEA_Domesticating_the_unrestrained_countryside.png"
-	}	SpriteType = {
+	}	
+	SpriteType = {
 		name = "GFX_GEA_The_Rule_of_Humility"
 		texturefile = "gfx/interface/goals/GEA_The_Rule_of_Humility.png"
-	}	SpriteType = {
+	}	
+	SpriteType = {
 		name = "GFX_GEA_Amnesty_For_The_Misled"
 		texturefile = "gfx/interface/goals/GEA_Amnesty_For_The_Misled.png"
-	}	SpriteType = {
+	}	
+	SpriteType = {
 		name = "GFX_GEA_Reconcile_at_last"
 		texturefile = "gfx/interface/goals/GEA_Reconcile_at_last.png"
-	}	SpriteType = {
+	}	
+	SpriteType = {
 		name = "GFX_GEA_Adat_Under_The_Black_White_Red"
 		texturefile = "gfx/interface/goals/GEA_Adat_Under_The_Black_White_Red.png"
-	}	SpriteType = {
+	}	
+	SpriteType = {
 		name = "GFX_GEA_The_Bureau_Of_Native_Affairs"
 		texturefile = "gfx/interface/goals/GEA_The_Bureau_Of_Native_Affairs.png"
-	}	SpriteType = {
+	}	
+	SpriteType = {
 		name = "GFX_GEA_Abandoning_the_savage_nature"
 		texturefile = "gfx/interface/goals/GEA_Abandoning_the_savage_nature.png"
-	}	SpriteType = {
+	}	
+	SpriteType = {
 		name = "GFX_GEA_Take_up_the_torch_of_solf"
 		texturefile = "gfx/interface/goals/GEA_Take_up_the_torch_of_solf.png"
-	}	SpriteType = {
+	}	
+	SpriteType = {
 		name = "GFX_GEA_The_Sultans_Seal"
 		texturefile = "gfx/interface/goals/GEA_The_Sultans_Seal.png"
-	}	SpriteType = {
+	}	
+	SpriteType = {
 		name = "GFX_GEA_Enlightenment_and_the_Mission_of_Education"
 		texturefile = "gfx/interface/goals/GEA_Enlightenment_and_the_Mission_of_Education.png"
-	}	SpriteType = {
+	}	
+	SpriteType = {
 		name = "GFX_GEA_Loyalty_rather_than_birth"
 		texturefile = "gfx/interface/goals/GEA_Loyalty_rather_than_birth.png"
-	}	SpriteType = {
+	}	
+	SpriteType = {
 		name = "GFX_GEA_Peaceful_Country"
 		texturefile = "gfx/interface/goals/GEA_Peaceful_Country.png"
-	}	SpriteType = {
+	}	
+	SpriteType = {
 		name = "GFX_GEA_The_Three_Beasts_Of_Burden"
 		texturefile = "gfx/interface/goals/GEA_The_Three_Beasts_Of_Burden.png"
-	}	SpriteType = {
+	}	
+	SpriteType = {
 		name = "GFX_GEA_Reform_of_the_outdated_tax_system"
 		texturefile = "gfx/interface/goals/GEA_Reform_of_the_outdated_tax_system.png"
-	}	SpriteType = {
+	}	
+	SpriteType = {
 		name = "GFX_GEA_Disturbing_the_dreams_of_the_cartel"
 		texturefile = "gfx/interface/goals/GEA_Disturbing_the_dreams_of_the_cartel.png"
-	}	SpriteType = {
+	}	
+	SpriteType = {
 		name = "GFX_GEA_The_Eastern_Paradise_of_the_Immigrants"
 		texturefile = "gfx/interface/goals/GEA_The_Eastern_Paradise_of_the_Immigrants.png"
-	}	SpriteType = {
+	}	
+	SpriteType = {
 		name = "GFX_GEA_Expanding_export-oriented_economy"
 		texturefile = "gfx/interface/goals/GEA_Expanding_export-oriented_economy.png"
-	}	SpriteType = {
+	}	
+	SpriteType = {
 		name = "GFX_GEA_Connecting_culture_with_nationality"
 		texturefile = "gfx/interface/goals/GEA_Connecting_culture_with_nationality.png"
-	}	SpriteType = {
+	}	
+	SpriteType = {
 		name = "GFX_GEA_Restore_food_security"
 		texturefile = "gfx/interface/goals/GEA_Restore_food_security.png"
-	}	SpriteType = {
+	}	
+	SpriteType = {
 		name = "GFX_GEA_Eastern_Economic_Pump"
 		texturefile = "gfx/interface/goals/GEA_Eastern_Economic_Pump.png"
-	}	SpriteType = {
+	}	
+	SpriteType = {
 		name = "GFX_GEA_Even_closer_to_a_model_colony"
 		texturefile = "gfx/interface/goals/GEA_Even_closer_to_a_model_colony.png"
-	}}
+	}
+}
 
