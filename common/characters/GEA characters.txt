@@ -182,7 +182,11 @@ characters = {
 
 	GEA_Prinz_Oskar_von_Preussen = { #普鲁士的奥斯卡亲王
 		name = GEA_Prinz_Oskar_von_Preussen
-		portraits = { army = { large = GFX_portrait_Portrait_GEA_Prinz_Oskar_von_Preussen } }
+		portraits = { 
+			army = { 
+				large = GFX_portrait_Portrait_GEA_Prinz_Oskar_von_Preussen 
+			} 
+		}
 		corps_commander = {
 			traits = { war_hero politically_connected }
 			skill = 3
@@ -195,7 +199,21 @@ characters = {
 
 	GEA_Prinz_Josias_zu_Waldeck_und_Pyrmont = { #瓦尔德克和皮尔蒙特的约西亚斯亲王
 		name = GEA_Prinz_Josias_zu_Waldeck_und_Pyrmont
-		portraits = { army = { large = GFX_portrait_Portrait_GEA_Prinz_Josias_Waldeck_Prymont } }
+		portraits = { 
+			civilian = {
+				large = GFX_portrait_Portrait_GEA_Prinz_Josias_Waldeck_Prymont
+			}
+			army = { 
+				large = GFX_portrait_Portrait_GEA_Prinz_Josias_Waldeck_Prymont 
+			} 
+		}
+		country_leader = {
+			desc = POLITICS_JOSIAS_DESC
+			ideology = colonial_govt_subtype
+			traits = {
+				well_connected_noble
+			}
+		}
 		corps_commander = {
 			traits = { politically_connected trait_reckless infantry_officer }
 			skill = 2

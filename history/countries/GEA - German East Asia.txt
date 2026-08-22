@@ -300,7 +300,10 @@ add_equipment_to_stockpile = { type = gw_tank_equipment amount = 220 producer = 
 add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 600 producer = GEA }
 add_manpower = 35000
 
-### Commanders ###
+recruit_character = GEA_Albert_Ballin
+recruit_character = GEA_Wilhelm_Heye
+recruit_character = GEA_Hellmuth_von_Mucke
+recruit_character = GEA_Ferdinand_Schorner
 recruit_character = GEA_Prinz_Oskar_von_Preussen
 recruit_character = GEA_Prinz_Josias_zu_Waldeck_und_Pyrmont
 recruit_character = GEA_Friedrich_von_Kessinger
@@ -328,7 +331,3 @@ recruit_character = GEA_Hellmuth_Heye
 recruit_character = GEA_Conrad_Patzig
 recruit_character = GEA_Ernst_von_Weizsacker
 GEA_start_naval_variant = yes
-recruit_character = GEA_Albert_Ballin
-recruit_character = GEA_Wilhelm_Heye
-recruit_character = GEA_Hellmuth_von_Mucke
-recruit_character = GEA_Ferdinand_Schorner

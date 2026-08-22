@@ -284,13 +284,13 @@ add_namespace = GEA
 			custom_effect_tooltip = GEA_blood_in_saigon_tt
 			hidden_effect = {
 				country_event = {
-					id = Ostasien.12
+					id = GEA.10 #价格大俯冲
 					days = 5
 				}
 			} 
 			hidden_effect = {
 				country_event = {
-					id = Ostasien.4
+					id = GEA.11 #不稳定的印度支那
 					days = 17
 				}
 			}
@@ -308,12 +308,333 @@ add_namespace = GEA
 			}
 		}
 	}
+	country_event = { #阿尔贝特·巴林之死
+		id = GEA.8
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.8" }
+		title = GEA.8.t
+		desc = GEA.8.d
+		picture = GFX_report_event_GEA_ballin
 
+		fire_only_once = yes
 
+		is_triggered_only = yes
 
+		option = { #老朋友，长夜漫漫，一路走好
+			name = GEA.8.a
+			add_country_leader_role = {
+				character = GEA_Hellmuth_von_Mucke
+				promote_leader = yes
+				country_leader = {
+					ideology = colonial_govt_subtype
+					traits = { 
+						grand_admiral  
+						modernizer 
+					}
+				}
+			}
+			promote_character = {
+				character = GEA_Hellmuth_von_Mucke
+				ideology = colonial_govt_subtype
+			}
+			hidden_effect = {
+				country_event = {
+					id = GEA.9
+					days = 7
+				}
+			}
+		}
+	}
+	country_event = { #柏林当局任命新政府
+		id = GEA.9
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.9" }
+		title = GEA.9.t
+		desc = GEA.9.d
+		picture = GFX_GEA_4
 
+		fire_only_once = yes
 
+		is_triggered_only = yes
 
+		option = { #皇帝选择了阿尔伯特·哈尔
+			name = GEA.9.a
+			ai_chance = {
+				factor = 20
+				modifier = {
+					factor = 1000 
+					OR = {
+						has_game_rule = {
+							rule = GEA_future 
+							option = GEA_FUTURE_MUCKE
+						}
+					}
+				}
+			}
+			promote_character = {
+				character = GEA_Albert_Hahl
+				ideology = soccon_colonial_govt_subtype
+			}
+			hidden_effect = {
+				add_country_leader_role = {
+					character = GEA_Prinz_Josias_zu_Waldeck_und_Pyrmont
+					promote_leader = yes
+					country_leader = {
+						ideology = colonial_govt_subtype
+						traits = { 
+							well_connected_noble 
+						}
+					}
+				}
+				country_event = { id = Ostasien.9 days = 35 } 
+				remove_all_ministers = yes
+				add_ideas = {
+					GEA_Felix_von_Luckner_hog_pau
+					GEA_Oskar_Trautmann_for_mli
+					GEA_Rudolf_Kaulla_eco_sco
+					GEA_Josias_zu_Waldeck_und_Pyrmont_sec_pau
+				}
+				country_event = {
+					id = Ostasien.302
+					days = 20
+				}
+				country_event = {
+					id = Ostasien.130
+					days = 7
+				}
+			}
+			set_politics = {
+				ruling_party = social_conservative
+				elections_allowed = no
+			}
+			add_popularity = {
+				ideology = social_conservative
+				popularity = 0.2
+			}
+			#add_to_variable = { GEA_nationalist_power = -10 }
+			#add_to_variable = { GEA_socialist_power = -10 }
+			#add_to_variable = { GEA_indochina_stab = 1 }
+			#custom_effect_tooltip = GEA_mucke_tt
+			#set_country_flag = GEA_Mucke_Appointed
+		}
+		option = { #瓦尔德克和皮尔蒙特的约西亚斯亲王被任命
+			name = GEA.9.b
+			ai_chance = {
+				factor = 20
+				modifier = {
+					factor = 1000 
+					OR = {
+						has_game_rule = {
+							rule = GEA_future 
+							option = GEA_FUTURE_JOSIAS
+						}
+					}
+				}
+			}
+			promote_character = {
+				character = GEA_Prinz_Josias_zu_Waldeck_und_Pyrmont
+				ideology = colonial_govt_subtype
+			}
+			add_popularity = {
+				ideology = authoritarian_democrat
+				popularity = 0.1
+			}
+			#add_to_variable = { GEA_socialist_power = -5 }  
+			#add_to_variable = { GEA_nationalist_power = -5 }
+			#custom_effect_tooltip = GEA_reforming_colonial_institutions1_tt
+			#set_country_flag = GEA_Pyrmont_Appointed
+			hidden_effect = {
+				country_event = {
+					id = Ostasien.303
+					days = 20
+				}
+			}
+		}	
+		option = { #奥古斯特·威廉·海耶元帅被任命
+			name = GEA.9.c
+			ai_chance = {
+				factor = 20
+				modifier = {
+					factor = 1000 
+					OR = {
+						has_game_rule = {
+							rule = GEA_future 
+							option = GEA_FUTURE_HEYE
+						}
+					}
+				}
+			}
+			promote_character = {
+				character = GEA_Wilhelm_Heye
+				ideology = autocratic_colonial_govt_subtype
+			}
+			add_popularity = {
+				ideology = paternal_autocrat
+				popularity = 0.2
+			}
+			#add_to_variable = { GEA_socialist_power = 10 }  
+			#add_to_variable = { GEA_nationalist_power = 10 }
+			#add_to_variable = { GEA_indochina_control = 1 }
+			#custom_effect_tooltip = GEA_heye_tt
+			set_country_flag = GEA_Heye_Appointed
+			hidden_effect = {
+				set_politics = {
+					ruling_party = paternal_autocrat
+					elections_allowed = no
+				}
+				remove_all_ministers = yes
+				add_ideas = {
+					GEA_Felix_von_Luckner_hog_pau
+					GEA_Nikolaus_Johnsen_for_pau
+					GEA_Arno_Spindler_eco_pau
+					GEA_Charles_August_Polack_sec_pau
+				}
+				country_event = {
+					id = Ostasien.305
+					days = 14
+				}
+			}
+		}
+		option = { #蒂洛·弗赖赫尔·冯·维尔莫夫斯基男爵受指派前来
+			name = GEA.9.e
+			ai_chance = {
+				factor = 20
+				modifier = {
+					factor = 20
+				}
+			}
+			promote_character = {
+				character = GEA_Tilo_Freiherr_von_Wilmowsky
+				ideology = colonial_govt_subtype
+			}
+			increase_ruling_party_popularity_by_10 = yes
+			hidden_effect = {
+			}
+		}
+		option = { #弗里茨·梅尔代表IG法本承接这一重担
+			name = GEA.9.f
+			ai_chance = {
+				factor = 20
+				modifier = {
+					factor = 20
+				}
+			}
+			promote_character = {
+				character = GEA_Fritz_ter_Meer
+				ideology = colonial_govt_subtype
+			}
+			increase_ruling_party_popularity_by_10 = yes
+			hidden_effect = {
+			}
+		}
+	}
+	country_event = { #价格大俯冲
+		id = GEA.10
+		title = GEA.10.t
+		desc = GEA.10.d
+		picture = GFX_report_event_INC_farmers
+
+		is_triggered_only = yes
+
+		immediate = {
+			log = "[GetDateText]: [Root.GetName]: event GEA.10"
+			hidden_effect = {
+				country_event = {
+					id = Ostasien.26
+					days = 17
+				}
+			}
+		}
+
+		option = {
+			name = GEA.10.a
+			ai_chance = {
+				factor = 33
+				modifier = {
+					factor = 1000 
+					OR = {
+						has_game_rule = {
+							rule = GEA_if_creat_inc_cheat
+							option = GEA_IF_CREAT_INC_YES
+						}
+					}
+				}
+			}
+			custom_effect_tooltip = GEA_event_2
+			add_timed_idea = {
+				idea = GEA_falling_price_idea
+				days = 365
+			}
+		}
+
+		option = {
+			name = GEA.10.b
+			ai_chance = {
+				factor = 33
+				modifier = {
+					factor = 1000 
+					OR = {
+						has_game_rule = {
+							rule = GEA_if_creat_inc_cheat
+							option = GEA_IF_CREAT_INC_NO
+						}
+					}
+				}
+			}
+			add_political_power = -25
+			add_timed_idea = {
+				idea = GEA_conrol_price_idea
+				days = 365
+			}
+		}
+
+		option = {
+			name = GEA.10.c
+			ai_chance = {
+				factor = 33
+			}
+			add_political_power = -25
+			add_timed_idea = {
+				idea = GEA_conrol_price_idea
+				days = 180
+			}
+		}
+	}	
+	country_event = {#不稳定的印度支那
+		id = GEA.11
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.11" }
+		title = GEA.11.t
+		desc = GEA.11.d
+		picture = GFX_report_event_vietnam
+
+		is_triggered_only = yes
+
+		option = { # This colony is notorious for insubordination
+			name = GEA.11.a
+			add_to_variable = { GEA_socialist_power = 10 }  
+			add_to_variable = { GEA_nationalist_power = 7.5 }
+			custom_effect_tooltip = GEA_Instability_in_Indochina_tt
+			hidden_effect = {
+				country_event = {
+					id = Ostasien.5 #东京民族独立主义者的骚动
+					days = 20
+				}
+			} 
+		}
+	}
+	country_event = { #东京民族独立主义者的骚动
+		id = GEA.12
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.12" }
+		title = GEA.12.t
+		desc = GEA.12.d
+		picture = GFX_Siam_German_Economical_Dominance
+
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = GEA.12.a
+			add_stability = -0.05
+		}
+	}
 
 
 
@@ -341,44 +662,6 @@ add_namespace = GEA
 
 
 #印支事件
-	country_event = {#不稳定的印度支那接事件1东京民族独立主义者的骚动
-		id = Ostasien.4
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.4" }
-		title = Ostasien.4.t
-		desc = Ostasien.4.d
-		picture = GFX_report_event_vietnam
-
-		is_triggered_only = yes
-
-		option = { # This colony is notorious for insubordination
-			name = Ostasien.4.a
-			add_to_variable = { GEA_socialist_power = 10 }  
-			add_to_variable = { GEA_nationalist_power = 7.5 }
-			custom_effect_tooltip = GEA_Instability_in_Indochina_tt
-			hidden_effect = {
-				country_event = {
-					id = Ostasien.5
-					days = 20
-				}
-			} 
-		}
-	}
-	country_event = { #东京民族独立主义者的骚动
-		id = Ostasien.5
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.5" }
-		title = Ostasien.5.t
-		desc = Ostasien.5.d
-		picture = GFX_Siam_German_Economical_Dominance
-
-		is_triggered_only = yes
-
-		option = {
-			name = Ostasien.5.a
-			add_stability = -0.05
-			add_to_variable = { GEA_nationalist_power = 10 }
-			custom_effect_tooltip = GEA_Nationalist_Agitation_in_Tonkin_tt
-		}
-	}
 	country_event = { #安沛暴动触发于6月11
 		id = Ostasien.6
 		title = Ostasien.6.t
@@ -642,87 +925,6 @@ add_namespace = GEA
 			custom_effect_tooltip = GEA_longshoremen_tt2
 		}
 	}
-	country_event = { #价格下跌在黑色星期一结束后触发
-		id = Ostasien.12
-		title = Ostasien.12.t
-		desc = Ostasien.12.d
-		picture = GFX_report_event_INC_farmers
-
-		is_triggered_only = yes
-
-		immediate = {
-			log = "[GetDateText]: [Root.GetName]: event Ostasien.12"
-			hidden_effect = {
-				country_event = {
-					id = Ostasien.26
-					days = 17
-				}
-			}
-		}
-
-		option = {
-			name = Ostasien.12.a
-			ai_chance = {
-				factor = 33
-				modifier = {
-					factor = 1000 
-					OR = {
-						has_game_rule = {
-							rule = GEA_if_creat_inc_cheat
-							option = GEA_IF_CREAT_INC_YES
-						}
-					}
-				}
-			}
-			add_timed_idea = {
-				idea = GEA_falling_price_idea
-				days = 365
-			}
-			add_to_variable = { GEA_socialist_power = 10 }
-			add_to_variable = { GEA_nationalist_power = 5 }
-			custom_effect_tooltip = GEA_Falling_Rice_Price_tt1
-		}
-
-		option = {
-			name = Ostasien.12.b
-			ai_chance = {
-				factor = 33
-				modifier = {
-					factor = 1000 
-					OR = {
-						has_game_rule = {
-							rule = GEA_if_creat_inc_cheat
-							option = GEA_IF_CREAT_INC_NO
-						}
-					}
-				}
-			}
-			add_political_power = -25
-			add_to_variable = { GEA_socialist_power = -5 }
-			add_to_variable = { GEA_nationalist_power = -10 }
-			add_to_variable = { GEA_indochina_stab = 1 } 
-			custom_effect_tooltip = GEA_Falling_Rice_Price_tt2
-			add_timed_idea = {
-				idea = GEA_conrol_price_idea
-				days = 365
-			}
-		}
-
-		option = {
-			name = Ostasien.12.c
-			ai_chance = {
-				factor = 33
-			}
-			add_political_power = -25
-			add_timed_idea = {
-				idea = GEA_conrol_price_idea
-				days = 180
-			}
-			add_to_variable = { GEA_socialist_power = 5 }
-			add_to_variable = { GEA_malaya_development = 0.05 }  
-			custom_effect_tooltip = GEA_Falling_Rice_Price_tt3
-		}
-	}	
 	country_event = {
 		id = Ostasien.13
 		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.13" }
@@ -3402,206 +3604,9 @@ add_namespace = GEA
 		}
 	}
 #总督以及后续事件
-	country_event = { # Ballin aint so ballin
-		id = Ostasien.300
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.300" }
-		title = Ostasien.300.t
-		desc = Ostasien.300.d
-		picture = GFX_report_event_GEA_ballin
+	
 
-		fire_only_once = yes
-
-		is_triggered_only = yes
-
-		option = {
-			name = Ostasien.300.a
-			create_country_leader = {
-				name = "Hellmuth von Mücke"
-				desc = "POLITICS_HELLMUTH_VON_MUCKE_DESC"
-				picture = "gfx/leaders/GEA/Portrait_GEA_Hellmuth_von_Mucke.png"
-				expire = "1957.7.30"
-				ideology = colonial_govt_subtype
-				traits = {	
-					grand_admiral  
-					modernizer
-				}
-			}
-		}
-	}
-
-	country_event = { #new gg man
-		id = Ostasien.301
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.301" }
-		title = Ostasien.301.t
-		desc = Ostasien.301.d
-		picture = GFX_report_event_GEA_ballin
-
-		fire_only_once = yes
-
-		is_triggered_only = yes
-
-		option = { #Mucke
-			name = Ostasien.301.a
-			ai_chance = {
-				factor = 33
-				modifier = {
-					factor = 1000 
-					OR = {
-						has_game_rule = {
-							rule = GEA_future 
-							option = GEA_FUTURE_MUCKE
-						}
-					}
-				}
-			}
-			hidden_effect = {
-				create_country_leader = {
-					name = "Josias zu Waldeck und Pyrmont"
-					desc = "POLITICS_JOSIAS_DESC"
-					picture = "gfx/leaders/GEA/Portrait_GEA_Prinz_Josias_Waldeck-Prymont.png"
-					expire = "1957.7.30"
-					ideology = colonial_govt_subtype
-					traits = {	
-						well_connected_noble
-					}
-				}
-				country_event = { id = Ostasien.9 days = 35 } 
-			}
-			set_politics = {
-				ruling_party = social_conservative
-			}
-			complete_national_focus = GEA_Mucke
-			add_popularity = {
-				ideology = social_conservative
-				popularity = 0.2
-			}
-			remove_all_ministers = yes
-			add_ideas = {
-				GEA_Felix_von_Luckner_hog_pau
-				GEA_Oskar_Trautmann_for_mli
-				GEA_Rudolf_Kaulla_eco_sco
-				GEA_Josias_zu_Waldeck_und_Pyrmont_sec_pau
-			}
-			add_to_variable = { GEA_nationalist_power = -10 }
-			add_to_variable = { GEA_socialist_power = -10 }
-			add_to_variable = { GEA_indochina_stab = 1 }
-			custom_effect_tooltip = GEA_mucke_tt
-			set_country_flag = GEA_Mucke_Appointed
-			hidden_effect = {
-				country_event = {
-					id = Ostasien.302
-					days = 20
-				}
-				country_event = {
-					id = Ostasien.130
-					days = 7
-				}
-			}
-		}
-		option = { #Josias
-			name = Ostasien.301.b
-			ai_chance = {
-				factor = 33
-				modifier = {
-					factor = 1000 
-					OR = {
-						has_game_rule = {
-							rule = GEA_future 
-							option = GEA_FUTURE_JOSIAS
-						}
-					}
-				}
-			}
-			create_country_leader = {
-				name = "Josias zu Waldeck und Pyrmont"
-				desc = "POLITICS_JOSIAS_DESC"
-				picture = "gfx/leaders/GEA/Portrait_GEA_Prinz_Josias_Waldeck-Prymont.png"
-				expire = "1957.7.30"
-				ideology = colonial_govt_subtype
-				traits = {	
-					well_connected_noble
-				}
-			}
-			add_popularity = {
-				ideology = authoritarian_democrat
-				popularity = 0.04
-			}
-			complete_national_focus = GEA_Josias
-			add_to_variable = { GEA_socialist_power = -5 }  
-			add_to_variable = { GEA_nationalist_power = -5 }
-			custom_effect_tooltip = GEA_reforming_colonial_institutions1_tt
-			set_country_flag = GEA_Pyrmont_Appointed
-			hidden_effect = {
-				country_event = {
-					id = Ostasien.303
-					days = 20
-				}
-			}
-		}	
-		option = { #Heye
-			name = Ostasien.301.c
-			ai_chance = {
-				factor = 33
-				modifier = {
-					factor = 1000 
-					OR = {
-						has_game_rule = {
-							rule = GEA_future 
-							option = GEA_FUTURE_HEYE
-						}
-					}
-				}
-			}
-			hidden_effect = {
-				create_country_leader = {
-					name = "Josias zu Waldeck und Pyrmont"
-					desc = "POLITICS_JOSIAS_DESC"
-					picture = "gfx/leaders/GEA/Portrait_GEA_Prinz_Josias_Waldeck-Prymont.png"
-					expire = "1957.7.30"
-					ideology = colonial_govt_subtype
-					traits = {	
-						well_connected_noble
-					}
-				}
-				create_country_leader = {
-					name = "Wilhelm Heye"
-					desc = "POLITICS_HEYE_DESC"
-					picture = "gfx/leaders/GEA/Portrait_GEA_Wilhelm_Heye.png"
-					expire = "1.1.1"
-					ideology = autocratic_colonial_govt_subtype
-					traits = {	
-						generaloberst
-					}
-				}
-			}
-			complete_national_focus = GEA_Heye
-			set_politics = {
-				ruling_party = paternal_autocrat
-			}
-			add_popularity = {
-				ideology = paternal_autocrat
-				popularity = 0.2
-			}
-			remove_all_ministers = yes
-			add_ideas = {
-				GEA_Felix_von_Luckner_hog_pau
-				GEA_Nikolaus_Johnsen_for_pau
-				GEA_Arno_Spindler_eco_pau
-				GEA_Charles_August_Polack_sec_pau
-			}
-			add_to_variable = { GEA_socialist_power = 10 }  
-			add_to_variable = { GEA_nationalist_power = 10 }
-			add_to_variable = { GEA_indochina_control = 1 }
-			custom_effect_tooltip = GEA_heye_tt
-			set_country_flag = GEA_Heye_Appointed
-			hidden_effect = {
-				country_event = {
-					id = Ostasien.305
-					days = 14
-				}
-			}
-		}
-	}
+	
 	country_event = { # cuck to people
 		id = Ostasien.302
 		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.302" }

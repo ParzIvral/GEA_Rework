@@ -64,7 +64,26 @@ ideas = {
 				ai_call_ally_desire_factor = -2000
 			}
 		}
-		
+	#黑色星期一相关
+		GEA_falling_price_idea = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_falling_price_idea"}
+			picture = great_depression
+			allowed = { always = no }
+			modifier = {
+				industrial_capacity_factory = -0.2
+				production_speed_buildings_factor = -0.1
+				production_factory_max_efficiency_factor = -0.1
+			}
+		}
+		GEA_conrol_price_idea = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_conrol_price_idea"}
+			picture = great_depression
+			allowed = { always = no }
+			modifier = {
+				political_power_gain = -0.10
+				min_export = -0.4
+			}
+		}
 #印支起义
 		GEA_military_police = {#战地宪兵
 				on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_military_police"}
@@ -2329,25 +2348,6 @@ ideas = {
 				air_chief_cost_factor = -0.33
 				high_command_cost_factor = -0.33
 				local_resources_factor = 0.1
-			}
-		}
-		GEA_falling_price_idea = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_falling_price_idea"}
-			picture = great_depression
-			allowed = { always = no }
-			modifier = {
-				industrial_capacity_factory = -0.2
-				production_speed_buildings_factor = -0.1
-				production_factory_max_efficiency_factor = -0.1
-			}
-		}
-		GEA_conrol_price_idea = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_conrol_price_idea"}
-			picture = great_depression
-			allowed = { always = no }
-			modifier = {
-				political_power_gain = -0.10
-				min_export = -0.4
 			}
 		}
 		GEA_plantations_negotiation_idea = {
