@@ -1,13 +1,13 @@
 guiTypes = {
 	containerWindowType = {
 		name = "GEA_map_gui_game"
-		position = { x = 0 y = 0 }
-		size = { width = 275 height = 350 }
+		position = { x = 0 y = 50 }
+		size = { width = 275 height = 370 }
 		
 		iconType = {
 			name = "GEA_Southeast_background"
 			orientation = center
-			position = { x = -130 y = -180 }
+			position = { x = -130 y = -170 }
 			spriteType = "GEA_Southeast_background"
 			scale = 0.7
 		}
@@ -15,7 +15,7 @@ guiTypes = {
 		buttonType = {
 			name = "GEA_Hawaii"
 			orientation = center
-			position = { x = 268 y = -81 }
+			position = { x = 268 y = -71 }
 			spriteType = "GEA_Hawaii"
 			pdx_tooltip = "GEA_Hawaii"
 			pdx_tooltip_delayed = "GEA_Hawaii_DESC"
@@ -25,7 +25,7 @@ guiTypes = {
 		buttonType = {
 			name = "GEA_Solomon"
 			orientation = center
-			position = { x = 146 y = -87 }
+			position = { x = 146 y = -77 }
 			spriteType = "GEA_Solomon"
 			pdx_tooltip = "GEA_Solomon"
 			pdx_tooltip_delayed = "GEA_Solomon_DESC"
@@ -35,7 +35,7 @@ guiTypes = {
 		buttonType = {
 			name = "GEA_Shandong"
 			orientation = center
-			position = { x = 254 y = -168 }
+			position = { x = 254 y = -158 }
 			spriteType = "GEA_Shandong"
 			pdx_tooltip = "GEA_Shandong"
 			pdx_tooltip_delayed = "GEA_Shandong_DESC"
@@ -45,7 +45,7 @@ guiTypes = {
 		buttonType = {
 			name = "GEA_Samoa"
 			orientation = center
-			position = { x = 155 y = -152 }
+			position = { x = 155 y = -142 }
 			spriteType = "GEA_Samoa"
 			pdx_tooltip = "GEA_Samoa"
 			pdx_tooltip_delayed = "GEA_Samoa_DESC"
@@ -55,7 +55,7 @@ guiTypes = {
 		buttonType = {
 			name = "GEA_South_Guinea"
 			orientation = center
-			position = { x = 260 y = 84.5 }
+			position = { x = 260 y = 94.5 }
 			spriteType = "GEA_South_Guinea"
 			pdx_tooltip = "GEA_South_Guinea"
 			pdx_tooltip_delayed = "GEA_South_Guinea_DESC"
@@ -65,7 +65,7 @@ guiTypes = {
 		buttonType = {
 			name = "GEA_Philippines"
 			orientation = center
-			position = { x = 23 y = -161 }
+			position = { x = 23 y = -151 }
 			spriteType = "GEA_Philippines"
 			pdx_tooltip = "GEA_Philippines"
 			pdx_tooltip_delayed = "GEA_Philippines_DESC"
@@ -75,7 +75,7 @@ guiTypes = {
 		buttonType = {
 			name = "GEA_GER_Guinea"
 			orientation = center
-			position = { x = 260 y = 56 }
+			position = { x = 260 y = 66 }
 			spriteType = "GEA_GER_Guinea"
 			pdx_tooltip = "GEA_GER_Guinea"
 			pdx_tooltip_delayed = "GEA_GER_Guinea_DESC"
@@ -85,7 +85,7 @@ guiTypes = {
 		buttonType = {
 			name = "GEA_DEI"
 			orientation = center
-			position = { x = -108.1 y = -9 }
+			position = { x = -107 y = 2 }
 			spriteType = "GEA_DEI"
 			pdx_tooltip = "GEA_DEI"
 			pdx_tooltip_delayed = "GEA_DEI_DESC"
@@ -95,7 +95,7 @@ guiTypes = {
 		buttonType = {
 			name = "GEA_Burma"
 			orientation = center
-			position = { x = -116 y = -174 }
+			position = { x = -116 y = -164 }
 			spriteType = "GEA_Burma"
 			pdx_tooltip = "GEA_Burma"
 			pdx_tooltip_delayed = "GEA_Burma_DESC"
@@ -105,7 +105,7 @@ guiTypes = {
 		buttonType = {
 			name = "GEA_Thailand"
 			orientation = center
-			position = { x = -83 y = -130 }
+			position = { x = -83 y = -120 }
 			spriteType = "GEA_Thailand"
 			pdx_tooltip = "GEA_Thailand"
 			pdx_tooltip_delayed = "GEA_Thailand_DESC"
@@ -115,7 +115,7 @@ guiTypes = {
 		buttonType = {
 			name = "GEA_North_Borneo"
 			orientation = center
-			position = { x = 8.7 y = -14 }
+			position = { x = 8.7 y = -4 }
 			spriteType = "GEA_North_Borneo"
 			pdx_tooltip = "GEA_North_Borneo"
 			pdx_tooltip_delayed = "GEA_North_Borneo_DESC"
@@ -125,7 +125,7 @@ guiTypes = {
 		buttonType = {
 			name = "GEA_Malaya"
 			orientation = center
-			position = { x = -63.2 y = -5 }
+			position = { x = -63.2 y = 5 }
 			spriteType = "GEA_Malaya"
 			pdx_tooltip = "GEA_Malaya"
 			pdx_tooltip_delayed = "GEA_Malaya_DESC"
@@ -135,7 +135,7 @@ guiTypes = {
 		buttonType = {
 			name = "GEA_Indochina"
 			orientation = center
-			position = { x = -57 y = -136.5 }
+			position = { x = -57 y = -126.5 }
 			spriteType = "GEA_Indochina"
 			pdx_tooltip = "GEA_Indochina"
 			pdx_tooltip_delayed = "GEA_Indochina_DESC"

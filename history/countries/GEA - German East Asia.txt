@@ -202,7 +202,7 @@ country_event = {
 
 
 country_event = { 
-	id = Ostasien.10
+	id = GEA.20
 	days = 260 
 }
 

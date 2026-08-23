@@ -65,6 +65,32 @@ ideas = {
 			}
 		}
 	#黑色星期一相关
+		GEA_black_monday_idea = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_black_monday_idea"}
+			picture = great_depression
+			allowed = { always = no }
+			modifier = {
+				stability_factor = -0.2
+				consumer_goods_factor = 0.2
+				production_factory_max_efficiency_factor = -0.15
+				industrial_capacity_factory = -0.15
+				production_speed_buildings_factor = -0.2
+				min_export = -0.3
+			}
+		}
+		GEA_collapsing_colonial_finances = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_collapsing_colonial_finances"}
+			picture = collapsing_colonial_finances
+			allowed = { always = no }
+			modifier = {
+				stability_factor = -0.15
+                war_support_factor = -0.20
+				consumer_goods_factor = 0.10
+                experience_gain_army_factor = -0.2
+				experience_gain_navy_factor = -0.1
+				experience_gain_air_factor = -0.1
+			}
+		}
 		GEA_falling_price_idea = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_falling_price_idea"}
 			picture = great_depression
@@ -82,6 +108,16 @@ ideas = {
 			modifier = {
 				political_power_gain = -0.10
 				min_export = -0.4
+			}
+		}
+		GEA_Give_in_to_longshoremen = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Give_in_to_longshoremen"}
+			picture = worker_guarantees
+			allowed = { always = no }
+			modifier = {
+				stability_factor = 0.05
+				production_speed_dockyard_factor = -0.05
+				industrial_capacity_dockyard = -0.15
 			}
 		}
 #印支起义
@@ -1230,16 +1266,6 @@ ideas = {
 				air_strategic_bomber_bombing_factor = 0.2
 			}
 		} 
-		GEA_Give_in_to_longshoremen = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Give_in_to_longshoremen"}
-			picture = worker_guarantees
-			allowed = { always = no }
-			modifier = {
-				stability_factor = 0.05
-				production_speed_dockyard_factor = -0.05
-				industrial_capacity_dockyard = -0.15
-			}
-		}
 #军事线
 		GEA_invest_arms_industry = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_invest_arms_industry" }
@@ -2233,19 +2259,6 @@ ideas = {
 			}
 		}
 #BM
-		GEA_black_monday_idea = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_black_monday_idea"}
-			picture = great_depression
-			allowed = { always = no }
-			modifier = {
-				stability_factor = -0.2
-				consumer_goods_factor = 0.2
-				production_factory_max_efficiency_factor = -0.15
-				industrial_capacity_factory = -0.15
-				production_speed_buildings_factor = -0.2
-				min_export = -0.3
-			}
-		}
 		GEA_black_monday_idea2 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_black_monday_idea2"}
 			picture = great_depression
@@ -2287,19 +2300,6 @@ ideas = {
 				min_export = -0.2
 			}
 		} 
-        GEA_collapsing_colonial_finances = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_collapsing_colonial_finances"}
-			picture = collapsing_colonial_finances
-			allowed = { always = no }
-			modifier = {
-				stability_factor = -0.15
-                war_support_factor = -0.20
-				consumer_goods_factor = 0.10
-                experience_gain_army_factor = -0.2
-				experience_gain_navy_factor = -0.1
-				experience_gain_air_factor = -0.1
-			}
-		}
 		GEA_collapsing_colonial_finances2 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_collapsing_colonial_finances2"}
 			picture = collapsing_colonial_finances2
