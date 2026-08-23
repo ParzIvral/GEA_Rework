@@ -1,4 +1,33 @@
 defined_text = {
+	name = GEA_Borneoloc_Status
+	text = {
+		trigger = {
+			GEA = {
+				owns_state = 333
+				owns_state = 828
+				owns_state = 334
+				owns_state = 1016
+			}
+		}
+		localization_key =  GEA_Borneo_decisions_desc2
+	}
+	text = {
+		trigger = {
+			GEA = {
+				owns_state = 333
+				owns_state = 828
+			}
+		}
+		localization_key =  GEA_Borneo_decisions_desc1
+	}
+}
+
+
+
+
+
+
+defined_text = {
 	name = GEA_colonial_reform_Status
 	text = {
 		trigger = {

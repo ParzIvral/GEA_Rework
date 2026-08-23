@@ -40,7 +40,7 @@ GEA_decisions = {
 	allowed = {
 		original_tag = GEA
 	}
-	priority = 1000
+	priority = 1001
 	visible_when_empty = yes
 	scripted_gui = GEA_MAP_DECISION_UI
 }

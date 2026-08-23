@@ -12,7 +12,7 @@ add_namespace = GEA
 		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.0" }
 		title = GEA.0.t
 		desc = GEA.0.d
-		picture = GFX_report_event_SIA_German_Economical_Dominance
+		picture = GFX_GEA_7
 
 		fire_only_once = yes
 
@@ -296,7 +296,7 @@ add_namespace = GEA
 			}
 			hidden_effect = {
 				country_event = {
-					id = Ostasien.30
+					id = GEA.17
 					days = 30
 				}
 			}
@@ -346,7 +346,12 @@ add_namespace = GEA
 	}
 	country_event = { #柏林当局任命新政府
 		id = GEA.9
-		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.9" }
+		immediate = { 
+			log = "[GetDateText]: [Root.GetName]: event GEA.9" 
+			hidden_effect = {
+				country_event = { id = GEA.19 days = 35 } 
+			}
+		}
 		title = GEA.9.t
 		desc = GEA.9.d
 		picture = GFX_GEA_4
@@ -384,7 +389,6 @@ add_namespace = GEA
 						}
 					}
 				}
-				country_event = { id = Ostasien.9 days = 35 } 
 				remove_all_ministers = yes
 				add_ideas = {
 					GEA_Felix_von_Luckner_hog_pau
@@ -533,6 +537,7 @@ add_namespace = GEA
 		picture = GFX_report_event_INC_farmers
 
 		is_triggered_only = yes
+		fire_only_once = yes
 
 		immediate = {
 			log = "[GetDateText]: [Root.GetName]: event GEA.10"
@@ -606,6 +611,7 @@ add_namespace = GEA
 		picture = GFX_report_event_vietnam
 
 		is_triggered_only = yes
+		fire_only_once = yes
 
 		option = { # This colony is notorious for insubordination
 			name = GEA.11.a
@@ -614,7 +620,7 @@ add_namespace = GEA
 			custom_effect_tooltip = GEA_Instability_in_Indochina_tt
 			hidden_effect = {
 				country_event = {
-					id = Ostasien.5 #东京民族独立主义者的骚动
+					id = GEA.12 #东京民族独立主义者的骚动
 					days = 20
 				}
 			} 
@@ -635,10 +641,233 @@ add_namespace = GEA
 			add_stability = -0.05
 		}
 	}
+	country_event = { #手忙脚乱
+		id = GEA.13
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.13" }
+		title = GEA.13.t
+		desc = GEA.13.d
+		picture = GFX_GEA_5
 
+		is_triggered_only = yes
+		fire_only_once = yes
 
+		option = {
+			name = GEA.12.a
+			add_stability = -0.05
+		}
+	}
+	country_event = { #安沛暴动
+		id = GEA.14
+		title = GEA.14.t
+		desc = GEA.14.d
+		picture = GFX_report_event_INC_vietunit
 
+		is_triggered_only = yes
+		fire_only_once = yes
 
+		immediate = {
+			log = "[GetDateText]: [Root.GetName]: event GEA.14"
+			hidden_effect = {
+				FRA = {
+					country_event = {
+						id = GEA.15
+						days = 3
+					}
+				} # FRA ver.
+				BHC = {
+					country_event = {
+						id = GEA.16
+						days = 3
+					}
+				}
+			}
+		}
+
+		option = { #集中力量消灭这些强盗！
+			name = GEA.14.a
+			ai_chance = {
+				factor = 50
+				modifier = {
+					factor = 1000 
+					OR = {
+						has_game_rule = {
+							rule = GEA_if_creat_inc_cheat
+							option = GEA_IF_CREAT_INC_YES
+						}
+					}
+				}
+			}
+			set_global_flag = GEA_Martial_Law_NOT_Declared
+			add_political_power = 50
+			add_stability = -0.05
+			increase_ruling_party_popularity_by_5 = yes
+		}
+		option = { #在印度支那宣布戒严令！
+			name = GEA.14.b
+			ai_chance = {
+				factor = 50
+				modifier = {
+					factor = 1000 
+					OR = {
+						has_game_rule = {
+							rule = GEA_if_creat_inc_cheat
+							option = GEA_IF_CREAT_INC_NO
+						}
+					}
+				}
+			}
+			add_political_power = -20
+			add_war_support = -0.05
+			set_country_flag = GEA_do_martial_law
+			unlock_decision_tooltip = GEA_indochina_martial_law
+		}
+	}
+	country_event = { #一场印度支那的悲剧
+		id = GEA.15
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.15" }
+		title = GEA.15.t
+		desc = GEA.15.d
+		picture = GFX_report_event_INC_vietunit
+
+		fire_only_once = yes
+		is_triggered_only = yes
+
+		option = { #送上我们的援助
+			name = GEA.15.a
+			ai_chance = {
+				factor = 80
+			}
+			add_political_power = -30
+			set_global_flag = INC_FRA_Help
+		}
+		option = { #我们不是现世的伯多禄主教
+			name = GEA.15.b
+			ai_chance = {
+				factor = 20
+			}
+		}
+	}
+	country_event = { #一场印度支那的悲剧
+		id = GEA.16
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.16" }
+		title = GEA.16.t
+		desc = GEA.16.d
+		picture = GFX_report_event_INC_vietunit
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+
+		option = { #送上我们的援助
+			name = GEA.16.a
+			ai_chance = {
+				factor = 70
+			}
+			add_political_power = -30
+			set_global_flag = INC_BHC_Help
+		}
+		option = { #这与我们无关
+			ai_chance = {
+				factor = 30
+			}
+			name = GEA.16.b
+		}
+	}
+	country_event = {#最悲伤的人
+		id = GEA.17
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.17" }
+		title = GEA.17.t
+		desc = GEA.17.d
+		picture = GFX_GEA_6
+
+		fire_only_once = yes
+		is_triggered_only = yes
+
+		option = { 
+			name = GEA.17.a
+			add_manpower = -1
+		}
+	}
+	country_event = {#开门，你被捕了
+		id = GEA.18
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.18" }
+		title = GEA.18.t
+		desc = GEA.18.d
+		picture = GFX_GEA_Arrest_operation
+
+		is_triggered_only = yes
+
+		option = { 
+			name = GEA.18.a
+			add_manpower = -19
+		}
+	}
+	country_event = {#东京的民族主义暴动
+		id = GEA.19
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.19" }
+		title = GEA.19.t
+		desc = GEA.19.d
+		picture = GFX_GEA_Nationalist_riots
+
+		fire_only_once = yes
+		trigger = {
+			tag = GEA
+			#check_variable = { GEA_nationalist_power > 35 }
+		}
+
+		option = {
+			name = GEA.19.a
+			ai_chance = {
+				factor = 33
+				modifier = {
+					factor = 1000 
+					OR = {
+						has_game_rule = {
+							rule = GEA_if_creat_inc_cheat
+							option = GEA_IF_CREAT_INC_NO
+						}
+					}
+				}
+			}
+			add_political_power = -100
+			decrease_ruling_party_popularity_by_10 = yes
+			add_war_support = -0.05
+			add_to_variable = { GEA_socialist_power = -5 }
+			add_to_variable = { GEA_nationalist_power = -10 }
+			add_to_variable = { GEA_indochina_control = -1 }
+			custom_effect_tooltip = GEA_Nationalist_riots_tt1
+		}
+		option = {
+			name = GEA.19.b
+			ai_chance = {
+				factor = 33
+			}
+			add_political_power = -40
+			decrease_ruling_party_popularity_by_5 = yes
+			add_war_support = -0.05
+			add_to_variable = { GEA_socialist_power = -5 }
+			add_to_variable = { GEA_nationalist_power = -5 }
+			custom_effect_tooltip = GEA_reforming_colonial_institutions1_tt
+		}
+		option = {
+			name = GEA.19.c
+			ai_chance = {
+				factor = 33
+				modifier = {
+					factor = 1000 
+					OR = {
+						has_game_rule = {
+							rule = GEA_if_creat_inc_cheat
+							option = GEA_IF_CREAT_INC_YES
+						}
+					}
+				}
+			}
+			add_political_power = 50
+			increase_ruling_party_popularity_by_5 = yes
+			add_to_variable = { GEA_nationalist_power = 10 }
+			custom_effect_tooltip = GEA_Nationalist_Agitation_in_Tonkin_tt
+		}
+	}
 
 
 
@@ -662,193 +891,6 @@ add_namespace = GEA
 
 
 #印支事件
-	country_event = { #安沛暴动触发于6月11
-		id = Ostasien.6
-		title = Ostasien.6.t
-		desc = Ostasien.6.d
-		picture = GFX_report_event_INC_vietunit
-
-		is_triggered_only = yes
-
-		immediate = {
-			log = "[GetDateText]: [Root.GetName]: event Ostasien.6"
-			hidden_effect = {
-				FRA = {
-					country_event = {
-						id = Ostasien.7
-						days = 3
-					}
-				} # FRA ver.
-				BHC = {
-					country_event = {
-						id = Ostasien.8
-						days = 3
-					}
-				}
-			}
-		}
-
-		option = { # Concentrate our force to crush these bandits!
-			name = Ostasien.6.a
-			ai_chance = {
-				factor = 50
-				modifier = {
-					factor = 1000 
-					OR = {
-						has_game_rule = {
-							rule = GEA_if_creat_inc_cheat
-							option = GEA_IF_CREAT_INC_YES
-						}
-					}
-				}
-			}
-			set_global_flag = GEA_Martial_Law_NOT_Declared
-			add_political_power = 50
-			add_stability = -0.05
-			increase_ruling_party_popularity_by_5 = yes
-			add_to_variable = { GEA_socialist_power = 5 }  
-			add_to_variable = { GEA_nationalist_power = 5 }
-			custom_effect_tooltip = GEA_baodai_reform_tt
-		}
-		option = { # Declare martial law in all Indochina!
-			ai_chance = {
-				factor = 50
-				modifier = {
-					factor = 1000 
-					OR = {
-						has_game_rule = {
-							rule = GEA_if_creat_inc_cheat
-							option = GEA_IF_CREAT_INC_NO
-						}
-					}
-				}
-			}
-			name = Ostasien.6.b
-			add_political_power = -20
-			add_war_support = -0.05
-			set_country_flag = GEA_do_martial_law
-			unlock_decision_tooltip = GEA_indochina_martial_law
-		}
-	}
-	country_event = { # Yen Bai Mutiny (FRA)
-		id = Ostasien.7
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.7" }
-		title = Ostasien.7.t
-		desc = Ostasien.7.d
-		picture = GFX_report_event_INC_vietunit
-
-		fire_only_once = yes
-		
-		is_triggered_only = yes
-
-		option = { # Bon voyage, Indochinese comrades!
-			name = Ostasien.7.a
-			ai_chance = {
-				factor = 80
-			}
-			add_political_power = -30
-			set_global_flag = INC_FRA_Help
-		}
-		option = { # We are not modern Pigneau de Behaine.
-			name = Ostasien.7.b
-			ai_chance = {
-				factor = 20
-			}
-		}
-	}
-	country_event = { # Yen Bai Mutiny (BHC)
-		id = Ostasien.8
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.8" }
-		title = Ostasien.8.t
-		desc = Ostasien.8.d
-		picture = GFX_report_event_INC_vietunit
-		
-		fire_only_once = yes
-
-		is_triggered_only = yes
-
-		option = { # Send our help
-			name = Ostasien.8.a
-			ai_chance = {
-				factor = 70
-			}
-			add_political_power = -30
-			set_global_flag = INC_BHC_Help
-		}
-		option = { # We are not interested.
-			ai_chance = {
-				factor = 30
-			}
-			name = Ostasien.8.b
-		}
-	}
-	country_event = {#东京的民族主义暴动#民族主义势力大于35触发
-		id = Ostasien.9
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.9" }
-		title = Ostasien.9.t
-		desc = Ostasien.9.d
-		picture = GFX_GEA_Nationalist_riots
-		fire_only_once = yes
-
-		trigger = {
-			tag = GEA
-			check_variable = {GEA_nationalist_power > 35}
-		}
-
-		option = {
-			name = Ostasien.9.a
-			ai_chance = {
-				factor = 33
-				modifier = {
-					factor = 1000 
-					OR = {
-						has_game_rule = {
-							rule = GEA_if_creat_inc_cheat
-							option = GEA_IF_CREAT_INC_NO
-						}
-					}
-				}
-			}
-			add_political_power = -100
-			decrease_ruling_party_popularity_by_10 = yes
-			add_war_support = -0.05
-			add_to_variable = { GEA_socialist_power = -5 }
-			add_to_variable = { GEA_nationalist_power = -10 }
-			add_to_variable = { GEA_indochina_control = -1 }
-			custom_effect_tooltip = GEA_Nationalist_riots_tt1
-		}
-		option = {
-			name = Ostasien.9.b
-			ai_chance = {
-				factor = 33
-			}
-			add_political_power = -40
-			decrease_ruling_party_popularity_by_5 = yes
-			add_war_support = -0.05
-			add_to_variable = { GEA_socialist_power = -5 }
-			add_to_variable = { GEA_nationalist_power = -5 }
-			custom_effect_tooltip = GEA_reforming_colonial_institutions1_tt
-		}
-		option = {
-			name = Ostasien.9.c
-			ai_chance = {
-				factor = 33
-				modifier = {
-					factor = 1000 
-					OR = {
-						has_game_rule = {
-							rule = GEA_if_creat_inc_cheat
-							option = GEA_IF_CREAT_INC_YES
-						}
-					}
-				}
-			}
-			add_political_power = 50
-			increase_ruling_party_popularity_by_5 = yes
-			add_to_variable = { GEA_nationalist_power = 10 }
-			custom_effect_tooltip = GEA_Nationalist_Agitation_in_Tonkin_tt
-		}
-	}
 	country_event = { #9月20日触发南圻国局势不稳42天后触发西贡码头罢工86天后触发越狱事件
 		id = Ostasien.10
 		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.10" }
@@ -1797,22 +1839,6 @@ add_namespace = GEA
 			custom_effect_tooltip = GEA_assassination_tt
 		}
 	}
-	country_event = {#开门，你被捕了
-		id = Ostasien.25
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.25" }
-		title = Ostasien.25.t
-		desc = Ostasien.25.d
-		picture = GFX_GEA_Arrest_operation
-
-		is_triggered_only = yes
-
-		option = { 
-			name = Ostasien.25.a
-			add_manpower = -19
-			add_to_variable = { GEA_socialist_power = 5 }
-			custom_effect_tooltip = GEA_unlucky_tt
-		}
-	}
 	country_event = {#种植园集体罢工
 		id = Ostasien.26
 		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.26" }
@@ -1931,20 +1957,7 @@ add_namespace = GEA
 			custom_effect_tooltip = GEA_unlucky_tt
 		}
 	}
-	country_event = {#最悲伤的人
-		id = Ostasien.30
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.30" }
-		title = Ostasien.30.t
-		desc = Ostasien.30.d
-		picture = GFX_GEA_great_depression
 
-		is_triggered_only = yes
-
-		option = { 
-			name = Ostasien.30.a
-			add_manpower = -1
-		}
-	}
 	country_event = {#殖民危机好转
 		id = Ostasien.31
 		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.31" }

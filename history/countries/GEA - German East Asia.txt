@@ -186,7 +186,7 @@ country_event = {
 }
 
 country_event = { 
-	id = Ostasien.6 
+	id = GEA.14
 	days = 161 
 }
 
@@ -196,7 +196,7 @@ country_event = {
 }
 
 country_event = { 
-	id = Ostasien.25
+	id = GEA.18
 	days = 204
 }
 

@@ -16,6 +16,22 @@ spriteTypes = {
 		texturefile = "gfx/event_pictures/GFX_GEA_4.png"
 	}
 	spriteType  = {
+		name = "GFX_GEA_5"
+		texturefile = "gfx/event_pictures/GFX_GEA_5.png"
+	}
+	spriteType  = {
+		name = "GFX_GEA_6"
+		texturefile = "gfx/event_pictures/GFX_GEA_6.png"
+	}
+	spriteType  = {
+		name = "GFX_GEA_7"
+		texturefile = "gfx/event_pictures/GFX_GEA_7.png"
+	}
+	spriteType  = {
+		name = "GFX_GEA_8"
+		texturefile = "gfx/event_pictures/GFX_GEA_8.png"
+	}
+	spriteType  = {
 		name = "GFX_GEA_Josias_banquet"
 		texturefile = "gfx/event_pictures/GFX_GEA_Josias_banquet.png"
 	}	

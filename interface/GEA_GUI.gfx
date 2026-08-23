@@ -1,8 +1,91 @@
 spriteTypes = {
+	spriteType = {
+		name = "GEA_Southeast_background"
+		texturefile = "gfx/interface/GEAGUI/GEA_Southeast_background.png"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "GEA_Indochina"
+		texturefile = "gfx/interface/GEAGUI/GEA_Indochina.png"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "GEA_Thailand"
+		texturefile = "gfx/interface/GEAGUI/GEA_Thailand.png"
+		transparencecheck = yes
+	}
 
 	spriteType = {
 		name = "GEA_Burma"
 		texturefile = "gfx/interface/GEAGUI/GEA_Burma.png"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "GEA_DEI"
+		texturefile = "gfx/interface/GEAGUI/GEA_DEI.png"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "GEA_Philippines"
+		texturefile = "gfx/interface/GEAGUI/GEA_Philippines.png"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "GEA_Malaya"
+		texturefile = "gfx/interface/GEAGUI/GEA_Malaya.png"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "GEA_North_Borneo"
+		texturefile = "gfx/interface/GEAGUI/GEA_North_Borneo.png"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "GEA_Borneo"
+		texturefile = "gfx/interface/GEAGUI/GEA_Borneo.png"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "GEA_GER_Guinea"
+		texturefile = "gfx/interface/GEAGUI/GEA_GER_Guinea.png"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "GEA_South_Guinea"
+		texturefile = "gfx/interface/GEAGUI/GEA_South_Guinea.png"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "GEA_Samoa"
+		texturefile = "gfx/interface/GEAGUI/GEA_Samoa.png"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "GEA_Shandong"
+		texturefile = "gfx/interface/GEAGUI/GEA_Shandong.png"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "GEA_Solomon"
+		texturefile = "gfx/interface/GEAGUI/GEA_Solomon.png"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "GEA_Hawaii"
+		texturefile = "gfx/interface/GEAGUI/GEA_Hawaii.png"
 		transparencecheck = yes
 	}
 
@@ -17,22 +100,10 @@ spriteTypes = {
 		texturefile = "gfx/interface/GEAGUI/GEA_Burma_ger.png"
 		transparencecheck = yes
 	}
-	
-	spriteType = {
-		name = "GEA_DEI"
-		texturefile = "gfx/interface/GEAGUI/GEA_DEI.png"
-		transparencecheck = yes
-	}
 
 	spriteType = {
 		name = "GEA_DEI_ger"
 		texturefile = "gfx/interface/GEAGUI/GEA_DEI_ger.png"
-		transparencecheck = yes
-	}
-	
-	spriteType = {
-		name = "GEA_GER_Guinea"
-		texturefile = "gfx/interface/GEAGUI/GEA_GER_Guinea.png"
 		transparencecheck = yes
 	}
 	
@@ -45,12 +116,6 @@ spriteTypes = {
 	spriteType = {
 		name = "GEA_Guinea"
 		texturefile = "gfx/interface/GEAGUI/GEA_Guinea.png"
-		transparencecheck = yes
-	}
-	
-	spriteType = {
-		name = "GEA_Indochina"
-		texturefile = "gfx/interface/GEAGUI/GEA_Indochina.png"
 		transparencecheck = yes
 	}
 
@@ -69,24 +134,6 @@ spriteTypes = {
 	spriteType = {
 		name = "GEA_Indochina_vin"
 		texturefile = "gfx/interface/GEAGUI/GEA_Indochina_vin.png"
-		transparencecheck = yes
-	}
-	
-	spriteType = {
-		name = "GEA_Malaya"
-		texturefile = "gfx/interface/GEAGUI/GEA_Malaya.png"
-		transparencecheck = yes
-	}
-	
-	spriteType = {
-		name = "GEA_North_Borneo"
-		texturefile = "gfx/interface/GEAGUI/GEA_North_Borneo.png"
-		transparencecheck = yes
-	}
-	
-	spriteType = {
-		name = "GEA_Philippines"
-		texturefile = "gfx/interface/GEAGUI/GEA_Philippines.png"
 		transparencecheck = yes
 	}
 
@@ -109,18 +156,6 @@ spriteTypes = {
 	}
 
 	spriteType = {
-		name = "GEA_Borneo"
-		texturefile = "gfx/interface/GEAGUI/GEA_Borneo.png"
-		transparencecheck = yes
-	}
-	
-	spriteType = {
-		name = "GEA_Thailand"
-		texturefile = "gfx/interface/GEAGUI/GEA_Thailand.png"
-		transparencecheck = yes
-	}
-
-	spriteType = {
 		name = "GEA_Thailand_soc"
 		texturefile = "gfx/interface/GEAGUI/GEA_Thailand_soc.png"
 		transparencecheck = yes
@@ -132,17 +167,6 @@ spriteTypes = {
 		transparencecheck = yes
 	}
 
-	spriteType = {
-		name = "whiteline"
-		texturefile = "gfx/interface/GEAGUI/whiteline.png"
-		transparencecheck = yes
-	}
-	
-	spriteType = {
-		name = "GEA_Hawaii"
-		texturefile = "gfx/interface/GEAGUI/GEA_Hawaii.png"
-		transparencecheck = yes
-	}
 	spriteType = {
 		name = "GEA_Hawaii_usa"
 		texturefile = "gfx/interface/GEAGUI/GEA_Hawaii_usa.png"
