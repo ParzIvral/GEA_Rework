@@ -285,6 +285,7 @@ focus_tree = {
 			NOT = {
 				has_completed_focus = GEA_Our_white_glave
 			}
+			has_country_flag = GEA_here_is_baodai
 		}
         prerequisite = {
 			focus = GEA_The_troublesome_Indochina_region
@@ -347,6 +348,10 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Revive_The_Luluai_Principle"
+			country_event = {
+				id = GEA.102
+				days = 65
+			}
 			add_popularity = {
 				ideology = social_conservative
 				popularity = 0.03
@@ -366,10 +371,6 @@ focus_tree = {
 			}
 			custom_effect_tooltip = GEA_Indochina_Stability_Up
 			add_ideas = GEA_Luluai_Principle
-			country_event = {
-				id = GEA.102
-				days = 65
-			}
 		}
 	}
 
@@ -391,6 +392,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_German-style_organization_local_employees"
+			custom_effect_tooltip = GEA_German-style_organization_local_employees_tt
 		}
 	}
 
@@ -437,6 +439,56 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Domesticating_the_unrestrained_countryside"
+			random_owned_state = {
+				limit = {
+					is_core_of = GEA
+					is_controlled_by = GEA
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}				
+			}
+			random_owned_state = {
+				limit = {
+					is_core_of = GEA
+					is_controlled_by = GEA
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}				
+			}
+			random_owned_state = {
+				limit = {
+					is_core_of = GEA
+					is_controlled_by = GEA
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}				
+			}
+			random_owned_state = {
+				limit = {
+					is_core_of = GEA
+					is_controlled_by = GEA
+				}
+				add_extra_state_shared_building_slots = 1			
+			}
+			random_owned_state = {
+				limit = {
+					is_core_of = GEA
+					is_controlled_by = GEA
+				}
+				add_extra_state_shared_building_slots = 1			
+			}
 		}
 	}
 
@@ -519,7 +571,7 @@ focus_tree = {
 	focus = {
 		id = GEA_Adat_Under_The_Black_White_Red #黑白红旗下的阿达特
 		icon = GFX_GEA_Adat_Under_The_Black_White_Red
-		cost = 4	
+		cost = 5	
 		x = -4
 		y = 1
 		available = {		
@@ -533,13 +585,17 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Adat_Under_The_Black_White_Red"
+			swap_ideas = {
+				remove_idea = GEA_colonial_question
+				add_idea = GEA_colonial_question_hahl
+			}
 		}
 	}
 
 	focus = {
 		id = GEA_The_Bureau_Of_Native_Affairs #土著事务局
 		icon = GFX_GEA_The_Bureau_Of_Native_Affairs
-		cost = 1	
+		cost = 5
 		x = 0
 		y = 1
 		available = {		
@@ -553,13 +609,14 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_Bureau_Of_Native_Affairs"
+			add_ideas = GEA_Bureau_Of_Native_Affairs
 		}
 	}
 
 	focus = {
 		id = GEA_Abandoning_the_savage_nature #弃绝野蛮秉性
 		icon = GFX_GEA_Abandoning_the_savage_nature
-		cost = 1	
+		cost = 5	
 		x = -2
 		y = 1
 		available = {		
@@ -573,13 +630,66 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Abandoning_the_savage_nature"
+			custom_effect_tooltip = GEA_Abandoning_the_savage_nature_tt
+			if = {
+				limit = {
+					check_variable = {
+						var = GEA_Handling_the_savage_army
+						value = 5
+						compare = greater_than_or_equals
+					}
+				}
+				swap_ideas = {
+					remove_idea = GEA_colonial_question_hahl
+					add_idea = GEA_colonial_question_hahl_2
+				}
+				add_stability = 0.05
+				custom_effect_tooltip = GEA_Abandoning_the_savage_nature_tt_2
+				add_to_variable = { GEA_mobilization_speed = 0.10 }
+				add_to_variable = { GEA_army_minimum_training_level = 0.15 }
+				add_to_variable = { GEA_army_conscription_factor = 0.075 }
+			}
+			else_if = {
+				limit = { 
+					check_variable = {
+						var = GEA_Handling_the_savage_army
+						value = 2
+						compare = greater_than_or_equals
+					}
+				}
+				swap_ideas = {
+					remove_idea = GEA_colonial_question_hahl
+					add_idea = GEA_colonial_question_hahl_2
+				}
+				add_stability = 0.02
+				custom_effect_tooltip = GEA_Abandoning_the_savage_nature_tt_3 
+				add_to_variable = { GEA_mobilization_speed = 0.05 }
+				add_to_variable = { GEA_army_minimum_training_level = 0.10 }
+				add_to_variable = { GEA_army_conscription_factor = 0.05 }
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = GEA_colonial_question_hahl
+					add_idea = GEA_colonial_question_hahl_2
+				}
+				swap_ideas = {
+					remove_idea = GEA_colonial_question_hahl
+					add_idea = GEA_colonial_question_hahl_2
+				}
+				add_war_support = 0.04
+				army_experience = 15
+				add_political_power = -50
+				custom_effect_tooltip = GEA_Abandoning_the_savage_nature_tt_4
+				add_to_variable = { GEA_army_minimum_training_level = -0.05 }
+				add_to_variable = { GEA_army_conscription_factor = 0.025 }
+			}
 		}
 	}
 
 	focus = {
 		id = GEA_Take_up_the_torch_of_solf  #接过佐尔夫之炬
 		icon = GFX_GEA_Take_up_the_torch_of_solf
-		cost = 1	
+		cost = 4	
 		x = 1
 		y = 1
 		available = {		
@@ -596,13 +706,17 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Take_up_the_torch_of_solf"
+			swap_ideas = {
+				remove_idea = GEA_colonial_question_hahl_2
+				add_idea = GEA_colonial_question_hahl_3
+			}
 		}
 	}
 
 	focus = {
 		id = GEA_The_Sultans_Seal  #拾起苏丹印玺
 		icon = GFX_GEA_The_Sultans_Seal
-		cost = 1	
+		cost = 4	
 		x = 1
 		y = 1
 		available = {		
@@ -622,7 +736,7 @@ focus_tree = {
 	focus = {
 		id = GEA_Enlightenment_and_the_Mission_of_Education  #开化与启蒙使命
 		icon = GFX_GEA_Enlightenment_and_the_Mission_of_Education
-		cost = 1	
+		cost = 4	
 		x = 0
 		y = 1
 		available = {		
@@ -642,7 +756,7 @@ focus_tree = {
 	focus = {
 		id = GEA_Loyalty_rather_than_birth  #忠诚而非出身
 		icon = GFX_GEA_Loyalty_rather_than_birth
-		cost = 1	
+		cost = 4	
 		x = -1
 		y = 1
 		available = {		
@@ -662,7 +776,7 @@ focus_tree = {
 	focus = {
 		id = GEA_Peaceful_Country #太平国度
 		icon = GFX_GEA_Peaceful_Country
-		cost = 1	
+		cost = 4	
 		x = -1
 		y = 1
 		available = {		
@@ -762,7 +876,7 @@ focus_tree = {
 	focus = {
 		id = GEA_The_Eastern_Paradise_of_the_Immigrants #移民们的东方天堂
 		icon = GFX_GEA_The_Eastern_Paradise_of_the_Immigrants 
-		cost = 1	
+		cost = 4	
 		x = -1
 		y = 1
 		available = {		
@@ -779,19 +893,19 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_Eastern_Paradise_of_the_Immigrants "
-			add_manpower = 1500
-			add_ideas = GEA_german_immigrant
 			country_event = {
 				id = GEA.111
 				days = 14
 			}
+			add_manpower = 1500
+			add_ideas = GEA_german_immigrant
 		}
 	}
 
 	focus = {
 		id = GEA_Expanding_export-oriented_economy #扩大出口式经济
 		icon = GFX_GEA_Expanding_export-oriented_economy
-		cost = 1	
+		cost = 4	
 		x = 1
 		y = 1
 		available = {		
@@ -860,7 +974,7 @@ focus_tree = {
 	focus = {
 		id = GEA_Restore_food_security #恢复粮食保障
 		icon = GFX_GEA_Restore_food_security
-		cost = 1	
+		cost = 4	
 		x = 0
 		y = 1
 		available = {		
@@ -879,13 +993,25 @@ focus_tree = {
 				remove_idea = GEA_The_garden_of_the_cartel_2
 				add_idea = GEA_The_garden_of_the_cartel_3
 			}
+			random_owned_state = {
+				limit = {
+					is_core_of = GEA
+					is_controlled_by = GEA
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}				
+			}
 		}
 	}
 
 	focus = {
 		id = GEA_Eastern_Economic_Pump #东方经济泵
 		icon = GFX_GEA_Eastern_Economic_Pump
-		cost = 1	
+		cost = 4
 		x = 1
 		y = 1
 		available = {		
@@ -905,6 +1031,43 @@ focus_tree = {
 			swap_ideas = {
 				remove_idea = GEA_Export_economy_first
 				add_idea = GEA_Export_economy_first_2
+			}
+			random_owned_state = {
+				limit = {
+					is_core_of = GEA
+					is_controlled_by = GEA
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				
+			}
+			random_owned_state = {
+				limit = {
+					is_core_of = GEA
+					is_controlled_by = GEA
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					is_core_of = GEA
+					is_controlled_by = GEA
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
 			}
 		}
 	}

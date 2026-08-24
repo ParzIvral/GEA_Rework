@@ -1562,6 +1562,7 @@ add_namespace = GEA
 					}
 				}
 			}
+			custom_effect_tooltip = GEA_Affect_Abandoning_the_savage_nature_tt
 			army_experience = 50
 			add_war_support = 0.05
 			add_popularity = {
@@ -1573,6 +1574,9 @@ add_namespace = GEA
 				value = 2
 			}
 			custom_effect_tooltip = GEA_Indochina_Anger_Up_More
+			add_to_variable = {
+				GEA_Handling_the_savage_army = 2
+			}
 		}
 		option = {
 			name = GEA.36.b
@@ -1588,6 +1592,7 @@ add_namespace = GEA
 					}
 				}
 			}
+			custom_effect_tooltip = GEA_Affect_Abandoning_the_savage_nature_tt
 			add_political_power = -40
 			add_war_support = -0.1
 			modify_country_flag = {
@@ -1596,12 +1601,16 @@ add_namespace = GEA
 			}
 			custom_effect_tooltip = GEA_Indochina_Anger_Down
 			decrease_ruling_party_popularity_by_5 = yes
+			add_to_variable = {
+				GEA_Handling_the_savage_army = 1
+			}
 		}
 		option = {
 			name = GEA.36.b
 			ai_chance = {
 				factor = 20
 			}
+			custom_effect_tooltip = GEA_Affect_Abandoning_the_savage_nature_tt
 			modify_country_flag = {
 				flag = GEA_Indochinese_Anger
 				value = 1
@@ -1609,6 +1618,9 @@ add_namespace = GEA
 			custom_effect_tooltip = GEA_Indochina_Anger_Up
 			add_stability = -0.03
 			add_political_power = -20
+			add_to_variable = {
+				GEA_Handling_the_savage_army = -1
+			}
 		}
 	}
 	country_event = {#殖民危机好转

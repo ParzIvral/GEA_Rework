@@ -7,9 +7,10 @@ ideas = {
 			allowed = { always = no }
 			modifier = {
 				non_core_manpower = 0.05
-				resistance_growth = 0.1
+				resistance_growth = 0.2
 				required_garrison_factor = 0.1
 				resistance_decay = -0.05
+				surrender_limit = -0.2
 			}
 		}
 		GEA_admirality = { #大舰队
@@ -448,6 +449,7 @@ ideas = {
 		}
 		GEA_The_garden_of_the_cartel_2 = { #受缚巨兽
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_The_garden_of_the_cartel_2"}
+			name = GEA_The_garden_of_the_cartel_2
 			picture = GEA_The_garden_of_the_cartel
 			allowed = { always = no }
 			modifier = {
@@ -462,6 +464,7 @@ ideas = {
 		}
 		GEA_The_garden_of_the_cartel_3 = { #受缚巨兽
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_The_garden_of_the_cartel_3"}
+			name = GEA_The_garden_of_the_cartel_2
 			picture = GEA_The_garden_of_the_cartel
 			allowed = { always = no }
 			modifier = {
@@ -503,7 +506,7 @@ ideas = {
 		}
 		GEA_Export_economy_first_2 = {#出口经济至上
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_german_immigrant_2"}
-			name = GEA_Export_economy_first
+			name = GEA_Export_economy_first_2
 			picture = immigrant_aid
 			allowed = { always = no }
 			modifier = {
@@ -523,6 +526,58 @@ ideas = {
 				political_power_gain = 0.03
 				compliance_growth = 0.075
 				opinion_gain_monthly_factor = 0.05
+			}
+		}
+		GEA_colonial_question_hahl = { #东亚殖民政府
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_colonial_question_hahl"}
+			picture = colonial_question
+			allowed = { always = no }
+			modifier = {
+				political_power_gain = 0.04
+				non_core_manpower = 0.05
+				resistance_growth = 0.1
+				required_garrison_factor = 0.1
+				resistance_decay = -0.01
+				surrender_limit = -0.15
+			}
+		}
+		GEA_Bureau_Of_Native_Affairs = { #土著事务局
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Bureau_Of_Native_Affairs"}
+			picture = GER_central
+			allowed = { always = no }
+			modifier = {
+				political_power_factor = 0.02
+				conscription = 0.005
+				mobilization_speed = 0.05
+				training_time_army_factor = -0.05
+			}
+		}
+		GEA_colonial_question_hahl_2 = { #东亚殖民政府
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_colonial_question_hahl_2"}
+			name = GEA_colonial_question_hahl_2
+			picture = colonial_question
+			allowed = { always = no }
+			modifier = {
+				political_power_gain = 0.05
+				non_core_manpower = 0.1
+				resistance_growth = 0.1
+				required_garrison_factor = 0.1
+				surrender_limit = -0.10
+				experience_loss_factor = -0.03
+			}
+		}
+		GEA_colonial_question_hahl_3 = { #东亚殖民政府
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_colonial_question_hahl_3"}
+			picture = colonial_question
+			name = GEA_colonial_question_hahl_2
+			allowed = { always = no }
+			modifier = {
+				political_power_gain = 0.08
+				non_core_manpower = 0.1
+				resistance_growth = 0.05
+				required_garrison_factor = 0.05
+				surrender_limit = -0.05
+				experience_loss_factor = -0.03
 			}
 		}
 #印支起义

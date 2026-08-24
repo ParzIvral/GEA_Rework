@@ -229,7 +229,15 @@
  GEA_Fiscal_reform:0 "财政改革"
  GEA_german_immigrant:0 "德意志移民"
  GEA_Export_economy_first:0 "出口经济至上"
+ GEA_Export_economy_first_2:0 "东方经济泵"
  GEA_Cultural_connection:0 "文化连结"
+ GEA_The_garden_of_the_cartel_2:0 "受缚巨兽"
+ GEA_colonial_question_hahl:0 "东亚殖民政府"
+ GEA_colonial_question_hahl_desc:0 "德意志的旗帜已经在东亚这片土地上屹立了数十年。即使在世界大战期间，德属东亚也曾誓死捍卫帝国在阳光下的权利，并以舰队和忠诚的军队勇士与协约国奋战到底。然而如今的东亚政府已逐渐腐朽：旧英法殖民遗产、海军辖区、企业巨头办事处、本地保护国与各式临时机构层层堆叠，构成了一套庞杂、低效而缺乏共同目标的殖民机器。随着时间推移，这个本就临时拼凑的机器更是日渐朽坏，诸多因素都在不断侵蚀我们原本平稳的统治。然而，包括总督在内，许多帝国与本土的殖民官僚仍相信，只要舰队还在海上游弋，港口仍悬挂黑白红旗，一切不满都不过是区区噪音。"
+ GEA_colonial_question_hahl_2:0 "东亚殖民政府"
+ GEA_colonial_question_hahl_2_desc:0 ""
+ GEA_colonial_question_hahl_3_desc:0 ""
+ GEA_Bureau_Of_Native_Affairs:0 "土著事务局"
 
 #事件
  GEA.0.t:0 "东方明珠"
@@ -443,7 +451,13 @@
  GEA_Governor_Heye_flag:0 "§P奥古斯特·海耶元帅将代表皇帝安定德属东亚§!"
  GEA_Governor_Meer_flag:0 "§U弗里茨·梅尔代表IG法本来到德属东亚§!"
  GEA_The_troublesome_Indochina_region_tt:0 "§G更多维持印度支那统治的决议将解锁§!"
+ GEA_Affect_Abandoning_the_savage_nature_tt:0 "§s这会影响国策§!§Y弃绝野蛮秉性§!§s的完成效果§!"
+ GEA_Abandoning_the_savage_nature_tt:0 "§s国策增益将取决于数个有关军队的事件的选项§!"
+ GEA_German-style_organization_local_employees_tt:0 "§s根据各地§!§Y土著事务局§!§s的设立情况，该国策将有不同增益：\n\n当前效果为：§!"
  GEA_Improved_Individual_Rations_For_Soldiers:0 "§H 德属东亚陆军 §! 追加效果：\n£supply_consumption_texticon  补给消耗：§G-5.00%§!"
+ GEA_Abandoning_the_savage_nature_tt_2:0 "§H 德属东亚陆军 §! 追加效果：\n£training_texticon  最低训练程度：§Y+15.00%§!\n£cn_manpower_texticon  适役人口系数：§G+7.50%§!\n£mobilisation_texticon  动员速度：§G+10.00%§!"
+ GEA_Abandoning_the_savage_nature_tt_3:0 "§H 德属东亚陆军 §! 追加效果：\n£training_texticon  最低训练程度：§Y+10.00%§!\n£cn_manpower_texticon  适役人口系数：§G+5.00%§!\n£mobilisation_texticon  动员速度：§G+5.00%§!"
+ GEA_Abandoning_the_savage_nature_tt_4:0 "§H 德属东亚陆军 §! 追加效果：\n£training_texticon  最低训练程度：§Y-5.00%§!\n£cn_manpower_texticon  适役人口系数：§G+2.50%§!"
 
 #德属东亚GUI
  GEA_decisions:0 "§c德属东亚，帝国明珠§!"
