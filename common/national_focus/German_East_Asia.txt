@@ -160,9 +160,13 @@ focus_tree = {
 		x = -15
 		y = 1
 		available = {		
+			has_country_flag = GEA_Governor_Hahl_flag
 		}
         prerequisite = {
 			focus = GEA_Our_position
+		}
+		bypass = {
+			has_country_flag = GEA_Governor_Hahl_flag
 		}
 		relative_position_id = GEA_Our_position
 		ai_will_do = {
@@ -176,7 +180,7 @@ focus_tree = {
 	focus = {
 		id = GEA_The_troublesome_Indochina_region #棘手的印度支那
 		icon = GFX_GEA_The_troublesome_Indochina_region
-		cost = 1	
+		cost = 2	
 		x = 0
 		y = 1
 		available = {		
@@ -190,13 +194,15 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_troublesome_Indochina_region"
+			add_stability = 0.02
+			custom_effect_tooltip = GEA_The_troublesome_Indochina_region_tt
 		}
 	}
 
 	focus = {
 		id = GEA_Our_white_glave #启用白手套
 		icon = GFX_GEA_Our_white_glave
-		cost = 1	
+		cost = 3	
 		x = -2
 		y = 1
 		available = {	
@@ -214,13 +220,36 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Our_white_glave"
+			add_political_power = 30
+			add_popularity = {
+				ideology = social_democrat
+				popularity = 0.02
+			}
+			add_popularity = {
+				ideology = social_liberal
+				popularity = 0.03
+			}
+			add_popularity = {
+				ideology = market_liberal
+				popularity = 0.03
+			}
+			add_popularity = {
+				ideology = social_conservative
+				popularity = 0.03
+			}
+			modify_country_flag = {
+				flag = GEA_Indochinese_Stability
+				value = 1
+			}
+			custom_effect_tooltip = GEA_Indochina_Stability_Up
+			add_ideas = GEA_Support_from_the_Vietnamese_partners_9
 		}
 	}
 
 	focus = {
 		id = GEA_Banquet_of_the_Elite #欢宴名流
 		icon = GFX_GEA_Banquet_of_the_Elite
-		cost = 1	
+		cost = 3
 		x = 0
 		y = 1
 		available = {	
@@ -235,13 +264,21 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Banquet_of_the_Elite"
+			swap_ideas = {
+				remove_idea = GEA_Support_from_the_Vietnamese_partners_9
+				add_idea = GEA_Support_from_the_Vietnamese_partners_10
+			}
+			country_event = {
+				id = GEA.109
+				days = 1
+			}
 		}
 	}
 
 	focus = {
 		id = GEA_Return_to_the_Vietnamese_court #重返越南宫廷
 		icon = GFX_GEA_Return_to_the_Vietnamese_court
-		cost = 1	
+		cost = 3
 		x = 2
 		y = 1
 		available = {		
@@ -259,13 +296,16 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Return_to_the_Vietnamese_court"
+			country_event = {
+				id = GEA.104
+			}
 		}
 	}
 
 	focus = {
 		id = GEA_Monarchical_colonial_rule #君主式殖民统治
 		icon = GFX_GEA_Monarchical_colonial_rule
-		cost = 1	
+		cost = 3	
 		x = 0
 		y = 1
 		available = {	
@@ -280,13 +320,19 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Monarchical_colonial_rule"
+			add_political_power = 50
+			add_popularity = { ideology = authoritarian_democrat popularity = 0.06 }
+			country_event = {
+				id = GEA.108
+				days = 1
+			}
 		}
 	}
 
 	focus = {
 		id = GEA_Revive_The_Luluai_Principle #卢卢艾制度的遗产
 		icon = GFX_GEA_Revive_The_Luluai_Principle
-		cost = 1	
+		cost = 4
 		x = 0
 		y = 1
 		available = {		
@@ -301,6 +347,29 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Revive_The_Luluai_Principle"
+			add_popularity = {
+				ideology = social_conservative
+				popularity = 0.03
+			}
+			add_popularity = {
+				ideology = authoritarian_democrat
+				popularity = 0.03
+			}
+			modify_country_flag = {
+				flag = GEA_Indochinese_Anger
+				value = -1
+			}
+			custom_effect_tooltip = GEA_Indochina_Anger_Down
+			modify_country_flag = {
+				flag = GEA_Indochinese_Stability
+				value = 1
+			}
+			custom_effect_tooltip = GEA_Indochina_Stability_Up
+			add_ideas = GEA_Luluai_Principle
+			country_event = {
+				id = GEA.102
+				days = 65
+			}
 		}
 	}
 
@@ -442,13 +511,15 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Reconcile_at_last"
+			add_stability = 0.1
+			remove_ideas = GEA_The_quagmire_of_Indochina
 		}
 	}
 
 	focus = {
 		id = GEA_Adat_Under_The_Black_White_Red #黑白红旗下的阿达特
 		icon = GFX_GEA_Adat_Under_The_Black_White_Red
-		cost = 1	
+		cost = 4	
 		x = -4
 		y = 1
 		available = {		
@@ -614,7 +685,7 @@ focus_tree = {
 	focus = {
 		id = GEA_The_Three_Beasts_Of_Burden #驾驭三头驮兽
 		icon = GFX_GEA_The_Three_Beasts_Of_Burden
-		cost = 1	
+		cost = 4	
 		x = 4
 		y = 1
 		available = {		
@@ -628,13 +699,18 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_Three_Beasts_Of_Burden"
+			add_political_power = 40
+			country_event = {
+				id = GEA.101
+				days = 1
+			}
 		}
 	}
 
 	focus = {
 		id = GEA_Reform_of_the_outdated_tax_system #陈旧税制改革
 		icon = GFX_GEA_Reform_of_the_outdated_tax_system
-		cost = 1	
+		cost = 5	
 		x = 0
 		y = 1
 		available = {		
@@ -648,13 +724,18 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Reform_of_the_outdated_tax_system"
+			add_ideas = GEA_Fiscal_reform
+			country_event = {
+				id = GEA.110
+				days = 4
+			}
 		}
 	}
 
 	focus = {
 		id = GEA_Disturbing_the_dreams_of_the_cartel #搅扰卡特尔美梦
 		icon = GFX_GEA_Disturbing_the_dreams_of_the_cartel
-		cost = 1	
+		cost = 5	
 		x = 2
 		y = 1
 		available = {		
@@ -668,6 +749,13 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Disturbing_the_dreams_of_the_cartel"
+			add_stability = 0.05
+			increase_ruling_party_popularity_by_5 = yes
+			add_political_power = 20
+			swap_ideas = {
+				remove_idea = GEA_The_garden_of_the_cartel
+				add_idea = GEA_The_garden_of_the_cartel_2
+			}
 		}
 	}
 
@@ -691,6 +779,12 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_Eastern_Paradise_of_the_Immigrants "
+			add_manpower = 1500
+			add_ideas = GEA_german_immigrant
+			country_event = {
+				id = GEA.111
+				days = 14
+			}
 		}
 	}
 
@@ -711,6 +805,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Expanding_export-oriented_economy"
+			add_ideas = GEA_Export_economy_first
 		}
 	}
 
@@ -730,27 +825,35 @@ focus_tree = {
 			factor = 100
 		}
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_Connecting_culture_with_nationality "
-		}
-	}
-
-	focus = {
-		id = GEA_Connecting_culture_with_nationality #连结文化与民族性
-		icon = GFX_GEA_Connecting_culture_with_nationality
-		cost = 1	
-		x = -1
-		y = 1
-		available = {		
-		}
-        prerequisite = {
-			focus = GEA_The_Eastern_Paradise_of_the_Immigrants
-		}
-		relative_position_id = GEA_The_Eastern_Paradise_of_the_Immigrants
-		ai_will_do = {
-			factor = 100
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_Connecting_culture_with_nationality "
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Connecting_culture_with_nationality"
+			add_stability = 0.04
+			add_political_power = 65
+			add_popularity = {
+				ideology = market_liberal
+				popularity = 0.04
+			}
+			add_popularity = {
+				ideology = social_liberal
+				popularity = 0.05
+			}
+			add_ideas = GEA_Cultural_connection
+			if = {
+				limit = {
+					NOT = {
+						has_completed_focus = GEA_Reconcile_at_last
+					}
+					modify_country_flag = {
+						flag = GEA_Indochinese_Anger
+						value = -1
+					}
+					custom_effect_tooltip = Gea_Indochina_Anger_Down
+					modify_country_flag = {
+						flag = GEA_Indochinese_Stability
+						value = 1
+					}
+					custom_effect_tooltip = GEA_Indochina_Stability_Up
+				}
+			}
 		}
 	}
 
@@ -771,6 +874,11 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Restore_food_security"
+			add_stability = 0.02
+			swap_ideas = {
+				remove_idea = GEA_The_garden_of_the_cartel_2
+				add_idea = GEA_The_garden_of_the_cartel_3
+			}
 		}
 	}
 
@@ -794,6 +902,10 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Eastern_Economic_Pump"
+			swap_ideas = {
+				remove_idea = GEA_Export_economy_first
+				add_idea = GEA_Export_economy_first_2
+			}
 		}
 	}
 
@@ -2348,10 +2460,6 @@ focus_tree = {
 		
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_cooperate_with_bao_dai"
-			country_event = {
-				id = Ostasien.132
-				days = 1
-			}
 			add_political_power = 10
 			add_stability = 0.05
 		}
@@ -2401,10 +2509,6 @@ focus_tree = {
 		
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_vit_rule_vit"
-			country_event = {
-				id = Ostasien.134
-				days = 1
-			}
 		}
 	} 
         focus = {
@@ -2510,10 +2614,6 @@ focus_tree = {
 		
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_banquet_with_local"
-			country_event = {
-				id = Ostasien.131
-				days = 1
-			}
 			add_stability = 0.05
 		}
 	} 

@@ -199,6 +199,7 @@ add_namespace = GEA
 		title = GEA.5.t
 		desc = GEA.5.d
 
+		is_triggered_only = yes
 		fire_only_once = yes
 
 		option = { #十年的美梦该醒了
@@ -274,9 +275,6 @@ add_namespace = GEA
 			name = GEA.7.a
 			add_stability = -0.1
 			add_ideas = GEA_colonial_disaster_idea
-			add_to_variable = { GEA_socialist_power = 15}
-			add_to_variable = { GEA_nationalist_power = 15 }
-			custom_effect_tooltip = GEA_blood_in_saigon_tt
 			hidden_effect = {
 				country_event = {
 					id = GEA.10 #价格大俯冲
@@ -297,13 +295,13 @@ add_namespace = GEA
 			}
 			hidden_effect = {
 				country_event = {
-					id = Ostasien.31
+					id = GEA.37
 					days = 120
 				}
 			}
 		}
 	}
-	country_event = { #阿尔贝特·巴林之死
+	country_event = {#阿尔贝特·巴林之死
 		id = GEA.8
 		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.8" }
 		title = GEA.8.t
@@ -342,7 +340,7 @@ add_namespace = GEA
 			}
 		}
 	}
-	country_event = { #柏林当局任命新政府
+	country_event = {#柏林当局任命新政府
 		id = GEA.9
 		immediate = { 
 			log = "[GetDateText]: [Root.GetName]: event GEA.9" 
@@ -381,6 +379,7 @@ add_namespace = GEA
 				value = -1
 			}
 			custom_effect_tooltip = GEA_Indochina_Anger_Down
+			set_country_flag = GEA_Governor_Hahl_flag
 			hidden_effect = {
 				add_country_leader_role = {
 					character = GEA_Prinz_Josias_zu_Waldeck_und_Pyrmont
@@ -404,7 +403,7 @@ add_namespace = GEA
 					days = 20
 				}
 				country_event = {
-					id = Ostasien.130
+					id = GEA.103
 					days = 7
 				}
 			}
@@ -435,6 +434,7 @@ add_namespace = GEA
 				character = GEA_Prinz_Josias_zu_Waldeck_und_Pyrmont
 				ideology = colonial_govt_subtype
 			}
+			set_country_flag = GEA_Governor_Josias_flag
 			add_popularity = {
 				ideology = authoritarian_democrat
 				popularity = 0.1
@@ -464,6 +464,7 @@ add_namespace = GEA
 				character = GEA_Wilhelm_Heye
 				ideology = autocratic_colonial_govt_subtype
 			}
+			set_country_flag = GEA_Governor_Heye_flag
 			add_popularity = {
 				ideology = paternal_autocrat
 				popularity = 0.2
@@ -504,6 +505,7 @@ add_namespace = GEA
 				character = GEA_Tilo_Freiherr_von_Wilmowsky
 				ideology = colonial_govt_subtype
 			}
+			set_country_flag = GEA_Governor_Tilo_flag
 			increase_ruling_party_popularity_by_10 = yes
 			hidden_effect = {
 			}
@@ -520,6 +522,7 @@ add_namespace = GEA
 				character = GEA_Fritz_ter_Meer
 				ideology = colonial_govt_subtype
 			}
+			set_country_flag = GEA_Governor_Meer_flag
 			modify_country_flag = {
 				flag = GEA_Indochinese_Anger
 				value = 1
@@ -530,7 +533,7 @@ add_namespace = GEA
 			}
 		}
 	}
-	country_event = { #价格大俯冲
+	country_event = {#价格大俯冲
 		id = GEA.10
 		title = GEA.10.t
 		desc = GEA.10.d
@@ -568,6 +571,11 @@ add_namespace = GEA
 				idea = GEA_falling_price_idea
 				days = 365
 			}
+			modify_country_flag = {
+				flag = GEA_Indochinese_Stability
+				value = -1
+			}
+			custom_effect_tooltip = GEA_Indochina_Stability_Down
 			modify_country_flag = {
 				flag = GEA_Indochinese_Anger
 				value = 2
@@ -630,6 +638,11 @@ add_namespace = GEA
 				ideology = syndicalist
 				popularity = 0.05
 			}
+			modify_country_flag = {
+				flag = GEA_Indochinese_Stability
+				value = -1
+			}
+			custom_effect_tooltip = GEA_Indochina_Stability_Down
 			hidden_effect = {
 				country_event = {
 					id = GEA.12 #东京民族独立主义者的骚动
@@ -638,12 +651,12 @@ add_namespace = GEA
 			} 
 		}
 	}
-	country_event = { #东京民族独立主义者的骚动
+	country_event = {#东京民族独立主义者的骚动
 		id = GEA.12
 		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.12" }
 		title = GEA.12.t
 		desc = GEA.12.d
-		picture = GFX_Siam_German_Economical_Dominance
+		picture = GFX_report_event_SIA_German_Economical_Dominance
 
 		is_triggered_only = yes
 		fire_only_once = yes
@@ -656,9 +669,14 @@ add_namespace = GEA
 				value = 1
 			}
 			custom_effect_tooltip = GEA_Indochina_Anger_Up
+			modify_country_flag = {
+				flag = GEA_Indochinese_Stability
+				value = -1
+			}
+			custom_effect_tooltip = GEA_Indochina_Stability_Down
 		}
 	}
-	country_event = { #手忙脚乱
+	country_event = {#手忙脚乱
 		id = GEA.13
 		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.13" }
 		title = GEA.13.t
@@ -678,7 +696,7 @@ add_namespace = GEA
 			add_manpower = 1500
 		}
 	}
-	country_event = { #安沛暴动
+	country_event = {#安沛暴动
 		id = GEA.14
 		title = GEA.14.t
 		desc = GEA.14.d
@@ -743,13 +761,18 @@ add_namespace = GEA
 					}
 				}
 			}
+			modify_country_flag = {
+				flag = GEA_Indochinese_Stability
+				value = -1
+			}
+			custom_effect_tooltip = GEA_Indochina_Stability_Down
 			add_political_power = -20
 			add_war_support = -0.05
 			set_country_flag = GEA_do_martial_law
 			unlock_decision_tooltip = GEA_indochina_martial_law
 		}
 	}
-	country_event = { #一场印度支那的悲剧
+	country_event = {#一场印度支那的悲剧
 		id = GEA.15
 		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.15" }
 		title = GEA.15.t
@@ -774,7 +797,7 @@ add_namespace = GEA
 			}
 		}
 	}
-	country_event = { #一场印度支那的悲剧
+	country_event = {#一场印度支那的悲剧
 		id = GEA.16
 		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.16" }
 		title = GEA.16.t
@@ -892,7 +915,7 @@ add_namespace = GEA
 		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.20" }
 		title = GEA.20.t
 		desc = GEA.20.d
-		picture = GFX_Siam_German_Economical_Dominance
+		picture = GFX_report_event_SIA_German_Economical_Dominance
 
 		is_triggered_only = yes
 		fire_only_once = yes
@@ -960,7 +983,7 @@ add_namespace = GEA
 			add_war_support = 0.05
 		}
 	}
-	country_event = { #在康道尔群岛发生的越狱
+	country_event = {#在康道尔群岛发生的越狱
 		id = GEA.22
 		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.22" }
 		title = GEA.22.t
@@ -982,7 +1005,7 @@ add_namespace = GEA
 			}
 		}
 	}
-	country_event = { #平定公社运动
+	country_event = {#平定公社运动
 		id = GEA.23
 		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.23" }
 		title = GEA.23.t
@@ -1001,7 +1024,7 @@ add_namespace = GEA
 				limit = {
 					check_variable = {
 						var = GEA_Indochinese_Anger
-						value = 6
+						value = 2
 						compare = less_than_or_equals
 					}
 				}
@@ -1035,11 +1058,16 @@ add_namespace = GEA
 					limit = {
 						limit = {
 							check_variable = {
+								var = GEA_Indochinese_Stability
+								value = 15
+								compare = greater_than_or_equals
+							}
+							check_variable = {
 								var = GEA_Indochinese_Anger
-								value = 2
+								value = 6
 								compare = less_than_or_equals
 							}
-							has_army_manpower = { size > 250000 }
+							has_army_manpower = { size > 300000 }
 						}			
 					}
 					hidden_effect = {
@@ -1086,7 +1114,7 @@ add_namespace = GEA
 			}
 		}
 	}
-	country_event = { #华商请愿
+	country_event = {#华商请愿
 		id = GEA.24
 		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.24" }
 		title = GEA.24.t
@@ -1128,13 +1156,15 @@ add_namespace = GEA
 			custom_effect_tooltip = GEA_Indochina_Anger_Up
 		}
 	}
- 	country_event = { #平定公社的叛乱被平息了
+ 	country_event = {#平定公社的叛乱被平息了
 		id = GEA.25
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.25"}
 		title = GEA.25.t
 		desc = GEA.25.d
 		picture = GFX_report_event_INC_farmers
+
 		is_triggered_only = yes
-		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.25"}
+		fire_only_once = yes
 
 		option = { 
 			name = GEA.25.a
@@ -1156,6 +1186,7 @@ add_namespace = GEA
 		picture = GFX_report_event_INC_farmers
 
 		is_triggered_only = yes
+		fire_only_once = yes
 
 		option = { 
 			name = GEA.26.a
@@ -1170,7 +1201,7 @@ add_namespace = GEA
 			}
 		}
 	}
-	country_event = { #这都是谁印的？
+	country_event = {#这都是谁印的？
 		id = GEA.27
 		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.27" }
 		title = GEA.27.t
@@ -1192,6 +1223,7 @@ add_namespace = GEA
 		picture = GFX_GEA_8
 
 		is_triggered_only = yes
+		fire_only_once = yes
 
 		option = { 
 			name = GEA.28.a
@@ -1240,6 +1272,7 @@ add_namespace = GEA
 		picture = GFX_GEA_army1
 
 		is_triggered_only = yes
+		fire_only_once = yes
 
 		option = { 
 			name = GEA.29.a
@@ -1275,18 +1308,1083 @@ add_namespace = GEA
 			decrease_ruling_party_popularity_by_10 = yes
 		}
 	}
+	country_event = {#武尔坎火山和凯亚火山爆发！
+		id = GEA.30
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.30" }
+		title = GEA.30.t
+		desc = GEA.30.d
+		picture = GFX_report_event_ELS_volcano
+
+		fire_only_once = yes
+
+		trigger = {
+			date > 1937.03.06
+			owns_state = 737
+		}
+
+		option = { 
+			name = GEA.30.a
+			add_political_power = -30
+			737 = {
+				damage_building = {
+					type = infrastructure
+					damage = 0.1
+				}
+			}
+		}
+	}
+	country_event = {#不幸者
+		id = GEA.31
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.31" }
+		title = GEA.31.t
+		desc = GEA.31.d
+		picture = GFX_GEA_farmer
+
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = { 
+			name = GEA.31.a
+		}
+	}
+	country_event = {#专员车队遇袭
+		id = GEA.32
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.32" }
+		title = GEA.32.t
+		desc = GEA.32.d
+		picture = GFX_GEA_assassination
+
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = { 
+			name = GEA.32.a
+			ai_chance = {
+				factor = 50
+				modifier = {
+					factor = 1000 
+					OR = {
+						has_game_rule = {
+							rule = GEA_if_creat_inc_cheat
+							option = GEA_IF_CREAT_INC_YES
+						}
+					}
+				}
+			}
+			add_manpower = -2934
+			add_stability = -0.02
+		}
+		option = {
+			name = GEA.32.b
+			ai_chance = {
+				factor = 50
+				modifier = {
+					factor = 1000 
+					OR = {
+						has_game_rule = {
+							rule = GEA_if_creat_inc_cheat
+							option = GEA_IF_CREAT_INC_NO
+						}
+					}
+				}
+			}
+			add_manpower = -7542
+			add_stability = -0.06
+		}
+	}
+	country_event = {#口腹之欲
+		id = GEA.33
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.33" }
+		title = GEA.33.t
+		desc = GEA.33.d
+		picture = GFX_GEA_9
+
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = { 
+			name = GEA.33.a
+			ai_chance = {
+				factor = 33
+			}
+			add_political_power = 20
+			army_experience = 25
+		}
+		option = {
+			name = GEA.33.b
+			ai_chance = {
+				factor = 33
+			}
+			add_political_power = -10
+			GER = {
+				add_timed_idea = {
+					idea = GEA_Enterprise_Prosperous
+					days = 180
+				}
+			}
+			custom_effect_tooltip = GEA_Improved_Individual_Rations_For_Soldiers
+			add_to_variable = {
+				GEA_army_supply_consumption_factor = -0.05
+			}
+		}
+		option = {
+			name = GEA.33.c
+			ai_chance = {
+				factor = 33
+			}
+			add_political_power = -50
+			country_event = {
+				id = GEA.34
+				days = 7
+			}
+		}
+	}
+	country_event = {#东方军粮计划
+		id = GEA.34
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.34" }
+		title = GEA.34.t
+		desc = GEA.34.d
+		picture = GFX_GEA_9
+
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = { 
+			name = GEA.34.a
+			ai_chance = {
+				factor = 33
+			}
+			set_country_flag = GEA_Individual_Rations_Storage
+			hidden_effect = {
+				country_event = {
+					id = GEA.35
+					days = 360
+				}
+			}
+		}
+		option = {
+			name = GEA.34.b
+			ai_chance = {
+				factor = 33
+			}
+			set_country_flag = GEA_Individual_Rations_Weight
+			hidden_effect = {
+				country_event = {
+					id = GEA.35
+					days = 360
+				}
+			}
+		}
+		option = {
+			name = GEA.34.c
+			ai_chance = {
+				factor = 33
+			}
+			set_country_flag = GEA_Individual_Rations_Nutrition
+			hidden_effect = {
+				country_event = {
+					id = GEA.35
+					days = 360
+				}
+			}
+		}
+	}
+	country_event = {#最终口粮定型
+		id = GEA.35
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.35" }
+		title = GEA.35.t
+		desc = { #
+			text = GEA.35.storage
+			trigger = {
+				has_country_flag = GEA_Individual_Rations_Storage
+			}
+		}
+		desc = { #
+			text = GEA.35.lightweight
+			trigger = {
+				has_country_flag = GEA_Individual_Rations_Weight
+			}
+		}
+		desc = { #
+			text = GEA.35.nutrition
+			trigger = {
+				has_country_flag = GEA_Individual_Rations_Nutrition
+			}
+		}
+		picture = GFX_GEA_10
+
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = { 
+			name = GEA.35.a
+			trigger = {
+				has_country_flag = GEA_Individual_Rations_Storage
+			}
+			add_ideas = GEA_Individual_Rations_Storage
+		}
+		option = {
+			name = GEA.35.b
+			trigger = {
+				has_country_flag = GEA_Individual_Rations_Weight
+			}
+			add_ideas = GEA_Individual_Rations_Weight
+		}
+		option = {
+			name = GEA.33.c
+			trigger = {
+				has_country_flag = GEA_Individual_Rations_Nutrition
+			}
+			add_ideas = GEA_Individual_Rations_Nutrition
+		}
+	}
+	country_event = {#军靴之下的正义
+		id = GEA.36
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.36" }
+		title = GEA.36.t
+		desc = GEA.36.d
+		picture = GFX_GEA_11
+
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = { 
+			name = GEA.36.a
+			ai_chance = {
+				factor = 50
+				modifier = {
+					factor = 1000 
+					OR = {
+						has_game_rule = {
+							rule = GEA_if_creat_inc_cheat
+							option = GEA_IF_CREAT_INC_YES
+						}
+					}
+				}
+			}
+			army_experience = 50
+			add_war_support = 0.05
+			add_popularity = {
+				ideology = national_populist
+				popularity = 0.03
+			}
+			modify_country_flag = {
+				flag = GEA_Indochinese_Anger
+				value = 2
+			}
+			custom_effect_tooltip = GEA_Indochina_Anger_Up_More
+		}
+		option = {
+			name = GEA.36.b
+			ai_chance = {
+				factor = 30
+				modifier = {
+					factor = 1000 
+					OR = {
+						has_game_rule = {
+							rule = GEA_if_creat_inc_cheat
+							option = GEA_IF_CREAT_INC_NO
+						}
+					}
+				}
+			}
+			add_political_power = -40
+			add_war_support = -0.1
+			modify_country_flag = {
+				flag = GEA_Indochinese_Anger
+				value = -1
+			}
+			custom_effect_tooltip = GEA_Indochina_Anger_Down
+			decrease_ruling_party_popularity_by_5 = yes
+		}
+		option = {
+			name = GEA.36.b
+			ai_chance = {
+				factor = 20
+			}
+			modify_country_flag = {
+				flag = GEA_Indochinese_Anger
+				value = 1
+			}
+			custom_effect_tooltip = GEA_Indochina_Anger_Up
+			add_stability = -0.03
+			add_political_power = -20
+		}
+	}
+	country_event = {#殖民危机好转
+		id = GEA.37
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.37" }
+		title = GEA.37.t
+		desc = GEA.37.d
+		picture = GFX_report_event_SIA_German_Economical_Dominance
+
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = { 
+			name = GEA.37.a
+			add_stability = 0.05
+			swap_ideas = {
+				remove_idea = GEA_colonial_disaster_idea
+				add_idea = GEA_colonial_disaster_idea1
+				days = 180
+			}
+		}
+	}
+	country_event = {#西门子的东方赌注
+		id = GEA.38
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.38" }
+		title = GEA.38.t
+		desc = GEA.38.d
+		picture = GFX_report_event_GER_Power_Grid
+
+		is_triggered_only = yes
+		fire_only_once = yes
+		
+		option = { 
+			name = GEA.38.a
+			add_ideas = GEA_Siemens_Investment
+			846 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes 
+				}
+			}
+			856 = { 
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes 
+				}
+			}
+		}
+	}
 
 
 
 
+#阿尔伯特·哈尔路线
+	country_event = { #驾驭三头驮兽
+		id = GEA.101
+		immediate = { 
+			log = "[GetDateText]: [Root.GetName]: event GEA.101" 
+		}
+		title = GEA.101.t
+		desc = GEA.101.d
+		picture = GFX_GEA_12
 
+		fire_only_once = yes
+		is_triggered_only = yes
 
+		option = { #提高盐税，人人都逃不过这一笔
+			name = GEA.101.a
+			add_stability = -0.03
+			decrease_ruling_party_popularity_by_3 = yes
+			modify_country_flag = {
+				flag = GEA_Indochinese_Anger
+				value = 1
+			}
+			custom_effect_tooltip = GEA_Indochina_Anger_Up
+			add_ideas = GEA_Expand_fiscal_and_taxation_sources_salt
+		}
 
+		option = { #提高酒税，从每一杯里抽出我们的份额
+			name = GEA.101.b
+			add_stability = -0.05
+			add_ideas = GEA_Expand_fiscal_and_taxation_sources_wine
+		}
 
+		option = { #别管那么多先从鸦片里捞一笔再说
+			name = GEA.101.c
+			add_stability = -0.02
+			add_political_power = -10
+			add_ideas = GEA_Expand_fiscal_and_taxation_sources_opium
+		}
+	}
+	country_event = { #老瓶装新酒
+		id = GEA.102
+		immediate = { 
+			log = "[GetDateText]: [Root.GetName]: event GEA.102" 
+		}
+		title = GEA.102.t
+		desc = GEA.102.d
+		picture = GFX_GEA_13
 
+		fire_only_once = yes
+		is_triggered_only = yes
 
+		option = { #必要时刻需要特殊手段
+			name = GEA.102.a
+			add_stability = 0.02
+			add_political_power = -30
+			modify_country_flag = {
+				flag = GEA_Indochinese_Stability
+				value = 1
+			}
+			custom_effect_tooltip = GEA_Indochina_Stability_Up
+		}
+	}
+	country_event = { #保大归来
+		id = GEA.103
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.103" }
+		title = GEA.103.t
+		desc = GEA.103.d
+		picture = GFX_report_event_VIE_royalfamily
 
+		is_triggered_only = yes
+		fire_only_once = yes
 
+		option = { # Welcome, our puppet emperor
+			name = GEA.103.a
+			add_stability = 0.05
+			add_popularity = { ideology = social_conservative popularity = 0.03 }
+			add_popularity = { ideology = paternal_autocrat popularity = 0.02 }
+			set_country_flag = GEA_here_is_baodai
+		}
+	}
+ 	country_event = {#保大皇帝的建议
+		id = GEA.104
+		immediate = { 
+			log = "[GetDateText]: [Root.GetName]: event GEA.104" 
+		}
+		title = GEA.104.t
+		desc = GEA.104.d
+		picture = GFX_report_event_VIE_royalfamily
+
+		fire_only_once = yes
+		is_triggered_only = yes
+
+		option = { #把部分权力还给皇帝，我们需要他的支持
+			name = GEA.104.a
+			add_political_power = -40
+			add_popularity = {
+				ideology = social_conservative
+				popularity = 0.04
+			}
+			modify_country_flag = {
+				flag = GEA_Indochinese_Anger
+				value = -1
+			}
+			custom_effect_tooltip = GEA_Indochina_Anger_Down
+			modify_country_flag = {
+				flag = GEA_Indochinese_Stability
+				value = 1
+			}
+			custom_effect_tooltip = GEA_Indochina_Stability_Up
+			add_ideas = GEA_Support_from_the_Vietnamese_partners
+			hidden_effect = {
+				country_event = {
+					id = GEA.105
+					days = 14
+				}
+			}
+		}
+
+		option = { #给他些边缘权力，足够凝聚人心即可
+			name = GEA.104.b
+			add_stability = 0.02
+			modify_country_flag = {
+				flag = GEA_Indochinese_Stability
+				value = 1
+			}
+			custom_effect_tooltip = GEA_Indochina_Stability_Up
+			add_ideas = GEA_Support_from_the_Vietnamese_partners_2
+			hidden_effect = {
+				country_event = {
+					id = GEA.105
+					days = 14
+				}
+			}
+		}
+
+		option = { #皇帝还是当个无害的神像吧
+			name = GEA.104.c
+			add_stability = -0.02
+			modify_country_flag = {
+				flag = GEA_Indochinese_Anger
+				value = 1
+			}
+			custom_effect_tooltip = GEA_Indochina_Anger_Up
+		}
+	}
+	country_event = {#保大的改革：行政
+		id = GEA.105
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.105" }
+		title = GEA.105.t
+		desc = GEA.105.d
+		picture = GFX_report_event_VIE_cabinet
+
+		is_triggered_only = yes
+		fire_only_once = yes
+		
+		option = {
+			name = GEA.105.a
+			ai_chance = {
+				factor = 90
+			}
+			add_stability = 0.02
+			add_popularity = {
+				ideology = social_conservative
+				popularity = 0.02
+			}
+			add_popularity = {
+				ideology = paternal_autocrat
+				popularity = 0.02
+			}
+			set_country_flag = GEA_Bao_Dai_Reform_1
+			if = {
+				limit = {
+					has_idea = GEA_Support_from_the_Vietnamese_partners
+				}
+				swap_ideas = {
+					remove_idea = GEA_Support_from_the_Vietnamese_partners
+					add_idea = GEA_Support_from_the_Vietnamese_partners_3
+				}
+			}
+			if = {
+				limit = {
+					has_idea = GEA_Support_from_the_Vietnamese_partners_2
+				}
+				swap_ideas = {
+					remove_idea = GEA_Support_from_the_Vietnamese_partners_2
+					add_idea = GEA_Support_from_the_Vietnamese_partners_4
+				}
+			}
+			hidden_effect = {
+				country_event = {
+					id = GEA.106
+					days = 14
+				}
+			}
+			modify_country_flag = {
+				flag = GEA_Indochinese_Anger
+				value = -1
+			}
+			custom_effect_tooltip = GEA_Indochina_Anger_Down
+		}
+		option = { 
+			name = Ostasien.131.b
+			ai_chance = {
+				factor = 10
+			}
+		}
+	}
+	country_event = {#保大的改革：警务
+		id = GEA.106
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.106" }
+		title = GEA.106.t
+		desc = GEA.106.d
+		picture = GFX_report_event_VIE_vanguard
+
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = { #至少他们现在不成威胁，而赤匪已经快打到家门口了！
+			name = GEA.106.a
+			ai_chance = {
+				factor = 30
+			}
+			add_political_power = -30
+			add_war_support = 0.03
+			add_popularity = {
+				ideology = social_conservative
+				popularity = -0.02
+			}
+			set_country_flag = GEA_Bao_Dai_Reform_2
+			modify_country_flag = {
+				flag = GEA_Indochinese_Stability
+				value = 1
+			}
+			custom_effect_tooltip = GEA_Indochina_Stability_Up
+			if = {
+				limit = {
+					has_idea = GEA_Support_from_the_Vietnamese_partners_3
+				}
+				swap_ideas = {
+					remove_idea = GEA_Support_from_the_Vietnamese_partners_3
+					add_idea = GEA_Support_from_the_Vietnamese_partners_5
+				}
+			}
+			if = {
+				limit = {
+					has_idea = GEA_Support_from_the_Vietnamese_partners_4
+				}
+				swap_ideas = {
+					remove_idea = GEA_Support_from_the_Vietnamese_partners_4
+					add_idea = GEA_Support_from_the_Vietnamese_partners_6
+				}
+			}
+			hidden_effect = {
+				country_event = {
+					id = GEA.107
+					days = 7
+				}
+			}
+		}
+		option = { #给安南人权力是一件疯狂危险的事情
+			name = GEA.106.b
+			ai_chance = {
+				factor = 70
+			}
+			add_stability = -0.03
+			add_war_support = -0.06
+			add_political_power = 20
+		}
+	}
+	country_event = {#保大独立
+		id = GEA.107
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.107" }
+		title = GEA.107.t
+		desc = GEA.107.d
+		picture = GFX_report_event_GER_colony_problems
+
+		fire_only_once = yes
+		is_triggered_only = yes
+
+		option = {
+			name = GEA.107.a
+			ai_chance = {
+				factor = 0
+			}
+			modify_country_flag = {
+				flag = GEA_Indochinese_Anger
+				value = -2
+			}
+			custom_effect_tooltip = GEA_Indochina_Anger_Down_More
+			modify_country_flag = {
+				flag = GEA_Indochinese_Stability
+				value = 1
+			}
+			custom_effect_tooltip = GEA_Indochina_Stability_Up
+			VIN = {
+				change_tag_from = GEA
+			}
+			add_stability = 0.05
+			VIN = {
+				transfer_state = 827
+				transfer_state = 857
+				transfer_state = 671
+			}
+			VIN = {
+				set_cosmetic_tag = VIN_ANNAM
+			}
+			hidden_effect = { # Set VIN politics, Remove GEA cores outside of Cochinchina
+				if = {
+					limit = { is_subject = yes }
+					overlord = {
+						set_autonomy = {
+							target = VIN
+							autonomy_state = kr_default_puppet
+						}
+					}
+				}
+				else = {
+					set_autonomy = {
+						target = VIN
+						autonomy_state = kr_default_puppet
+					}
+				}
+				VIN = {
+					load_oob = VIN
+					country_event = {
+						id = vietnam.0
+						days = 2
+					}
+					set_politics = {
+						ruling_party = paternal_autocrat
+						last_election = "1885.6.9"
+						election_frequency = 48
+						elections_allowed = no
+					}
+
+					set_popularities = {
+						totalist = 7
+						radical_socialist = 24
+						syndicalist = 5
+						social_democrat = 18
+						social_liberal = 1
+						market_liberal = 1
+						social_conservative = 11
+						authoritarian_democrat = 11
+						paternal_autocrat = 12
+						national_populist = 10
+					}
+					retire_country_leader = yes
+					create_country_leader = {
+						name = "Bao Dai" # Dai Hoang De Be Ha, lol
+						desc = "POLITICS_BAO_DAI_DESC"
+						picture = "gfx/leaders/VIN/Portrait_Vietnam_Bao_Dai.png"
+						expire = "1997.7.30"
+						ideology = absolute_monarchy_subtype
+					}
+				}
+				INC = {
+					set_nationality = {
+						target_country = VIN
+						character = INC_Tran_Dai_Nghia
+					}
+				}
+				827 = {
+					remove_core_of = GEA
+					remove_claim_by = GEA
+				}
+				857 = {
+					remove_core_of = GEA
+					remove_claim_by = GEA
+				}
+				671 = {
+					remove_core_of = GEA
+					remove_claim_by = GEA
+				}
+				286 = {
+					remove_core_of = VIN
+					add_claim_by = VIN
+				}
+				856 = {
+					remove_core_of = VIN
+					add_claim_by = VIN
+				}
+				GEA = {
+					VIN = {
+						transfer_technology = yes
+					}
+				}
+				if = {
+					limit = {
+						GEA = { has_war_with = INC }
+					}
+					VIN = {
+						add_to_war = {
+							targeted_alliance = GEA
+							enemy = INC
+						}
+					}
+				}
+			}
+			add_offsite_building = { type = industrial_complex level = 2 }
+			add_offsite_building = { type = arms_factory level = 2 }
+			add_popularity = {
+				ideology = social_conservative
+				popularity = 0.1
+			}
+			if = {
+				limit = {
+					has_idea = GEA_Support_from_the_Vietnamese_partners_5
+				}
+				swap_ideas = {
+					remove_idea = GEA_Support_from_the_Vietnamese_partners_5
+					add_idea = GEA_Support_from_the_Vietnamese_partners_7
+				}
+			}
+			if = {
+				limit = {
+					has_idea = GEA_Support_from_the_Vietnamese_partners_6
+				}
+				swap_ideas = {
+					remove_idea = GEA_Support_from_the_Vietnamese_partners_6
+					add_idea = GEA_Support_from_the_Vietnamese_partners_8
+				}
+			}
+		}
+		option = {
+			name = GEA.107.b
+			ai_chance = {
+				factor = 70
+			}
+			add_political_power = 40
+			add_stability = -0.05
+		}
+		option = {
+			name = GEA.107.c
+			ai_chance = {
+				factor = 30
+			}
+			add_stability = 0.05
+			modify_country_flag = {
+				flag = GEA_Indochinese_Anger
+				value = -2
+			}
+			custom_effect_tooltip = GEA_Indochina_Anger_Down_More
+			modify_country_flag = {
+				flag = GEA_Indochinese_Stability
+				value = 1
+			}
+			custom_effect_tooltip = GEA_Indochina_Stability_Up
+			VIN = {
+				transfer_state = 827
+				transfer_state = 857
+				transfer_state = 671
+			}
+			VIN = {
+				set_cosmetic_tag = VIN_ANNAM
+			}
+			hidden_effect = { # Set VIN politics, Remove GEA cores outside of Cochinchina
+				if = {
+					limit = { is_subject = yes }
+					overlord = {
+						set_autonomy = {
+							target = VIN
+							autonomy_state = kr_default_puppet
+						}
+					}
+				}
+				else = {
+					set_autonomy = {
+						target = VIN
+						autonomy_state = kr_default_puppet
+					}
+				}
+				VIN = {
+					load_oob = VIN
+					country_event = {
+						id = vietnam.0
+						days = 2
+					}
+					set_politics = {
+						ruling_party = paternal_autocrat
+						last_election = "1885.6.9"
+						election_frequency = 48
+						elections_allowed = no
+					}
+
+					set_popularities = {
+						totalist = 7
+						radical_socialist = 24
+						syndicalist = 5
+						social_democrat = 18
+						social_liberal = 1
+						market_liberal = 1
+						social_conservative = 11
+						authoritarian_democrat = 11
+						paternal_autocrat = 12
+						national_populist = 10
+					}
+					retire_country_leader = yes
+					create_country_leader = {
+						name = "Bao Dai" # Dai Hoang De Be Ha, lol
+						desc = "POLITICS_BAO_DAI_DESC"
+						picture = "gfx/leaders/VIN/Portrait_Vietnam_Bao_Dai.png"
+						expire = "1997.7.30"
+						ideology = absolute_monarchy_subtype
+					}
+				}
+				INC = {
+					set_nationality = {
+						target_country = VIN
+						character = INC_Tran_Dai_Nghia
+					}
+				}
+				827 = {
+					remove_core_of = GEA
+					remove_claim_by = GEA
+				}
+				857 = {
+					remove_core_of = GEA
+					remove_claim_by = GEA
+				}
+				671 = {
+					remove_core_of = GEA
+					remove_claim_by = GEA
+				}
+				286 = {
+					remove_core_of = VIN
+					add_claim_by = VIN
+				}
+				856 = {
+					remove_core_of = VIN
+					add_claim_by = VIN
+				}
+				GEA = {
+					VIN = {
+						transfer_technology = yes
+					}
+				}
+				if = {
+					limit = {
+						GEA = { has_war_with = INC }
+					}
+					VIN = {
+						add_to_war = {
+							targeted_alliance = GEA
+							enemy = INC
+						}
+					}
+				}
+			}
+			add_offsite_building = { type = industrial_complex level = 2 }
+			add_offsite_building = { type = arms_factory level = 2 }
+			add_popularity = {
+				ideology = social_conservative
+				popularity = 0.1
+			}
+			if = {
+				limit = {
+					has_idea = GEA_Support_from_the_Vietnamese_partners_5
+				}
+				swap_ideas = {
+					remove_idea = GEA_Support_from_the_Vietnamese_partners_5
+					add_idea = GEA_Support_from_the_Vietnamese_partners_7
+				}
+			}
+			if = {
+				limit = {
+					has_idea = GEA_Support_from_the_Vietnamese_partners_6
+				}
+				swap_ideas = {
+					remove_idea = GEA_Support_from_the_Vietnamese_partners_6
+					add_idea = GEA_Support_from_the_Vietnamese_partners_8
+				}
+			}
+		}
+	}
+	country_event = {#双皇之治
+		id = GEA.108
+		immediate = { 
+			log = "[GetDateText]: [Root.GetName]: event GEA.108" 
+		}
+		title = GEA.108.t
+		desc = GEA.108.d
+		picture = GFX_GEA_14
+
+		fire_only_once = yes
+		is_triggered_only = yes
+
+		option = { #两位皇帝，一份忠诚！
+			name = GEA.108.a
+			add_political_power = 20
+			modify_country_flag = {
+				flag = GEA_Indochinese_Anger
+				value = -1
+			}
+			custom_effect_tooltip = Gea_Indochina_Anger_Down
+			modify_country_flag = {
+				flag = GEA_Indochinese_Stability
+				value = 1
+			}
+			custom_effect_tooltip = GEA_Indochina_Stability_Up
+		}
+	}
+	country_event = {#席间名流
+		id = GEA.109
+		immediate = { 
+			log = "[GetDateText]: [Root.GetName]: event GEA.109" 
+		}
+		title = GEA.109.t
+		desc = GEA.109.d
+		picture = GFX_report_event_VIE_cabinet
+
+		fire_only_once = yes
+		is_triggered_only = yes
+
+		option = { #给他们更多特权
+			name = GEA.109.a
+			add_political_power = -30
+			decrease_ruling_party_popularity_by_3 = yes
+			modify_country_flag = {
+				flag = GEA_Indochinese_Anger
+				value = -1
+			}
+			custom_effect_tooltip = Gea_Indochina_Anger_Down
+			modify_country_flag = {
+				flag = GEA_Indochinese_Stability
+				value = 1
+			}
+			custom_effect_tooltip = GEA_Indochina_Stability_Up
+		}
+		option = { #给他们席位和勋章就够了
+			name = GEA.109.b
+			add_political_power = -10
+			add_stability = -0.03
+			modify_country_flag = {
+				flag = GEA_Indochinese_Stability
+				value = 1
+			}
+			custom_effect_tooltip = GEA_Indochina_Stability_Up
+		}
+	}
+	country_event = {#开源的困境
+		id = GEA.110
+		immediate = { 
+			log = "[GetDateText]: [Root.GetName]: event GEA.110" 
+		}
+		title = GEA.110.t
+		desc = GEA.110.d
+
+		fire_only_once = yes
+		is_triggered_only = yes
+
+		option = { #提高关税，连运往德国的货物也不能例外
+			name = GEA.110.a
+			add_political_power = -50
+			swap_ideas = {
+				remove_idea = GEA_Fiscal_reform
+				add_idea = GEA_Fiscal_reform_1
+			}
+			GER = { 
+				add_opinion_modifier = { 
+					target = GEA
+					modifier = large_decrease 
+				} 
+			}
+		}
+		option = { #给中小企业松绑
+			name = GEA.110.b
+			add_political_power = -10
+			swap_ideas = {
+				remove_idea = GEA_Fiscal_reform
+				add_idea = GEA_Fiscal_reform_2
+			}
+		}
+
+		option = { #收割富人，两难自解
+			name = GEA.110.c
+			modify_country_flag = {
+				flag = GEA_Indochinese_Stability
+				value = -1
+			}
+			custom_effect_tooltip = GEA_Indochina_Stability_Down
+			add_political_power = 10
+			swap_ideas = {
+				remove_idea = GEA_Fiscal_reform
+				add_idea = GEA_Fiscal_reform_3
+			}
+		}
+
+		option = { #还能怎么办？刮地皮吧
+			name = GEA.110.e
+			add_stability = -0.05
+			modify_country_flag = {
+				flag = GEA_Indochinese_Anger
+				value = 1
+			}
+			custom_effect_tooltip = GEA_Indochina_Anger_Up
+			modify_country_flag = {
+				flag = GEA_Indochinese_Stability
+				value = -1
+			}
+			custom_effect_tooltip = GEA_Indochina_Stability_Down
+			swap_ideas = {
+				remove_idea = GEA_Fiscal_reform
+				add_idea = GEA_Fiscal_reform_4
+			}
+		}
+	}
+	country_event = {#新来的邻居
+		id = GEA.111
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.111" }
+		title = GEA.111.t
+		desc = GEA.111.d
+		picture = GFX_GEA_15
+
+		fire_only_once = yes
+		is_triggered_only = yes
+
+		option = { #欢迎来到东方
+			name = GEA.111.a
+			add_stability = 0.02
+		}
+	}
 
 
 
@@ -1524,7 +2622,7 @@ add_namespace = GEA
 		id = Ostasien.16
 		title = Ostasien.16.t
 		desc = Ostasien.16.d
-		picture = GFX_Siam_German_Economical_Dominance
+		picture = GFX_report_event_SIA_German_Economical_Dominance
 
 		fire_only_once = yes
 
@@ -1996,95 +3094,13 @@ add_namespace = GEA
 			}
 		}
 	}
-	country_event = {#专员车队遇袭
-		id = Ostasien.24
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.24" }
-		title = Ostasien.24.t
-		desc = Ostasien.24.d
-		picture = GFX_GEA_assassination
-
-		is_triggered_only = yes
-
-		option = { 
-			name = Ostasien.24.a
-			ai_chance = {
-				factor = 50
-				modifier = {
-					factor = 1000 
-					OR = {
-						has_game_rule = {
-							rule = GEA_if_creat_inc_cheat
-							option = GEA_IF_CREAT_INC_YES
-						}
-					}
-				}
-			}
-			add_manpower = -2934
-			add_stability = -0.02
-			add_to_variable = { GEA_socialist_power = 5 }
-			custom_effect_tooltip = GEA_unlucky_tt
-		}
-		option = {
-			name = Ostasien.24.b
-			ai_chance = {
-				factor = 50
-				modifier = {
-					factor = 1000 
-					OR = {
-						has_game_rule = {
-							rule = GEA_if_creat_inc_cheat
-							option = GEA_IF_CREAT_INC_NO
-						}
-					}
-				}
-			}
-			add_manpower = -7542
-			add_stability = -0.06
-			add_to_variable = { GEA_socialist_power = 5 }
-			add_to_variable = { GEA_indochina_control = 1 } 
-			custom_effect_tooltip = GEA_assassination_tt
-		}
-	}
-	country_event = {#不幸者
-		id = Ostasien.29
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.29" }
-		title = Ostasien.29.t
-		desc = Ostasien.29.d
-		picture = GFX_GEA_farmer
-
-		is_triggered_only = yes
-
-		option = { 
-			name = Ostasien.29.a
-			add_to_variable = { GEA_socialist_power = 5 }
-			custom_effect_tooltip = GEA_unlucky_tt
-		}
-	}
-
-	country_event = {#殖民危机好转
-		id = Ostasien.31
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.31" }
-		title = Ostasien.31.t
-		desc = Ostasien.31.d
-		picture = GFX_Siam_German_Economical_Dominance
-
-		is_triggered_only = yes
-
-		option = { 
-			name = Ostasien.31.a
-			swap_ideas = {
-				remove_idea = GEA_colonial_disaster_idea
-				add_idea = GEA_colonial_disaster_idea1
-				days = 180
-			}
-		}
-	}
+	
 	country_event = {#印度支那的红色阴霾消散了
 		id = Ostasien.34
 		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.34" }
 		title = Ostasien.34.t
 		desc = Ostasien.34.d
-		picture = GFX_Siam_German_Economical_Dominance
+		picture = GFX_report_event_SIA_German_Economical_Dominance
 
 		is_triggered_only = yes
 
@@ -2157,67 +3173,12 @@ add_namespace = GEA
 		}
 	}
 #风味事件
-	country_event = { #Rabaul caldera
-		id = Ostasien.33
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.33" }
-		title = Ostasien.33.t
-		desc = Ostasien.33.d
-		picture = GFX_els_volcano
-
-		fire_only_once = yes
-
-		trigger = {
-			date > 1937.03.06
-			owns_state = 737
-		}
-
-		option = { 
-			name = Ostasien.33.a
-			add_political_power = -30
-			737 = {
-				damage_building = {
-					type = infrastructure
-					damage = 0.1
-				}
-			}
-		}
-	}
-	country_event = { #东南亚之缘
-		id = Ostasien.36
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.36" }
-		title = Ostasien.36.t
-		desc = Ostasien.36.d
-
-		fire_only_once = yes
-
-		is_triggered_only = yes
-
-		option = { 
-			name = Ostasien.36.a
-			add_stability = 0.01
-		}
-	}
-	country_event = { #再会
-		id = Ostasien.37
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.37" }
-		title = Ostasien.37.t
-		desc = Ostasien.37.d
-
-		fire_only_once = yes
-
-		is_triggered_only = yes
-
-		option = { 
-			name = Ostasien.37.a
-			add_war_support = -0.01
-		}
-	}
 	country_event = { # Fleet Parade
 		id = Ostasien.100
 		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.100" }
 		title = Ostasien.100.t
 		desc = Ostasien.100.d
-		picture = GFX_Siam_German_Economical_Dominance
+		picture = GFX_report_event_SIA_German_Economical_Dominance
 
 		is_triggered_only = yes
 
@@ -2546,94 +3507,7 @@ add_namespace = GEA
 		}
 	}
 #穆克事件
-	country_event = { # 保大归来
-		id = Ostasien.130
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.130" }
-		title = Ostasien.130.t
-		desc = Ostasien.130.d
-		picture = GFX_report_event_VIE_royalfamily
 
-		is_triggered_only = yes
-
-		option = { # Welcome, our puppet emperor
-			name = Ostasien.130.a
-			add_stability = 0.03
-			add_to_variable = { GEA_nationalist_power = -5 }
-			custom_effect_tooltip = GEA_cuck_to_nobles_tt
-			set_country_flag = GEA_here_is_baodai
-		}
-	}
-	country_event = { #保大的改革：行政
-		id = Ostasien.131
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.131" }
-		title = Ostasien.131.t
-		desc = Ostasien.131.d
-		picture = GFX_report_event_VIE_cabinet
-
-		is_triggered_only = yes
-
-		option = {
-			name = Ostasien.131.a
-			ai_chance = {
-				factor = 90
-			}
-			add_stability = 0.02
-			add_popularity = {
-				ideology = social_conservative
-				popularity = -0.05
-			}
-			set_country_flag = GEA_Bao_Dai_Reform_1
-			add_to_variable = { GEA_socialist_power = -5 }  
-			add_to_variable = { GEA_nationalist_power = -5 }
-			custom_effect_tooltip = GEA_reforming_colonial_institutions1_tt
-		}
-		option = { 
-			name = Ostasien.131.b
-			ai_chance = {
-				factor = 10
-				modifier = {
-					factor = 0 
-				}
-			}
-			add_to_variable = { GEA_socialist_power = 5 }  
-			add_to_variable = { GEA_nationalist_power = 5 }
-			custom_effect_tooltip = GEA_baodai_reform_tt
-		}
-	}
-	country_event = { 
-		id = Ostasien.132
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.132" }
-		title = Ostasien.132.t
-		desc = Ostasien.132.d
-		picture = GFX_report_event_VIE_vanguard
-
-		is_triggered_only = yes
-
-		option = {
-			name = Ostasien.132.a
-			ai_chance = {
-				factor = 30
-			}
-			add_political_power = -30
-			add_war_support = 0.03
-			add_popularity = {
-				ideology = social_conservative
-				popularity = -0.02
-			}
-			set_country_flag = GEA_Bao_Dai_Reform_2
-			add_to_variable = { GEA_socialist_power = -10 }  
-			custom_effect_tooltip = GEA_baodai_reform_tt2
-		}
-		option = { 
-			name = Ostasien.132.b
-			ai_chance = {
-				factor = 70
-			}
-			add_stability = -0.03
-			add_war_support = -0.06
-			add_political_power = 20
-		}
-	}
 	country_event = {
 		id = Ostasien.133
 		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.133" }
@@ -2673,235 +3547,6 @@ add_namespace = GEA
 			add_to_variable = { GEA_nationalist_power = -10 }
 			custom_effect_tooltip = GEA_reforming_colonial_institutions2_tt
 			set_country_flag = GEA_wholesome_100_flag
-		}
-	}
-	country_event = {
-		id = Ostasien.134
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.134" }
-		title = Ostasien.134.t
-		desc = Ostasien.134.d
-		picture = GFX_report_event_GER_colony_problems
-
-		fire_only_once = yes
-
-		is_triggered_only = yes
-
-		option = {
-			name = Ostasien.134.a
-			ai_chance = {
-				factor = 0
-			}
-			VIN = {
-				change_tag_from = GEA
-			}
-			VIN = {
-				transfer_state = 827
-				transfer_state = 857
-				transfer_state = 671
-				transfer_state = 826
-				transfer_state = 286
-				transfer_state = 670
-				transfer_state = 856
-			}
-			VIN = {
-				set_cosmetic_tag = VIN_ANNAM
-			}
-			hidden_effect = { # Set VIN politics, Remove GEA cores outside of Cochinchina
-				if = {
-					limit = { is_subject = yes }
-					overlord = {
-						set_autonomy = {
-							target = VIN
-							autonomy_state = kr_default_puppet
-						}
-					}
-				}
-				else = {
-					set_autonomy = {
-						target = VIN
-						autonomy_state = kr_default_puppet
-					}
-				}
-				VIN = {
-					load_oob = VIN
-					country_event = {
-						id = vietnam.0
-						days = 7
-					}
-					set_politics = {
-						ruling_party = paternal_autocrat
-						last_election = "1885.6.9"
-						election_frequency = 48
-						elections_allowed = no
-					}
-
-					set_popularities = {
-						totalist = 7
-						radical_socialist = 24
-						syndicalist = 5
-						social_democrat = 18
-						social_liberal = 1
-						market_liberal = 1
-						social_conservative = 11
-						authoritarian_democrat = 11
-						paternal_autocrat = 12
-						national_populist = 10
-					}
-					retire_country_leader = yes
-					create_country_leader = {
-						name = "Bao Dai" # Dai Hoang De Be Ha, lol
-						desc = "POLITICS_BAO_DAI_DESC"
-						picture = "gfx/leaders/VIN/Portrait_Vietnam_Bao_Dai.png"
-						expire = "1997.7.30"
-						ideology = absolute_monarchy_subtype
-					}
-				}
-				827 = {
-					remove_core_of = GEA
-					remove_claim_by = GEA
-				}
-				857 = {
-					remove_core_of = GEA
-					remove_claim_by = GEA
-				}
-				671 = {
-					remove_core_of = GEA
-					remove_claim_by = GEA
-				}
-				GEA = {
-					VIN = {
-						transfer_technology = yes
-					}
-				}
-				if = {
-					limit = {
-						GEA = { has_war_with = INC }
-					}
-					VIN = {
-						add_to_war = {
-							targeted_alliance = GEA
-							enemy = INC
-						}
-					}
-				}
-			}
-			add_offsite_building = { type = industrial_complex level = 2 }
-			add_offsite_building = { type = arms_factory level = 2 }
-			add_popularity = {
-				ideology = social_conservative
-				popularity = 0.1
-			}
-		}
-		option = {
-			name = Ostasien.134.b
-			ai_chance = {
-				factor = 70
-			}
-			add_political_power = 40
-			add_stability = -0.1
-		}
-		option = {
-			name = Ostasien.134.c
-			ai_chance = {
-				factor = 30
-			}
-			VIN = {
-				transfer_state = 827
-				transfer_state = 857
-				transfer_state = 671
-				transfer_state = 826
-				transfer_state = 286
-				transfer_state = 670
-				transfer_state = 856
-			}
-			VIN = {
-				set_cosmetic_tag = VIN_ANNAM
-			}
-			hidden_effect = { # Set VIN politics, Remove GEA cores outside of Cochinchina
-				if = {
-					limit = { is_subject = yes }
-					overlord = {
-						set_autonomy = {
-							target = VIN
-							autonomy_state = kr_default_puppet
-						}
-					}
-				}
-				else = {
-					set_autonomy = {
-						target = VIN
-						autonomy_state = kr_default_puppet
-					}
-				}
-				VIN = {
-					load_oob = VIN
-					country_event = {
-						id = vietnam.0
-						days = 7
-					}
-					set_politics = {
-						ruling_party = paternal_autocrat
-						last_election = "1885.6.9"
-						election_frequency = 48
-						elections_allowed = no
-					}
-
-					set_popularities = {
-						totalist = 7
-						radical_socialist = 24
-						syndicalist = 5
-						social_democrat = 18
-						social_liberal = 1
-						market_liberal = 1
-						social_conservative = 11
-						authoritarian_democrat = 11
-						paternal_autocrat = 12
-						national_populist = 10
-					}
-					retire_country_leader = yes
-					create_country_leader = {
-						name = "Bao Dai" # Dai Hoang De Be Ha, lol
-						desc = "POLITICS_BAO_DAI_DESC"
-						picture = "gfx/leaders/VIN/Portrait_Vietnam_Bao_Dai.png"
-						expire = "1997.7.30"
-						ideology = absolute_monarchy_subtype
-					}
-				}
-				827 = {
-					remove_core_of = GEA
-					remove_claim_by = GEA
-				}
-				857 = {
-					remove_core_of = GEA
-					remove_claim_by = GEA
-				}
-				671 = {
-					remove_core_of = GEA
-					remove_claim_by = GEA
-				}
-				GEA = {
-					VIN = {
-						transfer_technology = yes
-					}
-				}
-				if = {
-					limit = {
-						GEA = { has_war_with = INC }
-					}
-					VIN = {
-						add_to_war = {
-							targeted_alliance = GEA
-							enemy = INC
-						}
-					}
-				}
-			}
-			add_offsite_building = { type = industrial_complex level = 2 }
-			add_offsite_building = { type = arms_factory level = 2 }
-			add_popularity = {
-				ideology = social_conservative
-				popularity = 0.1
-			}
 		}
 	}
 	country_event = {
@@ -3310,7 +3955,7 @@ add_namespace = GEA
 		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.200" }
 		title = Ostasien.200.t
 		desc = Ostasien.200.d
-		picture = GFX_Siam_German_Economical_Dominance
+		picture = GFX_report_event_SIA_German_Economical_Dominance
 
 		is_triggered_only = yes
 
@@ -3325,7 +3970,7 @@ add_namespace = GEA
 		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.201" }
 		title = Ostasien.201.t
 		desc = Ostasien.201.d
-		picture = GFX_Siam_German_Economical_Dominance
+		picture = GFX_report_event_SIA_German_Economical_Dominance
 
 		is_triggered_only = yes
 
@@ -3344,7 +3989,7 @@ add_namespace = GEA
 		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.202" }
 		title = Ostasien.202.t
 		desc = Ostasien.202.d
-		picture = GFX_Siam_German_Economical_Dominance
+		picture = GFX_report_event_SIA_German_Economical_Dominance
 
 		is_triggered_only = yes
 
@@ -3385,7 +4030,7 @@ add_namespace = GEA
 		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.203" }
 		title = Ostasien.203.t
 		desc = Ostasien.203.d
-		picture = GFX_Siam_German_Economical_Dominance
+		picture = GFX_report_event_SIA_German_Economical_Dominance
 
 		is_triggered_only = yes
 
@@ -3424,7 +4069,7 @@ add_namespace = GEA
 		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.204" }
 		title = Ostasien.204.t
 		desc = Ostasien.204.d
-		picture = GFX_Siam_German_Economical_Dominance
+		picture = GFX_report_event_SIA_German_Economical_Dominance
 
 		is_triggered_only = yes
 
@@ -3440,7 +4085,7 @@ add_namespace = GEA
 		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.205" }
 		title = Ostasien.205.t
 		desc = Ostasien.205.d
-		#picture = GFX_Siam_German_Economical_Dominance
+		#picture = GFX_report_event_SIA_German_Economical_Dominance
 
 		fire_only_once = yes
 
@@ -3469,7 +4114,7 @@ add_namespace = GEA
 		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.206" }
 		title = Ostasien.206.t
 		desc = Ostasien.206.d
-		#picture = GFX_Siam_German_Economical_Dominance
+		#picture = GFX_report_event_SIA_German_Economical_Dominance
 
 		fire_only_once = yes
 
@@ -3501,7 +4146,7 @@ add_namespace = GEA
 		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.207" }
 		title = Ostasien.207.t
 		desc = Ostasien.207.d
-		#picture = GFX_Siam_German_Economical_Dominance
+		#picture = GFX_report_event_SIA_German_Economical_Dominance
 
 		fire_only_once = yes
 
@@ -3518,7 +4163,7 @@ add_namespace = GEA
 		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.208" }
 		title = Ostasien.208.t
 		desc = Ostasien.208.d
-		#picture = GFX_Siam_German_Economical_Dominance
+		#picture = GFX_report_event_SIA_German_Economical_Dominance
 
 		fire_only_once = yes
 
@@ -3535,7 +4180,7 @@ add_namespace = GEA
 		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.209" }
 		title = Ostasien.209.t
 		desc = Ostasien.209.d
-		#picture = GFX_Siam_German_Economical_Dominance
+		#picture = GFX_report_event_SIA_German_Economical_Dominance
 
 		fire_only_once = yes
 
@@ -3586,7 +4231,7 @@ add_namespace = GEA
 		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.211" }
 		title = Ostasien.211.t
 		desc = Ostasien.211.d
-		#picture = GFX_Siam_German_Economical_Dominance
+		#picture = GFX_report_event_SIA_German_Economical_Dominance
 
 		fire_only_once = yes
 
@@ -3614,7 +4259,7 @@ add_namespace = GEA
 		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.212" }
 		title = Ostasien.212.t
 		desc = Ostasien.212.d
-		#picture = GFX_Siam_German_Economical_Dominance
+		#picture = GFX_report_event_SIA_German_Economical_Dominance
 
 		fire_only_once = yes
 

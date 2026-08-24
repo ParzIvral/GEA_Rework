@@ -4,6 +4,7 @@
 # By Gwener
 ###########################
 GEA_decisions = {#德属东亚殖民地决议
+	
 	GEA_tou_zi_di_fang = {#投资地方
 		icon = cash
 		visible = {

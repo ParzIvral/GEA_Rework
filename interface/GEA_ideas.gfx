@@ -268,4 +268,28 @@ spriteTypes = {
 		name = "GFX_idea_GEA_The_garden_of_the_cartel"
 		texturefile = "gfx/interface/ideas/gea/GEA_The_garden_of_the_cartel.png"
 	}
+	spriteType = {
+		name = "GFX_idea_GEA_Enterprise_Prosperous"
+		texturefile = "gfx/interface/ideas/gea/GEA_Enterprise_Prosperous.png"
+	}
+	spriteType = {
+		name = "GFX_idea_GEA_Individual_Rations"
+		texturefile = "gfx/interface/ideas/gea/GEA_Individual_Rations.png"
+	}
+	spriteType = {
+		name = "GFX_idea_GEA_Luluai_Principle"
+		texturefile = "gfx/interface/ideas/gea/GEA_Luluai_Principle.png"
+	}
+	spriteType = {
+		name = "GFX_idea_GEA_Support_from_the_Vietnamese_partners"
+		texturefile = "gfx/interface/ideas/gea/GEA_Support_from_the_Vietnamese_partners.png"
+	}
+	spriteType = {
+		name = "GFX_idea_GEA_Support_from_the_Vietnamese_partners_2"
+		texturefile = "gfx/interface/ideas/gea/GEA_Support_from_the_Vietnamese_partners_2.png"
+	}
+	spriteType = {
+		name = "GFX_idea_GEA_Export_economy_first"
+		texturefile = "gfx/interface/ideas/gea/GEA_Export_economy_first.png"
+	}
 }

@@ -120,6 +120,411 @@ ideas = {
 				industrial_capacity_dockyard = -0.15
 			}
 		}
+		GEA_Enterprise_Prosperous = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Give_in_to_longshoremen"}
+			picture = GEA_Enterprise_Prosperous
+			allowed = { always = no }
+			modifier = {
+				stability_factor = 0.05
+				production_speed_dockyard_factor = -0.05
+				industrial_capacity_dockyard = -0.15
+			}
+		}
+		GEA_Individual_Rations_Storage = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Individual_Rations_Storage"}
+			name = GEA_Individual_Rations
+			picture = GEA_Individual_Rations
+			allowed = { always = no }
+			modifier = {
+				acclimatization_hot_climate_gain_factor = 0.15
+				supply_consumption_factor = -0.15
+				no_supply_grace = 72
+			}
+		}
+		GEA_Individual_Rations_Weight = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Individual_Rations_Weight"}
+			name = GEA_Individual_Rations
+			picture = GEA_Individual_Rations
+			allowed = { always = no }
+			modifier = {
+				army_speed_factor = 0.05
+				no_supply_grace = 24
+				coordination_bonus = 0.02
+				supply_consumption_factor = -0.1
+			}
+		}
+		GEA_Individual_Rations_Nutrition = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Individual_Rations_Nutrition"}
+			name = GEA_Individual_Rations
+			picture = GEA_Individual_Rations
+			allowed = { always = no }
+			modifier = {
+				political_power_cost = 0.02
+				army_org_factor = 0.1
+				conscription_factor = 0.05
+				attrition = -0.075
+			}
+		}
+		GEA_colonial_disaster_idea = { #殖民骚乱
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_colonial_disaster_idea"}
+			picture = GER_Desperate_Struggle_Third
+			allowed = { always = no }
+			modifier = {
+				war_support_weekly = -0.005
+				stability_factor = -0.3
+				political_power_gain = -0.20
+				local_resources_factor = -0.15
+				army_morale_factor = -0.20
+			}
+		}
+		GEA_colonial_disaster_idea1 = { #殖民地不稳定
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_colonial_disaster_idea1"}
+			picture = GER_Baton_Autocracy
+			allowed = { always = no }
+			modifier = {
+				stability_factor = -0.15
+				political_power_gain = -0.1
+				local_resources_factor = -0.1
+				army_morale_factor = -0.1
+			}
+		}
+		GEA_Siemens_Investment = { #西门子投资
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Siemens_Investment"}
+			picture = GER_Electrification_Commission
+			allowed = { always = no }
+			modifier = {
+				stability_factor = -0.15
+				political_power_gain = -0.1
+				local_resources_factor = -0.1
+				army_morale_factor = -0.1
+			}
+		}
+#阿尔伯特·哈尔
+		GEA_Luluai_Principle = { #改革式卢卢艾制度
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Luluai_Principle"}
+			picture = GEA_Luluai_Principle
+			allowed = { always = no }
+			modifier = {
+				political_power_factor = 0.03
+				consumer_goods_factor = 0.05
+				compliance_growth = 0.1
+				local_resources_factor = 0.05
+				monthly_population = 0.07
+			}
+		}
+		GEA_Support_from_the_Vietnamese_partners = { #越南合作者的支持
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Support_from_the_Vietnamese_partners"}
+			name = GEA_Support_from_the_Vietnamese_partners
+			picture = GEA_Support_from_the_Vietnamese_partners
+			allowed = { always = no }
+			modifier = {
+				political_power_factor = -0.02
+				mobilization_speed = 0.05
+				required_garrison_factor = -0.075
+				drift_defence_factor = 0.05
+			}
+		}
+		GEA_Support_from_the_Vietnamese_partners_2 = { #越南合作者的支持
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Support_from_the_Vietnamese_partners_2"}
+			name = GEA_Support_from_the_Vietnamese_partners
+			picture = GEA_Support_from_the_Vietnamese_partners
+			allowed = { always = no }
+			modifier = {
+				mobilization_speed = 0.025
+				required_garrison_factor = -0.05
+				drift_defence_factor = 0.05
+			}
+		}
+		GEA_Support_from_the_Vietnamese_partners_3 = { #越南合作者的支持
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Support_from_the_Vietnamese_partners_3"}
+			name = GEA_Support_from_the_Vietnamese_partners
+			picture = GEA_Support_from_the_Vietnamese_partners
+			allowed = { always = no }
+			modifier = {
+				political_power_factor = -0.05
+				mobilization_speed = 0.025
+				consumer_goods_factor = -0.05
+				industrial_capacity_factory = 0.04
+				required_garrison_factor = -0.05
+				drift_defence_factor = 0.05
+			}
+		}
+		GEA_Support_from_the_Vietnamese_partners_4 = { #越南合作者的支持
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Support_from_the_Vietnamese_partners_4"}
+			name = GEA_Support_from_the_Vietnamese_partners
+			picture = GEA_Support_from_the_Vietnamese_partners
+			allowed = { always = no }
+			modifier = {
+				consumer_goods_factor = -0.05
+				industrial_capacity_factory = 0.04
+				mobilization_speed = 0.025
+				required_garrison_factor = -0.05
+				drift_defence_factor = 0.05
+			}
+		}
+		GEA_Support_from_the_Vietnamese_partners_5 = { #越南合作者的支持
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Support_from_the_Vietnamese_partners_5"}
+			name = GEA_Support_from_the_Vietnamese_partners
+			picture = GEA_Support_from_the_Vietnamese_partners
+			allowed = { always = no }
+			modifier = {
+				political_power_factor = -0.1
+				mobilization_speed = 0.1
+				consumer_goods_factor = -0.05
+				industrial_capacity_factory = 0.04
+				required_garrison_factor = -0.15
+				drift_defence_factor = 0.05
+				army_infantry_attack_factor = 0.05
+				army_infantry_defence_factor = 0.05
+			}
+		}
+		GEA_Support_from_the_Vietnamese_partners_6 = { #越南合作者的支持
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Support_from_the_Vietnamese_partners_6"}
+			name = GEA_Support_from_the_Vietnamese_partners
+			picture = GEA_Support_from_the_Vietnamese_partners
+			allowed = { always = no }
+			modifier = {
+				consumer_goods_factor = -0.05
+				industrial_capacity_factory = 0.04
+				mobilization_speed = 0.05
+				required_garrison_factor = -0.1
+				drift_defence_factor = 0.05
+				army_infantry_attack_factor = 0.05
+				army_infantry_defence_factor = 0.05
+			}
+		}
+		GEA_Support_from_the_Vietnamese_partners_7 = { #越南合作者的支持
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Support_from_the_Vietnamese_partners_7"}
+			name = GEA_Support_from_the_Vietnamese_partners
+			picture = GEA_Support_from_the_Vietnamese_partners
+			allowed = { always = no }
+			modifier = {
+				mobilization_speed = 0.1
+				consumer_goods_factor = -0.15
+				industrial_capacity_factory = 0.1
+				required_garrison_factor = -0.15
+				drift_defence_factor = 0.05
+				army_infantry_attack_factor = 0.05
+				army_infantry_defence_factor = 0.05
+				conscription_factor = 0.1
+			}
+		}
+		GEA_Support_from_the_Vietnamese_partners_8 = { #越南合作者的支持
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Support_from_the_Vietnamese_partners_8"}
+			name = GEA_Support_from_the_Vietnamese_partners
+			picture = GEA_Support_from_the_Vietnamese_partners
+			allowed = { always = no }
+			modifier = {
+				consumer_goods_factor = -0.15
+				industrial_capacity_factory = 0.1
+				mobilization_speed = 0.05
+				required_garrison_factor = -0.1
+				army_infantry_attack_factor = 0.05
+				army_infantry_defence_factor = 0.05
+			}
+		}
+		GEA_Support_from_the_Vietnamese_partners_9 = { #越南合作者的支持
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Support_from_the_Vietnamese_partners_9"}
+			name = GEA_Support_from_the_Vietnamese_partners
+			picture = GEA_Support_from_the_Vietnamese_partners_2
+			allowed = { always = no }
+			modifier = {
+				political_power_factor = 0.05
+				stability_weekly = 0.001
+				consumer_goods_factor = -0.075
+				conscription_factor = 0.05
+				resistance_growth = -0.03
+			}
+		}
+		GEA_Support_from_the_Vietnamese_partners_10 = { #越南合作者的支持
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Support_from_the_Vietnamese_partners_10"}
+			name = GEA_Support_from_the_Vietnamese_partners
+			picture = GEA_Support_from_the_Vietnamese_partners_2
+			allowed = { always = no }
+			modifier = {
+				political_power_factor = 0.05
+				stability_weekly = 0.003
+				consumer_goods_factor = -0.11
+				conscription_factor = 0.05
+				resistance_growth = -0.05
+				production_factory_max_efficiency_factor = 0.06
+			}
+		}
+		GEA_Fiscal_reform = { #财政改革
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Fiscal_reform"}
+			picture = GER_KWS_Investments
+			allowed = { always = no }
+			modifier = {
+				stability_factor = -0.05
+				political_power_factor = 0.05
+				consumer_goods_factor = 0.1
+				production_speed_buildings_factor = 0.03
+				industrial_capacity_factory = 0.03
+			}
+		}
+		GEA_Fiscal_reform_1 = { #财政改革
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Fiscal_reform_1"}
+			name = GEA_Fiscal_reform
+			picture = GER_KWS_Investments
+			allowed = { always = no }
+			modifier = {
+				stability_factor = -0.1
+				political_power_factor = 0.075
+				consumer_goods_factor = -0.1
+				production_speed_buildings_factor = 0.03
+				industrial_capacity_factory = 0.03
+				local_resources_factor = 0.05
+				min_export = 0.1
+			}
+		}
+		GEA_Fiscal_reform_2 = { #财政改革
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Fiscal_reform_2"}
+			picture = GER_KWS_Investments
+			allowed = { always = no }
+			modifier = {
+				political_power_factor = 0.03
+				consumer_goods_factor = 0.15
+				production_speed_buildings_factor = 0.05
+				industrial_capacity_factory = 0.1
+				production_factory_efficiency_gain_factor = 0.06
+				line_change_production_efficiency_factor = 0.06
+			}
+		}
+		GEA_Fiscal_reform_3 = { #财政改革
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Fiscal_reform_3"}
+			picture = GER_KWS_Investments
+			allowed = { always = no }
+			modifier = {
+				stability_factor = -0.1
+				political_power_factor = 0.1
+				consumer_goods_factor = 0.05
+				production_speed_buildings_factor = 0.03
+				industrial_capacity_factory = 0.03
+			}
+		}
+		GEA_Fiscal_reform_4 = { #财政改革
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Fiscal_reform_4"}
+			picture = GER_KWS_Investments
+			allowed = { always = no }
+			modifier = {
+				stability_factor = -0.1
+				political_power_factor = 0.1
+				consumer_goods_factor = -0.05
+				production_speed_buildings_factor = 0.05
+				resistance_growth = 0.05
+			}
+		}
+		GEA_Expand_fiscal_and_taxation_sources_salt = { #扩大财税来源
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Expand_fiscal_and_taxation_sources_salt"}
+			name = GEA_Expand_fiscal_and_taxation_sources
+			picture = GER_goldstandard
+			allowed = { always = no }
+			modifier = {
+				political_power_factor = -0.05
+				consumer_goods_expected_value = -0.15
+			}
+		}
+		GEA_Expand_fiscal_and_taxation_sources_wine = { #扩大财税来源
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Expand_fiscal_and_taxation_sources_wine"}
+			name = GEA_Expand_fiscal_and_taxation_sources
+			picture = GER_goldstandard
+			allowed = { always = no }
+			modifier = {
+				political_power_factor = -0.02
+				consumer_goods_expected_value = -0.10
+			}
+		}
+		GEA_Expand_fiscal_and_taxation_sources_opium = { #扩大财税来源
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Expand_fiscal_and_taxation_sources_opium"}
+			name = GEA_Expand_fiscal_and_taxation_sources
+			picture = GER_goldstandard
+			allowed = { always = no }
+			modifier = {
+				stability_factor = -0.06
+				line_change_production_efficiency_factor = -0.05
+				political_power_factor = -0.03
+				consumer_goods_expected_value = -0.15
+			}
+		}
+		GEA_The_garden_of_the_cartel_2 = { #受缚巨兽
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_The_garden_of_the_cartel_2"}
+			picture = GEA_The_garden_of_the_cartel
+			allowed = { always = no }
+			modifier = {
+				political_power_factor = -0.075
+				local_resources_factor = 0.10
+				production_factory_efficiency_gain_factor = 0.02
+				local_building_slots_factor = 0.05
+				production_speed_industrial_complex_factor = 0.04
+				research_speed_factor = 0.02
+				economy_cost_factor = -0.2
+			}
+		}
+		GEA_The_garden_of_the_cartel_3 = { #受缚巨兽
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_The_garden_of_the_cartel_3"}
+			picture = GEA_The_garden_of_the_cartel
+			allowed = { always = no }
+			modifier = {
+				political_power_factor = -0.1
+				local_resources_factor = 0.05
+				production_factory_efficiency_gain_factor = 0.05
+				local_building_slots_factor = 0.05
+				production_speed_industrial_complex_factor = 0.05
+				research_speed_factor = 0.02
+				economy_cost_factor = -0.25
+				production_speed_infrastructure_factor = 0.05
+				production_factory_start_efficiency_factor = 0.07
+				monthly_population = 0.1
+			}
+		}
+		GEA_german_immigrant = {#德意志移民
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_german_immigrant"}
+			picture = GER_Beautiful_Horizon
+			allowed = { always = no }
+			modifier = {
+				army_org_factor = 0.02
+				weekly_manpower = 200
+				monthly_population = 0.15
+				conscription_factor = 0.075
+				authoritarian_democrat_drift = 0.01
+			}
+		}
+		GEA_Export_economy_first = {#出口经济至上
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_german_immigrant"}
+			name = GEA_Export_economy_first
+			picture = immigrant_aid
+			allowed = { always = no }
+			modifier = {
+				consumer_goods_factor = -0.04
+				production_factory_start_efficiency_factor = 0.05
+				industrial_capacity_factory = 0.05
+				production_factory_efficiency_gain_factor = 0.075
+			}
+		}
+		GEA_Export_economy_first_2 = {#出口经济至上
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_german_immigrant_2"}
+			name = GEA_Export_economy_first
+			picture = immigrant_aid
+			allowed = { always = no }
+			modifier = {
+				consumer_goods_factor = -0.06
+				production_factory_start_efficiency_factor = 0.07
+				industrial_capacity_factory = 0.05
+				production_factory_efficiency_gain_factor = 0.1
+				local_resources_factor = 0.04
+				local_building_slots_factor = 0.03
+			}
+		}
+		GEA_Cultural_connection = {#文化连结
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Cultural_connection"}
+			picture = GER_Daisys_Mazurka
+			allowed = { always = no }
+			modifier = {
+				political_power_gain = 0.03
+				compliance_growth = 0.075
+				opinion_gain_monthly_factor = 0.05
+			}
+		}
 #印支起义
 		GEA_military_police = {#战地宪兵
 				on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_military_police"}
@@ -169,15 +574,6 @@ ideas = {
 			}
 		}
 #穆克
-		GEA_german_immigrant = {#德意志移民
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_german_immigrant"}
-			picture = immigrant_aid
-			allowed = { always = no }
-			modifier = {
-				weekly_manpower = 200
-				monthly_population = 0.10
-			}
-		}
 		GEA_colonial_question_mu = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_colonial_question_mu"}
 			picture = colonial_question
@@ -2309,29 +2705,6 @@ ideas = {
 				war_support_factor = -0.05
 				consumer_goods_factor = 0.05
                 experience_gain_army_factor = -0.1
-			}
-		}
-		GEA_colonial_disaster_idea = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_colonial_disaster_idea"}
-			picture = FRA_scw_intervention_republicans_focus
-			allowed = { always = no }
-			modifier = {
-				war_support_weekly = -0.005
-				stability_factor = -0.3
-				political_power_gain = -0.20
-				local_resources_factor = -0.15
-				army_morale_factor = -0.20
-			}
-		}
-		GEA_colonial_disaster_idea1 = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_colonial_disaster_idea1"}
-			picture = FRA_scw_intervention_republicans_focus
-			allowed = { always = no }
-			modifier = {
-				stability_factor = -0.15
-				political_power_gain = -0.1
-				local_resources_factor = -0.1
-				army_morale_factor = -0.1
 			}
 		}
 		GEA_colonial_question1 = {
