@@ -289,7 +289,11 @@ spriteTypes = {
 		texturefile = "gfx/interface/ideas/gea/GEA_Support_from_the_Vietnamese_partners_2.png"
 	}
 	spriteType = {
-		name = "GFX_idea_GEA_Export_economy_first"
-		texturefile = "gfx/interface/ideas/gea/GEA_Export_economy_first.png"
+		name = "GFX_idea_GEA_Unifying_Rural_Forces"
+		texturefile = "gfx/interface/ideas/gea/GEA_Unifying_Rural_Forces.png"
+	}
+	spriteType = {
+		name = "GFX_idea_GEA_Remembering_Solf"
+		texturefile = "gfx/interface/ideas/gea/GEA_Remembering_Solf.png"
 	}
 }

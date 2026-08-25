@@ -173,3 +173,28 @@ GEA_Bulldoze_village1 = {
 	non_core_manpower = -0.2
 	monthly_population = -0.05                                                              
 }
+
+GEA_saigon_cholon_grain_board = {
+	icon = "GFX_idea_GEA_Unifying_Rural_Forces"
+	enable = { always = yes }
+	remove_trigger = { 
+		NOT = { 
+			is_owned_by = GEA
+		}
+	}	
+	local_manpower = 0.15              
+	local_supplies = 0.1                                     
+}
+
+GEA_Bureau_Of_Native_Affairs_modifier = {
+	icon = "GFX_idea_GEA_Luluai_Principle"
+	enable = { always = yes }
+	remove_trigger = { 
+		NOT = { 
+			is_owned_by = GEA
+		}
+	}	
+	production_speed_infrastructure_factor = 0.05        
+	local_manpower = 0.05
+	local_building_slots = 0.1                           
+}

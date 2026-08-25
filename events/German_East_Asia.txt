@@ -1022,8 +1022,8 @@ add_namespace = GEA
 			}
 			if = {
 				limit = {
-					check_variable = {
-						var = GEA_Indochinese_Anger
+					has_country_flag = {
+						flag = GEA_Indochinese_Anger
 						value = 2
 						compare = less_than_or_equals
 					}
@@ -1057,15 +1057,15 @@ add_namespace = GEA
 				if = {
 					limit = {
 						limit = {
+							has_country_flag = {
+								flag = GEA_Indochinese_Anger
+								value = 6
+								compare = less_than_or_equals
+							}
 							check_variable = {
 								var = GEA_Indochinese_Stability
 								value = 15
 								compare = greater_than_or_equals
-							}
-							check_variable = {
-								var = GEA_Indochinese_Anger
-								value = 6
-								compare = less_than_or_equals
 							}
 							has_army_manpower = { size > 300000 }
 						}			
@@ -2397,11 +2397,81 @@ add_namespace = GEA
 			add_stability = 0.02
 		}
 	}
+	country_event = {#写在纸上的规矩
+		id = GEA.112
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.112" }
+		title = GEA.112.t
+		desc = GEA.112.d
 
+		fire_only_once = yes
+		is_triggered_only = yes
 
+		option = { #没有规矩不成方圆
+			name = GEA.112.a
+			add_stability = 0.03
+		}
+	}
+	country_event = {#异乡异客
+		id = GEA.113
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.113" }
+		title = GEA.113.t
+		desc = GEA.113.d
+		picture = GFX_GEA_16
 
+		fire_only_once = yes
+		is_triggered_only = yes
 
+		option = { #吸收他们进入基层行政
+			name = GEA.113.a
+			add_stability = 0.05
+			add_political_power = 30
+			add_popularity = { ideology = social_democrat popularity = 0.02 }
+			add_popularity = { ideology = social_liberal popularity = 0.02 }
+			add_popularity = { ideology = market_liberal popularity = 0.02 }
+			add_popularity = { ideology = social_conservative popularity = 0.02 }
+		}
+		option = { #在德属东亚咱们就练起来！
+			name = GEA.113.b
+			custom_effect_tooltip = GEA_Mercenaries_tt
+			add_to_variable = {
+				GEA_army_army_org_factor = 0.05
+			}
+			add_to_variable = {
+				GEA_army_conscription_factor  = 0.05
+			}
+		}
+		option = { #遗老们还是少碰为妙
+			name = GEA.113.c
+			
+		}
+	}
+	country_event = {#南洋华商
+		id = GEA.114
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.114" }
+		title = GEA.114.t
+		desc = GEA.114.d
 
+		fire_only_once = yes
+		is_triggered_only = yes
+
+		option = { #生意行啊你们哥俩
+			name = GEA.114.a
+			add_stability = 0.02
+			add_popularity = { ideology = market_liberal popularity = 0.01 }
+		}
+	}
+
+#隐藏事件
+	country_event = {
+		id = GEA.10000
+		is_triggered_only = yes
+		fire_only_once = yes
+		hidden = yes
+
+		option = {
+			add_research_slot = -1
+		}
+	}
 #印支事件
 
 	country_event = { #印度支那起义
@@ -2411,7 +2481,11 @@ add_namespace = GEA
 		picture = GFX_report_event_INC_mass
 
 		is_triggered_only = yes
-
+		trigger = {
+			NOT = {
+				has_completed_focus = GEA_Reconcile_at_last
+			}
+		}
 		fire_only_once = yes
 
 		immediate = {

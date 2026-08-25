@@ -10,6 +10,24 @@ scripted_gui = {
 		}
 
 		triggers = {
+			GEA_Borneo_visible = {
+				GEA = {
+					owns_state = 333
+					owns_state = 828
+					owns_state = 334
+					owns_state = 1016
+				}
+			}
+
+
+
+
+
+
+
+
+
+
 			Burma_Map_visible = {
 				BRM = {
 					OR = {
@@ -117,31 +135,12 @@ scripted_gui = {
 					owns_state = 856
 				}
 			}
-			Indochina_schorner_Map_visible = {
-				GEA = {
-					has_country_flag = GEA_bloody_ferdinand_Appointed
-					OR = {
-						owns_state = 857
-						owns_state = 671
-						owns_state = 827
-						owns_state = 670
-						owns_state = 826
-						owns_state = 286
-						owns_state = 856
-					}
-				}
-			}
 			Indochina_vin_Map_visible = {
 				VIN = {
 					AND = {
 						is_in_faction_with = GER
 						exists = yes
 					}
-				}
-			}
-			Malaya_Map_visible = {
-				GEA = {
-					owns_state = 846
 				}
 			}
 			North_Borneo_Map_visible = {
@@ -192,14 +191,6 @@ scripted_gui = {
 						is_in_faction_with = GER
 						exists = yes
 					}
-					owns_state = 334
-					owns_state = 1016
-				}
-			}
-			Borneo_Map_visible = {
-				GEA = {
-					owns_state = 333
-					owns_state = 828
 					owns_state = 334
 					owns_state = 1016
 				}
@@ -298,6 +289,35 @@ scripted_gui = {
 		}
 
 		effects = {
+			GEA_Indochina_click = {
+				GEA_Indochina_click_effect = yes
+			}
+			GEA_Malaya_click = {
+				GEA_Malaya_click_effect = yes
+			}
+			GEA_Borneo_click = {
+				GEA_Borneo_click_effect = yes
+			}
+			GEA_North_Borneo_click = {
+				GEA_North_Borneo_click_effect = yes
+			}
+			GEA_GER_Guinea_click = {
+				GEA_GER_Guinea_click_effect = yes
+			}
+			GEA_Samoa_click = {
+				GEA_Samoa_click_effect = yes
+			}
+			GEA_Shandong_click = {
+				GEA_Shandong_click_effect = yes
+			}
+			GEA_Solomon_click = {
+				GEA_Solomon_click_effect = yes
+			}
+
+
+
+
+			
 			Burma_ger_Map_click = {
 				Burma_ger_click_effect = yes
 			}
@@ -310,17 +330,8 @@ scripted_gui = {
 			Guinea_Map_click = {
 				Guinea_click_effect = yes
 			}
-			Indochina_Map_click = {
-				Indochina_click_effect = yes
-			}
-			Indochina_schorner_Map_click = {
-				Indochina_schorner_click_effect = yes
-			}
 			Indochina_vin_Map_click = {
 				Indochina_vin_click_effect = yes
-			}
-			Malaya_Map_click = {
-				Malaya_click_effect = yes
 			}
 			North_Borneo_Map_click = {
 				North_Borneo_click_effect = yes

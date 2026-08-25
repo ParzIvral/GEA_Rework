@@ -552,6 +552,74 @@ ideas = {
 				training_time_army_factor = -0.05
 			}
 		}
+		GEA_Bureau_Of_Native_Affairs_2 = { #土著事务局
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Bureau_Of_Native_Affairs_2"}
+			name = GEA_Bureau_Of_Native_Affairs 
+			picture = GER_central
+			allowed = { always = no }
+			modifier = {
+				political_power_factor = 0.08
+				conscription = 0.015
+				mobilization_speed = 0.05
+				training_time_army_factor = -0.05
+				research_speed_factor = 0.06
+				industrial_capacity_factory = 0.05
+				conversion_cost_mil_to_civ_factor = -0.1
+			}
+		}
+		GEA_Bureau_Of_Native_Affairs_3 = { #土著事务局
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Bureau_Of_Native_Affairs_3"}
+			name = GEA_Bureau_Of_Native_Affairs 
+			picture = GER_central
+			allowed = { always = no }
+			modifier = {
+				political_power_factor = 0.03
+				conscription = 0.01
+				mobilization_speed = 0.05
+				training_time_army_factor = -0.05
+				research_speed_factor = 0.02
+				conversion_cost_mil_to_civ_factor = -0.05
+			}
+		}
+		GEA_Bureau_Of_Native_Affairs_4 = { #土著事务局
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Bureau_Of_Native_Affairs_4"}
+			name = GEA_Bureau_Of_Native_Affairs 
+			picture = GER_central
+			allowed = { always = no }
+			modifier = {
+				political_power_factor = 0.08
+				conscription = 0.01
+				mobilization_speed = 0.05
+				training_time_army_factor = -0.05
+				conversion_cost_mil_to_civ_factor = -0.05
+			}
+		}
+		GEA_Bureau_Of_Native_Affairs_5 = { #土著事务局
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Bureau_Of_Native_Affairs_5"}
+			name = GEA_Bureau_Of_Native_Affairs 
+			picture = GER_central
+			allowed = { always = no }
+			modifier = {
+				political_power_factor = 0.05
+				conscription = 0.005
+				mobilization_speed = 0.05
+				training_time_army_factor = -0.05
+				compliance_starting_value = 0.1
+				party_popularity_stability_factor = 0.05
+			}
+		}
+		GEA_Remembering_Solf = { #遵循佐尔夫道途
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Remembering_Solf"}
+			picture = GEA_Remembering_Solf
+			allowed = { always = no }
+			modifier = {
+				political_power_factor = 0.05
+				party_popularity_stability_factor = 0.05
+				production_speed_infrastructure_factor = 0.03
+				social_conservative_drift = 0.01
+				authoritarian_democrat_drift = 0.01
+			}
+		}
 		GEA_colonial_question_hahl_2 = { #东亚殖民政府
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_colonial_question_hahl_2"}
 			name = GEA_colonial_question_hahl_2
@@ -578,6 +646,52 @@ ideas = {
 				required_garrison_factor = 0.05
 				surrender_limit = -0.05
 				experience_loss_factor = -0.03
+			}
+		}
+		GEA_colonial_question_hahl_4 = { #东亚殖民政府
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_colonial_question_hahl_4"}
+			picture = colonial_question
+			name = GEA_colonial_question_hahl_2
+			allowed = { always = no }
+			modifier = {
+				political_power_gain = 0.15
+				non_core_manpower = 0.2
+				foreign_subversive_activites = -0.15
+				line_change_production_efficiency_factor = 0.1
+				experience_loss_factor = -0.05
+			}
+		}
+		GEA_colonial_question_hahl_5 = { #东亚殖民政府
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_colonial_question_hahl_5"}
+			picture = colonial_question
+			name = GEA_colonial_question_hahl_2
+			allowed = { always = no }
+			modifier = {
+				stability_weekly = 0.005
+				army_defence_factor = 0.1
+				army_core_defence_factor = 0.05
+				political_power_gain = 0.15
+				non_core_manpower = 0.25
+				foreign_subversive_activites = -0.15
+				line_change_production_efficiency_factor = 0.1
+				experience_loss_factor = -0.05
+				industrial_capacity_dockyard = 0.02
+			}
+		}
+		GEA_colonial_question_hahl_6 = { #东方的模范殖民地
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_colonial_question_hahl_5"}
+			picture = colonial_question
+			allowed = { always = no }
+			modifier = {
+				stability_weekly = 0.005
+				army_defence_factor = 0.1
+				army_core_defence_factor = 0.05
+				political_power_gain = 0.15
+				non_core_manpower = 0.25
+				foreign_subversive_activites = -0.15
+				line_change_production_efficiency_factor = 0.1
+				experience_loss_factor = -0.05
+				industrial_capacity_dockyard = 0.02
 			}
 		}
 #印支起义

@@ -4,595 +4,504 @@
 # By Gwener
 ###########################
 GEA_decisions = {#德属东亚殖民地决议
-	
-	GEA_tou_zi_di_fang = {#投资地方
-		icon = cash
-		visible = {
-			has_completed_focus = GEA_federalization_reform
-			check_variable = {
-				var = GEA_Progress_of_reform
-				value = 1
-				compare = less_than
-			}
-		}
+	GEA_hahl_saigon_cholon_grain_board = {#西贡-堤岸粮价委员会
+		icon = GFX_decision_generic_agriculture
+		allowed = { original_tag = GEA }
 
-		cost = 75
-		days_remove = 50
-		days_re_enable = 120
-
-		modifier = {
-			civilian_factory_use = 3
-		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision GEA_tou_zi_di_fang"
-			add_to_variable = {
-				GEA_Progress_of_reform = 0.05
-			}
-			custom_effect_tooltip = GEA_reforming_colonial_institutions_tt
-			random_owned_state = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-	}
-	GEA_tui_xing_de_yi_zhi_wen_hua = {#推行德意志文化
-		icon = GEA_colonial_department
-		visible = {
-			has_completed_focus = GEA_german_states_model
-			check_variable = {
-				var = GEA_Progress_of_reform
-				value = 1
-				compare = less_than
-			}
-		}
-
-		cost = 30
-		days_remove = 30
-		days_re_enable = 90
-
-		modifier = {
-			stability_weekly = -0.005 
-			political_power_gain = 0.05
-		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision GEA_tui_xing_de_yi_zhi_wen_hua"
-			add_stability = 0.02
-			add_popularity = {
-				ideology = social_conservative
-				popularity = 0.02
-			}
-			add_to_variable = {
-				GEA_Progress_of_reform = 0.05
-			}
-			custom_effect_tooltip = GEA_reforming_colonial_institutions_tt
-		}
-	}
-	GEA_de_shi_shou_xun = {#德式授勋
-		icon = police
-		visible = {
-			has_completed_focus = GEA_east_germany
-			check_variable = {
-				var = GEA_Progress_of_reform
-				value = 1
-				compare = less_than
-			}
-		}
-
-		cost = 30
-		days_remove = 45
-		days_re_enable = 100
-
-		modifier = {
-			stability_weekly = 0.005 
-		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision GEA_de_shi_shou_xun"
-			add_popularity = {
-				ideology = authoritarian_democrat
-				popularity = 0.01
-			}
-			add_command_power = 30
-			add_to_variable = {
-				GEA_Progress_of_reform = 0.05
-			}
-			custom_effect_tooltip = GEA_reforming_colonial_institutions_tt
-		}
-	}
-	GEA_Integrated_tribe = {#整编部落
-		icon = king
-		visible = {
-			has_completed_focus = GEA_tribes_become_states
-			check_variable = {
-				var = GEA_Progress_of_reform
-				value = 1
-				compare = less_than
-			}
-		}
-
-		cost = 20
-		days_remove = 30
-		days_re_enable = 90
-
-		modifier = {
-			stability_weekly = 0.01 
-		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision GEA_Integrated_tribe"
-			increase_ruling_party_popularity_by_5 = yes
-			add_command_power = 25
-			add_political_power = 20
-			add_to_variable = {
-				GEA_Progress_of_reform = 0.05
-			}
-			custom_effect_tooltip = GEA_reforming_colonial_institutions_tt
-		}
-	}
-	GEA_long_luo_dang_di_hao_qiang = {#笼络地方豪强
-		icon = Citizen
-		visible = {
-			has_completed_focus = GEA_follow_reality
-			check_variable = {
-				var = GEA_Progress_of_reform
-				value = 1
-				compare = less_than
-			}
-		}
-
-		cost = 75
-		days_remove = 14
-		days_re_enable = 180
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision GEA_long_luo_dang_di_hao_qiang"
-			add_popularity = {
-				ideology = social_conservative
-				popularity = 0.02
-			}
-			add_to_variable = {
-				GEA_Progress_of_reform = 0.075
-			}
-			custom_effect_tooltip = GEA_long_luo_dang_di_hao_qiang_tt
-			random_owned_state = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-			add_manpower = 500
-			add_equipment_to_stockpile = {
-				type = infantry_equipment
-				amount = 200
-				producer = GEA
-			}
-		}
-	}
-	GEA_fu_yu_di_fang_quan_li = {#扩大地方权力
-		icon = generic_agreement
-
-		available = {
-			has_completed_focus = GEA_strengthen_local
-		}
-		visible = {
-			has_completed_focus = GEA_strengthen_local
-			check_variable = {
-				var = GEA_Progress_of_reform
-				value = 1
-				compare = less_than
-			}
-		}
-
-		cost = 30
-		days_remove = 14
-		days_re_enable = 120
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision GEA_fu_yu_di_fang_quan_li"
-			add_stability = 0.05
-			add_to_variable = {
-				GEA_Progress_of_reform = 0.1
-			}
-			custom_effect_tooltip = GEA_local_government_tt
-		}
-	}
-	GEA_she_li_di_dang_fa_gui = {#掌控地方法规
-		icon = decision_election
-		visible = {
-			OR = {
-				has_completed_focus = GEA_strengthen_local
-				has_completed_focus = GEA_strengthen_government
-			}
-			check_variable = {
-				var = GEA_Progress_of_reform
-				value = 1
-				compare = less_than
-			}
-		}
-
-		cost = 25
-		days_remove = 30
-		days_re_enable = 90
-
-		modifier = {
-			political_power_gain = 0.03
-		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision GEA_she_li_di_dang_fa_gui"
-			add_stability = 0.03
-			add_war_support = 0.03
-			increase_ruling_party_popularity_by_5 = yes
-			add_to_variable = {
-				GEA_Progress_of_reform = 0.05
-			}
-			custom_effect_tooltip = GEA_reforming_colonial_institutions_tt
-		}
-	}
-	GEA_shui_shou_ren_wu = {#调整地方税收要求
-		icon = give_cash
-		visible = {
-			OR = {
-				has_completed_focus = GEA_new_parliament
-				has_completed_focus = GEA_new_administrative_division
-			}
-			check_variable = {
-				var = GEA_Progress_of_reform
-				value = 1
-				compare = less_than
-			}
-		}
-		days_remove = 60
-		days_re_enable = 120
-
-		modifier = {
-			political_power_gain = 0.05
-		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision GEA_shui_shou_ren_wu"
-			add_political_power = 75
-			add_stability = -0.03
-			add_to_variable = {
-				GEA_Progress_of_reform = 0.075
-			}
-			custom_effect_tooltip = GEA_long_luo_dang_di_hao_qiang_tt
-		}
-	}
-	GEA_tui_jin_jing_ying = {#推进地方精英入政府
-		icon = generic_prepare_civil_war #没有去选图
-		visible = {
-			has_completed_focus = GEA_centralization_reform
-			check_variable = {
-				var = GEA_Progress_of_reform
-				value = 1
-				compare = less_than
-			}
-		}
-
-		cost = 30
-		days_remove = 28
-		days_re_enable = 90
-
-		modifier = {
-			stability_weekly = 0.005 
-		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision GEA_tui_jin_jing_ying"
-			add_stability = 0.05
-			add_popularity = {
-				ideology = social_conservative
-				popularity = 0.05
-			}
-			add_to_variable = {
-				GEA_Progress_of_reform = 0.075
-			}
-			custom_effect_tooltip = GEA_long_luo_dang_di_hao_qiang_tt
-		}
-	}		
-	GEA_jian_she_ji_chu_she_shi = {#建设交通干线
-		icon = road
-		available = {
-			num_of_civilian_factories_available_for_projects > 1
-		}
-		visible = {
-			has_completed_focus = GEA_strengthen_ties
-			check_variable = {
-				var = GEA_Progress_of_reform
-				value = 1
-				compare = less_than
-			}
-		}
-		cost = 60
-		days_remove = 50
-		days_re_enable = 120
-
-		modifier = {
-			civilian_factory_use = 2
-		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision GEA_tou_zi_di_fang"
-			add_to_variable = {
-				GEA_Progress_of_reform = 0.1
-			}
-			custom_effect_tooltip = GEA_local_government_tt
-			random_owned_state = {
-				add_building_construction = {
-					type = infrastructure
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-	}
-	GEA_da_sui_fan_bang = {#切割部藩
-		icon = boot
-		visible = {
-			OR = {
-				has_completed_focus = GEA_no_tribe
-				has_completed_focus = GEA_german_states_model
-			}
-			check_variable = {
-				var = GEA_Progress_of_reform
-				value = 1
-				compare = less_than
-			}
-		}
-
-		cost = 30
-		days_remove = 30
-		days_re_enable = 120
-
-		modifier = {
-			political_power_gain = -0.05
-		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision GEA_da_sui_fan_bang"
-			add_political_power = 60
-			add_manpower = -248
-			add_to_variable = {
-				GEA_Progress_of_reform = 0.10
-			}
-			custom_effect_tooltip = GEA_local_government_tt
-		}
-	}
-	GEA_Basic_industry_construction = {#基础工业建设
-		icon = factories
-		visible = {
-			has_completed_focus = GEA_start_of_urbanization
-			check_variable = {
-				var = GEA_Progress_of_reform
-				value = 1
-				compare = less_than
-			}
-		}
-
+		fire_only_once = yes
 		cost = 50
 		days_remove = 60
-		days_re_enable = 120
 
-		modifier = {
-			political_power_gain = -0.02
-		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision GEA_Basic_industry_construction"
-			random_list = { 
-				40 = { 				
-					random_owned_state = {
-						add_extra_state_shared_building_slots = 1
-						add_building_construction = {
-							type = industrial_complex
-							level = 1
-							instant_build = yes
-						}
-					}
-				} 
-  				30 = {					
-					random_owned_state = {
-						add_extra_state_shared_building_slots = 1
-						add_building_construction = {
-							type = arms_factory
-							level = 1
-							instant_build = yes
-						}
-					}
-				} 
-  				30 = { 					
-					random_owned_state = {
-						add_extra_state_shared_building_slots = 1
-						add_building_construction = {
-							type = dockyard
-							level = 1
-							instant_build = yes
-						}
-					}
-				}
-			}
-			add_to_variable = {GEA_Progress_of_reform = 0.10}							
-			custom_effect_tooltip = GEA_local_government_tt
-		}
-	}
-	GEA_Local_garrison_troops = {#地方守备部队
-		icon = martial_law
 		visible = {
-			has_completed_focus = GEA_the_local_garrison
-			check_variable = {
-				var = GEA_Progress_of_reform
-				value = 1
-				compare = less_than
+			has_completed_focus = GEA_The_troublesome_Indochina_region
+			has_country_flag = Indochina_OPEN
+			GEA = {
+				owns_state = 670
 			}
+		}	
+		available = {
 		}
 
-		cost = 80
-		days_remove = 120
-		fire_only_once = yes
-
-		modifier = {
-			political_power_gain = -0.01
-		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision GEA_Local_garrison_troops"
-			add_manpower = -1200
-			add_to_variable = {
-				GEA_Progress_of_reform = 0.10
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				has_country_flag = {
+					flag = GEA_Indochinese_Anger
+					value > 5
+				}
+				factor = 100
 			}
-			custom_effect_tooltip = GEA_Local_garrison_troops_tt
 		}
 		remove_effect = {
-			set_country_flag = GEA_Activate_conscription_of_local_forces
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_hahl_saigon_cholon_grain_board"
+			add_stability = 0.05
+			increase_ruling_party_popularity_by_5 = yes
+			856 = { 
+				add_dynamic_modifier = { modifier = GEA_saigon_cholon_grain_board } 
+			}
+			modify_country_flag = {
+				flag = GEA_Indochinese_Anger
+				value = -1
+			}
+			custom_effect_tooltip = GEA_Indochina_Anger_Down	
 		}
 	}
-	GEA_333_militia = {#婆罗洲民兵
-		icon = martial_law
-		visible = {
-			has_war = yes
-			has_country_flag = GEA_Activate_conscription_of_local_forces
-		}
+	GEA_hahl_register_village_notables = {#编修乡绅名册
+		icon = GFX_decision_generic_operation
+		allowed = { original_tag = GEA }
+
 		fire_only_once = yes
-		cost = 0
+		cost = 25
 		days_remove = 30
 
-		modifier = {
-			political_power_gain = -0.01
-		}
-		custom_cost_text = GEA_we_need_soldier_cost_tt
-		custom_cost_trigger = {
-			command_power > 25 
-		}
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision GEA_333_militia"
-			add_command_power = -25
-			333 = {
-				create_unit = {
-					division = "division_template = \"Ostasiatische Miliztruppe\" start_experience_factor = 2"
-					owner = GEA
-				}
-				create_unit = {
-					division = "division_template = \"Ostasiatische Miliztruppe\" start_experience_factor = 2"
-					owner = GEA
-				}
-				create_unit = {
-					division = "division_template = \"Ostasiatische Miliztruppe\" start_experience_factor = 1"
-					owner = GEA
+		visible = {
+			has_completed_focus = GEA_The_troublesome_Indochina_region
+			has_country_flag = Indochina_OPEN
+			GEA = {
+				OR = {
+					owns_state = 857 #东北
+					owns_state = 671 #东京
+					owns_state = 856 #湄公河三角洲
+					owns_state = 670 #老挝
+					owns_state = 826 #上丁
+					owns_state = 286 #交趾支那
+					owns_state = 856 #西贡
 				}
 			}
-			custom_effect_tooltip = GEA_333_militia_tt
+		}	
+		available = {
+		}
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				has_country_flag = {
+					flag = GEA_Indochinese_Anger
+					value > 5
+				}
+				factor = 100
+			}
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_hahl_register_village_notables"
+			add_stability = 0.02
+			modify_country_flag = {
+				flag = GEA_Indochinese_Stability
+				value = 1
+			}
+			custom_effect_tooltip = GEA_Indochina_Stability_Up
 		}
 	}
-	GEA_828_militia = {#沙巴民兵
-		icon = martial_law
-		visible = {
-			has_war = yes
-			has_country_flag = GEA_Activate_conscription_of_local_forces
-		}
-		fire_only_once = yes
-		cost = 0
-		days_remove = 30
+	GEA_hahl_disorganize_cao_dai = {#瓦解高台教
+		icon = investigation
+		allowed = { original_tag = GEA }
 
-		modifier = {
-			political_power_gain = -0.01
-		}
-		custom_cost_text = GEA_we_need_soldier_cost_tt
-		custom_cost_trigger = {
-			command_power > 25 
-		}
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision GEA_828_militia"
-			add_command_power = -25
-			828 = {
-				create_unit = {
-					division = "division_template = \"Ostasiatische Miliztruppe\" start_experience_factor = 2"
-					owner = GEA
-				}
-				create_unit = {
-					division = "division_template = \"Ostasiatische Miliztruppe\" start_experience_factor = 2"
-					owner = GEA
+		fire_only_once = yes
+		days_remove = 45
+
+		visible = {
+			has_completed_focus = GEA_The_troublesome_Indochina_region
+			has_country_flag = Indochina_OPEN
+			GEA = {
+				OR = {
+					owns_state = 857 #东北
+					owns_state = 671 #东京
+					owns_state = 856 #湄公河三角洲
+					owns_state = 670 #老挝
+					owns_state = 826 #上丁
+					owns_state = 286 #交趾支那
+					owns_state = 856 #西贡
 				}
 			}
-			custom_effect_tooltip = GEA_828_militia_tt
+		}	
+		available = {
+		}
+		custom_cost_text = GEA_hahl_disorganize_cao_dai_cost_tt
+		custom_cost_trigger = {
+			command_power > 30
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				has_country_flag = {
+					flag = GEA_Indochinese_Anger
+					value > 5
+				}
+				factor = 100
+			}
+		}
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_hahl_disorganize_cao_dai"			
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_hahl_disorganize_cao_dai"
+			add_stability = 0.05
+			add_popularity = {
+				ideology = national_populist
+				popularity = -0.05
+			}
+			modify_country_flag = {
+				flag = GEA_Indochinese_Stability
+				value = 1
+			}
+			custom_effect_tooltip = GEA_Indochina_Stability_Up
 		}
 	}
-	GEA_670_militia = {#老挝民兵
-		icon = martial_law
-		visible = {
-			has_war = yes
-			has_country_flag = GEA_Activate_conscription_of_local_forces
-		}
+	GEA_hahl_Strengthen_Catholic_missionary_work = {#加强天主教传教
+		icon = GFX_decision_SWI_dismiss_council
+		allowed = { original_tag = GEA }
+
 		fire_only_once = yes
-		cost = 0
+		cost = 5
 		days_remove = 30
 
-		modifier = {
-			political_power_gain = -0.01
-		}
-		custom_cost_text = GEA_we_need_soldier_cost_tt
-		custom_cost_trigger = {
-			command_power > 25 
-		}
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision GEA_670_militia"
-			add_command_power = -25
-			670 = {
-				create_unit = {
-					division = "division_template = \"Ostasiatische Miliztruppe\" start_experience_factor = 2"
-					owner = GEA
-				}
-				create_unit = {
-					division = "division_template = \"Ostasiatische Miliztruppe\" start_experience_factor = 2"
-					owner = GEA
+		visible = {
+			has_completed_focus = GEA_The_troublesome_Indochina_region
+			has_country_flag = Indochina_OPEN
+			GEA = {
+				OR = {
+					owns_state = 857 #东北
+					owns_state = 671 #东京
+					owns_state = 856 #湄公河三角洲
+					owns_state = 670 #老挝
+					owns_state = 826 #上丁
+					owns_state = 286 #交趾支那
+					owns_state = 856 #西贡
 				}
 			}
-			custom_effect_tooltip = GEA_670_militia_tt
+		}	
+		available = {
+		}
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				has_country_flag = {
+					flag = GEA_Indochinese_Anger
+					value < 3
+				}
+				factor = 100
+			}
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_hahl_Strengthen_Catholic_missionary_work"
+			add_political_power = 50
+			add_popularity = { ideology = social_conservative popularity = 0.03 }
+			modify_country_flag = {
+				flag = GEA_Indochinese_Anger
+				value = 1
+			}
+			custom_effect_tooltip = GEA_Indochina_Anger_Up
+			modify_country_flag = {
+				flag = GEA_Indochinese_Stability
+				value = 1
+			}
+			custom_effect_tooltip = GEA_Indochina_Stability_Up
 		}
 	}
-	GEA_827_militia = {#安南民兵
-		icon = martial_law
-		visible = {
-			has_war = yes
-			has_country_flag = GEA_Activate_conscription_of_local_forces
-		}
+	GEA_hahl_Establish_an_Indigenous_Affairs_Bureau_Indochina = {#设立土著事务局
+		icon = GFX_decision_generic_political_address
+		allowed = { original_tag = GEA }
+
 		fire_only_once = yes
-		cost = 0
+		cost = 25
 		days_remove = 30
 
-		modifier = {
-			political_power_gain = -0.01
-		}
-		custom_cost_text = GEA_we_need_soldier_cost_tt
-		custom_cost_trigger = {
-			command_power > 25 
-		}
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision GEA_827_militia"
-			add_command_power = -25
-			827 = {
-				create_unit = {
-					division = "division_template = \"Ostasiatische Miliztruppe\" start_experience_factor = 2"
-					owner = GEA
-				}
-				create_unit = {
-					division = "division_template = \"Ostasiatische Miliztruppe\" start_experience_factor = 2"
-					owner = GEA
-				}
-				create_unit = {
-					division = "division_template = \"Ostasiatische Miliztruppe\" start_experience_factor = 2"
-					owner = GEA
+		visible = {
+			has_completed_focus = GEA_The_Bureau_Of_Native_Affairs
+			has_country_flag = Indochina_OPEN
+			GEA = {
+				OR = {
+					owns_state = 857 #东北
+					owns_state = 671 #东京
+					owns_state = 856 #湄公河三角洲
+					owns_state = 670 #老挝
+					owns_state = 826 #上丁
+					owns_state = 286 #交趾支那
+					owns_state = 856 #西贡
 				}
 			}
-			custom_effect_tooltip = GEA_827_militia_tt
+		}	
+		available = {
+		}
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				has_country_flag = {
+					flag = GEA_Indochinese_Anger
+					value < 4
+				}
+				factor = 100
+			}
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_hahl_Establish_an_Indigenous_Affairs_Bureau_Indochina"
+			modify_country_flag = {
+				flag = GEA_Indochinese_Stability
+				value = 1
+			}
+			custom_effect_tooltip = GEA_Indochina_Stability_Up
+			every_owned_state = {
+				limit = {
+					OR = {
+						state = 857 #东北
+						state = 671 #东京
+						state = 856 #湄公河三角洲
+						state = 670 #老挝
+						state = 826 #上丁
+						state = 286 #交趾支那
+						state = 856 #西贡
+					}
+				}
+				add_dynamic_modifier = { modifier = GEA_Bureau_Of_Native_Affairs_modifier } 
+				add_to_variable = {
+					GEA_Bureau_Of_Native_Affairs_Number = 1
+				}
+			}
+		}
+	}
+ 	#马来亚
+	GEA_hahl_Establish_an_Indigenous_Affairs_Bureau_Malaya = {#设立土著事务局
+		name = GEA_hahl_Establish_an_Indigenous_Affairs_Bureau_Indochina
+		icon = GFX_decision_generic_political_address
+		allowed = { original_tag = GEA }
+
+		fire_only_once = yes
+		cost = 25
+		days_remove = 30
+
+		visible = {
+			has_completed_focus = GEA_The_Bureau_Of_Native_Affairs
+			has_country_flag = Malaya_OPEN
+			GEA = {
+				OR = {
+					owns_state = 846 #马来亚
+					owns_state = 336 #新加坡
+				}
+			}
+		}	
+		available = {
+			GEA = {
+				OR = {
+					owns_state = 846 #马来亚
+					owns_state = 336 #新加坡
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_hahl_Establish_an_Indigenous_Affairs_Bureau_Malaya"
+			every_owned_state = {
+				limit = {
+					OR = {
+						state = 846 #马来亚
+						state = 336 #新加坡
+					}
+				}
+				add_dynamic_modifier = { modifier = GEA_Bureau_Of_Native_Affairs_modifier } 
+				add_to_variable = {
+					GEA_Bureau_Of_Native_Affairs_Number = 1
+				}
+			}
+		}
+	}
+	#婆罗洲
+	GEA_hahl_Establish_an_Indigenous_Affairs_Bureau_Borneo = {#设立土著事务局
+		name = GEA_hahl_Establish_an_Indigenous_Affairs_Bureau_Indochina	
+		icon = GFX_decision_generic_political_address
+		allowed = { original_tag = GEA }
+
+		fire_only_once = yes
+		cost = 25
+		days_remove = 30
+
+		visible = {
+			has_completed_focus = GEA_The_Bureau_Of_Native_Affairs
+			has_country_flag = Borneo_OPEN
+			GEA = {
+				OR = {
+					owns_state = 828  #沙巴
+					owns_state = 333  #北婆罗洲
+					owns_state = 1016 #东南婆罗洲
+					owns_state = 334  #西加里曼丹
+				}
+			}
+		}	
+		available = {
+			GEA = {
+				OR = {
+					owns_state = 828  #沙巴
+					owns_state = 333  #北婆罗洲
+					owns_state = 1016 #东南婆罗洲
+					owns_state = 334  #西加里曼丹
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_hahl_Establish_an_Indigenous_Affairs_Bureau_Borneo"
+			every_owned_state = {
+				limit = {
+					OR = {
+						state = 828  #沙巴
+						state = 333  #北婆罗洲
+						state = 1016 #东南婆罗洲
+						state = 334  #西加里曼丹
+					}
+				}
+				add_dynamic_modifier = { modifier = GEA_Bureau_Of_Native_Affairs_modifier } 
+				add_to_variable = {
+					GEA_Bureau_Of_Native_Affairs_Number = 1
+				}
+			}
+		}
+	}
+	#新几内亚
+	GEA_hahl_Establish_an_Indigenous_Affairs_Bureau_Guinea = {#设立土著事务局
+		name = GEA_hahl_Establish_an_Indigenous_Affairs_Bureau_Indochina
+		icon = GFX_decision_generic_political_address
+		allowed = { original_tag = GEA }
+
+		fire_only_once = yes
+		cost = 25
+		days_remove = 30
+
+		visible = {
+			has_completed_focus = GEA_The_Bureau_Of_Native_Affairs
+			has_country_flag = Guinea_OPEN
+			GEA = {
+				OR = {
+					owns_state = 1364  #塞皮克
+					owns_state = 757   #马当
+					owns_state = 1365  #新几内亚高地
+					owns_state = 737   #俾斯麦群岛
+					owns_state = 523   #巴布亚
+					owns_state = 669   #西北新几内亚
+					owns_state = 843   #西南新几内亚
+				}
+			}
+		}	
+		available = {
+			GEA = {
+				OR = {
+					owns_state = 1364  #塞皮克
+					owns_state = 757   #马当
+					owns_state = 1365  #新几内亚高地
+					owns_state = 737   #俾斯麦群岛
+					owns_state = 523   #巴布亚
+					owns_state = 669   #西北新几内亚
+					owns_state = 843   #西南新几内亚
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_hahl_Establish_an_Indigenous_Affairs_Bureau_Guinea"
+			every_owned_state = {
+				limit = {
+					OR = {
+						state = 1364  #塞皮克
+						state = 757   #马当
+						state = 1365  #新几内亚高地
+						state = 737   #俾斯麦群岛
+						state = 523   #巴布亚
+						state = 669   #西北新几内亚
+						state = 843   #西南新几内亚
+					}
+				}
+				add_dynamic_modifier = { modifier = GEA_Bureau_Of_Native_Affairs_modifier } 
+				add_to_variable = {
+					GEA_Bureau_Of_Native_Affairs_Number = 1
+				}
+			}
+		}
+	}
+	#所罗门群岛
+	GEA_hahl_Establish_an_Indigenous_Affairs_Bureau_Solomon = {#设立土著事务局
+		name = GEA_hahl_Establish_an_Indigenous_Affairs_Bureau_Indochina
+		icon = GFX_decision_generic_political_address
+		allowed = { original_tag = GEA }
+
+		fire_only_once = yes
+		cost = 25
+		days_remove = 30
+
+		visible = {
+			has_completed_focus = GEA_The_Bureau_Of_Native_Affairs
+			has_country_flag = Solomon_OPEN
+			GEA = {
+				owns_state = 634  #所罗门群岛				
+			}
+		}	
+		available = {
+			GEA = {
+				owns_state = 634  #所罗门群岛	
+			}
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_hahl_Establish_an_Indigenous_Affairs_Bureau_Solomon"
+			every_owned_state = {
+				limit = {
+					state = 634  #所罗门群岛	
+				}
+				add_dynamic_modifier = { modifier = GEA_Bureau_Of_Native_Affairs_modifier } 
+				add_to_variable = {
+					GEA_Bureau_Of_Native_Affairs_Number = 1
+				}
+			}
+		}
+	}
+	#萨摩亚
+	GEA_hahl_Establish_an_Indigenous_Affairs_Bureau_Samoa = {#设立土著事务局
+		name = GEA_hahl_Establish_an_Indigenous_Affairs_Bureau_Indochina
+		icon = GFX_decision_generic_political_address
+		allowed = { original_tag = GEA }
+
+		fire_only_once = yes
+		cost = 25
+		days_remove = 30
+
+		visible = {
+			has_completed_focus = GEA_The_Bureau_Of_Native_Affairs
+			has_country_flag = Solomon_OPEN
+			GEA = {
+				owns_state = 941  #萨摩亚				
+			}
+		}	
+		available = {
+			GEA = {
+				owns_state = 941  #萨摩亚		
+			}
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_hahl_Establish_an_Indigenous_Affairs_Bureau_Samoa"
+			every_owned_state = {
+				limit = {
+					state = 941  #萨摩亚	
+				}
+				add_dynamic_modifier = { modifier = GEA_Bureau_Of_Native_Affairs_modifier } 
+				add_to_variable = {
+					GEA_Bureau_Of_Native_Affairs_Number = 1
+				}
+			}
 		}
 	}
 }

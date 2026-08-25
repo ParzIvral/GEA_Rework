@@ -1,3 +1,201 @@
+GEA_Indochina_click_effect = {
+	if = {
+		limit = {
+			NOT = {
+				has_country_flag = Indochina_OPEN
+			}
+		}
+		set_country_flag = Indochina_OPEN
+		clr_country_flag = Malaya_OPEN
+		clr_country_flag = Borneo_OPEN
+		clr_country_flag = Guinea_OPEN
+		clr_country_flag = Samoa_OPEN
+		clr_country_flag = Shandong_OPEN
+		clr_country_flag = Solomon_OPEN
+	}
+	
+	else_if = {
+		limit = {
+			has_country_flag = Indochina_OPEN
+		}
+		clr_country_flag = Indochina_OPEN
+	}
+}
+GEA_Malaya_click_effect = {
+	if = {
+		limit = {
+			NOT = {
+				has_country_flag = Malaya_OPEN
+			}
+		}
+		set_country_flag = Malaya_OPEN
+		clr_country_flag = Indochina_OPEN
+		clr_country_flag = Borneo_OPEN
+		clr_country_flag = Guinea_OPEN
+		clr_country_flag = Samoa_OPEN
+		clr_country_flag = Shandong_OPEN
+		clr_country_flag = Solomon_OPEN
+	}
+	
+	else_if = {
+		limit = {
+			has_country_flag = Malaya_OPEN
+		}
+		clr_country_flag = Malaya_OPEN
+	}
+}
+GEA_North_Borneo_click_effect = {
+	if = {
+		limit = {
+			NOT = {
+				has_country_flag = Borneo_OPEN
+			}
+		}
+		set_country_flag = Borneo_OPEN
+		clr_country_flag = Indochina_OPEN
+		clr_country_flag = Malaya_OPEN
+		clr_country_flag = Guinea_OPEN
+		clr_country_flag = Samoa_OPEN
+		clr_country_flag = Shandong_OPEN
+		clr_country_flag = Solomon_OPEN
+	}
+	
+	else_if = {
+		limit = {
+			has_country_flag = Borneo_OPEN
+		}
+		clr_country_flag = Borneo_OPEN
+	}
+}
+GEA_Borneo_click_effect = {
+	if = {
+		limit = {
+			NOT = {
+				has_country_flag = Borneo_OPEN
+			}
+		}
+		set_country_flag = Borneo_OPEN
+		clr_country_flag = Indochina_OPEN
+		clr_country_flag = Malaya_OPEN
+		clr_country_flag = Guinea_OPEN
+		clr_country_flag = Samoa_OPEN
+		clr_country_flag = Shandong_OPEN
+		clr_country_flag = Solomon_OPEN
+	}
+	
+	else_if = {
+		limit = {
+			has_country_flag = Borneo_OPEN
+		}
+		clr_country_flag = Borneo_OPEN
+	}
+}
+GEA_GER_Guinea_click_effect = {
+	if = {
+		limit = {
+			NOT = {
+				has_country_flag = Guinea_OPEN
+			}
+		}
+		set_country_flag = Guinea_OPEN
+		clr_country_flag = Indochina_OPEN
+		clr_country_flag = Malaya_OPEN
+		clr_country_flag = Borneo_OPEN
+		clr_country_flag = Samoa_OPEN
+		clr_country_flag = Shandong_OPEN
+		clr_country_flag = Solomon_OPEN
+	}
+	
+	else_if = {
+		limit = {
+			has_country_flag = Guinea_OPEN
+		}
+		clr_country_flag = Guinea_OPEN
+	}
+}
+GEA_Samoa_click_effect = {
+	if = {
+		limit = {
+			NOT = {
+				has_country_flag = Samoa_OPEN
+			}
+		}
+		set_country_flag = Samoa_OPEN
+		clr_country_flag = Indochina_OPEN
+		clr_country_flag = Malaya_OPEN
+		clr_country_flag = Borneo_OPEN
+		clr_country_flag = Guinea_OPEN
+		clr_country_flag = Shandong_OPEN
+		clr_country_flag = Solomon_OPEN
+	}
+	
+	else_if = {
+		limit = {
+			has_country_flag = Samoa_OPEN
+		}
+		clr_country_flag = Samoa_OPEN
+	}
+}
+GEA_Shandong_click_effect = {
+	if = {
+		limit = {
+			NOT = {
+				has_country_flag = Shandong_OPEN
+			}
+		}
+		set_country_flag = Shandong_OPEN
+		clr_country_flag = Indochina_OPEN
+		clr_country_flag = Malaya_OPEN
+		clr_country_flag = Borneo_OPEN
+		clr_country_flag = Guinea_OPEN
+		clr_country_flag = Samoa_OPEN
+		clr_country_flag = Solomon_OPEN
+	}
+	
+	else_if = {
+		limit = {
+			has_country_flag = Shandong_OPEN
+		}
+		clr_country_flag = Shandong_OPEN
+	}
+}
+GEA_Solomon_click_effect = {
+	if = {
+		limit = {
+			NOT = {
+				has_country_flag = Solomon_OPEN
+			}
+		}
+		set_country_flag = Solomon_OPEN
+		clr_country_flag = Indochina_OPEN
+		clr_country_flag = Malaya_OPEN
+		clr_country_flag = Borneo_OPEN
+		clr_country_flag = Guinea_OPEN
+		clr_country_flag = Samoa_OPEN
+		clr_country_flag = Solomon_OPEN
+	}
+	
+	else_if = {
+		limit = {
+			has_country_flag = Solomon_OPEN
+		}
+		clr_country_flag = Solomon_OPEN
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Burma_ger_click_effect = {
 	if = {
 		limit = {
@@ -70,24 +268,6 @@ Guinea_click_effect = {
 	}
 }
 
-Indochina_click_effect = {
-	if = {
-		limit = {
-			NOT = {
-				has_country_flag = Indochina_OPEN
-			}
-		}
-		set_country_flag = Indochina_OPEN
-	}
-	
-	else_if = {
-		limit = {
-			has_country_flag = Indochina_OPEN
-		}
-		clr_country_flag = Indochina_OPEN
-	}
-}
-
 Indochina_schorner_click_effect = {
 	if = {
 		limit = {
@@ -124,42 +304,6 @@ Indochina_vin_click_effect = {
 	}
 }
 
-Malaya_click_effect = {
-	if = {
-		limit = {
-			NOT = {
-				has_country_flag = Malaya_OPEN
-			}
-		}
-		set_country_flag = Malaya_OPEN
-	}
-	
-	else_if = {
-		limit = {
-			has_country_flag = Malaya_OPEN
-		}
-		clr_country_flag = Malaya_OPEN
-	}
-}
-
-North_Borneo_click_effect = {
-	if = {
-		limit = {
-			NOT = {
-				has_country_flag = North_Borneo_OPEN
-			}
-		}
-		set_country_flag = North_Borneo_OPEN
-	}
-	
-	else_if = {
-		limit = {
-			has_country_flag = North_Borneo_OPEN
-		}
-		clr_country_flag = North_Borneo_OPEN
-	}
-}
-
 Philippines_ger_click_effect = {
 	if = {
 		limit = {
@@ -178,23 +322,7 @@ Philippines_ger_click_effect = {
 	}
 }
 
-Borneo_click_effect = {
-	if = {
-		limit = {
-			NOT = {
-				has_country_flag = Borneo_OPEN
-			}
-		}
-		set_country_flag = Borneo_OPEN
-	}
-	
-	else_if = {
-		limit = {
-			has_country_flag = Borneo_OPEN
-		}
-		clr_country_flag = Borneo_OPEN
-	}
-}
+
 
 Thailand_ger_click_effect = {
 	if = {

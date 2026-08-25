@@ -123,6 +123,16 @@ guiTypes = {
 		}
 
 		buttonType = {
+			name = "GEA_Borneo"
+			orientation = center
+			position = { x = 2 y = -4 }
+			spriteType = "GEA_Borneo"
+			pdx_tooltip = "GEA_Borneo"
+			pdx_tooltip_delayed = "GEA_Borneo_DESC"
+			scale = 0.7
+		}
+
+		buttonType = {
 			name = "GEA_Malaya"
 			orientation = center
 			position = { x = -63.2 y = 5 }

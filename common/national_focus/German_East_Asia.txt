@@ -377,7 +377,7 @@ focus_tree = {
 	focus = {
 		id = GEA_German-style_organization_local_employees #德式机构，本地雇员
 		icon = GFX_GEA_German-style_organization_local_employees
-		cost = 1	
+		cost = 5	
 		x = 0
 		y = 3
 		available = {		
@@ -393,13 +393,94 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_German-style_organization_local_employees"
 			custom_effect_tooltip = GEA_German-style_organization_local_employees_tt
+			if = {
+				limit = {
+					check_variable = {
+						var = GEA_Bureau_Of_Native_Affairs_Number
+						value = 4
+						compare = equal
+					}	
+				}
+				add_popularity = {
+					ideology = social_conservative
+					popularity = 0.06
+				}
+				add_political_power = 60
+				add_stability = 0.08
+				add_war_support = 0.04
+				modify_country_flag = {
+					flag = GEA_Indochinese_Anger
+					value = -1
+				}
+				custom_effect_tooltip = GEA_Indochina_Anger_Down
+				modify_country_flag = {
+					flag = GEA_Indochinese_Stability
+					value = 1
+				}
+				custom_effect_tooltip = GEA_Indochina_Stability_Up
+				swap_ideas = {
+					remove_idea = GEA_Bureau_Of_Native_Affairs
+					add_idea = GEA_Bureau_Of_Native_Affairs_2
+				}
+			}
+			else_if = {
+				limit = { 
+					check_variable = {
+						var = GEA_Bureau_Of_Native_Affairs_Number
+						value = 3
+						compare = equal
+					}	
+				}
+				add_popularity = {
+					ideology = social_conservative
+					popularity = 0.02
+				}
+				add_political_power = 40
+				add_stability = 0.05
+				modify_country_flag = {
+					flag = GEA_Indochinese_Stability
+					value = 1
+				}
+				custom_effect_tooltip = GEA_Indochina_Stability_Up
+				swap_ideas = {
+					remove_idea = GEA_Bureau_Of_Native_Affairs
+					add_idea = GEA_Bureau_Of_Native_Affairs_3
+				}
+			}
+			else_if = {
+				limit = { 
+					check_variable = {
+						var = GEA_Bureau_Of_Native_Affairs_Number
+						value = 2
+						compare = equal
+					}	
+				}
+				add_political_power = 30
+				add_stability = 0.03
+				swap_ideas = {
+					remove_idea = GEA_Bureau_Of_Native_Affairs
+					add_idea = GEA_Bureau_Of_Native_Affairs_4
+				}
+			}
+			else = {
+				add_political_power = 45
+				if = {
+					limit = {
+						has_idea = GEA_Bureau_Of_Native_Affairs
+					}
+					swap_ideas = {
+						remove_idea = GEA_Bureau_Of_Native_Affairs
+						add_idea = GEA_Bureau_Of_Native_Affairs_5
+					}
+				}
+			}
 		}
 	}
 
 	focus = {
 		id = GEA_Small_farmers_Chinese_merchants_and_exiles #小农，华商与异乡人
 		icon = GFX_GEA_Small_farmers_Chinese_merchants_and_exiles
-		cost = 1	
+		cost = 3	
 		x = -2
 		y = 3
 		available = {		
@@ -414,13 +495,61 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Small_farmers_Chinese_merchants_and_exiles"
+			add_stability = 0.03
+			add_political_power = 60
+			random_owned_state = {
+				limit = {
+					is_core_of = GEA
+					is_controlled_by = GEA
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}	
+			}
+			random_owned_state = {
+				limit = {
+					is_core_of = GEA
+					is_controlled_by = GEA
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}	
+			}
+			random_owned_state = {
+				limit = {
+					is_core_of = GEA
+					is_controlled_by = GEA
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}	
+			}
+			country_event = {
+				id = GEA.113
+				days = 3
+			}
+			hidden_effect = {
+				country_event = {
+					id = GEA.114
+					days = 14
+				}
+			}
 		}
 	}
 
 	focus = {
 		id = GEA_Domesticating_the_unrestrained_countryside #驯服无羁乡村
 		icon = GFX_GEA_Domesticating_the_unrestrained_countryside
-		cost = 1	
+		cost = 3	
 		x = -1
 		y = 2
 		available = {		
@@ -495,7 +624,7 @@ focus_tree = {
 	focus = {
 		id = GEA_The_Rule_of_Humility #谦逊之治
 		icon = GFX_GEA_The_Rule_of_Humility
-		cost = 1	
+		cost = 3	
 		x = 1
 		y = 2
 		available = {		
@@ -514,13 +643,32 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_Rule_of_Humility"
+			add_political_power = 50
+			add_stability = 0.05
+			add_popularity = {
+				ideology = social_conservative
+				popularity = 0.075
+			}
+			modify_country_flag = {
+				flag = GEA_Indochinese_Stability
+				value = 1
+			}
+			custom_effect_tooltip = GEA_Indochina_Stability_Up
+			856 = { 
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}	
+			}
 		}
 	}
 
 	focus = {
 		id = GEA_Amnesty_For_The_Misled #分辨首恶与无辜者
 		icon = GFX_GEA_Amnesty_For_The_Misled
-		cost = 1	
+		cost = 3	
 		x = 1
 		y = 1
 		available = {		
@@ -536,6 +684,20 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Amnesty_For_The_Misled"
+			add_political_power = 75
+			add_popularity = { ideology = totalist popularity = -0.15 }
+			add_popularity = { ideology = syndicalist popularity = -0.15 }
+			add_popularity = { ideology = radical_socialist popularity = -0.15 }
+			modify_country_flag = {
+				flag = GEA_Indochinese_Anger
+				value = -1
+			}
+			custom_effect_tooltip = GEA_Indochina_Anger_Down
+			modify_country_flag = {
+				flag = GEA_Indochinese_Stability
+				value = 1
+			}
+			custom_effect_tooltip = GEA_Indochina_Stability_Up
 		}
 	}
 
@@ -563,6 +725,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Reconcile_at_last"
+			custom_effect_tooltip = GEA_Reconcile_at_last_tt
 			add_stability = 0.1
 			remove_ideas = GEA_The_quagmire_of_Indochina
 		}
@@ -589,6 +752,12 @@ focus_tree = {
 				remove_idea = GEA_colonial_question
 				add_idea = GEA_colonial_question_hahl
 			}
+			hidden_effect = {
+				country_event = {
+					id = GEA.112
+					days = 7
+				}
+			}
 		}
 	}
 
@@ -609,6 +778,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_Bureau_Of_Native_Affairs"
+			custom_effect_tooltip = GEA_The_Bureau_Of_Native_Affairs_tt
 			add_ideas = GEA_Bureau_Of_Native_Affairs
 		}
 	}
@@ -672,10 +842,6 @@ focus_tree = {
 					remove_idea = GEA_colonial_question_hahl
 					add_idea = GEA_colonial_question_hahl_2
 				}
-				swap_ideas = {
-					remove_idea = GEA_colonial_question_hahl
-					add_idea = GEA_colonial_question_hahl_2
-				}
 				add_war_support = 0.04
 				army_experience = 15
 				add_political_power = -50
@@ -706,10 +872,20 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Take_up_the_torch_of_solf"
+			add_popularity = {
+				ideology = social_conservative
+				popularity = 0.02
+			}
+			add_popularity = {
+				ideology = authoritarian_democrat
+				popularity = 0.03
+			}
 			swap_ideas = {
 				remove_idea = GEA_colonial_question_hahl_2
 				add_idea = GEA_colonial_question_hahl_3
 			}
+			add_ideas = GEA_Remembering_Solf
+			
 		}
 	}
 
@@ -733,8 +909,8 @@ focus_tree = {
 		}
 	}
 
-	focus = {
-		id = GEA_Enlightenment_and_the_Mission_of_Education  #开化与启蒙使命
+	focus = { #开化与启蒙使命
+		id = GEA_Enlightenment_and_the_Mission_of_Education  
 		icon = GFX_GEA_Enlightenment_and_the_Mission_of_Education
 		cost = 4	
 		x = 0
@@ -750,11 +926,23 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Enlightenment_and_the_Mission_of_Education"
+			custom_effect_tooltip = GEA_Enlightenment_and_the_Mission_of_Education_tt
+			add_research_slot = 1
+			swap_ideas = {
+				remove_idea = GEA_colonial_question_hahl_3
+				add_idea = GEA_colonial_question_hahl_4 
+			}
+			hidden_effect = {
+				country_event = {
+					id = GEA.10000
+					days = 730
+				}
+			}
 		}
 	}
 
-	focus = {
-		id = GEA_Loyalty_rather_than_birth  #忠诚而非出身
+	focus = { #忠诚而非出身
+		id = GEA_Loyalty_rather_than_birth  
 		icon = GFX_GEA_Loyalty_rather_than_birth
 		cost = 4	
 		x = -1
@@ -770,6 +958,55 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Loyalty_rather_than_birth"
+			add_manpower = 30000
+			custom_effect_tooltip = GEA_Loyalty_rather_than_birth_tt
+			division_template = {
+				name = "Loyalist Infantry Division"
+				division_names_group = GEA_LOYAL_INF_01
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+					infantry = { x = 2 y = 2 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					recon = { x = 0 y = 1 }
+				}
+			}
+			hidden_effect = {
+				capital_scope = {
+					create_unit = {
+						division = "division_template = \"Loyalist Infantry Division\" start_experience_factor = 2 start_equipment_factor = 1.0"
+						owner = GEA
+					}
+					create_unit = {
+						division = "division_template = \"Loyalist Infantry Division\" start_experience_factor = 2 start_equipment_factor = 1.0"
+						owner = GEA
+					}
+					create_unit = {
+						division = "division_template = \"Loyalist Infantry Division\" start_experience_factor = 2 start_equipment_factor = 1.0"
+						owner = GEA
+					}
+					create_unit = {
+						division = "division_template = \"Loyalist Infantry Division\" start_experience_factor = 2 start_equipment_factor = 1.0"
+						owner = GEA
+					}
+					create_unit = {
+						division = "division_template = \"Loyalist Infantry Division\" start_experience_factor = 2 start_equipment_factor = 1.0"
+						owner = GEA
+					}
+					create_unit = {
+						division = "division_template = \"Loyalist Infantry Division\" start_experience_factor = 2 start_equipment_factor = 1.0"
+						owner = GEA
+					}
+				}
+			}
 		}
 	}
 
@@ -793,6 +1030,11 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Peaceful_Country"
+			add_stability = 0.05
+			swap_ideas = {
+				remove_idea = GEA_colonial_question_hahl_4
+				add_idea = GEA_colonial_question_hahl_5 
+			}
 		}
 	}
 
@@ -919,6 +1161,11 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Expanding_export-oriented_economy"
+			add_equipment_to_stockpile = {
+				type = convoy
+				amount = 300
+				producer = GEA
+			}
 			add_ideas = GEA_Export_economy_first
 		}
 	}
@@ -1075,7 +1322,7 @@ focus_tree = {
 	focus = {
 		id = GEA_Even_closer_to_a_model_colony #距模范殖民地更进一步
 		icon = GFX_GEA_Even_closer_to_a_model_colony
-		cost = 1	
+		cost = 2	
 		x = 0
 		y = 1
 		available = {		
@@ -1096,6 +1343,12 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Even_closer_to_a_model_colony"
+			custom_effect_tooltip = GEA_Even_closer_to_a_model_colony_tt
+			add_political_power = 75
+			swap_ideas = {
+				remove_idea = GEA_colonial_question_hahl_5
+				add_idea = GEA_colonial_question_hahl_6
+			}
 		}
 	}
 

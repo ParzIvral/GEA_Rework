@@ -90,6 +90,23 @@ spriteTypes = {
 	}
 
 	spriteType = {
+		name = "GEA_Borneo"
+		texturefile = "gfx/interface/GEAGUI/GEA_Borneo.png"
+		transparencecheck = yes
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+	spriteType = {
 		name = "GEA_Burma_soc"
 		texturefile = "gfx/interface/GEAGUI/GEA_Burma_soc.png"
 		transparencecheck = yes
