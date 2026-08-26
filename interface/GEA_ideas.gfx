@@ -300,4 +300,8 @@ spriteTypes = {
 		name = "GFX_idea_GEA_Export_economy_first"
 		texturefile = "gfx/interface/ideas/gea/GEA_Export_economy_first.png"
 	}
+	spriteType = {
+		name = "GFX_idea_GEA_colonial_question_hahl_6"
+		texturefile = "gfx/interface/ideas/gea/GEA_colonial_question_hahl_6.png"
+	}
 }

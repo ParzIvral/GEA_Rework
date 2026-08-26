@@ -813,6 +813,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		available = {		
+			has_country_flag = GEA_restrict_military
 		}
         prerequisite = {
 			focus = GEA_Adat_Under_The_Black_White_Red
@@ -1375,7 +1376,7 @@ focus_tree = {
 
 		relative_position_id = GEA_Reconcile_at_last
 		ai_will_do = {
-			factor = 100
+			factor = 101
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Even_closer_to_a_model_colony"

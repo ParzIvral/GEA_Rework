@@ -654,11 +654,14 @@ ideas = {
 			name = GEA_colonial_question_hahl_2
 			allowed = { always = no }
 			modifier = {
-				political_power_gain = 0.15
+				political_power_gain = 0.11
 				non_core_manpower = 0.2
-				foreign_subversive_activites = -0.15
+				foreign_subversive_activites = -0.10
 				line_change_production_efficiency_factor = 0.1
+				resistance_growth = 0.05
 				experience_loss_factor = -0.05
+				required_garrison_factor = 0.05
+				surrender_limit = -0.05
 			}
 		}
 		GEA_colonial_question_hahl_5 = { #东亚殖民政府
@@ -670,28 +673,28 @@ ideas = {
 				stability_weekly = 0.005
 				army_defence_factor = 0.1
 				army_core_defence_factor = 0.05
-				political_power_gain = 0.15
-				non_core_manpower = 0.25
+				political_power_gain = 0.11
+				non_core_manpower = 0.2
 				foreign_subversive_activites = -0.15
 				line_change_production_efficiency_factor = 0.1
+				resistance_growth = 0.05
 				experience_loss_factor = -0.05
-				industrial_capacity_dockyard = 0.02
+				surrender_limit = -0.05
 			}
 		}
 		GEA_colonial_question_hahl_6 = { #东方的模范殖民地
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_colonial_question_hahl_5"}
-			picture = colonial_question
+			picture = GEA_colonial_question_hahl_6
 			allowed = { always = no }
 			modifier = {
-				stability_weekly = 0.005
+				stability_weekly = 0.0075
 				army_defence_factor = 0.1
-				army_core_defence_factor = 0.05
+				army_core_defence_factor = 0.1
 				political_power_gain = 0.15
 				non_core_manpower = 0.25
 				foreign_subversive_activites = -0.15
 				line_change_production_efficiency_factor = 0.1
 				experience_loss_factor = -0.05
-				industrial_capacity_dockyard = 0.02
 			}
 		}
 #印支起义

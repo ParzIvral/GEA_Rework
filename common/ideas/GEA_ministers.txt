@@ -149,7 +149,7 @@ ideas = {
 			}
 			traits = {
 				head_of_government
-				paternal_autocrat
+				pa_east_asia_navy
 				hog_old_admiral
 			}
 		}
@@ -229,7 +229,7 @@ ideas = {
 			}
 			traits = {
 				foreign_minister
-				authoritarian_democrat
+				ad_east_asia_army
 				for_general_staffer
 			}
 		}
@@ -444,6 +444,25 @@ ideas = {
 			}
 		}
 		
+		GEA_Franz_Urbig_eco_ade = {
+			allowed = { original_tag = GEA }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Franz_Urbig_eco_ade"
+			}
+			traits = {
+				economy_minister
+				Reichsbank
+				eco_bank_president
+			}
+		}
+
 		GEA_Paul_Koenig_eco_pau = {
 			allowed = { original_tag = GEA }
 			available = {

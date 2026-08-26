@@ -7,7 +7,7 @@
 add_namespace = Ostasien
 add_namespace = GEA
 ###开局事件与黑色星期一###
-	country_event = { #1936 Situation
+	country_event = {#1936 Situation
 		id = GEA.0
 		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.0" }
 		title = GEA.0.t
@@ -93,7 +93,7 @@ add_namespace = GEA
 			}
 		}
 	}
-	country_event = { #中国与监事会
+	country_event = {#中国与监事会
 		id = GEA.1
 		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.1" }
 		title = GEA.1.t
@@ -139,7 +139,7 @@ add_namespace = GEA
 			}
 		}
 	}
-	country_event = { #长久以来的秩序
+	country_event = {#长久以来的秩序
 		id = GEA.2
 		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.2" }
 		title = GEA.2.t
@@ -158,7 +158,7 @@ add_namespace = GEA
 			}
 		}
 	}
-	country_event = { #利润高涨
+	country_event = {#利润高涨
 		id = GEA.3
 		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.3" }
 		title = GEA.3.t
@@ -173,7 +173,7 @@ add_namespace = GEA
 			add_political_power = 10
 		}
 	}
-	country_event = { #按部就班
+	country_event = {#按部就班
 		id = GEA.4
 		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.4" }
 		title = GEA.4.t
@@ -188,7 +188,7 @@ add_namespace = GEA
 			navy_experience = 5
 		}
 	}
-	country_event = { #倒塌
+	country_event = {#倒塌
 		id = GEA.5
 		immediate = { 
 			log = "[GetDateText]: [Root.GetName]: event GEA.5" 
@@ -207,7 +207,7 @@ add_namespace = GEA
 			set_country_flag = GEA_Black_Monday_Here
 		}
 	}
-	country_event = { #黑色星期一
+	country_event = {#黑色星期一
 		id = GEA.6
 		immediate = {
 			log = "[GetDateText]: [Root.GetName]: event GEA.6"
@@ -261,7 +261,7 @@ add_namespace = GEA
 			add_ideas = GEA_collapsing_colonial_finances
 		}
 	}
-	country_event = { #黑色一周的结束
+	country_event = {#黑色一周的结束
 		id = GEA.7
 		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.7" }
 		title = GEA.7.t
@@ -390,12 +390,16 @@ add_namespace = GEA
 					GEA_Josias_zu_Waldeck_und_Pyrmont_sec_pau
 				}
 				country_event = {
-					id = Ostasien.302
-					days = 20
+					id = GEA.36	
+					days = 3
 				}
 				country_event = {
 					id = GEA.103
 					days = 7
+				}
+				country_event = {
+					id = GEA.117
+					days = 14
 				}
 			}
 			add_popularity = {
@@ -431,6 +435,7 @@ add_namespace = GEA
 					id = Ostasien.303
 					days = 20
 				}
+				
 			}
 		}	
 		option = { #奥古斯特·威廉·海耶元帅被任命
@@ -1561,7 +1566,15 @@ add_namespace = GEA
 	}
 	country_event = {#军靴之下的正义
 		id = GEA.36
-		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.36" }
+		immediate = { 
+			log = "[GetDateText]: [Root.GetName]: event GEA.36" 
+			hidden_effect = {
+				country_event = {
+					id = GEA.115
+					days = 9
+				}
+			}
+		}
 		title = GEA.36.t
 		desc = GEA.36.d
 		picture = GFX_GEA_11
@@ -1569,7 +1582,7 @@ add_namespace = GEA
 		is_triggered_only = yes
 		fire_only_once = yes
 
-		option = { 
+		option = { #军队不能向街头舆论低头
 			name = GEA.36.a
 			ai_chance = {
 				factor = 50
@@ -1596,10 +1609,10 @@ add_namespace = GEA
 			}
 			custom_effect_tooltip = GEA_Indochina_Anger_Up_More
 			add_to_variable = {
-				GEA_Handling_the_savage_army = 2
+				GEA_Handling_the_savage_army = -1
 			}
 		}
-		option = {
+		option = { #公开审判，并依法严惩
 			name = GEA.36.b
 			ai_chance = {
 				factor = 30
@@ -1623,10 +1636,10 @@ add_namespace = GEA
 			custom_effect_tooltip = GEA_Indochina_Anger_Down
 			decrease_ruling_party_popularity_by_5 = yes
 			add_to_variable = {
-				GEA_Handling_the_savage_army = 1
+				GEA_Handling_the_savage_army = 2
 			}
 		}
-		option = {
+		option = { #交给军事法庭秘密处理
 			name = GEA.36.b
 			ai_chance = {
 				factor = 20
@@ -1649,7 +1662,7 @@ add_namespace = GEA
 			add_stability = -0.03
 			add_political_power = -20
 			add_to_variable = {
-				GEA_Handling_the_savage_army = -1
+				GEA_Handling_the_savage_army = 1
 			}
 		}
 	}
@@ -2380,7 +2393,7 @@ add_namespace = GEA
 				flag = GEA_Indochinese_Anger
 				value = -1
 			}
-			custom_effect_tooltip = Gea_Indochina_Anger_Down
+			custom_effect_tooltip = GEA_Indochina_Anger_Down
 			modify_country_flag = {
 				flag = GEA_Indochinese_Stability
 				value = 1
@@ -2625,7 +2638,157 @@ add_namespace = GEA
 			add_popularity = { ideology = market_liberal popularity = 0.01 }
 		}
 	}
+	country_event = {#剑拔弩张
+		id = GEA.115
+		immediate = { 
+			log = "[GetDateText]: [Root.GetName]: event GEA.115" 
+			hidden_effect = {
+				country_event = {
+					id = GEA.116
+					days = 7
+				}
+			}
+		}
+		title = GEA.115.t
+		desc = GEA.115.d
+		picture = GFX_GEA_18
 
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = { #通知舍尔纳，最快把暴民压制住
+			name = GEA.115.a
+			ai_chance = {
+				factor = 10
+				modifier = {
+					factor = 1000 
+					OR = {
+						has_game_rule = {
+							rule = GEA_future
+							option = GEA_FUTURE_REVOLT_YES
+						}
+					}
+				}
+			}
+			custom_effect_tooltip = GEA_Affect_Abandoning_the_savage_nature_tt
+			add_war_support = 0.02
+			add_popularity = {
+				ideology = national_populist
+				popularity = 0.02
+			}
+			modify_country_flag = {
+				flag = GEA_Indochinese_Anger
+				value = 1
+			}
+			custom_effect_tooltip = GEA_Indochina_Anger_Up
+			add_to_variable = {
+				GEA_Handling_the_savage_army = -1
+			}
+		}
+		option = { #出动宪兵和水枪，把广场清出来
+			name = GEA.36.b
+			ai_chance = {
+				factor = 20
+			}			
+			custom_effect_tooltip = GEA_Affect_Abandoning_the_savage_nature_tt
+			add_war_support = -0.01
+			add_popularity = {
+				ideology = social_conservative
+				popularity = -0.02
+			}
+			add_to_variable = {
+				GEA_Handling_the_savage_army = 1
+			}
+		}
+		option = { #对外宣布政府将落实调查这次事件
+			name = GEA.36.b
+			ai_chance = {
+				factor = 70
+				modifier = {
+					factor = 1000 
+					OR = {
+						has_game_rule = {
+							rule = GEA_future
+							option = GEA_FUTURE_REVOLT_NO
+						}
+					}
+				}
+			}
+			custom_effect_tooltip = GEA_Affect_Abandoning_the_savage_nature_tt
+			modify_country_flag = {
+				flag = GEA_Indochinese_Anger
+				value = -1 
+			}
+			custom_effect_tooltip = GEA_Indochina_Anger_Down
+			add_political_power = -30
+			add_to_variable = {
+				GEA_Handling_the_savage_army = 2
+			}
+		}
+	}
+	country_event = {#收刀入鞘
+		id = GEA.116
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.116" }
+		title = GEA.116.t
+		desc = GEA.116.d
+
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = { #严格执行新军纪
+			name = GEA.116.a
+			ai_chance = {
+				factor = 33
+			}
+			custom_effect_tooltip = GEA_Affect_Abandoning_the_savage_nature_tt
+			add_stability = 0.03
+			add_to_variable = {
+				GEA_Handling_the_savage_army = 2
+			}
+			set_country_flag = GEA_restrict_military
+		}
+		option = { #限制滥权，但给前线军官留下处置余地
+			name = GEA.36.b
+			ai_chance = {
+				factor = 33
+			}			
+			custom_effect_tooltip = GEA_Affect_Abandoning_the_savage_nature_tt
+			add_war_support = 0.03
+			add_to_variable = {
+				GEA_Handling_the_savage_army = 1
+			}
+		}
+		option = { #别给帝国士兵们上太多镣铐
+			name = GEA.36.b
+			ai_chance = {
+				factor = 33
+			}
+			custom_effect_tooltip = GEA_Affect_Abandoning_the_savage_nature_tt
+			army_experience = 25
+			add_to_variable = {
+				GEA_Handling_the_savage_army = -1
+			}
+		}
+	}
+	country_event = {#对民众做出让步
+		id = GEA.117
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.117" }
+		title = GEA.117.t
+		desc = GEA.117.d
+		picture = GFX_GEA_17
+
+		fire_only_once = yes
+		is_triggered_only = yes
+
+		option = {
+			name = GEA.117.a
+			modify_country_flag = {
+				flag = GEA_Indochinese_Anger
+				value = -1
+			}
+			custom_effect_tooltip = GEA_Indochina_Anger_Down
+		}
+	}
 #隐藏事件
 	country_event = {
 		id = GEA.10000
@@ -4572,23 +4735,7 @@ add_namespace = GEA
 	
 
 	
-	country_event = { # cuck to people
-		id = Ostasien.302
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.302" }
-		title = Ostasien.302.t
-		desc = Ostasien.302.d
-		picture = GFX_report_event_GEA_mucke
 
-		fire_only_once = yes
-
-		is_triggered_only = yes
-
-		option = {
-			name = Ostasien.302.a
-			add_to_variable = { GEA_socialist_power = -5 }
-			custom_effect_tooltip = GEA_cuck_to_people_tt
-		}
-	}
 
 	country_event = { # cuck to nobles
 		id = Ostasien.303

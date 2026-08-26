@@ -161,7 +161,7 @@ give_guarantee = LEC
 set_country_flag = legation_council_member
 
 set_research_slots = 3
-set_convoys = 150
+set_convoys = 300
 set_stability = 0.45
 set_war_support = 0.3
 starting_train_buffer = 1
@@ -236,7 +236,7 @@ add_ideas = {
 	free_trade
 	GEA_Paul_Koenig_hog_pau
 	GEA_Rudolph_Firle_for_pau
-	GEA_Paul_Koenig_eco_pau
+	GEA_Franz_Urbig_eco_ade
 	GEA_Josias_zu_Waldeck_und_Pyrmont_sec_pau
 	GEA_AOG_profit_idea
 	GEA_The_quagmire_of_Indochina
