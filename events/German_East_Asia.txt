@@ -325,13 +325,7 @@ add_namespace = GEA
 					}
 				}
 			}
-			promote_character = {
-				character = GEA_Hellmuth_von_Mucke
-				ideology = colonial_govt_subtype
-			}
-			retire_character = {
-				character = GEA_Albert_Ballin
-			}			
+			retire_character = GEA_Albert_Ballin	
 			hidden_effect = {
 				country_event = {
 					id = GEA.9
@@ -353,7 +347,6 @@ add_namespace = GEA
 		picture = GFX_GEA_4
 
 		fire_only_once = yes
-
 		is_triggered_only = yes
 
 		option = { #皇帝选择了阿尔伯特·哈尔
@@ -364,11 +357,15 @@ add_namespace = GEA
 					factor = 1000 
 					OR = {
 						has_game_rule = {
-							rule = GEA_future 
-							option = GEA_FUTURE_MUCKE
+							rule = GEA_governor 
+							option = GEA_GOVERNOR_HAHL
 						}
 					}
 				}
+			}
+			set_politics = {
+				ruling_party = social_conservative
+				elections_allowed = no
 			}
 			promote_character = {
 				character = GEA_Albert_Hahl
@@ -381,19 +378,13 @@ add_namespace = GEA
 			custom_effect_tooltip = GEA_Indochina_Anger_Down
 			set_country_flag = GEA_Governor_Hahl_flag
 			hidden_effect = {
-				add_country_leader_role = {
+				promote_character = {
 					character = GEA_Prinz_Josias_zu_Waldeck_und_Pyrmont
-					promote_leader = yes
-					country_leader = {
-						ideology = colonial_govt_subtype
-						traits = { 
-							well_connected_noble 
-						}
-					}
+					ideology = colonial_govt_subtype
 				}
 				remove_all_ministers = yes
 				add_ideas = {
-					GEA_Felix_von_Luckner_hog_pau
+					GEA_Hellmuth_Von_Mucke_hog_ade
 					GEA_Oskar_Trautmann_for_mli
 					GEA_Rudolf_Kaulla_eco_sco
 					GEA_Josias_zu_Waldeck_und_Pyrmont_sec_pau
@@ -406,10 +397,6 @@ add_namespace = GEA
 					id = GEA.103
 					days = 7
 				}
-			}
-			set_politics = {
-				ruling_party = social_conservative
-				elections_allowed = no
 			}
 			add_popularity = {
 				ideology = social_conservative
@@ -424,8 +411,8 @@ add_namespace = GEA
 					factor = 1000 
 					OR = {
 						has_game_rule = {
-							rule = GEA_future 
-							option = GEA_FUTURE_JOSIAS
+							rule = GEA_governor 
+							option = GEA_GOVERNOR_JOSIAS
 						}
 					}
 				}
@@ -454,8 +441,8 @@ add_namespace = GEA
 					factor = 1000 
 					OR = {
 						has_game_rule = {
-							rule = GEA_future 
-							option = GEA_FUTURE_HEYE
+							rule = GEA_governor 
+							option = GEA_GOVERNOR_HEYE
 						}
 					}
 				}
@@ -498,7 +485,13 @@ add_namespace = GEA
 			ai_chance = {
 				factor = 20
 				modifier = {
-					factor = 20
+					factor = 1000
+					OR = {
+						has_game_rule = {
+							rule = GEA_governor
+							option = GEA_GOVERNOR_CORPORATE
+						}
+					}
 				}
 			}
 			promote_character = {
@@ -515,7 +508,13 @@ add_namespace = GEA
 			ai_chance = {
 				factor = 20
 				modifier = {
-					factor = 20
+					factor = 1000
+					OR = {
+						has_game_rule = {
+							rule = GEA_governor
+							option = GEA_GOVERNOR_CORPORATE
+						}
+					}
 				}
 			}
 			promote_character = {
@@ -560,8 +559,8 @@ add_namespace = GEA
 					factor = 1000 
 					OR = {
 						has_game_rule = {
-							rule = GEA_if_creat_inc_cheat
-							option = GEA_IF_CREAT_INC_YES
+							rule = GEA_future
+							option = GEA_FUTURE_REVOLT_YES
 						}
 					}
 				}
@@ -591,8 +590,8 @@ add_namespace = GEA
 					factor = 1000 
 					OR = {
 						has_game_rule = {
-							rule = GEA_if_creat_inc_cheat
-							option = GEA_IF_CREAT_INC_NO
+							rule = GEA_future
+							option = GEA_FUTURE_REVOLT_NO
 						}
 					}
 				}
@@ -608,6 +607,15 @@ add_namespace = GEA
 			name = GEA.10.c
 			ai_chance = {
 				factor = 33
+				modifier = {
+					factor = 1000 
+					OR = {
+						has_game_rule = {
+							rule = GEA_future
+							option = GEA_FUTURE_REVOLT_YES
+						}
+					}
+				}
 			}
 			add_political_power = -25
 			add_timed_idea = {
@@ -731,8 +739,8 @@ add_namespace = GEA
 					factor = 1000 
 					OR = {
 						has_game_rule = {
-							rule = GEA_if_creat_inc_cheat
-							option = GEA_IF_CREAT_INC_YES
+							rule = GEA_future
+							option = GEA_FUTURE_REVOLT_YES
 						}
 					}
 				}
@@ -755,8 +763,8 @@ add_namespace = GEA
 					factor = 1000 
 					OR = {
 						has_game_rule = {
-							rule = GEA_if_creat_inc_cheat
-							option = GEA_IF_CREAT_INC_NO
+							rule = GEA_future
+							option = GEA_FUTURE_REVOLT_YES
 						}
 					}
 				}
@@ -872,8 +880,8 @@ add_namespace = GEA
 					factor = 1000 
 					OR = {
 						has_game_rule = {
-							rule = GEA_if_creat_inc_cheat
-							option = GEA_IF_CREAT_INC_NO
+							rule = GEA_future
+							option = GEA_FUTURE_REVOLT_NO
 						}
 					}
 				}
@@ -900,8 +908,8 @@ add_namespace = GEA
 					factor = 1000 
 					OR = {
 						has_game_rule = {
-							rule = GEA_if_creat_inc_cheat
-							option = GEA_IF_CREAT_INC_YES
+							rule = GEA_future
+							option = GEA_FUTURE_REVOLT_YES
 						}
 					}
 				}
@@ -953,8 +961,8 @@ add_namespace = GEA
 					factor = 1000 
 					OR = {
 						has_game_rule = {
-							rule = GEA_if_creat_inc_cheat
-							option = GEA_IF_CREAT_INC_NO
+							rule = GEA_future
+							option = GEA_FUTURE_REVOLT_NO
 						}
 					}
 				}
@@ -972,8 +980,8 @@ add_namespace = GEA
 					factor = 1000 
 					OR = {
 						has_game_rule = {
-							rule = GEA_if_creat_inc_cheat
-							option = GEA_IF_CREAT_INC_YES
+							rule = GEA_future
+							option = GEA_FUTURE_REVOLT_YES
 						}
 					}
 				}
@@ -1022,11 +1030,7 @@ add_namespace = GEA
 			}
 			if = {
 				limit = {
-					has_country_flag = {
-						flag = GEA_Indochinese_Anger
-						value = 2
-						compare = less_than_or_equals
-					}
+					has_country_flag = { flag = GEA_Indochinese_Anger value < 3 }
 				}
 				hidden_effect = {
 					country_event = {
@@ -1056,19 +1060,9 @@ add_namespace = GEA
 			hidden_effect = {
 				if = {
 					limit = {
-						limit = {
-							has_country_flag = {
-								flag = GEA_Indochinese_Anger
-								value = 6
-								compare = less_than_or_equals
-							}
-							check_variable = {
-								var = GEA_Indochinese_Stability
-								value = 15
-								compare = greater_than_or_equals
-							}
-							has_army_manpower = { size > 300000 }
-						}			
+						has_country_flag = { flag = GEA_Indochinese_Anger value < 7 }
+						has_country_flag = { flag = GEA_Indochinese_Stability value > 14 }
+						has_army_manpower = { size > 300000 }
 					}
 					hidden_effect = {
 						country_event = {
@@ -1095,8 +1089,8 @@ add_namespace = GEA
 					factor = 1000 
 					OR = {
 						has_game_rule = {
-							rule = GEA_if_creat_inc_cheat
-							option = GEA_IF_CREAT_INC_NO
+							rule = GEA_future
+							option = GEA_FUTURE_REVOLT_NO
 						}
 					}
 				}
@@ -1125,6 +1119,18 @@ add_namespace = GEA
 
 		option = {
 			name = GEA.24.a
+			ai_chance = {
+				factor = 33
+				modifier = {
+					factor = 1000 
+					OR = {
+						has_game_rule = {
+							rule = GEA_future
+							option = GEA_FUTURE_REVOLT_NO
+						}
+					}
+				}
+			}
 			add_stability = 0.05
 			add_political_power = -40
 			modify_country_flag = {
@@ -1136,6 +1142,9 @@ add_namespace = GEA
 
 		option = {
 			name = GEA.24.b
+			ai_chance = {
+				factor = 33
+			}
 			add_stability = 0.01
 			add_political_power = -10
 
@@ -1143,6 +1152,18 @@ add_namespace = GEA
 
 		option = {
 			name = GEA.24.c
+			ai_chance = {
+				factor = 33
+				modifier = {
+					factor = 1000 
+					OR = {
+						has_game_rule = {
+							rule = GEA_future
+							option = GEA_FUTURE_REVOLT_YES
+						}
+					}
+				}
+			}
 			add_stability = -0.03
 			add_political_power = 50
 			add_popularity = {
@@ -1233,8 +1254,8 @@ add_namespace = GEA
 					factor = 1000 
 					OR = {
 						has_game_rule = {
-							rule = GEA_if_creat_inc_cheat
-							option = GEA_IF_CREAT_INC_YES
+							rule = GEA_future
+							option = GEA_FUTURE_REVOLT_YES
 						}
 					}
 				}
@@ -1252,8 +1273,8 @@ add_namespace = GEA
 					factor = 1000 
 					OR = {
 						has_game_rule = {
-							rule = GEA_if_creat_inc_cheat
-							option = GEA_IF_CREAT_INC_NO
+							rule = GEA_future
+							option = GEA_FUTURE_REVOLT_NO
 						}
 					}
 				}
@@ -1282,8 +1303,8 @@ add_namespace = GEA
 					factor = 1000 
 					OR = {
 						has_game_rule = {
-							rule = GEA_if_creat_inc_cheat
-							option = GEA_IF_CREAT_INC_YES
+							rule = GEA_future
+							option = GEA_FUTURE_REVOLT_YES
 						}
 					}
 				}
@@ -1299,8 +1320,8 @@ add_namespace = GEA
 					factor = 1000 
 					OR = {
 						has_game_rule = {
-							rule = GEA_if_creat_inc_cheat
-							option = GEA_IF_CREAT_INC_NO
+							rule = GEA_future
+							option = GEA_FUTURE_REVOLT_NO
 						}
 					}
 				}
@@ -1365,8 +1386,8 @@ add_namespace = GEA
 					factor = 1000 
 					OR = {
 						has_game_rule = {
-							rule = GEA_if_creat_inc_cheat
-							option = GEA_IF_CREAT_INC_YES
+							rule = GEA_future
+							option = GEA_FUTURE_REVOLT_YES
 						}
 					}
 				}
@@ -1382,8 +1403,8 @@ add_namespace = GEA
 					factor = 1000 
 					OR = {
 						has_game_rule = {
-							rule = GEA_if_creat_inc_cheat
-							option = GEA_IF_CREAT_INC_NO
+							rule = GEA_future
+							option = GEA_FUTURE_REVOLT_NO
 						}
 					}
 				}
@@ -1556,8 +1577,8 @@ add_namespace = GEA
 					factor = 1000 
 					OR = {
 						has_game_rule = {
-							rule = GEA_if_creat_inc_cheat
-							option = GEA_IF_CREAT_INC_YES
+							rule = GEA_future
+							option = GEA_FUTURE_REVOLT_YES
 						}
 					}
 				}
@@ -1586,8 +1607,8 @@ add_namespace = GEA
 					factor = 1000 
 					OR = {
 						has_game_rule = {
-							rule = GEA_if_creat_inc_cheat
-							option = GEA_IF_CREAT_INC_NO
+							rule = GEA_future
+							option = GEA_FUTURE_REVOLT_NO
 						}
 					}
 				}
@@ -1609,6 +1630,15 @@ add_namespace = GEA
 			name = GEA.36.b
 			ai_chance = {
 				factor = 20
+				modifier = {
+					factor = 1000 
+					OR = {
+						has_game_rule = {
+							rule = GEA_future
+							option = GEA_FUTURE_REVOLT_YES
+						}
+					}
+				}
 			}
 			custom_effect_tooltip = GEA_Affect_Abandoning_the_savage_nature_tt
 			modify_country_flag = {
@@ -1691,6 +1721,18 @@ add_namespace = GEA
 
 		option = { #提高盐税，人人都逃不过这一笔
 			name = GEA.101.a
+			ai_chance = {
+				factor = 33
+				modifier = {
+					factor = 1000 
+					OR = {
+						has_game_rule = {
+							rule = GEA_future
+							option = GEA_FUTURE_REVOLT_YES
+						}
+					}
+				}
+			}
 			add_stability = -0.03
 			decrease_ruling_party_popularity_by_3 = yes
 			modify_country_flag = {
@@ -1703,12 +1745,18 @@ add_namespace = GEA
 
 		option = { #提高酒税，从每一杯里抽出我们的份额
 			name = GEA.101.b
+			ai_chance = {
+				factor = 33
+			}
 			add_stability = -0.05
 			add_ideas = GEA_Expand_fiscal_and_taxation_sources_wine
 		}
 
 		option = { #别管那么多先从鸦片里捞一笔再说
 			name = GEA.101.c
+			ai_chance = {
+				factor = 33
+			}
 			add_stability = -0.02
 			add_political_power = -10
 			add_ideas = GEA_Expand_fiscal_and_taxation_sources_opium
@@ -1769,6 +1817,18 @@ add_namespace = GEA
 
 		option = { #把部分权力还给皇帝，我们需要他的支持
 			name = GEA.104.a
+			ai_chance = {
+				factor = 33
+				modifier = {
+					factor = 1000 
+					OR = {
+						has_game_rule = {
+							rule = GEA_future
+							option = GEA_FUTURE_REVOLT_NO
+						}
+					}
+				}
+			}
 			add_political_power = -40
 			add_popularity = {
 				ideology = social_conservative
@@ -1795,6 +1855,18 @@ add_namespace = GEA
 
 		option = { #给他些边缘权力，足够凝聚人心即可
 			name = GEA.104.b
+			ai_chance = {
+				factor = 33
+				modifier = {
+					factor = 1000 
+					OR = {
+						has_game_rule = {
+							rule = GEA_future
+							option = GEA_FUTURE_REVOLT_NO
+						}
+					}
+				}
+			}
 			add_stability = 0.02
 			modify_country_flag = {
 				flag = GEA_Indochinese_Stability
@@ -1812,6 +1884,18 @@ add_namespace = GEA
 
 		option = { #皇帝还是当个无害的神像吧
 			name = GEA.104.c
+			ai_chance = {
+				factor = 33
+				modifier = {
+					factor = 1000 
+					OR = {
+						has_game_rule = {
+							rule = GEA_future
+							option = GEA_FUTURE_REVOLT_YES
+						}
+					}
+				}
+			}
 			add_stability = -0.02
 			modify_country_flag = {
 				flag = GEA_Indochinese_Anger
@@ -1834,6 +1918,15 @@ add_namespace = GEA
 			name = GEA.105.a
 			ai_chance = {
 				factor = 90
+				modifier = {
+					factor = 1000 
+					OR = {
+						has_game_rule = {
+							rule = GEA_future
+							option = GEA_FUTURE_REVOLT_NO
+						}
+					}
+				}
 			}
 			add_stability = 0.02
 			add_popularity = {
@@ -1896,6 +1989,15 @@ add_namespace = GEA
 			name = GEA.106.a
 			ai_chance = {
 				factor = 30
+				modifier = {
+					factor = 1000 
+					OR = {
+						has_game_rule = {
+							rule = GEA_future
+							option = GEA_FUTURE_REVOLT_NO
+						}
+					}
+				}
 			}
 			add_political_power = -30
 			add_war_support = 0.03
@@ -2111,6 +2213,15 @@ add_namespace = GEA
 			name = GEA.107.c
 			ai_chance = {
 				factor = 30
+				modifier = {
+					factor = 1000 
+					OR = {
+						has_game_rule = {
+							rule = GEA_future
+							option = GEA_FUTURE_REVOLT_NO
+						}
+					}
+				}
 			}
 			add_stability = 0.05
 			modify_country_flag = {
@@ -2291,6 +2402,18 @@ add_namespace = GEA
 
 		option = { #给他们更多特权
 			name = GEA.109.a
+			ai_chance = {
+				factor = 50
+				modifier = {
+					factor = 1000 
+					OR = {
+						has_game_rule = {
+							rule = GEA_future
+							option = GEA_FUTURE_REVOLT_NO
+						}
+					}
+				}
+			}
 			add_political_power = -30
 			decrease_ruling_party_popularity_by_3 = yes
 			modify_country_flag = {
@@ -2306,6 +2429,18 @@ add_namespace = GEA
 		}
 		option = { #给他们席位和勋章就够了
 			name = GEA.109.b
+			ai_chance = {
+				factor = 50
+				modifier = {
+					factor = 1000 
+					OR = {
+						has_game_rule = {
+							rule = GEA_future
+							option = GEA_FUTURE_REVOLT_NO
+						}
+					}
+				}
+			}
 			add_political_power = -10
 			add_stability = -0.03
 			modify_country_flag = {
@@ -2328,6 +2463,9 @@ add_namespace = GEA
 
 		option = { #提高关税，连运往德国的货物也不能例外
 			name = GEA.110.a
+			ai_chance = {
+				factor = 25
+			}
 			add_political_power = -50
 			swap_ideas = {
 				remove_idea = GEA_Fiscal_reform
@@ -2342,6 +2480,9 @@ add_namespace = GEA
 		}
 		option = { #给中小企业松绑
 			name = GEA.110.b
+			ai_chance = {
+				factor = 25
+			}
 			add_political_power = -10
 			swap_ideas = {
 				remove_idea = GEA_Fiscal_reform
@@ -2351,6 +2492,18 @@ add_namespace = GEA
 
 		option = { #收割富人，两难自解
 			name = GEA.110.c
+			ai_chance = {
+				factor = 25
+				modifier = {
+					factor = 1000 
+					OR = {
+						has_game_rule = {
+							rule = GEA_future
+							option = GEA_FUTURE_REVOLT_YES
+						}
+					}
+				}
+			}
 			modify_country_flag = {
 				flag = GEA_Indochinese_Stability
 				value = -1
@@ -2365,6 +2518,18 @@ add_namespace = GEA
 
 		option = { #还能怎么办？刮地皮吧
 			name = GEA.110.e
+			ai_chance = {
+				factor = 25
+				modifier = {
+					factor = 1000 
+					OR = {
+						has_game_rule = {
+							rule = GEA_future
+							option = GEA_FUTURE_REVOLT_YES
+						}
+					}
+				}
+			}
 			add_stability = -0.05
 			modify_country_flag = {
 				flag = GEA_Indochinese_Anger
@@ -3623,8 +3788,8 @@ add_namespace = GEA
 					factor = 1000 
 					OR = {
 						has_game_rule = {
-							rule = GEA_if_creat_inc_cheat
-							option = GEA_IF_CREAT_INC_NO
+							rule = GEA_future
+							option = GEA_FUTURE_REVOLT_NO
 						}
 					}
 				}

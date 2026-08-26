@@ -1,0 +1,7 @@
+spriteTypes = {	
+	#国家精神
+	spriteType = {
+		name = "GFX_idea_GEA_Hellmuth_Von_Mucke_hog_ade"
+		texturefile = "gfx/interface/ministers/GEA/GEA_Hellmuth_Von_Mucke_hog_ade.png"
+	}
+}

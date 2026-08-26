@@ -182,7 +182,7 @@ GEA_saigon_cholon_grain_board = {
 			is_owned_by = GEA
 		}
 	}	
-	local_manpower = 0.15              
+	state_production_speed_buildings_factor = 0.05       
 	local_supplies = 0.1                                     
 }
 
@@ -195,6 +195,6 @@ GEA_Bureau_Of_Native_Affairs_modifier = {
 		}
 	}	
 	production_speed_infrastructure_factor = 0.05        
-	local_manpower = 0.05
-	local_building_slots = 0.1                           
+	local_manpower = 2500
+	local_building_slots = 2                        
 }

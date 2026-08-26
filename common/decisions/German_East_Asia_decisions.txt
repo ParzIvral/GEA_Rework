@@ -262,6 +262,144 @@ GEA_decisions = {#德属东亚殖民地决议
 		}
 	}
  	#马来亚
+	GEA_hahl_convene_malay_sultans = {#召开马来苏丹会议
+		icon = GFX_decision_generic_agreement
+		allowed = { original_tag = GEA }
+
+		fire_only_once = yes
+		cost = 10
+		days_remove = 100
+
+		visible = {
+			has_completed_focus = GEA_The_Sultans_Seal
+			has_country_flag = Malaya_OPEN
+			GEA = {
+				OR = {
+					owns_state = 846 #马来亚
+					owns_state = 336 #新加坡
+				}
+			}
+		}
+		available = {
+			GEA = {
+				OR = {
+					owns_state = 846 #马来亚
+					owns_state = 336 #新加坡
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 50
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_hahl_convene_malay_sultans"
+			add_stability = 0.05
+			add_political_power = 75
+			add_popularity = {
+				ideology = social_conservative
+				popularity = 0.03
+			}
+		}
+	}
+
+	GEA_hahl_restore_resident_advisers = {#恢复土邦驻扎官制度
+		icon = GFX_decision_generic_political_address
+		allowed = { original_tag = GEA }
+
+		days_remove = 65
+		fire_only_once = yes
+		cost = 30
+
+		visible = {
+			has_completed_focus = GEA_The_Sultans_Seal
+			has_country_flag = Malaya_OPEN
+			GEA = {
+				OR = {
+					owns_state = 846 #马来亚
+					owns_state = 336 #新加坡
+				}
+			}
+		}
+		available = {
+			GEA = {
+				OR = {
+					owns_state = 846 #马来亚
+					owns_state = 336 #新加坡
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 50
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_hahl_restore_resident_advisers"
+			add_stability = 0.03
+			846 = {
+				add_building_construction = {
+					type = naval_base
+					level = 1
+					province = 10297
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 3
+			}
+			336 = {
+				add_extra_state_shared_building_slots = 2
+			}
+		}
+	}
+
+	GEA_hahl_tin_royalty_bargain = {#锡矿王室分成协议
+		icon = GFX_decision_generic_trade
+		allowed = { original_tag = GEA }
+
+		fire_only_once = yes
+		cost = 50
+		days_remove = 45
+
+		visible = {
+			has_completed_focus = GEA_The_Sultans_Seal
+			has_country_flag = Malaya_OPEN
+			GEA = {
+				OR = {
+					owns_state = 846 #马来亚
+					owns_state = 336 #新加坡
+				}
+			}
+		}
+		available = {
+			GEA = {
+				owns_state = 846 #马来亚				
+			}
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_hahl_tin_royalty_bargain"
+			846 = {
+				add_state_modifier = {
+					modifier = {
+						state_resources_factor = 0.20
+					}
+				}
+			}
+			add_resource = {
+				type = tungsten
+				amount = 45
+				state = 846
+			}	
+			add_resource = {
+				type = steel
+				amount = 20
+				state = 846
+			}	
+		}
+	}
+
 	GEA_hahl_Establish_an_Indigenous_Affairs_Bureau_Malaya = {#设立土著事务局
 		name = GEA_hahl_Establish_an_Indigenous_Affairs_Bureau_Indochina
 		icon = GFX_decision_generic_political_address
@@ -309,7 +447,105 @@ GEA_decisions = {#德属东亚殖民地决议
 			}
 		}
 	}
+	
 	#婆罗洲
+	GEA_hahl_brunei_crown_subsidy = {#文莱王冠补助金
+		icon = GFX_decision_give_cash
+		allowed = { original_tag = GEA }
+
+		days_remove = 50
+		fire_only_once = yes
+		cost = 50
+
+		visible = {
+			has_completed_focus = GEA_The_Sultans_Seal
+			has_country_flag = Borneo_OPEN
+			GEA = {
+				OR = {
+					owns_state = 828  #沙巴
+					owns_state = 333  #北婆罗洲
+				}
+			}
+		}
+		available = {
+			GEA = {
+				OR = {
+					owns_state = 828  #沙巴
+					owns_state = 333  #北婆罗洲
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 50
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_hahl_brunei_crown_subsidy"
+			add_stability = 0.05
+			828 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes 
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes 
+				}
+				add_state_modifier = {
+					modifier = {
+						state_production_speed_infrastructure_factor = 0.15
+						local_manpower = 5000
+					}
+				}
+			}
+		}
+	}
+
+	GEA_hahl_north_borneo_chartered_privileges = {#地方特许权
+		icon = GFX_decision_colonial_department
+		allowed = { original_tag = GEA }
+
+		days_remove = 45
+		fire_only_once = yes
+		cost = 20
+
+		visible = {
+			has_completed_focus = GEA_The_Sultans_Seal
+			has_country_flag = Borneo_OPEN
+			GEA = {
+				OR = {
+					owns_state = 828  #沙巴
+					owns_state = 333  #北婆罗洲
+				}
+			}
+		}
+		available = {
+			GEA = {
+				OR = {
+					owns_state = 828  #沙巴
+					owns_state = 333  #北婆罗洲
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 50
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_hahl_north_borneo_chartered_privileges"
+			828 = {
+				add_state_modifier = {
+					modifier = {
+						local_org_regain = 0.075
+						local_building_slots = 0.1
+					}
+				}
+			}
+		}
+	}
+
 	GEA_hahl_Establish_an_Indigenous_Affairs_Bureau_Borneo = {#设立土著事务局
 		name = GEA_hahl_Establish_an_Indigenous_Affairs_Bureau_Indochina	
 		icon = GFX_decision_generic_political_address

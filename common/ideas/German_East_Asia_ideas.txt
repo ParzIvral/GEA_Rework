@@ -495,7 +495,7 @@ ideas = {
 		GEA_Export_economy_first = {#出口经济至上
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_german_immigrant"}
 			name = GEA_Export_economy_first
-			picture = immigrant_aid
+			picture = GEA_Export_economy_first
 			allowed = { always = no }
 			modifier = {
 				consumer_goods_factor = -0.04
@@ -507,7 +507,7 @@ ideas = {
 		GEA_Export_economy_first_2 = {#出口经济至上
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_german_immigrant_2"}
 			name = GEA_Export_economy_first_2
-			picture = immigrant_aid
+			picture = GEA_Export_economy_first
 			allowed = { always = no }
 			modifier = {
 				consumer_goods_factor = -0.06

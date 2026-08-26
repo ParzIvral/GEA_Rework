@@ -296,4 +296,8 @@ spriteTypes = {
 		name = "GFX_idea_GEA_Remembering_Solf"
 		texturefile = "gfx/interface/ideas/gea/GEA_Remembering_Solf.png"
 	}
+	spriteType = {
+		name = "GFX_idea_GEA_Export_economy_first"
+		texturefile = "gfx/interface/ideas/gea/GEA_Export_economy_first.png"
+	}
 }

@@ -13,7 +13,7 @@ characters = {
 			ideology = soccon_colonial_govt_subtype
 			traits = {
 				grand_admiral  
-				modernizer
+				War_Hero
 			}
 		}
 		navy_leader = {

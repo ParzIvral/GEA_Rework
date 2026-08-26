@@ -1,0 +1,1049 @@
+ideas = {
+	head_of_government = { ### Head of Government ###
+		GEA_Lim_Yew_Hock_hog_sde = {
+			allowed = { original_tag = GEA }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Lim_Yew_Hock_hog_sde"
+			}
+			traits = {
+				head_of_government
+				social_democrat
+				hog_political_protege
+			}
+		}
+
+		GEA_Paul_Estebe_hog_sli = {
+			allowed = { original_tag = GEA }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Paul_Estebe_hog_sli"
+			}
+			traits = {
+				head_of_government
+				social_liberal
+				hog_pacifist_patriot
+			}
+		}
+
+		GEA_Le_Phat_An_hog_mli = {
+			allowed = { original_tag = GEA }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Le_Phat_An_hog_mli"
+			}
+			traits = {
+				head_of_government
+				market_liberal
+				hog_humanitarian
+			}
+		}
+
+		GEA_Ibrahim_of_Johor_hog_sco = {
+			allowed = { original_tag = GEA }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Ibrahim_of_Johor_hog_sco"
+			}
+			traits = {
+				head_of_government
+				social_conservative
+				hog_popular_nobleman
+			}
+		}
+
+		GEA_Hellmuth_Von_Mucke_hog_ade = {
+			name = GEA_Hellmuth_von_Mucke
+			allowed = { original_tag = GEA }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Hellmuth_Von_Mucke_hog_ade"
+			}
+			traits = {
+				head_of_government
+				sc_east_asia_navy
+				War_Hero
+			}
+		}
+
+		GEA_Felix_von_Luckner_hog_pau = {
+			allowed = { original_tag = GEA }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Felix_von_Luckner_hog_pau"
+			}
+			traits = {
+				head_of_government
+				paternal_autocrat
+				hog_old_admiral
+			}
+		}
+
+		GEA_Max_hog_pau = {
+			allowed = { original_tag = GEA }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Max_hog_pau"
+			}
+			traits = {
+				head_of_government
+				paternal_autocrat
+				hog_gentleman_politician
+				dog_good_boy
+			}
+		}
+
+		GEA_Paul_Koenig_hog_pau = {
+			allowed = { original_tag = GEA }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Paul_Koenig_hog_pau"
+			}
+			traits = {
+				head_of_government
+				paternal_autocrat
+				hog_old_admiral
+			}
+		}
+
+		GEA_Julius_Dorpmueller_hog_npo = {
+			allowed = { original_tag = GEA }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Julius_Dorpmueller_hog_npo"
+			}
+			traits = {
+				head_of_government
+				national_populist
+				hog_corporate_suit
+			}
+		}
+
+	}
+
+	person_of_influence = { ### Person of Influence ###
+		## Foreign Minister ##
+		GEA_Paul_Schneider_for_sde = {
+			allowed = { original_tag = GEA }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Paul_Schneider_for_sde"
+			}
+			traits = {
+				foreign_minister
+				social_democrat
+				for_ideological_crusader
+			}
+		}
+
+		GEA_Oskar_Trautmann_for_mli = {
+			allowed = { original_tag = GEA }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Oskar_Trautmann_for_mli"
+			}
+			traits = {
+				foreign_minister
+				ger_faction_nlp
+				for_the_cloak_n_dagger_schemer
+			}
+		}
+		
+		GEA_Rudolph_Firle_for_pau = {
+			allowed = { original_tag = GEA }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Rudolph_Firle_for_pau"
+			}
+			traits = {
+				foreign_minister
+				authoritarian_democrat
+				for_general_staffer
+			}
+		}
+
+		GEA_Felix_von_Luckner_for_pau = {
+			allowed = { original_tag = GEA }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Felix_von_Luckner_for_pau"
+			}
+			traits = {
+				foreign_minister
+				paternal_autocrat
+				for_ideological_crusader
+			}
+		}
+
+		GEA_Nikolaus_Johnsen_for_pau = {
+			allowed = { original_tag = GEA }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Nikolaus_Johnsen_for_pau"
+			}
+			traits = {
+				foreign_minister
+				paternal_autocrat
+				for_the_cloak_n_dagger_schemer
+			}
+		}
+
+		## Economy Minister ##
+		GEA_Ernst_Boerschmann_eco_sli = {
+			allowed = { original_tag = GEA }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Ernst_Boerschmann_eco_sli"
+			}
+			traits = {
+				economy_minister
+				social_liberal
+				eco_construction_magnate
+			}
+		}
+
+		GEA_Ernst_Siemmsen_eco_sli = {
+			allowed = { original_tag = GEA }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Ernst_Siemmsen_eco_sli"
+			}
+			traits = {
+				economy_minister
+				social_liberal
+				eco_laissez_faire_capitalist
+			}
+		}
+
+		GEA_Karl_Strasser_eco_sli = {
+			allowed = { original_tag = GEA }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Karl_Strasser_eco_sli"
+			}
+			traits = {
+				economy_minister
+				social_liberal
+				eco_construction_magnate
+			}
+		}
+
+		GEA_Hans_Driesch_eco_mli = {
+			allowed = { original_tag = GEA }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Hans_Driesch_eco_mli"
+			}
+			traits = {
+				economy_minister
+				market_liberal
+				eco_theoretical_scientist
+			}
+		}
+
+		GEA_Hans_Walz_eco_sco = {
+			allowed = { original_tag = GEA }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Hans_Walz_eco_sco"
+			}
+			traits = {
+				economy_minister
+				social_conservative
+				eco_tank_proponent
+			}
+		}
+
+		GEA_John_Rabe_eco_sco = {
+			allowed = { original_tag = GEA }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_John_Rabe_eco_sco"
+			}
+			traits = {
+				economy_minister
+				social_conservative
+				eco_laissez_faire_capitalist
+			}
+		}
+
+		GEA_Julius_Fromm_eco_sco = {
+			allowed = { original_tag = GEA }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Julius_Fromm_eco_sco"
+			}
+			traits = {
+				economy_minister
+				social_conservative
+				eco_industrial_chemist
+			}
+		}
+
+		GEA_Kurt_Scheider_eco_sco = {
+			allowed = { original_tag = GEA }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Kurt_Scheider_eco_sco"
+			}
+			traits = {
+				economy_minister
+				social_conservative
+				eco_industrialiser
+			}
+		}
+
+		GEA_Rudolf_Kaulla_eco_sco = {
+			allowed = { original_tag = GEA }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Rudolf_Kaulla_eco_sco"
+			}
+			traits = {
+				economy_minister
+				sc_independent
+				eco_bank_president
+			}
+		}
+		
+		GEA_Paul_Koenig_eco_pau = {
+			allowed = { original_tag = GEA }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Paul_Koenig_eco_pau"
+			}
+			traits = {
+				economy_minister
+				authoritarian_democrat
+				eco_u_boat_proponent
+			}
+		}
+
+		GEA_Rudolph_Firle_eco_pau = {
+			allowed = { original_tag = GEA }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Rudolph_Firle_eco_pau"
+			}
+			traits = {
+				economy_minister
+				authoritarian_democrat
+				eco_keynesian_economy
+			}
+		}
+
+		GEA_Adolf_Ahrens_eco_pau = {
+			allowed = { original_tag = GEA }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Adolf_Ahrens_eco_pau"
+			}
+			traits = {
+				economy_minister
+				paternal_autocrat
+				eco_u_boat_proponent
+			}
+		}
+
+		GEA_Arno_Spindler_eco_pau = {
+			allowed = { original_tag = GEA }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Arno_Spindler_eco_pau"
+			}
+			traits = {
+				economy_minister
+				paternal_autocrat
+				eco_u_boat_proponent
+			}
+		}
+		
+		GEA_Gunther_Plueschow_eco_pau = {
+			allowed = { original_tag = GEA }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Gunther_Plueschow_eco_pau"
+			}
+			traits = {
+				economy_minister
+				paternal_autocrat
+				eco_strategic_destruction_proponent
+			}
+		}
+
+		GEA_Hans_Klein_eco_pau = {
+			allowed = { original_tag = GEA }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Hans_Klein_eco_pau"
+			}
+			traits = {
+				economy_minister
+				paternal_autocrat
+				eco_infantry_proponent
+			}
+		}
+
+		GEA_Karl_Lindemann_eco_pau = {
+			allowed = { original_tag = GEA }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Karl_Lindemann_eco_pau"
+			}
+			traits = {
+				economy_minister
+				paternal_autocrat
+				eco_bank_president
+			}
+		}
+
+		GEA_Moritz_eco_pau = {
+			allowed = { original_tag = GEA }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Moritz_eco_pau"
+			}
+			traits = {
+				economy_minister
+				paternal_autocrat
+				eco_shipping_baron
+				dog_good_boy
+			}
+		}
+
+		GEA_Paul_von_Mendelssohn_Bartholdy_eco_npo = {
+			allowed = { original_tag = GEA }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Paul_von_Mendelssohn_Bartholdy_eco_npo"
+			}
+			traits = {
+				economy_minister
+				national_populist
+				eco_railway_magnate
+			}
+		}
+
+
+		## Security Minister ##
+		GEA_Dietrich_Bonhoeffer_sec_sde = {
+			allowed = { original_tag = GEA }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Dietrich_Bonhoeffer_sec_sde"
+			}
+			traits = {
+				security_minister
+				social_democrat
+				sec_man_of_the_people
+			}
+		}
+
+		GEA_Wilhelm_Schrameier_sec_sli = {
+			allowed = { original_tag = GEA }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Wilhelm_Schrameier_sec_sli"
+			}
+			traits = {
+				security_minister
+				social_liberal
+				sec_man_of_the_people
+			}
+		}
+		
+		GEA_Josias_zu_Waldeck_und_Pyrmont_sec_pau = {
+			allowed = { original_tag = GEA }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Josias_zu_Waldeck_und_Pyrmont_sec_pau"
+			}
+			traits = {
+				security_minister
+				Josias_group
+				sec_prince_of_terror
+			}
+		}
+
+		GEA_Charles_August_Polack_sec_pau = {
+			allowed = { original_tag = GEA }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Charles_August_Polack_sec_pau"
+			}
+			traits = {
+				security_minister
+				paternal_autocrat
+				sec_efficient_sociopath
+			}
+		}
+
+		GEA_Felix_von_Luckner_sec_pau = {
+			allowed = { original_tag = GEA }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Felix_von_Luckner_sec_pau"
+			}
+			traits = {
+				security_minister
+				paternal_autocrat
+				sec_man_of_the_people
+			}
+		}
+
+	}
+
+	chief_of_staff = { ### Chief of Staff ###
+		GEA_Dietrich_Witzel_cos_pau = {
+			allowed = { original_tag = GEA }
+			available = { }
+			visible = {
+				NOT = { has_country_flag = Dietrich_Witzel_dead }
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Dietrich_Witzel_cos_pau"
+			}
+			traits = {
+				chief_of_staff
+				cos_school_of_psychology
+			}
+			cancel_if_invalid = yes
+		}
+
+		GEA_Friedrich_von_Kessinger_cos_pau = {
+			allowed = { original_tag = GEA }
+			available = { }
+			visible = {
+				NOT = { has_country_flag = Friedrich_von_Kessinger_dead }
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Friedrich_von_Kessinger_cos_pau"
+			}
+			traits = {
+				chief_of_staff
+				cos_school_of_defence
+			}
+			cancel_if_invalid = yes
+		}
+
+		GEA_Josias_zu_Waldeck_und_Pyrmont_cos_pau = {
+			allowed = { original_tag = GEA }
+			available = { }
+			visible = {
+				NOT = { has_country_flag = Josias_zu_Waldeck_und_Pyrmont_dead }
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Josias_zu_Waldeck_und_Pyrmont_cos_pau"
+			}
+			traits = {
+				chief_of_staff
+				cos_school_of_psychology
+			}
+			cancel_if_invalid = yes
+		}
+
+		GEA_Paul_Kempe_cos_pau = {
+			allowed = { original_tag = GEA }
+			available = { }
+			visible = {
+				NOT = { has_country_flag = Paul_Kempe_dead }
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Paul_Kempe_cos_pau"
+			}
+			traits = {
+				chief_of_staff
+				cos_school_of_manoeuvre
+			}
+			cancel_if_invalid = yes
+		}
+
+		GEA_Paul_Ramin_cos_pau = {
+			allowed = { original_tag = GEA }
+			available = { }
+			visible = {
+				NOT = { has_country_flag = Paul_Ramin_dead }
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Paul_Ramin_cos_pau"
+			}
+			traits = {
+				chief_of_staff
+				cos_school_of_mass_combat
+			}
+			cancel_if_invalid = yes
+		}
+
+		GEA_Waldemar_Tschentscher_cos_pau = {
+			allowed = { original_tag = GEA }
+			available = { }
+			visible = {
+				NOT = { has_country_flag = Waldemar_Tschentscher_dead }
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Waldemar_Tschentscher_cos_pau"
+			}
+			traits = {
+				chief_of_staff
+				cos_school_of_commando_operations
+			}
+			cancel_if_invalid = yes
+		}
+
+		GEA_Walther_Graenzer_cos_pau = {
+			allowed = { original_tag = GEA }
+			available = { }
+			visible = {
+				NOT = { has_country_flag = Walther_Graenzer_dead }
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Walther_Graenzer_cos_pau"
+			}
+			traits = {
+				chief_of_staff
+				cos_school_of_mass_combat
+			}
+			cancel_if_invalid = yes
+		}
+
+	}
+
+	chief_of_army = { ### Chief of Army ###
+		GEA_Alexander_von_Falkenhausen_carm_ade = {
+			allowed = { original_tag = GEA }
+			available = { }
+			visible = {
+				NOT = { has_country_flag = Alexander_von_Falkenhausen_dead }
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Alexander_von_Falkenhausen_carm_ade"
+			}
+			traits = {
+				chief_of_army
+				carm_decisive_battle_doctrine
+			}
+			cancel_if_invalid = yes
+		}
+
+		GEA_Friedrich_von_Kessinger_carm_pau = {
+			allowed = { original_tag = GEA }
+			available = { }
+			visible = {
+				NOT = { has_country_flag = Friedrich_von_Kessinger_dead }
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Friedrich_von_Kessinger_carm_pau"
+			}
+			traits = {
+				chief_of_army
+				carm_guns_and_butter_doctrine
+			}
+			cancel_if_invalid = yes
+		}
+
+		GEA_Josias_zu_Waldeck_und_Pyrmont_carm_pau = {
+			allowed = { original_tag = GEA }
+			available = { }
+			visible = {
+				NOT = { has_country_flag = Josias_zu_Waldeck_und_Pyrmont_dead }
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Josias_zu_Waldeck_und_Pyrmont_carm_pau"
+			}
+			traits = {
+				chief_of_army
+				carm_commando_doctrine
+			}
+			cancel_if_invalid = yes
+		}
+
+		GEA_Waldemar_Tschentscher_carm_pau = {
+			allowed = { original_tag = GEA }
+			available = { }
+			visible = {
+				NOT = { has_country_flag = Waldemar_Tschentscher_dead }
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Waldemar_Tschentscher_carm_pau"
+			}
+			traits = {
+				chief_of_army
+				carm_decisive_battle_doctrine
+			}
+			cancel_if_invalid = yes
+		}
+
+	}
+
+	chief_of_navy = { ### Chief of Navy ###
+		GEA_Arno_Spindler_cnav_pau = {
+			allowed = { original_tag = GEA }
+			available = { }
+			visible = {
+				NOT = { has_country_flag = Arno_Spindler_dead }
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Arno_Spindler_cnav_pau"
+			}
+			traits = {
+				chief_of_navy
+				cnav_indirect_approach_doctrine
+			}
+			cancel_if_invalid = yes
+		}
+
+		GEA_Felix_von_Luckner_cnav_pau = {
+			allowed = { original_tag = GEA }
+			available = { }
+			visible = {
+				NOT = { has_country_flag = Felix_von_Luckner_dead }
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Felix_von_Luckner_cnav_pau"
+			}
+			traits = {
+				chief_of_navy
+				cnav_open_seas_doctrine
+			}
+			cancel_if_invalid = yes
+		}
+
+		GEA_Gunther_Plueschow_cnav_pau = {
+			allowed = { original_tag = GEA }
+			available = { }
+			visible = {
+				NOT = { has_country_flag = Gunther_Plueschow_dead }
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Gunther_Plueschow_cnav_pau"
+			}
+			traits = {
+				chief_of_navy
+				cnav_power_projection_doctrine
+			}
+			cancel_if_invalid = yes
+		}
+
+		GEA_Paul_Koenig_cnav_pau = {
+			allowed = { original_tag = GEA }
+			available = { }
+			visible = {
+				NOT = { has_country_flag = Paul_Koenig_dead }
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Paul_Koenig_cnav_pau"
+			}
+			traits = {
+				chief_of_navy
+				cnav_indirect_approach_doctrine
+			}
+			cancel_if_invalid = yes
+		}
+
+		GEA_Rudolph_Firle_cnav_pau = {
+			allowed = { original_tag = GEA }
+			available = { }
+			visible = {
+				NOT = { has_country_flag = Rudolph_Firle_dead }
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Rudolph_Firle_cnav_pau"
+			}
+			traits = {
+				chief_of_navy
+				cnav_open_seas_doctrine
+			}
+			cancel_if_invalid = yes
+		}
+
+		GEA_Thilo_von_Seebach_cnav_pau = {
+			allowed = { original_tag = GEA }
+			available = { }
+			visible = {
+				NOT = { has_country_flag = Thilo_von_Seebach_dead }
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Thilo_von_Seebach_cnav_pau"
+			}
+			traits = {
+				chief_of_navy
+				cnav_decisive_battle_doctrine
+			}
+			cancel_if_invalid = yes
+		}
+
+		GEA_Wilhelm_Henningsen_cnav_pau = {
+			allowed = { original_tag = GEA }
+			available = { }
+			visible = {
+				NOT = { has_country_flag = Wilhelm_Henningsen_dead }
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Wilhelm_Henningsen_cnav_pau"
+			}
+			traits = {
+				chief_of_navy
+				cnav_base_control_doctrine
+			}
+			cancel_if_invalid = yes
+		}
+
+	}
+
+	chief_of_air_force = { ### Chief of Air Force ###
+		GEA_Gunther_Plueschow_cair_pau = {
+			allowed = { original_tag = GEA }
+			available = { }
+			visible = {
+				NOT = { has_country_flag = Gunther_Plueschow_dead }
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Gunther_Plueschow_cair_pau"
+			}
+			traits = {
+				chief_of_air_force
+				cair_naval_aviation_doctrine
+			}
+			cancel_if_invalid = yes
+		}
+
+		GEA_Wulf_Diether_Graf_zu_Castell_Ruedenhausen_cair = {
+			allowed = { original_tag = GEA }
+			available = { }
+			visible = {
+				NOT = { has_country_flag = Wulf_Diether_Graf_zu_Castell_Ruedenhausen_dead }
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Wulf_Diether_Graf_zu_Castell_Ruedenhausen_cair"
+			}
+			traits = {
+				chief_of_air_force
+				cair_carpet_bombing_doctrine
+			}
+			cancel_if_invalid = yes
+		}
+
+	}
+}

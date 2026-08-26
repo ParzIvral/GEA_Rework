@@ -217,6 +217,13 @@ focus_tree = {
 		relative_position_id = GEA_The_troublesome_Indochina_region
 		ai_will_do = {
 			factor = 100
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = GEA_future
+					option = GEA_FUTURE_REVOLT_NO
+				}
+			}
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Our_white_glave"
@@ -345,6 +352,13 @@ focus_tree = {
 		relative_position_id = GEA_The_troublesome_Indochina_region
 		ai_will_do = {
 			factor = 100
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = GEA_future
+					option = GEA_FUTURE_REVOLT_NO
+				}
+			}
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Revive_The_Luluai_Principle"
@@ -389,17 +403,20 @@ focus_tree = {
 		relative_position_id = GEA_Revive_The_Luluai_Principle
 		ai_will_do = {
 			factor = 100
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = GEA_future
+					option = GEA_FUTURE_REVOLT_NO
+				}
+			}
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_German-style_organization_local_employees"
 			custom_effect_tooltip = GEA_German-style_organization_local_employees_tt
 			if = {
 				limit = {
-					check_variable = {
-						var = GEA_Bureau_Of_Native_Affairs_Number
-						value = 4
-						compare = equal
-					}	
+					check_variable = { GEA_Bureau_Of_Native_Affairs_Number = 4 }
 				}
 				add_popularity = {
 					ideology = social_conservative
@@ -425,11 +442,7 @@ focus_tree = {
 			}
 			else_if = {
 				limit = { 
-					check_variable = {
-						var = GEA_Bureau_Of_Native_Affairs_Number
-						value = 3
-						compare = equal
-					}	
+					check_variable = { GEA_Bureau_Of_Native_Affairs_Number = 3 }
 				}
 				add_popularity = {
 					ideology = social_conservative
@@ -449,11 +462,7 @@ focus_tree = {
 			}
 			else_if = {
 				limit = { 
-					check_variable = {
-						var = GEA_Bureau_Of_Native_Affairs_Number
-						value = 2
-						compare = equal
-					}	
+					check_variable = { GEA_Bureau_Of_Native_Affairs_Number = 2 }
 				}
 				add_political_power = 30
 				add_stability = 0.03
@@ -640,6 +649,13 @@ focus_tree = {
 		relative_position_id = GEA_Revive_The_Luluai_Principle
 		ai_will_do = {
 			factor = 100
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = GEA_future
+					option = GEA_FUTURE_REVOLT_NO
+				}
+			}
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_Rule_of_Humility"
@@ -681,6 +697,13 @@ focus_tree = {
 		relative_position_id = GEA_The_Rule_of_Humility
 		ai_will_do = {
 			factor = 100
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = GEA_future
+					option = GEA_FUTURE_REVOLT_NO
+				}
+			}
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Amnesty_For_The_Misled"
@@ -906,6 +929,12 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_Sultans_Seal"
+			add_political_power = 50
+			unlock_decision_tooltip = GEA_hahl_convene_malay_sultans
+			unlock_decision_tooltip = GEA_hahl_restore_resident_advisers
+			unlock_decision_tooltip = GEA_hahl_tin_royalty_bargain
+			unlock_decision_tooltip = GEA_hahl_brunei_crown_subsidy
+			unlock_decision_tooltip = GEA_hahl_north_borneo_chartered_privileges
 		}
 	}
 
@@ -1155,7 +1184,7 @@ focus_tree = {
 		prerequisite = {
 			focus = GEA_The_Eastern_Paradise_of_the_Immigrants 
 		}
-		relative_position_id = GEA_The_Eastern_Paradise_of_the_Immigrants 
+		relative_position_id = GEA_The_Eastern_Paradise_of_the_Immigrants
 		ai_will_do = {
 			factor = 100
 		}
@@ -1184,6 +1213,13 @@ focus_tree = {
 		relative_position_id = GEA_The_Eastern_Paradise_of_the_Immigrants
 		ai_will_do = {
 			factor = 100
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = GEA_future
+					option = GEA_FUTURE_REVOLT_NO
+				}
+			}
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Connecting_culture_with_nationality"
@@ -1203,17 +1239,17 @@ focus_tree = {
 					NOT = {
 						has_completed_focus = GEA_Reconcile_at_last
 					}
-					modify_country_flag = {
-						flag = GEA_Indochinese_Anger
-						value = -1
-					}
-					custom_effect_tooltip = Gea_Indochina_Anger_Down
-					modify_country_flag = {
-						flag = GEA_Indochinese_Stability
-						value = 1
-					}
-					custom_effect_tooltip = GEA_Indochina_Stability_Up
 				}
+				modify_country_flag = {
+					flag = GEA_Indochinese_Anger
+					value = -1
+				}
+				custom_effect_tooltip = Gea_Indochina_Anger_Down
+				modify_country_flag = {
+					flag = GEA_Indochinese_Stability
+					value = 1
+				}
+				custom_effect_tooltip = GEA_Indochina_Stability_Up
 			}
 		}
 	}
@@ -3407,7 +3443,6 @@ focus_tree = {
 		
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_federalization_reform"
-			unlock_decision_tooltip = GEA_tou_zi_di_fang
 			add_to_variable = { GEA_Progress_of_reform = 0.05 } 
 			custom_effect_tooltip = GEA_federalization_reform_tooltip 
 			add_dynamic_modifier = { modifier = GEA_mucke_reform }
@@ -3433,7 +3468,6 @@ focus_tree = {
 		
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_german_states_model"
-			unlock_decision_tooltip = GEA_tui_xing_de_yi_zhi_wen_hua
 			add_popularity = {
 				ideology = social_conservative
 				popularity = 0.05
@@ -3469,7 +3503,6 @@ focus_tree = {
 		
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_follow_reality"
-			unlock_decision_tooltip = GEA_long_luo_dang_di_hao_qiang
 			add_to_variable = { GEA_mucke_reform_political_power_factor = 0.1 }
 			add_to_variable = { GEA_mucke_reform_stability_weekly = 0.002 }  
 			custom_effect_tooltip = GEA_follow_reality_tt
@@ -3496,7 +3529,6 @@ focus_tree = {
 		
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_tribes_become_states"
-			unlock_decision_tooltip = GEA_Integrated_tribe
 			add_to_variable = {
 				GEA_Progress_of_reform = 0.05
 			}
@@ -3524,7 +3556,6 @@ focus_tree = {
 		
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_new_parliament"
-			unlock_decision_tooltip = GEA_shui_shou_ren_wu
 			add_to_variable = { GEA_mucke_reform_political_power_gain = 0.4 } 
 			custom_effect_tooltip = GEA_new_parliament_tt
 			add_to_variable = {
@@ -3553,7 +3584,6 @@ focus_tree = {
 		
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_centralization_reform"
-			unlock_decision_tooltip = GEA_tui_jin_jing_ying
 			add_to_variable = { GEA_Progress_of_reform = 0.05 } 
 			custom_effect_tooltip = GEA_federalization_reform_tooltip 
 			add_dynamic_modifier = { modifier = GEA_mucke_reform }
@@ -3579,7 +3609,6 @@ focus_tree = {
 		
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_east_germany"
-			unlock_decision_tooltip = GEA_de_shi_shou_xun
 			add_to_variable = { GEA_mucke_reform_army_core_attack_factor = 0.1 } 
 			add_to_variable = { GEA_mucke_reform_army_core_defence_factor = 0.1 } 
 			custom_effect_tooltip = GEA_east_germany_tt
@@ -3606,7 +3635,6 @@ focus_tree = {
 		
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_new_administrative_division"
-			unlock_decision_tooltip = GEA_shui_shou_ren_wu
 			add_to_variable = { GEA_mucke_reform_political_power_factor = 0.05 }
 			add_to_variable = { GEA_mucke_reform_stability_weekly = 0.005 }
 			add_to_variable = { GEA_mucke_reform_war_support_weekly = 0.005 }
@@ -3634,7 +3662,6 @@ focus_tree = {
 		
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_strengthen_ties"
-			unlock_decision_tooltip = GEA_jian_she_ji_chu_she_shi
 			random_owned_state = {
 				add_building_construction = {
 					type = infrastructure
@@ -3667,7 +3694,6 @@ focus_tree = {
 		
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_no_tribe"
-			unlock_decision_tooltip = GEA_da_sui_fan_bang
 			add_to_variable = { GEA_mucke_reform_local_manpower  = 0.1 } 
 			add_to_variable = { GEA_mucke_reform_army_conscription_factor = 0.1 } 
 			custom_effect_tooltip = GEA_no_tribe_tt
@@ -3694,7 +3720,6 @@ focus_tree = {
 		
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_the_local_garrison"
-			unlock_decision_tooltip = GEA_Local_garrison_troops
 			add_to_variable = { GEA_mucke_reform_army_conscription = 0.01 } 
 			add_to_variable = { GEA_mucke_reform_army_conscription_factor = 0.1 } 
 			custom_effect_tooltip = GEA_the_local_garrison_tt
@@ -3722,8 +3747,6 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_strengthen_local"
-			unlock_decision_tooltip = GEA_fu_yu_di_fang_quan_li
-			unlock_decision_tooltip = GEA_she_li_di_dang_fa_gui
 			add_to_variable = { GEA_mucke_reform_local_resources_factor = 0.1 }
 			add_to_variable = { GEA_mucke_reform_required_garrison_factor  = -0.15 }  
 			custom_effect_tooltip = GEA_strengthen_local_tt
@@ -3750,7 +3773,6 @@ focus_tree = {
 		
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_start_of_urbanization"
-			unlock_decision_tooltip = GEA_Basic_industry_construction
 			add_to_variable = { GEA_mucke_reform_local_building_slots_factor = 0.1 } 
 			add_to_variable = { GEA_mucke_reform_production_speed_buildings_factor = 0.05 } 
 			custom_effect_tooltip = GEA_start_of_urbanization_tt
@@ -3778,7 +3800,6 @@ focus_tree = {
 		}		
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_strengthen_government"
-			unlock_decision_tooltip = GEA_she_li_di_dang_fa_gui
 			add_to_variable = { GEA_mucke_reform_political_power_factor = 0.05 } 
 			add_to_variable = { GEA_mucke_reform_party_popularity_stability_factor = 0.15 } 
 			custom_effect_tooltip = GEA_strengthen_government_tt

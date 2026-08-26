@@ -1,5 +1,15 @@
 leader_traits = {
-
+	sc_east_asia_navy = {}						#海军
+	sd_independent = {}							#社自 独立人士
+	sl_independent = {}							#社自 独立人士
+	ml_independent = {}							#市自 独立人士
+	sc_independent = {}							#保民 独立人士
+	Josias_group = {}							#约西亚斯集团
+	War_Hero = {								#战争英雄
+		war_support_factor = 0.05
+		experience_gain_navy_factor = 0.05
+		production_speed_dockyard_factor = 0.02
+	}
 	GEA_not_governor_but_king = {
 		political_power_factor = 0.15
 		stability_factor = 0.1
