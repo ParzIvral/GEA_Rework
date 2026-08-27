@@ -152,12 +152,12 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_STABILITY }
 	}
 
-
+#阿尔伯特·哈尔
 	focus = {
 		id = GEA_Governor_Hahl #阿尔伯特·哈尔走马上任
 		icon = GFX_GEA_Governor_Hahl
 		cost = 1	
-		x = -15
+		x = -20
 		y = 1
 		available = {		
 			has_country_flag = GEA_Governor_Hahl_flag
@@ -1386,6 +1386,649 @@ focus_tree = {
 				remove_idea = GEA_colonial_question_hahl_5
 				add_idea = GEA_colonial_question_hahl_6
 			}
+		}
+	}
+#瓦尔德克和皮尔蒙特的约西亚斯亲王
+	focus = { #亲王驾临
+		id = GEA_Governor_Josias 
+		icon = GFX_GEA_Governor_Josias
+		cost = 1	
+		x = 0
+		y = 1
+		available = {		
+			has_country_flag = GEA_Governor_Josias_flag
+		}
+        prerequisite = {
+			focus = GEA_Our_position
+		}
+		bypass = {
+			has_country_flag = GEA_Governor_Josias_flag
+		}
+		relative_position_id = GEA_Our_position
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Governor_Josias"
+		}
+	}
+
+	focus = { #约西亚斯的王廷
+		id = GEA_Josias_Group 
+		icon = GFX_GEA_Josias_Group
+		cost = 1	
+		x = 0
+		y = 1
+		available = {		
+			
+		}
+        prerequisite = {
+			focus = GEA_Governor_Josias
+		}
+		relative_position_id = GEA_Governor_Josias
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Josias_Group"
+		}
+	}
+
+	focus = { #双重姻亲的亲切纽带
+		id = GEA_The_close_bond_of_dual_in-laws 
+		icon = GFX_GEA_The_close_bond_of_dual_in-laws
+		cost = 1	
+		x = -2
+		y = 1
+		available = {		
+			
+		}
+        prerequisite = {
+			focus = GEA_Josias_Group
+		}
+		relative_position_id = GEA_Josias_Group
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_close_bond_of_dual_in-laws"
+		}
+	}
+
+	focus = { #表兄情谊
+		id = GEA_Brotherly_affection
+		icon = GFX_GEA_Brotherly_affection
+		cost = 1	
+		x = -2
+		y = 1
+		available = {		
+			
+		}
+        prerequisite = {
+			focus = GEA_Josias_Group
+		}
+		relative_position_id = GEA_Josias_Group
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Brotherly_affection"
+		}
+	}
+
+	focus = { #表兄情谊
+		id = GEA_Brotherly_affection
+		icon = GFX_GEA_Brotherly_affection
+		cost = 1	
+		x = -1
+		y = 2
+		available = {		
+			
+		}
+        prerequisite = {
+			focus = GEA_Josias_Group
+		}
+		relative_position_id = GEA_Josias_Group
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Brotherly_affection"
+		}
+	}
+
+	focus = { #主权派的智者
+		id = GEA_The_wise_men_of_the_sovereignty_faction
+		icon = GFX_GEA_The_wise_men_of_the_sovereignty_faction
+		cost = 1	
+		x = 0
+		y = 1
+		available = {		
+			
+		}
+        prerequisite = {
+			focus = GEA_Josias_Group
+		}
+		relative_position_id = GEA_Josias_Group
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_wise_men_of_the_sovereignty_faction"
+		}
+	}
+
+	focus = { #与实业家联盟的友谊
+		id = GEA_The_friendship_with_the_publicity_magnate
+		icon = GFX_GEA_The_friendship_with_the_publicity_magnate
+		cost = 1	
+		x = 1
+		y = 2
+		available = {		
+			
+		}
+        prerequisite = {
+			focus = GEA_Josias_Group
+		}
+		relative_position_id = GEA_Josias_Group
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_friendship_with_the_publicity_magnate"
+		}
+	}
+
+	focus = { #将军之秘党
+		id = GEA_The_Secret_Party_of_the_General
+		icon = GFX_GEA_The_Secret_Party_of_the_General
+		cost = 1	
+		x = 2
+		y = 1
+		available = {		
+			
+		}
+        prerequisite = {
+			focus = GEA_Josias_Group
+		}
+		relative_position_id = GEA_Josias_Group
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_Secret_Party_of_the_General"
+		}
+	}
+
+	focus = { #为卡特尔解放市场
+		id = GEA_To_liberate_the_market_for_cartels
+		icon = GFX_GEA_To_liberate_the_market_for_cartels
+		cost = 1	
+		x = -1
+		y = 1
+		available = {		
+			
+		}
+        prerequisite = {
+			focus = GEA_The_Secret_Party_of_the_General
+			focus = GEA_The_friendship_with_the_publicity_magnate
+			focus = GEA_Brotherly_affection
+			focus = GEA_The_close_bond_of_dual_in-laws 
+			focus = GEA_The_wise_men_of_the_sovereignty_faction
+		}
+		relative_position_id = GEA_The_friendship_with_the_publicity_magnate
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_To_liberate_the_market_for_cartels"
+		}
+	}
+
+	focus = { #阴影下的监事会
+		id = GEA_AOG_under_the_Shadow_of_the_Prince
+		icon = GFX_GEA_AOG_under_the_Shadow_of_the_Prince
+		cost = 1	
+		x = 0   
+		y = 2
+		available = {		
+			
+		}
+        prerequisite = {
+			focus = GEA_The_Secret_Party_of_the_General
+			focus = GEA_The_friendship_with_the_publicity_magnate
+			focus = GEA_Brotherly_affection
+			focus = GEA_The_close_bond_of_dual_in-laws 
+			focus = GEA_The_wise_men_of_the_sovereignty_faction
+		}
+		relative_position_id = GEA_The_friendship_with_the_publicity_magnate
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_AOG_under_the_Shadow_of_the_Prince"
+		}
+	}
+	focus = { #执掌大洋通路
+		id = GEA_Take_charge_of_the_ocean_passage
+		icon = GFX_GEA_Take_charge_of_the_ocean_passage
+		cost = 1	
+		x = -2
+		y = 2
+		available = {		
+			
+		}
+        prerequisite = {
+			focus = GEA_The_Secret_Party_of_the_General
+			focus = GEA_The_friendship_with_the_publicity_magnate
+			focus = GEA_Brotherly_affection
+			focus = GEA_The_close_bond_of_dual_in-laws 
+			focus = GEA_The_wise_men_of_the_sovereignty_faction
+		}
+		relative_position_id = GEA_The_friendship_with_the_publicity_magnate
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Take_charge_of_the_ocean_passage"
+		}
+	}
+
+	focus = { #亲王权威至高无上
+		id = GEA_Supreme_authority_of_the_prince
+		icon = GFX_GEA_Supreme_authority_of_the_prince
+		cost = 1	
+		x = 0
+		y = 2
+		available = {		
+			
+		}
+        prerequisite = {
+			focus = GEA_AOG_under_the_Shadow_of_the_Prince
+			focus = GEA_Take_charge_of_the_ocean_passage
+			focus = GEA_To_liberate_the_market_for_cartels
+		}
+		relative_position_id = GEA_To_liberate_the_market_for_cartels
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Supreme_authority_of_the_prince"
+		}
+	}
+
+	focus = { #秩序领地
+		id = GEA_Orderly_territory
+		icon = GFX_GEA_Orderly_territory
+		cost = 1	
+		x = -5
+		y = 1
+		available = {		
+			
+		}
+        prerequisite = {
+			focus = GEA_Governor_Josias
+		}
+		relative_position_id = GEA_Governor_Josias
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Orderly_territory"
+		}
+	}
+
+	focus = { #忠君...但未必爱国
+		id = GEA_Serve_monarch_but_not_necessarily_be_patriotic
+		icon = GFX_GEA_Serve_monarch_but_not_necessarily_be_patriotic
+		cost = 1	
+		x = -1
+		y = 1
+		available = {		
+			
+		}
+        prerequisite = {
+			focus = GEA_Orderly_territory
+		}
+		relative_position_id = GEA_Orderly_territory
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Serve_monarch_but_not_necessarily_be_patriotic"
+		}
+	}
+
+	focus = { #冷酷之治
+		id = GEA_Cold_Rule
+		icon = GFX_GEA_Cold_Rule
+		cost = 1	
+		x = 0
+		y = 2
+		available = {		
+			
+		}
+        prerequisite = {
+			focus = GEA_Serve_monarch_but_not_necessarily_be_patriotic
+		}
+		relative_position_id = GEA_Serve_monarch_but_not_necessarily_be_patriotic
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Cold_Rule"
+		}
+	}
+
+	focus = { #驯服总参谋部
+		id = GEA_Domesticating_the_General_Staff_Department
+		icon = GFX_GEA_Domesticating_the_General_Staff_Department
+		cost = 1	
+		x = 1
+		y = 1
+		available = {		
+			
+		}
+        prerequisite = {
+			focus = GEA_Orderly_territory
+		}
+		relative_position_id = GEA_Orderly_territory
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Domesticating_the_General_Staff_Department"
+		}
+	}
+
+	focus = { #威廉？我们只认约西亚斯！
+		id = GEA_Only_Josias
+		icon = GFX_GEA_Only_Josias
+		cost = 1	
+		x = -1
+		y = 1
+		available = {		
+			
+		}
+        prerequisite = {
+			focus = GEA_Domesticating_the_General_Staff_Department
+		}
+		relative_position_id = GEA_Domesticating_the_General_Staff_Department
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Only_Josias"
+		}
+	}
+
+	focus = { #善用外部威胁论
+		id = GEA_Make_good_use_of_the_theory_of_external_threats
+		icon = GFX_GEA_Make_good_use_of_the_theory_of_external_threats
+		cost = 1	
+		x = 1
+		y = 2
+		available = {		
+			
+		}
+        prerequisite = {
+			focus = GEA_Domesticating_the_General_Staff_Department
+		}
+		relative_position_id = GEA_Domesticating_the_General_Staff_Department
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Make_good_use_of_the_theory_of_external_threats"
+		}
+	}
+
+	focus = { #风雨不透
+		id = GEA_Impermeable
+		icon = GFX_GEA_Impermeable
+		cost = 1	
+		x = 1
+		y = 2
+		available = {		
+			
+		}
+        prerequisite = {
+			focus = GEA_Cold_Rule
+		}
+		prerequisite = {
+			focus = GEA_Only_Josias
+		}
+		prerequisite = {
+			focus = GEA_Make_good_use_of_the_theory_of_external_threats
+		}
+		relative_position_id = GEA_Only_Josias
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Impermeable"
+		}
+	}
+
+	focus = { #驯服东方
+		id = GEA_Domesticating_the_East
+		icon = GFX_GEA_Domesticating_the_East
+		cost = 1	
+		x = 0
+		y = 1
+		available = {		
+			
+		}
+        prerequisite = {
+			focus = GEA_Impermeable
+		}
+		relative_position_id = GEA_Impermeable
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Domesticating_the_East"
+		}
+	}
+
+	focus = { #推动殖民法团制度
+		id = GEA_Promote_the_colonial_corporation_system
+		icon = GFX_GEA_Promote_the_colonial_corporation_system
+		cost = 1	
+		x = 5
+		y = 1
+		available = {		
+			
+		}
+        prerequisite = {
+			focus = GEA_Governor_Josias
+		}
+		relative_position_id = GEA_Governor_Josias
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Promote_the_colonial_corporation_system"
+		}
+	}
+
+	focus = { #斟酌卡特尔问题
+		id = GEA_Consider_the_issue_of_cartels
+		icon = GFX_GEA_Consider_the_issue_of_cartels
+		cost = 1	
+		x = -1
+		y = 1
+		available = {		
+			
+		}
+        prerequisite = {
+			focus = GEA_Promote_the_colonial_corporation_system
+		}
+		relative_position_id = GEA_Promote_the_colonial_corporation_system
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Consider_the_issue_of_cartels"
+		}
+	}
+
+	focus = { #再刺激旅游业
+		id = GEA_Boost_tourism_even_more
+		icon = GFX_GEA_Boost_tourism_even_more
+		cost = 1	
+		x = -1
+		y = 2
+		available = {		
+			
+		}
+        prerequisite = {
+			focus = GEA_Consider_the_issue_of_cartels
+		}
+		relative_position_id = GEA_Consider_the_issue_of_cartels
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Boost_tourism_even_more"
+		}
+	}
+
+	focus = { #引进技术官僚
+		id = GEA_Introduce_technocrats
+		icon = GFX_GEA_Introduce_technocrats
+		cost = 1	
+		x = 1
+		y = 1
+		available = {		
+			
+		}
+        prerequisite = {
+			focus = GEA_Consider_the_issue_of_cartels
+		}
+		relative_position_id = GEA_Consider_the_issue_of_cartels
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Introduce_technocrats"
+		}
+	}
+
+	focus = { #东方阿罗尔森
+		id = GEA_East_Arolsen
+		icon = GFX_GEA_East_Arolsen
+		cost = 1	
+		x = 1
+		y = 1
+		available = {		
+			
+		}
+        prerequisite = {
+			focus = GEA_Promote_the_colonial_corporation_system
+		}
+		relative_position_id = GEA_Promote_the_colonial_corporation_system
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_East_Arolsen"
+		}
+	}
+
+	focus = { #聚敛地产
+		id = GEA_Accumulation_of_real_estate
+		icon = GFX_GEA_Accumulation_of_real_estate
+		cost = 1	
+		x = 0
+		y = 2
+		available = {		
+			
+		}
+        prerequisite = {
+			focus = GEA_East_Arolsen
+		}
+		relative_position_id = GEA_East_Arolsen
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Accumulation_of_real_estate"
+		}
+	}
+
+	focus = { #新晋“贵族”
+		id = GEA_New_noble
+		icon = GFX_GEA_New_noble
+		cost = 1	
+		x = -2
+		y = 1
+		available = {		
+			
+		}
+		prerequisite = {
+			focus = GEA_Introduce_technocrats
+		}
+		prerequisite = {
+			focus = GEA_Boost_tourism_even_more
+		}
+        prerequisite = {
+			focus = GEA_Accumulation_of_real_estate
+		}
+		relative_position_id = GEA_Accumulation_of_real_estate
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_New_noble"
+		}
+	}
+
+	focus = { #约西亚斯的私人封地
+		id = GEA_The_private_estate_of_Josias
+		icon = GFX_GEA_The_private_estate_of_Josias
+		cost = 1	
+		x = 0
+		y = 1
+		available = {		
+			
+		}
+		prerequisite = {
+			focus = GEA_New_noble
+		}
+		relative_position_id = GEA_New_noble
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_private_estate_of_Josias"
+		}
+	}
+
+	focus = { #亲王，皇帝，德意志！
+		id = GEA_Prinz_Kaiser_Deutschland
+		icon = GFX_GEA_Prinz_Kaiser_Deutschland
+		cost = 1	
+		x = 0
+		y = 1
+		available = {		
+			
+		}
+		prerequisite = {
+			focus = GEA_Domesticating_the_East
+		}
+		prerequisite = {
+			focus = GEA_Supreme_authority_of_the_prince
+		}
+		prerequisite = {
+			focus = GEA_The_private_estate_of_Josias
+		}
+		relative_position_id = GEA_Supreme_authority_of_the_prince
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Prinz_Kaiser_Deutschland"
 		}
 	}
 
@@ -2805,1109 +3448,7 @@ focus_tree = {
 			add_ideas = GEA_governor_gaze_idea
 		}
 	}
- ### 穆克线 ###
- focus = {
-		id = GEA_Mucke
-		icon = GFX_GEA_Mucke
-		cost = 0
-		relative_position_id = GEA_New_governor
-		x = -16
-		y = 2
-		available = {
-			has_country_flag = GEA_Mucke_Appointed
-		}
-		prerequisite = {
-			focus = GEA_New_governor
-		}
-		mutually_exclusive = {
-			focus = GEA_Josias
-		}
-		mutually_exclusive = {
-			focus = GEA_Heye
-		}
-		ai_will_do = {
-			factor = 20
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_Mucke"
-            custom_effect_tooltip = unlock_focuses
-		}
-	}
-        focus = {
-		id = GEA_reforming_colonial_institutions
-		icon = GFX_GEA_reforming_colonial_institutions
-		relative_position_id = GEA_Mucke
-        cost = 5
-		x = -1
-		y = 1
-		available = {
-			has_country_flag = GEA_Mucke_Appointed
-		}
-		prerequisite = {focus = GEA_Mucke}
-		ai_will_do = {
-			factor = 70
-		}
-		
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_reforming_colonial_institutions"
-			swap_ideas = {
-				remove_idea = GEA_colonial_question
-				add_idea = GEA_colonial_question_mu
-			}
-			add_to_variable = { GEA_Progress_of_reform = 0.05 }  
-			custom_effect_tooltip = GEA_reforming_colonial_institutions_tt
-			country_event = {
-				id = Ostasien.133
-				days = 3
-			}
-		}
-	} 
-        focus = {
-		id = GEA_meet_local_elite
-		icon = GFX_NEE_elite_contracts
-		relative_position_id = GEA_reforming_colonial_institutions
-        cost = 5
-		x = 1
-		y = 1
-	    available = {
-			has_country_flag = GEA_Mucke_Appointed
-		}
-		prerequisite = {focus = GEA_reforming_colonial_institutions}
-		prerequisite = {focus = GEA_banquet_with_local}
-		ai_will_do = {
-			factor = 80
-		}
-		
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_meet_local_elite"
-			add_political_power = 50
-			add_offsite_building = { type = industrial_complex level = 1 }
-			add_popularity = {
-				ideology = social_democrat
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = social_liberal
-				popularity = 0.03
-			}
-			add_popularity = {
-				ideology = market_liberal
-				popularity = 0.05
-			}
-		}
-	} 
-        focus = {
-		id = GEA_cooperate_with_bao_dai
-		icon = GFX_goal_VIN_bao_dai_ascension
-		relative_position_id = GEA_banquet_with_local
-        cost = 2
-		x = 1
-		y = 1
-		available = {
-			has_country_flag = GEA_Mucke_Appointed
-		}
-		prerequisite = {focus = GEA_banquet_with_local}
-		ai_will_do = {
-			factor = 80
-		}
-		
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_cooperate_with_bao_dai"
-			add_political_power = 10
-			add_stability = 0.05
-		}
-	} 
-    focus = {
-		id = GEA_moderate_direct_rule
-		icon = GFX_GEA_moderate_direct_rule
-		relative_position_id = GEA_local_government
-        cost = 5
-		x = -2
-		y = 1
-		available = {
-			has_country_flag = GEA_Mucke_Appointed
-		}
-		prerequisite = {focus = GEA_local_government}
-		prerequisite = {focus = GEA_meet_local_elite}
-		ai_will_do = {
-			factor = 60
-		}
-		
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_moderate_direct_rule"
-			add_stability = 0.08
-			add_political_power = 40
-			swap_ideas = {
-				remove_idea = GEA_colonial_question_mu2
-				add_idea = GEA_colonial_question_mu3
-			}
-		}
-	} 
-    focus = {
-		id = GEA_vit_rule_vit
-		icon = GFX_goal_VIN_consecrating_pious_indochina
-		relative_position_id = GEA_cooperate_with_bao_dai
-        cost = 2
-		x = 2
-		y = 1
-		available = {
-			has_country_flag = GEA_Mucke_Appointed
-			has_country_flag = GEA_Bao_Dai_Reform_Success
-		}
-		prerequisite = {focus = GEA_cooperate_with_bao_dai}
-		prerequisite = {focus = GEA_meet_local_elite}
-		ai_will_do = {
-			factor = 60
-		}
-		
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_vit_rule_vit"
-		}
-	} 
-        focus = {
-		id = GEA_self_cleansing
-		icon = GFX_GEA_self_cleansing
-		relative_position_id = GEA_meet_local_elite
-        cost = 5
-		x = 1
-		y = 1
-		available = {
-			has_country_flag = GEA_Mucke_Appointed
-		}
-		prerequisite = {focus = GEA_cooperate_with_bao_dai}
-		prerequisite = {focus = GEA_meet_local_elite}
-		ai_will_do = {
-			factor = 60
-		}
-		
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_self_cleansing"
-			add_stability = 0.05
-			add_popularity = {
-				ideology = social_conservative
-				popularity = 0.05
-			}
-			custom_effect_tooltip = GEA_reforming_colonial_institutions_tt
-			custom_effect_tooltip = GEA_self_cleansing_tt
-			set_party_name = {
-				ideology = social_conservative
-				long_name =  GEA_social_conservative_party1_long
-				name =  GEA_social_conservative_party1
-			}
-			add_to_variable = { GEA_Progress_of_reform = 0.05 }  
-			add_to_variable = { GEA_mucke_reform_stability = 0.05 }  
-			add_to_variable = { GEA_mucke_reform_war_support = 0.05 }  
-		}
-	} 
-        focus = {
-		id = GEA_change_way
-		icon = GFX_goal_VIN_true_constitutionalism
-		relative_position_id = GEA_meet_local_elite
-        cost = 5
-		x = -1
-		y = 1
-		available = {
-			has_country_flag = GEA_Mucke_Appointed
-		}
-		prerequisite = {focus = GEA_local_government}
-		prerequisite = {focus = GEA_meet_local_elite}
-		ai_will_do = {
-			factor = 80
-		}
-		
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_change_way"
-			add_ideas = GEA_way_changed
-		}
-	} 
-        focus = {
-		id = GEA_local_government
-		icon = GFX_GEA_local_government
-		relative_position_id = GEA_reforming_colonial_institutions
-        cost = 5
-		x = -1
-		y = 1
-		available = {
-			has_country_flag = GEA_Mucke_Appointed
-		}
-		prerequisite = {focus = GEA_reforming_colonial_institutions}
-		ai_will_do = {
-			factor = 80
-		}
-		
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_local_government"
-			add_stability = 0.07
-			swap_ideas = {
-				remove_idea = GEA_colonial_question_mu
-				add_idea = GEA_colonial_question_mu2
-			}
-			add_to_variable = { GEA_socialist_power = -5 }  
-			add_to_variable = { GEA_nationalist_power = -5 }
-			custom_effect_tooltip = GEA_reforming_colonial_institutions1_tt
-			add_to_variable = { GEA_Progress_of_reform = 0.1 }  
-			custom_effect_tooltip = GEA_local_government_tt
-		}
-	}
-    focus = {
-		id = GEA_banquet_with_local
-		icon = GFX_goal_AOG_buy_out_Chinese_Assets
-		relative_position_id = GEA_Mucke
-        cost = 2
-		x = 1
-		y = 1
-		available = {
-			has_country_flag = GEA_Mucke_Appointed
-			has_country_flag = GEA_here_is_baodai
-		}
-		prerequisite = {focus = GEA_Mucke}
-		ai_will_do = {
-			factor = 80
-		}
-		
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_banquet_with_local"
-			add_stability = 0.05
-		}
-	} 
-        focus = {
-		id = GEA_prepare_election
-		icon = GFX_GEA_prepare_election
-		relative_position_id = GEA_Mucke
-        cost = 1
-		x = 0
-		y = 4
-		available = {
-			has_country_flag = GEA_Mucke_Appointed
-			has_country_flag = GEA_has_election
-		}
-		prerequisite = {focus = GEA_change_way}
-		prerequisite = {focus = GEA_self_cleansing}
-		prerequisite = {focus = GEA_moderate_direct_rule focus = GEA_vit_rule_vit}
-		ai_will_do = {
-			factor = 55
-		}
-		
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_prepare_election"
-			custom_effect_tooltip = GEA_prepare_election_tt
-			hidden_effect = {
-				country_event = {
-					id = Ostasien.137
-					days = 30
-				}
-			}
-		}
-	} 
-        focus = {
-		id = GEA_ruler_not_bandit
-		icon = GFX_goal_AUS_Police_Paramilitarism
-		relative_position_id = GEA_moderate_direct_rule
-        cost = 5
-		x = 0
-		y = 1
-		available = {
-			has_country_flag = GEA_Mucke_Appointed
-		}
-		available = { NOT = {
-		    has_completed_focus = GEA_eliminate_ethnic_differences}
-		}
-		prerequisite = {focus = GEA_moderate_direct_rule}
-		ai_will_do = {
-			factor = 70
-		}
-		
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_ruler_not_bandit"
-			add_ideas = GEA_We_will_stay_here
-		}
-	} 
-        focus = {
-		id = GEA_local_government_employee
-		icon = GFX_GEA_local_government_employee
-		relative_position_id = GEA_ruler_not_bandit
-        cost = 5
-		x = 1
-		y = 1
-		available = {
-			has_country_flag = GEA_Mucke_Appointed
-		}
-		prerequisite = {focus = GEA_ruler_not_bandit}
-		ai_will_do = {
-			factor = 50
-		}
-		
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_local_government_employee"
-			swap_ideas = {
-				remove_idea = GEA_colonial_question_mu3
-				add_idea = GEA_colonial_question_mu4
-			}
-		}
-	}
-        focus = {
-		id = GEA_german_leader
-		icon = GFX_GEA_german_leader
-		relative_position_id = GEA_local_government_employee
-        cost = 5
-		x = 0
-		y = 1
-		available = {
-			has_country_flag = GEA_Mucke_Appointed
-		}
-		prerequisite = {focus = GEA_local_government_employee}
-		ai_will_do = {
-			factor = 50
-		}
-		
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_german_leader"
-			swap_ideas = {
-				remove_idea = GEA_We_will_stay_here
-				add_idea = GEA_We_will_stay_here1
-			}
-		}
-	} 
-        focus = {
-		id = GEA_port_expansion
-		icon = GFX_USA_ports_atlantic
-		relative_position_id = GEA_ruler_not_bandit
-        cost = 5
-		x = -2
-		y = 1
-		available = {
-			has_country_flag = GEA_Mucke_Appointed
-		}
-		prerequisite = {focus = GEA_ruler_not_bandit}
-		ai_will_do = {
-			factor = 50
-		}
-		
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_port_expansion"
-			846 = {
-				add_building_construction = {
-					type = dockyard
-					level = 1
-					instant_build = yes 
-				}
-			}
-			827 = {
-				add_building_construction = {
-					type = dockyard
-					level = 1
-					instant_build = yes 
-				}
-			}
-			333 = {
-				add_building_construction = {
-					type = naval_base
-					level = 1
-					instant_build = yes 
-					province = 7371
-				}
-			}
-			286 = {
-				add_building_construction = {
-					type = naval_base
-					level = 1
-					instant_build = yes 
-					province = 4401
-				}
-			}
-			336 = {
-				add_building_construction = {
-					type = naval_base
-					level = 1
-					instant_build = yes 
-					province = 12299
-				}
-			}
-		}
-	}  
-        focus = {
-		id = GEA_german_immigrants
-		icon = GFX_GEA_german_immigrants
-		relative_position_id = GEA_port_expansion
-        cost = 5
-		x = -3
-		y = 1
-		available = {
-			has_country_flag = GEA_Mucke_Appointed
-		}
-		prerequisite = {focus = GEA_port_expansion}
-		ai_will_do = {
-			factor = 68
-		}
-		
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_german_immigrants"
-			add_manpower = 20000
-			add_ideas = GEA_german_immigrant
-			unlock_decision_tooltip = GEA_attract_migration
-		}
-	}  
-        focus = {
-		id = GEA_profit_in_jungle
-		icon = GFX_hiddentreasures
-		relative_position_id = GEA_port_expansion
-        cost = 5
-		x = -1
-		y = 1
-		available = {
-			has_country_flag = GEA_Mucke_Appointed
-		}
-		prerequisite = {focus = GEA_port_expansion}
-		ai_will_do = {
-			factor = 68
-		}
-		
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_profit_in_jungle"
-			add_political_power = 50
-			add_resource = {
-				type = oil
-				amount = 23
-				state = 333
-			}
-			add_resource = {
-				type = rubber
-				amount = 51
-				state = 333
-			}
-		}
-	} 
-        focus = {
-		id = GEA_expand_channels_for_military_aid
-		icon = GFX_goal_OTT_arms_purchase
-		relative_position_id = GEA_port_expansion
-        cost = 5
-		x = 1
-		y = 1
-		available = {
-			has_country_flag = GEA_Mucke_Appointed
-		}
-		prerequisite = {focus = GEA_port_expansion}
-		ai_will_do = {
-			factor = 68
-		}
-		
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_expand_channels_for_military_aid"
-			random_owned_state = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
-				}
-			}
-			random_owned_state = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
-				}
-			}
-			random_owned_state = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-	} 
-        focus = {
-		id = GEA_mild_exploitation
-		icon = GFX_goal_National_Security_Act
-		relative_position_id = GEA_profit_in_jungle
-        cost = 5
-		x = 0
-		y = 1
-		available = {
-			has_country_flag = GEA_Mucke_Appointed
-		}
-		prerequisite = {focus = GEA_profit_in_jungle}
-		prerequisite = {focus = GEA_german_immigrants}
-		prerequisite = {focus = GEA_expand_channels_for_military_aid}
-		prerequisite = {focus = GEA_german_leader}
-		ai_will_do = {
-			factor = 100
-		}
-		
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_mild_exploitation"
-			swap_ideas = {
-				remove_idea = GEA_colonial_question_mu4
-				add_idea = GEA_colonial_question_mu5
-			}
-		}
-	}
-        focus = {
-		id = GEA_service_standard
-		icon = GFX_tablecollaboration
-		relative_position_id = GEA_ruler_not_bandit
-        cost = 5
-		x = 0
-		y = 3
-		available = {
-			has_country_flag = GEA_Mucke_Appointed
-		}
-		prerequisite = {focus = GEA_expand_channels_for_military_aid}
-		prerequisite = {focus = GEA_german_leader}
-		ai_will_do = {
-			factor = 60
-		}
-		
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_service_standard"
-			add_ideas = GEA_bing_yi_yao_qiu
-		}
-	}
-    focus = {
-		id = GEA_benevolent_rule
-		icon = GFX_GEA_benevolent_rule
-		relative_position_id = GEA_expand_channels_for_military_aid
-        cost = 5
-		x = 0
-		y = 2
-		available = {
-			has_country_flag = GEA_Mucke_Appointed
-		}
-		prerequisite = {focus = GEA_service_standard}
-		prerequisite = {focus = GEA_mild_exploitation}
-		ai_will_do = {
-			factor = 120
-		}
-		
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_benevolent_rule"
-			add_political_power = 50
-			add_stability = 0.05
-			add_popularity = {
-				ideology = social_conservative
-				popularity = 0.07
-			}
-			random_owned_state = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-	}
-        focus = {
-		id = GEA_eliminate_ethnic_differences
-		icon = GFX_GEA_eliminate_ethnic_differences
-		relative_position_id = GEA_vit_rule_vit
-        cost = 5
-		x = 0
-		y = 1
-		available = {
-			has_country_flag = GEA_Mucke_Appointed
-		}
-		available = { NOT = {
-		    has_completed_focus = GEA_ruler_not_bandit}
-		}
-		prerequisite = {focus = GEA_vit_rule_vit}
-		ai_will_do = {
-			factor = 70
-		}
-		
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_eliminate_ethnic_differences"
-			add_ideas = GEA_rong_he
-		}
-	} 
-        focus = {
-		id = GEA_federalization_reform
-		icon = GFX_GEA_federalization_reform
-		relative_position_id = GEA_eliminate_ethnic_differences
-        cost = 2
-		x = -2
-		y = 1
-		available = {
-			has_country_flag = GEA_Mucke_Appointed
-		}
-		available = { NOT = {
-		    has_completed_focus = GEA_centralization_reform}
-		}
-		prerequisite = {focus = GEA_eliminate_ethnic_differences}
-		ai_will_do = {
-			factor = 70
-		}
-		
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_federalization_reform"
-			add_to_variable = { GEA_Progress_of_reform = 0.05 } 
-			custom_effect_tooltip = GEA_federalization_reform_tooltip 
-			add_dynamic_modifier = { modifier = GEA_mucke_reform }
-			add_to_variable = { GEA_mucke_reform_stability_weekly = 0.005 } 
-			custom_effect_tooltip = GEA_federalization_reform_tt
-		}
-	}  
-        focus = {
-		id = GEA_german_states_model
-		icon = GFX_goal_GER_Constitutionalism
-		relative_position_id = GEA_federalization_reform
-        cost = 5
-		x = -2
-		y = 1
-		available = {
-			has_country_flag = GEA_Mucke_Appointed
-		}
-		mutually_exclusive = {focus = GEA_follow_reality}
-		prerequisite = {focus = GEA_federalization_reform}
-		ai_will_do = {
-			factor = 70
-		}
-		
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_german_states_model"
-			add_popularity = {
-				ideology = social_conservative
-				popularity = 0.05
-			}
-			add_popularity = {
-				ideology = authoritarian_democrat
-				popularity = 0.05
-			}
-			add_to_variable = { GEA_mucke_reform_command_power_gain_mult = 0.1 } 
-			add_to_variable = { GEA_mucke_reform_defensive_war_stability_factor = 0.1 } 
-			custom_effect_tooltip = GEA_german_states_model_tt
-			add_to_variable = {
-				GEA_Progress_of_reform = 0.05
-			}
-			custom_effect_tooltip = GEA_reforming_colonial_institutions_tt
-		}
-	} 
-    focus = {
-		id = GEA_follow_reality
-		icon = GFX_MAF_german_settlement_committee
-		relative_position_id = GEA_federalization_reform
-        cost = 5
-		x = 1
-		y = 1
-		available = {
-			has_country_flag = GEA_Mucke_Appointed
-		}
-		mutually_exclusive = {focus = GEA_german_states_model}
-		prerequisite = {focus = GEA_federalization_reform}
-		ai_will_do = {
-			factor = 70
-		}
-		
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_follow_reality"
-			add_to_variable = { GEA_mucke_reform_political_power_factor = 0.1 }
-			add_to_variable = { GEA_mucke_reform_stability_weekly = 0.002 }  
-			custom_effect_tooltip = GEA_follow_reality_tt
-			add_to_variable = {
-				GEA_Progress_of_reform = 0.05
-			}
-			custom_effect_tooltip = GEA_reforming_colonial_institutions_tt
-		}
-	} 
-        focus = {
-		id = GEA_tribes_become_states
-		icon = GFX_goal_NFA_Local_Reconstruction_Councils
-		relative_position_id = GEA_german_states_model
-        cost = 5
-		x = -1
-		y = 1
-		available = {
-			has_country_flag = GEA_Mucke_Appointed
-		}
-		prerequisite = {focus = GEA_german_states_model}
-		ai_will_do = {
-			factor = 50
-		}
-		
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_tribes_become_states"
-			add_to_variable = {
-				GEA_Progress_of_reform = 0.05
-			}
-			add_to_variable = { GEA_mucke_reform_local_resources_factor = 0.1 } 
-			add_to_variable = { GEA_mucke_reform_monthly_population = 0.2 } 
-			custom_effect_tooltip = GEA_tribes_become_states_tt
-			custom_effect_tooltip = GEA_reforming_colonial_institutions_tt
-		}
-	} 
-
-    focus = {
-		id = GEA_new_parliament
-		icon = GFX_goal_Reichstag
-		relative_position_id = GEA_german_states_model
-        cost = 5
-		x = 1
-		y = 1
-		available = {
-			has_country_flag = GEA_Mucke_Appointed
-		}
-		prerequisite = {focus = GEA_german_states_model}
-		ai_will_do = {
-			factor = 55
-		}
-		
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_new_parliament"
-			add_to_variable = { GEA_mucke_reform_political_power_gain = 0.4 } 
-			custom_effect_tooltip = GEA_new_parliament_tt
-			add_to_variable = {
-				GEA_Progress_of_reform = 0.05
-			}
-			custom_effect_tooltip = GEA_reforming_colonial_institutions_tt
-		}
-	}
-    focus = {
-		id = GEA_centralization_reform
-		icon = GFX_goal_plantation_grants
-		relative_position_id = GEA_eliminate_ethnic_differences
-        cost = 2
-		x = 2
-		y = 1
-		available = {
-			has_country_flag = GEA_Mucke_Appointed
-		}
-		available = { NOT = {
-		    has_completed_focus = GEA_federalization_reform}
-		}
-		prerequisite = {focus = GEA_eliminate_ethnic_differences}
-		ai_will_do = {
-			factor = 70
-		}
-		
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_centralization_reform"
-			add_to_variable = { GEA_Progress_of_reform = 0.05 } 
-			custom_effect_tooltip = GEA_federalization_reform_tooltip 
-			add_dynamic_modifier = { modifier = GEA_mucke_reform }
-			add_to_variable = { GEA_mucke_reform_political_power_factor = 0.05 } 
-			custom_effect_tooltip = GEA_centralization_reform_tt
-		}
-	} 
-    focus = {
-		id = GEA_east_germany
-		icon = GFX_goal_AOG_Direct_German_Rule
-		relative_position_id = GEA_german_states_model
-        cost = 5
-		x = 0
-		y = 2
-		available = {
-			has_country_flag = GEA_Mucke_Appointed
-		}
-		prerequisite = {focus = GEA_new_parliament}
-		prerequisite = {focus = GEA_tribes_become_states}
-		ai_will_do = {
-			factor = 50
-		}
-		
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_east_germany"
-			add_to_variable = { GEA_mucke_reform_army_core_attack_factor = 0.1 } 
-			add_to_variable = { GEA_mucke_reform_army_core_defence_factor = 0.1 } 
-			custom_effect_tooltip = GEA_east_germany_tt
-			add_to_variable = {
-				GEA_Progress_of_reform = 0.05
-			}
-			custom_effect_tooltip = GEA_reforming_colonial_institutions_tt
-		}
-	} 
-    focus = {
-		id = GEA_new_administrative_division
-		icon = GFX_thedecision
-		relative_position_id = GEA_centralization_reform
-        cost = 5
-		x = 1
-		y = 1
-		available = {
-			has_country_flag = GEA_Mucke_Appointed
-		}
-		prerequisite = {focus = GEA_centralization_reform}
-		ai_will_do = {
-			factor = 50
-		}
-		
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_new_administrative_division"
-			add_to_variable = { GEA_mucke_reform_political_power_factor = 0.05 }
-			add_to_variable = { GEA_mucke_reform_stability_weekly = 0.005 }
-			add_to_variable = { GEA_mucke_reform_war_support_weekly = 0.005 }
-			custom_effect_tooltip = GEA_new_administrative_division_tt
-			add_to_variable = {
-				GEA_Progress_of_reform = 0.05
-			}
-			custom_effect_tooltip = GEA_reforming_colonial_institutions_tt
-		}
-	} 
-    focus = {
-		id = GEA_strengthen_ties
-		icon = GFX_COR_national_highway_system
-		relative_position_id = GEA_eliminate_ethnic_differences
-        cost = 5
-		x = -1
-		y = 3
-		available = {
-			has_country_flag = GEA_Mucke_Appointed
-		}
-		prerequisite = { focus = GEA_follow_reality}
-		ai_will_do = {
-			factor = 55
-		}
-		
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_strengthen_ties"
-			random_owned_state = {
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-			add_to_variable = { GEA_mucke_reform_production_speed_infrastructure_factor = 0.15 } 
-			custom_effect_tooltip = GEA_strengthen_ties_tt
-			add_to_variable = {
-				GEA_Progress_of_reform = 0.05
-			}
-			custom_effect_tooltip = GEA_reforming_colonial_institutions_tt
-		}
-	}
-    focus = {
-		id = GEA_no_tribe
-		icon = GFX_GEA_no_tribe
-		relative_position_id = GEA_centralization_reform
-        cost = 5
-		x = -1
-		y = 1
-		available = {
-			has_country_flag = GEA_Mucke_Appointed
-		}
-		prerequisite = {focus = GEA_centralization_reform}
-		ai_will_do = {
-			factor = 70
-		}
-		
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_no_tribe"
-			add_to_variable = { GEA_mucke_reform_local_manpower  = 0.1 } 
-			add_to_variable = { GEA_mucke_reform_army_conscription_factor = 0.1 } 
-			custom_effect_tooltip = GEA_no_tribe_tt
-			add_to_variable = {
-				GEA_Progress_of_reform = 0.05
-			}
-			custom_effect_tooltip = GEA_reforming_colonial_institutions_tt
-		}
-	} 
-    focus = {
-		id = GEA_the_local_garrison
-		icon = GFX_GEA_the_local_garrison
-		relative_position_id = GEA_no_tribe
-        cost = 5
-		x = 0
-		y = 1
-		available = {
-			has_country_flag = GEA_Mucke_Appointed
-		}
-		prerequisite = {focus = GEA_no_tribe focus = GEA_new_administrative_division focus = GEA_follow_reality}
-		ai_will_do = {
-			factor = 30
-		}
-		
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_the_local_garrison"
-			add_to_variable = { GEA_mucke_reform_army_conscription = 0.01 } 
-			add_to_variable = { GEA_mucke_reform_army_conscription_factor = 0.1 } 
-			custom_effect_tooltip = GEA_the_local_garrison_tt
-			add_to_variable = {
-				GEA_Progress_of_reform = 0.05
-			}
-			custom_effect_tooltip = GEA_reforming_colonial_institutions_tt
-		}
-	}
-
-    focus = {
-		id = GEA_strengthen_local
-		icon = GFX_goal_GER_Fundamental_Rights
-		relative_position_id = GEA_strengthen_ties
-        cost = 5
-		x = 0
-		y = 1
-		available = {
-			has_country_flag = GEA_Mucke_Appointed
-		}
-		prerequisite = { focus = GEA_strengthen_ties }
-		prerequisite = { focus = GEA_the_local_garrison }
-		ai_will_do = {
-			factor = 55
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_strengthen_local"
-			add_to_variable = { GEA_mucke_reform_local_resources_factor = 0.1 }
-			add_to_variable = { GEA_mucke_reform_required_garrison_factor  = -0.15 }  
-			custom_effect_tooltip = GEA_strengthen_local_tt
-			add_to_variable = {
-				GEA_Progress_of_reform = 0.05
-			}
-			custom_effect_tooltip = GEA_reforming_colonial_institutions_tt
-		}
-	}
-    focus = {
-		id = GEA_start_of_urbanization
-		icon = GFX_GEA_start_of_urbanization
-		relative_position_id = GEA_new_administrative_division
-        cost = 5
-		x = 0
-		y = 1
-		available = {
-			has_country_flag = GEA_Mucke_Appointed
-		}
-		prerequisite = {focus = GEA_new_administrative_division}
-		ai_will_do = {
-			factor = 30
-		}
-		
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_start_of_urbanization"
-			add_to_variable = { GEA_mucke_reform_local_building_slots_factor = 0.1 } 
-			add_to_variable = { GEA_mucke_reform_production_speed_buildings_factor = 0.05 } 
-			custom_effect_tooltip = GEA_start_of_urbanization_tt
-			add_to_variable = {
-				GEA_Progress_of_reform = 0.05
-			}
-			custom_effect_tooltip = GEA_reforming_colonial_institutions_tt
-		}
-	} 
-
-    focus = {
-		id = GEA_strengthen_government
-		icon = GFX_RUS_Reinforce_Local_Parliaments
-		relative_position_id = GEA_centralization_reform
-        cost = 5
-		x = 0
-		y = 3
-		available = {
-			has_country_flag = GEA_Mucke_Appointed
-		}
-		prerequisite = {focus = GEA_the_local_garrison}
-		prerequisite = {focus = GEA_start_of_urbanization}
-		ai_will_do = {
-			factor = 30
-		}		
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_strengthen_government"
-			add_to_variable = { GEA_mucke_reform_political_power_factor = 0.05 } 
-			add_to_variable = { GEA_mucke_reform_party_popularity_stability_factor = 0.15 } 
-			custom_effect_tooltip = GEA_strengthen_government_tt
-			add_to_variable = {
-				GEA_Progress_of_reform = 0.05
-			}
-			custom_effect_tooltip = GEA_reforming_colonial_institutions_tt
-		}
-	}  
-    focus = {
-		id = GEA_the_ideal_rule_of_Mucke
-		icon = GFX_GEA_the_ideal_rule_of_Mucke
-		relative_position_id = GEA_strengthen_local
-        cost = 5
-		x = 0
-		y = 1
-		available = {
-			has_country_flag = GEA_Mucke_Appointed
-			custom_trigger_tooltip ={
-				tooltip = GEA_the_ideal_rule_of_Mucke_trigger_tt
-				check_variable = { GEA_Progress_of_reform > 0.9 }
-			} 
-		}
-		prerequisite = {focus = GEA_strengthen_local focus = GEA_strengthen_government
-		focus = GEA_east_germany}
-		ai_will_do = {
-			factor = 100
-		}
-		
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_the_ideal_rule_of_Mucke"
-			GER = {
-				set_autonomy = {
-					target = GEA
-					autonomy_state = autonomy_free
-				}
-			}
-			set_cosmetic_tag = GEA_reform
-			country_event = {
-				id = Ostasien.135
-				days = 1
-			}
-			if = {
-				limit = {
-					has_completed_focus = GEA_german_states_model
-				}
-				add_to_variable = { GEA_mucke_reform_production_speed_arms_factory_factor = 0.2 } 
-				add_to_variable = { GEA_mucke_reform_industrial_capacity_factory = 0.3 } 
-				add_to_variable = { GEA_mucke_reform_army_conscription_factor = 0.2 } 
-				custom_effect_tooltip = GEA_choose_german_tt
-				hidden_effect= {
-					remove_dynamic_modifier = { modifier = GEA_mucke_reform } 
-					add_ideas = GEA_hellmuth_reform3
-				}
-			}
-			else_if = {
-				limit = {
-					has_completed_focus = GEA_follow_reality
-				}
-				add_to_variable = { GEA_mucke_reform_production_factory_max_efficiency_factor = 0.2 } 
-				add_to_variable = { GEA_mucke_reform_production_factory_efficiency_gain_factor = 0.3 } 
-				add_to_variable = { GEA_mucke_reform_monthly_population = 0.4 } 
-				custom_effect_tooltip = GEA_choose_reality_tt
-				hidden_effect= {
-					remove_dynamic_modifier = { modifier = GEA_mucke_reform } 
-					add_ideas = GEA_hellmuth_reform2
-				}
-			}
-			else_if = {
-				limit = {
-					has_completed_focus = GEA_centralization_reform
-				}
-				add_to_variable = { GEA_mucke_reform_line_change_production_efficiency_factor = 0.4 } 
-				add_to_variable = { GEA_mucke_reform_production_speed_industrial_complex_factor = 0.3 } 
-				add_to_variable = { GEA_mucke_reform_production_speed_buildings_factor = 0.1 } 
-				custom_effect_tooltip = GEA_choose_power_tt
-				hidden_effect= {
-					remove_dynamic_modifier = { modifier = GEA_mucke_reform } 
-					add_ideas = GEA_hellmuth_reform1
-				}
-			}
-		}
-	} 
     ### 经济改革 ###
-	focus = {
-		id = GEA_financial_reform
-		icon = GFX_goal_GEA_Mucke_Mark
-		cost = 5
-		relative_position_id = GEA_Mucke
-		x = 8
-		y = 1
-		prerequisite = {focus = GEA_Mucke focus = GEA_Josias}
-		ai_will_do = {
-			factor = 1000
-		}
-		available = { NOT = {
-		    has_completed_focus = GEA_military_economy}
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_financial_reform"
-			swap_ideas = {
-				remove_idea = GEA_collapsing_colonial_finances
-				add_idea = GEA_collapsing_colonial_finances2
-			}            
-			add_stability = 0.08
-		}
-	}      
 	focus = {
 		id = GEA_military_economy
 		icon = GFX_MAF_ostafrikanischer_kaisersfabrikkomplex
@@ -4943,528 +4484,6 @@ focus_tree = {
 			unlock_decision_tooltip = GEA_work_until_dead
 		}
 	}   
-    ### 打越共 ###
-	focus = {
-		id = GEA_we_are_in_crisis
-		icon = GFX_GEA_we_are_in_crisis
-		cost = 0
-		x = -28
-		y = 2
-		ai_will_do = {
-			factor = 1000
-		}
-		available = {
-			has_country_flag = GEA_indochina_war_broke_out
-		}
-		bypass = {
-			has_country_flag = GEA_indochina_war_broke_out
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_we_are_in_crisis"
-            custom_effect_tooltip = unlock_focuses
-		}
-	}
-	focus = {
-		id = GEA_turn_to_colleagues
-		icon = GFX_forgethebond
-		relative_position_id = GEA_we_are_in_crisis
-		cost = 1
-		x = -4
-		y = 1
-		ai_will_do = {
-			factor = 120
-		}
-		available = {
-			has_country_flag = GEA_indochina_war_broke_out
-		}
-		available = {country_exists = INC}
-		prerequisite = {focus = GEA_we_are_in_crisis}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_turn_to_colleagues"
-			add_political_power = 50
-			add_equipment_to_stockpile = {
-				type = infantry_equipment
-				amount = 600
-				producer = MAF
-			}
-		}
-	}
-	focus = {
-		id = GEA_MAF_support
-		icon = GFX_GEA_MAF_support
-		relative_position_id = GEA_turn_to_colleagues
-		cost = 3
-		x = 0
-		y = 1
-		ai_will_do = {
-			factor = 100
-		}
-		available = {
-			has_country_flag = GEA_indochina_war_broke_out
-		}
-		available = {country_exists = INC}
-		available = {country_exists = MAF}
-		prerequisite = {focus = GEA_turn_to_colleagues}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_turn_to_colleagues"
-			add_offsite_building = {
-				type = industrial_complex
-				level = 2
-			}
-			add_offsite_building = {
-				type = arms_factory
-				level = 2
-			}
-		}
-	}
-	focus = {
-		id = GEA_request_officer_support
-		icon = GFX_goal_MAF_RFG_Army
-		relative_position_id = GEA_MAF_support
-		cost = 3
-		x = -1
-		y = 1
-		ai_will_do = {
-			factor = 80
-		}
-		available = {
-			has_country_flag = GEA_indochina_war_broke_out
-		}
-		available = {country_exists = INC}
-		available = {country_exists = MAF}
-		prerequisite = {focus = GEA_MAF_support}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_request_officer_support"
-			ZAM = {
-				if = {
-					limit = { has_unit_leader = 65709 }
-					random_unit_leader = {
-						limit = { has_id = 65709 }
-						set_nationality = GEA
-					}
-				}
-			}
-			MAF = {
-				if = {
-					limit = { has_unit_leader = 87950 }
-					random_unit_leader = {
-						limit = { has_id = 87950 }
-						set_nationality = GEA
-					}
-				}
-				if = {
-					limit = { has_unit_leader = 87951 }
-					random_unit_leader = {
-						limit = { has_id = 87951 }
-						set_nationality = GEA
-					}
-				}
-			}
-			every_unit_leader = {
-				add_planning = 1
-				add_logistics = 1
-				add_attack = 1
-			}
-		}
-	}
-	focus = {
-		id = GEA_turn_to_vaterland
-		icon = GFX_german_army_advisors
-		relative_position_id = GEA_we_are_in_crisis
-		cost = 1
-		x = 4
-		y = 1
-		ai_will_do = {
-			factor = 120
-		}
-		available = {
-			has_country_flag = GEA_indochina_war_broke_out
-		}
-		available = {country_exists = INC}
-		prerequisite = {focus = GEA_we_are_in_crisis}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_turn_to_vaterland"
-			GER = {
-				country_event = {
-					id = Ostasien.900
-					days = 3
-				}
-			}
-		}
-	}
-	focus = {
-		id = GEA_self_reliance
-		icon = GFX_GEA_self_reliance
-		relative_position_id = GEA_we_are_in_crisis
-		cost = 2
-		x = 0
-		y = 1
-		ai_will_do = {
-			factor = 120
-		}
-		available = {
-			has_country_flag = GEA_indochina_war_broke_out
-		}
-		available = {country_exists = INC}
-		prerequisite = {focus = GEA_we_are_in_crisis}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_self-reliance"
-			add_political_power = 20
-			add_command_power = 40.0
-			army_experience = 50
-		}
-	}
-	focus = {
-		id = GEA_more_soldier
-		icon = GFX_goeringsthousands
-		relative_position_id = GEA_self_reliance
-		cost = 3
-		x = 0
-		y = 1
-		ai_will_do = {
-			factor = 100
-		}
-		available = {
-			has_country_flag = GEA_indochina_war_broke_out
-		}
-		available = {country_exists = INC}
-		prerequisite = {focus = GEA_self_reliance}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_more_soldier"
-			add_manpower = 2000
-			if = {
-				limit = {
-					OR = {
-						has_idea = disarmed_nation
-						has_idea = volunteer_only
-						has_idea = limited_conscription
-					}
-				}
-				add_ideas = extensive_conscription
-			}
-			else_if = {
-				limit = { 
-					has_idea = extensive_conscription
-				}
-				add_ideas = service_by_requirement
-			}
-			else_if = {
-				limit = { 
-					has_idea = service_by_requirement
-				}
-				add_ideas = tot_economic_mobilisation
-			}
-			else = {
-				add_ideas = scraping_the_barrel
-			}
-		}
-	}
-	focus = {
-		id = GEA_feldgendarmerie
-		icon = GFX_GEA_feldgendarmerie
-		relative_position_id = GEA_more_soldier
-		cost = 3
-		x = -2
-		y = 1
-		ai_will_do = {
-			factor = 120
-		}
-		available = {
-			has_country_flag = GEA_indochina_war_broke_out
-		}
-		available = {country_exists = INC}
-		prerequisite = {focus = GEA_more_soldier}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_feldgendarmerie"
-			add_ideas = GEA_military_police
-		}
-	}
-	focus = {
-		id = GEA_prepare_for_assault
-		icon = GFX_GEA_prepare_for_assault
-		relative_position_id = GEA_more_soldier
-		cost = 3
-		x = 2
-		y = 1
-		ai_will_do = {
-			factor = 120
-		}
-		available = {
-			has_country_flag = GEA_indochina_war_broke_out
-		}
-		available = {country_exists = INC}
-		prerequisite = {focus = GEA_more_soldier}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_prepare_for_assault"
-			add_command_power = 40.0
-			add_war_support = 0.05
-			unlock_decision_tooltip = GEA_assault
-		}
-	}
-	focus = {
-		id = GEA_kill_deserter
-		icon = GFX_goal_generic_basic_weapons
-		relative_position_id = GEA_more_soldier
-		cost = 3
-		x = 0
-		y = 2
-		ai_will_do = {
-			factor = 200
-		}
-		available = {
-			has_war = yes
-		}
-		available = {
-			has_country_flag = GEA_indochina_war_broke_out
-		}
-		available = {country_exists = INC}
-		prerequisite = {focus = GEA_feldgendarmerie}
-		prerequisite = {focus = GEA_prepare_for_assault}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_kill_deserter"
-			add_manpower = -1683
-			swap_ideas = {
-				remove_idea = GEA_military_police
-				add_idea = GEA_military_police2
-			}
-		}
-	}
-	focus = {
-		id = GEA_volunteer_air_corps
-		icon = GFX_goal_AFG_german_aces
-		relative_position_id = GEA_turn_to_vaterland
-		cost = 3
-		x = 0
-		y = 1
-		ai_will_do = {
-			factor = 100
-		}
-		available = {
-			has_country_flag = GEA_indochina_war_broke_out
-		}
-		available = {country_exists = INC}
-		prerequisite = {focus = GEA_turn_to_vaterland}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_volunteer_air_corps"
-			air_experience = 20
-			add_equipment_to_stockpile = {
-				type = small_plane_airframe
-				amount = 200
-				producer = GER
-			}
-			add_equipment_to_stockpile = {
-				type = small_plane_cas_airframe_0
-				amount = 100
-				producer = GER
-			}
-			hidden_effect = {
-				GER = {
-					add_equipment_to_stockpile = {
-						type = small_plane_airframe
-						amount = -300
-						producer = GER
-					}
-				}
-			}
-		}
-	}
-	focus = {
-		id = GEA_military_expenditure
-		icon = GFX_GEA_military_expenditure
-		relative_position_id = GEA_volunteer_air_corps
-		cost = 3
-		x = 1
-		y = 1
-		ai_will_do = {
-			factor = 100
-		}
-		available = {
-			has_country_flag = GEA_indochina_war_broke_out
-		}
-		available = {country_exists = INC}
-		prerequisite = {focus = GEA_volunteer_air_corps}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_military_economy"
-			add_political_power = 75
-			add_war_support = 0.1
-			add_offsite_building = { type = arms_factory level = 2 }
-		}
-	}
-	focus = {
-		id = GEA_request_weapons
-		icon = GFX_GRU_CORPORATE_MILITARY_INDUSTRIAL_COMPLEX
-		relative_position_id = GEA_military_expenditure
-		cost = 3
-		x = -2
-		y = 1
-		ai_will_do = {
-			factor = 80
-		}
-		available = {
-			has_war = yes
-		}
-		available = {
-			has_country_flag = GEA_indochina_war_broke_out
-		}
-		available = {country_exists = INC}
-		prerequisite = {focus = GEA_military_expenditure}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_request_weapons"
-			add_political_power = -200
-			add_equipment_to_stockpile = {
-				type = infantry_equipment
-				amount = 2500
-				producer = GER
-			}
-			add_equipment_to_stockpile = {
-				type = artillery_equipment
-				amount = 200
-				producer = GER
-			}
-			add_equipment_to_stockpile = {
-				type = support_equipment
-				amount = 200
-				producer = GER
-			}
-			add_equipment_to_stockpile = {
-				type = motorized_equipment 
-				amount = 150
-				producer = GER
-			}
-			add_equipment_to_stockpile = {
-				type = anti_tank_equipment 
-				amount = 100
-				producer = GER
-			}
-		}
-	}
-	focus = {
-		id = GEA_weapons_of_mass_destruction
-		icon = GFX_GEA_weapons_of_mass_destruction
-		relative_position_id = GEA_request_officer_support
-		cost = 3
-		x = 2
-		y = 1
-		ai_will_do = {
-			factor = 80
-		}
-		available = {
-			has_war = yes
-		}
-		available = {
-			has_country_flag = GEA_indochina_war_broke_out
-		}
-		available = {country_exists = INC}
-		prerequisite = {focus = GEA_request_officer_support}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_weapons_of_mass_destruction"
-            unlock_decision_tooltip = GEA_toxic_gas
-			unlock_decision_tooltip = GEA_Activate_liquid_incendiary_bombs
-		}
-	}
-	focus = {
-		id = GEA_fight_to_death
-		icon = GFX_goal_NFA_military_supremacy
-		relative_position_id = GEA_kill_deserter
-		cost = 3
-		x = -1
-		y = 1
-		ai_will_do = {
-			factor = 110
-		}
-		available = {
-			has_war = yes
-		}
-		available = {
-			has_country_flag = GEA_indochina_war_broke_out
-		}
-		available = {country_exists = INC}
-		prerequisite = {focus = GEA_weapons_of_mass_destruction}
-		prerequisite = {focus = GEA_kill_deserter}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_fight_to_death"
-			add_timed_idea = {
-				idea = GEA_shu_si_yi_bo
-				days = 60
-			}
-		}
-	}
-	focus = {
-		id = GEA_use_everything
-		icon = GFX_GEA_use_everything
-		relative_position_id = GEA_kill_deserter
-		cost = 3
-		x = 1
-		y = 1
-		ai_will_do = {
-			factor = 110
-		}
-		available = {
-			has_war = yes
-		}
-		available = {
-			has_country_flag = GEA_indochina_war_broke_out
-		}
-		available = {country_exists = INC}
-		prerequisite = {focus = GEA_request_weapons}
-		prerequisite = {focus = GEA_kill_deserter}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_use_everything"
-			if = {
-				limit = { 
-					NOT = {
-						has_idea = war_economy
-					}
-				}
-				add_ideas = war_economy
-			}
-			else = {
-				add_ideas = tot_economic_mobilisation
-			}
-			336 = {
-				add_building_construction = {
-					type = industrial_complex
-					level = -2
-					instant_build = yes 
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory 
-					level = 3
-					instant_build = yes 
-				}
-			}
-		}
-	}
-	focus = {
-		id = GEA_do_all_we_can_do
-		icon = GFX_GEA_do_all_we_can_do
-		relative_position_id = GEA_kill_deserter
-		cost = 3
-		x = 0
-		y = 2
-		ai_will_do = {
-			factor = 110
-		}
-		available = {
-			has_war = yes
-		}
-		available = {
-			has_country_flag = GEA_indochina_war_broke_out
-		}
-		available = {country_exists = INC}
-		prerequisite = {focus = GEA_fight_to_death}
-		prerequisite = {focus = GEA_use_everything}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_do_all_we_can_do"
-			add_war_support = 0.10
-			modify_timed_idea = {
-				idea = GEA_shu_si_yi_bo
-				days = 60
-			}
-		}
-	}
-
     ### 舍尔纳政变 ###
 	focus = {
 		id = GEA_bloody_ferdinand
