@@ -167,7 +167,7 @@ guiTypes = {
 		}
 
 		buttonType = { #左下
-			name = "GEA_Josias_frame_add_2"
+			name = "GEA_Josias_frame_add_5"
 			orientation = center
 			position = { x = -40 y = 70 }
 			spriteType = "GEA_Josias_frame_add"
@@ -175,7 +175,7 @@ guiTypes = {
 			scale = 0.4
 		}
 		iconType = { #左下
-			name = "GEA_Josias_frame_2"
+			name = "GEA_Josias_frame_5"
 			orientation = center
 			position = { x = -40 y = 70 }
 			spriteType = "GEA_Josias_frame"
@@ -214,17 +214,24 @@ guiTypes = {
 			scale = 0.4
 		}
 		iconType = { #左上
-			name = "GEA_Josias_Schleicher"
+			name = "GEA_Josias_Schleicher_1"
 			orientation = center
 			position = { x = -40 y = -200 }
 			spriteType = "GEA_Josias_Schleicher"
 			scale = 0.4
 		}
 		iconType = { #左上
-			name = "GEA_Josias_Hugenberg"
+			name = "GEA_Josias_Hugenberg_1"
 			orientation = center
 			position = { x = -40 y = -200 }
 			spriteType = "GEA_Josias_Hugenberg"
+			scale = 0.4
+		}
+		iconType = { #左上
+			name = "GEA_Josias_Werner_von_Alvensleben_1"
+			orientation = center
+			position = { x = -40 y = -200 }
+			spriteType = "GEA_Josias_Werner_von_Alvensleben"
 			scale = 0.4
 		}
 		iconType = { #左上
@@ -234,7 +241,114 @@ guiTypes = {
 			spriteType = "GEA_Josias_frame"
 			scale = 0.4
 		}
+
+		buttonType = { #右上
+			name = "GEA_Josias_frame_add_2"
+			orientation = center
+			position = { x = 190 y = -200 }
+			spriteType = "GEA_Josias_frame_add"
+			pdx_tooltip = ""
+			scale = 0.4
+		}
+		iconType = { #右上
+			name = "GEA_Josias_Nikolaus_2"
+			orientation = center
+			position = { x = 190 y = -200 }
+			spriteType = "GEA_Josias_Nikolaus"
+			scale = 0.4
+		}
+		iconType = { #右上
+			name = "GEA_Carl_Edward_2"
+			orientation = center
+			position = { x = 190 y = -200 }
+			spriteType = "GEA_Josias_Carl_Edward"
+			scale = 0.4
+		}
+		iconType = { #右上
+			name = "GEA_Josias_Elard_von_Oldenburg_2"
+			orientation = center
+			position = { x = 190 y = -200 }
+			spriteType = "GEA_Josias_Elard_von_Oldenburg"
+			scale = 0.4
+		}
+		iconType = { #右上
+			name = "GEA_Josias_Schleicher_2"
+			orientation = center
+			position = { x = 190 y = -200 }
+			spriteType = "GEA_Josias_Schleicher"
+			scale = 0.4
+		}
+		iconType = { #右上
+			name = "GEA_Josias_Hugenberg_2"
+			orientation = center
+			position = { x = 190 y = -200 }
+			spriteType = "GEA_Josias_Hugenberg"
+			scale = 0.4
+		}
+		iconType = { #右上
+			name = "GEA_Josias_Josias_Werner_von_Alvensleben_2"
+			orientation = center
+			position = { x = 190 y = -200 }
+			spriteType = "GEA_Josias_Josias_Werner_von_Alvensleben"
+			scale = 0.4
+		}
+		iconType = { #右上
+			name = "GEA_Josias_frame_2"
+			orientation = center
+			position = { x = 190 y = -200 }
+			spriteType = "GEA_Josias_frame"
+			scale = 0.4
+		}		
+
+		buttonType = {
+			name = "GEA_Josias_candidate_popup_background"
+			position = { x = 40 y = 123 }
+			spriteType = "GFX_tiled_decisions_bg_small"
+			size = { x = 435 y = 75 }
+			alwaystransparent = yes
+		}
+
+		buttonType = {
+			name = "GEA_Josias_candidate_Nikolaus"
+			position = { x = 45 y = 127 }
+			spriteType = "GEA_Josias_Nikolaus_small"
+			pdx_tooltip = ""
+		}
+
+		buttonType = {
+			name = "GEA_Josias_candidate_Carl_Edward"
+			position = { x = 105 y = 127 }
+			spriteType = "GEA_Josias_Carl_Edward_small"
+			pdx_tooltip = ""
+		}
+
+		buttonType = {
+			name = "GEA_Josias_candidate_Elard_von_Oldenburg"
+			position = { x = 165 y = 127 }
+			spriteType = "GEA_Josias_Elard_von_Oldenburg_small"
+			pdx_tooltip = ""
+		}
+
+		buttonType = {
+			name = "GEA_Josias_candidate_Schleicher"
+			position = { x = 225 y = 127 }
+			spriteType = "GEA_Josias_Schleicher_small"
+			pdx_tooltip = ""
+		}
+
+		buttonType = {
+			name = "GEA_Josias_candidate_Hugenberg"
+			position = { x = 285 y = 127 }
+			spriteType = "GEA_Josias_Hugenberg_small"
+			pdx_tooltip = ""
+		}
+
+		buttonType = {
+			name = "GEA_Josias_candidate_Werner_von_Alvensleben"
+			position = { x = 345 y = 127 }
+			spriteType = "GEA_Josias_Werner_von_Alvensleben_small"
+			pdx_tooltip = ""
+		}
 	}
 }
-
 

@@ -362,6 +362,142 @@ scripted_gui = {
 		}
 
 		triggers = {
+			GEA_Josias_frame_add_1_visible = {
+				NOT = {
+					OR = {
+						has_country_flag = GEA_Josias_frame_1_Nikolaus
+						has_country_flag = GEA_Josias_frame_1_Carl_Edward
+						has_country_flag = GEA_Josias_frame_1_Elard_von_Oldenburg
+						has_country_flag = GEA_Josias_frame_1_Schleicher
+						has_country_flag = GEA_Josias_frame_1_Hugenberg
+					}
+				}
+			}
+
+			GEA_Josias_Nikolaus_1_visible = {
+				has_country_flag = GEA_Josias_frame_1_Nikolaus
+			}
+
+			GEA_Carl_Edward_1_visible = {
+				has_country_flag = GEA_Josias_frame_1_Carl_Edward
+			}
+
+			GEA_Josias_Elard_von_Oldenburg_1_visible = {
+				has_country_flag = GEA_Josias_frame_1_Elard_von_Oldenburg
+			}
+
+			GEA_Josias_Schleicher_1_visible = {
+				has_country_flag = GEA_Josias_frame_1_Schleicher
+			}
+
+			GEA_Josias_Hugenberg_1_visible = {
+				has_country_flag = GEA_Josias_frame_1_Hugenberg
+			}
+
+			GEA_Josias_frame_add_2_visible = {
+				NOT = {
+					OR = {
+						has_country_flag = GEA_Josias_frame_2_Nikolaus
+						has_country_flag = GEA_Josias_frame_2_Carl_Edward
+						has_country_flag = GEA_Josias_frame_2_Elard_von_Oldenburg
+						has_country_flag = GEA_Josias_frame_2_Schleicher
+						has_country_flag = GEA_Josias_frame_2_Hugenberg
+					}
+				}
+			}
+
+			GEA_Josias_Nikolaus_2_visible = {
+				has_country_flag = GEA_Josias_frame_2_Nikolaus
+			}
+
+			GEA_Carl_Edward_2_visible = {
+				has_country_flag = GEA_Josias_frame_2_Carl_Edward
+			}
+
+			GEA_Josias_Elard_von_Oldenburg_2_visible = {
+				has_country_flag = GEA_Josias_frame_2_Elard_von_Oldenburg
+			}
+
+			GEA_Josias_Schleicher_2_visible = {
+				has_country_flag = GEA_Josias_frame_2_Schleicher
+			}
+
+			GEA_Josias_Hugenberg_2_visible = {
+				has_country_flag = GEA_Josias_frame_2_Hugenberg
+			}
+
+			GEA_Josias_candidate_popup_background_visible = {
+				OR = {
+					has_country_flag = GEA_Josias_selecting_frame_1
+					has_country_flag = GEA_Josias_selecting_frame_2
+				}
+			}
+
+			GEA_Josias_candidate_Nikolaus_visible = {
+				OR = {
+					has_country_flag = GEA_Josias_selecting_frame_1
+					has_country_flag = GEA_Josias_selecting_frame_2
+				}
+				NOT = {
+					OR = {
+						has_country_flag = GEA_Josias_frame_1_Nikolaus
+						has_country_flag = GEA_Josias_frame_2_Nikolaus
+					}
+				}
+			}
+
+			GEA_Josias_candidate_Carl_Edward_visible = {
+				OR = {
+					has_country_flag = GEA_Josias_selecting_frame_1
+					has_country_flag = GEA_Josias_selecting_frame_2
+				}
+				NOT = {
+					OR = {
+						has_country_flag = GEA_Josias_frame_1_Carl_Edward
+						has_country_flag = GEA_Josias_frame_2_Carl_Edward
+					}
+				}
+			}
+
+			GEA_Josias_candidate_Elard_von_Oldenburg_visible = {
+				OR = {
+					has_country_flag = GEA_Josias_selecting_frame_1
+					has_country_flag = GEA_Josias_selecting_frame_2
+				}
+				NOT = {
+					OR = {
+						has_country_flag = GEA_Josias_frame_1_Elard_von_Oldenburg
+						has_country_flag = GEA_Josias_frame_2_Elard_von_Oldenburg
+					}
+				}
+			}
+
+			GEA_Josias_candidate_Schleicher_visible = {
+				OR = {
+					has_country_flag = GEA_Josias_selecting_frame_1
+					has_country_flag = GEA_Josias_selecting_frame_2
+				}
+				NOT = {
+					OR = {
+						has_country_flag = GEA_Josias_frame_1_Schleicher
+						has_country_flag = GEA_Josias_frame_2_Schleicher
+					}
+				}
+			}
+
+			GEA_Josias_candidate_Hugenberg_visible = {
+				OR = {
+					has_country_flag = GEA_Josias_selecting_frame_1
+					has_country_flag = GEA_Josias_selecting_frame_2
+				}
+				NOT = {
+					OR = {
+						has_country_flag = GEA_Josias_frame_1_Hugenberg
+						has_country_flag = GEA_Josias_frame_2_Hugenberg
+					}
+				}
+			}
+
 		}
 		
 		visible = {
@@ -371,6 +507,131 @@ scripted_gui = {
 		}
 
 		effects = {
+			GEA_Josias_frame_add_1_click = {
+				if = {
+					limit = {
+						NOT = {
+							has_country_flag = GEA_Josias_selecting_frame_1
+						}
+					}
+					set_country_flag = GEA_Josias_selecting_frame_1
+					clr_country_flag = GEA_Josias_selecting_frame_2
+					clr_country_flag = GEA_Josias_selecting_frame_3
+				}
+				else = {
+					clr_country_flag = GEA_Josias_selecting_frame_1
+					clr_country_flag = GEA_Josias_selecting_frame_2
+					clr_country_flag = GEA_Josias_selecting_frame_3
+				}
+			}
+
+			GEA_Josias_frame_add_2_click = {
+				if = {
+					limit = {
+						NOT = {
+							has_country_flag = GEA_Josias_selecting_frame_2
+						}
+					}
+					set_country_flag = GEA_Josias_selecting_frame_2
+					clr_country_flag = GEA_Josias_selecting_frame_1
+					clr_country_flag = GEA_Josias_selecting_frame_3
+				}
+				else = {
+					clr_country_flag = GEA_Josias_selecting_frame_2
+					clr_country_flag = GEA_Josias_selecting_frame_1
+					clr_country_flag = GEA_Josias_selecting_frame_3
+				}
+			}
+
+			GEA_Josias_candidate_Nikolaus_click = {
+				if = {
+					limit = {
+						has_country_flag = GEA_Josias_selecting_frame_1
+					}
+					set_country_flag = GEA_Josias_frame_1_Nikolaus
+					clr_country_flag = GEA_Josias_selecting_frame_1
+					clr_country_flag = GEA_Josias_selecting_frame_2
+					clr_country_flag = GEA_Josias_selecting_frame_3
+				}
+				else = {
+					set_country_flag = GEA_Josias_frame_2_Nikolaus
+					clr_country_flag = GEA_Josias_selecting_frame_1
+					clr_country_flag = GEA_Josias_selecting_frame_2
+					clr_country_flag = GEA_Josias_selecting_frame_3
+				}
+			}
+
+			GEA_Josias_candidate_Carl_Edward_click = {
+				if = {
+					limit = {
+						has_country_flag = GEA_Josias_selecting_frame_1
+					}
+					set_country_flag = GEA_Josias_frame_1_Carl_Edward
+					clr_country_flag = GEA_Josias_selecting_frame_1
+					clr_country_flag = GEA_Josias_selecting_frame_2
+					clr_country_flag = GEA_Josias_selecting_frame_3
+				}
+				else = {
+					set_country_flag = GEA_Josias_frame_2_Carl_Edward
+					clr_country_flag = GEA_Josias_selecting_frame_1
+					clr_country_flag = GEA_Josias_selecting_frame_2
+					clr_country_flag = GEA_Josias_selecting_frame_3
+				}
+			}
+
+			GEA_Josias_candidate_Elard_von_Oldenburg_click = {
+				if = {
+					limit = {
+						has_country_flag = GEA_Josias_selecting_frame_1
+					}
+					set_country_flag = GEA_Josias_frame_1_Elard_von_Oldenburg
+					clr_country_flag = GEA_Josias_selecting_frame_1
+					clr_country_flag = GEA_Josias_selecting_frame_2
+					clr_country_flag = GEA_Josias_selecting_frame_3
+				}
+				else = {
+					set_country_flag = GEA_Josias_frame_2_Elard_von_Oldenburg
+					clr_country_flag = GEA_Josias_selecting_frame_1
+					clr_country_flag = GEA_Josias_selecting_frame_2
+					clr_country_flag = GEA_Josias_selecting_frame_3
+				}
+			}
+
+			GEA_Josias_candidate_Schleicher_click = {
+				if = {
+					limit = {
+						has_country_flag = GEA_Josias_selecting_frame_1
+					}
+					set_country_flag = GEA_Josias_frame_1_Schleicher
+					clr_country_flag = GEA_Josias_selecting_frame_1
+					clr_country_flag = GEA_Josias_selecting_frame_2
+					clr_country_flag = GEA_Josias_selecting_frame_3
+				}
+				else = {
+					set_country_flag = GEA_Josias_frame_2_Schleicher
+					clr_country_flag = GEA_Josias_selecting_frame_1
+					clr_country_flag = GEA_Josias_selecting_frame_2
+					clr_country_flag = GEA_Josias_selecting_frame_3
+				}
+			}
+
+			GEA_Josias_candidate_Hugenberg_click = {
+				if = {
+					limit = {
+						has_country_flag = GEA_Josias_selecting_frame_1
+					}
+					set_country_flag = GEA_Josias_frame_1_Hugenberg
+					clr_country_flag = GEA_Josias_selecting_frame_1
+					clr_country_flag = GEA_Josias_selecting_frame_2
+					clr_country_flag = GEA_Josias_selecting_frame_3
+				}
+				else = {
+					set_country_flag = GEA_Josias_frame_2_Hugenberg
+					clr_country_flag = GEA_Josias_selecting_frame_1
+					clr_country_flag = GEA_Josias_selecting_frame_2
+					clr_country_flag = GEA_Josias_selecting_frame_3
+				}
+			}
 		}
 	}
 }
