@@ -195,4 +195,60 @@ spriteTypes = {
 		texturefile = "gfx/interface/GEAGUI/GEA_Hawaii_ger.png"
 		transparencecheck = yes
 	}
+
+
+
+
+
+
+
+
+
+	spriteType = {
+		name = "GEA_Josias_Portraits"
+		texturefile = "gfx/interface/GEAGUI/Josias_Portraits.png"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "GEA_Josias_frame"
+		texturefile = "gfx/interface/GEAGUI/frame1.png"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "GEA_Josias_frame_add"
+		texturefile = "gfx/interface/GEAGUI/frame1_add.png"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "GEA_Josias_Nikolaus"
+		texturefile = "gfx/interface/GEAGUI/Josias_Nikolaus.png"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "GEA_Josias_Carl_Edward"
+		texturefile = "gfx/interface/GEAGUI/Josias_Carl_Edward.png"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "GEA_Josias_Elard_von_Oldenburg"
+		texturefile = "gfx/interface/GEAGUI/Josias_Elard_von_Oldenburg.png"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "GEA_Josias_Schleicher"
+		texturefile = "gfx/interface/GEAGUI/Josias_Schleicher.png"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "GEA_Josias_Hugenberg"
+		texturefile = "gfx/interface/GEAGUI/Josias_Hugenberg.png"
+		transparencecheck = yes
+	}
 }

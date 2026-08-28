@@ -152,6 +152,89 @@ guiTypes = {
 			scale = 0.7
 		}
 	}
+
+	containerWindowType = {
+		name = "GEA_josias_gui_game"
+		position = { x = 0 y = 50 }
+		size = { width = 275 height = 430 }
+		
+		iconType = {
+			name = "GEA_Josias_Portraits"
+			orientation = center
+			position = { x = 58 y = -95 }
+			spriteType = "GEA_Josias_Portraits"
+			scale = 0.6
+		}
+
+		buttonType = { #左下
+			name = "GEA_Josias_frame_add_2"
+			orientation = center
+			position = { x = -40 y = 70 }
+			spriteType = "GEA_Josias_frame_add"
+			pdx_tooltip = ""
+			scale = 0.4
+		}
+		iconType = { #左下
+			name = "GEA_Josias_frame_2"
+			orientation = center
+			position = { x = -40 y = 70 }
+			spriteType = "GEA_Josias_frame"
+			scale = 0.4
+		}
+
+
+
+		buttonType = { #左上
+			name = "GEA_Josias_frame_add_1"
+			orientation = center
+			position = { x = -40 y = -200 }
+			spriteType = "GEA_Josias_frame_add"
+			pdx_tooltip = ""
+			scale = 0.4
+		}
+		iconType = { #左上
+			name = "GEA_Josias_Nikolaus_1"
+			orientation = center
+			position = { x = -40 y = -200 }
+			spriteType = "GEA_Josias_Nikolaus"
+			scale = 0.4
+		}
+		iconType = { #左上
+			name = "GEA_Carl_Edward_1"
+			orientation = center
+			position = { x = -40 y = -200 }
+			spriteType = "GEA_Josias_Carl_Edward"
+			scale = 0.4
+		}
+		iconType = { #左上
+			name = "GEA_Josias_Elard_von_Oldenburg_1"
+			orientation = center
+			position = { x = -40 y = -200 }
+			spriteType = "GEA_Josias_Elard_von_Oldenburg"
+			scale = 0.4
+		}
+		iconType = { #左上
+			name = "GEA_Josias_Schleicher"
+			orientation = center
+			position = { x = -40 y = -200 }
+			spriteType = "GEA_Josias_Schleicher"
+			scale = 0.4
+		}
+		iconType = { #左上
+			name = "GEA_Josias_Hugenberg"
+			orientation = center
+			position = { x = -40 y = -200 }
+			spriteType = "GEA_Josias_Hugenberg"
+			scale = 0.4
+		}
+		iconType = { #左上
+			name = "GEA_Josias_frame_1"
+			orientation = center
+			position = { x = -40 y = -200 }
+			spriteType = "GEA_Josias_frame"
+			scale = 0.4
+		}
+	}
 }
 
 

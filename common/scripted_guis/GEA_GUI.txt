@@ -350,4 +350,27 @@ scripted_gui = {
 			}
 		}
 	}
+
+
+	GEA_Josias_DECISION_UI = {
+		context_type = decision_category
+		parent_window_token = topbar
+		window_name = "GEA_josias_gui_game"
+
+		ai_check = {
+			always = no
+		}
+
+		triggers = {
+		}
+		
+		visible = {
+			OR = {
+				tag = GEA
+			}
+		}
+
+		effects = {
+		}
+	}
 }
