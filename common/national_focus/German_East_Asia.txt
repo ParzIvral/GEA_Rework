@@ -1393,7 +1393,7 @@ focus_tree = {
 		id = GEA_Governor_Josias 
 		icon = GFX_GEA_Governor_Josias
 		cost = 1	
-		x = 0
+		x = -1
 		y = 1
 		available = {		
 			has_country_flag = GEA_Governor_Josias_flag
@@ -1437,7 +1437,7 @@ focus_tree = {
 	focus = { #双重姻亲的亲切纽带
 		id = GEA_The_close_bond_of_dual_in-laws 
 		icon = GFX_GEA_The_close_bond_of_dual_in-laws
-		cost = 1	
+		cost = 2	
 		x = -2
 		y = 1
 		available = {		
@@ -1458,28 +1458,7 @@ focus_tree = {
 	focus = { #表兄情谊
 		id = GEA_Brotherly_affection
 		icon = GFX_GEA_Brotherly_affection
-		cost = 1	
-		x = -2
-		y = 1
-		available = {		
-			
-		}
-        prerequisite = {
-			focus = GEA_Josias_Group
-		}
-		relative_position_id = GEA_Josias_Group
-		ai_will_do = {
-			factor = 100
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_Brotherly_affection"
-		}
-	}
-
-	focus = { #表兄情谊
-		id = GEA_Brotherly_affection
-		icon = GFX_GEA_Brotherly_affection
-		cost = 1	
+		cost = 2	
 		x = -1
 		y = 2
 		available = {		
@@ -1500,7 +1479,7 @@ focus_tree = {
 	focus = { #主权派的智者
 		id = GEA_The_wise_men_of_the_sovereignty_faction
 		icon = GFX_GEA_The_wise_men_of_the_sovereignty_faction
-		cost = 1	
+		cost = 2	
 		x = 0
 		y = 1
 		available = {		
@@ -1521,7 +1500,7 @@ focus_tree = {
 	focus = { #与实业家联盟的友谊
 		id = GEA_The_friendship_with_the_publicity_magnate
 		icon = GFX_GEA_The_friendship_with_the_publicity_magnate
-		cost = 1	
+		cost = 2	
 		x = 1
 		y = 2
 		available = {		
@@ -1542,7 +1521,7 @@ focus_tree = {
 	focus = { #将军之秘党
 		id = GEA_The_Secret_Party_of_the_General
 		icon = GFX_GEA_The_Secret_Party_of_the_General
-		cost = 1	
+		cost = 2
 		x = 2
 		y = 1
 		available = {		
@@ -1563,7 +1542,7 @@ focus_tree = {
 	focus = { #为卡特尔解放市场
 		id = GEA_To_liberate_the_market_for_cartels
 		icon = GFX_GEA_To_liberate_the_market_for_cartels
-		cost = 1	
+		cost = 3	
 		x = -1
 		y = 1
 		available = {		
@@ -1588,7 +1567,7 @@ focus_tree = {
 	focus = { #阴影下的监事会
 		id = GEA_AOG_under_the_Shadow_of_the_Prince
 		icon = GFX_GEA_AOG_under_the_Shadow_of_the_Prince
-		cost = 1	
+		cost = 3
 		x = 0   
 		y = 2
 		available = {		
@@ -1612,7 +1591,7 @@ focus_tree = {
 	focus = { #执掌大洋通路
 		id = GEA_Take_charge_of_the_ocean_passage
 		icon = GFX_GEA_Take_charge_of_the_ocean_passage
-		cost = 1	
+		cost = 3
 		x = -2
 		y = 2
 		available = {		
@@ -1637,7 +1616,7 @@ focus_tree = {
 	focus = { #亲王权威至高无上
 		id = GEA_Supreme_authority_of_the_prince
 		icon = GFX_GEA_Supreme_authority_of_the_prince
-		cost = 1	
+		cost = 5
 		x = 0
 		y = 2
 		available = {		
@@ -2008,7 +1987,7 @@ focus_tree = {
 	focus = { #亲王，皇帝，德意志！
 		id = GEA_Prinz_Kaiser_Deutschland
 		icon = GFX_GEA_Prinz_Kaiser_Deutschland
-		cost = 1	
+		cost = 5	
 		x = 0
 		y = 1
 		available = {		
@@ -2031,7 +2010,30 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Prinz_Kaiser_Deutschland"
 		}
 	}
-
+#威廉·海耶
+	focus = {
+		id = GEA_Governor_Heye #海耶元帅经略东方
+		icon = GFX_GEA_Governor_Heye
+		cost = 1	
+		x = 15
+		y = 1
+		available = {		
+			has_country_flag = GEA_Governor_Heye_flag
+		}
+        prerequisite = {
+			focus = GEA_Our_position
+		}
+		bypass = {
+			has_country_flag = GEA_Governor_Heye_flag
+		}
+		relative_position_id = GEA_Our_position
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Governor_Heye"
+		}
+	}
 	### start ###
 	focus = {
 		id = GEA_Status_of_the_Admiralty

@@ -12,10 +12,6 @@ SpriteTypes = {
 		texturefile = "gfx/interface/goals/GEA_connections_in_germany.png"
 	}
 	SpriteType = {
-		name = "GFX_GEA_Mucke"
-		texturefile = "gfx/interface/goals/GEA_Mucke.png"
-	}
-	SpriteType = {
 		name = "GFX_GEA_Heye"
 		texturefile = "gfx/interface/goals/GEA_Heye.png"
 	}
@@ -655,5 +651,116 @@ SpriteTypes = {
 		name = "GFX_GEA_Even_closer_to_a_model_colony"
 		texturefile = "gfx/interface/goals/GEA_Even_closer_to_a_model_colony.png"
 	}
+	SpriteType = {
+		name = "GFX_GEA_Governor_Josias"
+		texturefile = "gfx/interface/goals/GEA_Governor_Josias.png"
+	}
+	SpriteType = {
+		name = "GFX_GEA_Josias_Group"
+		texturefile = "gfx/interface/goals/GEA_Josias_Group.png"
+	}
+	SpriteType = {
+		name = "GFX_GEA_The_close_bond_of_dual_in-laws"
+		texturefile = "gfx/interface/goals/GEA_The_close_bond_of_dual_in-laws.png"
+	}
+	SpriteType = {
+		name = "GFX_GEA_The_wise_men_of_the_sovereignty_faction"
+		texturefile = "gfx/interface/goals/GEA_The_wise_men_of_the_sovereignty_faction.png"
+	}
+	SpriteType = {
+		name = "GFX_GEA_The_Secret_Party_of_the_General"
+		texturefile = "gfx/interface/goals/GEA_The_Secret_Party_of_the_General.png"
+	}
+	SpriteType = {
+		name = "GFX_GEA_Brotherly_affection"
+		texturefile = "gfx/interface/goals/GEA_Brotherly_affection.png"
+	}
+	SpriteType = {
+		name = "GFX_GEA_The_friendship_with_the_publicity_magnate"
+		texturefile = "gfx/interface/goals/GEA_The_friendship_with_the_publicity_magnate.png"
+	}
+	SpriteType = {
+		name = "GFX_GEA_To_liberate_the_market_for_cartels"
+		texturefile = "gfx/interface/goals/GEA_To_liberate_the_market_for_cartels.png"
+	}
+	SpriteType = {
+		name = "GFX_GEA_Take_charge_of_the_ocean_passage"
+		texturefile = "gfx/interface/goals/GEA_Take_charge_of_the_ocean_passage.png"
+	}
+	SpriteType = {
+		name = "GFX_GEA_AOG_under_the_Shadow_of_the_Prince"
+		texturefile = "gfx/interface/goals/GEA_AOG_under_the_Shadow_of_the_Prince.png"
+	}
+	SpriteType = {
+		name = "GFX_GEA_Orderly_territory"
+		texturefile = "gfx/interface/goals/GEA_Orderly_territory.png"
+	}
+	SpriteType = {
+		name = "GFX_GEA_Serve_monarch_but_not_necessarily_be_patriotic"
+		texturefile = "gfx/interface/goals/GEA_Serve_monarch_but_not_necessarily_be_patriotic.png"
+	}
+	SpriteType = {
+		name = "GFX_GEA_Domesticating_the_General_Staff_Department"
+		texturefile = "gfx/interface/goals/GEA_Domesticating_the_General_Staff_Department.png"
+	}
+	SpriteType = {
+		name = "GFX_GEA_Only_Josias"
+		texturefile = "gfx/interface/goals/GEA_Only_Josias.png"
+	}
+	SpriteType = {
+		name = "GFX_GEA_Cold_Rule"
+		texturefile = "gfx/interface/goals/GEA_Cold_Rule.png"
+	}
+	SpriteType = {
+		name = "GFX_GEA_Make_good_use_of_the_theory_of_external_threats"
+		texturefile = "gfx/interface/goals/GEA_Make_good_use_of_the_theory_of_external_threats.png"
+	}
+	SpriteType = {
+		name = "GFX_GEA_Impermeable"
+		texturefile = "gfx/interface/goals/GEA_Impermeable.png"
+	}
+	SpriteType = {
+		name = "GFX_GEA_Domesticating_the_East"
+		texturefile = "gfx/interface/goals/GEA_Domesticating_the_East.png"
+	}
+	SpriteType = {
+		name = "GFX_GEA_Promote_the_colonial_corporation_system"
+		texturefile = "gfx/interface/goals/GEA_Promote_the_colonial_corporation_system.png"
+	}
+	SpriteType = {
+		name = "GFX_GEA_Consider_the_issue_of_cartels"
+		texturefile = "gfx/interface/goals/GEA_Consider_the_issue_of_cartels.png"
+	}
+	SpriteType = {
+		name = "GFX_GEA_East_Arolsen"
+		texturefile = "gfx/interface/goals/GEA_East_Arolsen.png"
+	}
+	SpriteType = {
+		name = "GFX_GEA_Introduce_technocrats"
+		texturefile = "gfx/interface/goals/GEA_Introduce_technocrats.png"
+	}
+	SpriteType = {
+		name = "GFX_GEA_Boost_tourism_even_more"
+		texturefile = "gfx/interface/goals/GEA_Boost_tourism_even_more.png"
+	}
+	SpriteType = {
+		name = "GFX_GEA_Accumulation_of_real_estate"
+		texturefile = "gfx/interface/goals/GEA_Accumulation_of_real_estate.png"
+	}
+	SpriteType = {
+		name = "GFX_GEA_New_noble"
+		texturefile = "gfx/interface/goals/GEA_New_noble.png"
+	}
+	SpriteType = {
+		name = "GFX_GEA_The_private_estate_of_Josias"
+		texturefile = "gfx/interface/goals/GEA_The_private_estate_of_Josias.png"
+	}
+	SpriteType = {
+		name = "GFX_GEA_Prinz_Kaiser_Deutschland"
+		texturefile = "gfx/interface/goals/GEA_Prinz_Kaiser_Deutschland.png"
+	}
+	SpriteType = {
+		name = "GFX_GEA_Supreme_authority_of_the_prince"
+		texturefile = "gfx/interface/goals/GEA_Supreme_authority_of_the_prince.png"
+	}
 }
-
