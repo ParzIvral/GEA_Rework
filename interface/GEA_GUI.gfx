@@ -289,8 +289,146 @@ spriteTypes = {
 	}
 
 	spriteType = {
-		name = "GEA_Josias_Carl_Edward_small"
-		texturefile = "gfx/interface/GEAGUI/Josias_Carl_Edward_small.png"
+		name = "GEA_Josias_Carl_Schmitt"
+		texturefile = "gfx/interface/GEAGUI/Josias_Carl_Schmitt.png"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "GEA_Josias_Carl_Schmitt_small"
+		texturefile = "gfx/interface/GEAGUI/Josias_Carl_Schmitt_small.png"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "GEA_Josias_Dorpmuller"
+		texturefile = "gfx/interface/GEAGUI/Josias_Dorpmuller.png"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "GEA_Josias_Dorpmuller_small"
+		texturefile = "gfx/interface/GEAGUI/Josias_Dorpmuller_small.png"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "GEA_Josias_Emil_Helfferich"
+		texturefile = "gfx/interface/GEAGUI/Josias_Emil_Helfferich.png"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "GEA_Josias_Emil_Helfferich_small"
+		texturefile = "gfx/interface/GEAGUI/Josias_Emil_Helfferich_small.png"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "GEA_Josias_Fritz_Thyssen"
+		texturefile = "gfx/interface/GEAGUI/Josias_Fritz_Thyssen.png"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "GEA_Josias_Fritz_Thyssen_small"
+		texturefile = "gfx/interface/GEAGUI/Josias_Fritz_Thyssen_small.png"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "GEA_Josias_Hermann_Goring"
+		texturefile = "gfx/interface/GEAGUI/Josias_Hermann_Goring.png"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "GEA_Josias_Hermann_Goring_small"
+		texturefile = "gfx/interface/GEAGUI/Josias_Hermann_small.png"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "GEA_Josias_Siegmund_Bodenheimer"
+		texturefile = "gfx/interface/GEAGUI/Josias_Siegmund_Bodenheimer.png"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "GEA_Josias_Siegmund_Bodenheimer_small"
+		texturefile = "gfx/interface/GEAGUI/Josias_Siegmund_Bodenheimer_small.png"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "GEA_Josias_Josef_Abs"
+		texturefile = "gfx/interface/GEAGUI/Josias_ Josef_Abs.png"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "GEA_Josias_Josef_Abs_small"
+		texturefile = "gfx/interface/GEAGUI/Josias_ Josef_Abs_small.png"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "GEA_Josias_Fritz_Meer"
+		texturefile = "gfx/interface/GEAGUI/Josias_Fritz_Meer.png"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "GEA_Josias_Fritz_Meer_small"
+		texturefile = "gfx/interface/GEAGUI/Josias_Fritz_Meer_small.png"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "GEA_Josias_Hermann_Bucher"
+		texturefile = "gfx/interface/GEAGUI/Josias_Hermann_Bucher.png"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "GEA_Josias_Hermann_Bucher_small"
+		texturefile = "gfx/interface/GEAGUI/Josias_Hermann_Bucher_small.png"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "GEA_Josias_Hermann_Siemens"
+		texturefile = "gfx/interface/GEAGUI/Josias_Hermann_Siemens.png"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "GEA_Josias_Hermann_Siemens_small"
+		texturefile = "gfx/interface/GEAGUI/Josias_Hermann_Siemens_small.png"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "GEA_Josias_Otto_Jeidels"
+		texturefile = "gfx/interface/GEAGUI/Josias_Otto_Jeidels.png"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "GEA_Josias_Otto_Jeidels_small"
+		texturefile = "gfx/interface/GEAGUI/Josias_Otto_Jeidels_small.png"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "GEA_Josias_Alfred_Krupp"
+		texturefile = "gfx/interface/GEAGUI/Josias_Alfred_Krupp.png"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "GEA_Josias_Alfred_Krupp_small"
+		texturefile = "gfx/interface/GEAGUI/Josias_Alfred_Krupp_small.png"
 		transparencecheck = yes
 	}
 
