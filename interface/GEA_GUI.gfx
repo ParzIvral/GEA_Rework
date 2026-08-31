@@ -443,4 +443,10 @@ spriteTypes = {
 		texturefile = "gfx/interface/GEAGUI/Josias_Werner_von_Alvensleben_small.png"
 		transparencecheck = yes
 	}
+
+	spriteType = {
+		name = "GEA_total_background"
+		texturefile = "gfx/interface/GEAGUI/total_background.png"
+		transparencecheck = yes
+	}
 }

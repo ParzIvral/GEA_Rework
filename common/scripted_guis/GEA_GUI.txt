@@ -370,6 +370,7 @@ scripted_gui = {
 						has_country_flag = GEA_Josias_frame_1_Elard_von_Oldenburg
 						has_country_flag = GEA_Josias_frame_1_Schleicher
 						has_country_flag = GEA_Josias_frame_1_Hugenberg
+						has_country_flag = GEA_Josias_frame_1_Werner_von_Alvensleben
 					}
 				}
 			}
@@ -394,6 +395,10 @@ scripted_gui = {
 				has_country_flag = GEA_Josias_frame_1_Hugenberg
 			}
 
+			GEA_Josias_Werner_von_Alvensleben_1_visible = {
+				has_country_flag = GEA_Josias_frame_1_Werner_von_Alvensleben
+			}
+
 			GEA_Josias_frame_add_2_visible = {
 				NOT = {
 					OR = {
@@ -402,6 +407,7 @@ scripted_gui = {
 						has_country_flag = GEA_Josias_frame_2_Elard_von_Oldenburg
 						has_country_flag = GEA_Josias_frame_2_Schleicher
 						has_country_flag = GEA_Josias_frame_2_Hugenberg
+						has_country_flag = GEA_Josias_frame_2_Werner_von_Alvensleben
 					}
 				}
 			}
@@ -424,6 +430,10 @@ scripted_gui = {
 
 			GEA_Josias_Hugenberg_2_visible = {
 				has_country_flag = GEA_Josias_frame_2_Hugenberg
+			}
+
+			GEA_Josias_Werner_von_Alvensleben_2_visible = {
+				has_country_flag = GEA_Josias_frame_2_Werner_von_Alvensleben
 			}
 
 			GEA_Josias_frame_add_3_visible = {
@@ -662,6 +672,19 @@ scripted_gui = {
 					OR = {
 						has_country_flag = GEA_Josias_frame_5_Carl_Schmitt
 						has_country_flag = GEA_Josias_frame_6_Carl_Schmitt
+					}
+				}
+			}
+
+			GEA_Josias_candidate_Werner_von_Alvensleben_visible = {
+				OR = {
+					has_country_flag = GEA_Josias_selecting_frame_1
+					has_country_flag = GEA_Josias_selecting_frame_2
+				}
+				NOT = {
+					OR = {
+						has_country_flag = GEA_Josias_frame_1_Werner_von_Alvensleben
+						has_country_flag = GEA_Josias_frame_2_Werner_von_Alvensleben
 					}
 				}
 			}
@@ -1053,6 +1076,24 @@ scripted_gui = {
 				}
 				else = {
 					set_country_flag = GEA_Josias_frame_2_Hugenberg
+					clr_country_flag = GEA_Josias_selecting_frame_1
+					clr_country_flag = GEA_Josias_selecting_frame_2
+					clr_country_flag = GEA_Josias_selecting_frame_3
+				}
+			}
+
+			GEA_Josias_candidate_Werner_von_Alvensleben_click = {
+				if = {
+					limit = {
+						has_country_flag = GEA_Josias_selecting_frame_1
+					}
+					set_country_flag = GEA_Josias_frame_1_Werner_von_Alvensleben
+					clr_country_flag = GEA_Josias_selecting_frame_1
+					clr_country_flag = GEA_Josias_selecting_frame_2
+					clr_country_flag = GEA_Josias_selecting_frame_3
+				}
+				else = {
+					set_country_flag = GEA_Josias_frame_2_Werner_von_Alvensleben
 					clr_country_flag = GEA_Josias_selecting_frame_1
 					clr_country_flag = GEA_Josias_selecting_frame_2
 					clr_country_flag = GEA_Josias_selecting_frame_3

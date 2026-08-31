@@ -1433,6 +1433,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Josias_Group"
+			custom_effect_tooltip = GEA_Josias_Group_tt
 			unlock_decision_category_tooltip = GEA_josias_decisions
 		}
 	}
@@ -1455,6 +1456,10 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_close_bond_of_dual_in-laws"
+			custom_effect_tooltip = GEA_The_close_bond_of_dual_in-laws_tt
+			country_event = {
+				id = GEA.206
+			}
 		}
 	}
 
@@ -1497,6 +1502,10 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_wise_men_of_the_sovereignty_faction"
+			custom_effect_tooltip = GEA_The_wise_men_of_the_sovereignty_faction_tt
+			country_event = {
+				id = GEA.207
+			}
 		}
 	}
 
@@ -1539,6 +1548,10 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_Secret_Party_of_the_General"
+			custom_effect_tooltip = GEA_The_Secret_Party_of_the_General_tt
+			country_event = {
+				id = GEA.208
+			}
 		}
 	}
 
@@ -1642,7 +1655,7 @@ focus_tree = {
 	focus = { #秩序领地
 		id = GEA_Orderly_territory
 		icon = GFX_GEA_Orderly_territory
-		cost = 1	
+		cost = 4	
 		x = -5
 		y = 1
 		available = {		
@@ -1657,13 +1670,23 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Orderly_territory"
+			add_stability = 0.04
+			modify_country_flag = {
+				flag = GEA_Indochinese_Stability
+				value = 2
+			}
+			custom_effect_tooltip = GEA_Indochina_Stability_Up_More
+			swap_ideas = {
+				remove_idea = GEA_colonial_question
+				add_idea = GEA_colonial_question_josias_1
+			}
 		}
 	}
 
 	focus = { #忠君...但未必爱国
 		id = GEA_Serve_monarch_but_not_necessarily_be_patriotic
 		icon = GFX_GEA_Serve_monarch_but_not_necessarily_be_patriotic
-		cost = 1	
+		cost = 3	
 		x = -1
 		y = 1
 		available = {		
@@ -1678,13 +1701,17 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Serve_monarch_but_not_necessarily_be_patriotic"
+			swap_ideas = {
+				remove_idea = GEA_colonial_question_josias_1
+				add_idea = GEA_colonial_question_josias_2
+			}
 		}
 	}
 
 	focus = { #冷酷之治
 		id = GEA_Cold_Rule
 		icon = GFX_GEA_Cold_Rule
-		cost = 1	
+		cost = 3	
 		x = 0
 		y = 2
 		available = {		
@@ -1699,13 +1726,17 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Cold_Rule"
+			swap_ideas = {
+				remove_idea = GEA_colonial_question_josias_2
+				add_idea = GEA_colonial_question_josias_3
+			}
 		}
 	}
 
 	focus = { #驯服总参谋部
 		id = GEA_Domesticating_the_General_Staff_Department
 		icon = GFX_GEA_Domesticating_the_General_Staff_Department
-		cost = 1	
+		cost = 4	
 		x = 1
 		y = 1
 		available = {		
@@ -1720,13 +1751,18 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Domesticating_the_General_Staff_Department"
+			add_war_support = 0.06
+			custom_effect_tooltip = GEA_Domesticating_the_General_Staff_Department_tt
+			add_to_variable = { GEA_army_conscription_factor = 0.1 }
+			add_to_variable = { GEA_army_land_doctrine_cost_factor = -0.1 }
+			add_to_variable = { GEA_experience_loss_factor = -0.05 }
 		}
 	}
 
 	focus = { #威廉？我们只认约西亚斯！
 		id = GEA_Only_Josias
 		icon = GFX_GEA_Only_Josias
-		cost = 1	
+		cost = 4
 		x = -1
 		y = 1
 		available = {		
@@ -1741,13 +1777,26 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Only_Josias"
+			add_political_power = 100
+			add_popularity = { ideology = authoritarian_democrat popularity = 0.03 }
+			add_popularity = { ideology = paternal_autocrat popularity = 0.03 }
+			add_stability = 0.05
+			army_experience = 15
+			navy_experience = 15
+			air_experience = 15
+			hidden_effect = {
+				country_event = {
+					id = GEA.204
+					days = 10
+				}
+			}
 		}
 	}
 
 	focus = { #善用外部威胁论
 		id = GEA_Make_good_use_of_the_theory_of_external_threats
 		icon = GFX_GEA_Make_good_use_of_the_theory_of_external_threats
-		cost = 1	
+		cost = 4	
 		x = 1
 		y = 2
 		available = {		
@@ -1762,13 +1811,25 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Make_good_use_of_the_theory_of_external_threats"
+			add_war_support = 0.1
+			JAP = { 
+				add_opinion_modifier = { 
+					target = GEA
+					modifier = medium_decrease
+				} 
+			}
+			add_ideas = GEA_Portraying_Japan_as_a_threat
+			country_event = {
+				id = GEA.205
+				days = 7
+			}
 		}
 	}
 
 	focus = { #风雨不透
 		id = GEA_Impermeable
 		icon = GFX_GEA_Impermeable
-		cost = 1	
+		cost = 4	
 		x = 1
 		y = 2
 		available = {		
@@ -1789,13 +1850,17 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Impermeable"
+			swap_ideas = {
+				remove_idea = GEA_colonial_question_josias_3
+				add_idea = GEA_colonial_question_josias_4
+			}
 		}
 	}
 
 	focus = { #驯服东方
 		id = GEA_Domesticating_the_East
 		icon = GFX_GEA_Domesticating_the_East
-		cost = 1	
+		cost = 4	
 		x = 0
 		y = 1
 		available = {		
@@ -1816,7 +1881,7 @@ focus_tree = {
 	focus = { #推动殖民法团制度
 		id = GEA_Promote_the_colonial_corporation_system
 		icon = GFX_GEA_Promote_the_colonial_corporation_system
-		cost = 1	
+		cost = 4	
 		x = 5
 		y = 1
 		available = {		
@@ -1831,13 +1896,57 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Promote_the_colonial_corporation_system"
+			if = {
+				limit = {
+					GER = {
+						OR = {
+							has_idea = GER_Matthias_Erzberger_hog_sco
+							has_idea = GER_Heinrich_Bruening_hog_sco
+							has_idea = GER_Franz_von_Papen_hog_sco
+							has_idea = GER_Ludwig_Kaas_hog_sco
+							has_idea = GER_Konrad_Adenauer_hog_sco
+							has_idea = GER_Otto_Wels_hog_sde
+							has_idea = GER_Gustav_Noske_hog_sde
+							has_idea = GER_Thomas_Mann_hog_sli
+							has_idea = GER_Walther_Rathenau_hog_sli
+							has_idea = GER_Gustav_Stresemann_hog_mli
+							has_idea = GER_Paul_Lensch_hog_sde
+							has_idea = GER_Hans_Vogel_hog_sde
+							has_idea = GER_Max_Weber_hog_mli
+							has_idea = GER_Marianne_Weber_hog_mli
+							has_idea = GER_Carl_Schmitt_hog_ade
+							has_idea = GER_Friedrich_Meinecke_hog_sli
+						}
+					}
+				}
+				add_ideas = GEA_Free_export-oriented_economy
+			}
+			else_if = {
+				limit = { 
+					GER = {
+						OR = {
+							has_idea = GER_Kuno_von_Westarp_hog_ade
+							has_idea = GER_Paul_von_Lettow_Vorbeck_hog_ade
+							has_idea = GER_Manfred_Freiherr_von_Richthofen_hog_ade
+							has_idea = GER_Hans_Schlange_Schoningen_hog_ade
+							has_idea = GER_Kurt_von_Schleicher_hog_pau
+							has_idea = GER_Carl_Friedrich_Goerdeler_hog_pau
+							has_idea = GER_Moeller_van_den_Bruck_hog_npo
+						}
+					}
+				}
+				add_ideas = GEA_Military_industry_takes_the_lead
+			}
+			else = {
+				add_ideas = GEA_GEA_okonomische_Integration
+			}
 		}
 	}
 
 	focus = { #斟酌卡特尔问题
 		id = GEA_Consider_the_issue_of_cartels
 		icon = GFX_GEA_Consider_the_issue_of_cartels
-		cost = 1	
+		cost = 4	
 		x = -1
 		y = 1
 		available = {		
@@ -1852,13 +1961,17 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Consider_the_issue_of_cartels"
+			country_event = {
+				id = GEA.200
+				days = 1
+			}
 		}
 	}
 
 	focus = { #再刺激旅游业
 		id = GEA_Boost_tourism_even_more
 		icon = GFX_GEA_Boost_tourism_even_more
-		cost = 1	
+		cost = 4	
 		x = -1
 		y = 2
 		available = {		
@@ -1873,13 +1986,27 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Boost_tourism_even_more"
+			custom_effect_tooltip = GEA_Boost_tourism_even_more_tt
+			add_popularity = {
+				ideology = social_liberal
+				popularity = 0.03
+			}
+			add_popularity = {
+				ideology = market_liberal
+				popularity = 0.03
+			}
+			add_popularity = {
+				ideology = authoritarian_democrat
+				popularity = 0.05
+			}
+			add_stability = 0.05
 		}
 	}
 
 	focus = { #引进技术官僚
 		id = GEA_Introduce_technocrats
 		icon = GFX_GEA_Introduce_technocrats
-		cost = 1	
+		cost = 4	
 		x = 1
 		y = 1
 		available = {		
@@ -1894,13 +2021,21 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Introduce_technocrats"
+			custom_effect_tooltip = GEA_Enlightenment_and_the_Mission_of_Education_tt
+			add_research_slot = 1
+			hidden_effect = {
+				country_event = {
+					id = GEA.10000
+					days = 730
+				}
+			}
 		}
 	}
 
 	focus = { #东方阿罗尔森
 		id = GEA_East_Arolsen
 		icon = GFX_GEA_East_Arolsen
-		cost = 1	
+		cost = 3	
 		x = 1
 		y = 1
 		available = {		
@@ -1915,13 +2050,32 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_East_Arolsen"
+			add_stability = 0.03
+			add_political_power = 15
+			336 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			country_event = {
+				id = GEA.201
+				days = 4
+			}
 		}
 	}
 
 	focus = { #聚敛地产
 		id = GEA_Accumulation_of_real_estate
 		icon = GFX_GEA_Accumulation_of_real_estate
-		cost = 1	
+		cost = 3	
 		x = 0
 		y = 2
 		available = {		
@@ -1936,13 +2090,92 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Accumulation_of_real_estate"
+			add_political_power = 75
+			random_owned_state = {
+				limit = {
+					is_core_of = GEA
+					is_controlled_by = GEA
+					state = 857 #东北
+					state = 671 #东京
+					state = 856 #湄公河三角洲
+					state = 670 #老挝
+					state = 826 #上丁
+					state = 286 #交趾支那
+					state = 856 #西贡
+					state = 846 #马来亚
+					state = 336 #新加坡
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}	
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}			
+			}
+			random_owned_state = {
+				limit = {
+					is_core_of = GEA
+					is_controlled_by = GEA
+					state = 857 #东北
+					state = 671 #东京
+					state = 856 #湄公河三角洲
+					state = 670 #老挝
+					state = 826 #上丁
+					state = 286 #交趾支那
+					state = 856 #西贡
+					state = 846 #马来亚
+					state = 336 #新加坡
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}	
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}			
+			}
+			random_owned_state = {
+				limit = {
+					is_core_of = GEA
+					is_controlled_by = GEA
+					state = 857 #东北
+					state = 671 #东京
+					state = 856 #湄公河三角洲
+					state = 670 #老挝
+					state = 826 #上丁
+					state = 286 #交趾支那
+					state = 856 #西贡
+					state = 846 #马来亚
+					state = 336 #新加坡
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}	
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}			
+			}
 		}
 	}
 
 	focus = { #新晋“贵族”
 		id = GEA_New_noble
 		icon = GFX_GEA_New_noble
-		cost = 1	
+		cost = 4	
 		x = -2
 		y = 1
 		available = {		
@@ -1963,13 +2196,18 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_New_noble"
+			add_ideas = GEA_New_noble_idea
+			country_event = {
+				id = GEA.203
+				days = 2
+			}
 		}
 	}
 
 	focus = { #约西亚斯的私人封地
 		id = GEA_The_private_estate_of_Josias
 		icon = GFX_GEA_The_private_estate_of_Josias
-		cost = 1	
+		cost = 4	
 		x = 0
 		y = 1
 		available = {		
@@ -1984,6 +2222,9 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_private_estate_of_Josias"
+			every_owned_state = {
+				add_dynamic_modifier = { modifier = GEA_The_private_estate_of_Josias_modifier } 
+			}
 		}
 	}
 

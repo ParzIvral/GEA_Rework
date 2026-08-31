@@ -80,6 +80,46 @@ spriteTypes = {
 		texturefile = "gfx/event_pictures/GFX_GEA_20.png"
 	}
 	spriteType  = {
+		name = "GFX_GEA_21"
+		texturefile = "gfx/event_pictures/GFX_GEA_21.png"
+	}
+	spriteType  = {
+		name = "GFX_GEA_22"
+		texturefile = "gfx/event_pictures/GFX_GEA_22.png"
+	}
+	spriteType  = {
+		name = "GFX_GEA_23"
+		texturefile = "gfx/event_pictures/GFX_GEA_23.png"
+	}
+	spriteType  = {
+		name = "GFX_GEA_24"
+		texturefile = "gfx/event_pictures/GFX_GEA_24.png"
+	}
+	spriteType  = {
+		name = "GFX_GEA_25"
+		texturefile = "gfx/event_pictures/GFX_GEA_25.png"
+	}
+	spriteType  = {
+		name = "GFX_GEA_26"
+		texturefile = "gfx/event_pictures/GFX_GEA_26.png"
+	}
+	spriteType  = {
+		name = "GFX_GEA_27"
+		texturefile = "gfx/event_pictures/GFX_GEA_27.png"
+	}
+	spriteType  = {
+		name = "GFX_GEA_28"
+		texturefile = "gfx/event_pictures/GFX_GEA_28.png"
+	}
+	spriteType  = {
+		name = "GFX_GEA_29"
+		texturefile = "gfx/event_pictures/GFX_GEA_29.png"
+	}
+	spriteType  = {
+		name = "GFX_GEA_30"
+		texturefile = "gfx/event_pictures/GFX_GEA_30.png"
+	}
+	spriteType  = {
 		name = "GFX_GEA_Josias_banquet"
 		texturefile = "gfx/event_pictures/GFX_GEA_Josias_banquet.png"
 	}	

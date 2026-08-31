@@ -1715,7 +1715,26 @@ add_namespace = GEA
 			}
 		}
 	}
+	country_event = { #球形坦克
+		id = GEA.39
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.39" }
+		title = GEA.39.t
+		desc = GEA.39.d
+		picture = GFX_report_event_GEA_ball_tank
 
+		fire_only_once = yes
+
+		is_triggered_only = yes
+
+		option = {
+			name = GEA.39.a
+			add_tech_bonus = {
+				bonus = 0.1
+				uses = 1
+				category = armor
+			}
+		}
+	}
 
 
 
@@ -2789,6 +2808,182 @@ add_namespace = GEA
 			custom_effect_tooltip = GEA_Indochina_Anger_Down
 		}
 	}
+#约西亚斯
+	country_event = {#驯服东方卡特尔
+		id = GEA.200
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.200" }
+		title = GEA.200.t
+		desc = GEA.200.d
+		picture = GFX_report_event_GER_Court
+
+		fire_only_once = yes
+		is_triggered_only = yes
+		
+		option = { #这里可不是董事会的私产
+			name = GEA.200.a
+			add_political_power = -20
+			swap_ideas = {
+				remove_idea = GEA_The_garden_of_the_cartel
+				add_idea = GEA_The_garden_of_the_cartel_4
+			}
+		}
+
+		option = { #通过私下密约来达成共识
+			name = GEA.200.b
+
+			swap_ideas = {
+				remove_idea = GEA_The_garden_of_the_cartel
+				add_idea = GEA_The_garden_of_the_cartel_5
+			}
+		}
+
+		option = { #不出大乱子就随他们去
+			name = GEA.200.c
+			add_stability = -0.05
+			swap_ideas = {
+				remove_idea = GEA_The_garden_of_the_cartel
+				add_idea = GEA_The_garden_of_the_cartel_6 
+			}
+		}
+	}
+
+	country_event = {#新阿罗尔森宫
+		id = GEA.201
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.201" }
+		title = GEA.201.t
+		desc = GEA.201.d
+		picture = GFX_GEA_19
+
+		fire_only_once = yes
+		is_triggered_only = yes
+		
+		option = { #让阿罗尔森在东方再现
+			name = GEA.201.a
+			add_stability = 0.01
+		}
+	}
+
+	country_event = {#亲王的晚宴
+		id = GEA.202
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.202" }
+		title = GEA.202.t
+		desc = GEA.202.d
+		picture = GFX_GEA_20
+
+		fire_only_once = yes
+		is_triggered_only = yes
+		
+		option = { #敬我们的东方朋友！
+			name = GEA.202.a
+			add_stability = 0.01
+		}
+	}
+
+	country_event = {#约西亚斯圈
+		id = GEA.203
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.203" }
+		title = GEA.203.t
+		desc = GEA.203.d
+
+		fire_only_once = yes
+		is_triggered_only = yes
+		
+		option = { #这就是他的行事方式
+			name = GEA.203.a
+			increase_ruling_party_popularity_by_10 = yes
+		}
+	}
+
+	country_event = {#临时要求
+		id = GEA.204
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.204" }
+		title = GEA.204.t
+		desc = GEA.204.d
+
+		fire_only_once = yes
+		is_triggered_only = yes
+		
+		option = { #服从即是第一要务
+			name = GEA.204.a
+			add_popularity = {
+				ideology = paternal_autocrat
+				popularity = 0.01
+			}
+		}
+	}
+
+	country_event = {#恶意丑化
+		id = GEA.205
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.205" }
+		title = GEA.205.t
+		desc = GEA.205.d
+		picture = GFX_GEA_21
+
+		fire_only_once = yes
+		is_triggered_only = yes
+		
+		option = { #也许应该再多建几个印刷厂...
+			name = GEA.205.a
+			JAP = { 
+				add_opinion_modifier = { 
+					target = GEA
+					modifier = large_decrease
+				} 
+			}
+			add_war_support = 0.05
+			add_political_power = 10
+		}
+	}
+
+	country_event = {#双重姻亲
+		id = GEA.206
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.206" }
+		title = GEA.206.t
+		desc = GEA.206.d
+		picture = GFX_GEA_22
+
+		fire_only_once = yes
+		is_triggered_only = yes
+		
+		option = { #亲上加亲
+			name = GEA.206.a
+			add_political_power = 10
+		}
+	}
+
+	country_event = {#深入黑暗大陆
+		id = GEA.207
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.207" }
+		title = GEA.207.t
+		desc = GEA.207.d
+		picture = GFX_GEA_23
+
+		fire_only_once = yes
+		is_triggered_only = yes
+		
+		option = { #同狮共舞
+			name = GEA.207.a
+			add_political_power = 10
+		}
+	}
+
+	country_event = {#红色将军与阴谋家
+		id = GEA.208
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.208" }
+		title = GEA.208.t
+		desc = GEA.208.d
+		picture = GFX_GEA_24
+
+		fire_only_once = yes
+		is_triggered_only = yes
+		
+		option = { #也许，秘党里也有我的一个位置...
+			name = GEA.208.a
+			add_political_power = 10
+		}
+	}
+
+
 #隐藏事件
 	country_event = {
 		id = GEA.10000
@@ -2830,7 +3025,7 @@ add_namespace = GEA
 					days = 31
 				}
 				country_event = {
-					id = Ostasien.215
+					id = GEA.39
 					days = 30
 				}
 			}
@@ -3566,26 +3761,6 @@ add_namespace = GEA
 			}
 		}
 	}
-	country_event = { #球形坦克
-		id = Ostasien.215
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.215" }
-		title = Ostasien.215.t
-		desc = Ostasien.215.d
-		picture = GFX_report_event_GEA_ball_tank
-
-		fire_only_once = yes
-
-		is_triggered_only = yes
-
-		option = {
-			name = Ostasien.215.a
-			add_tech_bonus = {
-				bonus = 0.1
-				uses = 1
-				category = armor
-			}
-		}
-	}
 #风味事件
 	country_event = { # Fleet Parade
 		id = Ostasien.100
@@ -3752,22 +3927,7 @@ add_namespace = GEA
 		}
 	}
 #约西亚斯线
-	country_event = { # Josias'connections in Germany
-		id = Ostasien.101
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.101" }
-		title = Ostasien.101.t
-		desc = Ostasien.101.d
-		picture = GFX_GEA_Josias_banquet
 
-		fire_only_once = yes
-
-		is_triggered_only = yes
-
-		option = { 
-			name = Ostasien.101.a
-			add_political_power = 30
-		}
-	}
 	country_event = { # maf friends
 		id = Ostasien.102
 		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.102" }
@@ -4563,7 +4723,6 @@ add_namespace = GEA
 		#picture = GFX_report_event_SIA_German_Economical_Dominance
 
 		fire_only_once = yes
-
 		is_triggered_only = yes
 
 

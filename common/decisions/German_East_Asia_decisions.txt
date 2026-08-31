@@ -261,6 +261,280 @@ GEA_decisions = {#德属东亚殖民地决议
 			}
 		}
 	}
+
+	GEA_Halong_Bay_Cruises = {#下龙湾巡游
+		icon = GFX_decision_generic_trade
+		allowed = { original_tag = GEA }
+
+		fire_only_once = yes
+		cost = 20
+		days_remove = 45
+
+		visible = {
+			has_completed_focus = GEA_Boost_tourism_even_more
+			has_country_flag = Indochina_OPEN
+			GEA = {
+				owns_state = 671 #东京
+			}
+		}
+		available = {
+			GEA = {
+				owns_state = 671 #东京
+			}
+		}
+
+		ai_will_do = {
+			factor = 50
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Halong_Bay_Cruises"
+			increase_ruling_party_popularity_by_2 = yes
+			add_political_power = 10
+			671 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_state_modifier = {
+					modifier = {
+						state_production_speed_infrastructure_factor = 0.05
+					}
+				}
+			}
+		}
+	}
+
+	GEA_Saigon_Nightlife = {#西贡的东方夜生活
+		icon = GFX_decision_generic_trade
+		allowed = { original_tag = GEA }
+
+		fire_only_once = yes
+		cost = 15
+		days_remove = 60
+
+		visible = {
+			has_completed_focus = GEA_Boost_tourism_even_more
+			has_country_flag = Indochina_OPEN
+			GEA = {
+				owns_state = 286 #交趾支那
+			}
+		}
+		available = {
+			GEA = {
+				owns_state = 286 #交趾支那
+			}
+		}
+
+		ai_will_do = {
+			factor = 50
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Saigon_Nightlife"
+			modify_country_flag = {
+				flag = GEA_Indochinese_Anger
+				value = -1
+			}
+			custom_effect_tooltip = GEA_Indochina_Anger_Down
+			add_stability = 0.03
+			add_political_power = 35
+			286 = {
+				add_extra_state_shared_building_slots = 2
+			}
+		}
+	}
+
+	GEA_Hue_Imperial_Tours = {#顺化皇城之旅
+		icon = GFX_decision_generic_agreement
+		allowed = { original_tag = GEA }
+
+		fire_only_once = yes
+		cost = 25
+		days_remove = 50
+
+		visible = {
+			has_completed_focus = GEA_Boost_tourism_even_more
+			has_country_flag = Indochina_OPEN
+			GEA = {
+				owns_state = 827 #安南
+			}
+		}
+		available = {
+			GEA = {
+				owns_state = 827 #安南
+			}
+		}
+
+		ai_will_do = {
+			factor = 50
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Hue_Imperial_Tours"
+			modify_country_flag = {
+				flag = GEA_Indochinese_Stability
+				value = 1
+			}
+			custom_effect_tooltip = GEA_Indochina_Stability_Up
+			add_stability = 0.03
+			add_popularity = { ideology = social_conservative popularity = 0.02 }
+			827 = {
+				add_state_modifier = {
+					modifier = {
+						local_building_slots = 0.05
+					}
+				}
+			}
+		}
+	}
+
+	GEA_Angkor_Expeditions = {#吴哥古迹远征
+		icon = GFX_decision_generic_operation
+		allowed = { original_tag = GEA }
+
+		fire_only_once = yes
+		cost = 30
+		days_remove = 70
+
+		visible = {
+			has_completed_focus = GEA_Boost_tourism_even_more
+			has_country_flag = Indochina_OPEN
+			GEA = {
+				owns_state = 826 #上丁
+			}
+		}
+		available = {
+			GEA = {
+				owns_state = 826 #上丁
+			}
+		}
+
+		ai_will_do = {
+			factor = 50
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Angkor_Expeditions"
+			add_stability = 0.02
+			826 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_state_modifier = {
+					modifier = {
+						local_building_slots = 0.05
+					}
+				}
+			}
+		}
+	}
+
+	GEA_Mekong_Steamship_Holidays = {#湄公河蒸汽船假日
+		icon = GFX_decision_generic_trade
+		allowed = { original_tag = GEA }
+
+		fire_only_once = yes
+		cost = 25
+		days_remove = 55
+
+		visible = {
+			has_completed_focus = GEA_Boost_tourism_even_more
+			has_country_flag = Indochina_OPEN
+			GEA = {
+				owns_state = 856 #湄公河三角洲
+			}
+		}
+		available = {
+			GEA = {
+				owns_state = 856 #湄公河三角洲
+			}
+		}
+
+		ai_will_do = {
+			factor = 50
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Mekong_Steamship_Holidays"
+			modify_country_flag = {
+				flag = GEA_Indochinese_Anger
+				value = -1
+			}
+			custom_effect_tooltip = GEA_Indochina_Anger_Down
+			add_political_power = 10
+			856 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	GEA_Orient_Express_East = {#东方的东方快车
+		icon = GFX_decision_generic_trade
+		allowed = { original_tag = GEA }
+
+		fire_only_once = yes
+		cost = 50
+		days_remove = 90
+
+		visible = {
+			has_completed_focus = GEA_Boost_tourism_even_more
+			OR = {
+				has_country_flag = Indochina_OPEN
+				has_country_flag = Malaya_OPEN
+			}
+			GEA = {
+				OR = {
+					owns_state = 671 #东京
+					owns_state = 827 #安南
+					owns_state = 856 #湄公河三角洲
+					owns_state = 286 #交趾支那
+					owns_state = 846 #马来亚
+					owns_state = 336 #新加坡
+				}
+			}
+		}
+		available = {
+			GEA = {
+				OR = {
+					owns_state = 671 #东京
+					owns_state = 827 #安南
+					owns_state = 856 #湄公河三角洲
+					owns_state = 286 #交趾支那
+					owns_state = 846 #马来亚
+					owns_state = 336 #新加坡
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 50
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Orient_Express_East"
+			add_stability = 0.03
+			add_political_power = 60
+			every_owned_state = {
+				limit = {
+					OR = {
+						state = 671 #东京
+						state = 827 #安南
+						state = 856 #湄公河三角洲
+						state = 286 #交趾支那
+						state = 846 #马来亚
+						state = 336 #新加坡
+					}
+				}
+				add_state_modifier = {
+					modifier = {
+						state_production_speed_infrastructure_factor = 0.05
+					}
+				}
+			}
+		}
+	}
  	#马来亚
 	GEA_hahl_convene_malay_sultans = {#召开马来苏丹会议
 		icon = GFX_decision_generic_agreement
@@ -447,6 +721,88 @@ GEA_decisions = {#德属东亚殖民地决议
 			}
 		}
 	}
+
+	GEA_Singapore_Grand_Tour = {#新加坡大都会之旅
+		icon = GFX_decision_generic_trade
+		allowed = { original_tag = GEA }
+
+		fire_only_once = yes
+		cost = 30
+		days_remove = 45
+
+		visible = {
+			has_completed_focus = GEA_Boost_tourism_even_more
+			has_country_flag = Malaya_OPEN
+			GEA = {
+				owns_state = 336 #新加坡
+			}
+		}
+		available = {
+			GEA = {
+				owns_state = 336 #新加坡
+			}
+		}
+
+		ai_will_do = {
+			factor = 50
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Singapore_Grand_Tour"
+			add_stability = 0.05
+			add_political_power = 45
+			336 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}	
+			}
+		}
+	}
+
+	GEA_Cameron_Highlands = {#金马仑高原避暑地
+		icon = GFX_decision_generic_trade
+		allowed = { original_tag = GEA }
+
+		fire_only_once = yes
+		cost = 25
+		days_remove = 50
+
+		visible = {
+			has_completed_focus = GEA_Boost_tourism_even_more
+			has_country_flag = Malaya_OPEN
+			GEA = {
+				owns_state = 846 #马来亚
+			}
+		}
+		available = {
+			GEA = {
+				owns_state = 846 #马来亚
+			}
+		}
+
+		ai_will_do = {
+			factor = 50
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Cameron_Highlands"
+			add_stability = 0.02
+			846 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_state_modifier = {
+					modifier = {
+						state_production_speed_infrastructure_factor = 0.05
+						local_building_slots = 0.08
+					}
+				}
+			}
+		}
+	}
 	
 	#婆罗洲
 	GEA_hahl_brunei_crown_subsidy = {#文莱王冠补助金
@@ -496,7 +852,7 @@ GEA_decisions = {#德属东亚殖民地决议
 				add_state_modifier = {
 					modifier = {
 						state_production_speed_infrastructure_factor = 0.15
-						local_manpower = 5000
+						local_manpower = 0.15
 					}
 				}
 			}
@@ -595,6 +951,82 @@ GEA_decisions = {#德属东亚殖民地决议
 				add_dynamic_modifier = { modifier = GEA_Bureau_Of_Native_Affairs_modifier } 
 				add_to_variable = {
 					GEA_Bureau_Of_Native_Affairs_Number = 1
+				}
+			}
+		}
+	}
+
+	GEA_Brunei_Water_Village = {#文莱-水上之城
+		icon = GFX_decision_generic_trade
+		allowed = { original_tag = GEA }
+
+		fire_only_once = yes
+		cost = 15
+		days_remove = 35
+
+		visible = {
+			has_completed_focus = GEA_Boost_tourism_even_more
+			has_country_flag = Borneo_OPEN
+			GEA = {
+				owns_state = 828 #沙巴
+			}
+		}
+		available = {
+			GEA = {
+				owns_state = 828 #沙巴
+			}
+		}
+
+		ai_will_do = {
+			factor = 50
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Brunei_Water_Village"
+			add_political_power = 25
+			828 = {
+				add_state_modifier = {
+					modifier = {
+						local_building_slots_factor =  0.05
+						local_factories = 1
+						local_manpower = 0.1
+					}
+				}
+			}
+		}
+	}
+
+	GEA_Kinabalu_Expeditions = {#攀登京那巴鲁
+		icon = GFX_decision_generic_operation
+		allowed = { original_tag = GEA }
+
+		fire_only_once = yes
+		cost = 20
+		days_remove = 45
+
+		visible = {
+			has_completed_focus = GEA_Boost_tourism_even_more
+			has_country_flag = Borneo_OPEN
+			GEA = {
+				owns_state = 828 #沙巴
+			}
+		}
+		available = {
+			GEA = {
+				owns_state = 828 #沙巴
+			}
+		}
+
+		ai_will_do = {
+			factor = 50
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Kinabalu_Expeditions"
+			add_stability = 0.01
+			828 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
 				}
 			}
 		}

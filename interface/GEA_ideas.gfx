@@ -304,4 +304,20 @@ spriteTypes = {
 		name = "GFX_idea_GEA_colonial_question_hahl_6"
 		texturefile = "gfx/interface/ideas/gea/GEA_colonial_question_hahl_6.png"
 	}
+	spriteType = {
+		name = "GFX_idea_GEA_GEA_okonomische_Integration"
+		texturefile = "gfx/interface/ideas/gea/GEA_GEA_okonomische_Integration.png"
+	}
+	spriteType = {
+		name = "GFX_idea_GEA_New_noble_idea"
+		texturefile = "gfx/interface/ideas/gea/GEA_New_noble_idea.png"
+	}
+	spriteType = {
+		name = "GFX_GEA_idea_The_private_estate_of_Josias_modifier"
+		texturefile = "gfx/interface/ideas/gea/GEA_idea_The_private_estate_of_Josias_modifier.png"
+	}
+	spriteType = {
+		name = "GFX_idea_GEA_colonial_question_josias"
+		texturefile = "gfx/interface/ideas/gea/GEA_colonial_question_josias.png"
+	}
 }

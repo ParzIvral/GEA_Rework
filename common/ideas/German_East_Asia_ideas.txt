@@ -698,6 +698,191 @@ ideas = {
 			}
 		}
 #约西亚斯
+		GEA_Free_export-oriented_economy = { #自由出口式经济
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Free_export-oriented_economy"}
+			picture = GEA_Export_economy_first
+			allowed = { always = no }
+			modifier = {
+				consumer_goods_factor = -0.10
+				production_factory_efficiency_gain_factor = 0.1
+				production_speed_infrastructure_factor = 0.05
+				production_speed_naval_base_factor = 0.05
+			}
+		}
+		GEA_Military_industry_takes_the_lead = { #军事工业挂帅
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Military_industry_takes_the_lead"}
+			picture = GER_Rheinofen
+			allowed = { always = no }
+			modifier = {
+				consumer_goods_factor = 0.1
+				industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.05
+				production_factory_start_efficiency_factor = 0.03
+			}
+		}
+		GEA_GEA_okonomische_Integration = { #迈向一体化式经济
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_GEA_okonomische_Integration"}
+			picture = GEA_GEA_okonomische_Integration
+			allowed = { always = no }
+			modifier = {
+				consumer_goods_factor = 0.10
+				conversion_cost_civ_to_mil_factor = -0.2
+				production_factory_efficiency_gain_factor = 0.05
+				production_factory_max_efficiency_factor = 0.05
+				production_speed_buildings_factor = 0.03
+			}
+		}
+		GEA_The_garden_of_the_cartel_4 = { #卡特尔的后花园
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_The_garden_of_the_cartel_4"}
+			picture = GEA_The_garden_of_the_cartel
+			name = GEA_The_garden_of_the_cartel
+			allowed = { always = no }
+			modifier = {
+				political_power_factor = -0.08
+				consumer_goods_factor = -0.05
+				local_resources_factor = 0.10
+				production_factory_efficiency_gain_factor = 0.1
+				production_speed_buildings_factor = 0.05
+				research_speed_factor = 0.04
+				industrial_capacity_factory = 0.03
+			}
+		}
+
+		GEA_The_garden_of_the_cartel_5 = { #卡特尔的后花园
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_The_garden_of_the_cartel_5"}
+			picture = GEA_The_garden_of_the_cartel
+			name = GEA_The_garden_of_the_cartel
+			allowed = { always = no }
+			modifier = {
+				political_power_factor = -0.05
+				consumer_goods_factor = -0.05
+				local_resources_factor = 0.15
+				production_factory_efficiency_gain_factor = 0.08
+				research_speed_factor = 0.01
+				industrial_capacity_factory = 0.04
+			}
+		}
+		GEA_The_garden_of_the_cartel_6 = { #卡特尔的后花园
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_The_garden_of_the_cartel_6"}
+			picture = GEA_The_garden_of_the_cartel
+			name = GEA_The_garden_of_the_cartel
+			allowed = { always = no }
+			modifier = {
+				political_power_factor = -0.1
+				consumer_goods_factor = -0.30
+				local_building_slots_factor = 0.1
+				local_resources_factor = 0.25
+				line_change_production_efficiency_factor = -0.05
+			}
+		}
+		GEA_New_noble_idea = { #东方新贵
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_New_noble_idea"}
+			picture = GEA_New_noble_idea
+			allowed = { always = no }
+			modifier = {
+				political_power_factor = 0.08
+				stability_weekly = 0.002
+				party_popularity_stability_factor = 0.11
+				economy_cost_factor = -0.25
+				theorist_cost_factor = -0.25
+				army_chief_cost_factor = -0.25
+				navy_chief_cost_factor = -0.25
+				air_chief_cost_factor = -0.25
+				high_command_cost_factor = -0.25
+			}
+		}
+		GEA_colonial_question_josias_1 = { #东亚殖民政府
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_colonial_question_josias_1"}
+			name = GEA_colonial_question
+			picture = colonial_question
+			allowed = { always = no }
+			modifier = {
+				stability_factor = 0.05
+				stability_weekly = 0.001
+				non_core_manpower = 0.05
+				resistance_growth = 0.12
+				required_garrison_factor = 0.1
+				resistance_decay = -0.05
+				surrender_limit = -0.1
+			}
+		}
+		GEA_colonial_question_josias_2 = { #东亚殖民政府
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_colonial_question_josias_2"}
+			name = GEA_colonial_question_josias
+			picture = GEA_colonial_question_josias
+			allowed = { always = no }
+			modifier = {
+				stability_factor = 0.1
+				stability_weekly = 0.002
+				non_core_manpower = 0.1
+				resistance_growth = 0.075
+				required_garrison_factor = 0.05
+				surrender_limit = -0.1
+				drift_defence_factor = 0.1
+				party_popularity_stability_factor = 0.05
+			}
+		}
+		GEA_colonial_question_josias_3 = { #东亚殖民政府
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_colonial_question_josias_3"}
+			name = GEA_colonial_question_josias
+			picture = GEA_colonial_question_josias
+			allowed = { always = no }
+			modifier = {
+				stability_factor = 0.1
+				stability_weekly = 0.002
+				weekly_manpower = -45
+				non_core_manpower = 0.2
+				resistance_growth = 0.075
+				drift_defence_factor = 0.1
+				party_popularity_stability_factor = 0.05
+				authoritarian_democrat_drift = 0.02
+				paternal_autocrat_drift = 0.02
+				encryption_factor = 0.1
+				decryption_factor = 0.1
+				conscription = 0.005
+			}
+		}
+		GEA_colonial_question_josias_4 = { #东亚殖民政府
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_colonial_question_josias_4"}
+			name = GEA_colonial_question_josias
+			picture = GEA_colonial_question_josias
+			allowed = { always = no }
+			modifier = {
+				stability_factor = 0.1
+				stability_weekly = 0.003
+				weekly_manpower = -60
+				non_core_manpower = 0.2
+				drift_defence_factor = 0.2
+				party_popularity_stability_factor = 0.15
+				authoritarian_democrat_drift = 0.03
+				paternal_autocrat_drift = 0.03
+				encryption_factor = 0.2
+				decryption_factor = 0.2
+				conscription = 0.015
+			}
+		}
+		GEA_Portraying_Japan_as_a_threat = { #渲染日本威胁
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Portraying_Japan_as_a_threat"}
+		    picture = GEA_Portraying_Japan_as_a_threat
+			allowed = { always = no }
+			targeted_modifier = {
+				tag = jap
+				attack_bonus_against = 0.1
+				defense_bonus_against = 0.1
+			}
+			modifier = {
+				war_support_weekly = 0.002
+				defensive_war_stability_factor = 0.1
+				surrender_limit = 0.05
+			}			
+		}
+
+
+
+
+
+
+
         GEA_ger_investment = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_ger_investment"}
 		    picture = ger_investment
