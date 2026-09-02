@@ -1008,6 +1008,7 @@ scripted_gui = {
 					clr_country_flag = GEA_Josias_selecting_frame_2
 					clr_country_flag = GEA_Josias_selecting_frame_3
 				}
+				GEA_Josias_add_15_Nikolaus_effect = yes
 			}
 
 			GEA_Josias_candidate_Carl_Edward_click = {
@@ -1026,6 +1027,7 @@ scripted_gui = {
 					clr_country_flag = GEA_Josias_selecting_frame_2
 					clr_country_flag = GEA_Josias_selecting_frame_3
 				}
+				GEA_Josias_add_15_Carl_Edward_effect = yes
 			}
 
 			GEA_Josias_candidate_Elard_von_Oldenburg_click = {
@@ -1044,6 +1046,7 @@ scripted_gui = {
 					clr_country_flag = GEA_Josias_selecting_frame_2
 					clr_country_flag = GEA_Josias_selecting_frame_3
 				}
+				GEA_Josias_add_15_Elard_von_Oldenburg_effect = yes
 			}
 
 			GEA_Josias_candidate_Schleicher_click = {
@@ -1062,6 +1065,7 @@ scripted_gui = {
 					clr_country_flag = GEA_Josias_selecting_frame_2
 					clr_country_flag = GEA_Josias_selecting_frame_3
 				}
+				GEA_Josias_add_15_Schleicher_effect = yes
 			}
 
 			GEA_Josias_candidate_Hugenberg_click = {
@@ -1080,6 +1084,7 @@ scripted_gui = {
 					clr_country_flag = GEA_Josias_selecting_frame_2
 					clr_country_flag = GEA_Josias_selecting_frame_3
 				}
+				GEA_Josias_add_15_Hugenberg_effect = yes
 			}
 
 			GEA_Josias_candidate_Werner_von_Alvensleben_click = {
@@ -1098,6 +1103,7 @@ scripted_gui = {
 					clr_country_flag = GEA_Josias_selecting_frame_2
 					clr_country_flag = GEA_Josias_selecting_frame_3
 				}
+				GEA_Josias_add_15_Werner_von_Alvensleben_effect = yes
 			}
 
 			GEA_Josias_colonial_candidate_Carl_Schmitt_click = {
@@ -1114,6 +1120,7 @@ scripted_gui = {
 					clr_country_flag = GEA_Josias_selecting_frame_5
 					clr_country_flag = GEA_Josias_selecting_frame_6
 				}
+				GEA_Josias_add_15_Carl_Schmitt_effect = yes
 			}
 
 			GEA_Josias_colonial_candidate_Dorpmuller_click = {
@@ -1130,6 +1137,7 @@ scripted_gui = {
 					clr_country_flag = GEA_Josias_selecting_frame_5
 					clr_country_flag = GEA_Josias_selecting_frame_6
 				}
+				GEA_Josias_add_15_Dorpmuller_effect = yes
 			}
 
 			GEA_Josias_colonial_candidate_Emil_Helfferich_click = {
@@ -1146,6 +1154,7 @@ scripted_gui = {
 					clr_country_flag = GEA_Josias_selecting_frame_5
 					clr_country_flag = GEA_Josias_selecting_frame_6
 				}
+				GEA_Josias_add_15_Emil_Helfferich_effect = yes
 			}
 
 			GEA_Josias_colonial_candidate_Fritz_Thyssen_click = {
@@ -1162,6 +1171,7 @@ scripted_gui = {
 					clr_country_flag = GEA_Josias_selecting_frame_5
 					clr_country_flag = GEA_Josias_selecting_frame_6
 				}
+				GEA_Josias_add_15_Fritz_Thyssen_effect = yes
 			}
 
 			GEA_Josias_colonial_candidate_Hermann_Goring_click = {
@@ -1178,6 +1188,7 @@ scripted_gui = {
 					clr_country_flag = GEA_Josias_selecting_frame_5
 					clr_country_flag = GEA_Josias_selecting_frame_6
 				}
+				GEA_Josias_add_15_Hermann_Goring_effect = yes
 			}
 
 			GEA_Josias_colonial_candidate_Siegmund_Bodenheimer_click = {
@@ -1194,6 +1205,7 @@ scripted_gui = {
 					clr_country_flag = GEA_Josias_selecting_frame_5
 					clr_country_flag = GEA_Josias_selecting_frame_6
 				}
+				GEA_Josias_add_15_Siegmund_Bodenheimer_effect = yes
 			}
 
 			GEA_Josias_industry_candidate_Josef_Abs_click = {
@@ -1210,6 +1222,7 @@ scripted_gui = {
 					clr_country_flag = GEA_Josias_selecting_frame_3
 					clr_country_flag = GEA_Josias_selecting_frame_4
 				}
+				GEA_Josias_add_15_Josef_Abs_effect = yes
 			}
 
 			GEA_Josias_industry_candidate_Fritz_Meer_click = {
@@ -1226,6 +1239,7 @@ scripted_gui = {
 					clr_country_flag = GEA_Josias_selecting_frame_3
 					clr_country_flag = GEA_Josias_selecting_frame_4
 				}
+				GEA_Josias_add_15_Fritz_Meer_effect = yes
 			}
 
 			GEA_Josias_industry_candidate_Hermann_Bucher_click = {
@@ -1242,6 +1256,7 @@ scripted_gui = {
 					clr_country_flag = GEA_Josias_selecting_frame_3
 					clr_country_flag = GEA_Josias_selecting_frame_4
 				}
+				GEA_Josias_add_15_Hermann_Bucher_effect = yes
 			}
 
 			GEA_Josias_industry_candidate_Hermann_Siemens_click = {
@@ -1258,6 +1273,7 @@ scripted_gui = {
 					clr_country_flag = GEA_Josias_selecting_frame_3
 					clr_country_flag = GEA_Josias_selecting_frame_4
 				}
+				GEA_Josias_add_15_Hermann_Siemens_effect = yes
 			}
 
 			GEA_Josias_industry_candidate_Otto_Jeidels_click = {
@@ -1274,6 +1290,7 @@ scripted_gui = {
 					clr_country_flag = GEA_Josias_selecting_frame_3
 					clr_country_flag = GEA_Josias_selecting_frame_4
 				}
+				GEA_Josias_add_15_Otto_Jeidels_effect = yes
 			}
 
 			GEA_Josias_industry_candidate_Alfred_Krupp_click = {
@@ -1290,6 +1307,7 @@ scripted_gui = {
 					clr_country_flag = GEA_Josias_selecting_frame_3
 					clr_country_flag = GEA_Josias_selecting_frame_4
 				}
+				GEA_Josias_add_15_Alfred_Krupp_effect = yes
 			}
 		}
 	}

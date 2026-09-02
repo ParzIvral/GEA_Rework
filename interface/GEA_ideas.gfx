@@ -320,4 +320,16 @@ spriteTypes = {
 		name = "GFX_idea_GEA_colonial_question_josias"
 		texturefile = "gfx/interface/ideas/gea/GEA_colonial_question_josias.png"
 	}
+	spriteType = {
+		name = "GFX_idea_GEA_Take_control_of_trade_dominance"
+		texturefile = "gfx/interface/ideas/gea/GEA_Take_control_of_trade_dominance.png"
+	}
+	spriteType = {
+		name = "GFX_idea_GEA_supreme_governor"
+		texturefile = "gfx/interface/ideas/gea/GEA_supreme_governor.png"
+	}
+	spriteType = {
+		name = "GFX_idea_GEA_Portraying_Japan_as_a_threat"
+		texturefile = "gfx/interface/ideas/gea/GEA_Portraying_Japan_as_a_threat.png"
+	}
 }

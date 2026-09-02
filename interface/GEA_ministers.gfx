@@ -7,4 +7,16 @@ spriteTypes = {
 		name = "GFX_idea_GEA_Franz_Urbig_eco_ade"
 		texturefile = "gfx/interface/ministers/GEA/GEA_Franz_Urbig_eco_ade.png"
 	}
+	spriteType = {
+		name = "GFX_idea_GEA_Ulrich_von_Hassell_for_ade"
+		texturefile = "gfx/interface/ministers/GEA/GEA_Ulrich_von_Hassell_for_ade.png"
+	}
+	spriteType = {
+		name = "GFX_idea_GEA_Franz_Heinrich_Witthoefft_eco_ade"
+		texturefile = "gfx/interface/ministers/GEA/GEA_Franz_Heinrich_Witthoefft_eco_ade.png"
+	}
+	spriteType = {
+		name = "GFX_idea_GEA_Karl_Otto_Koch_sec_pau"
+		texturefile = "gfx/interface/ministers/GEA/GEA_Karl_Otto_Koch_sec_pau.png"
+	}
 }

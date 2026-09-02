@@ -6061,6 +6061,1402 @@ GEA_focus_china_decisions = {#支援八省
 }
 
 GEA_josias_decisions = {#约西亚斯乞讨决议
+	GEA_Josias_show_Nikolaus_decisions = { #显示尼古劳斯的相关决议
+		icon = GFX_decision_generic_political_address
+		visible = {
+			OR = {
+				has_country_flag = GEA_Josias_frame_1_Nikolaus
+				has_country_flag = GEA_Josias_frame_2_Nikolaus
+			}
+		}
+		cost = 0
+		complete_effect = {
+			GEA_Josias_clear_decision_view_effect = yes
+			set_country_flag = GEA_Josias_decision_view_Nikolaus
+		}
+	}
+
+	GEA_Josias_deepen_Nikolaus_friendship = { #加深与尼古劳斯的关系
+		icon = GFX_decision_generic_political_address
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Nikolaus
+		}
+		available = {
+			check_variable = { GEA_NIKOLAUS_friendship < 100 }
+		}
+		cost = 10
+		days_remove = 30
+		days_re_enable = 20
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_deepen_Nikolaus_friendship"
+			GEA_Josias_add_5_Nikolaus_effect = yes
+		}
+	}
+
+	GEA_Josias_show_Carl_Edward_decisions = { #显示卡尔·爱德华的相关决议
+		icon = GFX_decision_generic_political_address
+		visible = {
+			OR = {
+				has_country_flag = GEA_Josias_frame_1_Carl_Edward
+				has_country_flag = GEA_Josias_frame_2_Carl_Edward
+			}
+		}
+		cost = 0
+		complete_effect = {
+			GEA_Josias_clear_decision_view_effect = yes
+			set_country_flag = GEA_Josias_decision_view_Carl_Edward
+		}
+	}
+
+	GEA_Josias_deepen_Carl_Edward_friendship = { #加深与卡尔·爱德华的关系
+		icon = GFX_decision_generic_political_address
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Carl_Edward
+		}
+		available = {
+			check_variable = { GEA_CARL_EDWARD_friendship < 100 }
+		}
+		cost = 10
+		days_remove = 30
+		days_re_enable = 20
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_deepen_Carl_Edward_friendship"
+			GEA_Josias_add_5_Carl_Edward_effect = yes
+		}
+	}
+
+	GEA_Josias_show_Elard_von_Oldenburg_decisions = { #显示奥尔登堡的相关决议
+		icon = GFX_decision_generic_political_address
+		visible = {
+			OR = {
+				has_country_flag = GEA_Josias_frame_1_Elard_von_Oldenburg
+				has_country_flag = GEA_Josias_frame_2_Elard_von_Oldenburg
+			}
+		}
+		cost = 0
+		complete_effect = {
+			GEA_Josias_clear_decision_view_effect = yes
+			set_country_flag = GEA_Josias_decision_view_Elard_von_Oldenburg
+		}
+	}
+
+	GEA_Josias_deepen_Elard_von_Oldenburg_friendship = { #加深与奥尔登堡的关系
+		icon = GFX_decision_generic_political_address
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Elard_von_Oldenburg
+		}
+		available = {
+			check_variable = { GEA_ELARD_VON_OLDENBURG_friendship < 100 }
+		}
+		cost = 10
+		days_remove = 30
+		days_re_enable = 20
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_deepen_Elard_von_Oldenburg_friendship"
+			GEA_Josias_add_5_Elard_von_Oldenburg_effect = yes
+		}
+	}
+
+	GEA_Josias_show_Schleicher_decisions = { #显示施莱谢尔的相关决议
+		icon = GFX_decision_generic_political_address
+		visible = {
+			OR = {
+				has_country_flag = GEA_Josias_frame_1_Schleicher
+				has_country_flag = GEA_Josias_frame_2_Schleicher
+			}
+		}
+		cost = 0
+		complete_effect = {
+			GEA_Josias_clear_decision_view_effect = yes
+			set_country_flag = GEA_Josias_decision_view_Schleicher
+		}
+	}
+
+	GEA_Josias_deepen_Schleicher_friendship = { #加深与施莱谢尔的关系
+		icon = GFX_decision_generic_political_address
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Schleicher
+		}
+		available = {
+			check_variable = { GEA_SCHLEICHER_friendship < 100 }
+		}
+		cost = 10
+		days_remove = 30
+		days_re_enable = 20
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_deepen_Schleicher_friendship"
+			GEA_Josias_add_5_Schleicher_effect = yes
+		}
+	}
+
+	GEA_Josias_show_Hugenberg_decisions = { #显示胡根贝格的相关决议
+		icon = GFX_decision_generic_political_address
+		visible = {
+			OR = {
+				has_country_flag = GEA_Josias_frame_1_Hugenberg
+				has_country_flag = GEA_Josias_frame_2_Hugenberg
+			}
+		}
+		cost = 0
+		complete_effect = {
+			GEA_Josias_clear_decision_view_effect = yes
+			set_country_flag = GEA_Josias_decision_view_Hugenberg
+		}
+	}
+
+	GEA_Josias_deepen_Hugenberg_friendship = { #加深与胡根贝格的关系
+		icon = GFX_decision_generic_political_address
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Hugenberg
+		}
+		available = {
+			check_variable = { GEA_HUGENBERG_friendship < 100 }
+		}
+		cost = 10
+		days_remove = 30
+		days_re_enable = 20
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_deepen_Hugenberg_friendship"
+			GEA_Josias_add_5_Hugenberg_effect = yes
+		}
+	}
+
+	GEA_Josias_show_Werner_von_Alvensleben_decisions = { #显示阿尔文斯莱本的相关决议
+		icon = GFX_decision_generic_political_address
+		visible = {
+			OR = {
+				has_country_flag = GEA_Josias_frame_1_Werner_von_Alvensleben
+				has_country_flag = GEA_Josias_frame_2_Werner_von_Alvensleben
+			}
+		}
+		cost = 0
+		complete_effect = {
+			GEA_Josias_clear_decision_view_effect = yes
+			set_country_flag = GEA_Josias_decision_view_Werner_von_Alvensleben
+		}
+	}
+
+	GEA_Josias_deepen_Werner_von_Alvensleben_friendship = { #加深与阿尔文斯莱本的关系
+		icon = GFX_decision_generic_political_address
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Werner_von_Alvensleben
+		}
+		available = {
+			check_variable = { GEA_WERNER_VON_ALVENSLEBEN_friendship < 100 }
+		}
+		cost = 10
+		days_remove = 30
+		days_re_enable = 20
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_deepen_Werner_von_Alvensleben_friendship"
+			GEA_Josias_add_5_Werner_von_Alvensleben_effect = yes
+		}
+	}
+
+	GEA_Josias_show_Josef_Abs_decisions = { #显示阿布斯的相关决议
+		icon = GFX_decision_generic_political_address
+		visible = {
+			OR = {
+				has_country_flag = GEA_Josias_frame_3_Josef_Abs
+				has_country_flag = GEA_Josias_frame_4_Josef_Abs
+			}
+		}
+		cost = 0
+		complete_effect = {
+			GEA_Josias_clear_decision_view_effect = yes
+			set_country_flag = GEA_Josias_decision_view_Josef_Abs
+		}
+	}
+
+	GEA_Josias_deepen_Josef_Abs_friendship = { #加深与阿布斯的关系
+		icon = GFX_decision_generic_political_address
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Josef_Abs
+		}
+		available = {
+			check_variable = { GEA_Josef_Abs_friendship < 100 }
+		}
+		cost = 10
+		days_remove = 30
+		days_re_enable = 20
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_deepen_Josef_Abs_friendship"
+			GEA_Josias_add_5_Josef_Abs_effect = yes
+		}
+	}
+
+	GEA_Josias_show_Fritz_Meer_decisions = { #显示特尔·梅尔的相关决议
+		icon = GFX_decision_generic_political_address
+		visible = {
+			OR = {
+				has_country_flag = GEA_Josias_frame_3_Fritz_Meer
+				has_country_flag = GEA_Josias_frame_4_Fritz_Meer
+			}
+		}
+		cost = 0
+		complete_effect = {
+			GEA_Josias_clear_decision_view_effect = yes
+			set_country_flag = GEA_Josias_decision_view_Fritz_Meer
+		}
+	}
+
+	GEA_Josias_deepen_Fritz_Meer_friendship = { #加深与特尔·梅尔的关系
+		icon = GFX_decision_generic_political_address
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Fritz_Meer
+		}
+		available = {
+			check_variable = { GEA_Fritz_Meer_friendship < 100 }
+		}
+		cost = 10
+		days_remove = 30
+		days_re_enable = 20
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_deepen_Fritz_Meer_friendship"
+			GEA_Josias_add_5_Fritz_Meer_effect = yes
+		}
+	}
+
+	GEA_Josias_show_Hermann_Bucher_decisions = { #显示比歇尔的相关决议
+		icon = GFX_decision_generic_political_address
+		visible = {
+			OR = {
+				has_country_flag = GEA_Josias_frame_3_Hermann_Bucher
+				has_country_flag = GEA_Josias_frame_4_Hermann_Bucher
+			}
+		}
+		cost = 0
+		complete_effect = {
+			GEA_Josias_clear_decision_view_effect = yes
+			set_country_flag = GEA_Josias_decision_view_Hermann_Bucher
+		}
+	}
+
+	GEA_Josias_deepen_Hermann_Bucher_friendship = { #加深与比歇尔的关系
+		icon = GFX_decision_generic_political_address
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Hermann_Bucher
+		}
+		available = {
+			check_variable = { GEA_Hermann_Bucher_friendship < 100 }
+		}
+		cost = 10
+		days_remove = 30
+		days_re_enable = 20
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_deepen_Hermann_Bucher_friendship"
+			GEA_Josias_add_5_Hermann_Bucher_effect = yes
+		}
+	}
+
+	GEA_Josias_show_Hermann_Siemens_decisions = { #显示西门子的相关决议
+		icon = GFX_decision_generic_political_address
+		visible = {
+			OR = {
+				has_country_flag = GEA_Josias_frame_3_Hermann_Siemens
+				has_country_flag = GEA_Josias_frame_4_Hermann_Siemens
+			}
+		}
+		cost = 0
+		complete_effect = {
+			GEA_Josias_clear_decision_view_effect = yes
+			set_country_flag = GEA_Josias_decision_view_Hermann_Siemens
+		}
+	}
+
+	GEA_Josias_deepen_Hermann_Siemens_friendship = { #加深与西门子的关系
+		icon = GFX_decision_generic_political_address
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Hermann_Siemens
+		}
+		available = {
+			check_variable = { GEA_Hermann_Siemens_friendship < 100 }
+		}
+		cost = 10
+		days_remove = 30
+		days_re_enable = 20
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_deepen_Hermann_Siemens_friendship"
+			GEA_Josias_add_5_Hermann_Siemens_effect = yes
+		}
+	}
+
+	GEA_Josias_show_Otto_Jeidels_decisions = { #显示耶德尔斯的相关决议
+		icon = GFX_decision_generic_political_address
+		visible = {
+			OR = {
+				has_country_flag = GEA_Josias_frame_3_Otto_Jeidels
+				has_country_flag = GEA_Josias_frame_4_Otto_Jeidels
+			}
+		}
+		cost = 0
+		complete_effect = {
+			GEA_Josias_clear_decision_view_effect = yes
+			set_country_flag = GEA_Josias_decision_view_Otto_Jeidels
+		}
+	}
+
+	GEA_Josias_deepen_Otto_Jeidels_friendship = { #加深与耶德尔斯的关系
+		icon = GFX_decision_generic_political_address
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Otto_Jeidels
+		}
+		available = {
+			check_variable = { GEA_Otto_Jeidels_friendship < 100 }
+		}
+		cost = 10
+		days_remove = 30
+		days_re_enable = 20
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_deepen_Otto_Jeidels_friendship"
+			GEA_Josias_add_5_Otto_Jeidels_effect = yes
+		}
+	}
+
+	GEA_Josias_show_Alfred_Krupp_decisions = { #显示克虏伯的相关决议
+		icon = GFX_decision_generic_political_address
+		visible = {
+			OR = {
+				has_country_flag = GEA_Josias_frame_3_Alfred_Krupp
+				has_country_flag = GEA_Josias_frame_4_Alfred_Krupp
+			}
+		}
+		cost = 0
+		complete_effect = {
+			GEA_Josias_clear_decision_view_effect = yes
+			set_country_flag = GEA_Josias_decision_view_Alfred_Krupp
+		}
+	}
+
+	GEA_Josias_deepen_Alfred_Krupp_friendship = { #加深与克虏伯的关系
+		icon = GFX_decision_generic_political_address
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Alfred_Krupp
+		}
+		available = {
+			check_variable = { GEA_Alfred_Krupp_friendship < 100 }
+		}
+		cost = 10
+		days_remove = 30
+		days_re_enable = 20
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_deepen_Alfred_Krupp_friendship"
+			GEA_Josias_add_5_Alfred_Krupp_effect = yes
+		}
+	}
+
+	GEA_Josias_show_Carl_Schmitt_decisions = { #显示施米特的相关决议
+		icon = GFX_decision_generic_political_address
+		visible = {
+			OR = {
+				has_country_flag = GEA_Josias_frame_5_Carl_Schmitt
+				has_country_flag = GEA_Josias_frame_6_Carl_Schmitt
+			}
+		}
+		cost = 0
+		complete_effect = {
+			GEA_Josias_clear_decision_view_effect = yes
+			set_country_flag = GEA_Josias_decision_view_Carl_Schmitt
+		}
+	}
+
+	GEA_Josias_deepen_Carl_Schmitt_friendship = { #加深与施米特的关系
+		icon = GFX_decision_generic_political_address
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Carl_Schmitt
+		}
+		available = {
+			check_variable = { GEA_Carl_Schmitt_friendship < 100 }
+		}
+		cost = 10
+		days_remove = 30
+		days_re_enable = 20
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_deepen_Carl_Schmitt_friendship"
+			GEA_Josias_add_5_Carl_Schmitt_effect = yes
+		}
+	}
+
+	GEA_Josias_show_Dorpmuller_decisions = { #显示多普米勒的相关决议
+		icon = GFX_decision_generic_political_address
+		visible = {
+			OR = {
+				has_country_flag = GEA_Josias_frame_5_Dorpmuller
+				has_country_flag = GEA_Josias_frame_6_Dorpmuller
+			}
+		}
+		cost = 0
+		complete_effect = {
+			GEA_Josias_clear_decision_view_effect = yes
+			set_country_flag = GEA_Josias_decision_view_Dorpmuller
+		}
+	}
+
+	GEA_Josias_deepen_Dorpmuller_friendship = { #加深与多普米勒的关系
+		icon = GFX_decision_generic_political_address
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Dorpmuller
+		}
+		available = {
+			check_variable = { GEA_Dorpmuller_friendship < 100 }
+		}
+		cost = 10
+		days_remove = 30
+		days_re_enable = 20
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_deepen_Dorpmuller_friendship"
+			GEA_Josias_add_5_Dorpmuller_effect = yes
+		}
+	}
+
+	GEA_Josias_show_Emil_Helfferich_decisions = { #显示赫尔弗里希的相关决议
+		icon = GFX_decision_generic_political_address
+		visible = {
+			OR = {
+				has_country_flag = GEA_Josias_frame_5_Emil_Helfferich
+				has_country_flag = GEA_Josias_frame_6_Emil_Helfferich
+			}
+		}
+		cost = 0
+		complete_effect = {
+			GEA_Josias_clear_decision_view_effect = yes
+			set_country_flag = GEA_Josias_decision_view_Emil_Helfferich
+		}
+	}
+
+	GEA_Josias_deepen_Emil_Helfferich_friendship = { #加深与赫尔弗里希的关系
+		icon = GFX_decision_generic_political_address
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Emil_Helfferich
+		}
+		available = {
+			check_variable = { GEA_Emil_Helfferich_friendship < 100 }
+		}
+		cost = 10
+		days_remove = 30
+		days_re_enable = 20
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_deepen_Emil_Helfferich_friendship"
+			GEA_Josias_add_5_Emil_Helfferich_effect = yes
+		}
+	}
+
+	GEA_Josias_show_Fritz_Thyssen_decisions = { #显示蒂森的相关决议
+		icon = GFX_decision_generic_political_address
+		visible = {
+			OR = {
+				has_country_flag = GEA_Josias_frame_5_Fritz_Thyssen
+				has_country_flag = GEA_Josias_frame_6_Fritz_Thyssen
+			}
+		}
+		cost = 0
+		complete_effect = {
+			GEA_Josias_clear_decision_view_effect = yes
+			set_country_flag = GEA_Josias_decision_view_Fritz_Thyssen
+		}
+	}
+
+	GEA_Josias_deepen_Fritz_Thyssen_friendship = { #加深与蒂森的关系
+		icon = GFX_decision_generic_political_address
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Fritz_Thyssen
+		}
+		available = {
+			check_variable = { GEA_Fritz_Thyssen_friendship < 100 }
+		}
+		cost = 10
+		days_remove = 30
+		days_re_enable = 20
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_deepen_Fritz_Thyssen_friendship"
+			GEA_Josias_add_5_Fritz_Thyssen_effect = yes
+		}
+	}
+
+	GEA_Josias_show_Hermann_Goring_decisions = { #显示戈林的相关决议
+		icon = GFX_decision_generic_political_address
+		visible = {
+			OR = {
+				has_country_flag = GEA_Josias_frame_5_Hermann_Goring
+				has_country_flag = GEA_Josias_frame_6_Hermann_Goring
+			}
+		}
+		cost = 0
+		complete_effect = {
+			GEA_Josias_clear_decision_view_effect = yes
+			set_country_flag = GEA_Josias_decision_view_Hermann_Goring
+		}
+	}
+
+	GEA_Josias_deepen_Hermann_Goring_friendship = { #加深与戈林的关系
+		icon = GFX_decision_generic_political_address
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Hermann_Goring
+		}
+		available = {
+			check_variable = { GEA_Hermann_Goring_friendship < 100 }
+		}
+		cost = 10
+		days_remove = 30
+		days_re_enable = 20
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_deepen_Hermann_Goring_friendship"
+			GEA_Josias_add_5_Hermann_Goring_effect = yes
+		}
+	}
+
+	GEA_Josias_show_Siegmund_Bodenheimer_decisions = { #显示博登海默的相关决议
+		icon = GFX_decision_generic_political_address
+		visible = {
+			OR = {
+				has_country_flag = GEA_Josias_frame_5_Siegmund_Bodenheimer
+				has_country_flag = GEA_Josias_frame_6_Siegmund_Bodenheimer
+			}
+		}
+		cost = 0
+		complete_effect = {
+			GEA_Josias_clear_decision_view_effect = yes
+			set_country_flag = GEA_Josias_decision_view_Siegmund_Bodenheimer
+		}
+	}
+
+	GEA_Josias_deepen_Siegmund_Bodenheimer_friendship = { #加深与博登海默的关系
+		icon = GFX_decision_generic_political_address
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Siegmund_Bodenheimer
+		}
+		available = {
+			check_variable = { GEA_Siegmund_Bodenheimer_friendship < 100 }
+		}
+		cost = 10
+		days_remove = 30
+		days_re_enable = 20
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_deepen_Siegmund_Bodenheimer_friendship"
+			GEA_Josias_add_5_Siegmund_Bodenheimer_effect = yes
+		}
+	}
+
+	GEA_Josias_Nikolaus_private_dinner = { #安排私人晚宴
+		icon = GFX_decision_generic_political_address
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Nikolaus
+		}
+		available = {
+			check_variable = { GEA_NIKOLAUS_friendship < 100 }
+		}
+		cost = 25
+
+		days_remove = 7
+		days_re_enable = 60
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove EA_Josias_Nikolaus_private_dinner"
+			GEA_Josias_add_5_Nikolaus_effect = yes
+			add_stability = 0.02
+			add_popularity = {
+				ideology = authoritarian_democrat
+				popularity = 0.02
+			}
+		}
+	}
+
+	GEA_Josias_Nikolaus_political_support = { #提供政治支持
+		icon = GFX_decision_generic_political_address
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Nikolaus
+		}
+		available = {
+			check_variable = { GEA_NIKOLAUS_friendship < 100 }
+		}
+		cost = 30
+
+		days_remove = 30
+		days_re_enable = 30
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Nikolaus_political_support"
+			add_stability = 0.02
+			increase_ruling_party_popularity_by_3 = yes
+			GEA_Josias_add_10_Nikolaus_effect = yes
+		}
+	}
+
+	GEA_Josias_Carl_Edward_far_east_tour = { #邀请远东之行
+		icon = GFX_decision_generic_political_address
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Carl_Edward
+		}
+		available = {
+			check_variable = { GEA_CARL_EDWARD_friendship < 100 }
+		}
+		cost = 15
+		days_remove = 30
+		days_re_enable = 60
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Carl_Edward_far_east_tour"
+			add_stability = 0.02
+			add_political_power = 50
+			GEA_Josias_add_5_Carl_Edward_effect = yes
+		}
+	}
+
+	GEA_Josias_Carl_Edward_exiles_in_the_far_east = { #联络英国远东流亡者
+		icon = GFX_decision_generic_political_address
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Carl_Edward
+		}
+		available = {
+			check_variable = { GEA_CARL_EDWARD_friendship < 100 }
+		}
+		cost = 25
+		days_remove = 30
+		days_re_enable = 60
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Carl_Edward_exiles_in_the_far_east"
+			add_manpower = 220
+			add_popularity = {
+				ideology = social_liberal
+				popularity = 0.03
+			}
+			GEA_Josias_add_10_Carl_Edward_effect = yes
+		}
+	}
+
+	GEA_Josias_Elard_anti_liberal_rally = { #组织反自由主义集会
+		icon = GFX_decision_generic_political_address
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Elard_von_Oldenburg
+		}
+		available = {
+			check_variable = { GEA_ELARD_VON_OLDENBURG_friendship < 100 }
+		}
+		cost = 20
+		days_remove = 14
+		days_re_enable = 45
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Elard_anti_liberal_rally"
+			GER = {
+				add_stability = 0.01
+				add_popularity = {
+					ideology = social_democrat
+					popularity = -0.02
+				}
+				add_popularity = {
+					ideology = social_liberal
+					popularity = -0.02
+				}
+				add_popularity = {
+					ideology = market_liberal
+					popularity = -0.02
+				}
+			}
+			GEA_Josias_add_10_Elard_von_Oldenburg_effect = yes
+		}
+	}
+
+	GEA_Josias_Elard_fund_conservatives = { #为保守党提供资金
+		icon = GFX_decision_generic_political_address
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Elard_von_Oldenburg
+		}
+		available = {
+			check_variable = { GEA_ELARD_VON_OLDENBURG_friendship < 100 }
+		}
+		cost = 30
+		days_remove = 14
+		days_re_enable = 60
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Elard_fund_conservatives"
+			GER = {
+				add_stability = 0.02
+				add_popularity = {
+					ideology = authoritarian_democrat
+					popularity = 0.03
+				}
+			}
+			GEA_Josias_add_10_Elard_von_Oldenburg_effect = yes
+		}
+	}
+
+	GEA_Josias_Schleicher_secret_party_members = { #拉拢秘党成员
+		icon = GFX_decision_generic_political_address
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Schleicher
+		}
+		available = {
+			check_variable = { GEA_SCHLEICHER_friendship < 100 }
+		}
+		cost = 10
+		days_remove = 15
+		days_re_enable = 40
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision  remove GEA_Josias_Schleicher_secret_party_members"
+			add_command_power = 10
+			add_popularity = {
+				ideology = paternal_autocrat
+				popularity = 0.01
+			}
+			GEA_Josias_add_5_Schleicher_effect = yes
+		}
+	}
+
+	GEA_Josias_Schleicher_army_allies = { #协调军中盟友
+		icon = GFX_decision_generic_political_address
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Schleicher
+		}
+		available = {
+			check_variable = { GEA_SCHLEICHER_friendship < 100 }
+		}
+		cost = 25
+		days_remove = 30
+		days_re_enable = 50
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_Josias_Schleicher_army_allies"
+			army_experience = 10
+			add_war_support = 0.03
+			GEA_Josias_add_10_Schleicher_effect = yes
+		}
+	}
+
+	GEA_Josias_Schleicher_Expand_Aberville_in_the_Far_East = { #扩大远东阿勃维尔分部
+		icon = investigation
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Schleicher
+		}
+		available = {
+			check_variable = { GEA_SCHLEICHER_friendship < 100 }
+		}
+		custom_cost_text = GEA_command_50_tt
+		custom_cost_trigger = {
+			command_power > 50
+		}
+
+		civilian_factory_use = 1
+
+		days_remove = 45
+		fire_only_once = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_Josias_Schleicher_Expand_Aberville_in_the_Far_East"
+			add_command_power = -50
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Schleicher_Expand_Aberville_in_the_Far_East"
+			GER = {
+				add_ideas = GEA_far_eastern_abwehr_idea
+				add_intel = {
+					target = JAP
+					civilian_intel = 10
+				}
+				
+			}
+			add_war_support = 0.05
+			gain_random_agency_upgrade = yes
+			GEA_Josias_add_20_Schleicher_effect = yes
+		}
+	}
+
+	GEA_Josias_Hugenberg_media_network = { #资助传媒网络
+		icon = GFX_decision_generic_political_address
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Hugenberg
+		}
+		available = {
+			check_variable = { GEA_HUGENBERG_friendship < 100 }
+		}
+		cost = 20
+		days_remove = 7
+		days_re_enable = 70
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Hugenberg_media_network"
+			add_stability = 0.02
+			GEA_Josias_add_10_Hugenberg_effect = yes
+		}
+	}
+
+	GEA_Josias_Hugenberg_nationalist_rally = { #参与民族主义集会
+		icon = GFX_decision_generic_political_address
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Hugenberg
+		}
+		available = {
+			check_variable = { GEA_HUGENBERG_friendship < 100 }
+		}
+		cost = 25
+		days_remove = 30
+		days_re_enable = 45
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_Josias_Hugenberg_nationalist_rally"
+			add_war_support = 0.02
+			add_popularity = {
+				ideology = paternal_autocrat
+				popularity = 0.03
+			}
+			add_popularity = {
+				ideology = national_populist
+				popularity = 0.01
+			}
+			GEA_Josias_add_10_Hugenberg_effect = yes
+		}
+	}
+
+	GEA_Josias_Werner_gentlemens_club = { #加入“绅士俱乐部”
+		icon = GFX_decision_generic_political_address
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Werner_von_Alvensleben
+		}
+		available = {
+			check_variable = { GEA_WERNER_VON_ALVENSLEBEN_friendship < 100 }
+		}
+
+		cost = 40
+		fire_only_once = yes
+		days_remove = 50
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Werner_gentlemens_club"
+			add_stability = 0.05
+			add_popularity = {
+				ideology = authoritarian_democrat
+				popularity = 0.06
+			}
+			GER = {
+				add_popularity = {
+					ideology = social_conservative
+					popularity = 0.02
+				}
+				add_popularity = {
+					ideology = authoritarian_democrat
+					popularity = 0.02
+				}
+			}
+			GEA_Josias_add_15_Werner_von_Alvensleben_effect = yes
+		}
+	}
+
+	GEA_Josias_Werner_western_culture_league = { #资助“西方文化保护联盟”
+		icon = GFX_decision_generic_political_address
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Werner_von_Alvensleben
+		}
+		available = {
+			check_variable = { GEA_WERNER_VON_ALVENSLEBEN_friendship < 100 }
+		}
+		cost = 25
+		days_remove = 30
+		days_re_enable = 45
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Werner_western_culture_league"
+			GER = {
+				add_stability = 0.02
+				add_popularity = {
+					ideology = social_conservative
+					popularity = 0.04
+				}
+			}
+			add_stability = 0.03
+			GEA_Josias_add_10_Werner_von_Alvensleben_effect = yes
+			
+		}
+	}
+
+	GEA_Josias_Josef_Abs_bank_credit = { #安排银行授信
+		icon = GFX_decision_generic_political_address
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Josef_Abs
+		}
+		available = {
+			check_variable = { GEA_Josef_Abs_friendship < 100 }
+		}
+		cost = 10
+		days_remove = 30
+		days_re_enable = 20
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_Josias_Josef_Abs_bank_credit"
+			GEA_Josias_add_5_Josef_Abs_effect = yes
+			add_political_power = 15
+		}
+	}
+
+	GEA_Josias_Josef_Abs_far_east_investment = { #协调远东金融投资
+		icon = GFX_decision_generic_political_address
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Josef_Abs
+		}
+		available = {
+			check_variable = { GEA_Josef_Abs_friendship < 100 }
+		}
+		cost = 10
+		days_remove = 30
+		days_re_enable = 20
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_Josias_Josef_Abs_far_east_investment"
+			GEA_Josias_add_5_Josef_Abs_effect = yes
+			add_stability = 0.01
+		}
+	}
+
+	GEA_Josias_Fritz_Meer_special_development_permit = { #特批开发
+		icon = GFX_decision_generic_political_address
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Fritz_Meer
+		}
+		available = {
+			check_variable = { GEA_Fritz_Meer_friendship < 100 }
+		}
+		cost = 10
+		days_remove = 30
+		days_re_enable = 20
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_Josias_Fritz_Meer_special_development_permit"
+			GEA_Josias_add_5_Fritz_Meer_effect = yes
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+
+	GEA_Josias_Fritz_Meer_cheap_labor = { #提供“低价劳工”
+		icon = GFX_decision_generic_political_address
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Fritz_Meer
+		}
+		available = {
+			check_variable = { GEA_Fritz_Meer_friendship < 100 }
+		}
+		cost = 10
+		days_remove = 30
+		days_re_enable = 20
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_Josias_Fritz_Meer_cheap_labor"
+			GEA_Josias_add_5_Fritz_Meer_effect = yes
+			add_manpower = 1000
+			add_stability = -0.01
+		}
+	}
+
+	GEA_Josias_Hermann_Siemens_electrical_project_bid = { #特批电气工程项目竞标
+		icon = GFX_decision_generic_political_address
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Hermann_Siemens
+		}
+		available = {
+			check_variable = { GEA_Hermann_Siemens_friendship < 100 }
+		}
+		cost = 10
+		days_remove = 30
+		days_re_enable = 20
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_Josias_Hermann_Siemens_electrical_project_bid"
+			GEA_Josias_add_5_Hermann_Siemens_effect = yes
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	GEA_Josias_Hermann_Siemens_communications_orders = { #扩大通讯设备订单
+		icon = GFX_decision_generic_political_address
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Hermann_Siemens
+		}
+		available = {
+			check_variable = { GEA_Hermann_Siemens_friendship < 100 }
+		}
+		cost = 10
+		days_remove = 30
+		days_re_enable = 20
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_Josias_Hermann_Siemens_communications_orders"
+			GEA_Josias_add_5_Hermann_Siemens_effect = yes
+			add_political_power = 15
+		}
+	}
+
+	GEA_Josias_Hermann_Bucher_electrical_project_bid = { #批电气工程项目竞标
+		icon = GFX_decision_generic_political_address
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Hermann_Bucher
+		}
+		available = {
+			check_variable = { GEA_Hermann_Bucher_friendship < 100 }
+		}
+		cost = 10
+		days_remove = 30
+		days_re_enable = 20
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_Josias_Hermann_Bucher_electrical_project_bid"
+			GEA_Josias_add_5_Hermann_Bucher_effect = yes
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	GEA_Josias_Hermann_Bucher_appliance_procurement = { #扩大电器采购
+		icon = GFX_decision_generic_political_address
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Hermann_Bucher
+		}
+		available = {
+			check_variable = { GEA_Hermann_Bucher_friendship < 100 }
+		}
+		cost = 10
+		days_remove = 30
+		days_re_enable = 20
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_Josias_Hermann_Bucher_appliance_procurement"
+			GEA_Josias_add_5_Hermann_Bucher_effect = yes
+			add_stability = 0.01
+		}
+	}
+
+	GEA_Josias_Otto_Jeidels_project_investment = { #引进项目投资
+		icon = GFX_decision_generic_political_address
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Otto_Jeidels
+		}
+		available = {
+			check_variable = { GEA_Otto_Jeidels_friendship < 100 }
+		}
+		cost = 10
+		days_remove = 30
+		days_re_enable = 20
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_Josias_Otto_Jeidels_project_investment"
+			GEA_Josias_add_5_Otto_Jeidels_effect = yes
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+
+	GEA_Josias_Otto_Jeidels_financial_deregulation = { #开放金融限制
+		icon = GFX_decision_generic_political_address
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Otto_Jeidels
+		}
+		available = {
+			check_variable = { GEA_Otto_Jeidels_friendship < 100 }
+		}
+		cost = 10
+		days_remove = 30
+		days_re_enable = 20
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_Josias_Otto_Jeidels_financial_deregulation"
+			GEA_Josias_add_5_Otto_Jeidels_effect = yes
+			add_political_power = 15
+		}
+	}
+
+	GEA_Josias_Alfred_Krupp_industrial_zone = { #扩大克虏伯工业区建设
+		icon = GFX_decision_generic_political_address
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Alfred_Krupp
+		}
+		available = {
+			check_variable = { GEA_Alfred_Krupp_friendship < 100 }
+		}
+		civilian_factory_use = 4
+
+		cost = 75
+		days_remove = 60
+		fire_only_once = yes
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_Josias_Alfred_Krupp_industrial_zone"
+			GER = {
+				add_to_variable = {
+					var = GER.GER_mitteleuropa_strength_var
+					value = 2
+					tooltip = add_2_to_mitteleuropastrength_tt
+				}
+			}
+			modify_country_flag = {
+				flag = GEA_Indochinese_Stability
+				value = 1
+			}
+			custom_effect_tooltip = GEA_Indochina_Stability_Up
+			671 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+				}
+			}
+			336 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+				}
+			}
+			GEA_Josias_add_15_Alfred_Krupp_effect = yes
+		}
+	}
+
+	GEA_Josias_Alfred_Krupp_relax_regulations = { #放松条例管制
+		icon = GFX_decision_generic_political_address
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Alfred_Krupp
+		}
+		available = {
+			check_variable = { GEA_Alfred_Krupp_friendship < 100 }
+		}
+		cost = 10
+		days_remove = 30
+		days_re_enable = 20
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_Josias_Alfred_Krupp_relax_regulations"
+			GEA_Josias_add_5_Alfred_Krupp_effect = yes
+			add_political_power = 15
+		}
+	}
+
+	GEA_Josias_Carl_Schmitt_sovereigntist_rally = { #参与主权派集会
+		icon = GFX_decision_generic_political_address
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Carl_Schmitt
+		}
+		available = {
+			check_variable = { GEA_Carl_Schmitt_friendship < 100 }
+		}
+		cost = 10
+		days_remove = 30
+		days_re_enable = 20
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_Josias_Carl_Schmitt_sovereigntist_rally"
+			GEA_Josias_add_5_Carl_Schmitt_effect = yes
+			add_war_support = 0.01
+		}
+	}
+
+	GEA_Josias_Carl_Schmitt_political_endorsement = { #提供政治背书
+		icon = GFX_decision_generic_political_address
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Carl_Schmitt
+		}
+		available = {
+			check_variable = { GEA_Carl_Schmitt_friendship < 100 }
+		}
+		cost = 10
+		days_remove = 30
+		days_re_enable = 20
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_Josias_Carl_Schmitt_political_endorsement"
+			GEA_Josias_add_5_Carl_Schmitt_effect = yes
+			add_political_power = 15
+		}
+	}
+
+	GEA_Josias_Dorpmuller_new_railway_project = { #批准新铁路项目
+		icon = GFX_decision_generic_political_address
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Dorpmuller
+		}
+		available = {
+			check_variable = { GEA_Dorpmuller_friendship < 100 }
+		}
+		cost = 10
+		days_remove = 30
+		days_re_enable = 20
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_Josias_Dorpmuller_new_railway_project"
+			GEA_Josias_add_5_Dorpmuller_effect = yes
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	GEA_Josias_Dorpmuller_official_investment = { #加大官方投资
+		icon = GFX_decision_generic_political_address
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Dorpmuller
+		}
+		available = {
+			check_variable = { GEA_Dorpmuller_friendship < 100 }
+		}
+		cost = 10
+		days_remove = 30
+		days_re_enable = 20
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_Josias_Dorpmuller_official_investment"
+			GEA_Josias_add_5_Dorpmuller_effect = yes
+			add_political_power = 15
+		}
+	}
+
+	GEA_Josias_Emil_Helfferich_shipping_routes = { #扩展航路规模
+		icon = GFX_decision_generic_political_address
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Emil_Helfferich
+		}
+		available = {
+			check_variable = { GEA_Emil_Helfferich_friendship < 100 }
+		}
+		cost = 10
+		days_remove = 30
+		days_re_enable = 20
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_Josias_Emil_Helfferich_shipping_routes"
+			GEA_Josias_add_5_Emil_Helfferich_effect = yes
+			add_equipment_to_stockpile = {
+				type = convoy
+				amount = 25
+				producer = GEA
+			}
+		}
+	}
+
+	GEA_Josias_Emil_Helfferich_shipbuilding_investment = { #注资造船业
+		icon = GFX_decision_generic_political_address
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Emil_Helfferich
+		}
+		available = {
+			check_variable = { GEA_Emil_Helfferich_friendship < 100 }
+		}
+		cost = 10
+		days_remove = 30
+		days_re_enable = 20
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_Josias_Emil_Helfferich_shipbuilding_investment"
+			GEA_Josias_add_5_Emil_Helfferich_effect = yes
+			navy_experience = 10
+		}
+	}
+
+	GEA_Josias_Fritz_Thyssen_mining_contracts = { #扩大矿业合同
+		icon = GFX_decision_generic_political_address
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Fritz_Thyssen
+		}
+		available = {
+			check_variable = { GEA_Fritz_Thyssen_friendship < 100 }
+		}
+		cost = 10
+		days_remove = 30
+		days_re_enable = 20
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_Josias_Fritz_Thyssen_mining_contracts"
+			GEA_Josias_add_5_Fritz_Thyssen_effect = yes
+			add_political_power = 15
+		}
+	}
+
+	GEA_Josias_Fritz_Thyssen_mining_concessions = { #特批采矿权
+		icon = GFX_decision_generic_political_address
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Fritz_Thyssen
+		}
+		available = {
+			check_variable = { GEA_Fritz_Thyssen_friendship < 100 }
+		}
+		cost = 10
+		days_remove = 30
+		days_re_enable = 20
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_Josias_Fritz_Thyssen_mining_concessions"
+			GEA_Josias_add_5_Fritz_Thyssen_effect = yes
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+
+	GEA_Josias_Hermann_Goring_steppe_hunt = { #草原寻猎
+		icon = GFX_decision_generic_political_address
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Hermann_Goring
+		}
+		available = {
+			check_variable = { GEA_Hermann_Goring_friendship < 100 }
+		}
+		cost = 10
+		days_remove = 30
+		days_re_enable = 20
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_Josias_Hermann_Goring_steppe_hunt"
+			GEA_Josias_add_5_Hermann_Goring_effect = yes
+			air_experience = 10
+		}
+	}
+
+	GEA_Josias_Hermann_Goring_sovereigntist_rally = { #参与主权派集会
+		icon = GFX_decision_generic_political_address
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Hermann_Goring
+		}
+		available = {
+			check_variable = { GEA_Hermann_Goring_friendship < 100 }
+		}
+		cost = 10
+		days_remove = 30
+		days_re_enable = 20
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_Josias_Hermann_Goring_sovereigntist_rally"
+			GEA_Josias_add_5_Hermann_Goring_effect = yes
+			add_war_support = 0.01
+		}
+	}
+
+	GEA_Josias_Siegmund_Bodenheimer_bank_concession = { #授予德华银行特许经营权
+		icon = GFX_decision_generic_political_address
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Siegmund_Bodenheimer
+		}
+		available = {
+			check_variable = { GEA_Siegmund_Bodenheimer_friendship < 100 }
+		}
+		cost = 10
+		days_remove = 30
+		days_re_enable = 20
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_Josias_Siegmund_Bodenheimer_bank_concession"
+			GEA_Josias_add_5_Siegmund_Bodenheimer_effect = yes
+			add_political_power = 15
+		}
+	}
+
+	GEA_Josias_Siegmund_Bodenheimer_embassy_city = { #协助建设使馆城市
+		icon = GFX_decision_generic_political_address
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Siegmund_Bodenheimer
+		}
+		available = {
+			check_variable = { GEA_Siegmund_Bodenheimer_friendship < 100 }
+		}
+		cost = 10
+		days_remove = 30
+		days_re_enable = 20
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_Josias_Siegmund_Bodenheimer_embassy_city"
+			GEA_Josias_add_5_Siegmund_Bodenheimer_effect = yes
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
 
 }
 

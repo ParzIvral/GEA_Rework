@@ -259,11 +259,13 @@ set_variable = { GEA_army_army_org_factor = 0.10 }
 set_variable = { GEA_army_army_morale_factor = -0.1 }
 set_variable = { GEA_army_command_power_gain_mult = 0.1 }
 add_dynamic_modifier = { modifier = GEA_AOG_BONUS }
-set_variable = { GEA_AOG_CITIES = -0.12  }
+set_variable = { GEA_AOG_consumer_goods_factor = -0.12 }
 set_variable = { GEA_AOG_CITIES_FACTORIES = -12  }
 set_variable = { GEA_AOG_CITIES_NUMBER = 7  }
 set_variable = { GEA_AOG_SHIPYARD = 0.15  }
 set_variable = { GEA_AOG_SHIPYARD_loacl = 15  }
+set_variable = { GEA_TRADE_FACTOR = 0.15  }
+set_variable = { GEA_TRADE_FACTOR_local = 15  }
 set_variable = { GEA_BEST_COLONIAL_stability = 0.10 }
 set_country_flag = GEA_owner_of_wenzhou
 set_country_flag = GEA_owner_of_xiamen

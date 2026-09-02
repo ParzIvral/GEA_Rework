@@ -10,6 +10,24 @@ leader_traits = {
 	sc_independent = {}							#保民 独立人士
 	Josias_group = {}							#约西亚斯集团
 	Reichsbank = {}								#帝国银行
+	Noble_diplomat = {							#贵族外交官
+		political_power_factor = 0.04
+		party_popularity_stability_factor = 0.1
+	}
+	Prinze = {									#亲王
+		stability_weekly = 0.001
+		industrial_capacity_factory = 0.03
+		max_command_power = 20
+	}
+	Shipping_magnate = {						#航运大亨
+		industrial_capacity_dockyard = 0.06
+		equipment_bonus = {
+			convoy = {
+				build_cost_ic = -0.05
+				instant = yes
+			}
+		}
+	}
 	War_Hero = {								#战争英雄
 		war_support_factor = 0.05
 		experience_gain_navy_factor = 0.05

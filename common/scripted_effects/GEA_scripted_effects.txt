@@ -360,3 +360,762 @@ Hawaii_ger_click_effect = {
 	}
 }
 
+GEA_Josias_select_Nikolaus_effect = {
+	if = { limit = { NOT = { has_dynamic_modifier = { modifier = GEA_NIKOLAUS_modifier } } } add_dynamic_modifier = { modifier = GEA_NIKOLAUS_modifier } }
+	add_to_variable = { var = GEA_NIKOLAUS_friendship value = GEA_Josias_friendship_change }
+	clamp_variable = { var = GEA_NIKOLAUS_friendship min = 0 max = 100 }
+	set_variable = { GEA_NIKOLAUS_political_power = GEA_NIKOLAUS_friendship }
+	multiply_variable = { GEA_NIKOLAUS_political_power = 0.0005 }
+	set_variable = { GEA_NIKOLAUS_war_support = GEA_NIKOLAUS_friendship }
+	multiply_variable = { GEA_NIKOLAUS_war_support = 0.001 }
+	set_variable = { GEA_NIKOLAUS_mobilization_speed = GEA_NIKOLAUS_friendship }
+	multiply_variable = { GEA_NIKOLAUS_mobilization_speed = 0.001 }
+}
+
+GEA_Josias_select_Carl_Edward_effect = {
+	if = { limit = { NOT = { has_dynamic_modifier = { modifier = GEA_CARL_EDWARD_modifier } } } add_dynamic_modifier = { modifier = GEA_CARL_EDWARD_modifier } }
+	add_to_variable = { var = GEA_CARL_EDWARD_friendship value = GEA_Josias_friendship_change }
+	clamp_variable = { var = GEA_CARL_EDWARD_friendship min = 0 max = 100 }
+	set_variable = { GEA_CARL_EDWARD_political_power = GEA_CARL_EDWARD_friendship }
+	multiply_variable = { GEA_CARL_EDWARD_political_power = 0.0005 }
+	set_variable = { GEA_CARL_EDWARD_stability = GEA_CARL_EDWARD_friendship }
+	multiply_variable = { GEA_CARL_EDWARD_stability = 0.001 }
+	set_variable = { GEA_CARL_EDWARD_opinion_gain_monthly_factor = GEA_CARL_EDWARD_friendship }
+	multiply_variable = { GEA_CARL_EDWARD_opinion_gain_monthly_factor = 0.0015 }
+}
+
+GEA_Josias_select_Elard_von_Oldenburg_effect = {
+	if = { limit = { NOT = { has_dynamic_modifier = { modifier = GEA_ELARD_VON_OLDENBURG_modifier } } } add_dynamic_modifier = { modifier = GEA_ELARD_VON_OLDENBURG_modifier } }
+	add_to_variable = { var = GEA_ELARD_VON_OLDENBURG_friendship value = GEA_Josias_friendship_change }
+	clamp_variable = { var = GEA_ELARD_VON_OLDENBURG_friendship min = 0 max = 100 }
+	set_variable = { GEA_ELARD_VON_OLDENBURG_offensive_war_stability_factor = GEA_ELARD_VON_OLDENBURG_friendship }
+	multiply_variable = { GEA_ELARD_VON_OLDENBURG_offensive_war_stability_factor = 0.002 }
+	set_variable = { GEA_ELARD_VON_OLDENBURG_war_support = GEA_ELARD_VON_OLDENBURG_friendship }
+	multiply_variable = { GEA_ELARD_VON_OLDENBURG_war_support = 0.001 }
+	set_variable = { GEA_ELARD_VON_OLDENBURG_conscription_factor = GEA_ELARD_VON_OLDENBURG_friendship }
+	multiply_variable = { GEA_ELARD_VON_OLDENBURG_conscription_factor = 0.001 }
+}
+
+GEA_Josias_select_Schleicher_effect = {
+	if = { limit = { NOT = { has_dynamic_modifier = { modifier = GEA_SCHLEICHER_modifier } } } add_dynamic_modifier = { modifier = GEA_SCHLEICHER_modifier } }
+	add_to_variable = { var = GEA_SCHLEICHER_friendship value = GEA_Josias_friendship_change }
+	clamp_variable = { var = GEA_SCHLEICHER_friendship min = 0 max = 100 }
+	set_variable = { GEA_SCHLEICHER_political_power_gain = GEA_SCHLEICHER_friendship }
+	multiply_variable = { GEA_SCHLEICHER_political_power_gain = 0.0005 }
+	set_variable = { GEA_SCHLEICHER_army_attack_factor = GEA_SCHLEICHER_friendship }
+	multiply_variable = { GEA_SCHLEICHER_army_attack_factor = 0.001 }
+	set_variable = { GEA_SCHLEICHER_conscription = GEA_SCHLEICHER_friendship }
+	multiply_variable = { GEA_SCHLEICHER_conscription = 0.0005 }
+}
+
+GEA_Josias_select_Hugenberg_effect = {
+	if = { limit = { NOT = { has_dynamic_modifier = { modifier = GEA_HUGENBERG_modifier } } } add_dynamic_modifier = { modifier = GEA_HUGENBERG_modifier } }
+	add_to_variable = { var = GEA_HUGENBERG_friendship value = GEA_Josias_friendship_change }
+	clamp_variable = { var = GEA_HUGENBERG_friendship min = 0 max = 100 }
+	set_variable = { GEA_HUGENBERG_political_power_gain = GEA_HUGENBERG_friendship }
+	multiply_variable = { GEA_HUGENBERG_political_power_gain = 0.0005 }
+	set_variable = { GEA_HUGENBERG_war_support_weekly = GEA_HUGENBERG_friendship }
+	multiply_variable = { GEA_HUGENBERG_war_support_weekly = 0.00005 }
+	set_variable = { GEA_HUGENBERG_drift_defence_factor = GEA_HUGENBERG_friendship }
+	multiply_variable = { GEA_HUGENBERG_drift_defence_factor = 0.002 }
+}
+
+GEA_Josias_select_Werner_von_Alvensleben_effect = {
+	if = { limit = { NOT = { has_dynamic_modifier = { modifier = GEA_WERNER_VON_ALVENSLEBEN_modifier } } } add_dynamic_modifier = { modifier = GEA_WERNER_VON_ALVENSLEBEN_modifier } }
+	add_to_variable = { var = GEA_WERNER_VON_ALVENSLEBEN_friendship value = GEA_Josias_friendship_change }
+	clamp_variable = { var = GEA_WERNER_VON_ALVENSLEBEN_friendship min = 0 max = 100 }
+	set_variable = { GEA_WERNER_VON_ALVENSLEBEN_monthly_population = GEA_WERNER_VON_ALVENSLEBEN_friendship }
+	multiply_variable = { GEA_WERNER_VON_ALVENSLEBEN_monthly_population = 0.0015 }
+	set_variable = { GEA_WERNER_VON_ALVENSLEBEN_production_speed_arms_factory_factor = GEA_WERNER_VON_ALVENSLEBEN_friendship }
+	multiply_variable = { GEA_WERNER_VON_ALVENSLEBEN_production_speed_arms_factory_factor = 0.001 }
+	set_variable = { GEA_WERNER_VON_ALVENSLEBEN_party_popularity_stability_factor = GEA_WERNER_VON_ALVENSLEBEN_friendship }
+	multiply_variable = { GEA_WERNER_VON_ALVENSLEBEN_party_popularity_stability_factor = 0.0015 }
+}
+
+GEA_Josias_select_Josef_Abs_effect = {
+	if = { limit = { NOT = { has_dynamic_modifier = { modifier = GEA_Josef_Abs_modifier } } } add_dynamic_modifier = { modifier = GEA_Josef_Abs_modifier } }
+	add_to_variable = { var = GEA_Josef_Abs_friendship value = GEA_Josias_friendship_change }
+	clamp_variable = { var = GEA_Josef_Abs_friendship min = 0 max = 100 }
+	set_variable = { GEA_Josef_Abs_production_factory_start_efficiency_factor = GEA_Josef_Abs_friendship }
+	multiply_variable = { GEA_Josef_Abs_production_factory_start_efficiency_factor = 0.001 }
+	set_variable = { GEA_Josef_Abs_consumer_goods_factor = GEA_Josef_Abs_friendship }
+	multiply_variable = { GEA_Josef_Abs_consumer_goods_factor = -0.001 }
+	set_variable = { GEA_Josef_Abs_stability_factor = GEA_Josef_Abs_friendship }
+	multiply_variable = { GEA_Josef_Abs_stability_factor = 0.001 }
+}
+
+GEA_Josias_select_Fritz_Meer_effect = {
+	if = { limit = { NOT = { has_dynamic_modifier = { modifier = GEA_Fritz_Meer_modifier } } } add_dynamic_modifier = { modifier = GEA_Fritz_Meer_modifier } }
+	add_to_variable = { var = GEA_Fritz_Meer_friendship value = GEA_Josias_friendship_change }
+	clamp_variable = { var = GEA_Fritz_Meer_friendship min = 0 max = 100 }
+	set_variable = { GEA_Fritz_Meer_production_factory_max_efficiency_factor = GEA_Fritz_Meer_friendship }
+	multiply_variable = { GEA_Fritz_Meer_production_factory_max_efficiency_factor = 0.001 }
+	set_variable = { GEA_Fritz_Meer_production_speed_synthetic_refinery_factor = GEA_Fritz_Meer_friendship }
+	multiply_variable = { GEA_Fritz_Meer_production_speed_synthetic_refinery_factor = 0.001 }
+	set_variable = { GEA_Fritz_Meer_local_resources_factor = GEA_Fritz_Meer_friendship }
+	multiply_variable = { GEA_Fritz_Meer_local_resources_factor = 0.0005 }
+}
+
+GEA_Josias_select_Hermann_Bucher_effect = {
+	if = { limit = { NOT = { has_dynamic_modifier = { modifier = GEA_Hermann_Bucher_modifier } } } add_dynamic_modifier = { modifier = GEA_Hermann_Bucher_modifier } }
+	add_to_variable = { var = GEA_Hermann_Bucher_friendship value = GEA_Josias_friendship_change }
+	clamp_variable = { var = GEA_Hermann_Bucher_friendship min = 0 max = 100 }
+	set_variable = { GEA_Hermann_Bucher_line_change_production_efficiency_factor = GEA_Hermann_Bucher_friendship }
+	multiply_variable = { GEA_Hermann_Bucher_line_change_production_efficiency_factor = 0.001 }
+	set_variable = { GEA_Hermann_Bucher_production_speed_infrastructure_factor = GEA_Hermann_Bucher_friendship }
+	multiply_variable = { GEA_Hermann_Bucher_production_speed_infrastructure_factor = 0.001 }
+	set_variable = { GEA_Hermann_Bucher_research_speed_factor = GEA_Hermann_Bucher_friendship }
+	multiply_variable = { GEA_Hermann_Bucher_research_speed_factor = 0.0005 }
+}
+
+GEA_Josias_select_Hermann_Siemens_effect = {
+	if = { limit = { NOT = { has_dynamic_modifier = { modifier = GEA_Hermann_Siemens_modifier } } } add_dynamic_modifier = { modifier = GEA_Hermann_Siemens_modifier } }
+	add_to_variable = { var = GEA_Hermann_Siemens_friendship value = GEA_Josias_friendship_change }
+	clamp_variable = { var = GEA_Hermann_Siemens_friendship min = 0 max = 100 }
+	set_variable = { GEA_Hermann_Siemens_production_factory_efficiency_gain_factor = GEA_Hermann_Siemens_friendship }
+	multiply_variable = { GEA_Hermann_Siemens_production_factory_efficiency_gain_factor = 0.001 }
+	set_variable = { GEA_Hermann_Siemens_production_speed_radar_station_factor = GEA_Hermann_Siemens_friendship }
+	multiply_variable = { GEA_Hermann_Siemens_production_speed_radar_station_factor = 0.0015 }
+	set_variable = { GEA_Hermann_Siemens_research_speed_factor = GEA_Hermann_Siemens_friendship }
+	multiply_variable = { GEA_Hermann_Siemens_research_speed_factor = 0.0005 }
+}
+
+GEA_Josias_select_Otto_Jeidels_effect = {
+	if = { limit = { NOT = { has_dynamic_modifier = { modifier = GEA_Otto_Jeidels_modifier } } } add_dynamic_modifier = { modifier = GEA_Otto_Jeidels_modifier } }
+	add_to_variable = { var = GEA_Otto_Jeidels_friendship value = GEA_Josias_friendship_change }
+	clamp_variable = { var = GEA_Otto_Jeidels_friendship min = 0 max = 100 }
+	set_variable = { GEA_Otto_Jeidels_consumer_goods_factor = GEA_Otto_Jeidels_friendship }
+	multiply_variable = { GEA_Otto_Jeidels_consumer_goods_factor = -0.001 }
+	set_variable = { GEA_Otto_Jeidels_production_speed_industrial_complex_factor = GEA_Otto_Jeidels_friendship }
+	multiply_variable = { GEA_Otto_Jeidels_production_speed_industrial_complex_factor = 0.001 }
+	set_variable = { GEA_Otto_Jeidels_local_building_slots_factor = GEA_Otto_Jeidels_friendship }
+	multiply_variable = { GEA_Otto_Jeidels_local_building_slots_factor = 0.001 }
+}
+
+GEA_Josias_select_Alfred_Krupp_effect = {
+	if = { limit = { NOT = { has_dynamic_modifier = { modifier = GEA_Alfred_Krupp_modifier } } } add_dynamic_modifier = { modifier = GEA_Alfred_Krupp_modifier } }
+	add_to_variable = { var = GEA_Alfred_Krupp_friendship value = GEA_Josias_friendship_change }
+	clamp_variable = { var = GEA_Alfred_Krupp_friendship min = 0 max = 100 }
+	set_variable = { GEA_Alfred_Krupp_production_speed_arms_factory_factor = GEA_Alfred_Krupp_friendship }
+	multiply_variable = { GEA_Alfred_Krupp_production_speed_arms_factory_factor = 0.001 }
+	set_variable = { GEA_Alfred_Krupp_industrial_capacity_factory = GEA_Alfred_Krupp_friendship }
+	multiply_variable = { GEA_Alfred_Krupp_industrial_capacity_factory = 0.001 }
+	set_variable = { GEA_Alfred_Krupp_conversion_cost_civ_to_mil_factor = GEA_Alfred_Krupp_friendship }
+	multiply_variable = { GEA_Alfred_Krupp_conversion_cost_civ_to_mil_factor = -0.002 }
+}
+
+GEA_Josias_select_Carl_Schmitt_effect = {
+	if = { limit = { NOT = { has_dynamic_modifier = { modifier = GEA_Carl_Schmitt_modifier } } } add_dynamic_modifier = { modifier = GEA_Carl_Schmitt_modifier } }
+	add_to_variable = { var = GEA_Carl_Schmitt_friendship value = GEA_Josias_friendship_change }
+	clamp_variable = { var = GEA_Carl_Schmitt_friendship min = 0 max = 100 }
+	set_variable = { GEA_Carl_Schmitt_local_resources_factor = GEA_Carl_Schmitt_friendship }
+	multiply_variable = { GEA_Carl_Schmitt_local_resources_factor = 0.001 }
+	set_variable = { GEA_Carl_Schmitt_production_production_speed_buildings_factor = GEA_Carl_Schmitt_friendship }
+	multiply_variable = { GEA_Carl_Schmitt_production_production_speed_buildings_factor = 0.001 }
+	set_variable = { GEA_Carl_Schmitt_justify_war_goal_time = GEA_Carl_Schmitt_friendship }
+	multiply_variable = { GEA_Carl_Schmitt_justify_war_goal_time = -0.0025 }
+}
+
+GEA_Josias_select_Dorpmuller_effect = {
+	if = { limit = { NOT = { has_dynamic_modifier = { modifier = GEA_Dorpmuller_modifier } } } add_dynamic_modifier = { modifier = GEA_Dorpmuller_modifier } }
+	add_to_variable = { var = GEA_Dorpmuller_friendship value = GEA_Josias_friendship_change }
+	clamp_variable = { var = GEA_Dorpmuller_friendship min = 0 max = 100 }
+	set_variable = { GEA_Dorpmuller_production_speed_infrastructure_factor = GEA_Dorpmuller_friendship }
+	multiply_variable = { GEA_Dorpmuller_production_speed_infrastructure_factor = 0.001 }
+	set_variable = { GEA_Dorpmuller_production_speed_rail_way_factor = GEA_Dorpmuller_friendship }
+	multiply_variable = { GEA_Dorpmuller_production_speed_rail_way_factor = 0.001 }
+	set_variable = { GEA_Dorpmuller_army_speed_factor = GEA_Dorpmuller_friendship }
+	multiply_variable = { GEA_Dorpmuller_army_speed_factor = 0.001 }
+}
+
+GEA_Josias_select_Emil_Helfferich_effect = {
+	if = { limit = { NOT = { has_dynamic_modifier = { modifier = GEA_Emil_Helfferich_modifier } } } add_dynamic_modifier = { modifier = GEA_Emil_Helfferich_modifier } }
+	add_to_variable = { var = GEA_Emil_Helfferich_friendship value = GEA_Josias_friendship_change }
+	clamp_variable = { var = GEA_Emil_Helfferich_friendship min = 0 max = 100 }
+	set_variable = { GEA_Emil_Helfferich_production_speed_dockyard_factor = GEA_Emil_Helfferich_friendship }
+	multiply_variable = { GEA_Emil_Helfferich_production_speed_dockyard_factor = 0.001 }
+	set_variable = { GEA_Emil_Helfferich_industrial_capacity_dockyard = GEA_Emil_Helfferich_friendship }
+	multiply_variable = { GEA_Emil_Helfferich_industrial_capacity_dockyard = 0.001 }
+	set_variable = { GEA_Emil_Helfferich_autonomy_gain = GEA_Emil_Helfferich_friendship }
+	multiply_variable = { GEA_Emil_Helfferich_autonomy_gain = 0.0015 }
+}
+
+GEA_Josias_select_Fritz_Thyssen_effect = {
+	if = { limit = { NOT = { has_dynamic_modifier = { modifier = GEA_Fritz_Thyssen_modifier } } } add_dynamic_modifier = { modifier = GEA_Fritz_Thyssen_modifier } }
+	add_to_variable = { var = GEA_Fritz_Thyssen_friendship value = GEA_Josias_friendship_change }
+	clamp_variable = { var = GEA_Fritz_Thyssen_friendship min = 0 max = 100 }
+	set_variable = { GEA_Fritz_Thyssen_industrial_capacity_factory = GEA_Fritz_Thyssen_friendship }
+	multiply_variable = { GEA_Fritz_Thyssen_industrial_capacity_factory = 0.001 }
+	set_variable = { GEA_Fritz_Thyssen_local_resources_factor = GEA_Fritz_Thyssen_friendship }
+	multiply_variable = { GEA_Fritz_Thyssen_local_resources_factor = 0.001 }
+	set_variable = { GEA_Fritz_Thyssen_conversion_cost_civ_to_mil_factor = GEA_Fritz_Thyssen_friendship }
+	multiply_variable = { GEA_Fritz_Thyssen_conversion_cost_civ_to_mil_factor = -0.002 }
+}
+
+GEA_Josias_select_Hermann_Goring_effect = {
+	if = { limit = { NOT = { has_dynamic_modifier = { modifier = GEA_Hermann_Goring_modifier } } } add_dynamic_modifier = { modifier = GEA_Hermann_Goring_modifier } }
+	add_to_variable = { var = GEA_Hermann_Goring_friendship value = GEA_Josias_friendship_change }
+	clamp_variable = { var = GEA_Hermann_Goring_friendship min = 0 max = 100 }
+	set_variable = { GEA_Hermann_Goring_conscription = GEA_Hermann_Goring_friendship }
+	multiply_variable = { GEA_Hermann_Goring_conscription = 0.001 }
+	set_variable = { GEA_Hermann_Goring_army_org_factor = GEA_Hermann_Goring_friendship }
+	multiply_variable = { GEA_Hermann_Goring_army_org_factor = 0.001 }
+	set_variable = { GEA_Hermann_Goring_experience_gain_air_factor = GEA_Hermann_Goring_friendship }
+	multiply_variable = { GEA_Hermann_Goring_experience_gain_air_factor = 0.001 }
+}
+
+GEA_Josias_select_Siegmund_Bodenheimer_effect = {
+	if = { limit = { NOT = { has_dynamic_modifier = { modifier = GEA_Siegmund_Bodenheimer_modifier } } } add_dynamic_modifier = { modifier = GEA_Siegmund_Bodenheimer_modifier } }
+	add_to_variable = { var = GEA_Siegmund_Bodenheimer_friendship value = GEA_Josias_friendship_change }
+	clamp_variable = { var = GEA_Siegmund_Bodenheimer_friendship min = 0 max = 100 }
+	set_variable = { GEA_Siegmund_Bodenheimer_political_power_gain = GEA_Siegmund_Bodenheimer_friendship }
+	multiply_variable = { GEA_Siegmund_Bodenheimer_political_power_gain = 0.0005 }
+	set_variable = { GEA_Siegmund_Bodenheimer_consumer_goods_factor = GEA_Siegmund_Bodenheimer_friendship }
+	multiply_variable = { GEA_Siegmund_Bodenheimer_consumer_goods_factor = -0.001 }
+	set_variable = { GEA_Siegmund_Bodenheimer_local_building_slots_factor = GEA_Siegmund_Bodenheimer_friendship }
+	multiply_variable = { GEA_Siegmund_Bodenheimer_local_building_slots_factor = 0.001 }
+}
+
+GEA_Josias_clear_decision_view_effect = {
+	clr_country_flag = GEA_Josias_decision_view_Nikolaus
+	clr_country_flag = GEA_Josias_decision_view_Carl_Edward
+	clr_country_flag = GEA_Josias_decision_view_Elard_von_Oldenburg
+	clr_country_flag = GEA_Josias_decision_view_Schleicher
+	clr_country_flag = GEA_Josias_decision_view_Hugenberg
+	clr_country_flag = GEA_Josias_decision_view_Werner_von_Alvensleben
+	clr_country_flag = GEA_Josias_decision_view_Josef_Abs
+	clr_country_flag = GEA_Josias_decision_view_Fritz_Meer
+	clr_country_flag = GEA_Josias_decision_view_Hermann_Bucher
+	clr_country_flag = GEA_Josias_decision_view_Hermann_Siemens
+	clr_country_flag = GEA_Josias_decision_view_Otto_Jeidels
+	clr_country_flag = GEA_Josias_decision_view_Alfred_Krupp
+	clr_country_flag = GEA_Josias_decision_view_Carl_Schmitt
+	clr_country_flag = GEA_Josias_decision_view_Dorpmuller
+	clr_country_flag = GEA_Josias_decision_view_Emil_Helfferich
+	clr_country_flag = GEA_Josias_decision_view_Fritz_Thyssen
+	clr_country_flag = GEA_Josias_decision_view_Hermann_Goring
+	clr_country_flag = GEA_Josias_decision_view_Siegmund_Bodenheimer
+}
+
+GEA_Josias_add_5_Nikolaus_effect = {
+	custom_effect_tooltip = GEA_Josias_add_5_Nikolaus_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 5 }
+		GEA_Josias_select_Nikolaus_effect = yes
+	}
+}
+GEA_Josias_add_10_Nikolaus_effect = {
+	custom_effect_tooltip = GEA_Josias_add_10_Nikolaus_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 10 }
+		GEA_Josias_select_Nikolaus_effect = yes
+	}
+}
+GEA_Josias_add_15_Nikolaus_effect = {
+	custom_effect_tooltip = GEA_Josias_add_15_Nikolaus_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 15 }
+		GEA_Josias_select_Nikolaus_effect = yes
+	}
+}
+GEA_Josias_add_20_Nikolaus_effect = {
+	custom_effect_tooltip = GEA_Josias_add_20_Nikolaus_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 20 }
+		GEA_Josias_select_Nikolaus_effect = yes
+	}
+}
+
+GEA_Josias_add_5_Carl_Edward_effect = {
+	custom_effect_tooltip = GEA_Josias_add_5_Carl_Edward_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 5 }
+		GEA_Josias_select_Carl_Edward_effect = yes
+	}
+}
+GEA_Josias_add_10_Carl_Edward_effect = {
+	custom_effect_tooltip = GEA_Josias_add_10_Carl_Edward_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 10 }
+		GEA_Josias_select_Carl_Edward_effect = yes
+	}
+}
+GEA_Josias_add_15_Carl_Edward_effect = {
+	custom_effect_tooltip = GEA_Josias_add_15_Carl_Edward_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 15 }
+		GEA_Josias_select_Carl_Edward_effect = yes
+	}
+}
+GEA_Josias_add_20_Carl_Edward_effect = {
+	custom_effect_tooltip = GEA_Josias_add_20_Carl_Edward_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 20 }
+		GEA_Josias_select_Carl_Edward_effect = yes
+	}
+}
+
+GEA_Josias_add_5_Elard_von_Oldenburg_effect = {
+	custom_effect_tooltip = GEA_Josias_add_5_Elard_von_Oldenburg_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 5 }
+		GEA_Josias_select_Elard_von_Oldenburg_effect = yes
+	}
+}
+GEA_Josias_add_10_Elard_von_Oldenburg_effect = {
+	custom_effect_tooltip = GEA_Josias_add_10_Elard_von_Oldenburg_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 10 }
+		GEA_Josias_select_Elard_von_Oldenburg_effect = yes
+	}
+}
+GEA_Josias_add_15_Elard_von_Oldenburg_effect = {
+	custom_effect_tooltip = GEA_Josias_add_15_Elard_von_Oldenburg_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 15 }
+		GEA_Josias_select_Elard_von_Oldenburg_effect = yes
+	}
+}
+GEA_Josias_add_20_Elard_von_Oldenburg_effect = {
+	custom_effect_tooltip = GEA_Josias_add_20_Elard_von_Oldenburg_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 20 }
+		GEA_Josias_select_Elard_von_Oldenburg_effect = yes
+	}
+}
+
+GEA_Josias_add_5_Schleicher_effect = {
+	custom_effect_tooltip = GEA_Josias_add_5_Schleicher_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 5 }
+		GEA_Josias_select_Schleicher_effect = yes
+	}
+}
+GEA_Josias_add_10_Schleicher_effect = {
+	custom_effect_tooltip = GEA_Josias_add_10_Schleicher_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 10 }
+		GEA_Josias_select_Schleicher_effect = yes
+	}
+}
+GEA_Josias_add_15_Schleicher_effect = {
+	custom_effect_tooltip = GEA_Josias_add_15_Schleicher_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 15 }
+		GEA_Josias_select_Schleicher_effect = yes
+	}
+}
+GEA_Josias_add_20_Schleicher_effect = {
+	custom_effect_tooltip = GEA_Josias_add_20_Schleicher_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 20 }
+		GEA_Josias_select_Schleicher_effect = yes
+	}
+}
+
+GEA_Josias_add_5_Hugenberg_effect = {
+	custom_effect_tooltip = GEA_Josias_add_5_Hugenberg_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 5 }
+		GEA_Josias_select_Hugenberg_effect = yes
+	}
+}
+GEA_Josias_add_10_Hugenberg_effect = {
+	custom_effect_tooltip = GEA_Josias_add_10_Hugenberg_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 10 }
+		GEA_Josias_select_Hugenberg_effect = yes
+	}
+}
+GEA_Josias_add_15_Hugenberg_effect = {
+	custom_effect_tooltip = GEA_Josias_add_15_Hugenberg_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 15 }
+		GEA_Josias_select_Hugenberg_effect = yes
+	}
+}
+GEA_Josias_add_20_Hugenberg_effect = {
+	custom_effect_tooltip = GEA_Josias_add_20_Hugenberg_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 20 }
+		GEA_Josias_select_Hugenberg_effect = yes
+	}
+}
+
+GEA_Josias_add_5_Werner_von_Alvensleben_effect = {
+	custom_effect_tooltip = GEA_Josias_add_5_Werner_von_Alvensleben_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 5 }
+		GEA_Josias_select_Werner_von_Alvensleben_effect = yes
+	}
+}
+GEA_Josias_add_10_Werner_von_Alvensleben_effect = {
+	custom_effect_tooltip = GEA_Josias_add_10_Werner_von_Alvensleben_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 10 }
+		GEA_Josias_select_Werner_von_Alvensleben_effect = yes
+	}
+}
+GEA_Josias_add_15_Werner_von_Alvensleben_effect = {
+	custom_effect_tooltip = GEA_Josias_add_15_Werner_von_Alvensleben_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 15 }
+		GEA_Josias_select_Werner_von_Alvensleben_effect = yes
+	}
+}
+GEA_Josias_add_20_Werner_von_Alvensleben_effect = {
+	custom_effect_tooltip = GEA_Josias_add_20_Werner_von_Alvensleben_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 20 }
+		GEA_Josias_select_Werner_von_Alvensleben_effect = yes
+	}
+}
+
+GEA_Josias_add_5_Josef_Abs_effect = {
+	custom_effect_tooltip = GEA_Josias_add_5_Josef_Abs_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 5 }
+		GEA_Josias_select_Josef_Abs_effect = yes
+	}
+}
+GEA_Josias_add_10_Josef_Abs_effect = {
+	custom_effect_tooltip = GEA_Josias_add_10_Josef_Abs_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 10 }
+		GEA_Josias_select_Josef_Abs_effect = yes
+	}
+}
+GEA_Josias_add_15_Josef_Abs_effect = {
+	custom_effect_tooltip = GEA_Josias_add_15_Josef_Abs_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 15 }
+		GEA_Josias_select_Josef_Abs_effect = yes
+	}
+}
+GEA_Josias_add_20_Josef_Abs_effect = {
+	custom_effect_tooltip = GEA_Josias_add_20_Josef_Abs_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 20 }
+		GEA_Josias_select_Josef_Abs_effect = yes
+	}
+}
+
+GEA_Josias_add_5_Fritz_Meer_effect = {
+	custom_effect_tooltip = GEA_Josias_add_5_Fritz_Meer_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 5 }
+		GEA_Josias_select_Fritz_Meer_effect = yes
+	}
+}
+GEA_Josias_add_10_Fritz_Meer_effect = {
+	custom_effect_tooltip = GEA_Josias_add_10_Fritz_Meer_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 10 }
+		GEA_Josias_select_Fritz_Meer_effect = yes
+	}
+}
+GEA_Josias_add_15_Fritz_Meer_effect = {
+	custom_effect_tooltip = GEA_Josias_add_15_Fritz_Meer_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 15 }
+		GEA_Josias_select_Fritz_Meer_effect = yes
+	}
+}
+GEA_Josias_add_20_Fritz_Meer_effect = {
+	custom_effect_tooltip = GEA_Josias_add_20_Fritz_Meer_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 20 }
+		GEA_Josias_select_Fritz_Meer_effect = yes
+	}
+}
+
+GEA_Josias_add_5_Hermann_Bucher_effect = {
+	custom_effect_tooltip = GEA_Josias_add_5_Hermann_Bucher_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 5 }
+		GEA_Josias_select_Hermann_Bucher_effect = yes
+	}
+}
+GEA_Josias_add_10_Hermann_Bucher_effect = {
+	custom_effect_tooltip = GEA_Josias_add_10_Hermann_Bucher_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 10 }
+		GEA_Josias_select_Hermann_Bucher_effect = yes
+	}
+}
+GEA_Josias_add_15_Hermann_Bucher_effect = {
+	custom_effect_tooltip = GEA_Josias_add_15_Hermann_Bucher_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 15 }
+		GEA_Josias_select_Hermann_Bucher_effect = yes
+	}
+}
+GEA_Josias_add_20_Hermann_Bucher_effect = {
+	custom_effect_tooltip = GEA_Josias_add_20_Hermann_Bucher_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 20 }
+		GEA_Josias_select_Hermann_Bucher_effect = yes
+	}
+}
+
+GEA_Josias_add_5_Hermann_Siemens_effect = {
+	custom_effect_tooltip = GEA_Josias_add_5_Hermann_Siemens_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 5 }
+		GEA_Josias_select_Hermann_Siemens_effect = yes
+	}
+}
+GEA_Josias_add_10_Hermann_Siemens_effect = {
+	custom_effect_tooltip = GEA_Josias_add_10_Hermann_Siemens_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 10 }
+		GEA_Josias_select_Hermann_Siemens_effect = yes
+	}
+}
+GEA_Josias_add_15_Hermann_Siemens_effect = {
+	custom_effect_tooltip = GEA_Josias_add_15_Hermann_Siemens_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 15 }
+		GEA_Josias_select_Hermann_Siemens_effect = yes
+	}
+}
+GEA_Josias_add_20_Hermann_Siemens_effect = {
+	custom_effect_tooltip = GEA_Josias_add_20_Hermann_Siemens_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 20 }
+		GEA_Josias_select_Hermann_Siemens_effect = yes
+	}
+}
+
+GEA_Josias_add_5_Otto_Jeidels_effect = {
+	custom_effect_tooltip = GEA_Josias_add_5_Otto_Jeidels_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 5 }
+		GEA_Josias_select_Otto_Jeidels_effect = yes
+	}
+}
+GEA_Josias_add_10_Otto_Jeidels_effect = {
+	custom_effect_tooltip = GEA_Josias_add_10_Otto_Jeidels_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 10 }
+		GEA_Josias_select_Otto_Jeidels_effect = yes
+	}
+}
+GEA_Josias_add_15_Otto_Jeidels_effect = {
+	custom_effect_tooltip = GEA_Josias_add_15_Otto_Jeidels_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 15 }
+		GEA_Josias_select_Otto_Jeidels_effect = yes
+	}
+}
+GEA_Josias_add_20_Otto_Jeidels_effect = {
+	custom_effect_tooltip = GEA_Josias_add_20_Otto_Jeidels_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 20 }
+		GEA_Josias_select_Otto_Jeidels_effect = yes
+	}
+}
+
+GEA_Josias_add_5_Alfred_Krupp_effect = {
+	custom_effect_tooltip = GEA_Josias_add_5_Alfred_Krupp_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 5 }
+		GEA_Josias_select_Alfred_Krupp_effect = yes
+	}
+}
+GEA_Josias_add_10_Alfred_Krupp_effect = {
+	custom_effect_tooltip = GEA_Josias_add_10_Alfred_Krupp_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 10 }
+		GEA_Josias_select_Alfred_Krupp_effect = yes
+	}
+}
+GEA_Josias_add_15_Alfred_Krupp_effect = {
+	custom_effect_tooltip = GEA_Josias_add_15_Alfred_Krupp_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 15 }
+		GEA_Josias_select_Alfred_Krupp_effect = yes
+	}
+}
+GEA_Josias_add_20_Alfred_Krupp_effect = {
+	custom_effect_tooltip = GEA_Josias_add_20_Alfred_Krupp_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 20 }
+		GEA_Josias_select_Alfred_Krupp_effect = yes
+	}
+}
+
+GEA_Josias_add_5_Carl_Schmitt_effect = {
+	custom_effect_tooltip = GEA_Josias_add_5_Carl_Schmitt_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 5 }
+		GEA_Josias_select_Carl_Schmitt_effect = yes
+	}
+}
+GEA_Josias_add_10_Carl_Schmitt_effect = {
+	custom_effect_tooltip = GEA_Josias_add_10_Carl_Schmitt_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 10 }
+		GEA_Josias_select_Carl_Schmitt_effect = yes
+	}
+}
+GEA_Josias_add_15_Carl_Schmitt_effect = {
+	custom_effect_tooltip = GEA_Josias_add_15_Carl_Schmitt_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 15 }
+		GEA_Josias_select_Carl_Schmitt_effect = yes
+	}
+}
+GEA_Josias_add_20_Carl_Schmitt_effect = {
+	custom_effect_tooltip = GEA_Josias_add_20_Carl_Schmitt_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 20 }
+		GEA_Josias_select_Carl_Schmitt_effect = yes
+	}
+}
+
+GEA_Josias_add_5_Dorpmuller_effect = {
+	custom_effect_tooltip = GEA_Josias_add_5_Dorpmuller_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 5 }
+		GEA_Josias_select_Dorpmuller_effect = yes
+	}
+}
+GEA_Josias_add_10_Dorpmuller_effect = {
+	custom_effect_tooltip = GEA_Josias_add_10_Dorpmuller_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 10 }
+		GEA_Josias_select_Dorpmuller_effect = yes
+	}
+}
+GEA_Josias_add_15_Dorpmuller_effect = {
+	custom_effect_tooltip = GEA_Josias_add_15_Dorpmuller_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 15 }
+		GEA_Josias_select_Dorpmuller_effect = yes
+	}
+}
+GEA_Josias_add_20_Dorpmuller_effect = {
+	custom_effect_tooltip = GEA_Josias_add_20_Dorpmuller_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 20 }
+		GEA_Josias_select_Dorpmuller_effect = yes
+	}
+}
+
+GEA_Josias_add_5_Emil_Helfferich_effect = {
+	custom_effect_tooltip = GEA_Josias_add_5_Emil_Helfferich_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 5 }
+		GEA_Josias_select_Emil_Helfferich_effect = yes
+	}
+}
+GEA_Josias_add_10_Emil_Helfferich_effect = {
+	custom_effect_tooltip = GEA_Josias_add_10_Emil_Helfferich_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 10 }
+		GEA_Josias_select_Emil_Helfferich_effect = yes
+	}
+}
+GEA_Josias_add_15_Emil_Helfferich_effect = {
+	custom_effect_tooltip = GEA_Josias_add_15_Emil_Helfferich_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 15 }
+		GEA_Josias_select_Emil_Helfferich_effect = yes
+	}
+}
+GEA_Josias_add_20_Emil_Helfferich_effect = {
+	custom_effect_tooltip = GEA_Josias_add_20_Emil_Helfferich_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 20 }
+		GEA_Josias_select_Emil_Helfferich_effect = yes
+	}
+}
+
+GEA_Josias_add_5_Fritz_Thyssen_effect = {
+	custom_effect_tooltip = GEA_Josias_add_5_Fritz_Thyssen_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 5 }
+		GEA_Josias_select_Fritz_Thyssen_effect = yes
+	}
+}
+GEA_Josias_add_10_Fritz_Thyssen_effect = {
+	custom_effect_tooltip = GEA_Josias_add_10_Fritz_Thyssen_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 10 }
+		GEA_Josias_select_Fritz_Thyssen_effect = yes
+	}
+}
+GEA_Josias_add_15_Fritz_Thyssen_effect = {
+	custom_effect_tooltip = GEA_Josias_add_15_Fritz_Thyssen_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 15 }
+		GEA_Josias_select_Fritz_Thyssen_effect = yes
+	}
+}
+GEA_Josias_add_20_Fritz_Thyssen_effect = {
+	custom_effect_tooltip = GEA_Josias_add_20_Fritz_Thyssen_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 20 }
+		GEA_Josias_select_Fritz_Thyssen_effect = yes
+	}
+}
+
+GEA_Josias_add_5_Hermann_Goring_effect = {
+	custom_effect_tooltip = GEA_Josias_add_5_Hermann_Goring_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 5 }
+		GEA_Josias_select_Hermann_Goring_effect = yes
+	}
+}
+GEA_Josias_add_10_Hermann_Goring_effect = {
+	custom_effect_tooltip = GEA_Josias_add_10_Hermann_Goring_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 10 }
+		GEA_Josias_select_Hermann_Goring_effect = yes
+	}
+}
+GEA_Josias_add_15_Hermann_Goring_effect = {
+	custom_effect_tooltip = GEA_Josias_add_15_Hermann_Goring_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 15 }
+		GEA_Josias_select_Hermann_Goring_effect = yes
+	}
+}
+GEA_Josias_add_20_Hermann_Goring_effect = {
+	custom_effect_tooltip = GEA_Josias_add_20_Hermann_Goring_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 20 }
+		GEA_Josias_select_Hermann_Goring_effect = yes
+	}
+}
+
+GEA_Josias_add_5_Siegmund_Bodenheimer_effect = {
+	custom_effect_tooltip = GEA_Josias_add_5_Siegmund_Bodenheimer_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 5 }
+		GEA_Josias_select_Siegmund_Bodenheimer_effect = yes
+	}
+}
+GEA_Josias_add_10_Siegmund_Bodenheimer_effect = {
+	custom_effect_tooltip = GEA_Josias_add_10_Siegmund_Bodenheimer_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 10 }
+		GEA_Josias_select_Siegmund_Bodenheimer_effect = yes
+	}
+}
+GEA_Josias_add_15_Siegmund_Bodenheimer_effect = {
+	custom_effect_tooltip = GEA_Josias_add_15_Siegmund_Bodenheimer_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 15 }
+		GEA_Josias_select_Siegmund_Bodenheimer_effect = yes
+	}
+}
+GEA_Josias_add_20_Siegmund_Bodenheimer_effect = {
+	custom_effect_tooltip = GEA_Josias_add_20_Siegmund_Bodenheimer_effect_tt
+	hidden_effect = {
+		set_variable = { GEA_Josias_friendship_change = 20 }
+		GEA_Josias_select_Siegmund_Bodenheimer_effect = yes
+	}
+}
+

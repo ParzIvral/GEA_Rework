@@ -354,7 +354,7 @@ guiTypes = {
 			name ="GEA_Josias_Political_gui_3"
 			position = { x = -200 y = -58}
 			font = "hoi_16mbs"
-			text = "GEA_Josias_Political_gui_1"
+			text = "GEA_Josias_Political_gui_3"
 			format = center
 			orientation = center
 			maxWidth = 300
@@ -429,6 +429,15 @@ guiTypes = {
 			pdx_tooltip = ""
 			scale = 0.4
 		}
+		instantTextBoxType = {
+			name ="GEA_Josias_Political_gui_2"
+			position = { x = 70 y = -193}
+			font = "hoi_16mbs"
+			text = "GEA_Josias_Political_gui_1"
+			format = center
+			orientation = center
+			maxWidth = 300
+		}
 		iconType = { #右上
 			name = "GEA_Josias_Nikolaus_2"
 			orientation = center
@@ -499,6 +508,15 @@ guiTypes = {
 			pdx_tooltip = ""
 			scale = 0.4
 		}
+		instantTextBoxType = {
+			name ="GEA_Josias_Political_gui_4"
+			position = { x = 130 y = -58}
+			font = "hoi_16mbs"
+			text = "GEA_Josias_Political_gui_3"
+			format = center
+			orientation = center
+			maxWidth = 300
+		}
 		iconType = { #右中
 			name = "GEA_Josias_Josef_Abs_4"
 			orientation = center
@@ -568,6 +586,15 @@ guiTypes = {
 			spriteType = "GEA_Josias_frame_add"
 			pdx_tooltip = ""
 			scale = 0.4
+		}
+		instantTextBoxType = {
+			name ="GEA_Josias_Political_gui_6"
+			position = { x = 70 y = 77}
+			font = "hoi_16mbs"
+			text = "GEA_Josias_Political_gui_5"
+			format = center
+			orientation = center
+			maxWidth = 300
 		}
 		iconType = { #右下
 			name = "GEA_Josias_Carl_Schmitt_6"

@@ -431,6 +431,13 @@ add_namespace = GEA
 				popularity = 0.1
 			}
 			hidden_effect = {
+				remove_all_ministers = yes
+				add_ideas = {
+					GEA_Josias_zu_Waldeck_und_Pyrmont_hog_ade
+					GEA_Ulrich_von_Hassell_for_ade
+					GEA_Franz_Heinrich_Witthoefft_eco_ade
+					GEA_Karl_Otto_Koch_sec_pau
+				}
 				country_event = {
 					id = Ostasien.303
 					days = 20
@@ -2821,11 +2828,12 @@ add_namespace = GEA
 		
 		option = { #这里可不是董事会的私产
 			name = GEA.200.a
-			add_political_power = -20
+			add_political_power = 20
 			swap_ideas = {
 				remove_idea = GEA_The_garden_of_the_cartel
 				add_idea = GEA_The_garden_of_the_cartel_4
 			}
+			set_country_flag = GEA_Restrictive_Cartel_flag
 		}
 
 		option = { #通过私下密约来达成共识
@@ -2835,6 +2843,7 @@ add_namespace = GEA
 				remove_idea = GEA_The_garden_of_the_cartel
 				add_idea = GEA_The_garden_of_the_cartel_5
 			}
+			set_country_flag = GEA_Collaborate_Cartel_flag
 		}
 
 		option = { #不出大乱子就随他们去
@@ -2844,6 +2853,7 @@ add_namespace = GEA
 				remove_idea = GEA_The_garden_of_the_cartel
 				add_idea = GEA_The_garden_of_the_cartel_6 
 			}
+			set_country_flag = GEA_Allowing_Cartel_flag
 		}
 	}
 
@@ -2980,6 +2990,72 @@ add_namespace = GEA
 		option = { #也许，秘党里也有我的一个位置...
 			name = GEA.208.a
 			add_political_power = 10
+		}
+	}
+
+	country_event = {#科堡的表兄
+		id = GEA.209
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.209" }
+		title = GEA.209.t
+		desc = GEA.209.d
+		picture = GFX_GEA_25
+
+		fire_only_once = yes
+		is_triggered_only = yes
+		
+		option = { #通过表兄的关系，亲王的朋友遍布世界
+			name = GEA.209.a
+			add_political_power = 10
+		}
+	}
+
+	country_event = {#烟囱与王冠
+		id = GEA.210
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.210" }
+		title = GEA.210.t
+		desc = GEA.210.d
+		picture = GFX_GEA_26
+
+		fire_only_once = yes
+		is_triggered_only = yes
+		
+		option = { #皆为利来
+			name = GEA.210.a
+			add_political_power = 10
+		}
+	}
+
+	country_event = {#趁火打劫
+		id = GEA.211
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.211" }
+		title = GEA.211.t
+		desc = GEA.211.d
+		picture = GFX_GEA_27
+
+		fire_only_once = yes
+		is_triggered_only = yes
+		
+		option = { #提供贷款担保，让他们自己渡过难关
+			name = GEA.211.a
+			add_political_power = -30
+			add_popularity = {
+				ideology = market_liberal
+				popularity = 0.01
+			}
+			navy_experience = 15
+			swap_ideas = {
+				remove_idea = GEA_Take_control_of_trade_dominance
+				add_idea = GEA_Take_control_of_trade_dominance_3
+			}
+		}
+
+		option = { #趁现在捞一笔大的
+			name = GEA.211.b
+			add_political_power = -75
+			swap_ideas = {
+				remove_idea = GEA_Take_control_of_trade_dominance
+				add_idea = GEA_Take_control_of_trade_dominance_2
+			}
 		}
 	}
 
