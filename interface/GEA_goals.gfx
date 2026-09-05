@@ -763,4 +763,140 @@ SpriteTypes = {
 		name = "GFX_GEA_Supreme_authority_of_the_prince"
 		texturefile = "gfx/interface/goals/GEA_Supreme_authority_of_the_prince.png"
 	}
+	SpriteType = {
+		name = "GFX_GEA_Governor_Heye"
+		texturefile = "gfx/interface/goals/GEA_Governor_Heye.png"
+	}
+	SpriteType = {
+		name = "GFX_GEA_Reconstruction_of_the_breakwater_project"
+		texturefile = "gfx/interface/goals/GEA_Reconstruction_of_the_breakwater_project.png"
+	}
+	SpriteType = {
+		name = "GFX_GEA_Germany_Calling"
+		texturefile = "gfx/interface/goals/GEA_Germany_Calling.png"
+	}
+	SpriteType = {
+		name = "GFX_GEA_Resist_external_instigation"
+		texturefile = "gfx/interface/goals/GEA_Resist_external_instigation.png"
+	}
+	SpriteType = {
+		name = "GFX_GEA_Smother_the_flames_of_nationalism"
+		texturefile = "gfx/interface/goals/GEA_Smother_the_flames_of_nationalism.png"
+	}
+	SpriteType = {
+		name = "GFX_GEA_The_ten-year_struggle_against_the_Red_Ghost"
+		texturefile = "gfx/interface/goals/GEA_The_ten-year_struggle_against_the_Red_Ghost.png"
+	}
+	SpriteType = {
+		name = "GFX_GEA_Ensure_loyal_citizens"
+		texturefile = "gfx/interface/goals/GEA_Ensure_loyal_citizens.png"
+	}
+	SpriteType = {
+		name = "GFX_GEA_In_perfect_order"
+		texturefile = "gfx/interface/goals/GEA_In_perfect_order.png"
+	}
+	SpriteType = {
+		name = "GFX_GEA_The_armed_executioners_hand"
+		texturefile = "gfx/interface/goals/GEA_The_armed_executioners_hand.png"
+	}
+	SpriteType = {
+		name = "GFX_GEA_The_surveillance_was_intense"
+		texturefile = "gfx/interface/goals/GEA_The_surveillance_was_intense.png"
+	}
+	SpriteType = {
+		name = "GFX_GEA_Prutzmann-s_Einsatzgruppe"
+		texturefile = "gfx/interface/goals/GEA_Prutzmann-s_Einsatzgruppe.png"
+	}
+	SpriteType = {
+		name = "GFX_GEA_method_from_Abteilung_III_b"
+		texturefile = "gfx/interface/goals/GEA_method_from_Abteilung_III_b.png"
+	}
+	SpriteType = {
+		name = "GFX_GEA_Comprehensive_monitoring"
+		texturefile = "gfx/interface/goals/GEA_Comprehensive_monitoring.png"
+	}
+	SpriteType = {
+		name = "GFX_GEA_Militarization_of_the_police_force"
+		texturefile = "gfx/interface/goals/GEA_Militarization_of_the_police_force.png"
+	}
+	SpriteType = {
+		name = "GFX_GEA_Pass_emergency_authorization"
+		texturefile = "gfx/interface/goals/GEA_Pass_emergency_authorization.png"
+	}
+	SpriteType = {
+		name = "GFX_GEA_The_normalization_of_martial_law_regime"
+		texturefile = "gfx/interface/goals/GEA_The_normalization_of_martial_law_regime.png"
+	}
+	SpriteType = {
+		name = "GFX_GEA_Special_handling_for_special_cases"
+		texturefile = "gfx/interface/goals/GEA_Special_handling_for_special_cases.png"
+	}
+	SpriteType = {
+		name = "GFX_GEA_Another_peaceful_day_in_Indochina"
+		texturefile = "gfx/interface/goals/GEA_Another_peaceful_day_in_Indochina.png"
+	}
+	SpriteType = {
+		name = "GFX_GEA_A_deal_with_the_villain"
+		texturefile = "gfx/interface/goals/GEA_A_deal_with_the_villain.png"
+	}
+	SpriteType = {
+		name = "GFX_GEA_Good_steel_used_for_the_blade"
+		texturefile = "gfx/interface/goals/GEA_Good_steel_used_for_the_blade.png"
+	}
+	SpriteType = {
+		name = "GFX_GEA_Smoke_billowed_from_the_dense_forest"
+		texturefile = "gfx/interface/goals/GEA_Smoke_billowed_from_the_dense_forest.png"
+	}
+	SpriteType = {
+		name = "GFX_GEA_Amend_the_labor_regulations"
+		texturefile = "gfx/interface/goals/GEA_Amend_the_labor_regulations.png"
+	}
+	SpriteType = {
+		name = "GFX_GEA_Pure_military_conduct_principles"
+		texturefile = "gfx/interface/goals/GEA_Pure_military_conduct_principles.png"
+	}
+	SpriteType = {
+		name = "GFX_GEA_The_experience_of_the_old_colonial_period"
+		texturefile = "gfx/interface/goals/GEA_The_experience_of_the_old_colonial_period.png"
+	}
+	SpriteType = {
+		name = "GFX_GEA_Advocate_selfless_dedication"
+		texturefile = "gfx/interface/goals/GEA_Advocate_selfless_dedication.png"
+	}
+	SpriteType = {
+		name = "GFX_GEA_Redraw_the_defense_zone"
+		texturefile = "gfx/interface/goals/GEA_Redraw_the_defense_zone.png"
+	}
+	SpriteType = {
+		name = "GFX_GEA_Taking_the_Herelo_War_as_an_example"
+		texturefile = "gfx/interface/goals/GEA_Taking_the_Herelo_War_as_an_example.png"
+	}
+	SpriteType = {
+		name = "GFX_GEA_The_brutal_expansion_under_the_command_of_order"
+		texturefile = "gfx/interface/goals/GEA_The_brutal_expansion_under_the_command_of_order.png"
+	}
+	SpriteType = {
+		name = "GFX_GEA_Fidelity_Service"
+		texturefile = "gfx/interface/goals/GEA_Fidelity_Service.png"
+	}
+	SpriteType = {
+		name = "GFX_GEA_Obedience_brings_rewards"
+		texturefile = "gfx/interface/goals/GEA_Obedience_brings_rewards.png"
+	}
+	SpriteType = {
+		name = "GFX_GEA_Ready_to_dedicate_will_and_determination"
+		texturefile = "gfx/interface/goals/GEA_Ready_to_dedicate_will_and_determination.png"
+	}
+	SpriteType = {
+		name = "GFX_GEA_Unfeeling_Order"
+		texturefile = "gfx/interface/goals/GEA_Unfeeling_Order.png"
+	}
+	SpriteType = {
+		name = "GFX_GEA_Die_Wacht_im_Fernen_Osten"
+		texturefile = "gfx/interface/goals/GEA_Die_Wacht_im_Fernen_Osten.png"
+	}
+	SpriteType = {
+		name = "GFX_GEA_Strike_hard"
+		texturefile = "gfx/interface/goals/GEA_Strike_hard.png"
+	}
 }

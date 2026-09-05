@@ -6791,7 +6791,7 @@ GEA_josias_decisions = {#约西亚斯乞讨决议
 		days_remove = 15
 		days_re_enable = 40
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision  remove GEA_Josias_Schleicher_secret_party_members"
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Schleicher_secret_party_members"
 			add_command_power = 10
 			add_popularity = {
 				ideology = paternal_autocrat
@@ -6813,7 +6813,7 @@ GEA_josias_decisions = {#约西亚斯乞讨决议
 		days_remove = 30
 		days_re_enable = 50
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision GEA_Josias_Schleicher_army_allies"
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Schleicher_army_allies"
 			army_experience = 10
 			add_war_support = 0.03
 			GEA_Josias_add_10_Schleicher_effect = yes
@@ -6830,7 +6830,7 @@ GEA_josias_decisions = {#约西亚斯乞讨决议
 		}
 		custom_cost_text = GEA_command_50_tt
 		custom_cost_trigger = {
-			command_power > 50
+			command_power > 49.99
 		}
 
 		civilian_factory_use = 1
@@ -6889,7 +6889,7 @@ GEA_josias_decisions = {#约西亚斯乞讨决议
 		days_remove = 30
 		days_re_enable = 45
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision GEA_Josias_Hugenberg_nationalist_rally"
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Hugenberg_nationalist_rally"
 			add_war_support = 0.02
 			add_popularity = {
 				ideology = paternal_autocrat
@@ -6972,12 +6972,18 @@ GEA_josias_decisions = {#约西亚斯乞讨决议
 			check_variable = { GEA_Josef_Abs_friendship < 100 }
 		}
 		cost = 10
-		days_remove = 30
-		days_re_enable = 20
+		days_remove = 45
+		days_re_enable = 60
+
+		modifier = {
+			political_power_cost = 0.01
+		}
+
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision GEA_Josias_Josef_Abs_bank_credit"
-			GEA_Josias_add_5_Josef_Abs_effect = yes
-			add_political_power = 15
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Josef_Abs_bank_credit"
+			add_stability = 0.05
+			add_political_power = 40
+			GEA_Josias_add_10_Josef_Abs_effect = yes
 		}
 	}
 
@@ -6989,13 +6995,23 @@ GEA_josias_decisions = {#约西亚斯乞讨决议
 		available = {
 			check_variable = { GEA_Josef_Abs_friendship < 100 }
 		}
-		cost = 10
-		days_remove = 30
-		days_re_enable = 20
+
+		cost = 30
+		days_remove = 25
+		days_re_enable = 60
+
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision GEA_Josias_Josef_Abs_far_east_investment"
-			GEA_Josias_add_5_Josef_Abs_effect = yes
-			add_stability = 0.01
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Josef_Abs_far_east_investment"
+
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}	
+			}
+			GEA_Josias_add_10_Josef_Abs_effect = yes
 		}
 	}
 
@@ -7007,13 +7023,24 @@ GEA_josias_decisions = {#约西亚斯乞讨决议
 		available = {
 			check_variable = { GEA_Fritz_Meer_friendship < 100 }
 		}
-		cost = 10
-		days_remove = 30
-		days_re_enable = 20
+
+		cost = 30
+		days_remove = 60
+		days_re_enable = 60
+
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision GEA_Josias_Fritz_Meer_special_development_permit"
-			GEA_Josias_add_5_Fritz_Meer_effect = yes
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Fritz_Meer_special_development_permit"
+			GEA_Josias_add_10_Fritz_Meer_effect = yes
 			random_owned_controlled_state = {
+				increase_state_category_by_one_level = yes
+				add_extra_state_shared_building_slots = 2
+			}
+			random_owned_controlled_state = {
+				increase_state_category_by_one_level = yes
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_controlled_state = {
+				increase_state_category_by_one_level = yes
 				add_extra_state_shared_building_slots = 1
 			}
 		}
@@ -7027,76 +7054,133 @@ GEA_josias_decisions = {#约西亚斯乞讨决议
 		available = {
 			check_variable = { GEA_Fritz_Meer_friendship < 100 }
 		}
-		cost = 10
-		days_remove = 30
-		days_re_enable = 20
+
+		cost = 30
+		days_remove = 80
+		days_re_enable = 120
+
+		modifier = {
+			monthly_population = -0.30
+			production_speed_buildings_factor = 0.05
+			production_speed_synthetic_refinery_factor = 0.05
+		}
+
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision GEA_Josias_Fritz_Meer_cheap_labor"
-			GEA_Josias_add_5_Fritz_Meer_effect = yes
-			add_manpower = 1000
-			add_stability = -0.01
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Fritz_Meer_cheap_labor"
+			GEA_Josias_add_10_Fritz_Meer_effect = yes
+			add_stability = -0.02
 		}
 	}
 
 	GEA_Josias_Hermann_Siemens_electrical_project_bid = { #特批电气工程项目竞标
-		icon = GFX_decision_generic_political_address
+		icon = electrify
 		visible = {
 			has_country_flag = GEA_Josias_decision_view_Hermann_Siemens
 		}
 		available = {
 			check_variable = { GEA_Hermann_Siemens_friendship < 100 }
 		}
-		cost = 10
-		days_remove = 30
-		days_re_enable = 20
+
+		civilian_factory_use = 2
+
+		cost = 60
+		days_remove = 60
+		fire_only_once = yes
+
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision GEA_Josias_Hermann_Siemens_electrical_project_bid"
-			GEA_Josias_add_5_Hermann_Siemens_effect = yes
-			random_owned_controlled_state = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Hermann_Siemens_electrical_project_bid"	
+			GEA_Josias_add_15_Hermann_Siemens_effect = yes
+			modify_country_flag = {
+				flag = GEA_Indochinese_Anger
+				value = -1
+			}
+			custom_effect_tooltip = GEA_Indochina_Anger_Down
+			286 = {
+				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
-					type = infrastructure
+					type = industrial_infrastructure
 					level = 1
 					instant_build = yes
 				}
 			}
+			336 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			
 		}
 	}
 
 	GEA_Josias_Hermann_Siemens_communications_orders = { #扩大通讯设备订单
-		icon = GFX_decision_generic_political_address
+		icon = radio
 		visible = {
 			has_country_flag = GEA_Josias_decision_view_Hermann_Siemens
 		}
 		available = {
 			check_variable = { GEA_Hermann_Siemens_friendship < 100 }
 		}
-		cost = 10
+
+		cost = 30
 		days_remove = 30
-		days_re_enable = 20
+		days_re_enable = 60
+
+		modifier = {
+			consumer_goods_factor = 0.04
+		}
+
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision GEA_Josias_Hermann_Siemens_communications_orders"
-			GEA_Josias_add_5_Hermann_Siemens_effect = yes
-			add_political_power = 15
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Hermann_Siemens_communications_orders"
+			GEA_Josias_add_10_Hermann_Siemens_effect = yes
+			GER = {
+				add_political_power = 30
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 300
+				producer = GER
+			}		
 		}
 	}
 
-	GEA_Josias_Hermann_Bucher_electrical_project_bid = { #批电气工程项目竞标
-		icon = GFX_decision_generic_political_address
+	GEA_Josias_Hermann_Bucher_electrical_project_bid = { #电气工程项目
+		icon = radar
 		visible = {
 			has_country_flag = GEA_Josias_decision_view_Hermann_Bucher
 		}
 		available = {
 			check_variable = { GEA_Hermann_Bucher_friendship < 100 }
 		}
-		cost = 10
-		days_remove = 30
-		days_re_enable = 20
+
+		civilian_factory_use = 2
+
+		cost = 60
+		days_remove = 60
+		fire_only_once = yes
+
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision GEA_Josias_Hermann_Bucher_electrical_project_bid"
-			GEA_Josias_add_5_Hermann_Bucher_effect = yes
-			random_owned_controlled_state = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Hermann_Bucher_electrical_project_bid"
+			GEA_Josias_add_15_Hermann_Bucher_effect = yes
+			modify_country_flag = {
+				flag = GEA_Indochinese_Stability
+				value = 1
+			}
+			custom_effect_tooltip = GEA_Indochina_Stability_Up
+			286 = {
+				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
-					type = infrastructure
+					type = energy_infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			336 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = energy_infrastructure
 					level = 1
 					instant_build = yes
 				}
@@ -7105,20 +7189,39 @@ GEA_josias_decisions = {#约西亚斯乞讨决议
 	}
 
 	GEA_Josias_Hermann_Bucher_appliance_procurement = { #扩大电器采购
-		icon = GFX_decision_generic_political_address
+		icon = radio
 		visible = {
 			has_country_flag = GEA_Josias_decision_view_Hermann_Bucher
 		}
 		available = {
 			check_variable = { GEA_Hermann_Bucher_friendship < 100 }
 		}
-		cost = 10
+
+		civilian_factory_use = 1
+
+		cost = 40
 		days_remove = 30
-		days_re_enable = 20
+		days_re_enable = 75
+
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision GEA_Josias_Hermann_Bucher_appliance_procurement"
-			GEA_Josias_add_5_Hermann_Bucher_effect = yes
-			add_stability = 0.01
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Hermann_Bucher_appliance_procurement"
+			GEA_Josias_add_10_Hermann_Bucher_effect = yes
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 
@@ -7130,14 +7233,32 @@ GEA_josias_decisions = {#约西亚斯乞讨决议
 		available = {
 			check_variable = { GEA_Otto_Jeidels_friendship < 100 }
 		}
-		cost = 10
+
+		cost = 30
 		days_remove = 30
-		days_re_enable = 20
+		days_re_enable = 75
+
+		modifier = {
+			political_power_cost = 0.05
+			consumer_goods_factor = 0.075
+		}
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision GEA_Josias_Otto_Jeidels_project_investment"
-			GEA_Josias_add_5_Otto_Jeidels_effect = yes
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Otto_Jeidels_project_investment"
+			GEA_Josias_add_10_Otto_Jeidels_effect = yes
+			GER = {
+				add_to_variable = {
+					var = GER_mitteleuropa_investment_count
+					value = 1
+					tooltip = increase_investment_var_tt
+				}
+			}
 			random_owned_controlled_state = {
 				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
 			}
 		}
 	}
@@ -7150,15 +7271,52 @@ GEA_josias_decisions = {#约西亚斯乞讨决议
 		available = {
 			check_variable = { GEA_Otto_Jeidels_friendship < 100 }
 		}
-		cost = 10
-		days_remove = 30
-		days_re_enable = 20
+
+		cost = 30
+		days_remove = 60
+		days_re_enable = 120
+
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision GEA_Josias_Otto_Jeidels_financial_deregulation"
-			GEA_Josias_add_5_Otto_Jeidels_effect = yes
-			add_political_power = 15
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Otto_Jeidels_financial_deregulation"
+			GEA_Josias_add_10_Otto_Jeidels_effect = yes
+			GER = {
+				add_to_variable = {
+					var = GER.GER_mitteleuropa_strength_var
+					value = 2
+					tooltip = add_2_to_mitteleuropastrength_tt
+				}
+			}
+			add_political_power = 50
+			add_stability = 0.03
+			add_popularity = {
+				ideology = market_liberal
+				popularity = 0.03
+			}
 		}
 	}
+
+	GEA_Increase_production_subsidies = { #提高生产补贴
+		icon = GFX_decision_generic_political_address
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Alfred_Krupp
+		}
+		available = {
+			check_variable = { GEA_Alfred_Krupp_friendship < 100 }
+		}
+
+		cost = 45
+		days_re_enable = 180
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Increase_production_subsidies"
+			add_timed_idea = {
+				idea = GEA_production_subsidies
+				days = 90
+			}
+			GEA_Josias_add_10_Alfred_Krupp_effect = yes
+		}
+	}
+
 
 	GEA_Josias_Alfred_Krupp_industrial_zone = { #扩大克虏伯工业区建设
 		icon = GFX_decision_generic_political_address
@@ -7175,7 +7333,7 @@ GEA_josias_decisions = {#约西亚斯乞讨决议
 		fire_only_once = yes
 
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision GEA_Josias_Alfred_Krupp_industrial_zone"
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Alfred_Krupp_industrial_zone"
 			GER = {
 				add_to_variable = {
 					var = GER.GER_mitteleuropa_strength_var
@@ -7218,13 +7376,23 @@ GEA_josias_decisions = {#约西亚斯乞讨决议
 		available = {
 			check_variable = { GEA_Alfred_Krupp_friendship < 100 }
 		}
-		cost = 10
-		days_remove = 30
-		days_re_enable = 20
+
+		cost = 50
+		days_remove = 45
+		days_re_enable = 75
+
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision GEA_Josias_Alfred_Krupp_relax_regulations"
-			GEA_Josias_add_5_Alfred_Krupp_effect = yes
-			add_political_power = 15
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Alfred_Krupp_relax_regulations"	
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}	
+			decrease_ruling_party_popularity_by_5 = yes
+			GEA_Josias_add_15_Alfred_Krupp_effect = yes
 		}
 	}
 
@@ -7236,13 +7404,16 @@ GEA_josias_decisions = {#约西亚斯乞讨决议
 		available = {
 			check_variable = { GEA_Carl_Schmitt_friendship < 100 }
 		}
-		cost = 10
-		days_remove = 30
-		days_re_enable = 20
+
+		cost = 20
+		days_remove = 14
+		days_re_enable = 60
+
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision GEA_Josias_Carl_Schmitt_sovereigntist_rally"
-			GEA_Josias_add_5_Carl_Schmitt_effect = yes
-			add_war_support = 0.01
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Carl_Schmitt_sovereigntist_rally"
+			GEA_Josias_add_10_Carl_Schmitt_effect = yes
+			add_popularity = { ideology = national_populist popularity = 0.02 }
+			add_war_support = 0.02
 		}
 	}
 
@@ -7254,55 +7425,127 @@ GEA_josias_decisions = {#约西亚斯乞讨决议
 		available = {
 			check_variable = { GEA_Carl_Schmitt_friendship < 100 }
 		}
-		cost = 10
-		days_remove = 30
-		days_re_enable = 20
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision GEA_Josias_Carl_Schmitt_political_endorsement"
-			GEA_Josias_add_5_Carl_Schmitt_effect = yes
-			add_political_power = 15
-		}
-	}
 
-	GEA_Josias_Dorpmuller_new_railway_project = { #批准新铁路项目
-		icon = GFX_decision_generic_political_address
-		visible = {
-			has_country_flag = GEA_Josias_decision_view_Dorpmuller
+		cost = 20
+		days_remove = 60
+		days_re_enable = 75
+
+		modifier = {
+			political_power_factor = 0.05
+			national_populist_drift = 0.02
 		}
-		available = {
-			check_variable = { GEA_Dorpmuller_friendship < 100 }
-		}
-		cost = 10
-		days_remove = 30
-		days_re_enable = 20
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision GEA_Josias_Dorpmuller_new_railway_project"
-			GEA_Josias_add_5_Dorpmuller_effect = yes
-			random_owned_controlled_state = {
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Carl_Schmitt_political_endorsement"
+			GEA_Josias_add_10_Carl_Schmitt_effect = yes
+			MAF = {
+				increase_ruling_party_popularity_by_3 = yes
+				add_political_power = 50
 			}
+			add_stability = 0.05
 		}
 	}
 
 	GEA_Josias_Dorpmuller_official_investment = { #加大官方投资
-		icon = GFX_decision_generic_political_address
+		icon = GFX_decision_gre_paying_ifc_debt
 		visible = {
 			has_country_flag = GEA_Josias_decision_view_Dorpmuller
 		}
 		available = {
 			check_variable = { GEA_Dorpmuller_friendship < 100 }
 		}
-		cost = 10
-		days_remove = 30
-		days_re_enable = 20
+
+		cost = 30
+		days_remove = 60
+		days_re_enable = 60
+
+		modifier = {
+			consumer_goods_factor = 0.05
+		}
+
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision GEA_Josias_Dorpmuller_official_investment"
-			GEA_Josias_add_5_Dorpmuller_effect = yes
-			add_political_power = 15
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Dorpmuller_official_investment"
+			GEA_Josias_add_10_Dorpmuller_effect = yes
+			add_political_power = 50
+			random_owned_controlled_state = {
+				increase_state_category_by_one_level = yes
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+
+	GEA_Josias_Dorpmuller_new_railway_project = { #批准西贡-河内铁路项目
+		icon = railroad
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Dorpmuller
+		}
+		available = {
+			check_variable = { GEA_Dorpmuller_friendship < 100 }
+		}
+
+		cancel_trigger = {
+			FROM = {
+				NOT = {
+					OR = {
+						owns_state = 286 #东京
+						owns_state = 671 #交趾支那
+					}
+				}
+			}
+		}
+
+		civilian_factory_use = 3
+
+		cost = 40
+		days_remove = 120
+		fire_only_once = yes
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Dorpmuller_new_railway_project"
+			GEA_Josias_add_15_Dorpmuller_effect = yes
+			modify_country_flag = {
+				flag = GEA_Indochinese_Anger
+				value = -1
+			}
+			custom_effect_tooltip = GEA_Indochina_Anger_Down
+			build_railway = {
+				level = 2
+				start_province = 4401
+				target_province = 4075 
+			}
+		}
+	}
+
+	GEA_Josias_Dorpmuller_North_Borneo_railway_project = { #批准北婆罗洲铁路项目
+		icon = railroad
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Dorpmuller
+		}
+		available = {
+			check_variable = { GEA_Dorpmuller_friendship < 100 }
+		}
+
+		cancel_trigger = {
+			FROM = {
+				NOT = {
+					owns_state = 333					
+				}
+			}
+		}
+
+		civilian_factory_use = 2
+
+		cost = 40
+		days_remove = 120
+		fire_only_once = yes
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Dorpmuller_North_Borneo_railway_project"
+			GEA_Josias_add_15_Dorpmuller_effect = yes
+			build_railway = {
+				level = 2
+				start_province = 1208
+				target_province = 7371
+			}
 		}
 	}
 
@@ -7314,15 +7557,17 @@ GEA_josias_decisions = {#约西亚斯乞讨决议
 		available = {
 			check_variable = { GEA_Emil_Helfferich_friendship < 100 }
 		}
-		cost = 10
+
+		cost = 20
 		days_remove = 30
-		days_re_enable = 20
+		days_re_enable = 45
+
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision GEA_Josias_Emil_Helfferich_shipping_routes"
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Emil_Helfferich_shipping_routes"
 			GEA_Josias_add_5_Emil_Helfferich_effect = yes
 			add_equipment_to_stockpile = {
 				type = convoy
-				amount = 25
+				amount = 75
 				producer = GEA
 			}
 		}
@@ -7336,50 +7581,167 @@ GEA_josias_decisions = {#约西亚斯乞讨决议
 		available = {
 			check_variable = { GEA_Emil_Helfferich_friendship < 100 }
 		}
-		cost = 10
-		days_remove = 30
-		days_re_enable = 20
+
+		cost = 50
+		days_remove = 60
+		days_re_enable = 120
+
+		cancel_trigger = {
+			FROM = {
+				NOT = {
+					OR = {
+						owns_state = 286 #东京
+						owns_state = 671 #交趾支那
+					}
+				}
+			}
+		}
+
+		modifier = {
+			consumer_goods_factor = 0.1
+		}
+
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision GEA_Josias_Emil_Helfferich_shipbuilding_investment"
-			GEA_Josias_add_5_Emil_Helfferich_effect = yes
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Emil_Helfferich_shipbuilding_investment"
+			GEA_Josias_add_15_Emil_Helfferich_effect = yes
 			navy_experience = 10
+			336 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 1
+				}
+			}
+			331 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+				}
+			}
 		}
 	}
 
 	GEA_Josias_Fritz_Thyssen_mining_contracts = { #扩大矿业合同
-		icon = GFX_decision_generic_political_address
+		icon = GFX_decision_hol_draw_up_staff_plans
 		visible = {
 			has_country_flag = GEA_Josias_decision_view_Fritz_Thyssen
 		}
 		available = {
 			check_variable = { GEA_Fritz_Thyssen_friendship < 100 }
 		}
-		cost = 10
-		days_remove = 30
-		days_re_enable = 20
+
+		cost = 30
+		days_remove = 60
+		days_re_enable = 70
+
+		modifier = {
+			political_power_cost = 0.02
+			consumer_goods_factor = 0.05
+		}
+
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision GEA_Josias_Fritz_Thyssen_mining_contracts"
-			GEA_Josias_add_5_Fritz_Thyssen_effect = yes
-			add_political_power = 15
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Fritz_Thyssen_mining_contracts"
+			GEA_Josias_add_15_Fritz_Thyssen_effect = yes
+			random_list = {
+				25 = {
+					846 = {
+						add_state_modifier = {
+							modifier = {
+								local_resources_factor = 0.15
+							}
+						}
+					}
+				}
+				25 = {
+					333 = {
+						add_state_modifier = {
+							modifier = {
+								local_resources_factor = 0.15
+							}
+						}
+					}
+				}
+				25 = {
+					827 = {
+						add_state_modifier = {
+							modifier = {
+								local_resources_factor = 0.15
+							}
+						}
+					}
+				}
+				25 = {
+					671 = {
+						add_state_modifier = {
+							modifier = {
+								local_resources_factor = 0.15
+							}
+						}
+					}
+				}
+			}	
 		}
 	}
 
 	GEA_Josias_Fritz_Thyssen_mining_concessions = { #特批采矿权
-		icon = GFX_decision_generic_political_address
+		icon = GFX_decision_hol_draw_up_staff_plans
 		visible = {
 			has_country_flag = GEA_Josias_decision_view_Fritz_Thyssen
 		}
 		available = {
 			check_variable = { GEA_Fritz_Thyssen_friendship < 100 }
 		}
-		cost = 10
-		days_remove = 30
-		days_re_enable = 20
-		remove_effect = {
+
+		visible = {
+			check_variable = {
+				GEA_mining_concessions_count < 3
+			}
+		}
+		cost = 50
+		days_remove = 60
+		fire_only_once = yes
+
+		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision GEA_Josias_Fritz_Thyssen_mining_concessions"
-			GEA_Josias_add_5_Fritz_Thyssen_effect = yes
-			random_owned_controlled_state = {
-				add_extra_state_shared_building_slots = 1
+			add_to_variable = {
+				GEA_mining_concessions_count = 1
+			}
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Fritz_Thyssen_mining_concessions"
+			GEA_Josias_add_10_Fritz_Thyssen_effect = yes
+			if = {
+				limit = {
+					check_variable = {
+						GEA_mining_concessions_count = 0 
+					}
+				}
+				add_resource = {
+					type = steel
+					amount = 62
+					state = 846
+				}
+			}
+			else_if = {
+				limit = { 
+					check_variable = {
+						GEA_mining_concessions_count = 1 
+					}
+				}
+				add_resource = {
+					type = steel
+					amount = 41
+					state = 846
+				}
+			}
+			else = {
+				add_resource = {
+					type = steel
+					amount = 30
+					state = 846
+				}
 			}
 		}
 	}
@@ -7392,13 +7754,22 @@ GEA_josias_decisions = {#约西亚斯乞讨决议
 		available = {
 			check_variable = { GEA_Hermann_Goring_friendship < 100 }
 		}
-		cost = 10
+
+		cost = 15
+
 		days_remove = 30
-		days_re_enable = 20
+		days_re_enable = 45
+
+		modifier = {
+			army_speed_factor = 0.05
+		}
+
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision GEA_Josias_Hermann_Goring_steppe_hunt"
-			GEA_Josias_add_5_Hermann_Goring_effect = yes
-			air_experience = 10
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Hermann_Goring_steppe_hunt"
+			GEA_Josias_add_10_Hermann_Goring_effect = yes
+			add_war_support = 0.05
+			army_experience = 5
+			air_experience = 5
 		}
 	}
 
@@ -7410,31 +7781,16 @@ GEA_josias_decisions = {#约西亚斯乞讨决议
 		available = {
 			check_variable = { GEA_Hermann_Goring_friendship < 100 }
 		}
-		cost = 10
-		days_remove = 30
-		days_re_enable = 20
+
+		cost = 20
+		days_remove = 14
+		days_re_enable = 60
+
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision GEA_Josias_Hermann_Goring_sovereigntist_rally"
-			GEA_Josias_add_5_Hermann_Goring_effect = yes
-			add_war_support = 0.01
-		}
-	}
-
-	GEA_Josias_Siegmund_Bodenheimer_bank_concession = { #授予德华银行特许经营权
-		icon = GFX_decision_generic_political_address
-		visible = {
-			has_country_flag = GEA_Josias_decision_view_Siegmund_Bodenheimer
-		}
-		available = {
-			check_variable = { GEA_Siegmund_Bodenheimer_friendship < 100 }
-		}
-		cost = 10
-		days_remove = 30
-		days_re_enable = 20
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision GEA_Josias_Siegmund_Bodenheimer_bank_concession"
-			GEA_Josias_add_5_Siegmund_Bodenheimer_effect = yes
-			add_political_power = 15
+			GEA_Josias_add_10_Hermann_Goring_effect = yes
+			add_popularity = { ideology = national_populist popularity = 0.02 }
+			add_war_support = 0.02
 		}
 	}
 
@@ -7446,14 +7802,52 @@ GEA_josias_decisions = {#约西亚斯乞讨决议
 		available = {
 			check_variable = { GEA_Siegmund_Bodenheimer_friendship < 100 }
 		}
-		cost = 10
-		days_remove = 30
-		days_re_enable = 20
+
+		civilian_factory_use = 1 
+		cost = 20
+		days_remove = 60
+		days_re_enable = 60
+
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision GEA_Josias_Siegmund_Bodenheimer_embassy_city"
-			GEA_Josias_add_5_Siegmund_Bodenheimer_effect = yes
-			random_owned_controlled_state = {
-				add_extra_state_shared_building_slots = 1
+			GEA_Josias_add_10_Siegmund_Bodenheimer_effect = yes
+			LEC = {
+				random_owned_state = {
+					increase_state_category_by_one_level = yes
+					add_extra_state_shared_building_slots = 1
+				}
+				random_owned_state = {
+					increase_state_category_by_one_level = yes
+					add_extra_state_shared_building_slots = 1
+				}
+			}
+		}
+	}
+
+	GEA_Josias_Siegmund_Bodenheimer_bank_concession = { #授予德华银行特许经营权
+		icon = GFX_decision_generic_political_address
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Siegmund_Bodenheimer
+		}
+		available = {
+			check_variable = { GEA_Siegmund_Bodenheimer_friendship < 100 }
+		}
+
+		cost = 75
+		days_remove = 360
+		fire_only_once = yes
+		
+		modifier = {
+			consumer_goods_factor = -0.15
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_Josias_Siegmund_Bodenheimer_bank_concession"
+			GEA_Josias_add_20_Siegmund_Bodenheimer_effect = yes
+			add_stability = 0.05
+			add_popularity = {
+				ideology = market_liberal
+				popularity = 0.03
 			}
 		}
 	}

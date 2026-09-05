@@ -1024,6 +1024,25 @@ ideas = {
 				mobilization_speed = 0.075
 			}			
 		}
+		GEA_production_subsidies = { #生产补贴
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_production_subsidies"}
+			picture = GER_Clamped_Industrialist_Excess
+			allowed = { always = no }
+			modifier = {
+				consumer_goods_factor = 0.1
+				industrial_capacity_factory = 0.1
+			}
+		}
+		GEA_Forced_labor = { #强迫劳动
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Forced_labor"}
+			picture = GER_Clamped_Industrialist_Excess
+			allowed = { always = no }
+			modifier = {
+				monthly_population = -0.15
+				production_speed_buildings_factor = 0.05
+				production_speed_synthetic_refinery_factor = 0.05
+			}
+		}
 
 #海耶
 		GEA_heye = {
