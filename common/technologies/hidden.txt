@@ -1,6 +1,6 @@
 technologies = {
 
-	camel_corps_tech = {
+	camel_corps_tech = { #效果：骆驼骑兵在沙漠攻击+15%、防御+5%、移动+3%
 
 		research_cost = 1
 
@@ -20,7 +20,7 @@ technologies = {
 		}
 	}
 
-	cossack_corps_tech = {
+	cossack_corps_tech = { #效果：非正规骑兵在丘陵防御+5%、移动+3%，平原防御+5%
 		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech cossack_corps_tech"}
 
 		research_cost = 1
@@ -44,7 +44,7 @@ technologies = {
 		}
 	}
 
-	irregular_cavalry_tech = {
+	irregular_cavalry_tech = { #效果：解锁非正规骑兵营
 		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech irregular_cavalry_tech"}
 
 		research_cost = 1
@@ -62,7 +62,7 @@ technologies = {
 		
 	}
 
-	irregular_infantry_tech = {
+	irregular_infantry_tech = { #效果：解锁非正规步兵营
 		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech irregular_infantry_tech"}
 
 		research_cost = 1
@@ -79,7 +79,7 @@ technologies = {
 		}
 	}
 	
-	elite_infantry_tech = {
+	elite_infantry_tech = { #效果：解锁精锐步兵营
 		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech elite_infantry_tech"}
 
 		research_cost = 1
@@ -97,7 +97,7 @@ technologies = {
 	}
 
 
-	tech_ski_infantry = {
+	tech_ski_infantry = { #效果：步兵在丘陵攻击/防御/移动各+5%，山地攻击/防御+5%、移动+10%
 
 		research_cost = 1
 
@@ -122,7 +122,7 @@ technologies = {
 		}
 	}
 
-	tech_marine_bonus = {
+	tech_marine_bonus = { #效果：海军陆战队、两栖机械化、两栖装甲软攻+5%、硬攻+5%
 
 		research_cost = 1
 
@@ -147,7 +147,7 @@ technologies = {
 		}
 	}
 
-	tech_marine_bonus_2 = {
+	tech_marine_bonus_2 = { #效果：海军陆战队、两栖机械化、两栖装甲软攻+5%、硬攻+5%
 
 		research_cost = 1
 
@@ -172,7 +172,7 @@ technologies = {
 		}
 	}
 
-	jungle_warfare = {
+	jungle_warfare = { #效果：轻步兵类部队在丛林攻击+5%、防御+3%、移动+5%
 
 		research_cost = 1
 
@@ -192,7 +192,7 @@ technologies = {
 		}
 	}
 
-	forest_warfare = {
+	forest_warfare = { #效果：轻步兵类部队在森林攻击+5%、防御+3%、移动+5%
 
 		research_cost = 1
 
@@ -212,7 +212,7 @@ technologies = {
 		}
 	}
 
-	improved_field_hospitals = {
+	improved_field_hospitals = { #效果：野战医院伤兵复员+20%、经验损失-10%
 
 		research_cost = 1
 
@@ -229,7 +229,7 @@ technologies = {
 		}
 	}
 
-	improved_military_police = {
+	improved_military_police = { #效果：宪兵镇压+10%、补给消耗-10%、主动性+10%，城市攻击+10%
 
 		research_cost = 1
 
@@ -248,7 +248,7 @@ technologies = {
 		}
 	}
 
-	improved_military_police1 = {
+	improved_military_police1 = { #效果：宪兵软攻+15%、补给消耗-5%、兵力+2、组织度+5，森林攻击+10%、防御+5%
 
 		research_cost = 1
 
@@ -269,7 +269,7 @@ technologies = {
 		}
 	}
 
-	expanded_engineer_corps_tech = {
+	expanded_engineer_corps_tech = { #效果：工兵堑壕+2，对要塞攻击+10%、防御+10%
 
 		research_cost = 1
 
@@ -289,7 +289,7 @@ technologies = {
 		}
 	}
 
-	expanded_engineer_corps_tech1 = {
+	expanded_engineer_corps_tech1 = { #效果：工兵堑壕+3，对要塞攻击+20%、防御+15%
 
 		research_cost = 1
 
@@ -305,7 +305,7 @@ technologies = {
 		}
 	}
 
-	mountain_training_tech = {
+	mountain_training_tech = { #效果：轻步兵类部队在山地攻击+5%、防御+5%、移动+10%
 
 		research_cost = 1
 
@@ -325,7 +325,7 @@ technologies = {
 		}
 	}
 
-	improved_recon_units_tech = {
+	improved_recon_units_tech = { #效果：侦察类支援连侦察+1、突破+1
 
 		research_cost = 1
 
@@ -342,7 +342,7 @@ technologies = {
 		}
 	}
 
-	improved_recon_units_tech1 = {
+	improved_recon_units_tech1 = { #效果：侦察类支援连侦察+2、突破+2，丘陵/山地/河流/平原攻击+5%、移动+5%
 		research_cost = 1
 		allow = {
 			always = no
@@ -370,7 +370,7 @@ technologies = {
 		}
 	}
 
-	asymmetrical_warfare = {
+	asymmetrical_warfare = { #效果：轻步兵类部队在城市攻击+5%、防御+3%、移动+5%
 
 		research_cost = 1
 
@@ -389,7 +389,7 @@ technologies = {
 			}
 		}
 	}
-	flamethrower = {
+	flamethrower = { #效果：轻步兵类部队软攻+10%，城市攻击+10%/防御+1%，森林攻击+20%/防御+5%，要塞攻击+10%/防御+1%
 
 		research_cost = 1
 
@@ -414,7 +414,7 @@ technologies = {
 		}
 	}
 
-	desert_warfare = {
+	desert_warfare = { #效果：轻步兵类部队在沙漠攻击+10%、防御+5%、移动+5%
 		research_cost = 1
 
 		# only from focus!!! #####
@@ -433,7 +433,7 @@ technologies = {
 		}
 	}
 
-	marsh_warfare = {
+	marsh_warfare = { #效果：轻步兵类部队在沼泽攻击+10%、防御+5%、移动+5%
 		research_cost = 1
 
 		# only from focus!!! #####
@@ -452,7 +452,7 @@ technologies = {
 		}
 	}
 
-	anti_fortification_artillery = {
+	anti_fortification_artillery = { #效果：炮兵类部队对要塞攻击+20%
 
 		research_cost = 1
 
@@ -470,7 +470,7 @@ technologies = {
 		}
 	}
 
-	tech_integrated_specialists = {
+	tech_integrated_specialists = { #效果：特种部队容量+5%，特种部队软攻+5%、硬攻+5%
 
 		research_cost = 1
 
@@ -488,7 +488,7 @@ technologies = {
 		}
 	}
 
-	tech_at_cavalry = {
+	tech_at_cavalry = { #效果：骑兵穿甲+0.75、硬攻+10%
 
 		research_cost = 1
 
@@ -505,7 +505,7 @@ technologies = {
 		}
 	}
 
-	tech_dragoon_tactics = {
+	tech_dragoon_tactics = { #效果：陆军夜战攻击+10%，骑兵组织度+5、恢复率+10%、最大速度+10%
 
 		research_cost = 1
 
@@ -525,7 +525,7 @@ technologies = {
 		}
 	}
 
-	tech_semi_motorised_cav = {
+	tech_semi_motorised_cav = { #效果：骑兵组织度+5、恢复率+10%、最大速度+15%
 
 		research_cost = 1
 
@@ -543,7 +543,7 @@ technologies = {
 		}
 	}
 
-	tech_improved_encryption = {
+	tech_improved_encryption = { #效果：加密强度+2
 
 		research_cost = 1
 
@@ -557,7 +557,7 @@ technologies = {
 		crypto_strength = 2
 	}
 
-	tech_mountain_artillery = {
+	tech_mountain_artillery = { #效果：炮兵在丘陵/山地攻击+10%、移动+10%
 
 		research_cost = 1
 
@@ -580,7 +580,7 @@ technologies = {
 		}
 	}
 
-	tech_arctic_commando = {
+	tech_arctic_commando = { #效果：特种部队无补给宽限+48小时、寒冷适应增长+10%，丘陵/山地移动+5%
 
 		research_cost = 1
 
@@ -604,7 +604,7 @@ technologies = {
 		}
 	}
 
-	tech_better_paratroopers = {
+	tech_better_paratroopers = { #效果：伞兵额外补给宽限+24小时，伞兵软攻+10%、恢复率+20%
 
 		research_cost = 1
 
@@ -622,7 +622,7 @@ technologies = {
 		}
 	}
 
-	tech_assault_battalion = {
+	tech_assault_battalion = { #效果：解锁突击营
 
 		research_cost = 1
 
@@ -638,7 +638,7 @@ technologies = {
 		}
 	}
 	
-	masterful_blitz = { #this uses the same name as the vanilla tech to avoid needing to replace the tactics file
+	masterful_blitz = { #效果：解锁“娴熟闪电战”战术；沿用原版科技名以避免替换战术文件
 
 		research_cost = 1
 		doctrine = yes
@@ -653,7 +653,7 @@ technologies = {
 		enable_tactic = tactic_masterful_blitz
 	}
 
-	tech_anti-partisan = {
+	tech_anti-partisan = { #效果：步兵和骑兵镇压+15%
 
 		research_cost = 1
 
@@ -672,7 +672,7 @@ technologies = {
 		}
 	}
 	
-	tech_improved_logistics = {
+	tech_improved_logistics = { #效果：后勤连补给消耗-10%、燃油消耗-5%
 
 		research_cost = 1
 
@@ -689,7 +689,7 @@ technologies = {
 		}
 	}
 	
-	tech_winter_logistics_support = {
+	tech_winter_logistics_support = { #效果：解锁冬季后勤支援连
 		
 		research_cost = 1
 		
@@ -704,7 +704,7 @@ technologies = {
 		}
 	}
 
-	tech_long_range_patrol_support = {
+	tech_long_range_patrol_support = { #效果：解锁远程巡逻支援连
 		
 		research_cost = 1
 		
@@ -719,7 +719,7 @@ technologies = {
 		}
 	}
 	
-	tech_human_wave_tactics = {
+	tech_human_wave_tactics = { #效果：解锁“人海战术”战术
 
 		research_cost = 1
 
@@ -733,7 +733,7 @@ technologies = {
 		enable_tactic = tactic_human_wave_tactics
 	}
 
-	tech_extensive_reconaissance = {
+	tech_extensive_reconaissance = { #效果：侦察类支援连侦察+1，雪地移动+10%，森林/丘陵/山地/沼泽/平原/河流移动+5%
 
 		research_cost = 1
 
@@ -770,7 +770,7 @@ technologies = {
 		}
 	}
 
-	tech_strengthened_support_companies = {
+	tech_strengthened_support_companies = { #效果：支援营兵力+5、组织度+10
 
 		research_cost = 1
 
@@ -787,7 +787,7 @@ technologies = {
 		}
 	}
 
-	tech_anti_armour_tactics = {
+	tech_anti_armour_tactics = { #效果：所有步兵类部队硬攻+25%、穿甲+1
 
 		research_cost = 1
 

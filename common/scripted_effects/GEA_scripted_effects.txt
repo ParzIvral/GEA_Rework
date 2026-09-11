@@ -172,7 +172,6 @@ GEA_Solomon_click_effect = {
 		clr_country_flag = Borneo_OPEN
 		clr_country_flag = Guinea_OPEN
 		clr_country_flag = Samoa_OPEN
-		clr_country_flag = Solomon_OPEN
 	}
 	
 	else_if = {
@@ -1119,3 +1118,420 @@ GEA_Josias_add_20_Siegmund_Bodenheimer_effect = {
 	}
 }
 
+GEA_add_malaya_coastal_bunkers_effect = {
+	hidden_effect = {
+		846 = {
+			add_building_construction = {
+				type = coastal_bunker
+				province = 1376
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = coastal_bunker
+				province = 4367
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = coastal_bunker
+				province = 4412
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = coastal_bunker
+				province = 4424
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = coastal_bunker
+				province = 7399
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = coastal_bunker
+				province = 7427
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = coastal_bunker
+				province = 10297
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = coastal_bunker
+				province = 10313
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = coastal_bunker
+				province = 12215
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = coastal_bunker
+				province = 12271
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = coastal_bunker
+				province = 13543
+				level = 2
+				instant_build = yes
+			}
+		}
+		336 = {
+			add_building_construction = {
+				type = coastal_bunker
+				province = 12299
+				level = 2
+				instant_build = yes
+			}
+		}
+	}
+}
+
+GEA_add_north_borneo_coastal_bunkers_effect = {
+	hidden_effect = {
+		333 = {
+			add_building_construction = {
+				type = coastal_bunker
+				province = 1208
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = coastal_bunker
+				province = 4216
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = coastal_bunker
+				province = 4396
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = coastal_bunker
+				province = 7371
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = coastal_bunker
+				province = 7387
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = coastal_bunker
+				province = 10285
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = coastal_bunker
+				province = 12283
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = coastal_bunker
+				province = 12905
+				level = 2
+				instant_build = yes
+			}
+		}
+		828 = {
+			add_building_construction = {
+				type = coastal_bunker
+				province = 1306
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = coastal_bunker
+				province = 4282
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = coastal_bunker
+				province = 10143
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = coastal_bunker
+				province = 10199
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = coastal_bunker
+				province = 10212
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = coastal_bunker
+				province = 10240
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = coastal_bunker
+				province = 12171
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = coastal_bunker
+				province = 12228
+				level = 2
+				instant_build = yes
+			}
+		}
+	}
+}
+
+
+GEA_loyal_citizens_progress_effect = {
+	add_to_variable = { GEA_loyal_citizens_preparations = 1 }
+	custom_effect_tooltip = GEA_loyal_citizens_progress_tt
+	if = {
+		limit = {
+			check_variable = { GEA_loyal_citizens_preparations > 2 }
+			NOT = { has_country_flag = GEA_loyal_citizens_mobilization_ready }
+		}
+		set_country_flag = GEA_loyal_citizens_mobilization_ready
+		custom_effect_tooltip = GEA_loyal_citizens_mobilization_ready_tt
+	}
+}
+
+
+GEA_anti_viet_cong_progress_effect = {
+	add_to_variable = { GEA_anti_viet_cong_operations = 1 }
+	custom_effect_tooltip = GEA_anti_viet_cong_progress_tt
+}
+
+GEA_apply_anti_viet_cong_outcome_effect = {
+	if = {
+		limit = { check_variable = { GEA_anti_viet_cong_operations < 1 } }
+		INC = {
+			add_manpower = 30000
+			add_stability = 0.20
+			add_war_support = 0.20
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_0
+				amount = 3000
+				producer = INC
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 500
+				producer = INC
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 400
+				producer = INC
+			}
+			add_equipment_to_stockpile = {
+				type = motorized_equipment
+				amount = 250
+				producer = INC
+			}
+			set_country_flag = INC_anti_viet_cong_outcome_0
+		}
+	}
+	else_if = {
+		limit = { check_variable = { GEA_anti_viet_cong_operations = 1 } }
+		INC = {
+			add_manpower = 20000
+			add_stability = 0.15
+			add_war_support = 0.15
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_0
+				amount = 2000
+				producer = INC
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 400
+				producer = INC
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 300
+				producer = INC
+			}
+			add_equipment_to_stockpile = {
+				type = motorized_equipment
+				amount = 150
+				producer = INC
+			}
+			set_country_flag = INC_anti_viet_cong_outcome_1
+		}
+	}
+	else_if = {
+		limit = { check_variable = { GEA_anti_viet_cong_operations = 2 } }
+		INC = {
+			add_manpower = 10000
+			add_stability = 0.10
+			add_war_support = 0.10
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_0
+				amount = 2000
+				producer = INC
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 350
+				producer = INC
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 200
+				producer = INC
+			}
+			set_country_flag = INC_anti_viet_cong_outcome_2
+		}
+	}
+	else_if = {
+		limit = { check_variable = { GEA_anti_viet_cong_operations = 3 } }
+		INC = {
+			add_manpower = 5000
+			add_stability = 0.10
+			add_war_support = 0.10
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_0
+				amount = 1000
+				producer = INC
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 150
+				producer = INC
+			}
+			set_country_flag = INC_anti_viet_cong_outcome_3
+		}
+	}
+	else_if = {
+		limit = { check_variable = { GEA_anti_viet_cong_operations = 4 } }
+		INC = {
+			set_country_flag = INC_anti_viet_cong_outcome_4
+		}
+	}
+	else_if = {
+		limit = { check_variable = { GEA_anti_viet_cong_operations = 5 } }
+		INC = {
+			add_stability = -0.05
+			add_war_support = -0.05
+			decrease_ruling_party_popularity_by_5 = yes
+			set_country_flag = INC_anti_viet_cong_outcome_5
+		}
+	}
+	else = {
+		INC = {
+			add_manpower = -2500
+			add_stability = -0.1
+			add_war_support = -0.1
+			decrease_ruling_party_popularity_by_10 = yes
+			set_country_flag = INC_anti_viet_cong_outcome_6
+		}
+	}
+}
+
+GEA_anti_nationalist_progress_effect = {
+	add_to_variable = { GEA_anti_nationalist_operations = 1 }
+	custom_effect_tooltip = GEA_anti_nationalist_progress_tt
+}
+
+GEA_roll_nationalist_sabotage_event_effect = {
+	if = {
+		limit = { check_variable = { GEA_anti_nationalist_operations < 1 } }
+		random_list = {
+			10 = { country_event = { id = GEA.311 } }
+			18 = { country_event = { id = GEA.312 } }
+			18 = { country_event = { id = GEA.313 } }
+			18 = { country_event = { id = GEA.314 } }
+			18 = { country_event = { id = GEA.315 } }
+			18 = { country_event = { id = GEA.316 } }
+		}
+	}
+	else_if = {
+		limit = { check_variable = { GEA_anti_nationalist_operations = 1 } }
+		random_list = {
+			25 = { country_event = { id = GEA.311 } }
+			15 = { country_event = { id = GEA.312 } }
+			15 = { country_event = { id = GEA.313 } }
+			15 = { country_event = { id = GEA.314 } }
+			15 = { country_event = { id = GEA.315 } }
+			15 = { country_event = { id = GEA.316 } }
+		}
+	}
+	else_if = {
+		limit = { check_variable = { GEA_anti_nationalist_operations = 2 } }
+		random_list = {
+			40 = { country_event = { id = GEA.311 } }
+			12 = { country_event = { id = GEA.312 } }
+			12 = { country_event = { id = GEA.313 } }
+			12 = { country_event = { id = GEA.314 } }
+			12 = { country_event = { id = GEA.315 } }
+			12 = { country_event = { id = GEA.316 } }
+		}
+	}
+	else_if = {
+		limit = { check_variable = { GEA_anti_nationalist_operations = 3 } }
+		random_list = {
+			55 = { country_event = { id = GEA.311 } }
+			9 = { country_event = { id = GEA.312 } }
+			9 = { country_event = { id = GEA.313 } }
+			9 = { country_event = { id = GEA.314 } }
+			9 = { country_event = { id = GEA.315 } }
+			9 = { country_event = { id = GEA.316 } }
+		}
+	}
+	else_if = {
+		limit = { check_variable = { GEA_anti_nationalist_operations = 4 } }
+		random_list = {
+			70 = { country_event = { id = GEA.311 } }
+			6 = { country_event = { id = GEA.312 } }
+			6 = { country_event = { id = GEA.313 } }
+			6 = { country_event = { id = GEA.314 } }
+			6 = { country_event = { id = GEA.315 } }
+			6 = { country_event = { id = GEA.316 } }
+		}
+	}
+	else_if = {
+		limit = { check_variable = { GEA_anti_nationalist_operations = 5 } }
+		random_list = {
+			85 = { country_event = { id = GEA.311 } }
+			3 = { country_event = { id = GEA.312 } }
+			3 = { country_event = { id = GEA.313 } }
+			3 = { country_event = { id = GEA.314 } }
+			3 = { country_event = { id = GEA.315 } }
+			3 = { country_event = { id = GEA.316 } }
+		}
+	}
+	else = {
+		random_list = {
+			95 = { country_event = { id = GEA.311 } }
+			1 = { country_event = { id = GEA.312 } }
+			1 = { country_event = { id = GEA.313 } }
+			1 = { country_event = { id = GEA.314 } }
+			1 = { country_event = { id = GEA.315 } }
+			1 = { country_event = { id = GEA.316 } }
+		}
+	}
+}

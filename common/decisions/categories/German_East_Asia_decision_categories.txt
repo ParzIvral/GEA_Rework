@@ -17,6 +17,30 @@ GEA_colonial_decisions = {
 	}
 }
 
+GEA_heye_decisions = {
+	icon = GFX_decision_colonial_department
+	allowed = {
+		original_tag = GEA
+	}
+	visible = {
+		has_completed_focus = GEA_Germany_Calling
+	}
+	priority = 102
+	visible_when_empty = yes
+}
+
+GEA_heye_Breakwater_project_decisions = {
+	icon = GFX_decision_category_generic_mountain_fortification
+	allowed = {
+		original_tag = GEA
+	}
+	visible = {
+		has_completed_focus = GEA_Reconstruction_of_the_breakwater_project
+	}
+	priority = 101
+	visible_when_empty = yes
+}
+
 GEA_focus_china_decisions = {
 	allowed = {
 		original_tag = GEA
@@ -29,7 +53,7 @@ GEA_josias_decisions = {
 		original_tag = GEA
 	}
 	visible = {
-		#has_completed_focus = GEA_Josias_Group 
+		has_completed_focus = GEA_Josias_Group 
 	}
 	priority = 101
 	visible_when_empty = yes

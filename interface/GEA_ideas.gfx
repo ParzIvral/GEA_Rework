@@ -332,4 +332,20 @@ spriteTypes = {
 		name = "GFX_idea_GEA_Portraying_Japan_as_a_threat"
 		texturefile = "gfx/interface/ideas/gea/GEA_Portraying_Japan_as_a_threat.png"
 	}
+	spriteType = {
+		name = "GFX_idea_GEA_Continuous_production_lines_operating_day_and_night"
+		texturefile = "gfx/interface/ideas/gea/GEA_Continuous_production_lines_operating_day_and_night.png"
+	}
+	spriteType = {
+		name = "GFX_idea_GEA_Fifty_years_of_colonial_rule"
+		texturefile = "gfx/interface/ideas/gea/GEA_Fifty_years_of_colonial_rule.png"
+	}
+	spriteType = {
+		name = "GFX_idea_GEA_Dedication_to_duty_2"
+		texturefile = "gfx/interface/ideas/gea/GEA_Dedication_to_duty_2.png"
+	}
+	spriteType = {
+		name = "GFX_idea_GEA_Dedication_to_duty"
+		texturefile = "gfx/interface/ideas/gea/GEA_Dedication_to_duty.png"
+	}
 }

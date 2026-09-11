@@ -118,7 +118,7 @@ GEA_Defend_indochina = {
 	compliance_growth = GEA_Defend_indochina_compliance_growth
 }
 
-GEA_martial_law_modifier = {
+GEA_martial_law_modifier = { #GEA_has_martial_law_at_there
 	icon = "GFX_paternal_autocrat_texticon"
 	enable = { always = yes }
 	remove_trigger = { 
@@ -126,11 +126,11 @@ GEA_martial_law_modifier = {
 			is_owned_by = GEA
 		}
 	}	
-	recruitable_population_factor = -0.15
+	recruitable_population_factor = -0.10
 	mobilization_speed = 0.15                                                                                   
-	local_resources_factor = 0.20
+	local_resources_factor = 0.15
 	resistance_decay = 0.1
-	compliance_growth = -0.5
+	compliance_growth = -0.2
 }
 
 GEA_developing_porgram = {
