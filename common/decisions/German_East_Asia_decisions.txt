@@ -178,9 +178,7 @@ GEA_decisions = {#德属东亚殖民地决议
 			}
 		}
 
-		ai_will_do = { 
-			factor = 75 
-		}
+		ai_will_do = { factor = 75 }
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision GEA_register_loyal_civic_associations"
 			GEA_loyal_citizens_progress_effect = yes
@@ -257,41 +255,183 @@ GEA_decisions = {#德属东亚殖民地决议
 			GEA_loyal_citizens_progress_effect = yes
 		}
 	}
-	#反越工行动
-	GEA_destroy_viet_cong_liaison_network = { #捣毁越工联络网
-		icon = GFX_decision_generic_assassination
-		cost = 20
 
-		days_remove = 30
+	# 忠诚城市防御工事准备：完成全部四项后，由GEA.309统一建设
+	GEA_map_loyalist_urban_defenses = { #测绘忠诚城市防区
+		icon = GFX_decision_bunker
+		cost = 25
+		days_remove = 14
 		fire_only_once = yes
-
 		visible = {
+			has_completed_focus = GEA_Ensure_loyal_citizens
+			has_country_flag = GEA_loyal_citizens_mobilization_ready
 			has_country_flag = Indochina_OPEN
-			has_completed_focus = GEA_The_ten-year_struggle_against_the_Red_Ghost
 			NOT = { has_global_flag = GEA_Indochina_Uprising_Fired }
 		}
-
-		available = {
-			NOT = { has_global_flag = GEA_Indochina_Uprising_Fired }
-		}
-		cancel_trigger = {
-			has_global_flag = GEA_Indochina_Uprising_Fire
-		}
-		ai_will_do = { 
-			factor = 75 
-		}
-
+		available = { NOT = { has_global_flag = GEA_Indochina_Uprising_Fired } }
+		cancel_trigger = { has_global_flag = GEA_Indochina_Uprising_Fired }
+		ai_will_do = { factor = 75 }
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_destroy_viet_cong_liaison_network"
-			GEA_anti_viet_cong_progress_effect = yes
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_map_loyalist_urban_defenses"
+			GEA_loyalist_fortification_progress_effect = yes
 		}
 	}
 
+	GEA_stockpile_urban_fortification_materials = { #储备城市筑垒材料
+		icon = GFX_decision_bunker
+		cost = 35
+		days_remove = 21
+		fire_only_once = yes
+		visible = {
+			has_completed_focus = GEA_Ensure_loyal_citizens
+			has_country_flag = GEA_loyal_citizens_mobilization_ready
+			has_country_flag = Indochina_OPEN
+			NOT = { has_global_flag = GEA_Indochina_Uprising_Fired }
+		}
+		available = { NOT = { has_global_flag = GEA_Indochina_Uprising_Fired } }
+		cancel_trigger = { has_global_flag = GEA_Indochina_Uprising_Fired }
+		ai_will_do = { factor = 75 }
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_stockpile_urban_fortification_materials"
+			GEA_loyalist_fortification_progress_effect = yes
+		}
+	}
+
+	GEA_assign_engineers_to_loyalist_cities = { #派驻城市工兵队
+		icon = GFX_decision_generic_military
+		custom_cost_text = CP_30
+		custom_cost_trigger = { command_power > 29.99 }
+		days_remove = 21
+		fire_only_once = yes
+		visible = {
+			has_completed_focus = GEA_Ensure_loyal_citizens
+			has_country_flag = GEA_loyal_citizens_mobilization_ready
+			has_country_flag = Indochina_OPEN
+			NOT = { has_global_flag = GEA_Indochina_Uprising_Fired }
+		}
+		available = { NOT = { has_global_flag = GEA_Indochina_Uprising_Fired } }
+		cancel_trigger = { has_global_flag = GEA_Indochina_Uprising_Fired }
+		ai_will_do = { factor = 75 }
+		complete_effect = { add_command_power = -30 }
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_assign_engineers_to_loyalist_cities"
+			GEA_loyalist_fortification_progress_effect = yes
+		}
+	}
+
+	GEA_prepare_loyalist_urban_strongpoints = { #预设城市坚固据点
+		icon = GFX_decision_bunker
+		days_remove = 30
+		fire_only_once = yes
+		modifier = { civilian_factory_use = 2 }
+		visible = {
+			has_completed_focus = GEA_Ensure_loyal_citizens
+			has_country_flag = GEA_loyal_citizens_mobilization_ready
+			has_country_flag = Indochina_OPEN
+			NOT = { has_global_flag = GEA_Indochina_Uprising_Fired }
+		}
+		available = {
+			NOT = { has_global_flag = GEA_Indochina_Uprising_Fired }
+			num_of_civilian_factories_available_for_projects > 1
+		}
+		cancel_trigger = { has_global_flag = GEA_Indochina_Uprising_Fired }
+		ai_will_do = { factor = 75 }
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_prepare_loyalist_urban_strongpoints"
+			GEA_loyalist_fortification_progress_effect = yes
+		}
+	}
+
+	# 忠诚城市第二梯队准备：完成全部四项后，在GEA.309七日后统一增援
+	GEA_expand_loyalist_recruitment_rolls = { #扩充忠诚人员名册
+		icon = GFX_decision_colonial_department
+		cost = 25
+		days_remove = 21
+		fire_only_once = yes
+		visible = {
+			has_completed_focus = GEA_Ensure_loyal_citizens
+			has_country_flag = GEA_loyalist_fortifications_ready
+			has_country_flag = Indochina_OPEN
+			NOT = { has_global_flag = GEA_Indochina_Uprising_Fired }
+		}
+		available = { NOT = { has_global_flag = GEA_Indochina_Uprising_Fired } }
+		cancel_trigger = { has_global_flag = GEA_Indochina_Uprising_Fired }
+		ai_will_do = { factor = 75 }
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_expand_loyalist_recruitment_rolls"
+			GEA_loyalist_reserve_progress_effect = yes
+		}
+	}
+
+	GEA_train_loyalist_irregular_formations = { #训练忠诚非正规部队
+		icon = GFX_decision_generic_military
+		custom_cost_text = CP_30
+		custom_cost_trigger = { command_power > 29.99 }
+		days_remove = 21
+		fire_only_once = yes
+		visible = {
+			has_completed_focus = GEA_Ensure_loyal_citizens
+			has_country_flag = GEA_loyalist_fortifications_ready
+			has_country_flag = Indochina_OPEN
+			NOT = { has_global_flag = GEA_Indochina_Uprising_Fired }
+		}
+		available = { NOT = { has_global_flag = GEA_Indochina_Uprising_Fired } }
+		cancel_trigger = { has_global_flag = GEA_Indochina_Uprising_Fired }
+		ai_will_do = { factor = 75 }
+		complete_effect = { add_command_power = -30 }
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_train_loyalist_irregular_formations"
+			GEA_loyalist_reserve_progress_effect = yes
+		}
+	}
+
+	GEA_equip_loyalist_reserve_battalions = { #武装忠诚预备营
+		icon = GFX_decision_generic_equipment
+		cost = 35
+		days_remove = 21
+		fire_only_once = yes
+		visible = {
+			has_completed_focus = GEA_Ensure_loyal_citizens
+			has_country_flag = GEA_loyalist_fortifications_ready
+			has_country_flag = Indochina_OPEN
+			NOT = { has_global_flag = GEA_Indochina_Uprising_Fired }
+		}
+		available = { NOT = { has_global_flag = GEA_Indochina_Uprising_Fired } }
+		cancel_trigger = { has_global_flag = GEA_Indochina_Uprising_Fired }
+		ai_will_do = { factor = 75 }
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_equip_loyalist_reserve_battalions"
+			GEA_loyalist_reserve_progress_effect = yes
+		}
+	}
+
+	GEA_finalize_second_echelon_mobilization = { #敲定第二梯队动员案
+		icon = GFX_decision_generic_operation
+		days_remove = 30
+		fire_only_once = yes
+		modifier = { civilian_factory_use = 2 }
+		visible = {
+			has_completed_focus = GEA_Ensure_loyal_citizens
+			has_country_flag = GEA_loyalist_fortifications_ready
+			has_country_flag = Indochina_OPEN
+			NOT = { has_global_flag = GEA_Indochina_Uprising_Fired }
+		}
+		available = {
+			NOT = { has_global_flag = GEA_Indochina_Uprising_Fired }
+			num_of_civilian_factories_available_for_projects > 1
+		}
+		cancel_trigger = { has_global_flag = GEA_Indochina_Uprising_Fired }
+		ai_will_do = { factor = 75 }
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_finalize_second_echelon_mobilization"
+			GEA_loyalist_reserve_progress_effect = yes
+		}
+	}
+	#反越工行动
 	GEA_infiltrate_unions_and_dock_organizations = { #渗透工会与码头组织
 		icon = GFX_decision_generic_assassination
 		cost = 30
 		days_remove = 30
-
 		fire_only_once = yes
 
 		visible = {
@@ -303,11 +443,9 @@ GEA_decisions = {#德属东亚殖民地决议
 			NOT = { has_global_flag = GEA_Indochina_Uprising_Fired }
 		}
 		cancel_trigger = {
-			has_global_flag = GEA_Indochina_Uprising_Fire
+			has_global_flag = GEA_Indochina_Uprising_Fired
 		}
-		ai_will_do = { 
-			factor = 75 
-		}
+		ai_will_do = { factor = 75 }
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision GEA_infiltrate_unions_and_dock_organizations"
@@ -316,42 +454,6 @@ GEA_decisions = {#德属东亚殖民地决议
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_infiltrate_unions_and_dock_organizations"
-			GEA_anti_viet_cong_progress_effect = yes
-		}
-	}
-
-	GEA_cut_border_arms_smuggling = { #切断边境武器走私
-		icon = GFX_decision_generic_military
-
-		custom_cost_text = CP_30
-		custom_cost_trigger = { command_power > 29.99 }
-
-		days_remove = 60
-		fire_only_once = yes
-
-		visible = {
-			has_country_flag = Indochina_OPEN
-			has_completed_focus = GEA_The_ten-year_struggle_against_the_Red_Ghost
-			NOT = { has_global_flag = GEA_Indochina_Uprising_Fired }
-		}
-		available = {
-			NOT = { has_global_flag = GEA_Indochina_Uprising_Fired }
-		}
-
-		ai_will_do = { factor = 75 }
-
-		cancel_trigger = {
-			has_global_flag = GEA_Indochina_Uprising_Fire
-		}
-
-		complete_effect = {
-			add_command_power = -30
-			log = "[GetDateText]: [Root.GetName]: Decision GEA_cut_border_arms_smuggling"
-		}
-
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_cut_border_arms_smuggling"
-			add_stability = 0.02
 			GEA_anti_viet_cong_progress_effect = yes
 		}
 	}
@@ -371,9 +473,8 @@ GEA_decisions = {#德属东亚殖民地决议
 			NOT = { has_global_flag = GEA_Indochina_Uprising_Fired }
 		}
 		cancel_trigger = {
-			has_global_flag = GEA_Indochina_Uprising_Fire
+			has_global_flag = GEA_Indochina_Uprising_Fired
 		}
-
 		ai_will_do = { factor = 75 }
 
 		complete_effect = {
@@ -381,7 +482,6 @@ GEA_decisions = {#德属东亚殖民地决议
 			add_popularity = { ideology = social_conservative popularity = 0.02 }
 			add_popularity = { ideology = authoritarian_democrat popularity = 0.02 }
 		}
-
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_support_moderate_national_unions"
 			add_stability = 0.03
@@ -392,7 +492,6 @@ GEA_decisions = {#德属东亚殖民地决议
 	GEA_arrest_radical_labor_leaders = { #逮捕激进劳工领袖
 		icon = GFX_decision_generic_confiscation
 		cost = 40
-
 		days_remove = 21
 		fire_only_once = yes
 
@@ -405,16 +504,94 @@ GEA_decisions = {#德属东亚殖民地决议
 			NOT = { has_global_flag = GEA_Indochina_Uprising_Fired }
 		}
 		cancel_trigger = {
-			has_global_flag = GEA_Indochina_Uprising_Fire
+			has_global_flag = GEA_Indochina_Uprising_Fired
 		}
-
-		ai_will_do = { 
-			factor = 75 
-		}
+		ai_will_do = { factor = 75 }
 
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_arrest_radical_labor_leaders"
 			add_manpower = -120
+			add_war_support = 0.02
+			GEA_anti_viet_cong_progress_effect = yes
+		}
+	}
+
+	# GEA.307“扫荡本身就是答案”额外解锁
+	GEA_destroy_viet_cong_liaison_network = { #捣毁越工联络网
+		icon = GFX_decision_generic_assassination
+		custom_cost_text = CP_50
+		custom_cost_trigger = { command_power > 49.99 }
+
+		days_remove = 30
+		fire_only_once = yes
+
+		visible = {
+			has_country_flag = Indochina_OPEN
+			has_completed_focus = GEA_The_ten-year_struggle_against_the_Red_Ghost
+			has_country_flag = GEA_anti_viet_cong_sweeps_strategy
+			NOT = { has_global_flag = GEA_Indochina_Uprising_Fired }
+		}
+
+		available = {
+			NOT = { has_global_flag = GEA_Indochina_Uprising_Fired }
+		}
+		cancel_trigger = {
+			has_global_flag = GEA_Indochina_Uprising_Fired
+		}
+		ai_will_do = { 
+			factor = 75 
+		}
+
+		complete_effect = {
+			add_command_power = -50
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_destroy_viet_cong_liaison_network"
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_destroy_viet_cong_liaison_network"
+			add_political_power = 25
+			GEA_anti_viet_cong_progress_effect = yes
+		}
+	}
+
+	GEA_cut_border_arms_smuggling = { #切断边境武器走私
+		icon = GFX_decision_generic_military
+
+		custom_cost_text = CP_60
+		custom_cost_trigger = { command_power > 59.99 }
+
+		days_remove = 60
+		fire_only_once = yes
+
+		visible = {
+			has_country_flag = Indochina_OPEN
+			has_completed_focus = GEA_The_ten-year_struggle_against_the_Red_Ghost
+			has_country_flag = GEA_anti_viet_cong_sweeps_strategy
+			NOT = { has_global_flag = GEA_Indochina_Uprising_Fired }
+		}
+		available = {
+			NOT = { has_global_flag = GEA_Indochina_Uprising_Fired }
+		}
+
+		ai_will_do = { factor = 75 }
+
+		cancel_trigger = {
+			has_global_flag = GEA_Indochina_Uprising_Fired
+		}
+
+		complete_effect = {
+			add_command_power = -60
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_cut_border_arms_smuggling"
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_cut_border_arms_smuggling"
+			add_stability = 0.02
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 300
+				producer = GEA
+			}
 			GEA_anti_viet_cong_progress_effect = yes
 		}
 	}
@@ -422,8 +599,8 @@ GEA_decisions = {#德属东亚殖民地决议
 	GEA_launch_large_scale_sweeps = { #大规模扫荡
 		icon = GFX_decision_generic_military
 
-		custom_cost_text = CP_30
-		custom_cost_trigger = { command_power > 29.99 }
+		custom_cost_text = CP_75
+		custom_cost_trigger = { command_power > 74.99 }
 		days_remove = 45
 
 		fire_only_once = yes
@@ -435,6 +612,7 @@ GEA_decisions = {#德属东亚殖民地决议
 		visible = {
 			has_country_flag = Indochina_OPEN
 			has_completed_focus = GEA_The_ten-year_struggle_against_the_Red_Ghost
+			has_country_flag = GEA_anti_viet_cong_sweeps_strategy
 			NOT = { has_global_flag = GEA_Indochina_Uprising_Fired }
 		}
 
@@ -443,17 +621,143 @@ GEA_decisions = {#德属东亚殖民地决议
 			num_of_civilian_factories_available_for_projects > 1
 		}
 
-		ai_will_do = { 
-			factor = 75 
+		ai_will_do = { factor = 75 }
+		cancel_trigger = {
+			has_global_flag = GEA_Indochina_Uprising_Fired
 		}
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision GEA_launch_large_scale_sweeps"
-			add_command_power = -30
+			add_command_power = -75
 		}
 
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_launch_large_scale_sweeps"
+			army_experience = 10
+			add_war_support = 0.03
+			GEA_anti_viet_cong_progress_effect = yes
+		}
+	}
+
+	# GEA.307“尽斩蛇头”额外解锁
+	GEA_compile_viet_cong_leadership_dossiers = { #编制越工头目档案
+		icon = GFX_decision_generic_confiscation
+		custom_cost_text = GEA_anti_viet_cong_cost_15xp_500mp
+		custom_cost_trigger = {
+			has_army_experience > 14.99
+			has_manpower > 499
+		}
+		days_remove = 30
+		fire_only_once = yes
+
+		visible = {
+			has_country_flag = Indochina_OPEN
+			has_completed_focus = GEA_The_ten-year_struggle_against_the_Red_Ghost
+			has_country_flag = GEA_anti_viet_cong_decapitation_strategy
+			NOT = { has_global_flag = GEA_Indochina_Uprising_Fired }
+		}
+		available = {
+			NOT = { has_global_flag = GEA_Indochina_Uprising_Fired }
+		}
+		cancel_trigger = {
+			has_global_flag = GEA_Indochina_Uprising_Fired
+		}
+		ai_will_do = { factor = 75 }
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_compile_viet_cong_leadership_dossiers"
+			army_experience = -15
+			add_manpower = -500
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_compile_viet_cong_leadership_dossiers"
+			add_political_power = 25
+			GEA_anti_viet_cong_progress_effect = yes
+		}
+	}
+
+	GEA_turn_viet_cong_couriers = { #策反越工秘密交通员
+		icon = GFX_decision_generic_assassination
+		custom_cost_text = GEA_anti_viet_cong_cost_20xp_500rifles
+		custom_cost_trigger = {
+			has_army_experience > 19.99
+			has_equipment = { infantry_equipment > 499 }
+		}
+		days_remove = 35
+		fire_only_once = yes
+
+		visible = {
+			has_country_flag = Indochina_OPEN
+			has_completed_focus = GEA_The_ten-year_struggle_against_the_Red_Ghost
+			has_country_flag = GEA_anti_viet_cong_decapitation_strategy
+			NOT = { has_global_flag = GEA_Indochina_Uprising_Fired }
+		}
+		available = {
+			NOT = { has_global_flag = GEA_Indochina_Uprising_Fired }
+		}
+		cancel_trigger = {
+			has_global_flag = GEA_Indochina_Uprising_Fired
+		}
+		ai_will_do = { factor = 75 }
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_turn_viet_cong_couriers"
+			army_experience = -20
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -500
+			}
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_turn_viet_cong_couriers"
+			add_stability = 0.02
+			add_popularity = { ideology = syndicalist popularity = -0.01 }
+			add_popularity = { ideology = radical_socialist popularity = -0.01 }
+			GEA_anti_viet_cong_progress_effect = yes
+		}
+	}
+
+	GEA_execute_coordinated_decapitation_strikes = { #发动协同斩首突袭
+		icon = GFX_decision_generic_assassination
+		custom_cost_text = GEA_anti_viet_cong_cost_30xp_1000mp_750rifles
+		custom_cost_trigger = {
+			has_army_experience > 29.99
+			has_manpower > 999
+			has_equipment = { infantry_equipment > 749 }
+		}
+		days_remove = 45
+		fire_only_once = yes
+
+		visible = {
+			has_country_flag = Indochina_OPEN
+			has_completed_focus = GEA_The_ten-year_struggle_against_the_Red_Ghost
+			has_country_flag = GEA_anti_viet_cong_decapitation_strategy
+			NOT = { has_global_flag = GEA_Indochina_Uprising_Fired }
+		}
+		available = {
+			NOT = { has_global_flag = GEA_Indochina_Uprising_Fired }
+		}
+		cancel_trigger = {
+			has_global_flag = GEA_Indochina_Uprising_Fired
+		}
+		ai_will_do = { factor = 75 }
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_execute_coordinated_decapitation_strikes"
+			army_experience = -30
+			add_manpower = -1000
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -750
+			}
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_execute_coordinated_decapitation_strikes"
+			add_war_support = 0.03
+			add_command_power = 25
 			GEA_anti_viet_cong_progress_effect = yes
 		}
 	}

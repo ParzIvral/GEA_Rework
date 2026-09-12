@@ -1310,11 +1310,44 @@ GEA_loyal_citizens_progress_effect = {
 	custom_effect_tooltip = GEA_loyal_citizens_progress_tt
 	if = {
 		limit = {
-			check_variable = { GEA_loyal_citizens_preparations > 2 }
+			check_variable = { GEA_loyal_citizens_preparations > 3 }
 			NOT = { has_country_flag = GEA_loyal_citizens_mobilization_ready }
 		}
 		set_country_flag = GEA_loyal_citizens_mobilization_ready
 		custom_effect_tooltip = GEA_loyal_citizens_mobilization_ready_tt
+		unlock_decision_tooltip = GEA_map_loyalist_urban_defenses
+		unlock_decision_tooltip = GEA_stockpile_urban_fortification_materials
+		unlock_decision_tooltip = GEA_assign_engineers_to_loyalist_cities
+		unlock_decision_tooltip = GEA_prepare_loyalist_urban_strongpoints
+	}
+}
+
+GEA_loyalist_fortification_progress_effect = {
+	add_to_variable = { GEA_loyalist_fortification_preparations = 1 }
+	custom_effect_tooltip = GEA_loyalist_fortification_progress_tt
+	if = {
+		limit = {
+			check_variable = { GEA_loyalist_fortification_preparations > 3 }
+			NOT = { has_country_flag = GEA_loyalist_fortifications_ready }
+		}
+		set_country_flag = GEA_loyalist_fortifications_ready
+		unlock_decision_tooltip = GEA_expand_loyalist_recruitment_rolls
+		unlock_decision_tooltip = GEA_train_loyalist_irregular_formations
+		unlock_decision_tooltip = GEA_equip_loyalist_reserve_battalions
+		unlock_decision_tooltip = GEA_finalize_second_echelon_mobilization
+	}
+}
+
+GEA_loyalist_reserve_progress_effect = {
+	add_to_variable = { GEA_loyalist_reserve_preparations = 1 }
+	custom_effect_tooltip = GEA_loyalist_reserve_progress_tt
+	if = {
+		limit = {
+			check_variable = { GEA_loyalist_reserve_preparations > 3 }
+			NOT = { has_country_flag = GEA_loyalist_reserves_ready }
+		}
+		set_country_flag = GEA_loyalist_reserves_ready
+		custom_effect_tooltip = GEA_loyalist_reserves_ready_tt
 	}
 }
 

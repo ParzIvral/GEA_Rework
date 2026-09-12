@@ -1193,12 +1193,16 @@ ideas = {
 			modifier = {
 				resistance_decay = -0.1
 				offensive_war_stability_factor = 0.1
-				army_org_factor = 0.05
+				army_org_factor = 0.1
 				army_morale_factor = 0.05
-				paternal_autocrat_drift = 0.01
+				paternal_autocrat_drift = 0.02
 				conscription = 0.01
-				conscription_factor = 0.1
-				land_doctrine_cost_factor = -0.05
+				conscription_factor = 0.15
+				land_doctrine_cost_factor = -0.1
+				army_attack_against_major_factor = 0.1
+				army_defence_against_major_factor = 0.1
+				army_breakthrough_against_major_factor = 0.1
+				max_planning_factor = 0.075
 			}
 		}
 		GEA_In_the_Shadow = { #于阴影之中
@@ -1392,6 +1396,31 @@ ideas = {
 				military_industrial_organization_funds_gain = 0.20
 				military_industrial_organization_size_up_requirement = -0.15
 				market_liberal_drift = 0.01
+			}
+		}
+		GEA_Special_Authorization = { #武备齐全
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Special_Authorization"}
+			picture = GER_Hutier_Secondary_Spirit
+			allowed = { always = no }
+			modifier = {
+				training_time_army_factor = -0.05
+				required_garrison_factor = 0.05
+				compliance_growth = 0.1
+				resistance_growth = -0.1
+				attrition = -0.05
+			}
+		}
+		GEA_Special_Authorization_2 = { #特别授权
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Special_Authorization_2"}
+			picture = GER_Hutier_Secondary_Spirit
+			allowed = { always = no }
+			modifier = {
+				political_power_factor = 0.1
+				training_time_army_factor = -0.1
+				required_garrison_factor = 0.05
+				compliance_growth = 0.1
+				resistance_growth = -0.1
+				attrition = -0.05
 			}
 		}
 		GEA_Dedication_to_duty = { #恪尽职守

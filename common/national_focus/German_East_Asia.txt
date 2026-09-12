@@ -2450,6 +2450,13 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Resist_external_instigation"
+			add_popularity = {
+				ideology = paternal_autocrat
+				popularity = 0.1
+			}
+			add_political_power = 75
+			add_command_power = 50
+			add_stability = 0.1
 		}
 	}
 	focus = { #混乱时局需下猛药
@@ -2572,6 +2579,8 @@ focus_tree = {
 			custom_effect_tooltip = GEA_Indochina_Anger_Up
 			add_manpower = 2000
 			set_variable = { GEA_loyal_citizens_preparations = 0 }
+			set_variable = { GEA_loyalist_fortification_preparations = 0 }
+			set_variable = { GEA_loyalist_reserve_preparations = 0 }
 			custom_effect_tooltip = GEA_Ensure_loyal_citizens_tt
 			country_event = {
 				id = GEA.306
@@ -2619,6 +2628,10 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_In_perfect_order"
+			add_popularity = {
+				ideology = paternal_autocrat
+				popularity = 0.08
+			}
 			swap_ideas = {
 				remove_idea = GEA_The_quagmire_of_Indochina
 				add_idea = GEA_The_quagmire_of_Indochina_heye
@@ -2828,6 +2841,20 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Militarization_of_the_police_force"
+			add_manpower = 3000
+			add_ideas = GEA_Special_Authorization
+			add_tech_bonus = {
+				name = GEA_Militarization_of_the_police_force
+				bonus = 0.5
+				uses = 1
+				category = infantry_weapons
+			}
+			add_tech_bonus = {
+				name = GEA_Militarization_of_the_police_force
+				bonus = 0.5
+				uses = 1
+				category = military_police_tech
+			}
 		}
 	}
 	focus = { #通过紧急授权
@@ -2847,6 +2874,15 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Pass_emergency_authorization"
+			add_political_power = 60
+			add_popularity = {
+				ideology = paternal_autocrat
+				popularity = 0.06
+			}
+			swap_ideas = {
+				remove_idea = GEA_Special_Authorization
+				add_idea = GEA_Special_Authorization_2
+			}
 		}
 	}
 	focus = { #戒严制度常态化
@@ -2915,6 +2951,10 @@ focus_tree = {
 		x = 1
 		y = 1
 		available = {		
+			OR = {
+				has_country_flag = GEA_Indochina_Uprising_got_cancelled
+				has_country_flag = GEA_Defeated_Uprising
+			}
 		}
         prerequisite = {
 			focus = GEA_Pass_emergency_authorization
@@ -3486,6 +3526,11 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Die_Wacht_im_Fernen_Osten"
+			add_war_support = 0.1
+			swap_ideas = {
+				remove_idea = GEA_colonial_question_heye_2
+				add_idea = GEA_colonial_question_heye_3 
+			}
 		}
 	}
 
