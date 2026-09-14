@@ -1,155 +1,253 @@
 guiTypes = {
 	containerWindowType = {
 		name = "GEA_map_gui_game"
-		position = { x = 0 y = 50 }
-		size = { width = 275 height = 370 }
+		position = { x = 0 y = 0 }
+		size = { width = 275 height = 460 }
 		
 		iconType = {
 			name = "GEA_Southeast_background"
 			orientation = center
-			position = { x = -130 y = -170 }
+			position = { x = -130 y = -190 }
 			spriteType = "GEA_Southeast_background"
-			scale = 0.7
+			scale = 0.3235
 		}
 
 		buttonType = {
-			name = "GEA_Hawaii"
+			name = "Hainan_ger_Map"
 			orientation = center
-			position = { x = 268 y = -71 }
+			position = { x = -130 y = -190 }
+			spriteType = "GEA_Hainan_ger"
+			pdx_tooltip = "GEA_Hainan_ger"
+			pdx_tooltip_delayed = "GEA_Hainan_ger_DESC"
+			scale = 0.3235
+		}
+
+		buttonType = {
+			name = "Hainan_Map"
+			orientation = center
+			position = { x = -130 y = -190 }
+			spriteType = "GEA_Hainan"
+			pdx_tooltip = "GEA_Hainan"
+			pdx_tooltip_delayed = "GEA_Hainan_DESC"
+			scale = 0.3235
+		}
+
+		buttonType = {
+			name = "Hawaii_Map"
+			orientation = center
+			position = { x = -130 y = -190 }
 			spriteType = "GEA_Hawaii"
 			pdx_tooltip = "GEA_Hawaii"
 			pdx_tooltip_delayed = "GEA_Hawaii_DESC"
-			scale = 0.7
+			scale = 0.3235
+		}
+
+		buttonType = {
+			name = "Hawaii_ger_Map"
+			orientation = center
+			position = { x = -130 y = -190 }
+			spriteType = "GEA_Hawaii_ger"
+			pdx_tooltip = "GEA_Hawaii_ger"
+			pdx_tooltip_delayed = "GEA_Hawaii_ger_DESC"
+			scale = 0.3235
 		}
 
 		buttonType = {
 			name = "GEA_Solomon"
 			orientation = center
-			position = { x = 146 y = -77 }
+			position = { x = -130 y = -190 }
 			spriteType = "GEA_Solomon"
 			pdx_tooltip = "GEA_Solomon"
 			pdx_tooltip_delayed = "GEA_Solomon_DESC"
-			scale = 0.7
+			scale = 0.3235
 		}
 
 		buttonType = {
 			name = "GEA_Shandong"
 			orientation = center
-			position = { x = 254 y = -158 }
+			position = { x = -130 y = -190 }
 			spriteType = "GEA_Shandong"
 			pdx_tooltip = "GEA_Shandong"
 			pdx_tooltip_delayed = "GEA_Shandong_DESC"
-			scale = 0.7
+			scale = 0.3235
 		}
 
 		buttonType = {
 			name = "GEA_Samoa"
 			orientation = center
-			position = { x = 155 y = -142 }
+			position = { x = -130 y = -190 }
 			spriteType = "GEA_Samoa"
 			pdx_tooltip = "GEA_Samoa"
 			pdx_tooltip_delayed = "GEA_Samoa_DESC"
-			scale = 0.7
+			scale = 0.3235
 		}
 
-		buttonType = {
-			name = "GEA_South_Guinea"
+		buttonType = { #[PHI.GetNameWithFlag]
+			name = "Philippines_Map"
 			orientation = center
-			position = { x = 260 y = 94.5 }
-			spriteType = "GEA_South_Guinea"
-			pdx_tooltip = "GEA_South_Guinea"
-			pdx_tooltip_delayed = "GEA_South_Guinea_DESC"
-			scale = 0.7
-		}
-
-		buttonType = {
-			name = "GEA_Philippines"
-			orientation = center
-			position = { x = 23 y = -151 }
+			position = { x = -130 y = -190 }
 			spriteType = "GEA_Philippines"
 			pdx_tooltip = "GEA_Philippines"
 			pdx_tooltip_delayed = "GEA_Philippines_DESC"
-			scale = 0.7
+			scale = 0.3235
 		}
 
-		buttonType = {
+		buttonType = { #德属菲律宾
+			name = "Philippines_ger_Map"
+			orientation = center
+			position = { x = -130 y = -190 }
+			spriteType = "GEA_Philippines_ger"
+			pdx_tooltip = "GEA_Philippines"
+			pdx_tooltip_delayed = "GEA_Philippines_DESC"
+			scale = 0.3235
+		}
+
+		buttonType = { #德属新几内亚
 			name = "GEA_GER_Guinea"
 			orientation = center
-			position = { x = 260 y = 66 }
+			position = { x = -130 y = -190 }
 			spriteType = "GEA_GER_Guinea"
 			pdx_tooltip = "GEA_GER_Guinea"
 			pdx_tooltip_delayed = "GEA_GER_Guinea_DESC"
-			scale = 0.7
+			scale = 0.3235
 		}
 
-		buttonType = {
-			name = "GEA_DEI"
+		buttonType = { #[DEI.GetNameWithFlag]
+			name = "DEI_Map"
 			orientation = center
-			position = { x = -107 y = 2 }
+			position = { x = -130 y = -190 }
 			spriteType = "GEA_DEI"
 			pdx_tooltip = "GEA_DEI"
 			pdx_tooltip_delayed = "GEA_DEI_DESC"
-			scale = 0.7
+			scale = 0.3235
 		}
 
-		buttonType = {
-			name = "GEA_Burma"
+		buttonType = { #德属东印度
+			name = "DEI_ger_Map"
 			orientation = center
-			position = { x = -116 y = -164 }
+			position = { x = -130 y = -190 }
+			spriteType = "GEA_DEI_ger"
+			pdx_tooltip = "GEA_DEI"
+			pdx_tooltip_delayed = "GEA_DEI_DESC"
+			scale = 0.3235
+		}
+
+		buttonType = { #[BRM.GetNameWithFlag]
+			name = "Burma_Map"
+			orientation = center
+			position = { x = -130 y = -190 }
 			spriteType = "GEA_Burma"
 			pdx_tooltip = "GEA_Burma"
 			pdx_tooltip_delayed = "GEA_Burma_DESC"
-			scale = 0.7
+			scale = 0.3235
 		}
 
-		buttonType = {
-			name = "GEA_Thailand"
+		buttonType = { #德属缅甸
+			name = "Burma_ger_Map"
 			orientation = center
-			position = { x = -83 y = -120 }
+			position = { x = -130 y = -190 }
+			spriteType = "GEA_Burma_ger"
+			pdx_tooltip = "GEA_Burma"
+			pdx_tooltip_delayed = "GEA_Burma_DESC"
+			scale = 0.3235
+		}
+
+		buttonType = { #[SIA.GetNameWithFlag]
+			name = "Thailand_Map"
+			orientation = center
+			position = { x = -130 y = -190 }
 			spriteType = "GEA_Thailand"
 			pdx_tooltip = "GEA_Thailand"
 			pdx_tooltip_delayed = "GEA_Thailand_DESC"
-			scale = 0.7
+			scale = 0.3235
 		}
 
-		buttonType = {
-			name = "GEA_North_Borneo"
+		buttonType = { #德属暹罗
+			name = "Thailand_ger_Map"
 			orientation = center
-			position = { x = 8.7 y = -4 }
+			position = { x = -130 y = -190 }
+			spriteType = "GEA_Thailand_ger"
+			pdx_tooltip = "GEA_Thailand"
+			pdx_tooltip_delayed = "GEA_Thailand_DESC"
+			scale = 0.3235
+		}
+
+		buttonType = { #北婆罗洲
+			name = "North_Borneo_Map"
+			orientation = center
+			position = { x = -130 y = -190 }
 			spriteType = "GEA_North_Borneo"
 			pdx_tooltip = "GEA_North_Borneo"
 			pdx_tooltip_delayed = "GEA_North_Borneo_DESC"
-			scale = 0.7
+			scale = 0.3235
 		}
 
-		buttonType = {
-			name = "GEA_Borneo"
+		buttonType = { #荷属婆罗洲
+			name = "South_Borneo_Map"
 			orientation = center
-			position = { x = 2 y = -4 }
+			position = { x = -130 y = -190 }
+			spriteType = "GEA_South_Borneo"
+			pdx_tooltip = "GEA_North_Borneo"
+			pdx_tooltip_delayed = "GEA_South_Borneo_DESC"
+			scale = 0.3235
+		}
+
+		buttonType = { #德属婆罗洲
+			name = "Borneo_Map"
+			orientation = center
+			position = { x = -130 y = -190 }
 			spriteType = "GEA_Borneo"
 			pdx_tooltip = "GEA_Borneo"
 			pdx_tooltip_delayed = "GEA_Borneo_DESC"
-			scale = 0.7
+			scale = 0.3235
 		}
 
-		buttonType = {
+		buttonType = { #马来亚
 			name = "GEA_Malaya"
 			orientation = center
-			position = { x = -63.2 y = 5 }
+			position = { x = -130 y = -190 }
 			spriteType = "GEA_Malaya"
 			pdx_tooltip = "GEA_Malaya"
 			pdx_tooltip_delayed = "GEA_Malaya_DESC"
-			scale = 0.7
+			scale = 0.3235
 		}
 
-		buttonType = {
-			name = "GEA_Indochina"
+		buttonType = { #印度支那
+			name = "Indochina_Map"
 			orientation = center
-			position = { x = -57 y = -126.5 }
+			position = { x = -130 y = -190 }
 			spriteType = "GEA_Indochina"
 			pdx_tooltip = "GEA_Indochina"
 			pdx_tooltip_delayed = "GEA_Indochina_DESC"
-			scale = 0.7
+			scale = 0.3235
+		}
+
+		buttonType = { #[INC.GetNameWithFlag]
+			name = "Indochina_inc_Map"
+			orientation = center
+			position = { x = -130 y = -190 }
+			spriteType = "GEA_Indochina_inc"
+			pdx_tooltip = "GEA_Indochina"
+			pdx_tooltip_delayed = "GEA_Indochina_DESC"
+			scale = 0.3235
+		}
+
+		buttonType = { #[VIN.GetNameWithFlag]
+			name = "Indochina_vin_Map"
+			orientation = center
+			position = { x = -130 y = -190 }
+			spriteType = "GEA_Indochina_vin"
+			pdx_tooltip = "GEA_Indochina"
+			pdx_tooltip_delayed = "GEA_Indochina_DESC"
+			scale = 0.3235
+		}
+
+		iconType = {
+			name = "GEA_extra_background"
+			orientation = center
+			position = { x = -130 y = -190 }
+			spriteType = "GEA_extra_background"
+			scale = 0.3235
 		}
 	}
 

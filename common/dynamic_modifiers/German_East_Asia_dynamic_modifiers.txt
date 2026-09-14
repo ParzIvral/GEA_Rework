@@ -67,43 +67,6 @@ GEA_gea_army = {
 	enemy_attrition = GEA_enemy_attrition
 }
 
-GEA_mucke_reform = {
-	icon = "GFX_idea_GEA_mucke_reform"
-	enable = { always = yes }
-	remove_trigger = { 
-		NOT = { 
-			is_owned_by = GEA
-		}
-	}	
-	political_power_factor = GEA_mucke_reform_political_power_factor
-	political_power_gain = GEA_mucke_reform_political_power_gain
-	command_power_gain_mult = GEA_mucke_reform_command_power_gain_mult
-	stability_factor = GEA_mucke_reform_stability
-	stability_weekly = GEA_mucke_reform_stability_weekly
-	war_support_factor = GEA_mucke_reform_war_support
-	war_support_weekly = GEA_mucke_reform_war_support_weekly
-	production_speed_infrastructure_factor = GEA_mucke_reform_production_speed_infrastructure_factor
-	local_resources_factor = GEA_mucke_reform_local_resources
-	army_core_attack_factor = GEA_mucke_reform_army_core_attack_factor       
-	army_core_defence_factor = GEA_mucke_reform_army_core_defence_factor 
-	conscription = GEA_mucke_reform_army_conscription
-	conscription_factor = GEA_mucke_reform_army_conscription_factor
-	local_building_slots_factor = GEA_mucke_reform_local_building_slots_factor
-	production_speed_buildings_factor = GEA_mucke_reform_production_speed_buildings_factor   
-	defensive_war_stability_factor = GEA_mucke_reform_defensive_war_stability_factor      
-	local_manpower = GEA_mucke_reform_local_manpower   
-	party_popularity_stability_factor = GEA_mucke_reform_party_popularity_stability_factor 
-	required_garrison_factor = GEA_mucke_reform_required_garrison_factor 
-	local_resources_factor = GEA_mucke_reform_local_resources_factor  
-	monthly_population = GEA_mucke_reform_monthly_population
-	production_factory_max_efficiency_factor = GEA_mucke_reform_production_factory_max_efficiency_factor
-	production_factory_efficiency_gain_factor = GEA_mucke_reform_production_factory_efficiency_gain_factor
-	industrial_capacity_factory = GEA_mucke_reform_industrial_capacity_factory
-	line_change_production_efficiency_factor = GEA_mucke_reform_line_change_production_efficiency_factor
-	production_speed_industrial_complex_factor = GEA_mucke_reform_production_speed_industrial_complex_factor
-	production_speed_arms_factory_factor = GEA_mucke_reform_production_speed_arms_factory_factor
-}
-
 GEA_Defend_indochina = {
 	icon = "GFX_idea_GEA_Defend_indochina"
 	enable = { always = yes }
@@ -445,4 +408,45 @@ GEA_Alfred_Krupp_modifier = {
 	production_speed_arms_factory_factor = GEA_Alfred_Krupp_production_speed_arms_factory_factor			#军用工厂建造速度 10%
 	industrial_capacity_factory = GEA_Alfred_Krupp_industrial_capacity_factory								#工厂产出 10%
 	conversion_cost_civ_to_mil_factor = GEA_Alfred_Krupp_conversion_cost_civ_to_mil_factor					#民转军花费 -20%
+}
+
+
+GEA_Economic_modifier = {
+	icon = "GFX_GEA_Economic_modifier"
+	enable = { always = yes }
+	remove_trigger = { always = no }
+	
+	industry_repair_factor = GEA_Economic_industry_repair_factor 							#工厂维修速度
+	monthly_population = GEA_Economic_monthly_population									#每月人口
+	research_speed_factor = GEA_Economic_research_speed										#研究速度
+	local_resources_factor = GEA_Economic_local_resources									#战略资源获取率
+	political_power_factor = GEA_Economic_political_power									#政治点数
+	stability_factor = GEA_Economic_stability												#稳定度		
+	stability_weekly = GEA_Economic_stability_weekly										#每周稳定度增长				
+	consumer_goods_factor = GEA_Economic_consumer_goods										#生活消费品工厂系数
+	local_building_slots_factor = GEA_Economic_building_slots								#地区最大工业值
+	industrial_capacity_factory = GEA_Economic_factory_output								#工厂产出
+	industrial_capacity_dockyard = GEA_Economic_dockyard_output								#海军船坞产出
+	production_oil_factor = GEA_Economic_production_oil										#合成油
+	production_speed_buildings_factor = GEA_Economic_construction_speed						#建造速度
+	production_speed_radar_station_factor = GEA_Economic_radar_speed						#雷达站建设速度	
+	production_speed_infrastructure_factor = GEA_Economic_infrastructure_speed				#基础设施建设速度
+	production_speed_industrial_complex_factor = GEA_Economic_civilian_speed				#民用工厂建设速度
+	production_speed_arms_factory_factor = GEA_Economic_military_speed						#军用工厂建设速度
+	production_speed_dockyard_factor = GEA_Economic_production_speed_dockyard_factor 		#海军船坞建造速度
+	production_speed_naval_base_factor = GEA_Economic_production_speed_naval_base_factor 	#海军基地建造速度
+	production_speed_rail_way_factor = GEA_Economic_railway_speed							#铁路建造速度
+	production_speed_synthetic_refinery_factor = GEA_Economic_refinery_speed				#合成炼油厂建造速度 £construction_speed_refinery_texticon 
+	production_factory_efficiency_gain_factor = GEA_Economic_efficiency_gain				#生产效率增长
+	production_factory_max_efficiency_factor = GEA_Economic_efficiency_max					#生产效率上限
+	line_change_production_efficiency_factor = GEA_Economic_efficiency_retention			#生产效率保持
+	production_lack_of_resource_penalty_factor = GEA_Economic_lack_resource_penalty			#缺少资源惩罚
+	production_factory_start_efficiency_factor = GEA_Economic_start_efficiency				#基础生产效率
+	production_speed_fuel_silo_factor = GEA_Economic_production_speed_fuel_silo_factor		#储油罐建设速度
+	army_fuel_consumption_factor = GEA_Economic_army_fuel_consumption_factor				#陆军燃料消耗
+	fuel_gain_factor = GEA_Economic_fuel_gain_factor										#从石油获得的燃油 £fuel_gain_oil_texticon
+	factory_energy_consumption = GEA_Economic_factory_energy_consumption					#工厂能源消耗 
+	industry_free_repair_factor = GEA_Economic_industry_free_repair_factor					#免费维修
+	cic_construction_boost_factor = GEA_Economic_cic_construction_boost_factor				#市场建设加成乘数
+	consumer_goods_expected_value = GEA_Economic_consumer_goods_expected_value				#用于生产生活消费品的期望工厂数量
 }

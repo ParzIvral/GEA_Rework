@@ -294,9 +294,9 @@ add_namespace = GEA
 				}
 			}
 			hidden_effect = {
-				country_event = {
+				country_event = { #殖民危机暂缓
 					id = GEA.37
-					days = 120
+					days = 90
 				}
 			}
 		}
@@ -1685,6 +1685,7 @@ add_namespace = GEA
 
 		option = { 
 			name = GEA.37.a
+			set_country_flag = GEA_crisis_is_on_hold
 			add_stability = 0.05
 			swap_ideas = {
 				remove_idea = GEA_colonial_disaster_idea

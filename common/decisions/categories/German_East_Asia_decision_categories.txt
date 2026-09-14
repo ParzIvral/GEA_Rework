@@ -65,7 +65,15 @@ GEA_decisions = {
 	allowed = {
 		original_tag = GEA
 	}
-	priority = 1001
+	priority = 1002
 	visible_when_empty = yes
 	scripted_gui = GEA_MAP_DECISION_UI
+}
+
+GEA_pacify_indochina_decisions = {
+	icon = GFX_decision_GEA_indochina_decisions
+	allowed = {
+		original_tag = GEA
+	}
+	priority = 1003
 }

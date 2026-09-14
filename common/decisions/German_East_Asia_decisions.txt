@@ -3,7 +3,7 @@
 ###########################
 # By Gwener
 ###########################
-GEA_decisions = {#德属东亚殖民地决议
+GEA_pacify_indochina_decisions = {#平定印度支那
 	GEA_nationalist_sabotage_cycle = {
 		icon = GFX_decision_generic_military
 		allowed = { always = no }
@@ -84,7 +84,6 @@ GEA_decisions = {#德属东亚殖民地决议
 	GEA_Integrate_inc = {#整合印度支那
 		icon = eng_trade_unions_demand
 		visible = {
-			has_country_flag = Indochina_OPEN
 			GEA = {
 				owns_state = 857
 				owns_state = 671
@@ -169,7 +168,6 @@ GEA_decisions = {#德属东亚殖民地决议
 		
 		visible = {
 			has_completed_focus = GEA_Ensure_loyal_citizens
-			has_country_flag = Indochina_OPEN
 			NOT = { has_global_flag = GEA_Indochina_Uprising_Fired }
 		}
 		available = {
@@ -184,7 +182,6 @@ GEA_decisions = {#德属东亚殖民地决议
 			GEA_loyal_citizens_progress_effect = yes
 		}
 	}
-
 	GEA_secure_saigon_communications = { #确保广播与电报局
 		icon = GFX_decision_generic_operation
 		cost = 35
@@ -193,7 +190,6 @@ GEA_decisions = {#德属东亚殖民地决议
 
 		visible = {
 			has_completed_focus = GEA_Ensure_loyal_citizens
-			has_country_flag = Indochina_OPEN
 			NOT = { has_global_flag = GEA_Indochina_Uprising_Fired }
 		}
 
@@ -206,7 +202,6 @@ GEA_decisions = {#德属东亚殖民地决议
 			GEA_loyal_citizens_progress_effect = yes
 		}
 	}
-
 	GEA_reorganize_saigon_police = { #武装城市警察
 		icon = GFX_decision_generic_military
 		custom_cost_text = CP_30
@@ -216,7 +211,6 @@ GEA_decisions = {#德属东亚殖民地决议
 
 		visible = {
 			has_completed_focus = GEA_Ensure_loyal_citizens
-			has_country_flag = Indochina_OPEN
 			NOT = { has_global_flag = GEA_Indochina_Uprising_Fired }
 		}
 		available = {
@@ -231,7 +225,6 @@ GEA_decisions = {#德属东亚殖民地决议
 			GEA_loyal_citizens_progress_effect = yes
 		}
 	}
-
 	GEA_prepare_saigon_emergency_depots = { #设立市区应急仓库
 		icon = GFX_decision_bunker
 		days_remove = 30
@@ -242,7 +235,6 @@ GEA_decisions = {#德属东亚殖民地决议
 
 		visible = {
 			has_completed_focus = GEA_Ensure_loyal_citizens
-			has_country_flag = Indochina_OPEN
 			NOT = { has_global_flag = GEA_Indochina_Uprising_Fired }
 		}
 		available = {
@@ -256,7 +248,7 @@ GEA_decisions = {#德属东亚殖民地决议
 		}
 	}
 
-	# 忠诚城市防御工事准备：完成全部四项后，由GEA.309统一建设
+	# 忠诚城市防御工事
 	GEA_map_loyalist_urban_defenses = { #测绘忠诚城市防区
 		icon = GFX_decision_bunker
 		cost = 25
@@ -265,7 +257,6 @@ GEA_decisions = {#德属东亚殖民地决议
 		visible = {
 			has_completed_focus = GEA_Ensure_loyal_citizens
 			has_country_flag = GEA_loyal_citizens_mobilization_ready
-			has_country_flag = Indochina_OPEN
 			NOT = { has_global_flag = GEA_Indochina_Uprising_Fired }
 		}
 		available = { NOT = { has_global_flag = GEA_Indochina_Uprising_Fired } }
@@ -276,7 +267,6 @@ GEA_decisions = {#德属东亚殖民地决议
 			GEA_loyalist_fortification_progress_effect = yes
 		}
 	}
-
 	GEA_stockpile_urban_fortification_materials = { #储备城市筑垒材料
 		icon = GFX_decision_bunker
 		cost = 35
@@ -285,7 +275,6 @@ GEA_decisions = {#德属东亚殖民地决议
 		visible = {
 			has_completed_focus = GEA_Ensure_loyal_citizens
 			has_country_flag = GEA_loyal_citizens_mobilization_ready
-			has_country_flag = Indochina_OPEN
 			NOT = { has_global_flag = GEA_Indochina_Uprising_Fired }
 		}
 		available = { NOT = { has_global_flag = GEA_Indochina_Uprising_Fired } }
@@ -296,7 +285,6 @@ GEA_decisions = {#德属东亚殖民地决议
 			GEA_loyalist_fortification_progress_effect = yes
 		}
 	}
-
 	GEA_assign_engineers_to_loyalist_cities = { #派驻城市工兵队
 		icon = GFX_decision_generic_military
 		custom_cost_text = CP_30
@@ -306,7 +294,6 @@ GEA_decisions = {#德属东亚殖民地决议
 		visible = {
 			has_completed_focus = GEA_Ensure_loyal_citizens
 			has_country_flag = GEA_loyal_citizens_mobilization_ready
-			has_country_flag = Indochina_OPEN
 			NOT = { has_global_flag = GEA_Indochina_Uprising_Fired }
 		}
 		available = { NOT = { has_global_flag = GEA_Indochina_Uprising_Fired } }
@@ -318,7 +305,6 @@ GEA_decisions = {#德属东亚殖民地决议
 			GEA_loyalist_fortification_progress_effect = yes
 		}
 	}
-
 	GEA_prepare_loyalist_urban_strongpoints = { #预设城市坚固据点
 		icon = GFX_decision_bunker
 		days_remove = 30
@@ -327,7 +313,6 @@ GEA_decisions = {#德属东亚殖民地决议
 		visible = {
 			has_completed_focus = GEA_Ensure_loyal_citizens
 			has_country_flag = GEA_loyal_citizens_mobilization_ready
-			has_country_flag = Indochina_OPEN
 			NOT = { has_global_flag = GEA_Indochina_Uprising_Fired }
 		}
 		available = {
@@ -341,8 +326,6 @@ GEA_decisions = {#德属东亚殖民地决议
 			GEA_loyalist_fortification_progress_effect = yes
 		}
 	}
-
-	# 忠诚城市第二梯队准备：完成全部四项后，在GEA.309七日后统一增援
 	GEA_expand_loyalist_recruitment_rolls = { #扩充忠诚人员名册
 		icon = GFX_decision_colonial_department
 		cost = 25
@@ -351,7 +334,6 @@ GEA_decisions = {#德属东亚殖民地决议
 		visible = {
 			has_completed_focus = GEA_Ensure_loyal_citizens
 			has_country_flag = GEA_loyalist_fortifications_ready
-			has_country_flag = Indochina_OPEN
 			NOT = { has_global_flag = GEA_Indochina_Uprising_Fired }
 		}
 		available = { NOT = { has_global_flag = GEA_Indochina_Uprising_Fired } }
@@ -362,7 +344,6 @@ GEA_decisions = {#德属东亚殖民地决议
 			GEA_loyalist_reserve_progress_effect = yes
 		}
 	}
-
 	GEA_train_loyalist_irregular_formations = { #训练忠诚非正规部队
 		icon = GFX_decision_generic_military
 		custom_cost_text = CP_30
@@ -372,7 +353,6 @@ GEA_decisions = {#德属东亚殖民地决议
 		visible = {
 			has_completed_focus = GEA_Ensure_loyal_citizens
 			has_country_flag = GEA_loyalist_fortifications_ready
-			has_country_flag = Indochina_OPEN
 			NOT = { has_global_flag = GEA_Indochina_Uprising_Fired }
 		}
 		available = { NOT = { has_global_flag = GEA_Indochina_Uprising_Fired } }
@@ -384,7 +364,6 @@ GEA_decisions = {#德属东亚殖民地决议
 			GEA_loyalist_reserve_progress_effect = yes
 		}
 	}
-
 	GEA_equip_loyalist_reserve_battalions = { #武装忠诚预备营
 		icon = GFX_decision_generic_equipment
 		cost = 35
@@ -393,7 +372,6 @@ GEA_decisions = {#德属东亚殖民地决议
 		visible = {
 			has_completed_focus = GEA_Ensure_loyal_citizens
 			has_country_flag = GEA_loyalist_fortifications_ready
-			has_country_flag = Indochina_OPEN
 			NOT = { has_global_flag = GEA_Indochina_Uprising_Fired }
 		}
 		available = { NOT = { has_global_flag = GEA_Indochina_Uprising_Fired } }
@@ -404,7 +382,6 @@ GEA_decisions = {#德属东亚殖民地决议
 			GEA_loyalist_reserve_progress_effect = yes
 		}
 	}
-
 	GEA_finalize_second_echelon_mobilization = { #敲定第二梯队动员案
 		icon = GFX_decision_generic_operation
 		days_remove = 30
@@ -413,7 +390,6 @@ GEA_decisions = {#德属东亚殖民地决议
 		visible = {
 			has_completed_focus = GEA_Ensure_loyal_citizens
 			has_country_flag = GEA_loyalist_fortifications_ready
-			has_country_flag = Indochina_OPEN
 			NOT = { has_global_flag = GEA_Indochina_Uprising_Fired }
 		}
 		available = {
@@ -435,7 +411,6 @@ GEA_decisions = {#德属东亚殖民地决议
 		fire_only_once = yes
 
 		visible = {
-			has_country_flag = Indochina_OPEN
 			has_completed_focus = GEA_The_ten-year_struggle_against_the_Red_Ghost
 			NOT = { has_global_flag = GEA_Indochina_Uprising_Fired }
 		}
@@ -457,7 +432,6 @@ GEA_decisions = {#德属东亚殖民地决议
 			GEA_anti_viet_cong_progress_effect = yes
 		}
 	}
-
 	GEA_support_moderate_national_unions = { #扶植温和民族工会
 		icon = GFX_decision_generic_agriculture
 		cost = 30
@@ -465,7 +439,6 @@ GEA_decisions = {#德属东亚殖民地决议
 		fire_only_once = yes
 
 		visible = {
-			has_country_flag = Indochina_OPEN
 			has_completed_focus = GEA_The_ten-year_struggle_against_the_Red_Ghost
 			NOT = { has_global_flag = GEA_Indochina_Uprising_Fired }
 		}
@@ -488,7 +461,6 @@ GEA_decisions = {#德属东亚殖民地决议
 			GEA_anti_viet_cong_progress_effect = yes
 		}
 	}
-
 	GEA_arrest_radical_labor_leaders = { #逮捕激进劳工领袖
 		icon = GFX_decision_generic_confiscation
 		cost = 40
@@ -496,7 +468,6 @@ GEA_decisions = {#德属东亚殖民地决议
 		fire_only_once = yes
 
 		visible = {
-			has_country_flag = Indochina_OPEN
 			has_completed_focus = GEA_The_ten-year_struggle_against_the_Red_Ghost
 			NOT = { has_global_flag = GEA_Indochina_Uprising_Fired }
 		}
@@ -515,8 +486,7 @@ GEA_decisions = {#德属东亚殖民地决议
 			GEA_anti_viet_cong_progress_effect = yes
 		}
 	}
-
-	# GEA.307“扫荡本身就是答案”额外解锁
+	#
 	GEA_destroy_viet_cong_liaison_network = { #捣毁越工联络网
 		icon = GFX_decision_generic_assassination
 		custom_cost_text = CP_50
@@ -526,7 +496,6 @@ GEA_decisions = {#德属东亚殖民地决议
 		fire_only_once = yes
 
 		visible = {
-			has_country_flag = Indochina_OPEN
 			has_completed_focus = GEA_The_ten-year_struggle_against_the_Red_Ghost
 			has_country_flag = GEA_anti_viet_cong_sweeps_strategy
 			NOT = { has_global_flag = GEA_Indochina_Uprising_Fired }
@@ -553,7 +522,6 @@ GEA_decisions = {#德属东亚殖民地决议
 			GEA_anti_viet_cong_progress_effect = yes
 		}
 	}
-
 	GEA_cut_border_arms_smuggling = { #切断边境武器走私
 		icon = GFX_decision_generic_military
 
@@ -564,7 +532,6 @@ GEA_decisions = {#德属东亚殖民地决议
 		fire_only_once = yes
 
 		visible = {
-			has_country_flag = Indochina_OPEN
 			has_completed_focus = GEA_The_ten-year_struggle_against_the_Red_Ghost
 			has_country_flag = GEA_anti_viet_cong_sweeps_strategy
 			NOT = { has_global_flag = GEA_Indochina_Uprising_Fired }
@@ -595,7 +562,6 @@ GEA_decisions = {#德属东亚殖民地决议
 			GEA_anti_viet_cong_progress_effect = yes
 		}
 	}
-
 	GEA_launch_large_scale_sweeps = { #大规模扫荡
 		icon = GFX_decision_generic_military
 
@@ -610,7 +576,6 @@ GEA_decisions = {#德属东亚殖民地决议
 		}
 
 		visible = {
-			has_country_flag = Indochina_OPEN
 			has_completed_focus = GEA_The_ten-year_struggle_against_the_Red_Ghost
 			has_country_flag = GEA_anti_viet_cong_sweeps_strategy
 			NOT = { has_global_flag = GEA_Indochina_Uprising_Fired }
@@ -638,8 +603,7 @@ GEA_decisions = {#德属东亚殖民地决议
 			GEA_anti_viet_cong_progress_effect = yes
 		}
 	}
-
-	# GEA.307“尽斩蛇头”额外解锁
+	#
 	GEA_compile_viet_cong_leadership_dossiers = { #编制越工头目档案
 		icon = GFX_decision_generic_confiscation
 		custom_cost_text = GEA_anti_viet_cong_cost_15xp_500mp
@@ -651,7 +615,6 @@ GEA_decisions = {#德属东亚殖民地决议
 		fire_only_once = yes
 
 		visible = {
-			has_country_flag = Indochina_OPEN
 			has_completed_focus = GEA_The_ten-year_struggle_against_the_Red_Ghost
 			has_country_flag = GEA_anti_viet_cong_decapitation_strategy
 			NOT = { has_global_flag = GEA_Indochina_Uprising_Fired }
@@ -676,7 +639,6 @@ GEA_decisions = {#德属东亚殖民地决议
 			GEA_anti_viet_cong_progress_effect = yes
 		}
 	}
-
 	GEA_turn_viet_cong_couriers = { #策反越工秘密交通员
 		icon = GFX_decision_generic_assassination
 		custom_cost_text = GEA_anti_viet_cong_cost_20xp_500rifles
@@ -688,7 +650,6 @@ GEA_decisions = {#德属东亚殖民地决议
 		fire_only_once = yes
 
 		visible = {
-			has_country_flag = Indochina_OPEN
 			has_completed_focus = GEA_The_ten-year_struggle_against_the_Red_Ghost
 			has_country_flag = GEA_anti_viet_cong_decapitation_strategy
 			NOT = { has_global_flag = GEA_Indochina_Uprising_Fired }
@@ -718,7 +679,6 @@ GEA_decisions = {#德属东亚殖民地决议
 			GEA_anti_viet_cong_progress_effect = yes
 		}
 	}
-
 	GEA_execute_coordinated_decapitation_strikes = { #发动协同斩首突袭
 		icon = GFX_decision_generic_assassination
 		custom_cost_text = GEA_anti_viet_cong_cost_30xp_1000mp_750rifles
@@ -731,7 +691,6 @@ GEA_decisions = {#德属东亚殖民地决议
 		fire_only_once = yes
 
 		visible = {
-			has_country_flag = Indochina_OPEN
 			has_completed_focus = GEA_The_ten-year_struggle_against_the_Red_Ghost
 			has_country_flag = GEA_anti_viet_cong_decapitation_strategy
 			NOT = { has_global_flag = GEA_Indochina_Uprising_Fired }
@@ -761,7 +720,6 @@ GEA_decisions = {#德属东亚殖民地决议
 			GEA_anti_viet_cong_progress_effect = yes
 		}
 	}
-
 	# 处理印度支那民族主义者
 	GEA_catalogue_nationalist_associations = { #清查民族主义结社
 		icon = GFX_decision_generic_operation
@@ -771,7 +729,6 @@ GEA_decisions = {#德属东亚殖民地决议
 		fire_only_once = yes
 
 		visible = {
-			has_country_flag = Indochina_OPEN
 			has_completed_focus = GEA_Smother_the_flames_of_nationalism
 			NOT = { has_global_flag = GEA_Indochina_Uprising_Fired }
 		}
@@ -792,7 +749,6 @@ GEA_decisions = {#德属东亚殖民地决议
 			GEA_anti_nationalist_progress_effect = yes
 		}
 	}
-
 	GEA_infiltrate_vnqdd_cells = { #渗透越国党支部
 		icon = GFX_decision_generic_assassination
 		cost = 30
@@ -801,7 +757,6 @@ GEA_decisions = {#德属东亚殖民地决议
 		fire_only_once = yes
 
 		visible = {
-			has_country_flag = Indochina_OPEN
 			has_completed_focus = GEA_Smother_the_flames_of_nationalism
 			NOT = { has_global_flag = GEA_Indochina_Uprising_Fired }
 		}
@@ -820,7 +775,6 @@ GEA_decisions = {#德属东亚殖民地决议
 			GEA_anti_nationalist_progress_effect = yes
 		}
 	}
-
 	GEA_monitor_student_press_networks = { #监控学生与报刊网络
 		icon = GFX_decision_generic_operation
 		cost = 30
@@ -828,7 +782,6 @@ GEA_decisions = {#德属东亚殖民地决议
 		fire_only_once = yes
 
 		visible = {
-			has_country_flag = Indochina_OPEN
 			has_completed_focus = GEA_Smother_the_flames_of_nationalism
 			NOT = { has_global_flag = GEA_Indochina_Uprising_Fired }
 		}
@@ -844,7 +797,6 @@ GEA_decisions = {#德属东亚殖民地决议
 			GEA_anti_nationalist_progress_effect = yes
 		}
 	}
-
 	GEA_cut_nationalist_foreign_funding = { #切断民族主义者海外资助
 		icon = GFX_decision_generic_military
 
@@ -854,7 +806,6 @@ GEA_decisions = {#德属东亚殖民地决议
 		days_remove = 60
 		fire_only_once = yes
 		visible = {
-			has_country_flag = Indochina_OPEN
 			has_completed_focus = GEA_Smother_the_flames_of_nationalism
 			NOT = { has_global_flag = GEA_Indochina_Uprising_Fired }
 		}
@@ -873,7 +824,6 @@ GEA_decisions = {#德属东亚殖民地决议
 			GEA_anti_nationalist_progress_effect = yes
 		}
 	}
-
 	GEA_coopt_constitutionalist_elites = { #拉拢立宪派精英
 		icon = GFX_decision_generic_political_address
 		cost = 40
@@ -881,7 +831,6 @@ GEA_decisions = {#德属东亚殖民地决议
 		fire_only_once = yes
 		
 		visible = {
-			has_country_flag = Indochina_OPEN
 			has_completed_focus = GEA_Smother_the_flames_of_nationalism
 			NOT = { has_global_flag = GEA_Indochina_Uprising_Fired }
 		}
@@ -897,7 +846,6 @@ GEA_decisions = {#德属东亚殖民地决议
 			GEA_anti_nationalist_progress_effect = yes
 		}
 	}
-
 	GEA_raid_nationalist_safehouses = { #捣毁民族主义者安全屋
 		icon = GFX_decision_generic_confiscation
 		custom_cost_text = CP_30
@@ -908,7 +856,6 @@ GEA_decisions = {#德属东亚殖民地决议
 			civilian_factory_use = 2
 		}
 		visible = {
-			has_country_flag = Indochina_OPEN
 			has_completed_focus = GEA_Smother_the_flames_of_nationalism
 			NOT = { has_global_flag = GEA_Indochina_Uprising_Fired }
 		}
@@ -926,7 +873,9 @@ GEA_decisions = {#德属东亚殖民地决议
 			GEA_anti_nationalist_progress_effect = yes
 		}
 	}
+}
 
+GEA_decisions = {#德属东亚殖民地决议
 	GEA_hahl_saigon_cholon_grain_board = {#西贡-堤岸粮价委员会
 		icon = GFX_decision_generic_agriculture
 		allowed = { original_tag = GEA }

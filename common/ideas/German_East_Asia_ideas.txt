@@ -1409,6 +1409,14 @@ ideas = {
 				resistance_growth = -0.1
 				attrition = -0.05
 			}
+			equipment_bonus = {
+				armored_car_equipment = {
+					build_cost_ic = -0.25
+					soft_attack = 0.15
+					breakthrough = 0.15
+					instant = yes
+				}
+			}
 		}
 		GEA_Special_Authorization_2 = { #特别授权
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Special_Authorization_2"}
@@ -1421,6 +1429,14 @@ ideas = {
 				compliance_growth = 0.1
 				resistance_growth = -0.1
 				attrition = -0.05
+			}
+			equipment_bonus = {
+				armored_car_equipment = {
+					build_cost_ic = -0.25
+					soft_attack = 0.15
+					breakthrough = 0.15
+					instant = yes
+				}
 			}
 		}
 		GEA_Dedication_to_duty = { #恪尽职守

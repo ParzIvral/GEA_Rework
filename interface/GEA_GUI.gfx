@@ -60,12 +60,6 @@ spriteTypes = {
 	}
 
 	spriteType = {
-		name = "GEA_South_Guinea"
-		texturefile = "gfx/interface/GEAGUI/GEA_South_Guinea.png"
-		transparencecheck = yes
-	}
-
-	spriteType = {
 		name = "GEA_Samoa"
 		texturefile = "gfx/interface/GEAGUI/GEA_Samoa.png"
 		transparencecheck = yes
@@ -89,28 +83,6 @@ spriteTypes = {
 		transparencecheck = yes
 	}
 
-	spriteType = {
-		name = "GEA_Borneo"
-		texturefile = "gfx/interface/GEAGUI/GEA_Borneo.png"
-		transparencecheck = yes
-	}
-
-
-
-
-
-
-
-
-
-
-
-
-	spriteType = {
-		name = "GEA_Burma_soc"
-		texturefile = "gfx/interface/GEAGUI/GEA_Burma_soc.png"
-		transparencecheck = yes
-	}
 
 	spriteType = {
 		name = "GEA_Burma_ger"
@@ -125,24 +97,6 @@ spriteTypes = {
 	}
 	
 	spriteType = {
-		name = "GEA_HOL_Guinea"
-		texturefile = "gfx/interface/GEAGUI/GEA_HOL_Guinea.png"
-		transparencecheck = yes
-	}
-
-	spriteType = {
-		name = "GEA_Guinea"
-		texturefile = "gfx/interface/GEAGUI/GEA_Guinea.png"
-		transparencecheck = yes
-	}
-
-	spriteType = {
-		name = "GEA_Indochina_schorner"
-		texturefile = "gfx/interface/GEAGUI/GEA_Indochina_schorner.png"
-		transparencecheck = yes
-	}
-
-	spriteType = {
 		name = "GEA_Indochina_inc"
 		texturefile = "gfx/interface/GEAGUI/GEA_Indochina_inc.png"
 		transparencecheck = yes
@@ -151,12 +105,6 @@ spriteTypes = {
 	spriteType = {
 		name = "GEA_Indochina_vin"
 		texturefile = "gfx/interface/GEAGUI/GEA_Indochina_vin.png"
-		transparencecheck = yes
-	}
-
-	spriteType = {
-		name = "GEA_Philippines_soc"
-		texturefile = "gfx/interface/GEAGUI/GEA_Philippines_soc.png"
 		transparencecheck = yes
 	}
 
@@ -173,20 +121,8 @@ spriteTypes = {
 	}
 
 	spriteType = {
-		name = "GEA_Thailand_soc"
-		texturefile = "gfx/interface/GEAGUI/GEA_Thailand_soc.png"
-		transparencecheck = yes
-	}
-
-	spriteType = {
 		name = "GEA_Thailand_ger"
 		texturefile = "gfx/interface/GEAGUI/GEA_Thailand_ger.png"
-		transparencecheck = yes
-	}
-
-	spriteType = {
-		name = "GEA_Hawaii_usa"
-		texturefile = "gfx/interface/GEAGUI/GEA_Hawaii_usa.png"
 		transparencecheck = yes
 	}
 
@@ -447,6 +383,24 @@ spriteTypes = {
 	spriteType = {
 		name = "GEA_total_background"
 		texturefile = "gfx/interface/GEAGUI/total_background.png"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "GEA_extra_background"
+		texturefile = "gfx/interface/GEAGUI/GEA_extra_background.png"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "GEA_Hainan_ger"
+		texturefile = "gfx/interface/GEAGUI/GEA_Hainan_ger.png"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "GEA_Hainan"
+		texturefile = "gfx/interface/GEAGUI/GEA_Hainan.png"
 		transparencecheck = yes
 	}
 }
