@@ -744,4 +744,25 @@ SpriteTypes = {
 		name = "GFX_GEA_Iron_within_Iron_without"
 		texturefile = "gfx/interface/goals/GEA_Iron_within_Iron_without.png"
 	}
+	SpriteType = { name = "GFX_GEA_The_Far_East_is_at_war_again" texturefile = "gfx/interface/goals/GEA_The_Far_East_is_at_war_again.png" }
+	SpriteType = { name = "GFX_GEA_Innovate_and_renew" texturefile = "gfx/interface/goals/GEA_Innovate_and_renew.png" }
+	SpriteType = { name = "GFX_GEA_Fear_and_Discipline" texturefile = "gfx/interface/goals/GEA_Fear_and_Discipline.png" }
+	SpriteType = { name = "GFX_GEA_Improve_the_design_of_weapons" texturefile = "gfx/interface/goals/GEA_Improve_the_design_of_weapons.png" }
+	SpriteType = { name = "GFX_GEA_Wave_Defense" texturefile = "gfx/interface/goals/GEA_Wave_Defense.png" }
+	SpriteType = { name = "GFX_GEA_Encouraging_the_dying_person" texturefile = "gfx/interface/goals/GEA_Encouraging_the_dying_person.png" }
+	SpriteType = { name = "GFX_GEA_Blockade_of_the_ocean" texturefile = "gfx/interface/goals/GEA_Blockade_of_the_ocean.png" }
+	SpriteType = { name = "GFX_GEA_Seek_assistance_from_the_fatherland" texturefile = "gfx/interface/goals/GEA_Seek_assistance_from_the_fatherland.png" }
+	SpriteType = { name = "GFX_GEA_Emergency_ammunition" texturefile = "gfx/interface/goals/GEA_Emergency_ammunition.png" }
+	SpriteType = { name = "GFX_GEA_The_Siege_of_Saigon" texturefile = "gfx/interface/goals/GEA_The_Siege_of_Saigon.png" }
+	SpriteType = { name = "GFX_GEA_The_camaraderie_with_the_Dark_Continent" texturefile = "gfx/interface/goals/GEA_The_camaraderie_with_the_Dark_Continent.png" }
+	SpriteType = { name = "GFX_GEA_Invitation_to_Hunters" texturefile = "gfx/interface/goals/GEA_Invitation_to_Hunters.png" }
+	SpriteType = { name = "GFX_GEA_Eliminate_the_hiding_place" texturefile = "gfx/interface/goals/GEA_Eliminate_the_hiding_place.png" }
+	SpriteType = { name = "GFX_GEA_self_dependence" texturefile = "gfx/interface/goals/GEA_self_dependence.png" }
+	SpriteType = { name = "GFX_GEA_Recruit_all_available_soldiers" texturefile = "gfx/interface/goals/GEA_Recruit_all_available_soldiers.png" }
+	SpriteType = { name = "GFX_GEA_Never_repeat_the_mistake" texturefile = "gfx/interface/goals/GEA_Never_repeat_the_mistake.png" }
+	SpriteType = { name = "GFX_GEA_Fight_to_the_death" texturefile = "gfx/interface/goals/GEA_Fight_to_the_death.png" }
+	SpriteType = { name = "GFX_GEA_Desertion_Law" texturefile = "gfx/interface/goals/GEA_Desertion_Law.png" }
+	SpriteType = { name = "GFX_GEA_Organize_industrial_relocation" texturefile = "gfx/interface/goals/GEA_Organize_industrial_relocation.png" }
+	SpriteType = { name = "GFX_GEA_Berlin_intervention" texturefile = "gfx/interface/goals/GEA_Berlin_intervention.png" }
+	SpriteType = { name = "GFX_GEA_New_BB" texturefile = "gfx/interface/goals/GEA_New_BB.png" }
 }

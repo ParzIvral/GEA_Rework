@@ -253,6 +253,7 @@ if = {
 }
 
 add_dynamic_modifier = { modifier = GEA_gea_army }
+set_variable = { GEA_support_capcity = 1 }
 set_variable = { GEA_army_conscription_factor = -0.85 }
 set_variable = { GEA_army_conscription = 0.05 }
 set_variable = { GEA_army_army_org_factor = 0.10 }

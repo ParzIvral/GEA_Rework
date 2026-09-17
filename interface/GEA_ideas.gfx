@@ -205,14 +205,6 @@ spriteTypes = {
 		texturefile = "gfx/interface/ideas/gea/GEA_fuck_kmt.png"
 	}
 	spriteType = {
-		name = "GFX_idea_GEA_mine"
-		texturefile = "gfx/interface/ideas/gea/GEA_mine.png"
-	}
-	spriteType = {
-		name = "GFX_idea_GEA_railway"
-		texturefile = "gfx/interface/ideas/gea/GEA_railway.png"
-	}
-	spriteType = {
 		name = "GFX_idea_attack"
 		texturefile = "gfx/interface/ideas/gea/attack.png"
 	}
@@ -351,5 +343,17 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_idea_GEA_Dedication_to_duty"
 		texturefile = "gfx/interface/ideas/gea/GEA_Dedication_to_duty.png"
+	}
+	spriteType = {
+		name = "GFX_GEA_mio_policy_forced_labour"
+		texturefile = "gfx/interface/ideas/gea/GEA_mio_policy_forced_labour.png"
+	}
+	spriteType = {
+		name = "GFX_idea_GEA_colonial_question_heye_3"
+		texturefile = "gfx/interface/ideas/gea/GEA_colonial_question_heye_3.png"
+	}
+	spriteType = {
+		name = "GFX_idea_GEA_bbc_company"
+		texturefile = "gfx/interface/ideas/gea/GEA_bbc_company.png"
 	}
 }

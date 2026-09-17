@@ -459,10 +459,6 @@ add_namespace = GEA
 					}
 				}
 			}
-			promote_character = {
-				character = GEA_Wilhelm_Heye
-				ideology = autocratic_colonial_govt_subtype
-			}
 			set_country_flag = GEA_Governor_Heye_flag
 			add_popularity = {
 				ideology = paternal_autocrat
@@ -473,12 +469,15 @@ add_namespace = GEA
 				value = 1
 			}
 			custom_effect_tooltip = GEA_Indochina_Anger_Up
-			set_country_flag = GEA_Heye_Appointed
 			hidden_effect = {
 				set_politics = {
 					ruling_party = paternal_autocrat
 					elections_allowed = no
 				}
+				promote_character = {
+					character = GEA_Wilhelm_Heye
+					ideology = autocratic_colonial_govt_subtype
+				}	
 				remove_all_ministers = yes
 				add_ideas = {
 					GEA_Felix_von_Luckner_hog_pau
@@ -3245,13 +3244,17 @@ add_namespace = GEA
 		option = { #扫荡本身就是答案
 			name = GEA.307.a
 			set_country_flag = GEA_anti_viet_cong_sweeps_strategy
-			custom_effect_tooltip = GEA_anti_viet_cong_sweeps_strategy_tt
+			unlock_decision_tooltip = GEA_destroy_viet_cong_liaison_network
+			unlock_decision_tooltip = GEA_cut_border_arms_smuggling
+			unlock_decision_tooltip = GEA_launch_large_scale_sweeps
 		}
 
 		option = { #尽斩蛇头
 			name = GEA.307.b
 			set_country_flag = GEA_anti_viet_cong_decapitation_strategy
-			custom_effect_tooltip = GEA_anti_viet_cong_decapitation_strategy_tt
+			unlock_decision_tooltip = GEA_compile_viet_cong_leadership_dossiers
+			unlock_decision_tooltip = GEA_turn_viet_cong_couriers
+			unlock_decision_tooltip = GEA_execute_coordinated_decapitation_strikes 
 		}
 	}
 
@@ -3383,6 +3386,10 @@ add_namespace = GEA
 		option = { #命令已经下达，我该考虑的只是执行
 			name = GEA.310.a
 			army_experience = 10
+			hidden_effect = {
+				remove_ideas_with_trait = security_minister
+			}
+			add_ideas = GEA_Hans-Adolf_Prutzmann_sec_npo
 		}
 	}
 	country_event = {
@@ -3677,6 +3684,130 @@ add_namespace = GEA
 					owner = GEA
 					prioritize_location = 4379
 					allow_spawning_on_enemy_provs = yes
+				}
+			}
+		}
+	}
+
+
+	country_event = { #重点开发
+		id = GEA.1000
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.1000" }
+		title = GEA.1000.t
+		desc = GEA.1000.d
+		picture = GFX_GEA_26
+
+		fire_only_once = yes
+		is_triggered_only = yes
+
+		option = { 
+			name = GEA.1000.a
+			ai_chance = {
+				factor = 33
+			}
+			add_political_power = -75
+			336 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				add_state_modifier = {
+					modifier = { 
+						local_manpower = 0.05
+						local_building_slots = 3
+						state_production_speed_arms_factory_factor = 0.2
+					}
+				}
+			}
+		}
+		option = { 
+			name = GEA.1000.b
+			ai_chance = {
+				factor = 33
+			}
+			modify_country_flag = {
+				flag = GEA_Indochinese_Anger
+				value = -1
+			}
+			custom_effect_tooltip = GEA_Indochina_Anger_Down
+			857 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}	
+				add_state_modifier = {
+					modifier = { 
+						local_manpower = 0.05
+						local_building_slots = 1
+						state_production_speed_arms_factory_factor = 0.12
+					}
+				}
+			}
+			671 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}	
+				add_state_modifier = {
+					modifier = { 
+						local_manpower = 0.05
+						local_building_slots = 1
+						state_production_speed_arms_factory_factor = 0.12
+					}
+				}
+			}
+		}
+		option = { 
+			name = GEA.1000.c
+			ai_chance = {
+				factor = 33
+			}
+			333 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}	
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_state_modifier = {
+					modifier = { 
+						local_building_slots = 4
+						local_resources_factor = 0.12
+						state_production_speed_infrastructure_factor = 0.05
+						state_production_speed_arms_factory_factor = 0.05
+					}
+				}
+			}
+			828 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}	
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_state_modifier = {
+					modifier = { 
+						local_building_slots = 2
+						local_resources_factor = 0.2
+						state_production_speed_infrastructure_factor = 0.05
+						state_production_speed_arms_factory_factor = 0.05
+					}
 				}
 			}
 		}

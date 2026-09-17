@@ -4,7 +4,7 @@
 # By Gwener
 ###########################
 GEA_pacify_indochina_decisions = {#平定印度支那
-	GEA_nationalist_sabotage_cycle = {
+	GEA_nationalist_sabotage_cycle = { #民族主义者正在策划破坏
 		icon = GFX_decision_generic_military
 		allowed = { always = no }
 		activation = { always = no }
@@ -79,85 +79,6 @@ GEA_pacify_indochina_decisions = {#平定印度支那
 				custom_effect_tooltip = GEA_designate_priority_defense_zone_effect_tt
 			}
 			add_to_variable = { GEA_priority_defense_zones_selected = 1 }
-		}
-	}
-	GEA_Integrate_inc = {#整合印度支那
-		icon = eng_trade_unions_demand
-		visible = {
-			GEA = {
-				owns_state = 857
-				owns_state = 671
-				owns_state = 827
-				owns_state = 670
-				owns_state = 826
-				owns_state = 286
-				owns_state = 856
-			}
-			OR = {
-				857 = { NOT = { is_core_of = GEA } }
-				671 = { NOT = { is_core_of = GEA } }
-				827 = { NOT = { is_core_of = GEA } }
-				670 = { NOT = { is_core_of = GEA } }
-				826 = { NOT = { is_core_of = GEA } }
-				286 = { NOT = { is_core_of = GEA } }
-				856 = { NOT = { is_core_of = GEA } }
-			}
-		}
-		available = {
-			AND = {
-				owns_state = 857
-				owns_state = 671
-				owns_state = 827
-				owns_state = 670
-				owns_state = 826
-				owns_state = 286
-				owns_state = 856
-			}
-			OR = {
-				857 = {
-					compliance > 75
-				}
-				671 = {
-					compliance > 75
-				}
-				827 = {
-					compliance > 75
-				}
-				670 = {
-					compliance > 75
-				}
-				826 = {
-					compliance > 75
-				}
-				286 = {
-					compliance > 75
-				}
-				856 = {
-					compliance > 75
-				}
-			}
-		}
-		days_remove = 180
-		fire_only_once = yes
-		ai_will_do = { factor = 1000 }
-
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Integrate_inc target: [From.GetName]"
-			every_owned_state = {
-				limit = {
-					is_controlled_by = ROOT
-					OR = {
-						state = 857
-						state = 671
-						state = 827
-						state = 670
-						state = 826
-						state = 286
-						state = 856
-					}
-				}
-				add_core_of = GEA	
-			}
 		}
 	}
 	GEA_register_loyal_civic_associations = { #登记市民团体
@@ -874,8 +795,87 @@ GEA_pacify_indochina_decisions = {#平定印度支那
 		}
 	}
 }
-
 GEA_decisions = {#德属东亚殖民地决议
+	GEA_Integrate_inc = {#整合印度支那
+		icon = eng_trade_unions_demand
+		visible = {
+			GEA = {
+				owns_state = 857
+				owns_state = 671
+				owns_state = 827
+				owns_state = 670
+				owns_state = 826
+				owns_state = 286
+				owns_state = 856
+			}
+			has_country_flag = Indochina_OPEN
+			OR = {
+				857 = { NOT = { is_core_of = GEA } }
+				671 = { NOT = { is_core_of = GEA } }
+				827 = { NOT = { is_core_of = GEA } }
+				670 = { NOT = { is_core_of = GEA } }
+				826 = { NOT = { is_core_of = GEA } }
+				286 = { NOT = { is_core_of = GEA } }
+				856 = { NOT = { is_core_of = GEA } }
+			}
+		}
+		available = {
+			AND = {
+				owns_state = 857
+				owns_state = 671
+				owns_state = 827
+				owns_state = 670
+				owns_state = 826
+				owns_state = 286
+				owns_state = 856
+			}
+			OR = {
+				857 = {
+					compliance > 75
+				}
+				671 = {
+					compliance > 75
+				}
+				827 = {
+					compliance > 75
+				}
+				670 = {
+					compliance > 75
+				}
+				826 = {
+					compliance > 75
+				}
+				286 = {
+					compliance > 75
+				}
+				856 = {
+					compliance > 75
+				}
+			}
+		}
+		days_remove = 180
+		fire_only_once = yes
+		ai_will_do = { factor = 1000 }
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Integrate_inc target: [From.GetName]"
+			every_owned_state = {
+				limit = {
+					is_controlled_by = ROOT
+					OR = {
+						state = 857
+						state = 671
+						state = 827
+						state = 670
+						state = 826
+						state = 286
+						state = 856
+					}
+				}
+				add_core_of = GEA	
+			}
+		}
+	}
 	GEA_hahl_saigon_cholon_grain_board = {#西贡-堤岸粮价委员会
 		icon = GFX_decision_generic_agriculture
 		allowed = { original_tag = GEA }
@@ -3343,17 +3343,17 @@ GEA_decisions = {#德属东亚殖民地决议
 	}
 	GEA_blood_lumberyard = {#血汗伐木场
 		icon = wood
-		cost = 30
+		cost = 20
 		allowed = { original_tag = GEA }
 
-		days_remove = 90
-		days_re_enable = 120
+		days_remove = 60
+		days_re_enable = 90
 
 		available = {
 		}
 
 		visible = {
-			has_completed_focus = GEA_Boost_tourism_even_more
+			has_completed_focus = GEA_Deep_in_the_barren_land
 			has_country_flag = Borneo_OPEN
 			GEA = {
 				owns_state = 828 #沙巴
@@ -3363,6 +3363,7 @@ GEA_decisions = {#德属东亚殖民地决议
 		ai_will_do = {
 			factor = 30
 		}
+
 		modifier = {
 			political_power_gain = -0.01
 			production_speed_buildings_factor = 0.05
@@ -3374,19 +3375,12 @@ GEA_decisions = {#德属东亚殖民地决议
 			random_state = {
 				limit = {
 					OR = {
-						333 = {
-							is_owned_and_controlled_by = ROOT
-						}
-						828 = {
-							is_owned_and_controlled_by = ROOT
-						}
-						334 = {
-							is_owned_and_controlled_by = ROOT
-						}
-						1016 = {
-							is_owned_and_controlled_by = ROOT
-						}
+						state = 333
+						state = 828
+						state = 334
+						state = 1016
 					}
+					is_owned_and_controlled_by = ROOT
 				}
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
@@ -3394,6 +3388,50 @@ GEA_decisions = {#德属东亚殖民地决议
 					level = 1
 					instant_build = yes
 				}
+				set_state_flag = GEA_slot_selected_temp
+			}
+			random_state = {
+				limit = {
+					OR = {
+						state = 333
+						state = 828
+						state = 334
+						state = 1016
+					}
+					is_owned_and_controlled_by = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = GEA_slot_selected_temp
+			}
+			random_state = {
+				limit = {
+					OR = {
+						state = 333
+						state = 828
+						state = 334
+						state = 1016
+					}
+					is_owned_and_controlled_by = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+				set_state_flag = GEA_slot_selected_temp
+			}
+			333 = {
+				clr_state_flag = GEA_slot_selected_temp
+			}
+			828 = {
+				clr_state_flag = GEA_slot_selected_temp
+			}
+			334 = {
+				clr_state_flag = GEA_slot_selected_temp
+			}
+			1016 = {
+				clr_state_flag = GEA_slot_selected_temp
 			}
 		}
 	}

@@ -21,6 +21,66 @@ GEA_Indochina_click_effect = {
 		clr_country_flag = Indochina_OPEN
 	}
 }
+
+GEA_liquidate_partner_assets_effect = {
+	set_temp_variable = { GEA_liquidation_change = party_popularity@market_liberal }
+	divide_temp_variable = { GEA_liquidation_change = 3 }
+	set_temp_variable = { GEA_liquidation_negative = GEA_liquidation_change }
+	multiply_temp_variable = { GEA_liquidation_negative = -1 }
+	set_temp_variable = { GEA_liquidation_stability = GEA_liquidation_change }
+	multiply_temp_variable = { GEA_liquidation_stability = 2 }
+	add_popularity = { ideology = market_liberal popularity = GEA_liquidation_negative }
+	add_popularity = { ideology = authoritarian_democrat popularity = GEA_liquidation_change }
+	add_stability = var:GEA_liquidation_stability
+	if = {
+		limit = { NOT = { check_variable = { GEA_liquidation_change < 0.09 } } }
+		GEA_liquidate_one_civilian_factory_effect = yes
+		GEA_liquidate_one_civilian_factory_effect = yes
+		GEA_liquidate_one_civilian_factory_effect = yes
+		GEA_liquidate_one_civilian_factory_effect = yes
+		add_political_power = 100
+		ROOT = {
+			add_offsite_building = { type = industrial_complex level = 3 }
+			add_political_power = 50
+		}
+	}
+	else_if = {
+		limit = { NOT = { check_variable = { GEA_liquidation_change < 0.07 } } }
+		GEA_liquidate_one_civilian_factory_effect = yes
+		GEA_liquidate_one_civilian_factory_effect = yes
+		GEA_liquidate_one_civilian_factory_effect = yes
+		add_political_power = 75
+		ROOT = { add_offsite_building = { type = industrial_complex level = 3 } }
+	}
+	else_if = {
+		limit = { NOT = { check_variable = { GEA_liquidation_change < 0.05 } } }
+		GEA_liquidate_one_civilian_factory_effect = yes
+		GEA_liquidate_one_civilian_factory_effect = yes
+		add_political_power = 50
+		ROOT = { add_offsite_building = { type = industrial_complex level = 2 } }
+	}
+	else_if = {
+		limit = { NOT = { check_variable = { GEA_liquidation_change < 0.03 } } }
+		GEA_liquidate_one_civilian_factory_effect = yes
+		add_political_power = 25
+		ROOT = { add_offsite_building = { type = industrial_complex level = 1 } }
+	}
+}
+
+GEA_liquidate_one_civilian_factory_effect = {
+	random_owned_state = {
+		limit = { industrial_complex > 0 }
+		remove_building = { type = industrial_complex level = 1 }
+	}
+}
+
+GEA_liquidate_shandong_assets_effect = {
+	add_popularity = { ideology = market_liberal popularity = -0.07 }
+	GEA_liquidate_one_civilian_factory_effect = yes
+	GEA_liquidate_one_civilian_factory_effect = yes
+	GEA_liquidate_one_civilian_factory_effect = yes
+}
+
 GEA_Malaya_click_effect = {
 	if = {
 		limit = {

@@ -15,6 +15,9 @@ GEA_colonial_decisions = {
 	allowed = {
 		original_tag = GEA
 	}
+	NOT = {
+		has_completed_focus = GEA_Germany_Calling
+	}
 }
 
 GEA_heye_decisions = {
@@ -75,5 +78,9 @@ GEA_pacify_indochina_decisions = {
 	allowed = {
 		original_tag = GEA
 	}
+	visible = {
+		#has_completed_focus = GEA_Strike_hard
+	}
 	priority = 1003
+	visible_when_empty = yes
 }

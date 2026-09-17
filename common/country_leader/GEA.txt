@@ -8,8 +8,11 @@ leader_traits = {
 	sl_independent = {}							#社自 独立人士
 	ml_independent = {}							#市自 独立人士
 	sc_independent = {}							#保民 独立人士
+	ad_independent = {}							#威民 独立人士
+	pa_independent = {}							#家独 独立人士
 	Josias_group = {}							#约西亚斯集团
 	Reichsbank = {}								#帝国银行
+	Werwolf = {}								#狼人
 	Noble_diplomat = {							#贵族外交官
 		political_power_factor = 0.04
 		party_popularity_stability_factor = 0.1
@@ -18,6 +21,11 @@ leader_traits = {
 		stability_weekly = 0.001
 		industrial_capacity_factory = 0.03
 		max_command_power = 20
+	}
+	sec_a_cold-blooded_man = {						#冷血无情之人
+		special_forces_cap = 0.1
+		resistance_growth = -0.15
+		monthly_population = -0.08
 	}
 	Shipping_magnate = {						#航运大亨
 		industrial_capacity_dockyard = 0.06
@@ -32,11 +40,6 @@ leader_traits = {
 		war_support_factor = 0.05
 		experience_gain_navy_factor = 0.05
 		production_speed_dockyard_factor = 0.02
-	}
-	GEA_not_governor_but_king = {
-		political_power_factor = 0.15
-		stability_factor = 0.1
-		compliance_gain = -0.04
 	}
 }
 	
