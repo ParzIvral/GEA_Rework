@@ -787,8 +787,6 @@ add_namespace = GEA
 			custom_effect_tooltip = GEA_Indochina_Stability_Down
 			add_political_power = -20
 			add_war_support = -0.05
-			set_country_flag = GEA_do_martial_law
-			unlock_decision_tooltip = GEA_indochina_martial_law
 		}
 	}
 	country_event = {#一场印度支那的悲剧
@@ -3152,7 +3150,6 @@ add_namespace = GEA
 			}
 		}
 	}
-
 	country_event = { #圈地
 		id = GEA.304
 		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.304" }
@@ -3188,7 +3185,6 @@ add_namespace = GEA
 			}
 		}
 	}
-
 	country_event = { #帷幕后的秩序
 		id = GEA.305
 		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.305" }
@@ -3207,7 +3203,6 @@ add_namespace = GEA
 			}
 		}
 	}
-
 	country_event = { #模范臣民
 		id = GEA.306
 		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.306" }
@@ -3230,7 +3225,6 @@ add_namespace = GEA
 			}
 		}
 	}
-
 	country_event = { #广州余烬
 		id = GEA.307
 		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.307" }
@@ -3257,7 +3251,6 @@ add_namespace = GEA
 			unlock_decision_tooltip = GEA_execute_coordinated_decapitation_strikes 
 		}
 	}
-
 	country_event = { #另一面旗帜
 		id = GEA.308
 		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.308" }
@@ -3289,19 +3282,20 @@ add_namespace = GEA
 
 		option = {
 			name = GEA.309.a
-			division_template = {
-				name = "Städtische Bürgerwehr"
-				division_names_group = GEA_MIL_01
-				regiments = {
-					militia = { x = 0 y = 0 }
-					militia = { x = 0 y = 1 }
-					militia = { x = 0 y = 2 }
-					militia = { x = 1 y = 0 }
-					militia = { x = 1 y = 1 }
-					militia = { x = 1 y = 2 }
-				}
-			}
+			custom_effect_tooltip = GEA_loyal_citizens_mobilized_tt
 			hidden_effect = {
+				division_template = {
+					name = "Städtische Bürgerwehr"
+					division_names_group = GEA_MIL_01
+					regiments = {
+						militia = { x = 0 y = 0 }
+						militia = { x = 0 y = 1 }
+						militia = { x = 0 y = 2 }
+						militia = { x = 1 y = 0 }
+						militia = { x = 1 y = 1 }
+						militia = { x = 1 y = 2 }
+					}
+				}
 				286 = {
 					create_unit = {
 						division = "name = \"Bürgerwehr Saigon\" division_template = \"Städtische Bürgerwehr\" start_experience_factor = 0.3 start_equipment_factor = 0.7"
@@ -3372,7 +3366,6 @@ add_namespace = GEA
 			}
 		}
 	}
-
 	country_event = { #冷酷无情之人
 		id = GEA.310
 		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.310" }
@@ -3402,7 +3395,6 @@ add_namespace = GEA
 			name = GEA.311.a
 		}
 	}
-
 	country_event = {
 		id = GEA.312
 		title = GEA.312.t
@@ -3421,7 +3413,6 @@ add_namespace = GEA
 			}
 		}
 	}
-
 	country_event = {
 		id = GEA.313
 		title = GEA.313.t
@@ -3434,7 +3425,6 @@ add_namespace = GEA
 			add_stability = -0.02
 		}
 	}
-
 	country_event = {
 		id = GEA.314
 		title = GEA.314.t
@@ -3452,7 +3442,6 @@ add_namespace = GEA
 			}
 		}
 	}
-
 	country_event = {
 		id = GEA.315
 		title = GEA.315.t
@@ -3471,7 +3460,6 @@ add_namespace = GEA
 			}
 		}
 	}
-
 	country_event = {
 		id = GEA.316
 		title = GEA.316.t
@@ -3630,7 +3618,6 @@ add_namespace = GEA
 			}
 		}
 	}
-
 	country_event = { #忠诚城市第二梯队抵达
 		id = GEA.318
 		hidden = yes
@@ -3688,8 +3675,7 @@ add_namespace = GEA
 			}
 		}
 	}
-
-
+#经济
 	country_event = { #重点开发
 		id = GEA.1000
 		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.1000" }
@@ -3812,6 +3798,339 @@ add_namespace = GEA
 			}
 		}
 	}
+#印支战争
+	country_event = { #再度投身战火
+		id = GEA.1100
+		title = GEA.1100.t
+		desc = GEA.1100.d
+		picture = GFX_GEA_35
+
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = { #我们将战斗到底！
+			name = GEA.1100.a
+			add_war_support = 0.1
+		}
+	}
+	country_event = { #同僚来信
+		id = GEA.1101
+		title = GEA.1101.t
+		desc = GEA.1101.d
+
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = { #好吧，我们会尽全力帮助我们的朋友
+			name = GEA.1101.a
+			ai_chance = {
+				factor = 100
+			}
+			add_political_power = -100
+			add_stability = -0.05
+			GEA = {
+				country_event = {
+					id = GEA.1102
+					days = 7
+				}
+			}
+		}
+
+		option = { #表达我们的同情
+			name = GEA.1101.b
+			ai_chance = {
+				factor = 0
+			}
+			add_political_power = -25
+			GEA = {
+				country_event = {
+					id = GEA.1103
+					days = 7
+				}
+			}
+		}
+
+		option = { #中央非洲同样自身难保
+			name = GEA.1101.c
+			ai_chance = {
+				factor = 0
+			}
+			GEA = {
+				country_event = {
+					id = GEA.1104
+					days = 7
+				}
+			}
+		}
+	}
+
+	country_event = { #中央非洲支援抵达
+		id = GEA.1102
+		title = GEA.1102.t
+		desc = GEA.1102.d
+
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = { #很好！
+			name = GEA.1102.a
+			add_political_power = 100
+			add_stability = 0.05
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 3000
+				producer = MAF
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 500
+				producer = MAF
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 400
+				producer = MAF
+			}
+			add_equipment_to_stockpile = {
+				type = motorized_equipment
+				amount = 100
+				producer = MAF
+			}
+		}
+	}
+
+	country_event = { #中央非洲支援抵达
+		id = GEA.1103
+		title = GEA.1103.t
+		desc = GEA.1103.d
+
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = { #很好！
+			name = GEA.1103.a
+			add_political_power = 50
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 1000
+				producer = MAF
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 50
+				producer = MAF
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 100
+				producer = MAF
+			}
+		}
+	}
+
+	country_event = { #中央非洲爱莫能助
+		id = GEA.1104
+		title = GEA.1104.t
+		desc = GEA.1104.d
+
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = { #这帮混蛋！
+			name = GEA.1104.a
+			add_political_power = 20
+		}
+	}
+	country_event = { #远东危局
+		id = GEA.1105
+		title = GEA.1105.t
+		desc = GEA.1105.d
+
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = { #全力支持东亚政府
+			name = GEA.1105.a
+			ai_chance = {
+				factor = 100
+			}
+			add_political_power = -50
+			add_stability = -0.05
+			add_manpower = -30000
+			GEA = {
+				country_event = {
+					id = GEA.1102
+					days = 7
+				}
+			}
+		}
+
+		option = { #提供有限的支援
+			name = GEA.1105.b
+			ai_chance = {
+				factor = 0
+			}
+			add_political_power = -25
+			add_manpower = -20000
+			GEA = {
+				country_event = {
+					id = GEA.1103
+					days = 7
+				}
+			}
+		}
+
+		option = { #他们得自力更生
+			name = GEA.1105.c
+			ai_chance = {
+				factor = 0
+			}
+			add_political_power = -10
+			GEA = {
+				country_event = {
+					id = GEA.1104
+					days = 7
+				}
+			}
+		}
+	}
+
+	country_event = { #祖国支援抵达
+		id = GEA.1106
+		title = GEA.1106.t
+		desc = GEA.1106.d
+
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = { #很好！
+			name = GEA.1106.a
+			add_political_power = 100
+			add_stability = 0.05
+			add_manpower = 30000
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 2000
+				producer = GER
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 200
+				producer = GER
+			}
+		}
+	}
+
+	country_event = { #祖国支援抵达
+		id = GEA.1107
+		title = GEA.1107.t
+		desc = GEA.1107.d
+
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = { #好吧...
+			name = GEA.1107.a
+			add_manpower = 20000
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 1000
+				producer = GER
+			}
+		}
+	}
+
+	country_event = { #祖国拒绝援助
+		id = GEA.1108
+		title = GEA.1108.t
+		desc = GEA.1108.d
+
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = { #操
+			name = GEA.1108.a
+			add_stability = 0.03
+		}
+	}
+
+	country_event = { #印度支那局势恶化(GER)
+		id = GEA.1109
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.1109" }
+		title = GEA.1109.t
+		desc = GEA.1109.d
+		picture = GFX_report_event_vietnam
+
+		is_triggered_only = yes
+
+		option = { #他们可以对付的
+			name = GEA.1109.a
+			ai_chance = {
+				factor = 30
+			}
+		}
+		option = { #援军过去！
+			name = GEA.1109.b
+			ai_chance = {
+				factor = 60
+			}
+			add_political_power = -30
+			add_manpower = -10000
+
+			send_equipment = {
+				target = GEA
+				type = infantry_equipment
+				amount = 1000
+			}
+			GEA = {
+				country_event = {
+					id = Ostasien.21
+					days = 2
+				}
+			}
+		}
+		option = { #一场在亚洲的地面战？这个可以有！
+			name = GEA.1109.c
+			ai_chance = {
+				factor = 10
+				modifier = {
+					factor = 100
+					INC = {
+						NOT = {
+							is_ai = yes
+						}
+					}
+				}
+				modifier = {
+					factor = 0
+					any_enemy_country = {
+						is_major = yes
+					}
+				}
+				modifier = {
+					factor = 0
+					GEA = {
+						is_ai = yes					
+					}
+				}
+				modifier = {
+					factor = 0
+					INC = {
+						NOT = {
+							is_ai = yes
+						}
+					}
+				}
+			}
+			add_war_support = -0.1 
+			set_global_flag = GFX_report_event_GER_colony_problems
+			add_to_war = {
+				targeted_alliance = GEA
+				enemy = INC
+			}
+		}
+	}
+
 #隐藏事件
 	country_event = {
 		id = GEA.10000
@@ -3824,9 +4143,6 @@ add_namespace = GEA
 		}
 	}
 #印支事件
-
-	
-
 	country_event = { #印度支那起义
 		id = Ostasien.15
 		title = Ostasien.15.t
@@ -4060,121 +4376,6 @@ add_namespace = GEA
 						days = 7
 					}
 				}
-			}
-		}
-	}
-	country_event = { #印度支那局势恶化
-		id = Ostasien.16
-		title = Ostasien.16.t
-		desc = Ostasien.16.d
-		picture = GFX_report_event_SIA_German_Economical_Dominance
-
-		fire_only_once = yes
-
-		trigger = {
-			tag = GEA
-			has_war_with = INC
-			controls_state = 671
-			INC = {
-				controls_state = 827
-				NOT = {
-					surrender_progress > 0.20
-				}
-			}
-		}
-
-		immediate = {
-			log = "[GetDateText]: [Root.GetName]: event Ostasien.16"
-			GER = {
-				country_event = Ostasien.17
-			}
-		}
-
-		option = { # We must hurry!
-			name = Ostasien.16.a
-			671 = {
-				remove_building = {
-					type = industrial_complex
-					level = 1
-				}
-			}
-			336 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-			add_political_power = -30
-		}
-		option = { # Everything is alright!
-			name = Ostasien.16.b
-		}
-	}
-	country_event = { #印度支那局势恶化(GER)
-		id = Ostasien.17
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.17" }
-		title = Ostasien.17.t
-		desc = Ostasien.17.d
-		picture = GFX_report_event_vietnam
-
-		is_triggered_only = yes
-
-		option = { #他们可以对付的
-			name = Ostasien.17.a
-			ai_chance = {
-				factor = 30
-			}
-		}
-		option = { #援军过去！
-			name = Ostasien.17.b
-			ai_chance = {
-				factor = 60
-			}
-			add_political_power = -30
-			add_manpower = -10000
-
-			send_equipment = {
-				target = GEA
-				type = infantry_equipment
-				amount = 1000
-			}
-			GEA = {
-				country_event = {
-					id = Ostasien.21
-					days = 2
-				}
-			}
-		}
-		option = { #一场在亚洲的地面战？这个可以有！
-			name = Ostasien.17.c
-			ai_chance = {
-				factor = 10
-				modifier = {
-					factor = 0
-					any_enemy_country = {
-						is_major = yes
-					}
-				}
-				modifier = {
-					factor = 0
-					has_idea = GER_quenched_militarism
-				}
-				modifier = {
-					factor = 0
-					INC = {
-						NOT = {
-							is_ai = yes
-						}
-					}
-				}
-			}
-			add_war_support = -0.1 
-			set_global_flag = GFX_report_event_GER_colony_problems
-			add_to_war = {
-				targeted_alliance = GEA
-				enemy = INC
 			}
 		}
 	}
@@ -6690,3 +6891,14 @@ add_namespace = GEA
 		}
 	}
 
+	state_event = {
+		id = GEA.1200
+		hidden = yes
+		is_triggered_only = yes
+		immediate = {
+			log = "[GetDateText]: State event GEA.1200 in [Root.GetName]"
+			remove_dynamic_modifier = {
+				modifier = GEA_scorched_earth_state_modifier
+			}
+		}
+	}

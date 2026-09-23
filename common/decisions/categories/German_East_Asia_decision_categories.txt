@@ -50,6 +50,15 @@ GEA_focus_china_decisions = {
 	}
 }
 
+GEA_decisions = {
+	icon = GFX_decision_GEA_decision
+	allowed = {
+		original_tag = GEA
+	}
+	priority = 2000
+	visible_when_empty = yes
+	scripted_gui = GEA_MAP_DECISION_UI
+}
 GEA_josias_decisions = {
 	icon = GFX_decision_GEA_josias
 	allowed = {
@@ -58,21 +67,10 @@ GEA_josias_decisions = {
 	visible = {
 		has_completed_focus = GEA_Josias_Group 
 	}
-	priority = 101
+	priority = 1000
 	visible_when_empty = yes
 	scripted_gui = GEA_Josias_DECISION_UI
 }
-
-GEA_decisions = {
-	icon = GFX_decision_GEA_decision
-	allowed = {
-		original_tag = GEA
-	}
-	priority = 1002
-	visible_when_empty = yes
-	scripted_gui = GEA_MAP_DECISION_UI
-}
-
 GEA_pacify_indochina_decisions = {
 	icon = GFX_decision_GEA_indochina_decisions
 	allowed = {
@@ -81,6 +79,18 @@ GEA_pacify_indochina_decisions = {
 	visible = {
 		#has_completed_focus = GEA_Strike_hard
 	}
-	priority = 1003
+	priority = 1100
+	visible_when_empty = yes
+}
+
+GEA_War_Experience_decisions = {
+	icon = GFX_decision_GEA_indochina_decisions
+	allowed = {
+		original_tag = GEA
+	}
+	visible = {
+		#has_completed_focus = GEA_Innovate_and_renew
+	}
+	priority = 1200
 	visible_when_empty = yes
 }

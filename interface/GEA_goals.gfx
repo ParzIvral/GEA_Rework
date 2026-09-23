@@ -765,4 +765,33 @@ SpriteTypes = {
 	SpriteType = { name = "GFX_GEA_Organize_industrial_relocation" texturefile = "gfx/interface/goals/GEA_Organize_industrial_relocation.png" }
 	SpriteType = { name = "GFX_GEA_Berlin_intervention" texturefile = "gfx/interface/goals/GEA_Berlin_intervention.png" }
 	SpriteType = { name = "GFX_GEA_New_BB" texturefile = "gfx/interface/goals/GEA_New_BB.png" }
+	SpriteType = { name = "GFX_GEA_Governor_Kartel" texturefile = "gfx/interface/goals/GEA_Governor_Kartel.png" }
+	SpriteType = { name = "GFX_GEA_The_guidance_of_Governor_Tilo" texturefile = "gfx/interface/goals/GEA_The_guidance_of_Governor_Tilo.png" }
+	SpriteType = { name = "GFX_GEA_Pour_a_tight_and_economical_chain" texturefile = "gfx/interface/goals/GEA_Pour_a_tight_and_economical_chain.png" }
+	SpriteType = { name = "GFX_GEA_Guns_steel_and_furnaces" texturefile = "gfx/interface/goals/GEA_Guns_steel_and_furnaces.png" }
+	SpriteType = { name = "GFX_GEA_Humanitarian_construction" texturefile = "gfx/interface/goals/GEA_Humanitarian_construction.png" }
+	SpriteType = { name = "GFX_GEA_Establish_the_security_status_of_agricultural_products" texturefile = "gfx/interface/goals/GEA_Establish_the_security_status_of_agricultural_products.png" }
+	SpriteType = { name = "GFX_GEA_Das_Erbe_des_Grusonwerks" texturefile = "gfx/interface/goals/GEA_Das_Erbe_des_Grusonwerks.png" }
+	SpriteType = { name = "GFX_GEA_Treue_verpflichtet_beide_Seiten" texturefile = "gfx/interface/goals/GEA_Treue_verpflichtet_beide_Seiten.png" }
+	SpriteType = { name = "GFX_GEA_The_Essen_Constitution_in_the_Far_East" texturefile = "gfx/interface/goals/GEA_The_Essen_Constitution_in_the_Far_East.png" }
+	SpriteType = { name = "GFX_GEA_Governor_Fritz_Meers_Wild_Journey" texturefile = "gfx/interface/goals/GEA_Governor_Fritz_Meers_Wild_Journey.png" }
+	SpriteType = { name = "GFX_GEA_The_foundation_of_the_war_industry" texturefile = "gfx/interface/goals/GEA_The_foundation_of_the_war_industry.png" }
+	SpriteType = { name = "GFX_GEA_Reinventing_the_East_through_Chemistry" texturefile = "gfx/interface/goals/GEA_Reinventing_the_East_through_Chemistry.png" }
+	SpriteType = { name = "GFX_GEA_The_wisdom_of_the_Central_Committee" texturefile = "gfx/interface/goals/GEA_The_wisdom_of_the_Central_Committee.png" }
+	SpriteType = { name = "GFX_GEA_For_the_sake_of_progress_to_plunder" texturefile = "gfx/interface/goals/GEA_For_the_sake_of_progress_to_plunder.png" }
+	SpriteType = { name = "GFX_GEA_Being_unfeeling_due_to_the_necessity_of_evil" texturefile = "gfx/interface/goals/GEA_Being_unfeeling_due_to_the_necessity_of_evil.png" }
+	SpriteType = { name = "GFX_GEA_Taking_the_first_step_towards_greatness" texturefile = "gfx/interface/goals/GEA_Taking_the_first_step_towards_greatness.png" }
+	SpriteType = { name = "GFX_GEA_Another_scientific_center_of_the_empire" texturefile = "gfx/interface/goals/GEA_Another_scientific_center_of_the_empire.png" }
+	SpriteType = { name = "GFX_GEA_Expansion_leads_to_prosperity" texturefile = "gfx/interface/goals/GEA_Expansion_leads_to_prosperity.png" }
+	SpriteType = { name = "GFX_GEA_Rapid_industrialization" texturefile = "gfx/interface/goals/GEA_Rapid_industrialization.png" }
+	SpriteType = { name = "GFX_GEA_Rushing_headlong_into_technological_progress" texturefile = "gfx/interface/goals/GEA_Rushing_headlong_into_technological_progress.png" }
+	SpriteType = { name = "GFX_GEA_Chasing_after_big_business" texturefile = "gfx/interface/goals/GEA_Chasing_after_big_business.png" }
+	SpriteType = { name = "GFX_GEA_Compassion_and_Humanity" texturefile = "gfx/interface/goals/GEA_Compassion_and_Humanity.png" }
+	SpriteType = { name = "GFX_GEA_Get_rid_of_the_epidemic_of_red_tape" texturefile = "gfx/interface/goals/GEA_Get_rid_of_the_epidemic_of_red_tape.png" }
+	SpriteType = { name = "GFX_GEA_Transform_the_export-oriented_economy" texturefile = "gfx/interface/goals/GEA_Transform_the_export-oriented_economy.png" }
+	SpriteType = { name = "GFX_GEA_The_silent_industrial_factory_building" texturefile = "gfx/interface/goals/GEA_The_silent_industrial_factory_building.png" }
+	SpriteType = { name = "GFX_GEA_With_a-kind_mask_on" texturefile = "gfx/interface/goals/GEA_With_a-kind_mask_on.png" }
+	SpriteType = { name = "GFX_GEA_Enterprise_Exceptionalism" texturefile = "gfx/interface/goals/GEA_Enterprise_Exceptionalism.png" }
+	SpriteType = { name = "GFX_GEA_The_benefits_of_arms_sales" texturefile = "gfx/interface/goals/GEA_The_benefits_of_arms_sales.png" }
+	SpriteType = { name = "GFX_GEA_The_factorys_thick_smoke_wealth_and_German_East_Asia" texturefile = "gfx/interface/goals/GEA_The_factorys_thick_smoke_wealth_and_German_East_Asia.png" }
 }

@@ -1491,38 +1491,6 @@ ideas = {
 				resistance_decay = 0.1
 			}
 		} 
-		GEA_focus_attack = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_focus_attack"}
-			picture = attack
-			allowed = { always = no }
-			modifier = {
-				max_planning = 0.1
-				army_attack_factor = 0.1
-				army_speed_factor = 0.05
-			}
-		} 
-		GEA_gas = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_gas"}
-			picture = generic_gas_idea
-			allowed = { always = no }
-			modifier = {
-				stability_factor = -0.05
-				war_support_factor = -0.05
-				army_attack_factor = 0.1
-				breakthrough_factor = 0.1
-				army_morale_factor = -0.1
-			}
-		} 
-		GEA_Liquid_combustion_bomb = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Liquid_combustion_bomb"}
-			picture = bomb
-			allowed = { always = no }
-			modifier = {
-				air_cas_efficiency = 0.1
-				air_bombing_targetting = 0.1
-				air_strategic_bomber_bombing_factor = 0.2
-			}
-		} 
 #军事线
 		GEA_invest_arms_industry = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_invest_arms_industry" }

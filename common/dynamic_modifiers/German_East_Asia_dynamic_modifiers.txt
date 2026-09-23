@@ -51,6 +51,7 @@ GEA_gea_army = {
 	railway_gun_bombardment_factor = GEA_army_railway_gun_bombardment_factor 		#列车炮轰击
 	army_speed_factor = GEA_army_speed_factor 										#军队速度
 	breakthrough_factor = GEA_army_breakthrough_factor 								#突破
+	army_attack_speed_factor = GEA_army_attack_speed_factor 						#进攻速度
 	planning_speed = GEA_army_planning_speed 										#计划速度
 	max_dig_in_factor = GEA_army_max_dig_in_factor 									#堑壕上限
 	dig_in_speed_factor = GEA_dig_in_speed_factor 									#堑壕速度
@@ -94,6 +95,18 @@ GEA_martial_law_modifier = { #GEA_has_martial_law_at_there
 	local_resources_factor = 0.15
 	resistance_decay = 0.1
 	compliance_growth = -0.2
+}
+
+GEA_scorched_earth_state_modifier = {
+	icon = "GFX_GEA_Desertion_Law"
+	enable = { always = yes }
+	remove_trigger = { always = no }
+	army_speed_factor_for_controller = -0.3
+	attrition_for_controller = -0.2
+	disable_strategic_redeployment = 1
+	local_building_slots = -3
+	local_manpower = -0.3
+	local_supply_impact_factor = -0.2
 }
 
 GEA_developing_porgram = {

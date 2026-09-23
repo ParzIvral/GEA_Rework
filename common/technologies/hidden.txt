@@ -1,6 +1,6 @@
 technologies = {
 
-	camel_corps_tech = { #效果：骆驼骑兵在沙漠攻击+15%、防御+5%、移动+3%
+	camel_corps_tech = {
 
 		research_cost = 1
 
@@ -20,10 +20,8 @@ technologies = {
 		}
 	}
 
-	cossack_corps_tech = { #效果：非正规骑兵在丘陵防御+5%、移动+3%，平原防御+5%
+	cossack_corps_tech = {
 		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech cossack_corps_tech"}
-
-		research_cost = 1
 
 		# only from focus!!! #####
 		allow = {
@@ -32,6 +30,9 @@ technologies = {
 
 		#If you change these
 		#Change the custom tooltip too: cossack_corps_tech_effect
+		enable_subunits = {
+			irregular_cavalry
+		}
 		irregular_cavalry = {
 			hills = {
 				defence = 0.05
@@ -39,12 +40,14 @@ technologies = {
 			}
 			plains = {
 				defence = 0.05
-				
+			}
+			steppe = {
+				movement = 0.05
 			}
 		}
 	}
 
-	irregular_cavalry_tech = { #效果：解锁非正规骑兵营
+	irregular_cavalry_tech = {
 		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech irregular_cavalry_tech"}
 
 		research_cost = 1
@@ -59,10 +62,10 @@ technologies = {
 		enable_subunits = {
 			irregular_cavalry
 		}
-		
+
 	}
 
-	irregular_infantry_tech = { #效果：解锁非正规步兵营
+	irregular_infantry_tech = {
 		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech irregular_infantry_tech"}
 
 		research_cost = 1
@@ -78,8 +81,8 @@ technologies = {
 			irregular_infantry
 		}
 	}
-	
-	elite_infantry_tech = { #效果：解锁精锐步兵营
+
+	elite_infantry_tech = {
 		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech elite_infantry_tech"}
 
 		research_cost = 1
@@ -96,8 +99,7 @@ technologies = {
 		}
 	}
 
-
-	tech_ski_infantry = { #效果：步兵在丘陵攻击/防御/移动各+5%，山地攻击/防御+5%、移动+10%
+	tech_ski_infantry = {
 
 		research_cost = 1
 
@@ -122,7 +124,7 @@ technologies = {
 		}
 	}
 
-	tech_marine_bonus = { #效果：海军陆战队、两栖机械化、两栖装甲软攻+5%、硬攻+5%
+	tech_marine_bonus = {
 
 		research_cost = 1
 
@@ -147,7 +149,7 @@ technologies = {
 		}
 	}
 
-	tech_marine_bonus_2 = { #效果：海军陆战队、两栖机械化、两栖装甲软攻+5%、硬攻+5%
+	tech_marine_bonus_2 = {
 
 		research_cost = 1
 
@@ -172,7 +174,7 @@ technologies = {
 		}
 	}
 
-	jungle_warfare = { #效果：轻步兵类部队在丛林攻击+5%、防御+3%、移动+5%
+	jungle_warfare = {
 
 		research_cost = 1
 
@@ -192,7 +194,7 @@ technologies = {
 		}
 	}
 
-	forest_warfare = { #效果：轻步兵类部队在森林攻击+5%、防御+3%、移动+5%
+	forest_warfare = {
 
 		research_cost = 1
 
@@ -212,7 +214,7 @@ technologies = {
 		}
 	}
 
-	improved_field_hospitals = { #效果：野战医院伤兵复员+20%、经验损失-10%
+	improved_field_hospitals = {
 
 		research_cost = 1
 
@@ -226,6 +228,787 @@ technologies = {
 		field_hospital = {
 			casualty_trickleback = 0.20
 			experience_loss_factor = -0.10
+		}
+	}
+
+	expanded_engineer_corps_tech = {
+
+		research_cost = 1
+
+		# only from focus!!! #####
+		allow = {
+			always = no
+		}
+
+		#If you change these
+		#Change the custom tooltip too: expanded_engineer_corps_tech_effect
+		engineer = {
+			entrenchment = 2
+			fort = {
+				defence = 0.10
+				attack = 0.10
+			}
+		}
+		pioneer_support = {
+			entrenchment = 2
+			fort = {
+				defence = 0.10
+				attack = 0.10
+			}
+		}
+		jungle_pioneers_support = {
+			entrenchment = 2
+			fort = {
+				defence = 0.10
+				attack = 0.10
+			}
+		}
+		assault_engineer = {
+			entrenchment = 2
+			fort = {
+				defence = 0.10
+				attack = 0.10
+			}
+		}
+		armored_engineer = {
+			entrenchment = 2
+			fort = {
+				defence = 0.10
+				attack = 0.10
+			}
+		}
+	}
+
+	mountain_training_tech = {
+
+		research_cost = 1
+
+		# only from focus!!! #####
+		allow = {
+			always = no
+		}
+
+		#If you change these
+		#Change the custom tooltip too: mountain_training_tech_effect
+		category_light_infantry = {
+			mountain = {
+				attack = 0.05
+				defence = 0.05
+				movement = 0.1
+			}
+		}
+	}
+
+	improved_recon_units_tech = {
+
+		research_cost = 1
+
+		# only from focus!!! #####
+		allow = {
+			always = no
+		}
+
+		#If you change these
+		#Change the custom tooltip too: improved_recon_units_tech_effect
+		category_recon = {
+			recon = 1
+			breakthrough = 1
+		}
+	}
+
+	asymmetrical_warfare = {
+
+		research_cost = 1
+
+		# only from focus!!! #####
+		allow = {
+			always = no
+		}
+
+		#If you change these
+		#Change the custom tooltip too: asymmetrical_warfare_effect
+		category_light_infantry = {
+			urban = {
+				attack = 0.05
+				defence = 0.03
+				movement = 0.05
+			}
+		}
+	}
+
+	mountain_warfare = {
+		research_cost = 1
+
+		# only from focus!!! #####
+		allow = {
+			always = no
+		}
+
+		category_light_infantry = {
+			mountain = {
+				attack = 0.05
+				defence = 0.05
+				movement = 0.1
+			}
+		}
+	}
+
+	urban_warfare = {
+		research_cost = 1
+
+		# only from focus!!! #####
+		allow = {
+			always = no
+		}
+
+		category_light_infantry = {
+			urban = {
+				attack = 0.05
+				defence = 0.03
+				movement = 0.05
+			}
+		}
+	}
+
+	desert_warfare = {
+		research_cost = 1
+
+		# only from focus!!! #####
+		allow = {
+			always = no
+		}
+
+		#If you change these
+		#Change the custom tooltip too: desert_warfare_effect
+		category_light_infantry = {
+			desert = {
+				attack = 0.10
+				defence = 0.05
+				movement = 0.05
+			}
+		}
+	}
+
+	steppe_warfare = {
+		research_cost = 1
+
+		# only from focus!!! #####
+		allow = {
+			always = no
+		}
+
+		#If you change these
+		#Change the custom tooltip too: steppe_warfare_effect
+		category_light_infantry = {
+			steppe = {
+				attack = 0.10
+				defence = 0.05
+				movement = 0.05
+			}
+		}
+	}
+
+	marsh_warfare = {
+		research_cost = 1
+
+		# only from focus!!! #####
+		allow = {
+			always = no
+		}
+
+		#If you change these
+		#Change the custom tooltip too: marsh_warfare_effect
+		category_light_infantry = {
+			marsh = {
+				attack = 0.10
+				defence = 0.05
+				movement = 0.05
+			}
+		}
+	}
+
+	anti_fortification_artillery = {
+
+		research_cost = 1
+
+		# only from focus!!! #####
+		allow = {
+			always = no
+		}
+
+		#If you change these
+		#Change the custom tooltip too: anti_fortification_artillery_effect
+		category_artillery = {
+			fort = {
+				attack = 0.20
+			}
+		}
+	}
+
+	tech_integrated_specialists = {
+
+		research_cost = 1
+
+		# only from focus!!! #####
+		allow = {
+			always = no
+		}
+
+		#If you change these
+		#Change the custom tooltip too: tech_integrated_specialists_effect
+		special_forces_cap = 0.05
+		category_special_forces = {
+			soft_attack = 0.05
+			hard_attack = 0.05
+		}
+	}
+
+	tech_at_cavalry = {
+
+		research_cost = 1
+
+		# only from focus!!! #####
+		allow = {
+			always = no
+		}
+
+		#If you change these
+		#Change the custom tooltip too: tech_at_cavalry_effect
+		cavalry = {
+			ap_attack = 0.75
+			hard_attack = 0.1
+		}
+		irregular_cavalry = {
+			ap_attack = 0.75
+			hard_attack = 0.1
+		}
+	}
+
+	tech_dragoon_tactics = {
+
+		research_cost = 1
+
+		# only from focus!!! #####
+		allow = {
+			always = no
+		}
+
+		land_night_attack = 0.1
+
+		#If you change these
+		#Change the custom tooltip too: tech_dragoon_tactics_effect
+		cavalry = {
+			max_organisation = 5
+			default_morale = 0.1
+			maximum_speed = 0.1
+		}
+		irregular_cavalry = {
+			max_organisation = 5
+			default_morale = 0.1
+			maximum_speed = 0.1
+		}
+	}
+
+	tech_home_bred_horses = {
+
+		research_cost = 1
+
+		# only from focus!!! #####
+		allow = {
+			always = no
+		}
+
+		land_night_attack = 0.1
+
+		#If you change these
+		#Change the custom tooltip too: tech_home_bred_horses_effect
+		cavalry = {
+			max_organisation = 5
+			default_morale = 0.1
+			maximum_speed = 0.1
+		}
+		irregular_cavalry = {
+			max_organisation = 5
+			default_morale = 0.1
+			maximum_speed = 0.1
+		}
+	}
+
+	tech_semi_motorised_cav = {
+
+		research_cost = 1
+
+		# only from focus!!! #####
+		allow = {
+			always = no
+		}
+
+		#If you change these
+		#Change the custom tooltip too: tech_semi_motorised_cav_effect
+		cavalry = {
+			max_organisation = 5
+			default_morale = 0.1
+			maximum_speed = 0.15
+		}
+		irregular_cavalry = {
+			max_organisation = 5
+			default_morale = 0.1
+			maximum_speed = 0.15
+		}
+	}
+
+	tech_improved_encryption = {
+
+		research_cost = 1
+
+		# only from focus!!! #####
+		allow = {
+			always = no
+		}
+
+		#If you change these
+		#Change the custom tooltip too: tech_improved_encryption_effect
+		crypto_strength = 2
+	}
+
+	tech_mountain_artillery = {
+
+		research_cost = 1
+
+		# only from focus!!! #####
+		allow = {
+			always = no
+		}
+
+		#If you change these
+		#Change the custom tooltip too: tech_mountain_artillery_effect
+		artillery = {
+			hills = {
+				attack = 0.1
+				movement = 0.1
+			}
+			mountain = {
+				attack = 0.1
+				movement = 0.1
+			}
+		}
+	}
+
+	tech_arctic_commando = {
+
+		research_cost = 1
+
+		# only from focus!!! #####
+		allow = {
+			always = no
+		}
+
+		#If you change these
+		#Change the custom tooltip too: tech_arctic_commando_effect
+		special_forces_no_supply_grace = 48
+
+		category_special_forces = {
+			acclimatization_cold_climate_gain_factor = 0.10
+			hills = {
+				movement = 0.05
+			}
+			mountain = {
+				movement = 0.05
+			}
+		}
+	}
+
+	tech_better_paratroopers = {
+
+		research_cost = 1
+
+		# only from focus!!! #####
+		allow = {
+			always = no
+		}
+
+		#If you change these
+		#Change the custom tooltip too: tech_better_paratroopers_effect
+		extra_paratrooper_supply_grace = 24
+		paratrooper = {
+			soft_attack = 0.10
+			default_morale = 0.2
+		}
+	}
+
+	tech_anti_partisan = {
+		allow = { always = no } #only added by effect
+
+		category_light_infantry = {
+			suppression_factor = 0.15
+		}
+		category_cavalry = {
+			suppression_factor = 0.15
+		}
+	}
+
+	tech_assault_battalion = {
+
+		research_cost = 1
+
+		#only added by effect
+		allow = {
+			always = no
+		}
+
+		#If you change these
+		#Change the custom tooltip too: tech_assault_battalion_effect
+		enable_subunits = {
+			assault_battalion
+		}
+	}
+
+	masterful_blitz = { #this uses the same name as the vanilla tech to avoid needing to replace the tactics file
+
+		research_cost = 1
+		doctrine = yes
+
+		#only added by effect
+		allow = {
+			always = no
+		}
+
+		#If you change these
+		#Change the custom tooltip too: masterful_blitz_effect
+		enable_tactic = tactic_masterful_blitz
+	}
+
+	tech_anti-partisan = {
+
+		research_cost = 1
+
+		#only added by effect
+		allow = {
+			always = no
+		}
+
+		#If you change these
+		#Change the custom tooltip too: tech_anti-partisan_effect
+		infantry = {
+			suppression_factor = 0.15
+		}
+		cavalry = {
+			suppression_factor = 0.15
+		}
+		irregular_cavalry = {
+			suppression_factor = 0.15
+		}
+	}
+
+	tech_improved_logistics = {
+
+		research_cost = 1
+
+		#only added by effect
+		allow = {
+			always = no
+		}
+
+		#If you change these
+		#Change the custom tooltip too: tech_improved_logistics_effect
+		logistics_company = {
+			supply_consumption_factor = -0.1
+			fuel_consumption_factor = -0.05
+		}
+	}
+
+	tech_extensive_reconnaissance = {
+		allow = { always = no } #only added by effect
+
+		on_research_complete = {
+			custom_effect_tooltip = tech_extensive_reconnaissance_terrain_effect #TODO: remove if tech_effect terrain tooltips are fixed
+		}
+		show_effect_as_desc = yes
+
+		category_recon = {
+			recon = 1
+			snow = {
+				movement = 0.1
+			}
+			forest = {
+				movement = 0.05
+			}
+			hills = {
+				movement = 0.05
+			}
+			mountain = {
+				movement = 0.05
+			}
+			marsh = {
+				movement = 0.05
+			}
+			plains = {
+				movement = 0.05
+			}
+			river = {
+				movement = 0.05
+			}
+		}
+	}
+
+	tech_winter_logistics_support = {
+
+		research_cost = 1
+
+		allow = {
+			always = no
+		}
+
+		#If you change these
+		#Change the custom tooltip too: tech_winter_logistics_support_effect
+		enable_subunits = {
+			winter_logistics_support
+		}
+	}
+
+	tech_long_range_patrol_support = {
+
+		research_cost = 1
+
+		allow = {
+			always = no
+		}
+
+		#If you change these
+		#Change the custom tooltip too: tech_long_range_patrol_support_effect
+		enable_subunits = {
+			long_range_patrol_support
+		}
+	}
+
+	tech_human_wave_tactics = {
+
+		research_cost = 1
+
+		#added by effect
+		allow = {
+			always = no
+		}
+
+		#If you change these
+		#Change the custom tooltip too: tech_human_wave_tactics_effect
+		enable_tactic = tactic_human_wave_tactics
+	}
+
+	tech_extensive_reconaissance = {
+
+		research_cost = 1
+
+		#only added by effect
+		allow = {
+			always = no
+		}
+
+		#If you change these
+		#Change the custom tooltip too: tech_extensive_reconaissance_effect
+		category_recon = {
+			recon = 1
+			snow = {
+				movement = 0.1
+			}
+			forest = {
+				movement = 0.05
+			}
+			hills = {
+				movement = 0.05
+			}
+			mountain = {
+				movement = 0.05
+			}
+			marsh = {
+				movement = 0.05
+			}
+			plains = {
+				movement = 0.05
+			}
+			river = {
+				movement = 0.05
+			}
+		}
+	}
+
+	tech_strengthened_support_companies = {
+
+		research_cost = 1
+
+		#only added by effect
+		allow = {
+			always = no
+		}
+
+		#If you change these
+		#Change the custom tooltip too: tech_strengthened_support_companies_effect
+		category_support_battalions = {
+			max_strength = 5
+			max_organisation = 10
+		}
+	}
+
+	tech_anti_armour_tactics = {
+
+		research_cost = 1
+
+		#only added by effect
+		allow = {
+			always = no
+		}
+
+		#If you change these
+		#Change the custom tooltip too: tech_anti_armour_tactics_effect
+		category_all_infantry = {
+			hard_attack = 0.25
+			ap_attack = 1
+		}
+	}
+
+	tech_river_boats = {
+
+		research_cost = 1
+
+		#only added by effect
+		allow = {
+			always = no
+		}
+
+		category_all_infantry = {
+			river = {
+				movement = 0.1
+				attack = 0.1
+				defence = 0.05
+			}
+		}
+	}
+
+	tech_armored_car_spearhead = {
+		allow = { always = no } #only added by effect
+
+		armored_car = {
+			max_organisation = 10
+			default_morale = 0.1
+			maximum_speed = 0.2
+		}
+	}
+
+	tech_improved_decryption = {
+		allow = { always = no } #only added by effect
+
+		decryption_power = 10
+	}
+
+	tech_elephant_sappers = {
+		allow = { always = no } #only added by effect
+
+		on_research_complete = {
+			custom_effect_tooltip = tech_elephant_sappers_terrain_effect #TODO: remove if tech_effect terrain tooltips are fixed
+		}
+		show_effect_as_desc = yes
+
+		engineer = {
+			supply_consumption_factor = -0.05
+			jungle = {
+				attack = 0.05
+				defence = 0.05
+				movement = 0.05
+			}
+			mountain = {
+				attack = 0.05
+				defence = 0.05
+				movement = 0.05
+			}
+		}
+		pioneer_support = {
+			supply_consumption_factor = -0.05
+			jungle = {
+				attack = 0.05
+				defence = 0.05
+				movement = 0.05
+			}
+			mountain = {
+				attack = 0.05
+				defence = 0.05
+				movement = 0.05
+			}
+		}
+	}
+
+	tech_martial_arts = {
+
+		research_cost = 1
+
+		#only added by effect
+        allow = {
+			always = no
+		}
+
+		#If you change these
+		#Change the custom tooltip too: tech_martial_arts_effect
+		category_all_infantry = {
+			max_strength = 2
+			max_organisation = 10
+			default_morale = 0.1
+		}
+	}
+	tech_railway_troops = {
+
+		research_cost = 1
+
+		#only added by effect
+		allow = {
+			always = no
+		}
+
+		#If you change these
+		#Change the custom tooltip too: tech_railway_troops_effect
+		maintenance_company = {
+			reliability_factor = 0.05
+			equipment_capture_factor = 0.05
+		}
+	}
+	elephantry = {
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+
+		enable_subunits = {
+			elephantry
+		}
+	}
+
+	tech_improved_assault_battalion = {
+		allow = { always = no } #only added by effect
+
+		assault_battalion = {
+			soft_attack = 0.10
+			hard_attack = 0.10
+		}
+	}
+	GEA_jungle_warfare_experience_tech = { #效果：轻步兵类部队在丛林攻击/防御+10%，森林攻击/防御+5%
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech GEA_jungle_warfare_experience_tech" }
+
+		research_cost = 1
+
+		# only added by effect
+		allow = {
+			always = no
+		}
+
+		category_light_infantry = {
+			jungle = {
+				attack = 0.10
+				defence = 0.10
+			}
+			forest = {
+				attack = 0.05
+				defence = 0.05
+			}
 		}
 	}
 
@@ -269,26 +1052,6 @@ technologies = {
 		}
 	}
 
-	expanded_engineer_corps_tech = { #效果：工兵堑壕+2，对要塞攻击+10%、防御+10%
-
-		research_cost = 1
-
-		# only from focus!!! #####
-		allow = {
-			always = no
-		}
-
-		#If you change these
-		#Change the custom tooltip too: expanded_engineer_corps_tech_effect
-		engineer = {
-			entrenchment = 2
-			fort = {
-				defence = 0.10
-				attack = 0.10
-			}
-		}
-	}
-
 	expanded_engineer_corps_tech1 = { #效果：工兵堑壕+3，对要塞攻击+20%、防御+15%
 
 		research_cost = 1
@@ -302,43 +1065,6 @@ technologies = {
 				defence = 0.15
 				attack = 0.20
 			}
-		}
-	}
-
-	mountain_training_tech = { #效果：轻步兵类部队在山地攻击+5%、防御+5%、移动+10%
-
-		research_cost = 1
-
-		# only from focus!!! #####
-		allow = {
-			always = no
-		}
-
-		#If you change these
-		#Change the custom tooltip too: mountain_training_tech_effect
-		category_light_infantry = {
-			mountain = {
-				attack = 0.05
-				defence = 0.05
-				movement = 0.1
-			}
-		}
-	}
-
-	improved_recon_units_tech = { #效果：侦察类支援连侦察+1、突破+1
-
-		research_cost = 1
-
-		# only from focus!!! #####
-		allow = {
-			always = no
-		}
-
-		#If you change these
-		#Change the custom tooltip too: improved_recon_units_tech_effect
-		category_recon = {
-			recon = 1
-			breakthrough = 1
 		}
 	}
 
@@ -370,25 +1096,6 @@ technologies = {
 		}
 	}
 
-	asymmetrical_warfare = { #效果：轻步兵类部队在城市攻击+5%、防御+3%、移动+5%
-
-		research_cost = 1
-
-		# only from focus!!! #####
-		allow = {
-			always = no
-		}
-
-		#If you change these
-		#Change the custom tooltip too: asymmetrical_warfare_effect
-		category_light_infantry = {
-			urban = {
-				attack = 0.05
-				defence = 0.03
-				movement = 0.05
-			}
-		}
-	}
 	flamethrower = { #效果：轻步兵类部队软攻+10%，城市攻击+10%/防御+1%，森林攻击+20%/防御+5%，要塞攻击+10%/防御+1%
 
 		research_cost = 1
@@ -413,395 +1120,4 @@ technologies = {
 			}
 		}
 	}
-
-	desert_warfare = { #效果：轻步兵类部队在沙漠攻击+10%、防御+5%、移动+5%
-		research_cost = 1
-
-		# only from focus!!! #####
-		allow = {
-			always = no
-		}
-
-		#If you change these
-		#Change the custom tooltip too: desert_warfare_effect
-		category_light_infantry = {
-			desert = {
-				attack = 0.10
-				defence = 0.05
-				movement = 0.05
-			}
-		}
-	}
-
-	marsh_warfare = { #效果：轻步兵类部队在沼泽攻击+10%、防御+5%、移动+5%
-		research_cost = 1
-
-		# only from focus!!! #####
-		allow = {
-			always = no
-		}
-
-		#If you change these
-		#Change the custom tooltip too: marsh_warfare_effect
-		category_light_infantry = {
-			marsh = {
-				attack = 0.10
-				defence = 0.05
-				movement = 0.05
-			}
-		}
-	}
-
-	anti_fortification_artillery = { #效果：炮兵类部队对要塞攻击+20%
-
-		research_cost = 1
-
-		# only from focus!!! #####
-		allow = {
-			always = no
-		}
-
-		#If you change these
-		#Change the custom tooltip too: anti_fortification_artillery_effect
-		category_artillery = {
-			fort = {
-				attack = 0.20
-			}
-		}
-	}
-
-	tech_integrated_specialists = { #效果：特种部队容量+5%，特种部队软攻+5%、硬攻+5%
-
-		research_cost = 1
-
-		# only from focus!!! #####
-		allow = {
-			always = no
-		}
-
-		#If you change these
-		#Change the custom tooltip too: tech_integrated_specialists_effect
-		special_forces_cap = 0.05
-		category_special_forces = {
-			soft_attack = 0.05
-			hard_attack = 0.05
-		}
-	}
-
-	tech_at_cavalry = { #效果：骑兵穿甲+0.75、硬攻+10%
-
-		research_cost = 1
-
-		# only from focus!!! #####
-		allow = {
-			always = no
-		}
-
-		#If you change these
-		#Change the custom tooltip too: tech_at_cavalry_effect
-		cavalry = {
-			ap_attack = 0.75
-			hard_attack = 0.1
-		}
-	}
-
-	tech_dragoon_tactics = { #效果：陆军夜战攻击+10%，骑兵组织度+5、恢复率+10%、最大速度+10%
-
-		research_cost = 1
-
-		# only from focus!!! #####
-		allow = {
-			always = no
-		}
-
-		land_night_attack = 0.1
-
-		#If you change these
-		#Change the custom tooltip too: tech_dragoon_tactics_effect
-		cavalry = {
-			max_organisation = 5
-			default_morale = 0.1
-			maximum_speed = 0.1
-		}
-	}
-
-	tech_semi_motorised_cav = { #效果：骑兵组织度+5、恢复率+10%、最大速度+15%
-
-		research_cost = 1
-
-		# only from focus!!! #####
-		allow = {
-			always = no
-		}
-
-		#If you change these
-		#Change the custom tooltip too: tech_semi_motorised_cav_effect
-		cavalry = {
-			max_organisation = 5
-			default_morale = 0.1
-			maximum_speed = 0.15
-		}
-	}
-
-	tech_improved_encryption = { #效果：加密强度+2
-
-		research_cost = 1
-
-		# only from focus!!! #####
-		allow = {
-			always = no
-		}
-
-		#If you change these
-		#Change the custom tooltip too: tech_improved_encryption_effect
-		crypto_strength = 2
-	}
-
-	tech_mountain_artillery = { #效果：炮兵在丘陵/山地攻击+10%、移动+10%
-
-		research_cost = 1
-
-		# only from focus!!! #####
-		allow = {
-			always = no
-		}
-
-		#If you change these
-		#Change the custom tooltip too: tech_mountain_artillery_effect
-		artillery = {
-			hills = {
-				attack = 0.1
-				movement = 0.1
-			}
-			mountain = {
-				attack = 0.1
-				movement = 0.1
-			}
-		}
-	}
-
-	tech_arctic_commando = { #效果：特种部队无补给宽限+48小时、寒冷适应增长+10%，丘陵/山地移动+5%
-
-		research_cost = 1
-
-		# only from focus!!! #####
-		allow = {
-			always = no
-		}
-
-		#If you change these
-		#Change the custom tooltip too: tech_arctic_commando_effect
-		special_forces_no_supply_grace = 48
-
-		category_special_forces = {
-			acclimatization_cold_climate_gain_factor = 0.10
-			hills = {
-				movement = 0.05
-			}
-			mountain = {
-				movement = 0.05
-			}
-		}
-	}
-
-	tech_better_paratroopers = { #效果：伞兵额外补给宽限+24小时，伞兵软攻+10%、恢复率+20%
-
-		research_cost = 1
-
-		# only from focus!!! #####
-		allow = {
-			always = no
-		}
-
-		#If you change these
-		#Change the custom tooltip too: tech_better_paratroopers_effect
-		extra_paratrooper_supply_grace = 24
-		paratrooper = {
-			soft_attack = 0.10
-			default_morale = 0.2
-		}
-	}
-
-	tech_assault_battalion = { #效果：解锁突击营
-
-		research_cost = 1
-
-		#only added by effect
-		allow = {
-			always = no
-		}
-
-		#If you change these
-		#Change the custom tooltip too: tech_assault_battalion_effect
-		enable_subunits = {
-			assault_battalion
-		}
-	}
-	
-	masterful_blitz = { #效果：解锁“娴熟闪电战”战术；沿用原版科技名以避免替换战术文件
-
-		research_cost = 1
-		doctrine = yes
-
-		#only added by effect
-		allow = {
-			always = no
-		}
-
-		#If you change these
-		#Change the custom tooltip too: masterful_blitz_effect
-		enable_tactic = tactic_masterful_blitz
-	}
-
-	tech_anti-partisan = { #效果：步兵和骑兵镇压+15%
-
-		research_cost = 1
-
-		#only added by effect
-		allow = {
-			always = no
-		}
-
-		#If you change these
-		#Change the custom tooltip too: tech_anti-partisan_effect
-		infantry = {
-			suppression_factor = 0.15
-		}
-		cavalry = {
-			suppression_factor = 0.15
-		}
-	}
-	
-	tech_improved_logistics = { #效果：后勤连补给消耗-10%、燃油消耗-5%
-
-		research_cost = 1
-
-		#only added by effect
-		allow = {
-			always = no
-		}
-
-		#If you change these
-		#Change the custom tooltip too: tech_improved_logistics_effect
-		logistics_company = {
-			supply_consumption_factor = -0.1
-			fuel_consumption_factor = -0.05
-		}
-	}
-	
-	tech_winter_logistics_support = { #效果：解锁冬季后勤支援连
-		
-		research_cost = 1
-		
-		allow = {
-			always = no
-		}
-		
-		#If you change these
-		#Change the custom tooltip too: tech_winter_logistics_support_effect
-		enable_subunits = {
-			winter_logistics_support
-		}
-	}
-
-	tech_long_range_patrol_support = { #效果：解锁远程巡逻支援连
-		
-		research_cost = 1
-		
-		allow = {
-			always = no
-		}
-
-		#If you change these
-		#Change the custom tooltip too: tech_long_range_patrol_support_effect
-		enable_subunits = {
-			long_range_patrol_support
-		}
-	}
-	
-	tech_human_wave_tactics = { #效果：解锁“人海战术”战术
-
-		research_cost = 1
-
-		#added by effect
-		allow = {
-			always = no
-		}
-
-		#If you change these
-		#Change the custom tooltip too: tech_human_wave_tactics_effect
-		enable_tactic = tactic_human_wave_tactics
-	}
-
-	tech_extensive_reconaissance = { #效果：侦察类支援连侦察+1，雪地移动+10%，森林/丘陵/山地/沼泽/平原/河流移动+5%
-
-		research_cost = 1
-
-		#only added by effect
-		allow = {
-			always = no
-		}
-
-		#If you change these
-		#Change the custom tooltip too: tech_extensive_reconaissance_effect
-		category_recon = {
-			recon = 1
-			snow = {
-				movement = 0.1
-			}
-			forest = {
-				movement = 0.05
-			}
-			hills = {
-				movement = 0.05
-			}
-			mountain = {
-				movement = 0.05
-			}
-			marsh = {
-				movement = 0.05
-			}
-			plains = {
-				movement = 0.05
-			}
-			river = {
-				movement = 0.05
-			}
-		}
-	}
-
-	tech_strengthened_support_companies = { #效果：支援营兵力+5、组织度+10
-
-		research_cost = 1
-
-		#only added by effect
-		allow = {
-			always = no
-		}
-
-		#If you change these
-		#Change the custom tooltip too: tech_strengthened_support_companies_effect
-		category_support_battalions = {
-			max_strength = 5
-			max_organisation = 10
-		}
-	}
-
-	tech_anti_armour_tactics = { #效果：所有步兵类部队硬攻+25%、穿甲+1
-
-		research_cost = 1
-
-		#only added by effect
-		allow = {
-			always = no
-		}
-
-		#If you change these
-		#Change the custom tooltip too: tech_anti_armour_tactics_effect
-		category_all_infantry = {
-			hard_attack = 0.25
-			ap_attack = 1
-		}
-	}
 }
-

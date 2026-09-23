@@ -300,6 +300,17 @@ set_variable = { GEA_mucke_reform_war_support = 0.05}
 set_variable = { GEA_Defend_indochina_stability = 0.1}
 set_variable = { GEA_Defend_indochina_production_speed_buildings_factor = 0.05}
 set_variable = { GEA_Defend_indochina_industrial_capacity_factory = 0.05}
+set_variable = { GEA_colonial_decision_cost_100 = 100 }
+set_variable = { GEA_colonial_decision_cost_50 = 50 }
+set_variable = { GEA_colonial_decision_cost_25 = 25 }
+set_variable = { GEA_colonial_decision_cost_20 = 20 }
+set_variable = { GEA_colonial_decision_days_365 = 365 }
+set_variable = { GEA_colonial_decision_days_360 = 360 }
+set_variable = { GEA_colonial_decision_days_200 = 200 }
+set_variable = { GEA_colonial_decision_days_180 = 180 }
+set_variable = { GEA_colonial_decision_days_60 = 60 }
+set_variable = { GEA_colonial_field_corps_command_power_cost = 50 }
+set_variable = { GEA_colonial_field_corps_command_power_cost_negative = -50 }
 
 add_equipment_to_stockpile = { type = infantry_equipment_0 amount = 4000 producer = GEA }
 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 1000 producer = GEA }

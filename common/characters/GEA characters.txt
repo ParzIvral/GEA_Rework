@@ -1,4 +1,4 @@
-﻿##
+##
 characters = {
 	GEA_Hellmuth_von_Mucke = { #赫尔穆特·冯·穆克
 		name = GEA_Hellmuth_von_Mucke
@@ -535,6 +535,57 @@ characters = {
 			coordination_skill = 2
 		}
 	}
-}
 
+	GEA_Fritz_Bayerlein = { #弗里茨·拜尔莱因
+		name = GEA_Fritz_Bayerlein
+		portraits = { army = { large = GFX_portrait_Portrait_GEA_Fritz_Bayerlein } }
+		corps_commander = {
+			traits = {
+				harsh_leader
+				career_officer
+				armor_officer
+				ascari_officer
+			}
+			skill = 3
+			attack_skill = 4
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+
+	GEA_Herbert_Gille = { #赫伯特·吉勒
+		name = GEA_Herbert_Gille
+		portraits = { army = { large = GFX_portrait_Portrait_GEA_Herbert_Gille } }
+		corps_commander = {
+			traits = {
+				brilliant_strategist
+				ascari_officer
+			}
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 3
+		}
+	}
+
+	GEA_Felix_Steiner = { #菲利克斯·史坦纳
+		name = GEA_Felix_Steiner
+		portraits = { army = { large = GFX_portrait_Portrait_GEA_Felix_Steiner } }
+		corps_commander = {
+			traits = {
+				war_hero
+				politically_connected
+				brilliant_strategist
+				ascari_officer
+			}
+			skill = 3
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 4
+		}
+	}
+}
 
