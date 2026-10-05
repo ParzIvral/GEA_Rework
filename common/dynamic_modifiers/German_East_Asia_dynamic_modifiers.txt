@@ -109,47 +109,6 @@ GEA_scorched_earth_state_modifier = {
 	local_supply_impact_factor = -0.2
 }
 
-GEA_developing_porgram = {
-	icon = "GFX_production_texticon"
-	enable = { always = yes }
-	remove_trigger = { 
-		NOT = { 
-			is_owned_by = GEA
-		}
-	}	
-	local_building_slots_factor = 0.2
-	production_speed_buildings_factor = 0.1                                                                         
-	production_speed_arms_factory_factor = 0.05
-	production_speed_industrial_complex_factor = 0.1
-	production_speed_infrastructure_factor = 0.1
-}
-
-GEA_more_mine1 = {
-	icon = "GFX_production_texticon"
-	enable = { always = yes }
-	remove_trigger = { 
-		NOT = { 
-			is_owned_by = GEA
-		}
-	}	
-	local_resources_factor = 0.20
-	production_speed_buildings_factor = 0.05  
-	compliance_growth = -0.2                                                                     
-}
-
-GEA_Bulldoze_village1 = {
-	icon = "GFX_production_texticon"
-	enable = { always = yes }
-	remove_trigger = { 
-		NOT = { 
-			is_owned_by = GEA
-		}
-	}	
-	conscription_factor = -0.1
-	non_core_manpower = -0.2
-	monthly_population = -0.05                                                              
-}
-
 GEA_saigon_cholon_grain_board = {
 	icon = "GFX_idea_GEA_Unifying_Rural_Forces"
 	enable = { always = yes }
@@ -470,4 +429,50 @@ GEA_Economic_modifier = {
 	industry_air_damage_factor = GEA_Economic_industry_air_damage_factor					#工厂受轰炸易损性
 	cic_construction_boost = GEA_Economic_cic_construction_boost							#基础建设队列速度加成
 	trade_opinion_factor = GEA_Economic_trade_opinion_factor								#贸易协定关系修正
+}
+
+GEA_Corporation_Rule = {
+	icon = "GFX_GEA_Corporation_Rule"
+	enable = { always = yes }
+	remove_trigger = { always = no }
+	
+	industry_repair_factor = GEA_Corporation_Rule_industry_repair_factor 							#工厂维修速度
+	monthly_population = GEA_Corporation_Rule_monthly_population									#每月人口
+	research_speed_factor = GEA_Corporation_Rule_research_speed										#研究速度
+	local_resources_factor = GEA_Corporation_Rule_local_resources									#战略资源获取率
+	political_power_factor = GEA_Corporation_Rule_political_power									#政治点数
+	stability_factor = GEA_Corporation_Rule_stability												#稳定度		
+	stability_weekly = GEA_Corporation_Rule_stability_weekly										#每周稳定度增长				
+	consumer_goods_factor = GEA_Corporation_Rule_consumer_goods										#生活消费品工厂系数
+	local_building_slots_factor = GEA_Corporation_Rulec_building_slots								#地区最大工业值
+	industrial_capacity_factory = GEA_Corporation_Rule_factory_output								#工厂产出
+	industrial_capacity_dockyard = GEA_Corporation_Rule_dockyard_output								#海军船坞产出
+	production_oil_factor = GEA_Corporation_Rule_production_oil										#合成油
+	production_speed_buildings_factor = GEA_Corporation_Rule_construction_speed						#建造速度
+	production_speed_radar_station_factor = GEA_Corporation_Rule_radar_speed						#雷达站建设速度	
+	production_speed_infrastructure_factor = GEA_Corporation_Rule_infrastructure_speed				#基础设施建设速度
+	production_speed_industrial_complex_factor = GEA_Corporation_Rule_civilian_speed				#民用工厂建设速度
+	production_speed_arms_factory_factor = GEA_Corporation_Rule_military_speed						#军用工厂建设速度
+	production_speed_dockyard_factor = GEA_Corporation_Rule_production_speed_dockyard_factor 		#海军船坞建造速度
+	production_speed_naval_base_factor = GEA_Corporation_Rule_production_speed_naval_base_factor 	#海军基地建造速度
+	production_speed_rail_way_factor = GEA_Corporation_Rule_railway_speed							#铁路建造速度
+	production_speed_synthetic_refinery_factor = GEA_Corporation_Rule_refinery_speed				#合成炼油厂建造速度 £construction_speed_refinery_texticon 
+	production_factory_efficiency_gain_factor = GEA_Corporation_Rule_efficiency_gain				#生产效率增长
+	production_factory_max_efficiency_factor = GEA_Corporation_Rule_efficiency_max					#生产效率上限
+	line_change_production_efficiency_factor = GEA_Corporation_Rule_efficiency_retention			#生产效率保持
+	production_lack_of_resource_penalty_factor = GEA_Corporation_Rule_lack_resource_penalty			#缺少资源惩罚
+	production_factory_start_efficiency_factor = GEA_Corporation_Rule_start_efficiency				#基础生产效率
+	production_speed_fuel_silo_factor = GEA_Corporation_Rule_production_speed_fuel_silo_factor		#储油罐建设速度
+	army_fuel_consumption_factor = GEA_Corporation_Rule_army_fuel_consumption_factor				#陆军燃料消耗
+	fuel_gain_factor = GEA_Corporation_Rule_fuel_gain_factor										#从石油获得的燃油 £fuel_gain_oil_texticon
+	factory_energy_consumption = GEA_Corporation_Rule_factory_energy_consumption					#工厂能源消耗 
+	industry_free_repair_factor = GEA_Corporation_Rule_industry_free_repair_factor					#免费维修
+	cic_construction_boost_factor = GEA_Corporation_Rule_cic_construction_boost_factor				#市场建设加成乘数
+	consumer_goods_expected_value = GEA_Corporation_Rule_consumer_goods_expected_value				#用于生产生活消费品的期望工厂数量
+	local_resources_steel_factor = GEA_Corporation_Rule_local_resources_steel_factor				#钢铁获取效率
+	production_speed_buildings_powered_factor = GEA_Corporation_Rule_production_speed_buildings_powered_factor	#已供能的建设速度
+	industrial_capacity_factory_powered = GEA_Corporation_Rule_industrial_capacity_factory_powered				#已供能的工厂产出
+	industry_air_damage_factor = GEA_Corporation_Rule_industry_air_damage_factor					#工厂受轰炸易损性
+	cic_construction_boost = GEA_Corporation_Rule_cic_construction_boost							#基础建设队列速度加成
+	trade_opinion_factor = GEA_Corporation_Rule_trade_opinion_factor								#贸易协定关系修正
 }

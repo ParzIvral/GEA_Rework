@@ -352,25 +352,19 @@ scripted_gui = {
 				GEA_Solomon_click_effect = yes
 			}
 			Burma_ger_Map_click = {
-				Burma_ger_click_effect = yes
+				GEA_Bruma_click_effect = yes
 			}
 			DEI_ger_Map_click = {
-				DEI_ger_click_effect = yes
-			}
-			GER_Guinea_Map_click = {
-				GER_Guinea_click_effect = yes
-			}
-			Indochina_vin_Map_click = {
-				Indochina_vin_click_effect = yes
+				GEA_Dei_click_effect = yes
 			}
 			Philippines_ger_Map_click = {
-				Philippines_ger_click_effect = yes
+				GEA_Phi_click_effect = yes
 			}
 			Thailand_ger_Map_click = {
-				Thailand_ger_click_effect = yes
+				GEA_Tai_click_effect = yes
 			}
 			Hawaii_ger_Map_click = {
-				Hawaii_ger_click_effect = yes
+				GEA_Hawaii_click_effect = yes
 			}
 		}
 	}

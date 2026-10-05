@@ -1466,6 +1466,20 @@ ideas = {
 				army_leader_start_defense_level = 1
 			}
 		}
+#卡特尔
+		GEA_The_garden_of_the_cartel_Cartel_1 = { #卡特尔的后花园
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_The_garden_of_the_cartel_Cartel_1"}
+			name = GEA_The_garden_of_the_cartel
+			picture = GEA_The_garden_of_the_cartel
+			allowed = { always = no }
+			modifier = {
+				political_power_factor = -0.075
+				consumer_goods_factor = -0.15
+				local_resources_factor = 0.15
+				production_factory_efficiency_gain_factor = 0.05
+				production_speed_buildings_factor = 0.07
+			}
+		}
 #经济
 		GEA_Comprehensive_sales_network = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Comprehensive_sales_network"}

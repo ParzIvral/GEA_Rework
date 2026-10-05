@@ -636,6 +636,11 @@ SpriteTypes = {
 	}
 	
 	SpriteType = {
+		name = "GFX_GEA_Dull_Future"
+		texturefile = "gfx/interface/goals/GEA_Dull_Future.png"
+	}
+
+	SpriteType = {
 		name = "GFX_GEA_Introduce_Brown-Boveri"
 		texturefile = "gfx/interface/goals/GEA_Introduce_Brown-Boveri.png"
 	}
@@ -794,4 +799,80 @@ SpriteTypes = {
 	SpriteType = { name = "GFX_GEA_Enterprise_Exceptionalism" texturefile = "gfx/interface/goals/GEA_Enterprise_Exceptionalism.png" }
 	SpriteType = { name = "GFX_GEA_The_benefits_of_arms_sales" texturefile = "gfx/interface/goals/GEA_The_benefits_of_arms_sales.png" }
 	SpriteType = { name = "GFX_GEA_The_factorys_thick_smoke_wealth_and_German_East_Asia" texturefile = "gfx/interface/goals/GEA_The_factorys_thick_smoke_wealth_and_German_East_Asia.png" }
+	SpriteType = { name = "GFX_GEA_Dull_Future" texturefile = "gfx/interface/goals/GEA_Dull_Future.png" }
+	SpriteType = { name = "GFX_GEA_Governor_Luckner" texturefile = "gfx/interface/goals/GEA_Governor_Luckner.png" }
+	SpriteType = { name = "GFX_GEA_Dressed_in_a_navy_uniform" texturefile = "gfx/interface/goals/GEA_Dressed_in_a_navy_uniform.png" }
+	SpriteType = { name = "GFX_GEA_Seizing_the_throat_of_Asia" texturefile = "gfx/interface/goals/GEA_Seizing_the_throat_of_Asia.png" }
+	SpriteType = { name = "GFX_GEA_The_secret_operation_under_the_glow_of_black_white_and_red_lights" texturefile = "gfx/interface/goals/GEA_The_secret_operation_under_the_glow_of_black_white_and_red_lights.png" }
+	SpriteType = { name = "GFX_GEA_The_pursuit_of_glory_and_victory" texturefile = "gfx/interface/goals/GEA_The_pursuit_of_glory_and_victory.png" }
+	SpriteType = { name = "GFX_GEA_Unless_necessary_no_death" texturefile = "gfx/interface/goals/GEA_Unless_necessary_no_death.png" }
+	SpriteType = { name = "GFX_GEA_The_loyal_sailor_of_the_count" texturefile = "gfx/interface/goals/GEA_The_loyal_sailor_of_the_count.png" }
+	SpriteType = { name = "GFX_GEA_The_sea_demon_of_the_Pacific_Ocean" texturefile = "gfx/interface/goals/GEA_The_sea_demon_of_the_Pacific_Ocean.png" }
+	SpriteType = { name = "GFX_GEA_Remembering_the_Glory_of_the_Doggerland_Battle" texturefile = "gfx/interface/goals/GEA_Remembering_the_Glory_of_the_Doggerland_Battle.png" }
+	SpriteType = { name = "GFX_GEA_The_seagull_soars_into_the_sky" texturefile = "gfx/interface/goals/GEA_The_seagull_soars_into_the_sky.png" }
+	SpriteType = { name = "GFX_GEA_The_imperial_pirates_roaming_the_vast_ocean" texturefile = "gfx/interface/goals/GEA_The_imperial_pirates_roaming_the_vast_ocean.png" }
+	SpriteType = { name = "GFX_GEA_The_ocean_demon_conquers_the_seven_seas" texturefile = "gfx/interface/goals/GEA_The_ocean_demon_conquers_the_seven_seas.png" }
+	SpriteType = { name = "GFX_GEA_Governor_Schorner" texturefile = "gfx/interface/goals/GEA_Governor_Schorner.png" }
+	SpriteType = { name = "GFX_GEA_Only_liquidation_is_the_most_important" texturefile = "gfx/interface/goals/GEA_Only_liquidation_is_the_most_important.png" }
+	SpriteType = { name = "GFX_GEA_Ostasiatische_Heer" texturefile = "gfx/interface/goals/GEA_Ostasiatische_Heer.png" }
+	SpriteType = { name = "GFX_GEA_The_younger_generation_triumph" texturefile = "gfx/interface/goals/GEA_The_younger_generation_triumph.png" }
+	SpriteType = { name = "GFX_GEA_Trust_the_General_Staff_Department" texturefile = "gfx/interface/goals/GEA_Trust_the_General_Staff_Department.png" }
+	SpriteType = { name = "GFX_GEA_Rebuild_the_mobilization_system" texturefile = "gfx/interface/goals/GEA_Rebuild_the_mobilization_system.png" }
+	SpriteType = { name = "GFX_GEA_The_city_of_Abwehr" texturefile = "gfx/interface/goals/GEA_The_city_of_Abwehr.png" }
+	SpriteType = { name = "GFX_GEA_All_for_the_purpose_of_defending" texturefile = "gfx/interface/goals/GEA_All_for_the_purpose_of_defending.png" }
+	SpriteType = { name = "GFX_GEA_Military_expansion_plan" texturefile = "gfx/interface/goals/GEA_Military_expansion_plan.png" }
+	SpriteType = { name = "GFX_GEA_Stauffenberg_s_strategy" texturefile = "gfx/interface/goals/GEA_Stauffenberg_s_strategy.png" }
+	SpriteType = { name = "GFX_GEA_The_riding_of_the_Valkyries" texturefile = "gfx/interface/goals/GEA_The_riding_of_the_Valkyries.png" }
+	SpriteType = { name = "GFX_GEA_Emphasize_the_mobility_of_the_troops" texturefile = "gfx/interface/goals/GEA_Emphasize_the_mobility_of_the_troops.png" }
+	SpriteType = { name = "GFX_GEA_Sharpen_the_spearhead" texturefile = "gfx/interface/goals/GEA_Sharpen_the_spearhead.png" }
+	SpriteType = { name = "GFX_GEA_Ensure_the_strength_at_the_grassroots_level" texturefile = "gfx/interface/goals/GEA_Ensure_the_strength_at_the_grassroots_level.png" }
+	SpriteType = { name = "GFX_GEA_Emergency_Armor_Upgrade" texturefile = "gfx/interface/goals/GEA_Emergency_Armor_Upgrade.png" }
+	SpriteType = { name = "GFX_GEA_Upgrade_the_armored_horses_and_mules" texturefile = "gfx/interface/goals/GEA_Upgrade_the_armored_horses_and_mules.png" }
+	SpriteType = { name = "GFX_GEA_Tresckow_s_brilliant_plan" texturefile = "gfx/interface/goals/GEA_Tresckow_s_brilliant_plan.png" }
+	SpriteType = { name = "GFX_GEA_Siloed_operations" texturefile = "gfx/interface/goals/GEA_Siloed_operations.png" }
+	SpriteType = { name = "GFX_GEA_Streamline_the_organization_structure" texturefile = "gfx/interface/goals/GEA_Streamline_the_organization_structure.png" }
+	SpriteType = { name = "GFX_GEA_deep_into_the_earth" texturefile = "gfx/interface/goals/GEA_deep_into_the_earth.png" }
+	SpriteType = { name = "GFX_GEA_Maintain_the_supply_line" texturefile = "gfx/interface/goals/GEA_Maintain_the_supply_line.png" }
+	SpriteType = { name = "GFX_GEA_Depend_on_armored_artillery" texturefile = "gfx/interface/goals/GEA_Depend_on_armored_artillery.png" }
+	SpriteType = { name = "GFX_GEA_Full_firepower_readiness" texturefile = "gfx/interface/goals/GEA_Full_firepower_readiness.png" }
+	SpriteType = { name = "GFX_GEA_Durchbruchmuller_Legacy" texturefile = "gfx/interface/goals/GEA_Durchbruchmuller_Legacy.png" }
+	SpriteType = { name = "GFX_GEA_Flexible_organization" texturefile = "gfx/interface/goals/GEA_Flexible_organization.png" }
+	SpriteType = { name = "GFX_GEA_Battle_group_supremacy" texturefile = "gfx/interface/goals/GEA_Battle_group_supremacy.png" }
+	SpriteType = { name = "GFX_GEA_The_reconnaissance_scouts_are_all-knowing" texturefile = "gfx/interface/goals/GEA_The_reconnaissance_scouts_are_all-knowing.png" }
+	SpriteType = { name = "GFX_GEA_Modernize_military_equipment" texturefile = "gfx/interface/goals/GEA_Modernize_military_equipment.png" }
+	SpriteType = { name = "GFX_GEA_The_Valkyrie_brandished_her_sharp_sword" texturefile = "gfx/interface/goals/GEA_The_Valkyrie_brandished_her_sharp_sword.png" }
+	SpriteType = { name = "GFX_GEA_planning_before_taking_action" texturefile = "gfx/interface/goals/GEA_planning_before_taking_action.png" }
+	SpriteType = { name = "GFX_GEA_Upgrading_of_combat_theory" texturefile = "gfx/interface/goals/GEA_Upgrading_of_combat_theory.png" }
+	SpriteType = { name = "GFX_GEA_A_well-organized_chain_of_command" texturefile = "gfx/interface/goals/GEA_A_well-organized_chain_of_command.png" }
+	SpriteType = { name = "GFX_GEA_Everyone_fulfills_their_duties_conscientiously" texturefile = "gfx/interface/goals/GEA_Everyone_fulfills_their_duties_conscientiously.png" }
+	SpriteType = { name = "GFX_GEA_Reorganize_the_General_Staff_Department" texturefile = "gfx/interface/goals/GEA_Reorganize_the_General_Staff_Department.png" }
+	SpriteType = { name = "GFX_GEA_Coordinate_the_broad_front_of_the_conflict" texturefile = "gfx/interface/goals/GEA_Coordinate_the_broad_front_of_the_conflict.png" }
+	SpriteType = { name = "GFX_GEA_Carefully_plan_boldly_innovate" texturefile = "gfx/interface/goals/GEA_Carefully_plan_boldly_innovate.png" }
+	SpriteType = { name = "GFX_GEA_The_victory_of_willpower" texturefile = "gfx/interface/goals/GEA_The_victory_of_willpower.png" }
+	SpriteType = { name = "GFX_GEA_Push_forward_at_all_costs" texturefile = "gfx/interface/goals/GEA_Push_forward_at_all_costs.png" }
+	SpriteType = { name = "GFX_GEA_Hunter_Raid" texturefile = "gfx/interface/goals/GEA_Hunter_Raid.png" }
+	SpriteType = { name = "GFX_GEA_Retreating_means_cowardice_and_cowardice_means_death" texturefile = "gfx/interface/goals/GEA_Retreating_means_cowardice_and_cowardice_means_death.png" }
+	SpriteType = { name = "GFX_GEA_The_last_line_of_defense_of_the_world_empire" texturefile = "gfx/interface/goals/GEA_The_last_line_of_defense_of_the_world_empire.png" }
+	SpriteType = { name = "GFX_GEA_Schorner_secret_forces" texturefile = "gfx/interface/goals/GEA_Schorner_secret_forces.png" }
+	SpriteType = { name = "GFX_GEA_Everyone_serves_until_death" texturefile = "gfx/interface/goals/GEA_Everyone_serves_until_death.png" }
+	SpriteType = { name = "GFX_GEA_Implement_flexible_defense_tactics" texturefile = "gfx/interface/goals/GEA_Implement_flexible_defense_tactics.png" }
+	SpriteType = { name = "GFX_GEA_Carry_forward_the_Hutier_tactic" texturefile = "gfx/interface/goals/GEA_Carry_forward_the_Hutier_tactic.png" }
+	SpriteType = { name = "GFX_GEA_Command_supremacy" texturefile = "gfx/interface/goals/GEA_Command_supremacy.png" }
+	SpriteType = { name = "GFX_GEA_Rolling_floodwaters" texturefile = "gfx/interface/goals/GEA_Rolling_floodwaters.png" }
+	SpriteType = { name = "GFX_GEA_Play_the_symphony_of_war" texturefile = "gfx/interface/goals/GEA_Play_the_symphony_of_war.png" }
+	SpriteType = { name = "GFX_GEA_The_military_art_of_the_new_era" texturefile = "gfx/interface/goals/GEA_The_military_art_of_the_new_era.png" }
+	SpriteType = { name = "GFX_GEA_To_be_enslaved_for_the_sake_of_rule" texturefile = "gfx/interface/goals/GEA_To_be_enslaved_for_the_sake_of_rule.png" }
+	SpriteType = { name = "GFX_GEA_Release_the_tame_wild_beasts" texturefile = "gfx/interface/goals/GEA_Release_the_tame_wild_beasts.png" }
+	SpriteType = { name = "GFX_GEA_Subdue_the_armies" texturefile = "gfx/interface/goals/GEA_Subdue_the_armies.png" }
+	SpriteType = { name = "GFX_GEA_die_in_the_front_die_behind" texturefile = "gfx/interface/goals/GEA_die_in_the_front_die_behind.png" }
+	SpriteType = { name = "GFX_GEA_No_one_is_exempt_no_one_is_spared" texturefile = "gfx/interface/goals/GEA_No_one_is_exempt_no_one_is_spared.png" }
+	SpriteType = { name = "GFX_GEA_Loyalty_is_the_foundation_of_all_things" texturefile = "gfx/interface/goals/GEA_Loyalty_is_the_foundation_of_all_things.png" }
+	SpriteType = { name = "GFX_GEA_Strength_is_the_foundation_of_an_empire" texturefile = "gfx/interface/goals/GEA_Strength_is_the_foundation_of_an_empire.png" }
+	SpriteType = { name = "GFX_GEA_Not_acting_under_the_order_of_the_monarch" texturefile = "gfx/interface/goals/GEA_Not_acting_under_the_order_of_the_monarch.png" }
+	SpriteType = { name = "GFX_GEA_Polish_the_muzzle_sharpen_the_knife_and_gun" texturefile = "gfx/interface/goals/GEA_Polish_the_muzzle_sharpen_the_knife_and_gun.png" }
+	SpriteType = { name = "GFX_GEA_Overcome_difficulties_and_obstacles" texturefile = "gfx/interface/goals/GEA_Overcome_difficulties_and_obstacles.png" }
+	SpriteType = { name = "GFX_GEA_On-the-spot_trial" texturefile = "gfx/interface/goals/GEA_On-the-spot_trial.png" }
+	SpriteType = { name = "GFX_GEA_Schorner_Law" texturefile = "gfx/interface/goals/GEA_Schorner_Law.png" }
+	SpriteType = { name = "GFX_GEA_Bloody_Ferdinand_Supreme_Power" texturefile = "gfx/interface/goals/GEA_Bloody_Ferdinand_Supreme_Power.png" }
+	SpriteType = { name = "GFX_GEA_Let_loose_the_blood-stained_black_eagle" texturefile = "gfx/interface/goals/GEA_Let_loose_the_blood-stained_black_eagle.png" }
 }

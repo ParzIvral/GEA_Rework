@@ -94,3 +94,15 @@ GEA_War_Experience_decisions = {
 	priority = 1200
 	visible_when_empty = yes
 }
+
+GEA_Kartel_decisions = {
+	icon = GFX_decision_GEA_Kartel_decisions
+	allowed = {
+		original_tag = GEA
+	}
+	visible = {
+		#has_completed_focus = GEA_Governor_Kartel		
+	}
+	priority = 1000
+	visible_when_empty = yes
+}

@@ -512,6 +512,9 @@ add_namespace = GEA
 			set_country_flag = GEA_Governor_Tilo_flag
 			increase_ruling_party_popularity_by_10 = yes
 			hidden_effect = {
+				add_dynamic_modifier = {
+					modifier = GEA_Corporation_RuleGEA_Corporation_Rule
+				}
 			}
 		}
 		option = { #弗里茨·梅尔代表IG法本承接这一重担
@@ -540,6 +543,9 @@ add_namespace = GEA
 			custom_effect_tooltip = GEA_Indochina_Anger_Up
 			increase_ruling_party_popularity_by_10 = yes
 			hidden_effect = {
+				add_dynamic_modifier = {
+					modifier = GEA_Corporation_RuleGEA_Corporation_Rule
+				}
 			}
 		}
 	}
@@ -3675,6 +3681,125 @@ add_namespace = GEA
 			}
 		}
 	}
+#企业
+	country_event = { #新领地
+		id = GEA.400
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.400" }
+		title = GEA.400.t
+		desc = GEA.400.d
+		picture = GFX_GEA_36
+
+		fire_only_once = yes
+		is_triggered_only = yes
+
+		option = { 
+			name = GEA.400.a
+			add_political_power = 5
+		}
+	}
+	country_event = { #如人一样
+		id = GEA.401
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.400" }
+		title = GEA.401.t
+		desc = GEA.401.d
+		picture = GFX_GEA_37
+
+		fire_only_once = yes
+		is_triggered_only = yes
+
+		option = { 
+			name = GEA.401.a
+			add_political_power = 5
+		}
+	}
+	country_event = { #划清界限
+		id = GEA.402
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.402" }
+		title = GEA.402.t
+		desc = GEA.402.d
+
+		fire_only_once = yes
+		is_triggered_only = yes
+
+		option = { 
+			name = GEA.402.a
+			add_stability = 0.01
+		}
+	}
+	country_event = { #枪支
+		id = GEA.403
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.403" }
+		title = GEA.403.t
+		desc = GEA.403.d
+		picture = GFX_GEA_38
+
+		fire_only_once = yes
+		is_triggered_only = yes
+
+		option = { 
+			name = GEA.403.a
+			add_war_support = 0.01
+		}
+	}
+	country_event = { #送还
+		id = GEA.404
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.404" }
+		title = GEA.404.t
+		desc = GEA.404.d
+		picture = GFX_GEA_39
+
+		fire_only_once = yes
+		is_triggered_only = yes
+
+		option = { 
+			name = GEA.404.a
+			add_manpower = -1
+		}
+	}
+	country_event = { #东方粮仓
+		id = GEA.405
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.405" }
+		title = GEA.405.t
+		desc = GEA.405.d
+		picture = GFX_GEA_40
+
+		fire_only_once = yes
+		is_triggered_only = yes
+
+		option = { 
+			name = GEA.405.a
+			increase_ruling_party_popularity_by_10 = yes
+			add_to_variable = { GEA_Corporation_Rule_political_power = 0.05 }
+			add_to_variable = { GEA_Corporation_Rule_start_efficiency = 0.03 }
+		}
+
+		option = { 
+			name = GEA.405.b
+			add_stability = 0.1
+			modify_country_flag = {
+				flag = GEA_Indochinese_Anger
+				value = -1
+			}
+			custom_effect_tooltip = GEA_Indochina_Anger_Down
+			add_to_variable = { GEA_Other_Corporation_Anger = 1 }
+			custom_effect_tooltip = GEA_Krupp_Other_Corporation_Anger_Up
+		}
+	}
+	country_event = { #东方的一天
+		id = GEA.406
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.406" }
+		title = GEA.406.t
+		desc = GEA.406.d
+		picture = GFX_GEA_41
+
+		fire_only_once = yes
+		is_triggered_only = yes
+
+		option = { 
+			name = GEA.406.a
+			increase_ruling_party_popularity_by_2 = yes
+		}
+	}
 #经济
 	country_event = { #重点开发
 		id = GEA.1000
@@ -4130,7 +4255,47 @@ add_namespace = GEA
 			}
 		}
 	}
+#陆军事件
+	country_event = {
+		id = GEA.1200
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.1200" }
+		title = GEA.1200.t
+		desc = GEA.1200.d
+		picture = GFX_GEA_The_German_General_Staff
 
+		fire_only_once = yes
+
+		is_triggered_only = yes
+
+		option = { 
+			name = GEA.1200.a
+			ai_chance = {
+				factor = 25
+			}
+        	set_country_flag = GEA_Stauffenberg_reform
+		}
+		option = { 
+			name = GEA.1200.b
+			ai_chance = {
+				factor = 25
+			}
+        	set_country_flag = GEA_Tresckow_reform
+		}
+		option = { 
+			name = GEA.1200.c
+			ai_chance = {
+				factor = 25
+			}
+        	set_country_flag = GEA_Saucken_reform
+		}
+		option = { 
+			name = GEA.1200.e
+			ai_chance = {
+				factor = 25
+			}
+        	set_country_flag = GEA_ferdinand_win
+		}
+	}
 #隐藏事件
 	country_event = {
 		id = GEA.10000
@@ -6639,47 +6804,7 @@ add_namespace = GEA
 			add_war_support = -0.02
 		}
 	}
-#陆军事件
-	country_event = {
-		id = Ostasien.1000
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.1000" }
-		title = Ostasien.1000.t
-		desc = Ostasien.1000.d
-		picture = GFX_GEA_The_German_General_Staff
 
-		fire_only_once = yes
-
-		is_triggered_only = yes
-
-		option = { 
-			name = Ostasien.1000.a
-			ai_chance = {
-				factor = 25
-			}
-        	set_country_flag = GEA_Stauffenberg_reform
-		}
-		option = { 
-			name = Ostasien.1000.b
-			ai_chance = {
-				factor = 25
-			}
-        	set_country_flag = GEA_Tresckow_reform
-		}
-		option = { 
-			name = Ostasien.1000.c
-			ai_chance = {
-				factor = 25
-			}
-        	set_country_flag = GEA_Saucken_reform
-		}
-		option = { 
-			name = Ostasien.1000.e
-			ai_chance = {
-				factor = 25
-			}
-        	set_country_flag = GEA_ferdinand_win
-		}
-	}
 	country_event = {
 		id = Ostasien.1001
 		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.1001" }

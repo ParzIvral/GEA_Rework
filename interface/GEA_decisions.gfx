@@ -4,6 +4,10 @@ spriteTypes = {
 		texturefile = "gfx/interface/decisions/josias_decision.png"
 	}
 	spriteType = {
+		name = "GFX_decision_GEA_Kartel_decisions"
+		texturefile = "gfx/interface/decisions/GEA_Kartel_decisions.png"
+	}
+	spriteType = {
 		name = "GFX_decision_mucke_decision"
 		texturefile = "gfx/interface/decisions/mucke_decision.png"
 	}
