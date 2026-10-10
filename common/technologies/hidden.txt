@@ -1012,6 +1012,28 @@ technologies = {
 		}
 	}
 
+	GEA_penal_assault_tech = { #效果：惩戒营要塞/城市攻击+15%，HP+50%，补给消耗-10%
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech GEA_penal_assault_tech" }
+
+		research_cost = 1
+
+		# only added by effect
+		allow = {
+			always = no
+		}
+
+		penal_battalion = {
+			max_strength = 10
+			supply_consumption_factor = -0.10
+			fort = {
+				attack = 0.15
+			}
+			urban = {
+				attack = 0.15
+			}
+		}
+	}
+
 	improved_military_police = { #效果：宪兵镇压+10%、补给消耗-10%、主动性+10%，城市攻击+10%
 
 		research_cost = 1
@@ -1100,7 +1122,6 @@ technologies = {
 
 		research_cost = 1
 
-		# only from focus!!! #####
 		allow = {
 			always = no
 		}

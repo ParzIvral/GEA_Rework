@@ -13,6 +13,26 @@ spriteTypes = {
 		textureFile = "gfx/interface/autonomy/autonomy_colonial_government_icon.png"
 	}
 	spriteType = {
+		name = "GFX_GEA_Corporation_Rule_Krupp"
+		textureFile = "gfx/interface/autonomy/GEA_Corporation_Rule_Krupp.png"
+	}
+	spriteType = {
+		name = "GFX_GEA_Corporation_Rule_IG"
+		textureFile = "gfx/interface/autonomy/GEA_Corporation_Rule_IG.png"
+	}
+	spriteType = {
+		name = "GFX_idea_GEA_Industrial_production_never_stops_day_or_night"
+		texturefile = "gfx/interface/ideas/gea/GEA_Industrial_production_never_stops_day_or_night.png"
+	}
+	spriteType = {
+		name = "GFX_idea_GEA_End_unlimited_exports"
+		texturefile = "gfx/interface/ideas/gea/GEA_End_unlimited_exports.png"
+	}
+	spriteType = {
+		name = "GFX_idea_GEA_Essen_Singapore_Constitution"
+		texturefile = "gfx/interface/ideas/gea/GEA_Essen_Singapore_Constitution.png"
+	}
+	spriteType = {
 		name = "GFX_idea_GEA_mucke_reform"
 		texturefile = "gfx/interface/ideas/gea/GEA_mucke_reform.png"
 	}

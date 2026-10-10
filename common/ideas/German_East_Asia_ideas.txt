@@ -1480,6 +1480,110 @@ ideas = {
 				production_speed_buildings_factor = 0.07
 			}
 		}
+		GEA_The_garden_of_the_cartel_Cartel_2 = { #卡特尔的后花园
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_The_garden_of_the_cartel_Cartel_2"}
+			name = GEA_The_garden_of_the_cartel
+			picture = GEA_The_garden_of_the_cartel
+			allowed = { always = no }
+			modifier = {
+				political_power_factor = -0.1
+				consumer_goods_factor = -0.2
+				local_resources_factor = 0.15
+				production_factory_efficiency_gain_factor = 0.05
+				production_factory_max_efficiency_factor = 0.04
+				production_speed_buildings_factor = 0.12
+				military_industrial_organization_funds_gain = 0.2
+				military_industrial_organization_research_bonus = 0.15
+			}
+		}
+		GEA_colonial_question_Cartel_1 = { #东亚殖民政府
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_colonial_question_Cartel_1"}
+			name = GEA_colonial_question
+			picture = colonial_question
+			allowed = { always = no }
+			modifier = {
+				political_power_factor = 0.1
+				non_core_manpower = 0.05
+				resistance_growth = 0.1
+				required_garrison_factor = 0.1
+				surrender_limit = -0.1
+				stability_factor = 0.05
+			}
+		}
+		GEA_colonial_question_Cartel_2_Krupp = { #东亚殖民政府
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_colonial_question_Cartel_2_Krupp "}
+			name = GEA_colonial_question
+			picture = colonial_question
+			allowed = { always = no }
+			modifier = {
+				political_power_factor = 0.08
+				compliance_growth = 0.04
+				stability_factor = 0.05
+				consumer_goods_expected_value = 0.1
+				production_factory_efficiency_gain_factor = 0.03
+			}
+		}
+		GEA_colonial_question_Cartel_2_IG = { #东亚殖民政府
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_colonial_question_Cartel_2_IG"}
+			name = GEA_colonial_question
+			picture = colonial_question
+			allowed = { always = no }
+			modifier = {
+				political_power_factor = 0.13
+				industrial_capacity_factory = 0.06
+				resistance_growth = 0.1
+				required_garrison_factor = 0.05
+				local_resources_factor = 0.04
+			}
+		}
+		GEA_Industrial_production_never_stops_day_or_night = { #工业生产日夜不停
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Industrial_production_never_stops_day_or_night"}
+			picture = GEA_Industrial_production_never_stops_day_or_night
+			allowed = { always = no }
+			modifier = {
+				conscription_factor = -0.07
+				production_speed_buildings_factor = 0.04
+				industrial_capacity_factory = 0.04
+				production_factory_max_efficiency_factor = 0.06
+			}
+		}
+		GEA_End_unlimited_exports = { #终结无限制出口
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_End_unlimited_exports"}
+			picture = GEA_End_unlimited_exports
+			allowed = { always = no }
+			modifier = {
+				political_power_gain = 0.06
+				local_building_slots_factor = 0.15
+				line_change_production_efficiency_factor = -0.08
+				min_export = -0.2
+			}
+		}
+		GEA_End_unlimited_exports_2 = { #终结无限制出口
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_End_unlimited_exports_2"}
+			name = GEA_End_unlimited_exports
+			picture = GEA_End_unlimited_exports
+			allowed = { always = no }
+			modifier = {
+				political_power_gain = 0.09
+				consumer_goods_factor = -0.06
+				local_building_slots_factor = 0.15
+				line_change_production_efficiency_factor = -0.1
+				min_export = -0.3
+			}
+		}
+		GEA_Essen_Singapore_Constitution = { #埃森-新加坡宪法
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Essen_Singapore_Constitution"}
+			picture = GEA_Essen_Singapore_Constitution
+			allowed = { always = no }
+			modifier = {
+				political_power_factor = 0.1
+				production_factory_start_efficiency_factor = 0.11
+				production_factory_efficiency_gain_factor = 0.06
+				local_resources_factor = -0.06
+				industrial_capacity_factory = 0.05
+				consumer_goods_factor = 0.15
+			}
+		}
 #经济
 		GEA_Comprehensive_sales_network = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Comprehensive_sales_network"}
@@ -1498,13 +1602,23 @@ ideas = {
 #决议
 		GEA_Integration_of_Siamese_police = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Integration_of_Siamese_police"}
-			picture = brokencuffs
+			picture = GER_Martial_Discipline_Pure_Simple
 			allowed = { always = no }
 			modifier = {
 				required_garrison_factor = -0.1
 				resistance_decay = 0.1
 			}
 		} 
+#印度支那战争
+		GEA_vietcong_killer_idea = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_vietcong_killer_idea"}
+			picture = FRA_scw_intervention_nationalists_focus
+			allowed = { always = no }
+			targeted_modifier = {
+				tag = INC
+				attack_bonus_against = 0.1
+			}
+		}
 #军事线
 		GEA_invest_arms_industry = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_invest_arms_industry" }
