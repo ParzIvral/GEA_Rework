@@ -2179,7 +2179,7 @@ GEA_decisions = {#德属东亚殖民地决议
 			NOT = {
 				has_country_flag = GEA_Rangers_have_been_put_to_the_task
 			}
-			has_manpower = 1000
+			has_manpower > 999
 		}
 
 		visible = {
@@ -2236,7 +2236,7 @@ GEA_decisions = {#德属东亚殖民地决议
 			NOT = {
 				has_country_flag = GEA_Rangers_have_been_put_to_the_task
 			}
-			has_manpower = 1000
+			has_manpower > 1999
 		}
 
 		visible = {
@@ -2298,7 +2298,7 @@ GEA_decisions = {#德属东亚殖民地决议
 			NOT = {
 				has_country_flag = GEA_Rangers_have_been_put_to_the_task
 			}
-			has_manpower = 1000
+			has_manpower > 1999
 		}
 
 		visible = {
@@ -2975,7 +2975,7 @@ GEA_decisions = {#德属东亚殖民地决议
 			add_to_variable = { GEA_singapore_development = 1 }  
 			custom_effect_tooltip = GEA_development_in_singapore_tt
 			846 = {
-				increase_state_category = yes
+				increase_state_category_by_one_level = yes = yes
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
@@ -3026,7 +3026,7 @@ GEA_decisions = {#德属东亚殖民地决议
 			}
 			add_manpower = 7500
 			846 = {
-				increase_state_category = yes
+				increase_state_category_by_one_level = yes = yes
 				add_extra_state_shared_building_slots = 1
 			}
 			add_to_variable = {
@@ -3129,7 +3129,7 @@ GEA_decisions = {#德属东亚殖民地决议
 				tooltip = GEA_Integrate_Borneo_effect_tt
 				check_variable = { GEA_Borneo_development > 9 }
 			} 
-			has_country_flag = Borneo_OPEN
+			
 		}
 
 		visible = {
@@ -3139,6 +3139,7 @@ GEA_decisions = {#德属东亚殖民地决议
 				owns_state = 334
 				owns_state = 1016
 			}
+			has_country_flag = Borneo_OPEN
 		}
 
 		cost = 100
@@ -3604,10 +3605,12 @@ GEA_decisions = {#德属东亚殖民地决议
 		ai_will_do = {
 			factor = 20
 		}
-
+		visible = {
+			has_country_flag = Borneo_OPEN
+		}
 		available = {
 			has_completed_focus = GEA_Tread_flat_the_rainforest
-			has_country_flag = Borneo_OPEN
+			
 		}
 		modifier = {
 			political_power_gain = -0.05
@@ -3652,13 +3655,16 @@ GEA_decisions = {#德属东亚殖民地决议
 		ai_will_do = {
 			factor = 30
 		}
+		visible = {
+			has_country_flag = Borneo_OPEN
+		}
 		available = {
 			has_completed_focus = GEA_Deep_in_the_barren_land
 		}
 		modifier = {
 			political_power_gain = -0.05
 			weekly_manpower = 500
-			has_country_flag = Borneo_OPEN
+			
 		}
 
 		complete_effect = {
@@ -5264,6 +5270,7 @@ GEA_decisions = {#德属东亚殖民地决议
 			log = "[GetDateText]: [Root.GetName]: Decision GEA_Conscription_of_militia"
 			add_to_variable = { GEA_Bruma_development = 1 }  
 			custom_effect_tooltip = GEA_Conscription_of_militia_tt
+			custom_effect_tooltip = GEA_development_in_Bruma_tt
 			hidden_effect = {
 				division_template = {
 					name = "Royal Bloodsworn Elite"
@@ -5883,6 +5890,7 @@ GEA_heye_Breakwater_project_decisions = {
 		allowed = { original_tag = GEA }
 
 		available = {
+			num_of_civilian_factories_available_for_projects > 4
 			NOT = { has_country_flag = GEA_breakwater_project_under_construction }
 		}
 
@@ -5895,8 +5903,9 @@ GEA_heye_Breakwater_project_decisions = {
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision GEA_Start_construction_progress_1_in_indochina"
 			set_country_flag = GEA_breakwater_project_under_construction
+			add_ideas = GEA_construction_fiscal_expenditure
 			GEA = {
-				activate_decision = GEA_Start_construction_project_of_the_indochina
+				activate_mission = GEA_Start_construction_project_of_the_indochina
 			}
 		}
 	}
@@ -5906,6 +5915,7 @@ GEA_heye_Breakwater_project_decisions = {
 		allowed = { original_tag = GEA }
 
 		available = {
+			num_of_civilian_factories_available_for_projects > 4
 			NOT = { has_country_flag = GEA_breakwater_project_under_construction }
 		}
 
@@ -5919,8 +5929,9 @@ GEA_heye_Breakwater_project_decisions = {
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision GEA_Start_construction_progress_2_in_indochina"
 			set_country_flag = GEA_breakwater_project_under_construction
+			add_ideas = GEA_construction_fiscal_expenditure
 			GEA = {
-				activate_decision = GEA_Start_construction_project_of_the_indochina_2
+				activate_mission = GEA_Start_construction_project_of_the_indochina_2
 			}
 		}
 	}
@@ -5930,6 +5941,7 @@ GEA_heye_Breakwater_project_decisions = {
 		allowed = { original_tag = GEA }
 
 		available = {
+			num_of_civilian_factories_available_for_projects > 4
 			NOT = { has_country_flag = GEA_breakwater_project_under_construction }
 		}
 
@@ -5943,8 +5955,9 @@ GEA_heye_Breakwater_project_decisions = {
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision GEA_Start_construction_progress_3_in_indochina"
 			set_country_flag = GEA_breakwater_project_under_construction
+			add_ideas = GEA_construction_fiscal_expenditure
 			GEA = {
-				activate_decision = GEA_Start_construction_project_of_the_indochina_3
+				activate_mission = GEA_Start_construction_project_of_the_indochina_3
 			}
 		}
 	}
@@ -5954,6 +5967,7 @@ GEA_heye_Breakwater_project_decisions = {
 		allowed = { original_tag = GEA }
 
 		available = {
+			num_of_civilian_factories_available_for_projects > 4
 			NOT = { has_country_flag = GEA_breakwater_project_under_construction }
 		}
 
@@ -5966,8 +5980,9 @@ GEA_heye_Breakwater_project_decisions = {
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision GEA_Start_construction_progress_1_in_malaya"
 			set_country_flag = GEA_breakwater_project_under_construction
+			add_ideas = GEA_construction_fiscal_expenditure
 			GEA = {
-				activate_decision = GEA_Start_construction_project_of_the_malaya
+				activate_mission = GEA_Start_construction_project_of_the_malaya
 			}
 		}
 	}
@@ -5977,6 +5992,7 @@ GEA_heye_Breakwater_project_decisions = {
 		allowed = { original_tag = GEA }
 
 		available = {
+			num_of_civilian_factories_available_for_projects > 4
 			NOT = { has_country_flag = GEA_breakwater_project_under_construction }
 		}
 
@@ -5990,8 +6006,9 @@ GEA_heye_Breakwater_project_decisions = {
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision GEA_Start_construction_progress_2_in_malaya"
 			set_country_flag = GEA_breakwater_project_under_construction
+			add_ideas = GEA_construction_fiscal_expenditure
 			GEA = {
-				activate_decision = GEA_Start_construction_project_of_the_malaya_2
+				activate_mission = GEA_Start_construction_project_of_the_malaya_2
 			}
 		}
 	}
@@ -6001,6 +6018,7 @@ GEA_heye_Breakwater_project_decisions = {
 		allowed = { original_tag = GEA }
 
 		available = {
+			num_of_civilian_factories_available_for_projects > 4
 			NOT = { has_country_flag = GEA_breakwater_project_under_construction }
 		}
 
@@ -6014,8 +6032,9 @@ GEA_heye_Breakwater_project_decisions = {
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision GEA_Start_construction_progress_3_in_malaya"
 			set_country_flag = GEA_breakwater_project_under_construction
+			add_ideas = GEA_construction_fiscal_expenditure
 			GEA = {
-				activate_decision = GEA_Start_construction_project_of_the_malaya_3
+				activate_mission = GEA_Start_construction_project_of_the_malaya_3
 			}
 		}
 	}
@@ -6025,6 +6044,7 @@ GEA_heye_Breakwater_project_decisions = {
 		allowed = { original_tag = GEA }
 
 		available = {
+			num_of_civilian_factories_available_for_projects > 4
 			NOT = { has_country_flag = GEA_breakwater_project_under_construction }
 		}
 
@@ -6037,8 +6057,9 @@ GEA_heye_Breakwater_project_decisions = {
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision GEA_Start_construction_progress_1_in_north_borneo"
 			set_country_flag = GEA_breakwater_project_under_construction
+			add_ideas = GEA_construction_fiscal_expenditure
 			GEA = {
-				activate_decision = GEA_Start_construction_project_of_the_north_borneo
+				activate_mission = GEA_Start_construction_project_of_the_north_borneo
 			}
 		}
 	}
@@ -6048,6 +6069,7 @@ GEA_heye_Breakwater_project_decisions = {
 		allowed = { original_tag = GEA }
 
 		available = {
+			num_of_civilian_factories_available_for_projects > 4
 			NOT = { has_country_flag = GEA_breakwater_project_under_construction }
 		}
 
@@ -6061,8 +6083,9 @@ GEA_heye_Breakwater_project_decisions = {
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision GEA_Start_construction_progress_2_in_north_borneo"
 			set_country_flag = GEA_breakwater_project_under_construction
+			add_ideas = GEA_construction_fiscal_expenditure
 			GEA = {
-				activate_decision = GEA_Start_construction_project_of_the_north_borneo_2
+				activate_mission = GEA_Start_construction_project_of_the_north_borneo_2
 			}
 		}
 	}
@@ -6072,6 +6095,7 @@ GEA_heye_Breakwater_project_decisions = {
 		allowed = { original_tag = GEA }
 
 		available = {
+			num_of_civilian_factories_available_for_projects > 4
 			NOT = { has_country_flag = GEA_breakwater_project_under_construction }
 		}
 
@@ -6085,8 +6109,9 @@ GEA_heye_Breakwater_project_decisions = {
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision GEA_Start_construction_progress_3_in_north_borneo"
 			set_country_flag = GEA_breakwater_project_under_construction
+			add_ideas = GEA_construction_fiscal_expenditure
 			GEA = {
-				activate_decision = GEA_Start_construction_project_of_the_north_borneo_3
+				activate_mission = GEA_Start_construction_project_of_the_north_borneo_3
 			}
 		}
 	}	
@@ -6117,6 +6142,7 @@ GEA_heye_Breakwater_project_decisions = {
 		}
 
 		cancel_effect = {
+			remove_ideas = GEA_construction_fiscal_expenditure
 			clr_country_flag = GEA_breakwater_project_under_construction
 		}
 
@@ -6124,15 +6150,12 @@ GEA_heye_Breakwater_project_decisions = {
 			num_of_civilian_factories_available_for_projects > 4
 		}
 
-		modifier = {
-			civilian_factory_use = 5
-			consumer_goods_factor = 0.05
-		}
 
 		days_mission_timeout = 180
 
 
 		timeout_effect = {
+			remove_ideas = GEA_construction_fiscal_expenditure
 			clr_country_flag = GEA_breakwater_project_under_construction        
 			custom_effect_tooltip = GEA_coast_line_bunker_building_construction_1
 			set_country_flag = GEA_bunker_construction_progress_1_done_in_indochina
@@ -6358,6 +6381,7 @@ GEA_heye_Breakwater_project_decisions = {
 		}
 
 		cancel_effect = {
+			remove_ideas = GEA_construction_fiscal_expenditure
 			clr_country_flag = GEA_breakwater_project_under_construction
 		}
 
@@ -6365,15 +6389,12 @@ GEA_heye_Breakwater_project_decisions = {
 			num_of_civilian_factories_available_for_projects > 4
 		}
 
-		modifier = {
-			civilian_factory_use = 5
-			consumer_goods_factor = 0.05
-		}
 
 		days_mission_timeout = 180
 
 
 		timeout_effect = {
+			remove_ideas = GEA_construction_fiscal_expenditure
 			clr_country_flag = GEA_breakwater_project_under_construction        
 			custom_effect_tooltip = GEA_coast_line_bunker_building_construction_1
 			set_country_flag = GEA_bunker_construction_progress_2_done_in_indochina
@@ -6599,6 +6620,7 @@ GEA_heye_Breakwater_project_decisions = {
 		}
 
 		cancel_effect = {
+			remove_ideas = GEA_construction_fiscal_expenditure
 			clr_country_flag = GEA_breakwater_project_under_construction
 		}
 
@@ -6606,15 +6628,12 @@ GEA_heye_Breakwater_project_decisions = {
 			num_of_civilian_factories_available_for_projects > 4
 		}
 
-		modifier = {
-			civilian_factory_use = 5
-			consumer_goods_factor = 0.05
-		}
 
 		days_mission_timeout = 180
 
 
 		timeout_effect = {
+			remove_ideas = GEA_construction_fiscal_expenditure
 			clr_country_flag = GEA_breakwater_project_under_construction        
 			custom_effect_tooltip = GEA_coast_line_bunker_building_construction_1
 			set_country_flag = GEA_bunker_construction_progress_3_done_in_indochina
@@ -6837,6 +6856,7 @@ GEA_heye_Breakwater_project_decisions = {
 		}
 
 		cancel_effect = {
+			remove_ideas = GEA_construction_fiscal_expenditure
 			clr_country_flag = GEA_breakwater_project_under_construction
 		}
 
@@ -6844,14 +6864,11 @@ GEA_heye_Breakwater_project_decisions = {
 			num_of_civilian_factories_available_for_projects > 4
 		}
 
-		modifier = {
-			civilian_factory_use = 5
-			consumer_goods_factor = 0.05
-		}
 
 		days_mission_timeout = 180
 
 		timeout_effect = {
+			remove_ideas = GEA_construction_fiscal_expenditure
 			clr_country_flag = GEA_breakwater_project_under_construction
 			custom_effect_tooltip = GEA_coast_line_bunker_building_construction_malaya
 			set_country_flag = GEA_bunker_construction_progress_1_done_in_malaya
@@ -6882,6 +6899,7 @@ GEA_heye_Breakwater_project_decisions = {
 		}
 
 		cancel_effect = {
+			remove_ideas = GEA_construction_fiscal_expenditure
 			clr_country_flag = GEA_breakwater_project_under_construction
 		}
 
@@ -6889,14 +6907,11 @@ GEA_heye_Breakwater_project_decisions = {
 			num_of_civilian_factories_available_for_projects > 4
 		}
 
-		modifier = {
-			civilian_factory_use = 5
-			consumer_goods_factor = 0.05
-		}
 
 		days_mission_timeout = 180
 
 		timeout_effect = {
+			remove_ideas = GEA_construction_fiscal_expenditure
 			clr_country_flag = GEA_breakwater_project_under_construction
 			custom_effect_tooltip = GEA_coast_line_bunker_building_construction_malaya
 			set_country_flag = GEA_bunker_construction_progress_2_done_in_malaya
@@ -6927,6 +6942,7 @@ GEA_heye_Breakwater_project_decisions = {
 		}
 
 		cancel_effect = {
+			remove_ideas = GEA_construction_fiscal_expenditure
 			clr_country_flag = GEA_breakwater_project_under_construction
 		}
 
@@ -6934,14 +6950,11 @@ GEA_heye_Breakwater_project_decisions = {
 			num_of_civilian_factories_available_for_projects > 4
 		}
 
-		modifier = {
-			civilian_factory_use = 5
-			consumer_goods_factor = 0.05
-		}
 
 		days_mission_timeout = 180
 
 		timeout_effect = {
+			remove_ideas = GEA_construction_fiscal_expenditure
 			clr_country_flag = GEA_breakwater_project_under_construction
 			custom_effect_tooltip = GEA_coast_line_bunker_building_construction_malaya
 			set_country_flag = GEA_bunker_construction_progress_3_done_in_malaya
@@ -6972,6 +6985,7 @@ GEA_heye_Breakwater_project_decisions = {
 		}
 
 		cancel_effect = {
+			remove_ideas = GEA_construction_fiscal_expenditure
 			clr_country_flag = GEA_breakwater_project_under_construction
 		}
 
@@ -6979,14 +6993,11 @@ GEA_heye_Breakwater_project_decisions = {
 			num_of_civilian_factories_available_for_projects > 4
 		}
 
-		modifier = {
-			civilian_factory_use = 5
-			consumer_goods_factor = 0.05
-		}
 
 		days_mission_timeout = 180
 
 		timeout_effect = {
+			remove_ideas = GEA_construction_fiscal_expenditure
 			clr_country_flag = GEA_breakwater_project_under_construction
 			custom_effect_tooltip = GEA_coast_line_bunker_building_construction_north_borneo
 			set_country_flag = GEA_bunker_construction_progress_1_done_in_north_borneo
@@ -7017,6 +7028,7 @@ GEA_heye_Breakwater_project_decisions = {
 		}
 
 		cancel_effect = {
+			remove_ideas = GEA_construction_fiscal_expenditure
 			clr_country_flag = GEA_breakwater_project_under_construction
 		}
 
@@ -7024,14 +7036,11 @@ GEA_heye_Breakwater_project_decisions = {
 			num_of_civilian_factories_available_for_projects > 4
 		}
 
-		modifier = {
-			civilian_factory_use = 5
-			consumer_goods_factor = 0.05
-		}
 
 		days_mission_timeout = 180
 
 		timeout_effect = {
+			remove_ideas = GEA_construction_fiscal_expenditure
 			clr_country_flag = GEA_breakwater_project_under_construction
 			custom_effect_tooltip = GEA_coast_line_bunker_building_construction_north_borneo
 			set_country_flag = GEA_bunker_construction_progress_2_done_in_north_borneo
@@ -7062,6 +7071,7 @@ GEA_heye_Breakwater_project_decisions = {
 		}
 
 		cancel_effect = {
+			remove_ideas = GEA_construction_fiscal_expenditure
 			clr_country_flag = GEA_breakwater_project_under_construction
 		}
 
@@ -7069,14 +7079,11 @@ GEA_heye_Breakwater_project_decisions = {
 			num_of_civilian_factories_available_for_projects > 4
 		}
 
-		modifier = {
-			civilian_factory_use = 5
-			consumer_goods_factor = 0.05
-		}
 
 		days_mission_timeout = 180
 
 		timeout_effect = {
+			remove_ideas = GEA_construction_fiscal_expenditure
 			clr_country_flag = GEA_breakwater_project_under_construction
 			custom_effect_tooltip = GEA_coast_line_bunker_building_construction_north_borneo
 			set_country_flag = GEA_bunker_construction_progress_3_done_in_north_borneo
@@ -7538,7 +7545,7 @@ GEA_War_Experience_decisions = { #战火淬炼
 		allowed = { original_tag = GEA }
 
 		visible = {
-			has_completed_focus = EA_Improve_the_design_of_weapons
+			has_completed_focus = GEA_Improve_the_design_of_weapons
 		}
 
 		available = {
@@ -7576,7 +7583,7 @@ GEA_War_Experience_decisions = { #战火淬炼
 		allowed = { original_tag = GEA }
 
 		visible = {
-			has_completed_focus = EA_Improve_the_design_of_weapons
+			has_completed_focus = GEA_Improve_the_design_of_weapons
 		}
 
 		available = {
@@ -7704,6 +7711,7 @@ GEA_Kartel_decisions = { #东方聚宝盆
 			add_stability = 0.05
 			add_to_variable = { GEA_army_breakthrough_factor = 0.05 }
 			add_to_variable = { GEA_army_army_morale_factor = 0.05 }
+			custom_effect_tooltip = GEA_Strengthening_military_armaments_army_tt
 		}
 	}
 }

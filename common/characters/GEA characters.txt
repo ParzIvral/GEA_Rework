@@ -540,6 +540,9 @@ characters = {
 		name = GEA_Fritz_Bayerlein
 		portraits = { army = { large = GFX_portrait_Portrait_GEA_Fritz_Bayerlein } }
 		corps_commander = {
+			visible = {
+				has_completed_focus = GEA_Invitation_to_Hunters
+			}
 			traits = {
 				harsh_leader
 				career_officer
@@ -558,6 +561,9 @@ characters = {
 		name = GEA_Herbert_Gille
 		portraits = { army = { large = GFX_portrait_Portrait_GEA_Herbert_Gille } }
 		corps_commander = {
+			visible = {
+				has_completed_focus = GEA_Invitation_to_Hunters
+			}
 			traits = {
 				brilliant_strategist
 				ascari_officer
@@ -574,6 +580,9 @@ characters = {
 		name = GEA_Felix_Steiner
 		portraits = { army = { large = GFX_portrait_Portrait_GEA_Felix_Steiner } }
 		corps_commander = {
+			visible = {
+				has_completed_focus = GEA_Invitation_to_Hunters
+			}
 			traits = {
 				war_hero
 				politically_connected

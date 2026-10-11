@@ -841,7 +841,7 @@ focus_tree = {
 				}
 				add_stability = 0.05
 				custom_effect_tooltip = GEA_Abandoning_the_savage_nature_tt_2
-				add_to_variable = { GEA_mobilization_speed = 0.10 }
+				add_to_variable = { GEA_army_mobilization_speed = 0.10 }
 				add_to_variable = { GEA_army_minimum_training_level = 0.15 }
 				add_to_variable = { GEA_army_conscription_factor = 0.075 }
 			}
@@ -859,7 +859,7 @@ focus_tree = {
 				}
 				add_stability = 0.02
 				custom_effect_tooltip = GEA_Abandoning_the_savage_nature_tt_3 
-				add_to_variable = { GEA_mobilization_speed = 0.05 }
+				add_to_variable = { GEA_army_mobilization_speed = 0.05 }
 				add_to_variable = { GEA_army_minimum_training_level = 0.10 }
 				add_to_variable = { GEA_army_conscription_factor = 0.05 }
 			}
@@ -1846,7 +1846,7 @@ focus_tree = {
 			custom_effect_tooltip = GEA_Domesticating_the_General_Staff_Department_tt
 			add_to_variable = { GEA_army_conscription_factor = 0.10 }
 			add_to_variable = { GEA_army_land_doctrine_cost_factor = -0.10 }
-			add_to_variable = { GEA_experience_loss_factor = -0.05 }
+			add_to_variable = { GEA_army_experience_loss_factor = -0.05 }
 		}
 	}
 
@@ -2607,27 +2607,6 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_In_perfect_order"
-		}
-	}
-	focus = { #秩序井然...？
-		id = GEA_In_perfect_order
-		icon = GFX_GEA_In_perfect_order
-		cost = 1	
-		x = -2
-		y = 1
-		available = {		
-		}
-        prerequisite = {
-			focus = GEA_Smother_the_flames_of_nationalism
-			focus = GEA_The_ten-year_struggle_against_the_Red_Ghost
-			focus = GEA_Ensure_loyal_citizens
-		}
-		relative_position_id = GEA_Ensure_loyal_citizens
-		ai_will_do = {
-			factor = 100
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_In_perfect_order"
 			add_popularity = {
 				ideology = paternal_autocrat
 				popularity = 0.08
@@ -3258,6 +3237,7 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Redraw_the_defense_zone"
 			set_variable = { GEA_priority_defense_zones_selected = 0 }
 			custom_effect_tooltip = GEA_Redraw_the_defense_zone_tt
+			custom_effect_tooltip = GEA_priority_defense_decisions_tt
 			hidden_effect = {
 				division_template = {
 					name = "Ostasiatische Verteidigungsdivision"
@@ -3807,7 +3787,7 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Treue_verpflichtet_beide_Seiten"
 			country_event = {
 				id = GEA.411
-				day = 1
+				days = 1
 			}
 		}
 	}
@@ -3878,6 +3858,7 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_foundation_of_the_war_industry"
 			add_to_variable = { GEA_Corporation_Rule_military_speed = 0.05 }
 			add_to_variable = { GEA_Corporation_Rule_refinery_speed = 0.1 }
+			custom_effect_tooltip = GEA_The_foundation_of_the_war_industry_corporation_rule_modifier_tt
 			random_owned_state = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -3966,6 +3947,7 @@ focus_tree = {
 			add_research_slot = 1
 			add_to_variable = { GEA_Corporation_Rule_efficiency_max = 0.06 }
 			add_to_variable = { GEA_Corporation_Rule_political_power = 0.04 }
+			custom_effect_tooltip = GEA_The_wisdom_of_the_Central_Committee_corporation_rule_modifier_tt
 			country_event = {
 				id = GEA.415
 				days = 2
@@ -4000,6 +3982,7 @@ focus_tree = {
 			add_to_variable = { GEA_Corporation_Rule_local_resources = 0.13 }
 			add_to_variable = { GEA_Corporation_Rule_factory_output = 0.04 }
 			add_to_variable = { GEA_Corporation_Rule_lack_resource_penalty = -0.06 }
+			custom_effect_tooltip = GEA_For_the_sake_of_progress_to_plunder_corporation_rule_modifier_tt
 			country_event = {
 				id = GEA.407
 				days = 7
@@ -4060,6 +4043,7 @@ focus_tree = {
 			add_to_variable = { GEA_Corporation_Rule_efficiency_max = 0.04 }
 			add_to_variable = { GEA_Corporation_Rule_political_power = 0.07 }
 			add_to_variable = { GEA_Corporation_Rule_consumer_goods = -0.06 }
+			custom_effect_tooltip = GEA_Taking_the_first_step_towards_greatness_corporation_rule_modifier_tt
 			country_event = {
 				id = GEA.408 #化学家的国度
 				days = 7
@@ -4093,6 +4077,32 @@ focus_tree = {
 			country_event = {
 				id = GEA.410
 				days = 4
+			}
+		}
+	}
+	focus = { #摆脱繁文缛节之疫
+		id = GEA_Get_rid_of_the_epidemic_of_red_tape
+		icon = GFX_GEA_Get_rid_of_the_epidemic_of_red_tape
+		cost = 1	
+		x = 0
+		y = 1
+		available = {		
+
+		}
+        prerequisite = {
+			focus = GEA_Governor_Kartel
+		}
+
+		relative_position_id = GEA_Governor_Kartel
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Get_rid_of_the_epidemic_of_red_tape"
+			increase_ruling_party_popularity_by_5 = yes
+			swap_ideas = {
+				remove_idea = GEA_colonial_question
+				add_idea = GEA_colonial_question_Cartel_1
 			}
 		}
 	}
@@ -4196,7 +4206,7 @@ focus_tree = {
 			add_research_slot = 1
 			336 = {
 				construct_building_in_random_province = {
-					land_facility = 1
+					air_facility = 1 
 				}
 			}
 			add_tech_bonus = {
@@ -4268,32 +4278,6 @@ focus_tree = {
 			country_event = {
 				id = GEA.401
 				days = 3
-			}
-		}
-	}
-	focus = { #摆脱繁文缛节之疫
-		id = GEA_Get_rid_of_the_epidemic_of_red_tape
-		icon = GFX_GEA_Get_rid_of_the_epidemic_of_red_tape
-		cost = 1	
-		x = 0
-		y = 1
-		available = {		
-
-		}
-        prerequisite = {
-			focus = GEA_Governor_Kartel
-		}
-
-		relative_position_id = GEA_Governor_Kartel
-		ai_will_do = {
-			factor = 100
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_Get_rid_of_the_epidemic_of_red_tape"
-			increase_ruling_party_popularity_by_5 = yes
-			swap_ideas = {
-				remove_idea = GEA_colonial_question
-				add_idea = GEA_colonial_question_Cartel_1
 			}
 		}
 	}
@@ -4413,7 +4397,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Enterprise_Exceptionalism"
-			add_popularity = 20
+			add_political_power = 20
 			random_owned_state = {
 				add_extra_state_shared_building_slots = 1		
 			}
@@ -4447,7 +4431,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_benefits_of_arms_sales"
-			swap = {
+			swap_ideas = {
 				remove_idea = GEA_End_unlimited_exports
 				add_idea = GEA_End_unlimited_exports_2
 			}
@@ -4852,6 +4836,29 @@ focus_tree = {
 		
 		}
 	}
+	focus = { #力量乃帝国之基
+		id = GEA_Strength_is_the_foundation_of_an_empire
+		icon = GFX_GEA_Strength_is_the_foundation_of_an_empire
+		cost = 1
+		x = 2
+		y = 1
+
+		available = {
+
+		}
+		prerequisite = {
+			focus = GEA_Governor_Schorner
+		}
+		relative_position_id = GEA_Governor_Schorner
+
+		ai_will_do = {
+			factor = 1000
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Strength_is_the_foundation_of_an_empire"
+		
+		}
+	}
 	focus = { #为统治而奴役
 		id = GEA_To_be_enslaved_for_the_sake_of_rule
 		icon = GFX_GEA_To_be_enslaved_for_the_sake_of_rule
@@ -4874,6 +4881,30 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_To_be_enslaved_for_the_sake_of_rule"
+		
+		}
+	}
+	focus = { #忠诚乃万事之先
+		id = GEA_Loyalty_is_the_foundation_of_all_things
+		icon = GFX_GEA_Loyalty_is_the_foundation_of_all_things
+
+		cost = 1
+		x = -2
+		y = 1
+
+		available = {
+
+		}
+		prerequisite = {
+			focus = GEA_Governor_Schorner
+		}
+		relative_position_id = GEA_Governor_Schorner
+
+		ai_will_do = {
+			factor = 1000
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Loyalty_is_the_foundation_of_all_things"
 		
 		}
 	}
@@ -4976,53 +5007,6 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_No_one_is_exempt_no_one_is_spared"
-		
-		}
-	}
-	focus = { #忠诚乃万事之先
-		id = GEA_Loyalty_is_the_foundation_of_all_things
-		icon = GFX_GEA_Loyalty_is_the_foundation_of_all_things
-
-		cost = 1
-		x = -2
-		y = 1
-
-		available = {
-
-		}
-		prerequisite = {
-			focus = GEA_Governor_Schorner
-		}
-		relative_position_id = GEA_Governor_Schorner
-
-		ai_will_do = {
-			factor = 1000
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_Loyalty_is_the_foundation_of_all_things"
-		
-		}
-	}
-	focus = { #力量乃帝国之基
-		id = GEA_Strength_is_the_foundation_of_an_empire
-		icon = GFX_GEA_Strength_is_the_foundation_of_an_empire
-		cost = 1
-		x = 2
-		y = 1
-
-		available = {
-
-		}
-		prerequisite = {
-			focus = GEA_Governor_Schorner
-		}
-		relative_position_id = GEA_Governor_Schorner
-
-		ai_will_do = {
-			factor = 1000
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_Strength_is_the_foundation_of_an_empire"
 		
 		}
 	}
@@ -5562,7 +5546,7 @@ focus_tree = {
 		prerequisite = {
 			focus = GEA_Krupp_brought_armaments
 			focus = GEA_IG_fraben_brought_progress
-			focus = GEA_Siemens_brings_prosperity
+			focus = GEA_OSRAM_brings_prosperity
 		}
 		prerequisite = {
 			focus = GEA_Guaranteeing_grain_exports
@@ -5955,7 +5939,7 @@ focus_tree = {
 			add_to_variable = { GEA_Economic_research_speed = 0.03 }
 			custom_effect_tooltip = GEA_Reproducing_the_Magic_of_Synthesizing_Ammonia_economic_modifier_tt
 
-			add_to_variable = { GEA_no_supply_grace = 48 }
+			add_to_variable = { GEA_army_no_supply_grace = 48 }
 			add_to_variable = { GEA_army_supply_consumption_factor = -0.1 }
 			custom_effect_tooltip = GEA_Reproducing_the_Magic_of_Synthesizing_Ammonia_army_tt
 		}
@@ -5982,7 +5966,7 @@ focus_tree = {
 			custom_effect_tooltip = GEA_Questions_of_Tropical_Pathology_economic_modifier_tt
 
 			add_to_variable = { GEA_army_army_morale_factor = 0.08 }
-			add_to_variable = { GEA_acclimatization_hot_climate_gain_factor = 0.15 }
+			add_to_variable = { GEA_army_acclimatization_hot_climate_gain_factor = 0.15 }
 			custom_effect_tooltip = GEA_Questions_of_Tropical_Pathology_army_tt
 		}
 	}
@@ -6348,7 +6332,7 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Lorenz_brings_the_sounds_from_beyond"
 			increase_ruling_party_popularity_by_3 = yes
 			add_to_variable = { GEA_army_land_reinforce_rate = 0.08 }
-			add_to_variable = { GEA_combat_width_factor = -0.05 }
+			add_to_variable = { GEA_army_combat_width_factor = -0.05 }
 			custom_effect_tooltip = GEA_Lorenz_brings_the_sounds_from_beyond_army_tt
 
 			add_to_variable = { GEA_Economic_research_speed = 0.06 }
@@ -6874,7 +6858,7 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_era_of_the_middle_class"
 			random_owned_state = {
 				add_extra_state_shared_building_slots = 2
-				increase_state_category = yes
+				increase_state_category_by_one_level = yes 
 				add_building_construction = {
 					type = industrial_complex
 					level = 2
@@ -6883,7 +6867,7 @@ focus_tree = {
 			}
 			random_owned_state = {
 				add_extra_state_shared_building_slots = 1
-				increase_state_category = yes
+				increase_state_category_by_one_level = yes
 				add_building_construction = {
 					type = industrial_complex
 					level = 1
@@ -6892,7 +6876,7 @@ focus_tree = {
 			}
 			random_owned_state = {
 				add_extra_state_shared_building_slots = 1
-				increase_state_category = yes
+				increase_state_category_by_one_level = yes 
 				add_building_construction = {
 					type = industrial_complex
 					level = 1
@@ -6901,7 +6885,7 @@ focus_tree = {
 			}
 			random_owned_state = {
 				add_extra_state_shared_building_slots = 1
-				increase_state_category = yes
+				increase_state_category_by_one_level = yes 
 				add_building_construction = {
 					type = industrial_complex
 					level = 1
@@ -6910,11 +6894,11 @@ focus_tree = {
 			}
 			random_owned_state = {
 				add_extra_state_shared_building_slots = 1
-				increase_state_category = yes		
+				increase_state_category_by_one_level = yes 		
 			}
 			random_owned_state = {
 				add_extra_state_shared_building_slots = 1
-				increase_state_category = yes		
+				increase_state_category_by_one_level = yes 		
 			}
 			add_to_variable = { GEA_Economic_efficiency_max = 0.05 }
 			add_to_variable = { GEA_Economic_efficiency_gain = 0.07 }
@@ -7216,8 +7200,8 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Wave_Defense"
 			custom_effect_tooltip = GEA_Wave_Defense_tt
 			add_to_variable = { GEA_army_defence_factor = 0.10 }
-			add_to_variable = { GEA_org_loss_when_moving = -0.40 }
-			add_to_variable = { GEA_experience_loss_factor = -0.08 }
+			add_to_variable = { GEA_army_org_loss_when_moving = -0.40 }
+			add_to_variable = { GEA_army_experience_loss_factor = -0.08 }
 		}
 	}
 	focus = { #驱策将死之人
@@ -7240,6 +7224,7 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Encouraging_the_dying_person"
 			set_technology = { penal_infantry = 1 }
 			custom_effect_tooltip = GEA_Encouraging_the_dying_person_tt
+			custom_effect_tooltip = GEA_unlock_penal_battalion_tt
 			custom_effect_tooltip = GEA_penal_assault_tech_effect
 			hidden_effect = {
 				set_technology = { GEA_penal_assault_tech = 1 popup = no }
@@ -7593,12 +7578,9 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Invitation_to_Hunters"
 			custom_effect_tooltip = GEA_Invitation_to_Hunters_tt
-			add_to_variable = { GEA_experience_loss_factor = -0.05 }
+			add_to_variable = { GEA_army_experience_loss_factor = -0.05 }
 			army_experience = 40
 			hidden_effect = {
-				recruit_character = GEA_Fritz_Bayerlein
-				recruit_character = GEA_Herbert_Gille
-				recruit_character = GEA_Felix_Steiner
 				random_army_leader = {
 					limit = { NOT = { has_unit_leader_flag = GEA_invitation_to_hunters_levelled } }
 					add_skill_level = 1
@@ -7874,12 +7856,18 @@ focus_tree = {
 			focus = GEA_emergency_meeting
 		}
 
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Ostasiatische_Heer"
 			custom_effect_tooltip = GEA_Ostasiatische_Heer_tt
 			army_experience = 50
 			add_to_variable = { GEA_army_command_power_gain_mult = 0.10 }
 			add_to_variable = { GEA_max_command_power = 30 }
+			336 = {
+				construct_building_in_random_province = {
+					land_facility = 1 
+				}
+			}
 			country_event = {
 				id = Ostasien.1000
 				days = 0
@@ -7903,6 +7891,7 @@ focus_tree = {
 			focus = GEA_Ostasiatische_Heer
 		}
 		
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_emergency_meeting"
 			custom_effect_tooltip = GEA_Ostasiatische_Heer_tt
@@ -7913,6 +7902,11 @@ focus_tree = {
 			}
 			add_to_variable = { GEA_army_command_power_gain_mult = 0.10 }
 			add_to_variable = { GEA_max_command_power = 30 }
+			336 = {
+				construct_building_in_random_province = {
+					land_facility = 1 
+				}
+			}
 			country_event = {
 				id = Ostasien.1002
 				days = 1
@@ -7945,6 +7939,7 @@ focus_tree = {
 			}
 		}
 		
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_younger_generation_triumph"
 		}		
@@ -7986,7 +7981,31 @@ focus_tree = {
 		x = -1
 		y = 1
 		ai_will_do = {
-			factor = 1000
+			factor = 25
+			modifier = {
+				factor = 150
+				has_war = yes
+			}
+			modifier = {
+				add = 10
+				date > 1937.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1937.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1939.1.1
+			}
 		}
 		prerequisite = {
 			focus = GEA_Ostasiatische_Heer
@@ -7996,9 +8015,14 @@ focus_tree = {
 
 		}
 		
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Rebuild_the_mobilization_system"
-			add_to_variable = { }
+			add_war_support = -0.05
+			add_manpower = 10000
+			add_to_variable = { GEA_army_conscription_factor = 0.1 }
+			add_to_variable = { GEA_army_mobilization_speed = 0.15 }
+			custom_effect_tooltip = GEA_Rebuild_the_mobilization_system_army_tt
 		}		
 	}
 	focus = {#阿勃维尔之城
@@ -8020,6 +8044,7 @@ focus_tree = {
 		
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_city_of_Abwehr"
+			add_ideas = GEA_hide_in_shadow
 		}		
 	}
 	focus = {#一切为了保卫
@@ -8072,9 +8097,35 @@ focus_tree = {
 		cost = 5
 		x = -3
 		y = 1
+
 		ai_will_do = {
-			factor = 1000
+			factor = 25
+			modifier = {
+				factor = 150
+				has_war = yes
+			}
+			modifier = {
+				add = 10
+				date > 1937.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1937.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1939.1.1
+			}
 		}
+
 		prerequisite = {
 			focus = GEA_The_younger_generation_triumph
 		}
@@ -8083,8 +8134,26 @@ focus_tree = {
 			has_country_flag = GEA_Stauffenberg_reform
 		}
 		
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Stauffenberg_s_strategy"
+			add_to_variable = { GEA_army_minimum_training_level = 0.1 }
+			custom_effect_tooltip = GEA_Stauffenberg_s_strategy_army_tt
+			add_mastery_bonus = {
+				name = GEA_Stauffenberg_s_strategy
+				bonus = 0.1
+				days = 365
+				track = armor
+			}
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+			add_breakthrough_progress = {
+				specialization = specialization_land
+				value = 0.20
+			}
 		}		
 	}
 	focus = {#女武神的骑行
@@ -8094,7 +8163,31 @@ focus_tree = {
 		x = 0
 		y = 1
 		ai_will_do = {
-			factor = 1000
+			factor = 25
+			modifier = {
+				factor = 150
+				has_war = yes
+			}
+			modifier = {
+				add = 10
+				date > 1937.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1937.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1939.1.1
+			}
 		}
 		prerequisite = {
 			focus = GEA_Stauffenberg_s_strategy
@@ -8106,7 +8199,14 @@ focus_tree = {
 		
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_riding_of_the_Valkyries"
-		}		
+			add_to_variable = { GEA_army_armor_attack_factor = 0.1 }
+			add_to_variable = { GEA_army_armor_attack_factor = 0.1 }
+			add_to_variable = { GEA_army_motorized_attack_factor = 0.1 }
+			add_to_variable = { GEA_army_mechanized_attack_factor = 0.1 }
+			custom_effect_tooltip = GEA_The_riding_of_the_Valkyries_army_tt
+			
+		}	
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }	
 	}
 	focus = {#强调部队机动
 		id = GEA_Emphasize_the_mobility_of_the_troops
@@ -8115,7 +8215,31 @@ focus_tree = {
 		x = 0
 		y = 1
 		ai_will_do = {
-			factor = 1000
+			factor = 25
+			modifier = {
+				factor = 150
+				has_war = yes
+			}
+			modifier = {
+				add = 10
+				date > 1937.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1937.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1939.1.1
+			}
 		}
 		prerequisite = {
 			focus = GEA_The_riding_of_the_Valkyries
@@ -8125,8 +8249,13 @@ focus_tree = {
 			has_country_flag = GEA_Stauffenberg_reform
 		}
 		
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Emphasize_the_mobility_of_the_troops"
+			add_to_variable = { GEA_army_attack_speed_factor = 0.15 }
+			add_to_variable = { GEA_army_speed_factor = 0.1 }
+			add_to_variable = { GEA_army_breakthrough_factor = 0.1 }
+			custom_effect_tooltip = GEA_Emphasize_the_mobility_of_the_troops_army_tt
 		}		
 	}
 	focus = {#擦亮矛头
@@ -8136,7 +8265,31 @@ focus_tree = {
 		x = -2
 		y = 1
 		ai_will_do = {
-			factor = 1000
+			factor = 25
+			modifier = {
+				factor = 150
+				has_war = yes
+			}
+			modifier = {
+				add = 10
+				date > 1937.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1937.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1939.1.1
+			}
 		}
 		prerequisite = {
 			focus = GEA_The_riding_of_the_Valkyries
@@ -8146,8 +8299,13 @@ focus_tree = {
 			has_country_flag = GEA_Stauffenberg_reform
 		}
 		
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Sharpen_the_spearhead"
+			add_to_variable = { GEA_army_army_org_factor = 0.075 }
+			add_to_variable = { GEA_army_attack_factor = 0.05 }
+			add_to_variable = { GEA_army_breakthrough_factor = 0.05 }
+			custom_effect_tooltip = GEA_Sharpen_the_spearhead_army_tt
 		}		
 	}
 	focus = {#确保基层火力
@@ -8157,7 +8315,31 @@ focus_tree = {
 		x = 0
 		y = 1
 		ai_will_do = {
-			factor = 1000
+			factor = 25
+			modifier = {
+				factor = 150
+				has_war = yes
+			}
+			modifier = {
+				add = 10
+				date > 1937.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1937.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1939.1.1
+			}
 		}
 		prerequisite = {
 			focus = GEA_Sharpen_the_spearhead
@@ -8170,8 +8352,15 @@ focus_tree = {
 			has_country_flag = GEA_Stauffenberg_reform
 		}
 		
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Ensure_the_strength_at_the_grassroots_level"
+			add_war_support = 0.05
+			add_to_variable = { GEA_army_land_reinforce_rate = 0.05 }
+			add_to_variable = { GEA_army_experience_loss_factor = -0.05 }
+			add_to_variable = { GEA_army_infantry_attack_factor = 0.05 }
+			add_to_variable = { GEA_army_infantry_defence_factor = 0.05 }
+			custom_effect_tooltip = GEA_Ensure_the_strength_at_the_grassroots_level_army_tt
 		}		
 	}
 	focus = {#紧急装甲改造
@@ -8191,8 +8380,10 @@ focus_tree = {
 			has_country_flag = GEA_Stauffenberg_reform
 		}
 		
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Emergency_Armor_Upgrade"
+			add_ideas = GEA_Armored_vehicle_modification
 		}		
 	}
 	focus = {#升级装甲骡马
@@ -8202,7 +8393,31 @@ focus_tree = {
 		x = 0
 		y = 2
 		ai_will_do = {
-			factor = 1000
+			factor = 25
+			modifier = {
+				factor = 150
+				has_war = yes
+			}
+			modifier = {
+				add = 10
+				date > 1937.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1937.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1939.1.1
+			}
 		}
 		prerequisite = {
 			focus = GEA_Emergency_Armor_Upgrade
@@ -8212,8 +8427,13 @@ focus_tree = {
 			has_country_flag = GEA_Stauffenberg_reform
 		}
 		
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Upgrade_the_armored_horses_and_mules"
+			swap_ideas = {
+				remove_idea = GEA_Armored_vehicle_modification
+				add_idea = GEA_Armored_vehicle_modification_2
+			}
 		}		
 	}
 	focus = {#特雷司寇的良计
@@ -8223,7 +8443,31 @@ focus_tree = {
 		x = 3
 		y = 1
 		ai_will_do = {
-			factor = 1000
+			factor = 25
+			modifier = {
+				factor = 150
+				has_war = yes
+			}
+			modifier = {
+				add = 10
+				date > 1937.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1937.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1939.1.1
+			}
 		}
 		prerequisite = {
 			focus = GEA_The_younger_generation_triumph
@@ -8233,8 +8477,26 @@ focus_tree = {
 			has_country_flag = GEA_Tresckow_reform
 		}
 		
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Tresckow_s_brilliant_plan"
+			add_to_variable = { GEA_army_minimum_training_level = 0.1 }
+			custom_effect_tooltip = GEA_Tresckow_s_brilliant_plan_army_tt
+			add_mastery_bonus = {
+				name = EA_Tresckow_s_brilliant_plan
+				bonus = 0.1
+				days = 365
+				track = combat_support
+			}
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+			add_breakthrough_progress = {
+				specialization = specialization_land
+				value = 0.20
+			}
 		}		
 	}
 	focus = {#立体作战
@@ -8244,7 +8506,31 @@ focus_tree = {
 		x = 0
 		y = 1
 		ai_will_do = {
-			factor = 1000
+			factor = 25
+			modifier = {
+				factor = 150
+				has_war = yes
+			}
+			modifier = {
+				add = 10
+				date > 1937.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1937.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1939.1.1
+			}
 		}
 		prerequisite = {
 			focus = GEA_Tresckow_s_brilliant_plan
@@ -8254,8 +8540,14 @@ focus_tree = {
 			has_country_flag = GEA_Tresckow_reform
 		}
 		
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Siloed_operations"
+			add_to_variable = { GEA_army_bonus_air_superiority_factor = 0.1 }
+			add_to_variable = { GEA_army_railway_gun_bombardment_factor = 0.1 }
+			add_to_variable = { GEA_air_cas_present_factor = 0.15 }
+			add_to_variable = { GEA_army_shore_bombardment_bonus = 0.25 }
+			custom_effect_tooltip = GEA_Siloed_operations_army_tt
 		}		
 	}
 	focus = {#精简编制
@@ -8265,7 +8557,31 @@ focus_tree = {
 		x = 0
 		y = 1
 		ai_will_do = {
-			factor = 1000
+			factor = 25
+			modifier = {
+				factor = 150
+				has_war = yes
+			}
+			modifier = {
+				add = 10
+				date > 1937.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1937.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1939.1.1
+			}
 		}
 		prerequisite = {
 			focus = GEA_Siloed_operations
@@ -8275,8 +8591,13 @@ focus_tree = {
 			has_country_flag = GEA_Tresckow_reform
 		}
 		
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Streamline_the_organization_structure"
+			army_experience = 40
+			add_ideas = GEA_Flexible_organization_idea
+			add_to_variable = { GEA_army_combat_width_factor = -0.15 }
+			custom_effect_tooltip = GEA_Streamline_the_organization_structure_army_tt
 		}		
 	}
 	focus = {#深入恶土
@@ -8286,7 +8607,31 @@ focus_tree = {
 		x = 2
 		y = 1
 		ai_will_do = {
-			factor = 1000
+			factor = 25
+			modifier = {
+				factor = 150
+				has_war = yes
+			}
+			modifier = {
+				add = 10
+				date > 1937.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1937.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1939.1.1
+			}
 		}
 		prerequisite = {
 			focus = GEA_Siloed_operations
@@ -8296,8 +8641,16 @@ focus_tree = {
 			has_country_flag = GEA_Tresckow_reform
 		}
 		
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_deep_into_the_earth"
+			custom_effect_tooltip = GEA_adverse_terrain_warfare_tech_effect
+			hidden_effect = {
+				set_technology = { GEA_adverse_terrain_warfare_tech = 1 }
+			}
+			add_to_variable = { GEA_army_terrain_penalty_reduction = 0.1 }
+			add_to_variable = { GEA_army_acclimatization_hot_climate_gain_factor = 0.1 }
+			custom_effect_tooltip = GEA_deep_into_the_earth_army_tt
 		}		
 	}
 	focus = {#坚守补给线
@@ -8307,7 +8660,31 @@ focus_tree = {
 		x = 0
 		y = 1
 		ai_will_do = {
-			factor = 1000
+			factor = 25
+			modifier = {
+				factor = 150
+				has_war = yes
+			}
+			modifier = {
+				add = 10
+				date > 1937.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1937.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1939.1.1
+			}
 		}
 		prerequisite = {
 			focus = GEA_Streamline_the_organization_structure
@@ -8320,8 +8697,13 @@ focus_tree = {
 			has_country_flag = GEA_Tresckow_reform
 		}
 		
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Maintain_the_supply_line"
+			add_to_variable = { GEA_army_defence_factor = 0.15 }
+			add_to_variable = { GEA_army_supply_node_range = 0.25 }
+			add_to_variable = { GEA_army_supply_consumption_factor = -0.05 }
+			custom_effect_tooltip = GEA_Maintain_the_supply_line_army_tt
 		}		
 	}
 	focus = {#依赖装甲火炮
@@ -8331,7 +8713,31 @@ focus_tree = {
 		x = 2
 		y = 1
 		ai_will_do = {
-			factor = 1000
+			factor = 25
+			modifier = {
+				factor = 150
+				has_war = yes
+			}
+			modifier = {
+				add = 10
+				date > 1937.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1937.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1939.1.1
+			}
 		}
 		prerequisite = {
 			focus = GEA_Tresckow_s_brilliant_plan
@@ -8348,8 +8754,10 @@ focus_tree = {
 			}
 		}
 		
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Depend_on_armored_artillery"
+			add_ideas = GEA_Assault_Gun_Cluster
 		}		
 	}
 	focus = {#充足火力准备
@@ -8359,7 +8767,35 @@ focus_tree = {
 		x = -2
 		y = 1
 		ai_will_do = {
-			factor = 1000
+			factor = 50
+			modifier = {
+				factor = 150
+				has_war = yes
+			}
+			modifier = {
+				factor = 100
+				has_completed_focus = GEA_Tresckow_s_brilliant_plan
+			}
+			modifier = {
+				add = 10
+				date > 1937.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1937.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1939.1.1
+			}
 		}
 		prerequisite = {
 			focus = GEA_Tresckow_s_brilliant_plan
@@ -8376,8 +8812,13 @@ focus_tree = {
 			}
 		}
 		
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Full_firepower_readiness"
+			add_to_variable = { GEA_army_attack_factor = 0.05 }
+			add_to_variable = { GEA_army_artillery_attack_factor = 0.2 }
+			add_to_variable = { GEA_army_railway_gun_bombardment_factor = 0.1 }
+			custom_effect_tooltip = GEA_Full_firepower_readiness_army_tt
 		}		
 	}
 	focus = {#破阵穆勒的传承
@@ -8387,7 +8828,31 @@ focus_tree = {
 		x = 0
 		y = 1
 		ai_will_do = {
-			factor = 1000
+			factor = 25
+			modifier = {
+				factor = 150
+				has_war = yes
+			}
+			modifier = {
+				add = 10
+				date > 1937.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1937.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1939.1.1
+			}
 		}
 		prerequisite = {
 			focus = GEA_Full_firepower_readiness
@@ -8404,8 +8869,13 @@ focus_tree = {
 			}
 		}
 		
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Durchbruchmuller_Legacy"
+			add_to_variable = { GEA_army_breakthrough_factor = 0.05 }
+			add_to_variable = { GEA_army_land_reinforce_rate = 0.05 }
+			add_to_variable = { GEA_army_artillery_attack_factor = 0.10 }
+			custom_effect_tooltip = GEA_Durchbruchmuller_Legacy_army_tt
 		}		
 	}
 	focus = {#灵活组织
@@ -8415,7 +8885,31 @@ focus_tree = {
 		x = -2
 		y = 1
 		ai_will_do = {
-			factor = 1000
+			factor = 25
+			modifier = {
+				factor = 150
+				has_war = yes
+			}
+			modifier = {
+				add = 10
+				date > 1937.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1937.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1939.1.1
+			}
 		}
 		prerequisite = {
 			focus = GEA_Full_firepower_readiness
@@ -8432,8 +8926,12 @@ focus_tree = {
 			}
 		}
 		
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Flexible_organization"
+			add_to_variable = { GEA_army_army_morale_factor = 0.15 }
+			add_to_variable = { GEA_army_combat_width_factor = -0.05 }
+			custom_effect_tooltip = GEA_Flexible_organization_army_tt
 		}		
 	}
 	focus = {#战斗群至上
@@ -8443,7 +8941,31 @@ focus_tree = {
 		x = -1
 		y = 1
 		ai_will_do = {
-			factor = 1000
+			factor = 25
+			modifier = {
+				factor = 150
+				has_war = yes
+			}
+			modifier = {
+				add = 10
+				date > 1937.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1937.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1939.1.1
+			}
 		}
 		prerequisite = {
 			focus = GEA_Durchbruchmuller_Legacy
@@ -8457,8 +8979,19 @@ focus_tree = {
 			}
 		}
 		
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Battle_group_supremacy"
+			add_mastery_bonus = {
+				name = GEA_Stauffenberg_s_strategy
+				bonus = 0.1
+				days = 365
+				track = armor
+			}
+			add_to_variable = { GEA_army_army_org_factor = 0.1 }
+			add_to_variable = { GEA_army_org_loss_when_moving = -0.15 }
+			add_to_variable = { GEA_army_land_reinforce_rate = 0.05 }
+			custom_effect_tooltip = GEA_Battle_group_supremacy_army_tt
 		}		
 	}
 	focus = {#侦察猎兵无所不知
@@ -8468,7 +9001,31 @@ focus_tree = {
 		x = 3
 		y = 1
 		ai_will_do = {
-			factor = 1000
+			factor = 25
+			modifier = {
+				factor = 150
+				has_war = yes
+			}
+			modifier = {
+				add = 10
+				date > 1937.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1937.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1939.1.1
+			}
 		}
 		prerequisite = {
 			focus = GEA_Tresckow_s_brilliant_plan
@@ -8478,8 +9035,19 @@ focus_tree = {
 			has_country_flag = GEA_Tresckow_reform
 		}
 		
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_reconnaissance_scouts_are_all-knowing"
+			hidden_effect = {
+				set_technology = {
+					improved_recon_units_tech1 = 1
+					popup = no
+				}
+			}
+			custom_effect_tooltip = improved_recon_units_tech1_effect
+			add_to_variable = { GEA_army_recon_factor = 0.15 }
+			add_to_variable = {GEA_army_special_forces_cap = 0.1 }
+			custom_effect_tooltip = GEA_The_reconnaissance_scouts_are_all-knowing_army_tt
 		}		
 	}
 	focus = {#革新武备
@@ -8489,7 +9057,31 @@ focus_tree = {
 		x = 0
 		y = 2
 		ai_will_do = {
-			factor = 1000
+			factor = 25
+			modifier = {
+				factor = 150
+				has_war = yes
+			}
+			modifier = {
+				add = 10
+				date > 1937.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1937.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1939.1.1
+			}
 		}
 		prerequisite = {
 			focus = GEA_The_reconnaissance_scouts_are_all-knowing
@@ -8499,8 +9091,29 @@ focus_tree = {
 			has_country_flag = GEA_Tresckow_reform
 		}
 		
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Modernize_military_equipment"
+			add_ideas = GEA_Fully_armed
+			add_tech_bonus = {
+				name = GEA_Modernize_military_equipment
+				bonus = 1
+				uses = 1
+				category = infantry_weapons
+			}
+			add_tech_bonus = {
+				name = GEA_Rushing_headlong_into_technological_progress
+				bonus = 1
+				uses = 1
+				category = artillery
+			}
+			add_tech_bonus = {
+				name = GEA_Rushing_headlong_into_technological_progress
+				bonus = 1
+				ahead_reduction = 1
+				uses = 1
+				category = armor
+			}
 		}		
 	}
 	focus = {#女武神挥舞利剑
@@ -8510,7 +9123,31 @@ focus_tree = {
 		x = 0
 		y = 1
 		ai_will_do = {
-			factor = 1000
+			factor = 25
+			modifier = {
+				factor = 150
+				has_war = yes
+			}
+			modifier = {
+				add = 10
+				date > 1937.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1937.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1939.1.1
+			}
 		}
 		prerequisite = {
 			focus = GEA_Battle_group_supremacy
@@ -8531,8 +9168,14 @@ focus_tree = {
 			}
 		}
 		
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_Valkyrie_brandished_her_sharp_sword"
+			add_war_support = 0.1
+			add_to_variable = { GEA_army_conscription_factor = 0.15 }
+			add_to_variable = { GEA_army_experience_gain_army = 0.1 }
+			add_to_variable = { GEA_army_training_time_army_factor = -0.05 }
+			custom_effect_tooltip = GEA_The_Valkyrie_brandished_her_sharp_sword_army_tt
 		}		
 	}
 	focus = {#谋定而后动
@@ -8542,7 +9185,31 @@ focus_tree = {
 		x = -3
 		y = 1
 		ai_will_do = {
-			factor = 1000
+			factor = 25
+			modifier = {
+				factor = 150
+				has_war = yes
+			}
+			modifier = {
+				add = 10
+				date > 1937.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1937.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1939.1.1
+			}
 		}
 		prerequisite = {
 			focus = GEA_Trust_the_General_Staff_Department
@@ -8552,8 +9219,26 @@ focus_tree = {
 			has_country_flag = GEA_Saucken_reform
 		}
 		
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_planning_before_taking_action"
+			add_to_variable = { GEA_army_max_planning = 0.05 }
+			custom_effect_tooltip = GEA_planning_before_taking_action_army_tt
+			add_mastery_bonus = {
+				name = GEA_Stauffenberg_s_strategy
+				bonus = 0.1
+				days = 365
+				track = operations
+			}
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+			add_breakthrough_progress = {
+				specialization = specialization_land
+				value = 0.20
+			}
 		}		
 	}
 	focus = {#作战理论升级
@@ -8563,7 +9248,31 @@ focus_tree = {
 		x = -3
 		y = 1
 		ai_will_do = {
-			factor = 1000
+			factor = 25
+			modifier = {
+				factor = 150
+				has_war = yes
+			}
+			modifier = {
+				add = 10
+				date > 1937.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1937.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1939.1.1
+			}
 		}
 		prerequisite = {
 			focus = GEA_planning_before_taking_action
@@ -8573,8 +9282,15 @@ focus_tree = {
 			has_country_flag = GEA_Saucken_reform
 		}
 		
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Upgrading_of_combat_theory"
+			army_experience = 25
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.75
+				uses = 2
+				category = land_doctrine
+			}
 		}		
 	}
 	focus = {#井井有条的指挥链条
@@ -8584,7 +9300,31 @@ focus_tree = {
 		x = 0
 		y = 2
 		ai_will_do = {
-			factor = 1000
+			factor = 25
+			modifier = {
+				factor = 150
+				has_war = yes
+			}
+			modifier = {
+				add = 10
+				date > 1937.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1937.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1939.1.1
+			}
 		}
 		prerequisite = {
 			focus = GEA_Upgrading_of_combat_theory
@@ -8594,8 +9334,14 @@ focus_tree = {
 			has_country_flag = GEA_Saucken_reform
 		}
 		
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_A_well-organized_chain_of_command"
+			add_to_variable = { GEA_army_army_org_factor = 0.05 }
+			add_to_variable = { GEA_army_command_power_gain_mult = 0.1 }
+			add_to_variable = { GEA_army_land_reinforce_rate = 0.1 }
+			add_to_variable = { GEA_army_conscription = 0.005 }
+			custom_effect_tooltip = GEA_A_well-organized_chain_of_command_army_tt
 		}		
 	}
 	focus = {#人人恪尽职守
@@ -8605,7 +9351,31 @@ focus_tree = {
 		x = 0
 		y = 1
 		ai_will_do = {
-			factor = 1000
+			factor = 25
+			modifier = {
+				factor = 150
+				has_war = yes
+			}
+			modifier = {
+				add = 10
+				date > 1937.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1937.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1939.1.1
+			}
 		}
 		prerequisite = {
 			focus = GEA_planning_before_taking_action
@@ -8615,8 +9385,13 @@ focus_tree = {
 			has_country_flag = GEA_Saucken_reform
 		}
 		
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Everyone_fulfills_their_duties_conscientiously"
+			add_to_variable = { GEA_army_max_planning = 0.05 }
+			add_to_variable = { GEA_army_planning_speed = 0.1 }
+			add_to_variable = { GEA_army_strength_factor = 0.1 }
+			custom_effect_tooltip = GEA_Everyone_fulfills_their_duties_conscientiously_army_tt
 		}		
 	}
 	focus = {#改组总参谋部
@@ -8626,7 +9401,31 @@ focus_tree = {
 		x = 0
 		y = 1
 		ai_will_do = {
-			factor = 1000
+			factor = 25
+			modifier = {
+				factor = 150
+				has_war = yes
+			}
+			modifier = {
+				add = 10
+				date > 1937.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1937.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1939.1.1
+			}
 		}
 		prerequisite = {
 			focus = GEA_Everyone_fulfills_their_duties_conscientiously
@@ -8636,8 +9435,15 @@ focus_tree = {
 			has_country_flag = GEA_Saucken_reform
 		}
 		
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Reorganize_the_General_Staff_Department"
+			add_political_power = 40
+			add_command_power = 50
+			add_to_variable = { GEA_max_command_power = 60 }
+			add_to_variable = { GEA_army_command_power_gain_mult = 0.15 }
+			add_to_variable = { GEA_army_military_leader_cost_factor = -0.2 }
+			custom_effect_tooltip = GEA_Reorganize_the_General_Staff_Department_army_tt
 		}		
 	}
 	focus = {#协调宽大战线
@@ -8647,7 +9453,31 @@ focus_tree = {
 		x = -2
 		y = 1
 		ai_will_do = {
-			factor = 1000
+			factor = 25
+			modifier = {
+				factor = 150
+				has_war = yes
+			}
+			modifier = {
+				add = 10
+				date > 1937.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1937.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1939.1.1
+			}
 		}
 		prerequisite = {
 			focus = GEA_Everyone_fulfills_their_duties_conscientiously
@@ -8657,8 +9487,60 @@ focus_tree = {
 			has_country_flag = GEA_Saucken_reform
 		}
 		
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Coordinate_the_broad_front_of_the_conflict"
+			custom_effect_tooltip = GEA_Coordinate_the_broad_front_of_the_conflict_units_tt
+			hidden_effect = {
+				division_template = {
+					name = "GEA_broad_front_infantry_division"
+					division_names_group = GEA_INF_01
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+						infantry = { x = 2 y = 0 }
+						infantry = { x = 2 y = 1 }
+						infantry = { x = 2 y = 2 }
+						artillery_brigade = { x = 3 y = 0 }
+						artillery_brigade = { x = 3 y = 1 }
+						artillery_brigade = { x = 3 y = 2 }
+					}
+					regimental_support = {
+						field_guns = { x = 0 y = 0 }
+						field_guns = { x = 1 y = 0 }
+						field_guns = { x = 2 y = 0 }
+						fire_support = { x = 3 y = 0 }
+					}
+					support = {
+						artillery = { x = 0 y = 0 }
+						engineer = { x = 0 y = 1 }
+						recon = { x = 0 y = 2 }
+						logistics_company = { x = 0 y = 3 }
+					}
+				}
+				random_owned_controlled_state = {
+					prioritize = { 336 }
+					create_unit = {
+						division = "division_template = \"GEA_broad_front_infantry_division\" start_experience_factor = 0.8 start_equipment_factor = 1 start_manpower_factor = 1"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "division_template = \"GEA_broad_front_infantry_division\" start_experience_factor = 0.8 start_equipment_factor = 1 start_manpower_factor = 1"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "division_template = \"GEA_broad_front_infantry_division\" start_experience_factor = 0.8 start_equipment_factor = 1 start_manpower_factor = 1"
+						owner = ROOT
+					}
+				}
+			}
+			add_to_variable = { GEA_army_attack_speed_factor = 0.15 }
+			add_to_variable = { GEA_army_combat_width_factor = -0.3 }
+			custom_effect_tooltip = GEA_Coordinate_the_broad_front_of_the_conflict_army_tt
 		}		
 	}
 	focus = {#谨慎计划，大胆突破
@@ -8668,7 +9550,31 @@ focus_tree = {
 		x = 0
 		y = 1
 		ai_will_do = {
-			factor = 1000
+			factor = 25
+			modifier = {
+				factor = 150
+				has_war = yes
+			}
+			modifier = {
+				add = 10
+				date > 1937.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1937.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1939.1.1
+			}
 		}
 		prerequisite = {
 			focus = GEA_Reorganize_the_General_Staff_Department
@@ -8681,8 +9587,14 @@ focus_tree = {
 			has_country_flag = GEA_Saucken_reform
 		}
 		
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Carefully_plan_boldly_innovate"
+			add_to_variable = { GEA_army_breakthrough_factor = 0.10 }
+			add_to_variable = { GEA_army_planning_speed = -0.15 }
+			add_to_variable = { GEA_army_max_planning = 0.15 }
+			add_to_variable = { GEA_army_experience_loss_factor = -0.1 }
+			custom_effect_tooltip = GEA_Carefully_plan_boldly_innovate_army_tt
 		}		
 	}
 	focus = {#意志的胜利
@@ -8692,7 +9604,31 @@ focus_tree = {
 		x = 3
 		y = 1
 		ai_will_do = {
-			factor = 1000
+			factor = 25
+			modifier = {
+				factor = 150
+				has_war = yes
+			}
+			modifier = {
+				add = 10
+				date > 1937.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1937.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1939.1.1
+			}
 		}
 		prerequisite = {
 			focus = GEA_Trust_the_General_Staff_Department
@@ -8702,8 +9638,26 @@ focus_tree = {
 			has_country_flag = GEA_ferdinand_win
 		}
 		
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_victory_of_willpower"
+			add_to_variable = { GEA_army_army_org_factor = 0.1 }
+			custom_effect_tooltip = GEA_The_victory_of_willpower_army_tt
+			add_mastery_bonus = {
+				name = GEA_Stauffenberg_s_strategy
+				bonus = 0.1
+				days = 365
+				track = infantry
+			}
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+			add_breakthrough_progress = {
+				specialization = specialization_land
+				value = 0.20
+			}
 		}		
 	}
 	focus = {#不惜代价的前进
@@ -8713,7 +9667,31 @@ focus_tree = {
 		x = 0
 		y = 1
 		ai_will_do = {
-			factor = 1000
+			factor = 25
+			modifier = {
+				factor = 150
+				has_war = yes
+			}
+			modifier = {
+				add = 10
+				date > 1937.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1937.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1939.1.1
+			}
 		}
 		prerequisite = {
 			focus = GEA_The_victory_of_willpower
@@ -8723,8 +9701,13 @@ focus_tree = {
 			has_country_flag = GEA_ferdinand_win
 		}
 		
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Push_forward_at_all_costs"
+			add_to_variable = { GEA_army_attack_factor = 0.05 }
+			add_to_variable = { GEA_army_infantry_attack_factor = 0.1 }
+			add_to_variable = { GEA_army_infantry_defence_factor = 0.1 }
+			custom_effect_tooltip = GEA_Push_forward_at_all_costs_army_tt
 		}		
 	}
 	focus = {#猎兵破袭
@@ -8734,7 +9717,31 @@ focus_tree = {
 		x = 2
 		y = 1
 		ai_will_do = {
-			factor = 1000
+			factor = 25
+			modifier = {
+				factor = 150
+				has_war = yes
+			}
+			modifier = {
+				add = 10
+				date > 1937.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1937.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1939.1.1
+			}
 		}
 		prerequisite = {
 			focus = GEA_Push_forward_at_all_costs
@@ -8744,8 +9751,13 @@ focus_tree = {
 			has_country_flag = GEA_ferdinand_win
 		}
 		
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Hunter_Raid"
+			add_to_variable = { GEA_army_infantry_attack_factor = 0.05 }
+			add_to_variable = { GEA_army_special_forces_attack_factor = 0.15 }
+			add_to_variable = { GEA_army_special_forces_defence_factor = 0.15 }
+			custom_effect_tooltip = GEA_Hunter_Raid_army_tt
 		}		
 	}
 	focus = {#后退即怯懦，怯懦即死亡
@@ -8755,7 +9767,31 @@ focus_tree = {
 		x = 0
 		y = 1
 		ai_will_do = {
-			factor = 1000
+			factor = 25
+			modifier = {
+				factor = 150
+				has_war = yes
+			}
+			modifier = {
+				add = 10
+				date > 1937.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1937.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1939.1.1
+			}
 		}
 		prerequisite = {
 			focus = GEA_Push_forward_at_all_costs
@@ -8765,8 +9801,15 @@ focus_tree = {
 			has_country_flag = GEA_ferdinand_win
 		}
 		
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Retreating_means_cowardice_and_cowardice_means_death"
+			add_war_support = 0.15
+			add_to_variable = { GEA_army_initiative_factor = 0.15 }
+			add_to_variable = { GEA_army_breakthrough_factor = 0.2 }
+			add_to_variable = { GEA_army_attrition = -0.1 }
+			add_to_variable = { GEA_army_army_morale_factor = -0.1 }
+			custom_effect_tooltip = GEA_Retreating_means_cowardice_and_cowardice_means_death_army_tt
 		}		
 	}
 	focus = {#世界帝国的最后一道防线
@@ -8776,7 +9819,31 @@ focus_tree = {
 		x = 0
 		y = 1
 		ai_will_do = {
-			factor = 1000
+			factor = 25
+			modifier = {
+				factor = 150
+				has_war = yes
+			}
+			modifier = {
+				add = 10
+				date > 1937.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1937.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1939.1.1
+			}
 		}
 		prerequisite = {
 			focus = GEA_Retreating_means_cowardice_and_cowardice_means_death
@@ -8789,8 +9856,13 @@ focus_tree = {
 			has_country_flag = GEA_ferdinand_win
 		}
 		
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_last_line_of_defense_of_the_world_empire"
+			add_to_variable = { GEA_army_conscription_factor = 0.15 }
+			add_to_variable = { GEA_army_max_dig_in_factor = 0.2 }
+			add_to_variable = { GEA_army_training_time_army_factor = -0.15 }
+			custom_effect_tooltip = GEA_The_last_line_of_defense_of_the_world_empire_army_tt
 		}		
 	}
 	focus = {#舍尔纳的秘密部队
@@ -8800,7 +9872,31 @@ focus_tree = {
 		x = 3
 		y = 1
 		ai_will_do = {
-			factor = 1000
+			factor = 25
+			modifier = {
+				factor = 150
+				has_war = yes
+			}
+			modifier = {
+				add = 10
+				date > 1937.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1937.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1939.1.1
+			}
 		}
 		prerequisite = {
 			focus = GEA_The_victory_of_willpower
@@ -8810,8 +9906,12 @@ focus_tree = {
 			has_country_flag = GEA_ferdinand_win
 		}
 		
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Schorner_secret_forces"
+			add_to_variable = { GEA_army_special_forces_attack_factor = 0.1 }
+			add_to_variable = { GEA_army_special_forces_cap = 0.1 }
+			custom_effect_tooltip = GEA_Schorner_secret_forces_army_tt
 		}		
 	}
 	focus = {#人人服役，效力至死
@@ -8831,8 +9931,13 @@ focus_tree = {
 			has_country_flag = GEA_ferdinand_win
 		}
 		
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Everyone_serves_until_death"
+			add_manpower = 20000
+			add_to_variable = { GEA_army_conscription_factor = 0.2 }
+			add_to_variable = { GEA_army_mobilization_speed = 0.3 }
+			custom_effect_tooltip = GEA_Everyone_serves_until_death_army_tt
 		}		
 	}
 	focus = {#实践弹性防御战术
@@ -8842,7 +9947,31 @@ focus_tree = {
 		x = -2
 		y = 1
 		ai_will_do = {
-			factor = 1000
+			factor = 25
+			modifier = {
+				factor = 150
+				has_war = yes
+			}
+			modifier = {
+				add = 10
+				date > 1937.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1937.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1939.1.1
+			}
 		}
 		prerequisite = {
 			focus = GEA_planning_before_taking_action
@@ -8859,8 +9988,13 @@ focus_tree = {
 			}
 		}
 		
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Implement_flexible_defense_tactics"
+			add_to_variable = { GEA_army_army_org_factor = 0.05 }
+			add_to_variable = { GEA_army_army_morale_factor = 0.1 }
+			add_to_variable = { GEA_army_dig_in_speed_factor = 0.5 }
+			custom_effect_tooltip = GEA_Implement_flexible_defense_tactics_army_tt
 		}		
 	}
 	focus = {#发扬胡蒂尔战术
@@ -8870,7 +10004,31 @@ focus_tree = {
 		x = 2
 		y = 1
 		ai_will_do = {
-			factor = 1000
+			factor = 25
+			modifier = {
+				factor = 150
+				has_war = yes
+			}
+			modifier = {
+				add = 10
+				date > 1937.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1937.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1939.1.1
+			}
 		}
 		prerequisite = {
 			focus = GEA_planning_before_taking_action
@@ -8887,8 +10045,20 @@ focus_tree = {
 			}
 		}
 		
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Carry_forward_the_Hutier_tactic"
+			add_to_variable = { GEA_army_unit_sturmtruppe_battalion_design_cost_factor = -1 }
+			custom_effect_tooltip = GEA_Carry_forward_the_Hutier_tactic_army_tt
+			custom_effect_tooltip = GEA_unlock_sturmtruppe_battalion_tt
+			custom_effect_tooltip = GEA_hutier_tactics_tech_effect
+			hidden_effect = {
+				set_technology = {
+					sturmtruppe_battalion_tech = 1
+					GEA_hutier_tactics_tech = 1
+					popup = no
+				}
+			}
 		}		
 	}
 	focus = {#命令至上
@@ -8898,7 +10068,31 @@ focus_tree = {
 		x = 0
 		y = 1
 		ai_will_do = {
-			factor = 1000
+			factor = 25
+			modifier = {
+				factor = 150
+				has_war = yes
+			}
+			modifier = {
+				add = 10
+				date > 1937.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1937.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1939.1.1
+			}
 		}
 		prerequisite = {
 			focus = GEA_Carry_forward_the_Hutier_tactic
@@ -8915,8 +10109,13 @@ focus_tree = {
 			}
 		}
 		
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Command_supremacy"
+			add_to_variable = { GEA_army_command_power_gain_mult = 0.2 }
+			add_to_variable = { GEA_army_initiative_factor = 0.1 }
+			add_to_variable = { GEA_army_strength_factor = 0.05 }
+			custom_effect_tooltip = GEA_Command_supremacy_army_tt
 		}		
 	}
 	focus = {#滚滚洪流
@@ -8926,7 +10125,31 @@ focus_tree = {
 		x = 0
 		y = 1
 		ai_will_do = {
-			factor = 1000
+			factor = 25
+			modifier = {
+				factor = 150
+				has_war = yes
+			}
+			modifier = {
+				add = 10
+				date > 1937.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1937.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1939.1.1
+			}
 		}
 		prerequisite = {
 			focus = GEA_Carry_forward_the_Hutier_tactic
@@ -8943,8 +10166,109 @@ focus_tree = {
 			}
 		}
 		
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Rolling_floodwaters"
+			custom_effect_tooltip = GEA_Rolling_floodwaters_units_tt
+			hidden_effect = {
+				division_template = {
+					name = "GEA_floodwaters_infantry_division"
+					division_names_group = GEA_INF_01
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+						infantry = { x = 2 y = 0 }
+						infantry = { x = 2 y = 1 }
+						infantry = { x = 2 y = 2 }
+						artillery_brigade = { x = 3 y = 0 }
+					}
+					regimental_support = {
+						field_guns = { x = 0 y = 0 }
+						field_guns = { x = 1 y = 0 }
+						field_guns = { x = 2 y = 0 }
+						fire_support = { x = 3 y = 0 }
+					}
+					support = {
+						artillery = { x = 0 y = 0 }
+						engineer = { x = 0 y = 1 }
+						recon = { x = 0 y = 2 }
+					}
+				}
+				division_template = {
+					name = "GEA_floodwaters_armored_division"
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+						infantry = { x = 2 y = 0 }
+						infantry = { x = 2 y = 1 }
+						medium_armor = { x = 3 y = 0 }
+						medium_armor = { x = 3 y = 1 }
+						medium_armor = { x = 3 y = 2 }
+						medium_armor = { x = 4 y = 0 }
+						medium_armor = { x = 4 y = 1 }
+						medium_armor = { x = 4 y = 2 }
+					}
+					regimental_support = {
+						field_guns = { x = 0 y = 0 }
+						field_guns = { x = 1 y = 0 }
+						field_guns = { x = 2 y = 0 }
+					}
+					support = {
+						artillery = { x = 0 y = 0 }
+						light_tank_recon = { x = 0 y = 1 }
+						field_hospital = { x = 0 y = 2 }
+						logistics_company = { x = 0 y = 3 }
+						signal_company = { x = 0 y = 4 }
+					}
+				}
+				random_owned_controlled_state = {
+					prioritize = { 336 }
+					create_unit = {
+						division = "division_template = \"GEA_floodwaters_infantry_division\" start_experience_factor = 0.5 start_equipment_factor = 1 start_manpower_factor = 1"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "division_template = \"GEA_floodwaters_infantry_division\" start_experience_factor = 0.5 start_equipment_factor = 1 start_manpower_factor = 1"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "division_template = \"GEA_floodwaters_infantry_division\" start_experience_factor = 0.5 start_equipment_factor = 1 start_manpower_factor = 1"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "division_template = \"GEA_floodwaters_infantry_division\" start_experience_factor = 0.5 start_equipment_factor = 1 start_manpower_factor = 1"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "division_template = \"GEA_floodwaters_infantry_division\" start_experience_factor = 0.5 start_equipment_factor = 1 start_manpower_factor = 1"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "division_template = \"GEA_floodwaters_infantry_division\" start_experience_factor = 0.5 start_equipment_factor = 1 start_manpower_factor = 1"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "division_template = \"GEA_floodwaters_infantry_division\" start_experience_factor = 0.5 start_equipment_factor = 1 start_manpower_factor = 1"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "division_template = \"GEA_floodwaters_infantry_division\" start_experience_factor = 0.5 start_equipment_factor = 1 start_manpower_factor = 1"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "division_template = \"GEA_floodwaters_armored_division\" start_experience_factor = 0.5 start_equipment_factor = 1 start_manpower_factor = 1"
+						owner = ROOT
+					}
+				}
+			}
 		}		
 	}
 	focus = {#保守而非腐朽
@@ -8954,7 +10278,31 @@ focus_tree = {
 		x = 1
 		y = 1
 		ai_will_do = {
-			factor = 1000
+			factor = 25
+			modifier = {
+				factor = 150
+				has_war = yes
+			}
+			modifier = {
+				add = 10
+				date > 1937.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1937.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1939.1.1
+			}
 		}
 		prerequisite = {
 			focus = GEA_Command_supremacy
@@ -8968,8 +10316,22 @@ focus_tree = {
 			}
 		}
 		
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Play_the_symphony_of_war"
+			add_mastery_bonus = {
+				name = GEA_Play_the_symphony_of_war
+				bonus = 0.25
+				days = 180
+				folder = land
+			}
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+			add_to_variable = { GEA_army_coordination_bonus = 0.05 }
+			custom_effect_tooltip = GEA_Play_the_symphony_of_war_army_tt
 		}		
 	}
 	focus = {#新时代的军事艺术
@@ -8979,7 +10341,31 @@ focus_tree = {
 		x = 0
 		y = 1
 		ai_will_do = {
-			factor = 1000
+			factor = 25
+			modifier = {
+				factor = 150
+				has_war = yes
+			}
+			modifier = {
+				add = 10
+				date > 1937.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1937.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.1.1
+			}
+			modifier = {
+				add = 10
+				date > 1938.6.1
+			}
+			modifier = {
+				add = 10
+				date > 1939.1.1
+			}
 		}
 		prerequisite = {
 			focus = GEA_Play_the_symphony_of_war
@@ -9000,17 +10386,22 @@ focus_tree = {
 			}
 		}
 		
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_military_art_of_the_new_era"
+			add_to_variable = { GEA_army_max_planning = 0.05 }
+			add_to_variable = { GEA_army_planning_speed = 0.05 }
+			add_to_variable = { GEA_army_experience_gain_army = 0.2 }
+			custom_effect_tooltip = GEA_The_military_art_of_the_new_era_army_tt
 		}		
 	}
 	### 海军线 ###
 	focus = { #大舰队
 		id = GEA_Asia_Grand_Navy
-		icon = GFX_GEA_Asia_Grand_Navy
+		icon = GFX_goal_GER_Kaiserliche_Marine
 		cost = 5
 		x = 40
-		y = 25
+		y = 23
 		ai_will_do = {factor = 100}
 		available = {
 			OR = {
@@ -9128,738 +10519,1080 @@ focus_tree = {
 
 		}
 	}
-### 海军线 ###
-	focus = { #大舰队
-		id = GEA_relaunch_navy_program
-		icon = GFX_GEA_Ostasiatische_Station
+	focus = { #擦拭东亚明珠
+		id = GEA_Wiping_the_Oriental_Pearl_Tower
+		icon = GFX_GEA_Wiping_the_Oriental_Pearl_Tower
 		cost = 5
-		x = 65
-		y = 15
-		ai_will_do = {factor = 100}
+		x = 2
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+		}	
+		prerequisite = {
+			focus =  GEA_Alfred_Mahan_s_teachings
+		}	
+		relative_position_id = GEA_Alfred_Mahan_s_teachings
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Wiping_the_Oriental_Pearl_Tower"
+
+		}
+	}
+	focus = { #扬帆远航
+		id = GEA_Set_sail_and_sail_far
+		icon = GFX_GEA_Set_sail_and_sail_far
+		cost = 5
+		x = 1
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+		}	
+		prerequisite = {
+			focus = GEA_Shipbuilding_plan
+		}	
+		prerequisite = {
+			focus = GEA_The_shipbuilding_industry_is_operating_at_full_capacity
+		}	
+		prerequisite = {
+			focus = GEA_Protecting_the_World_Airways_Route
+		}	
+		prerequisite = {
+			focus = GEA_Wiping_the_Oriental_Pearl_Tower
+		}	
+		relative_position_id = GEA_The_shipbuilding_industry_is_operating_at_full_capacity
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Set_sail_and_sail_far"
+
+		}
+	}
+	focus = { #东方公海舰队
+		id = GEA_Eastern_Ocean_Fleet
+		icon = GFX_GEA_Eastern_Ocean_Fleet
+		cost = 5
+		x = -7
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+		}	
+		prerequisite = {
+			focus = GEA_Set_sail_and_sail_far
+		}	
+		relative_position_id = GEA_Set_sail_and_sail_far
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Eastern_Ocean_Fleet"
+
+		}
+	}
+	focus = { #改进旧船壳
+		id = GEA_Improve_the_old_hull
+		icon = GFX_GEA_Improve_the_old_hull
+		cost = 5
+		x = -3
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+		}	
+		prerequisite = {
+			focus = GEA_Eastern_Ocean_Fleet
+		}	
+		relative_position_id = GEA_Eastern_Ocean_Fleet
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Improve_the_old_hull"
+
+		}
+	}
+	focus = { #撕碎海鸟
+		id = GEA_Tear_apart_the_seabirds
+		icon = GFX_GEA_Tear_apart_the_seabirds
+		cost = 5
+		x = 3
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+		}	
+		prerequisite = {
+			focus = GEA_Eastern_Ocean_Fleet
+		}	
+		relative_position_id = GEA_Eastern_Ocean_Fleet
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Tear_apart_the_seabirds"
+
+		}
+	}
+	focus = { #深海堡垒
+		id = GEA_Ocean_Fortress
+		icon = GFX_GEA_Ocean_Fortress
+		cost = 5
+		x = 1
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+		}	
+		prerequisite = {
+			focus = GEA_Eastern_Ocean_Fleet
+		}	
+		relative_position_id = GEA_Eastern_Ocean_Fleet
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Ocean_Fortress"
+
+		}
+	}
+	focus = { #帝国重炮
+		id = GEA_Imperial_Cannons
+		icon = GFX_GEA_Imperial_Cannons
+		cost = 5
+		x = -1
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+		}	
+		prerequisite = {
+			focus = GEA_Eastern_Ocean_Fleet
+		}	
+		relative_position_id = GEA_Eastern_Ocean_Fleet
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Imperial_Cannons"
+
+		}
+	}
+	focus = { #预备舰队决战
+		id = GEA_IPreparatory_Fleet_Battle
+		icon = GFX_GEA_IPreparatory_Fleet_Battle
+		cost = 5
+		x = 1
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+		}	
+		prerequisite = {
+			focus = GEA_Ocean_Fortress
+		}
+		prerequisite = {
+			focus = GEA_Imperial_Cannons
+		}	
+		relative_position_id = GEA_Imperial_Cannons
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_IPreparatory_Fleet_Battle"
+
+		}
+	}
+	focus = { #地狱打击
+		id = GEA_Hell_Strike
+		icon = GFX_GEA_Hell_Strike
+		cost = 5
+		x = -1
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+		}	
+		mutually_exclusive = {
+			focus = GEA_High_speed_equals_truth
+		}
+		prerequisite = {
+			focus = GEA_IPreparatory_Fleet_Battle
+		}
+		relative_position_id = GEA_IPreparatory_Fleet_Battle
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Hell_Strike"
+
+		}
+	}
+	focus = { #高速即真理
+		id = GEA_High_speed_equals_truth
+		icon = GFX_GEA_High_speed_equals_truth
+		cost = 5
+		x = 1
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+		}	
+		mutually_exclusive = {
+			focus = GEA_Hell_Strike
+		}
+		prerequisite = {
+			focus = GEA_IPreparatory_Fleet_Battle
+		}
+		relative_position_id = GEA_IPreparatory_Fleet_Battle
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_High_speed_equals_truth"
+
+		}
+	}
+	focus = { #反潜作战
+		id = GEA_Anti-submarine_warfare
+		icon = GFX_GEA_Anti-submarine_warfare
+		cost = 5
+		x = 0
+		y = 2
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+		}	
+		prerequisite = {
+			focus = GEA_Improve_the_old_hull
+		}
+		relative_position_id = GEA_Improve_the_old_hull
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Anti-submarine_warfare"
+
+		}
+	}
+	focus = { #精确打击
+		id = GEA_Precision_strike
+		icon = GFX_GEA_Precision_strike
+		cost = 5
+		x = 0
+		y = 2
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+		}	
+		prerequisite = {
+			focus = GEA_Tear_apart_the_seabirds
+		}
+		relative_position_id = GEA_Tear_apart_the_seabirds
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Precision_strike"
+
+		}
+	}
+	focus = { #大洋猎鹰
+		id = GEA_Ocean_Falcon
+		icon = GFX_GEA_Ocean_Falcon
+		cost = 5
+		x = 7
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+		}	
+		prerequisite = {
+			focus = GEA_Set_sail_and_sail_far
+		}	
+		relative_position_id = GEA_Set_sail_and_sail_far
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Ocean_Falcon"
+
+		}
+	}
+	focus = { #注重护航舰队
+		id = GEA_Focus_on_the_escort_fleet
+		icon = GFX_GEA_Focus_on_the_escort_fleet
+		cost = 5
+		x = -1
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+		}	
+		prerequisite = {
+			focus = GEA_Ocean_Falcon
+		}	
+		relative_position_id = GEA_Ocean_Falcon
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Focus_on_the_escort_fleet"
+
+		}
+	}
+	focus = { #航母作战群
+		id = GEA_Aircraft_Carrier_Battle_Group
+		icon = GFX_GEA_Aircraft_Carrier_Battle_Group
+		cost = 5
+		x = 1
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+		}	
+		prerequisite = {
+			focus = GEA_Ocean_Falcon
+		}	
+		relative_position_id = GEA_Ocean_Falcon
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Aircraft_Carrier_Battle_Group"
+
+		}
+	}
+	focus = { #集群狩猎
+		id = GEA_Cluster_hunting
+		icon = GFX_GEA_Cluster_hunting
+		cost = 5
+		x = -1
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+		}	
+		prerequisite = {
+			focus = GEA_Focus_on_the_escort_fleet
+		}	
+		prerequisite = {
+			focus = GEA_Aircraft_Carrier_Battle_Group
+		}	
+		relative_position_id = GEA_Aircraft_Carrier_Battle_Group
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Cluster_hunting"
+
+		}
+	}
+	focus = { #装甲甲板作业
+		id = GEA_Armor_deck_protection
+		icon = GFX_GEA_Armor_deck_protection
+		cost = 5
+		x = -1
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+		}	
+		prerequisite = {
+			focus = GEA_Cluster_hunting
+		}	
+		relative_position_id = GEA_Cluster_hunting
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Armor_deck_protection"
+
+		}
+	}
+	focus = { #遮天蔽日
+		id = GEA_Covering_the_sky_and_blocking_the_sun
+		icon = GFX_GEA_Covering_the_sky_and_blocking_the_sun
+		cost = 5
+		x = 1
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+		}	
+		prerequisite = {
+			focus = GEA_Cluster_hunting
+		}	
+		relative_position_id = GEA_Cluster_hunting
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Covering_the_sky_and_blocking_the_sun"
+
+		}
+	}
+	focus = { #海上斗士无所惧
+		id = GEA_The_sea_warriors_are_fearless
+		icon = GFX_GEA_The_sea_warriors_are_fearless
+		cost = 5
+		x = -3
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+		}	
+		prerequisite = {
+			focus = GEA_Ocean_Falcon
+		}	
+		relative_position_id = GEA_Ocean_Falcon
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_sea_warriors_are_fearless"
+
+		}
+	}
+	focus = { #舍命俯冲
+		id = GEA_Making_a_desperate_dive
+		icon = GFX_GEA_Making_a_desperate_dive
+		cost = 5
+		x = 0
+		y = 2
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+		}	
+		prerequisite = {
+			focus = GEA_The_sea_warriors_are_fearless
+		}	
+		relative_position_id = GEA_The_sea_warriors_are_fearless
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Making_a_desperate_dive"
+
+		}
+	}
+	focus = { #扩大巡逻
+		id = GEA_Increase_patrols
+		icon = GFX_GEA_Increase_patrols
+		cost = 5
+		x = 3
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+		}	
+		prerequisite = {
+			focus = GEA_Ocean_Falcon
+		}	
+		relative_position_id = GEA_Ocean_Falcon
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Increase_patrols"
+
+		}
+	}
+	focus = { #远洋维修补给
+		id = GEA_Oceanic_maintenance_and_supply
+		icon = GFX_GEA_Oceanic_maintenance_and_supply
+		cost = 5
+		x = 0
+		y = 2
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+		}	
+		prerequisite = {
+			focus = GEA_Increase_patrols
+		}	
+		relative_position_id = GEA_Increase_patrols
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Oceanic_maintenance_and_supply"
+
+		}
+	}
+	focus = { #水下尖刀
+		id = GEA_Underwater_knife
+		icon = GFX_GEA_Underwater_knife
+		cost = 5
+		x = 0
+		y = 2
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+		}	
+		prerequisite = {
+			focus = GEA_Set_sail_and_sail_far
+		}	
+		relative_position_id = GEA_Set_sail_and_sail_far
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Underwater_knife"
+
+		}
+	}
+	focus = { #静默战
+		id = GEA_Silent_War
+		icon = GFX_GEA_Silent_War
+		cost = 5
+		x = -1
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+		}	
+		prerequisite = {
+			focus = GEA_Underwater_knife
+		}	
+		relative_position_id = GEA_Underwater_knife
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Silent_War"
+
+		}
+	}
+	focus = { #微波，无线电与磁控管
+		id = GEA_Microwave_radio_magnetron
+		icon = GFX_GEA_Microwave_radio_magnetron
+		cost = 5
+		x = 1
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+		}	
+		prerequisite = {
+			focus = GEA_Underwater_knife
+		}	
+		relative_position_id = GEA_Underwater_knife
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Microwave_radio_magnetron"
+
+		}
+	}
+	focus = { #不朽动力
+		id = GEA_Immortal_Power
+		icon = GFX_GEA_Immortal_Power
+		cost = 5
+		x = 1
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+		}	
+		prerequisite = {
+			focus = GEA_Silent_War
+		}	
+		prerequisite = {
+			focus = GEA_Microwave_radio_magnetron
+		}
+		relative_position_id = GEA_Silent_War
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Immortal_Power"
+
+		}
+	}
+	focus = { #两洋之主
+		id = GEA_The_ruler_of_the_two_oceans
+		icon = GFX_GEA_The_ruler_of_the_two_oceans
+		cost = 5
+		x = 0
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+		}	
+		prerequisite = {
+			focus = GEA_Immortal_Power
+		}	
+		prerequisite = {
+			focus = GEA_Precision_strike
+			focus = GEA_Making_a_desperate_dive
+		}
+		prerequisite = {
+			focus = GEA_Anti-submarine_warfare
+			focus = GEA_Oceanic_maintenance_and_supply
+		}
+		prerequisite = {
+			focus = GEA_High_speed_equals_truth
+			focus = GEA_Hell_Strike
+			focus = GEA_Armor_deck_protection
+			focus = GEA_Covering_the_sky_and_blocking_the_sun
+		}
+		relative_position_id = GEA_Immortal_Power
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_ruler_of_the_two_oceans"
+
+		}
+	}
+	### 空军线 ###
+	focus = { #翱翔天际
+		id = GEA_Expansion_of_Singapore_Air_Force
+		icon = GFX_goal_GER_Deutsche_Luftflotte
+		cost = 5
+		x = 60
+		y = 24
+		ai_will_do = {
+			factor = 100
+		}
 		available = {
 			OR = {
 				has_country_flag = GEA_Indochina_Uprising_Fired
 				has_country_flag = GEA_Indochina_Uprising_got_cancelled
 			}
-		}		
+		}			
+
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_relaunch_navy_program"
-			navy_experience = 50
-			add_doctrine_cost_reduction = {
-				cost_reduction = 0.5
-				uses = 1
-				category = naval_doctrine
-			}
-		}
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Expansion_of_Singapore_Air_Force"
+		}	
 	}
-	focus = {
-		id = GEA_New_ship_building_program
-		icon = GFX_goal_FIU_Kaiser_Karls_Revenge
-		cost = 5
-		x = 0
-		y = 1
-		ai_will_do = {factor = 80}
-		prerequisite = {focus = GEA_relaunch_navy_program}
-		relative_position_id = GEA_relaunch_navy_program
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_New_ship_building_program"
-			swap_ideas = {
-				remove_idea = GEA_admirality
-				add_idea = GEA_admirality1
-			}
-		}
-	}
-	focus = {
-		id = GEA_navy_cartelisation
-		icon = GFX_goal_FIU_proper_armada
-		cost = 5
-		x = -1
-		y = 1
-		ai_will_do = {factor = 80}
-		prerequisite = {focus = GEA_New_ship_building_program}
-		relative_position_id = GEA_New_ship_building_program
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_navy_cartelisation"
-			custom_effect_tooltip = GEA_navy_cartelisation_tt
-			if = {
-				limit = {dockyard > 30}
-				846 = {
-					add_building_construction = {
-						type = dockyard
-						level = 5
-						instant_build = yes 
-					}
-				}
-			}
-			else_if= {
-				limit = {dockyard > 20}
-				846 = {
-					add_building_construction = {
-						type = dockyard
-						level = 4
-						instant_build = yes 
-					}
-				}
-			}
-			else_if= {
-				limit = {dockyard > 10}
-				846 = {
-					add_building_construction = {
-						type = dockyard
-						level = 3
-						instant_build = yes 
-					}
-				}
-			}
-			else= {
-				846 = {
-					add_building_construction = {
-						type = dockyard
-						level = 2
-						instant_build = yes 
-					}
-				}
-			}
-		}
-	}
-	focus = {
-		id = GEA_expansion_of_Singaporez_port
-		icon = GFX_GEA_expansion_of_Singaporez_port
+	focus = { #鼓舞好斗精神
+		id = GEA_Encourage_a_combative_spirit
+		icon = GFX_GEA_Encourage_a_combative_spirit
 		cost = 5
 		x = 1
 		y = 1
-		ai_will_do = {factor = 80}
-		prerequisite = {focus = GEA_New_ship_building_program}
-		relative_position_id = GEA_New_ship_building_program
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_expansion_of_Singaporez_port"
-			336 = {
-				add_building_construction = {
-					type = naval_base
-					level = 3
-					instant_build = yes 
-					province = 12299
-				}
-				add_building_construction = {
-					type = coastal_bunker
-					level = 5
-					instant_build = yes 
-					province = 12299
-				}
-			}
+		ai_will_do = {
+			factor = 100
 		}
+		available = {
+		}			
+		prerequisite = {
+			focus = GEA_Expansion_of_Singapore_Air_Force
+		}
+		relative_position_id = GEA_Expansion_of_Singapore_Air_Force
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Encourage_a_combative_spirit"
+		}	
 	}
-	focus = {
-		id = GEA_foundation_of_naval_tactics
-		icon = GFX_goal_USA_new_admirals
+	focus = { #组建航空设计局
+		id = GEA_Establish_an_aviation_design_bureau
+		icon = GFX_GEA_Establish_an_aviation_design_bureau
 		cost = 5
-		x = 9
+		x = -1
 		y = 1
-		ai_will_do = {factor = 30}
-		prerequisite = {focus = GEA_expansion_of_Singaporez_port}
-		prerequisite = {focus = GEA_navy_cartelisation}
-		relative_position_id = GEA_expansion_of_Singaporez_port
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_foundation_of_naval_tactics"
-			add_doctrine_cost_reduction = {
-				cost_reduction = 0.5
-				uses = 1
-				category = naval_doctrine
-			}
+		ai_will_do = {
+			factor = 100
 		}
+		available = {
+		}			
+		prerequisite = {
+			focus = GEA_Expansion_of_Singapore_Air_Force
+		}
+		relative_position_id = GEA_Expansion_of_Singapore_Air_Force
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Establish_an_aviation_design_bureau"
+		}	
 	}
-	focus = {
-		id = GEA_New_CV
-		icon = GFX_goal_CAN_Canadian_Carriers
+	focus = { #航空崇拜
+		id = GEA_Aviation_Worship
+		icon = GFX_GEA_Aviation_Worship
+		cost = 5
+		x = 1
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+		}			
+		prerequisite = {
+			focus = GEA_Encourage_a_combative_spirit
+		}
+		prerequisite = {
+			focus = GEA_Establish_an_aviation_design_bureau
+		}
+		relative_position_id = GEA_Establish_an_aviation_design_bureau
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Aviation_Worship"
+		}	
+	}
+	focus = { #海军航空兵大展神威
+		id = GEA_The_naval_air_force_showed_its_power
+		icon = GFX_GEA_The_naval_air_force_showed_its_power
+		cost = 5
+		x = -5
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+		}			
+		prerequisite = {
+			focus = GEA_Aviation_Worship
+		}
+		relative_position_id = GEA_Aviation_Worship
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_naval_air_force_showed_its_power"
+		}	
+	}
+	focus = { #明确目标
+		id = GEA_Set_clear_goals
+		icon = GFX_GEA_Set_clear_goals
+		cost = 5
+		x = -1
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+		}			
+		prerequisite = {
+			focus = GEA_The_naval_air_force_showed_its_power
+		}
+		relative_position_id = GEA_The_naval_air_force_showed_its_power
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Set_clear_goals"
+		}	
+	}
+	focus = { #追求更大当量
+		id = GEA_Pursuing_a_greater_magnitude
+		icon = GFX_GEA_Pursuing_a_greater_magnitude
+		cost = 5
+		x = 0
+		y = 2
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+		}			
+		prerequisite = {
+			focus = GEA_Set_clear_goals
+		}
+		relative_position_id = GEA_Set_clear_goals
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Pursuing_a_greater_magnitude"
+		}	
+	}
+	focus = { #严密编队
+		id = GEA_Forming_a_tight_formation
+		icon = GFX_GEA_Forming_a_tight_formation
+		cost = 5
+		x = 1
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+		}			
+		prerequisite = {
+			focus = GEA_The_naval_air_force_showed_its_power
+		}
+		relative_position_id = GEA_The_naval_air_force_showed_its_power
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Forming_a_tight_formation"
+		}	
+	}
+	focus = { #长程飞行
+		id = GEA_Long-distance_flight
+		icon = GFX_GEA_Long-distance_flight
+		cost = 5
+		x = 0
+		y = 2
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+		}			
+		prerequisite = {
+			focus = GEA_Forming_a_tight_formation
+		}
+		relative_position_id = GEA_Forming_a_tight_formation
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus A_Long-distance_flight"
+		}	
+	}
+	focus = { #海上侦察分队
+		id = GEA_Maritime_reconnaissance_unit
+		icon = GFX_GEA_Maritime_reconnaissance_unit
+		cost = 5
+		x = 0
+		y = 2
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+		}			
+		prerequisite = {
+			focus = GEA_The_naval_air_force_showed_its_power
+		}
+		relative_position_id = GEA_The_naval_air_force_showed_its_power
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Maritime_reconnaissance_unit"
+		}	
+	}
+	focus = { #波涛猎手
+		id = GEA_Wave_Hunter
+		icon = GFX_GEA_Wave_Hunter
+		cost = 5
+		x = 0
+		y = 2
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+		}			
+		prerequisite = {
+			focus = GEA_Pursuing_a_greater_magnitude
+		}
+		prerequisite = {
+			focus = GEA_Long-distance_flight
+		}
+		prerequisite = {
+			focus = GEA_Maritime_reconnaissance_unit
+		}
+		relative_position_id = GEA_Maritime_reconnaissance_unit
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus EA_Wave_Hunter"
+		}	
+	}
+	focus = { #多面手的绝技
+		id = GEA_The_trick_of_a_generalist
+		icon = GFX_GEA_The_trick_of_a_generalist
+		cost = 5
+		x = 0
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+		}			
+		prerequisite = {
+			focus = GEA_Aviation_Worship
+		}
+		relative_position_id = GEA_Aviation_Worship
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_trick_of_a_generalist"
+		}	
+	}
+	focus = { #耶利哥号角的东方巡演
+		id = GEA_The_Eastern_Tour_of_the_Jericho_Horn
+		icon = GFX_GEA_The_Eastern_Tour_of_the_Jericho_Horn
+		cost = 5
+		x = 1
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+		}			
+		prerequisite = {
+			focus = GEA_The_trick_of_a_generalist
+		}
+		relative_position_id = GEA_The_trick_of_a_generalist
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_Eastern_Tour_of_the_Jericho_Horn"
+		}	
+	}
+	focus = { #昼夜不停
+		id = GEA_Day_and_night_without_stopping
+		icon = GFX_GEA_Day_and_night_without_stopping
+		cost = 5
+		x = 0
+		y = 2
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+		}			
+		prerequisite = {
+			focus = GEA_The_Eastern_Tour_of_the_Jericho_Horn
+		}
+		relative_position_id = GEA_The_Eastern_Tour_of_the_Jericho_Horn
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Day_and_night_without_stopping"
+		}	
+	}
+	focus = { #播撒地火
+		id = GEA_Sowing_the_seeds_of_fire
+		icon = GFX_GEA_Sowing_the_seeds_of_fire
+		cost = 5
+		x = 0
+		y = 2
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+		}			
+		prerequisite = {
+			focus = GEA_The_trick_of_a_generalist
+		}
+		relative_position_id = GEA_The_trick_of_a_generalist
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Sowing_the_seeds_of_fire"
+		}	
+	}
+	focus = { #全能机型
+		id = GEA_All-in-one_model
+		icon = GFX_GEA_All-in-one_model
+		cost = 5
+		x = -1
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+		}			
+		prerequisite = {
+			focus = GEA_The_trick_of_a_generalist
+		}
+		relative_position_id = GEA_The_trick_of_a_generalist
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_All-in-one_model"
+		}	
+	}
+	focus = { #无缺陷之设计
+		id = GEA_Defect-free_design
+		icon = GFX_GEA_Defect-free_design
+		cost = 5
+		x = 0
+		y = 2
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+		}			
+		prerequisite = {
+			focus = GEA_All-in-one_model
+		}
+		relative_position_id = GEA_All-in-one_model
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Defect-free_design"
+		}	
+	}
+	focus = { #德意志王牌之舞
+		id = GEA_The_German_ACE_s_Waltz
+		icon = GFX_GEA_The_German_ACE_s_Waltz
+		cost = 5
+		x = 0
+		y = 2
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+		}			
+		prerequisite = {
+			focus = GEA_Sowing_the_seeds_of_fire
+		}
+		prerequisite = {
+			focus = GEA_Defect-free_design
+		}
+		prerequisite = {
+			focus = GEA_Day_and_night_without_stopping
+		}
+		relative_position_id = GEA_Sowing_the_seeds_of_fire
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_German_ACE_s_Waltz"
+		}	
+	}
+	focus = { #依赖空天骑士
+		id = GEA_Depend_on_sky_Knights
+		icon = GFX_GEA_Depend_on_sky_Knights
 		cost = 5
 		x = 5
 		y = 1
-		ai_will_do = {factor = 100}
-		prerequisite = {focus = GEA_expansion_of_Singaporez_port}
-		prerequisite = {focus = GEA_navy_cartelisation}
-		relative_position_id = GEA_navy_cartelisation
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_New_CV"
-			custom_effect_tooltip = GEA_I_WANT_CV
-			hidden_effect = { country_event = { id = Ostasien.52 days = 360 } }
-			add_tech_bonus = {
-					name = GEA_strikegroup3
-					bonus = 1
-					uses = 1
-					category = cv_tech
-			}
+		ai_will_do = {
+			factor = 100
 		}
-	}
-	focus = {
-		id = GEA_New_CB
-		icon = GFX_GEA_New_CB
-		cost = 5
-		x = 1
-		y = 1
-		ai_will_do = {factor = 60}
-		prerequisite = {focus = GEA_expansion_of_Singaporez_port}
-		prerequisite = {focus = GEA_navy_cartelisation}
-		relative_position_id = GEA_navy_cartelisation
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_New_CB"
-				hidden_effect = { country_event = { id = Ostasien.54 days = 450 } }
-				custom_effect_tooltip = GEA_I_WANT_CB
-			}
-	}
-	focus = {
-		id = GEA_New_BB
-		icon = GFX_GEA_New_BB
-		cost = 5
-		x = -3
-		y = 1
-		ai_will_do = {factor = 80}
-		prerequisite = {focus = GEA_expansion_of_Singaporez_port}
-		prerequisite = {focus = GEA_navy_cartelisation}
-		relative_position_id = GEA_navy_cartelisation
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_New_BB"
-				hidden_effect = { country_event = { id = Ostasien.53 days = 500 } }
-				custom_effect_tooltip = GEA_I_WANT_BB
-				add_tech_bonus = {
-					name = GEA_fleet3
-					bonus = 1
-					uses = 1
-					category = bb_tech
-				}		
-			}
-	}
-	focus = {
-		id = GEA_East_Asian_Naval_Air_Force
-		icon = GFX_goal_CZE_air_is_sea
-		cost = 5
-		x = 1
-		y = 1
-		ai_will_do = {factor = 30}
-		prerequisite = {focus = GEA_foundation_of_naval_tactics}
-		prerequisite = {focus = GEA_Navy_bomber }
-		relative_position_id = GEA_foundation_of_naval_tactics
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_East_Asian_Naval_Air_Force"
-			add_doctrine_cost_reduction = {
-				cost_reduction = 0.33
-				uses = 1
-				category = naval_doctrine
-			}
-			swap_ideas = {
-				remove_idea = GEA_navy_bomber
-				add_idea = GEA_navy_bomber1
-			}
+		available = {
+		}			
+		prerequisite = {
+			focus = GEA_Aviation_Worship
 		}
-	}
-	focus = {
-		id = GEA_Water_trap
-		icon = GFX_goal_ENG_anti_non_contact_committee
-		cost = 5
-		x = -1
-		y = 1
-		ai_will_do = {factor = 50}
-		prerequisite = {focus = GEA_foundation_of_naval_tactics}
-		relative_position_id = GEA_foundation_of_naval_tactics
+		relative_position_id = GEA_Aviation_Worship
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_Water_trap"
-			add_tech_bonus = {
-				name = GEA_fleet3
-				bonus = 1.5
-				uses = 2
-				category = naval_mines
-			}
-		}
-	}
-	focus = {
-		id = GEA_East_Asian_Marine_Corps
-		icon = GFX_GEA_Kaiserliche_Marine
-		cost = 5
-		x = -1
-		y = 1
-		ai_will_do = {factor = 50}
-		prerequisite = {focus = GEA_navy_cartelisation}
-		prerequisite = {focus = GEA_navy_cartelisation}
-		relative_position_id = GEA_Water_trap
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_East_Asian_Marine_Corps"
-			add_tech_bonus = {
-				bonus = 1
-				uses = 1
-				category = marine_tech
-				category = tp_tech
-			}
-			add_ideas = GEA_marine
-		}
-	}
-	focus = {
-		id = GEA_force_cooperation
-		icon = GFX_goal_generic_combined_land_sea_navy
-		cost = 5
-		x = -1
-		y = 1
-		ai_will_do = {factor = 50}
-		prerequisite = {focus = GEA_East_Asian_Marine_Corps}
-		relative_position_id = GEA_East_Asian_Marine_Corps
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_force_cooperation"
-			swap_ideas = {
-				remove_idea = GEA_marine
-				add_idea = GEA_marine1
-			}
-		}
-	}
-	focus = {
-		id = GEA_Damage_control_unit
-		icon = GFX_goal_ZIM_steady_ship_of_state
-		cost = 5
-		x = 0
-		y = 2
-		ai_will_do = {factor = 50}
-		prerequisite = {focus = GEA_East_Asian_Marine_Corps}
-		prerequisite = {focus = GEA_Water_trap}
-		available = {OR = {has_completed_focus = GEA_NEW_CA
-							has_completed_focus = GEA_light_CV}}
-		relative_position_id = GEA_Water_trap
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_Damage_control_unit"
-			swap_ideas = {
-				remove_idea = GEA_repair_ship
-				add_idea = GEA_repair_ship1
-			}
-			add_tech_bonus = {
-				name = GEA_strikegroup3
-				bonus = 1
-				uses = 1
-				category = naval_equipment
-		}
-		}
-	}
-	focus = {
-		id = GEA_New_BC
-		icon = GFX_goal_CAN_Canadian_Cruisers
-		cost = 5
-		x = -2
-		y = 1
-		ai_will_do = {factor = 80}
-		prerequisite = {focus = GEA_New_BB}
-		relative_position_id = GEA_New_BB
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_New_BC"
-			hidden_effect = { country_event = { id = Ostasien.59 days = 450 } }
-				custom_effect_tooltip = GEA_I_WANT_BC
-				add_tech_bonus = {
-					name = GEA_battlecruiser2
-					bonus = 1
-					uses = 1
-					category = ca_tech
-				}
-			}
-	}
-	focus = {
-		id = GEA_dominate_South_Asia
-		icon = GFX_MAF_naval_aerial_observation
-		cost = 5
-		x = -1
-		y = 2
-		ai_will_do = {factor = 100}
-		prerequisite = {focus = GEA_New_BC}
-		prerequisite = {focus = GEA_behemoth_of_sea}
-		relative_position_id = GEA_New_BB
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_dominate_South_Asia"
-			swap_ideas = {
-				remove_idea = GEA_admirality3
-				add_idea = GEA_admirality5
-			}
-		}
-	}
-	focus = {
-		id = GEA_Sea_fort
-		icon = GFX_goal_NFA_unchallenged_fleet
-		cost = 5
-		x = -1
-		y = 3
-		ai_will_do = {factor = 100}
-		prerequisite = {focus = GEA_dominate_South_Asia}
-		relative_position_id = GEA_New_BB
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_Sea_fort"
-			add_tech_bonus = {
-				name = GEA_fleet3
-				bonus = 2
-				uses = 1
-				category = bb_tech
-			}	
-		}
-	}
-
-	focus = {
-		id = GEA_behemoth_of_sea
-		icon = GFX_goal_CSA_power_of_red_navy_2
-		cost = 5
-		x = -2
-		y = 1
-		ai_will_do = {factor = 60}
-		available = { NOT = {
-			has_completed_focus = GEA_neodoxy}
-		}
-		prerequisite = {focus = GEA_New_BB}
-		prerequisite = {focus = GEA_New_CB}
-		relative_position_id = GEA_New_CB
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_behemoth_of_sea"
-			swap_ideas = {
-				remove_idea = GEA_admirality1
-				add_idea = GEA_admirality3
-			}
-		}
-	}
-	focus = {
-		id = GEA_the_torpedo
-		icon = GFX_goal_CAN_Canadian_Small_Ships
-		cost = 5
-		x = -1
-		y = 1
-		ai_will_do = {factor = 90}
-		prerequisite = {focus = GEA_NEW_CL}
-		prerequisite = {focus = GEA_behemoth_of_sea focus = GEA_neodoxy}
-		relative_position_id = GEA_NEW_CL
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_the_torpedo"
-			add_tech_bonus = {
-				bonus = 0.75
-				uses = 3
-				category = cat_torpedo
-			}
-		}
-	}
-	focus = {
-		id = GEA_NEW_CA
-		icon = GFX_goal_MAG_open_port_for_all	
-		cost = 5
-		x = -3
-		y = 1
-		ai_will_do = {factor = 90}
-		available = {NOT = {has_completed_focus = GEA_light_CV}}
-		bypass_if_unavailable = yes
-		prerequisite = {focus = GEA_NEW_CL}
-		prerequisite = {focus = GEA_behemoth_of_sea focus = GEA_neodoxy}
-		relative_position_id = GEA_NEW_CL
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_NEW_CA"
-			hidden_effect = { country_event = { id = Ostasien.58 days = 360 } }
-			custom_effect_tooltip = GEA_I_want_CA
-			navy_experience = 25
-			add_ideas = GEA_repair_ship
-		}
-	}
-
-	focus = {
-		id = GEA_Mobility_first
-		icon = GFX_goal_generic_sea_focused_navy
-		cost = 5
-		x = 1
-		y = 3
-		ai_will_do = {factor = 100}
-		prerequisite = {focus = GEA_Strike_beyond_visual_range}
-		relative_position_id = GEA_New_CV
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_Mobility_first"
-			add_tech_bonus = {
-				bonus = 1.5
-				uses = 1
-				category = cv_tech
-		}
-		}
-	}
-
-	focus = {
-		id = GEA_New_DD
-		icon = GFX_goal_CAN_Canadian_Battleships
-		cost = 5
-		x = 2
-		y = 1
-		ai_will_do = {factor = 80}
-		prerequisite = {focus = GEA_New_CV}
-		relative_position_id = GEA_New_CV
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_New_DD"
-			custom_effect_tooltip = GEA_Fleet_will_arrive
-			hidden_effect = { country_event = { id = Ostasien.56 days = 150 } }
-				add_tech_bonus = {
-					name = GEA_fleet_2
-					bonus = 2
-					uses = 1
-					category = dd_tech
-				}
-		}
-	}
-	focus = {
-		id = GEA_Strike_beyond_visual_range
-		icon = GFX_goal_WCC_Bomb_Em_Back_into_the_stone_age
-		cost = 5
-		x = 1
-		y = 2
-		ai_will_do = {factor = 80}
-		prerequisite = {focus = GEA_New_DD}
-		prerequisite = {focus = GEA_neodoxy}
-		relative_position_id = GEA_New_CV
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_Strike_beyond_visual_range"
-			swap_ideas = {
-				remove_idea = GEA_admirality2
-				add_idea = GEA_admirality4
-			}
-		}
-	}
-	focus = {
-		id = GEA_NEW_CL
-		icon = GFX_goal_NIC_buy_ship
-		cost = 5
-		x = 0
-		y = 1
-		ai_will_do = {factor = 80}
-		prerequisite = {focus = GEA_New_CB focus = GEA_New_CV focus = GEA_New_BB}
-		relative_position_id = GEA_New_CB
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_New_CL"
-			custom_effect_tooltip = GEA_I_want_CL
-			hidden_effect = { country_event = { id = Ostasien.55 days = 300 } }
-				add_tech_bonus = {
-					name = GEA_strikegroup2
-					bonus = 1
-					uses = 1
-					category = cl_tech
-					category = ca_tech
-			}		
-		}
-	}
-	focus = {
-		id = GEA_Ghost_of_the_sea
-		icon = GFX_RUS_Submarines_Kamchatka
-		cost = 5
-		x = 0
-		y = 2
-		ai_will_do = {factor = 80}
-		prerequisite = {focus = GEA_NEW_CL}
-		relative_position_id = GEA_NEW_CL
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_Ghost_of_the_sea"
-			add_tech_bonus = {
-				bonus = 1
-				uses = 1
-				category = ss_tech
-			}
-			add_ideas = GEA_submarine
-		}
-	}
-	focus = {
-		id = GEA_German_naval_advisor
-		icon = GFX_goal_generic_naval_command
-		cost = 5
-		x = -1
-		y = 1
-		ai_will_do = {factor = 65}
-		prerequisite = {focus = GEA_NEW_CA}
-		prerequisite = {focus = GEA_the_torpedo}
-		relative_position_id = GEA_the_torpedo
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_German_naval_advisor"
-			navy_experience = 50
-			add_doctrine_cost_reduction = {
-				cost_reduction = 0.5
-				uses = 2
-				category = naval_doctrine
-			}
-		}
-	}
-	focus = {
-		id = GEA_navyfort
-		icon = GFX_goal_NEE_Cannon_City
-		cost = 5
-		x = 1
-		y = 1
-		ai_will_do = {factor = 65}
-		prerequisite = {focus = GEA_light_CV}
-		prerequisite = {focus = GEA_the_sword}
-		relative_position_id = GEA_the_sword
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_navyfort"
-			846 = {
-				add_building_construction = {
-					type = bunker
-					level = 2
-					province = 12215
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = bunker
-					level = 2
-					province = 1376
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = bunker
-					level = 2
-					province = 10297
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = bunker
-					level = 2
-					province = 4412
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = bunker
-					level = 2
-					province = 7427
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = bunker
-					level = 2
-					province = 4424
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = bunker
-					level = 2
-					province = 10313
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = bunker
-					level = 2
-					province = 4367
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = bunker
-					level = 2
-					province = 12271
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = bunker
-					level = 2
-					province = 7399
-					instant_build = yes
-				}
-			}	
-		}
-	}
-	focus = {
-		id = GEA_neodoxy
-		icon = GFX_GEA_neodoxy
-		cost = 5
-		x = 2
-		y = 1
-		ai_will_do = {factor = 60}
-		available = { NOT = {
-			has_completed_focus = GEA_behemoth_of_sea}
-		}
-		prerequisite = {focus = GEA_New_CV}
-		prerequisite = {focus = GEA_New_CB}
-		relative_position_id = GEA_New_CB
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_neodoxy"
-			swap_ideas = {
-				remove_idea = GEA_admirality1
-				add_idea = GEA_admirality2
-			}
-		}
-	}
-	focus = {
-		id = GEA_light_CV
-		icon = GFX_goal_generic_carrier_aircraft	
-		cost = 5
-		x = 3
-		y = 1
-		ai_will_do = {factor = 80}
-		available = {NOT = {has_completed_focus = GEA_NEW_CA}}
-		bypass_if_unavailable = yes
-		prerequisite = {focus = GEA_NEW_CL}
-		prerequisite = {focus = GEA_behemoth_of_sea focus = GEA_neodoxy}
-		relative_position_id = GEA_NEW_CL
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_light_CV"
-			custom_effect_tooltip = GEA_I_WANT_CARRIER
-			hidden_effect = { country_event = { id = Ostasien.57 days = 220 } }
-			air_experience = 25
-			add_ideas = GEA_repair_ship
-		}
-	}
-	focus = {
-		id = GEA_the_sword
-		icon = GFX_GEA_the_sword
-		cost = 5
-		x = 1
-		y = 1
-		ai_will_do = {factor = 75}
-		prerequisite = {focus = GEA_NEW_CL}
-		prerequisite = {focus = GEA_behemoth_of_sea focus = GEA_neodoxy}
-		relative_position_id = GEA_NEW_CL
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_the_sword"
-			add_tech_bonus = {
-				bonus = 0.75
-				uses = 1
-				category = cat_gunnery
-			}
-			add_tech_bonus = {
-				bonus = 0.75
-				uses = 1
-				category = cat_ship_light_battery
-			}
-			add_tech_bonus = {
-				bonus = 0.75
-				uses = 1
-				category = cat_ship_medium_battery
-			}
-			add_tech_bonus = {
-				bonus = 0.75
-				uses = 1
-				category = cat_ship_heavy_battery
-			}
-		}
-	}
-	focus = {
-		id = GEA_Lord_of_the_two_ocean
-		icon = GFX_goal_TEX_meek_inherit_earth
-		cost = 5
-		x = 0
-		y = 1
-		ai_will_do = {factor = 100}
-		prerequisite = {focus = GEA_German_naval_advisor}
-		prerequisite = {focus = GEA_navyfort}
-		prerequisite = {focus = GEA_Ghost_of_the_sea}
-		relative_position_id = GEA_Ghost_of_the_sea
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_Lord_of_the_two_ocean"
-			add_political_power = 100
-			navy_experience = 100
-		}
-	}
-### 空军线 ###
-	focus = {
-		id = GEA_Expansion_of_Singapore_Air_Force
-		icon = GFX_GEA_Fliegerabteilung
-		cost = 5
-		x = 58
-		y = 25
-		ai_will_do = {factor = 100}
-		available = {OR = {has_country_flag = GEA_indochina_war_broke_out
-		has_completed_focus = GEA_economic_recovery
-		has_completed_focus = GEA_complete_militarization}}			
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_Expansion_of_Singapore_Air_Force"
-			add_doctrine_cost_reduction = {
-				cost_reduction = 0.5
-				uses = 1
-				category = air_doctrine
-			}
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Depend_on_sky_Knights"
 		}	
 	}
-
+	focus = { #飞翔的伙友骑兵
+		id = GEA_Flying_Comrade_Cavalry
+		icon = GFX_GEA_Flying_Comrade_Cavalry
+		cost = 5
+		x = 0
+		y = 2
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+		}			
+		prerequisite = {
+			focus = GEA_Depend_on_sky_Knights
+		}
+		relative_position_id = GEA_Depend_on_sky_Knights
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Flying_Comrade_Cavalry"
+		}	
+	}
+	focus = { #全面防护
+		id = GEA_Comprehensive_protection
+		icon = GFX_GEA_Comprehensive_protection
+		cost = 5
+		x = -1
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+		}			
+		prerequisite = {
+			focus = GEA_Depend_on_sky_Knights
+		}
+		relative_position_id = GEA_Depend_on_sky_Knights
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Comprehensive_protection"
+		}	
+	}
+	focus = { #编制火力网
+		id = GEA_Establish_a_fire_coverage_network
+		icon = GFX_GEA_Establish_a_fire_coverage_network
+		cost = 5
+		x = 0
+		y = 2
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+		}			
+		prerequisite = {
+			focus = GEA_Comprehensive_protection
+		}
+		relative_position_id = GEA_Comprehensive_protection
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Establish_a_fire_coverage_network"
+		}	
+	}
+	focus = { #精英训练
+		id = GEA_Elite_training
+		icon = GFX_GEA_Elite_training
+		cost = 5
+		x = 1
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+		}			
+		prerequisite = {
+			focus = GEA_Depend_on_sky_Knights
+		}
+		relative_position_id = GEA_Depend_on_sky_Knights
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus EA_Elite_training"
+		}	
+	}
+	focus = { #革新机动战法
+		id = GEA_Innovate_mobile_combat_tactics
+		icon = GFX_GEA_Innovate_mobile_combat_tactics
+		cost = 5
+		x = 0
+		y = 2
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+		}			
+		prerequisite = {
+			focus = GEA_Elite_training
+		}
+		relative_position_id = GEA_Elite_training
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Innovate_mobile_combat_tactics"
+		}	
+	}
+	focus = { #统治蓝天
+		id = GEA_Rule_the_sky
+		icon = GFX_GEA_Rule_the_sky
+		cost = 5
+		x = 0
+		y = 2
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+		}			
+		prerequisite = {
+			focus = GEA_Flying_Comrade_Cavalry
+		}
+		prerequisite = {
+			focus = GEA_Establish_a_fire_coverage_network
+		}
+		prerequisite = {
+			focus = GEA_Innovate_mobile_combat_tactics
+		}
+		relative_position_id = GEA_Flying_Comrade_Cavalry
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Rule_the_sky"
+		}	
+	}
 }

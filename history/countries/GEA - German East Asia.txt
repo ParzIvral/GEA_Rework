@@ -319,6 +319,9 @@ add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 600 produce
 add_manpower = 35000
 
 recruit_character = GEA_Albert_Ballin
+recruit_character = GEA_Fritz_Bayerlein
+recruit_character = GEA_Herbert_Gille
+recruit_character = GEA_Felix_Steiner
 recruit_character = GEA_Wilhelm_Heye
 recruit_character = GEA_Hellmuth_von_Mucke
 recruit_character = GEA_Ferdinand_Schorner

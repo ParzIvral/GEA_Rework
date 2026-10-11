@@ -1,5 +1,40 @@
 technologies = {
 
+	sturmtruppe_battalion_tech = {
+		allow = { always = no }
+		research_cost = 1
+		start_year = 1936
+		enable_subunits = { sturmtruppe_battalion }
+	}
+
+	GEA_hutier_tactics_tech = {
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech GEA_hutier_tactics_tech" }
+		research_cost = 1
+		allow = { always = no }
+		modifier_army_sub_unit_sturmtruppe_battalion_max_org_factor = 0.05
+		sturmtruppe_battalion = {
+			max_strength = 20
+			default_morale = 0.2
+			breakthrough = 0.10
+			forest = { attack = 0.10 defence = 0.10 }
+			jungle = { attack = 0.10 defence = 0.10 }
+		}
+	}
+
+	GEA_adverse_terrain_warfare_tech = {
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech GEA_adverse_terrain_warfare_tech" }
+		research_cost = 1
+		allow = { always = no }
+
+		category_front_line = {
+			jungle = { attack = 0.15 defence = 0.15 }
+			forest = { attack = 0.10 defence = 0.10 }
+			hills = { attack = 0.05 defence = 0.05 }
+			mountain = { attack = 0.10 defence = 0.10 }
+			river = { attack = 0.05 defence = 0.05 }
+		}
+	}
+
 	camel_corps_tech = {
 
 		research_cost = 1

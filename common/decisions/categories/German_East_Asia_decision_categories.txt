@@ -15,9 +15,6 @@ GEA_colonial_decisions = {
 	allowed = {
 		original_tag = GEA
 	}
-	NOT = {
-		has_completed_focus = GEA_Germany_Calling
-	}
 }
 
 GEA_heye_decisions = {

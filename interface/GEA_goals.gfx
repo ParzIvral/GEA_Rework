@@ -1,135 +1,7 @@
 SpriteTypes = {
 	SpriteType = {
-		name = "GFX_GEA_Stauffenberg_win"
-		texturefile = "gfx/interface/goals/GEA_Stauffenberg_win.png"
-	}
-	SpriteType = {
-		name = "GFX_GEA_Tresckow_win"
-		texturefile = "gfx/interface/goals/GEA_Tresckow_win.png"
-	}
-	SpriteType = {
-		name = "GFX_GEA_Saucken_win"
-		texturefile = "gfx/interface/goals/GEA_Saucken_win.png"
-	}
-	SpriteType = {
-		name = "GFX_GEA_Schorner_win"
-		texturefile = "gfx/interface/goals/GEA_Schorner_win.png"
-	}
-	SpriteType = {
-		name = "GFX_GEA_squad_armored_vehicles"
-		texturefile = "gfx/interface/goals/GEA_squad_armored_vehicles.png"
-	}
-	SpriteType = {
-		name = "GFX_GEA_breakthrough_spearhead"
-		texturefile = "gfx/interface/goals/GEA_breakthrough_spearhead.png"
-	}
-	SpriteType = {
-		name = "GFX_GEA_new_assault_gun"
-		texturefile = "gfx/interface/goals/GEA_new_assault_gun.png"
-	}
-	SpriteType = {
-		name = "GFX_GEA_break_tin_can"
-		texturefile = "gfx/interface/goals/GEA_break_tin_can.png"
-	}
-	SpriteType = {
-		name = "GFX_GEA_battle_behemoth"
-		texturefile = "gfx/interface/goals/GEA_battle_behemoth.png"
-	}
-	SpriteType = {
 		name = "GFX_GEA_emergency_meeting"
 		texturefile = "gfx/interface/goals/GEA_emergency_meeting.png"
-	}
-	SpriteType = {
-		name = "GFX_GEA_careful_planning"
-		texturefile = "gfx/interface/goals/GEA_careful_planning.png"
-	}
-	SpriteType = {
-		name = "GFX_GEA_Durchbruchmuller"
-		texturefile = "gfx/interface/goals/GEA_Durchbruchmuller.png"
-	}
-	SpriteType = {
-		name = "GFX_GEA_secret_army"
-		texturefile = "gfx/interface/goals/GEA_secret_army.png"
-	}
-	SpriteType = {
-		name = "GFX_GEA_requisitioned_agricultural_tractor"
-		texturefile = "gfx/interface/goals/GEA_requisitioned_agricultural_tractor.png"
-	}
-	SpriteType = {
-		name = "GFX_GEA_secure_logistical_lifeline"
-		texturefile = "gfx/interface/goals/GEA_secure_logistical_lifeline.png"
-	}
-	SpriteType = {
-		name = "GFX_GEA_integrated_air_ground_strike"
-		texturefile = "gfx/interface/goals/GEA_integrated_air_ground_strike.png"
-	}
-	SpriteType = {
-		name = "GFX_GEA_born_in_iron_and_blood"
-		texturefile = "gfx/interface/goals/GEA_born_in_iron_and_blood.png"
-	}
-	SpriteType = {
-		name = "GFX_GEA_focus_infantry_tank"
-		texturefile = "gfx/interface/goals/GEA_focus_infantry_tank.png"
-	}
-	SpriteType = {
-		name = "GFX_GEA_focus_speed_tank"
-		texturefile = "gfx/interface/goals/GEA_focus_speed_tank.png"
-	}
-	SpriteType = {
-		name = "GFX_GEA_mobile_team"
-		texturefile = "gfx/interface/goals/GEA_mobile_team.png"
-	}
-	SpriteType = {
-		name = "GFX_GEA_Operation_Falkenhayn"
-		texturefile = "gfx/interface/goals/GEA_Operation_Falkenhayn.png"
-	}
-	SpriteType = {
-		name = "GFX_GEA_Operation_Frederick"
-		texturefile = "gfx/interface/goals/GEA_Operation_Frederick.png"
-	}
-	SpriteType = {
-		name = "GFX_GEA_operation_Valkyrie"
-		texturefile = "gfx/interface/goals/GEA_operation_Valkyrie.png"
-	}
-	SpriteType = {
-		name = "GFX_GEA_operation_cerberus"
-		texturefile = "gfx/interface/goals/GEA_operation_cerberus.png"
-	}
-	SpriteType = {
-		name = "GFX_GEA_New_CB"
-		texturefile = "gfx/interface/goals/GEA_New_CB.png"
-	}
-	SpriteType = {
-		name = "GFX_GEA_expansion_of_Singaporez_port"
-		texturefile = "gfx/interface/goals/GEA_expansion_of_Singaporez_port.png"
-	}
-	SpriteType = {
-		name = "GFX_GEA_neodoxy"
-		texturefile = "gfx/interface/goals/GEA_neodoxy.png"
-	}
-	SpriteType = {
-		name = "GFX_GEA_the_sword"
-		texturefile = "gfx/interface/goals/GEA_the_sword.png"
-	}
-	SpriteType = {
-		name = "GFX_GEA_Red_Baron"
-		texturefile = "gfx/interface/goals/GEA_Red_Baron.png"
-	}
-	SpriteType = {
-		name = "GFX_GEA_Destroy_everything"
-		texturefile = "gfx/interface/goals/GEA_Destroy_everything.png"
-	}
-	SpriteType = {
-		name = "GFX_GEA_Close_formation"
-		texturefile = "gfx/interface/goals/GEA_Close_formation.png"
-	}
-	SpriteType = {
-		name = "GFX_GEA_anti_air"
-		texturefile = "gfx/interface/goals/GEA_anti_air.png"
-	}
-	SpriteType = {
-		name = "GFX_GEA_anti_air"
-		texturefile = "gfx/interface/goals/GEA_anti_air.png"
 	}
 	SpriteType = {
 		name = "GFX_GEA_Expand_the_share_of_exports"
@@ -769,7 +641,6 @@ SpriteTypes = {
 	SpriteType = { name = "GFX_GEA_Desertion_Law" texturefile = "gfx/interface/goals/GEA_Desertion_Law.png" }
 	SpriteType = { name = "GFX_GEA_Organize_industrial_relocation" texturefile = "gfx/interface/goals/GEA_Organize_industrial_relocation.png" }
 	SpriteType = { name = "GFX_GEA_Berlin_intervention" texturefile = "gfx/interface/goals/GEA_Berlin_intervention.png" }
-	SpriteType = { name = "GFX_GEA_New_BB" texturefile = "gfx/interface/goals/GEA_New_BB.png" }
 	SpriteType = { name = "GFX_GEA_Governor_Kartel" texturefile = "gfx/interface/goals/GEA_Governor_Kartel.png" }
 	SpriteType = { name = "GFX_GEA_The_guidance_of_Governor_Tilo" texturefile = "gfx/interface/goals/GEA_The_guidance_of_Governor_Tilo.png" }
 	SpriteType = { name = "GFX_GEA_Pour_a_tight_and_economical_chain" texturefile = "gfx/interface/goals/GEA_Pour_a_tight_and_economical_chain.png" }
@@ -875,4 +746,290 @@ SpriteTypes = {
 	SpriteType = { name = "GFX_GEA_Schorner_Law" texturefile = "gfx/interface/goals/GEA_Schorner_Law.png" }
 	SpriteType = { name = "GFX_GEA_Bloody_Ferdinand_Supreme_Power" texturefile = "gfx/interface/goals/GEA_Bloody_Ferdinand_Supreme_Power.png" }
 	SpriteType = { name = "GFX_GEA_Let_loose_the_blood-stained_black_eagle" texturefile = "gfx/interface/goals/GEA_Let_loose_the_blood-stained_black_eagle.png" }
+	# 海空军国策图标
+	SpriteType = {
+		name = "GFX_GEA_Asia_Grand_Navy"
+		texturefile = "gfx/interface/goals/GEA_Asia_Grand_Navy.png"
+	}
+
+	SpriteType = {
+		name = "GFX_GEA_Thielpitz_s_far-sightedness"
+		texturefile = "gfx/interface/goals/GEA_Thielpitz_s_far-sightedness.png"
+	}
+
+	SpriteType = {
+		name = "GFX_GEA_The_shipbuilding_industry_is_operating_at_full_capacity"
+		texturefile = "gfx/interface/goals/GEA_The_shipbuilding_industry_is_operating_at_full_capacity.png"
+	}
+
+	SpriteType = {
+		name = "GFX_GEA_Shipbuilding_plan"
+		texturefile = "gfx/interface/goals/GEA_Shipbuilding_plan.png"
+	}
+
+	SpriteType = {
+		name = "GFX_GEA_Alfred_Mahan_s_teachings"
+		texturefile = "gfx/interface/goals/GEA_Alfred_Mahan_s_teachings.png"
+	}
+
+	SpriteType = {
+		name = "GFX_GEA_Protecting_the_World_Airways_Route"
+		texturefile = "gfx/interface/goals/GEA_Protecting_the_World_Airways_Route.png"
+	}
+
+	SpriteType = {
+		name = "GFX_GEA_Wiping_the_Oriental_Pearl_Tower"
+		texturefile = "gfx/interface/goals/GEA_Wiping_the_Oriental_Pearl_Tower.png"
+	}
+
+	SpriteType = {
+		name = "GFX_GEA_Set_sail_and_sail_far"
+		texturefile = "gfx/interface/goals/GEA_Set_sail_and_sail_far.png"
+	}
+
+	SpriteType = {
+		name = "GFX_GEA_Eastern_Ocean_Fleet"
+		texturefile = "gfx/interface/goals/GEA_Eastern_Ocean_Fleet.png"
+	}
+
+	SpriteType = {
+		name = "GFX_GEA_Improve_the_old_hull"
+		texturefile = "gfx/interface/goals/GEA_Improve_the_old_hull.png"
+	}
+
+	SpriteType = {
+		name = "GFX_GEA_Tear_apart_the_seabirds"
+		texturefile = "gfx/interface/goals/GEA_Tear_apart_the_seabirds.png"
+	}
+
+	SpriteType = {
+		name = "GFX_GEA_Ocean_Fortress"
+		texturefile = "gfx/interface/goals/GEA_Ocean_Fortress.png"
+	}
+
+	SpriteType = {
+		name = "GFX_GEA_Imperial_Cannons"
+		texturefile = "gfx/interface/goals/GEA_Imperial_Cannons.png"
+	}
+
+	SpriteType = {
+		name = "GFX_GEA_IPreparatory_Fleet_Battle"
+		texturefile = "gfx/interface/goals/GEA_IPreparatory_Fleet_Battle.png"
+	}
+
+	SpriteType = {
+		name = "GFX_GEA_Hell_Strike"
+		texturefile = "gfx/interface/goals/GEA_Hell_Strike.png"
+	}
+
+	SpriteType = {
+		name = "GFX_GEA_High_speed_equals_truth"
+		texturefile = "gfx/interface/goals/GEA_High_speed_equals_truth.png"
+	}
+
+	SpriteType = {
+		name = "GFX_GEA_Anti-submarine_warfare"
+		texturefile = "gfx/interface/goals/GEA_Anti-submarine_warfare.png"
+	}
+
+	SpriteType = {
+		name = "GFX_GEA_Precision_strike"
+		texturefile = "gfx/interface/goals/GEA_Precision_strike.png"
+	}
+
+	SpriteType = {
+		name = "GFX_GEA_Ocean_Falcon"
+		texturefile = "gfx/interface/goals/GEA_Ocean_Falcon.png"
+	}
+
+	SpriteType = {
+		name = "GFX_GEA_Focus_on_the_escort_fleet"
+		texturefile = "gfx/interface/goals/GEA_Focus_on_the_escort_fleet.png"
+	}
+
+	SpriteType = {
+		name = "GFX_GEA_Aircraft_Carrier_Battle_Group"
+		texturefile = "gfx/interface/goals/GEA_Aircraft_Carrier_Battle_Group.png"
+	}
+
+	SpriteType = {
+		name = "GFX_GEA_Cluster_hunting"
+		texturefile = "gfx/interface/goals/GEA_Cluster_hunting.png"
+	}
+
+	SpriteType = {
+		name = "GFX_GEA_Armor_deck_protection"
+		texturefile = "gfx/interface/goals/GEA_Armor_deck_protection.png"
+	}
+
+	SpriteType = {
+		name = "GFX_GEA_Covering_the_sky_and_blocking_the_sun"
+		texturefile = "gfx/interface/goals/GEA_Covering_the_sky_and_blocking_the_sun.png"
+	}
+
+	SpriteType = {
+		name = "GFX_GEA_The_sea_warriors_are_fearless"
+		texturefile = "gfx/interface/goals/GEA_The_sea_warriors_are_fearless.png"
+	}
+
+	SpriteType = {
+		name = "GFX_GEA_Making_a_desperate_dive"
+		texturefile = "gfx/interface/goals/GEA_Making_a_desperate_dive.png"
+	}
+
+	SpriteType = {
+		name = "GFX_GEA_Increase_patrols"
+		texturefile = "gfx/interface/goals/GEA_Increase_patrols.png"
+	}
+
+	SpriteType = {
+		name = "GFX_GEA_Oceanic_maintenance_and_supply"
+		texturefile = "gfx/interface/goals/GEA_Oceanic_maintenance_and_supply.png"
+	}
+
+	SpriteType = {
+		name = "GFX_GEA_Underwater_knife"
+		texturefile = "gfx/interface/goals/GEA_Underwater_knife.png"
+	}
+
+	SpriteType = {
+		name = "GFX_GEA_Silent_War"
+		texturefile = "gfx/interface/goals/GEA_Silent_War.png"
+	}
+
+	SpriteType = {
+		name = "GFX_GEA_Microwave_radio_magnetron"
+		texturefile = "gfx/interface/goals/GEA_Microwave_radio_magnetron.png"
+	}
+
+	SpriteType = {
+		name = "GFX_GEA_Immortal_Power"
+		texturefile = "gfx/interface/goals/GEA_Immortal_Power.png"
+	}
+
+	SpriteType = {
+		name = "GFX_GEA_The_ruler_of_the_two_oceans"
+		texturefile = "gfx/interface/goals/GEA_The_ruler_of_the_two_oceans.png"
+	}
+
+	SpriteType = {
+		name = "GFX_GEA_Encourage_a_combative_spirit"
+		texturefile = "gfx/interface/goals/GEA_Encourage_a_combative_spirit.png"
+	}
+
+	SpriteType = {
+		name = "GFX_GEA_Establish_an_aviation_design_bureau"
+		texturefile = "gfx/interface/goals/GEA_Establish_an_aviation_design_bureau.png"
+	}
+
+	SpriteType = {
+		name = "GFX_GEA_Aviation_Worship"
+		texturefile = "gfx/interface/goals/GEA_Aviation_Worship.png"
+	}
+
+	SpriteType = {
+		name = "GFX_GEA_The_naval_air_force_showed_its_power"
+		texturefile = "gfx/interface/goals/GEA_The_naval_air_force_showed_its_power.png"
+	}
+
+	SpriteType = {
+		name = "GFX_GEA_Set_clear_goals"
+		texturefile = "gfx/interface/goals/GEA_Set_clear_goals.png"
+	}
+
+	SpriteType = {
+		name = "GFX_GEA_Pursuing_a_greater_magnitude"
+		texturefile = "gfx/interface/goals/GEA_Pursuing_a_greater_magnitude.png"
+	}
+
+	SpriteType = {
+		name = "GFX_GEA_Forming_a_tight_formation"
+		texturefile = "gfx/interface/goals/GEA_Forming_a_tight_formation.png"
+	}
+
+	SpriteType = {
+		name = "GFX_GEA_Long-distance_flight"
+		texturefile = "gfx/interface/goals/GEA_Long-distance_flight.png"
+	}
+
+	SpriteType = {
+		name = "GFX_GEA_Maritime_reconnaissance_unit"
+		texturefile = "gfx/interface/goals/GEA_Maritime_reconnaissance_unit.png"
+	}
+
+	SpriteType = {
+		name = "GFX_GEA_Wave_Hunter"
+		texturefile = "gfx/interface/goals/GEA_Wave_Hunter.png"
+	}
+
+	SpriteType = {
+		name = "GFX_GEA_The_trick_of_a_generalist"
+		texturefile = "gfx/interface/goals/GEA_The_trick_of_a_generalist.png"
+	}
+
+	SpriteType = {
+		name = "GFX_GEA_The_Eastern_Tour_of_the_Jericho_Horn"
+		texturefile = "gfx/interface/goals/GEA_The_Eastern_Tour_of_the_Jericho_Horn.png"
+	}
+
+	SpriteType = {
+		name = "GFX_GEA_Day_and_night_without_stopping"
+		texturefile = "gfx/interface/goals/GEA_Day_and_night_without_stopping.png"
+	}
+
+	SpriteType = {
+		name = "GFX_GEA_Sowing_the_seeds_of_fire"
+		texturefile = "gfx/interface/goals/GEA_Sowing_the_seeds_of_fire.png"
+	}
+
+	SpriteType = {
+		name = "GFX_GEA_All-in-one_model"
+		texturefile = "gfx/interface/goals/GEA_All-in-one_model.png"
+	}
+
+	SpriteType = {
+		name = "GFX_GEA_Defect-free_design"
+		texturefile = "gfx/interface/goals/GEA_Defect-free_design.png"
+	}
+
+	SpriteType = {
+		name = "GFX_GEA_The_German_ACE_s_Waltz"
+		texturefile = "gfx/interface/goals/GEA_The_German_ACE_s_Waltz.png"
+	}
+
+	SpriteType = {
+		name = "GFX_GEA_Depend_on_sky_Knights"
+		texturefile = "gfx/interface/goals/GEA_Depend_on_sky_Knights.png"
+	}
+
+	SpriteType = {
+		name = "GFX_GEA_Flying_Comrade_Cavalry"
+		texturefile = "gfx/interface/goals/GEA_Flying_Comrade_Cavalry.png"
+	}
+
+	SpriteType = {
+		name = "GFX_GEA_Comprehensive_protection"
+		texturefile = "gfx/interface/goals/GEA_Comprehensive_protection.png"
+	}
+
+	SpriteType = {
+		name = "GFX_GEA_Establish_a_fire_coverage_network"
+		texturefile = "gfx/interface/goals/GEA_Establish_a_fire_coverage_network.png"
+	}
+
+	SpriteType = {
+		name = "GFX_GEA_Elite_training"
+		texturefile = "gfx/interface/goals/GEA_Elite_training.png"
+	}
+
+	SpriteType = {
+		name = "GFX_GEA_Innovate_mobile_combat_tactics"
+		texturefile = "gfx/interface/goals/GEA_Innovate_mobile_combat_tactics.png"
+	}
+
+	SpriteType = {
+		name = "GFX_GEA_Rule_the_sky"
+		texturefile = "gfx/interface/goals/GEA_Rule_the_sky.png"
+	}
+
 }

@@ -4463,6 +4463,7 @@ add_namespace = GEA
 			increase_ruling_party_popularity_by_10 = yes
 			add_to_variable = { GEA_Corporation_Rule_political_power = 0.05 }
 			add_to_variable = { GEA_Corporation_Rule_start_efficiency = 0.03 }
+			custom_effect_tooltip = GEA_405_a_corporation_rule_modifier_tt
 		}
 
 		option = { 
@@ -4583,6 +4584,7 @@ add_namespace = GEA
 		option = { 
 			name = GEA.411.c
 			add_to_variable = { GEA_army_army_org_factor = 0.05 }
+			custom_effect_tooltip = GEA_411_c_army_tt
 		}
 	}
 	country_event = { #红色药剂
