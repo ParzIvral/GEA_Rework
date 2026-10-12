@@ -1,0 +1,18 @@
+# 德属东亚订购的 Z 系驱逐舰：1940 年船壳；不指定固定舰名，由设计的舰名池自动分配。
+units = {
+	fleet = {
+		name = GEA_FLEET_Z_DESTROYER_DELIVERY
+		naval_base = 12299 #新加坡
+		task_force = {
+			name = GEA_FLEET_Z_DESTROYER_DELIVERY
+			location = 12299 #新加坡
+			ship = { definition = destroyer equipment = { ship_hull_light_3 = { amount = 1 owner = GEA version_name = "GEA_Z_CLASS_1940_ORDERS" } } }
+			ship = { definition = destroyer equipment = { ship_hull_light_3 = { amount = 1 owner = GEA version_name = "GEA_Z_CLASS_1940_ORDERS" } } }
+			ship = { definition = destroyer equipment = { ship_hull_light_3 = { amount = 1 owner = GEA version_name = "GEA_Z_CLASS_1940_ORDERS" } } }
+			ship = { definition = destroyer equipment = { ship_hull_light_3 = { amount = 1 owner = GEA version_name = "GEA_Z_CLASS_1940_ORDERS" } } }
+			ship = { definition = destroyer equipment = { ship_hull_light_3 = { amount = 1 owner = GEA version_name = "GEA_Z_CLASS_1940_ORDERS" } } }
+			ship = { definition = destroyer equipment = { ship_hull_light_3 = { amount = 1 owner = GEA version_name = "GEA_Z_CLASS_1940_ORDERS" } } }
+			ship = { definition = destroyer equipment = { ship_hull_light_3 = { amount = 1 owner = GEA version_name = "GEA_Z_CLASS_1940_ORDERS" } } }
+		}
+	}
+}

@@ -1,12 +1,5 @@
 technologies = {
 
-	sturmtruppe_battalion_tech = {
-		allow = { always = no }
-		research_cost = 1
-		start_year = 1936
-		enable_subunits = { sturmtruppe_battalion }
-	}
-
 	GEA_hutier_tactics_tech = {
 		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech GEA_hutier_tactics_tech" }
 		research_cost = 1

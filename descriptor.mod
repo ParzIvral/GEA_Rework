@@ -11,4 +11,4 @@ dependencies={
 	"Kaiserredux汉化"
 	"KaiserreduX"
 }
-supported_version="1.18.1.0"
+supported_version="1.19.3.0"

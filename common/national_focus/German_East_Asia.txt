@@ -10418,6 +10418,7 @@ focus_tree = {
 				category = naval_doctrine
 			}
 		}
+		search_filters = { FOCUS_FILTER_NAVY_BONUS }
 	}
 	focus = { #提尔皮茨的高瞻远瞩
 		id = GEA_Thielpitz_s_far-sightedness
@@ -10436,8 +10437,30 @@ focus_tree = {
 		relative_position_id = GEA_Asia_Grand_Navy
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Thielpitz_s_far-sightedness"
-
+			navy_experience = 20
+			if = {
+				limit = {
+					has_dlc_mtg = yes
+				}
+				add_tech_bonus = {
+					category = cat_ship_heavy_battery
+					uses = 1
+					bonus = 1
+				}
+				
+				add_tech_bonus = {
+					category = cat_ship_medium_battery
+					uses = 1
+					bonus = 1
+				}
+				add_tech_bonus = {
+					category = naval_equipment
+					uses = 1
+					bonus = 1
+				}
+			}
 		}
+		search_filters = { FOCUS_FILTER_NAVY_BONUS }
 	}
 	focus = { #造船工业开足马力
 		id = GEA_The_shipbuilding_industry_is_operating_at_full_capacity
@@ -10456,8 +10479,53 @@ focus_tree = {
 		relative_position_id = GEA_Thielpitz_s_far-sightedness
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_shipbuilding_industry_is_operating_at_full_capacity"
-
+			random_owned_controlled_state = {
+				limit = {
+					is_coastal = yes
+					NOT = { has_state_flag = GEA_shipbuilding_focus_selected }
+				}
+				hidden_effect = { set_state_flag = GEA_shipbuilding_focus_selected }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_coastal = yes
+					NOT = { has_state_flag = GEA_shipbuilding_focus_selected }
+				}
+				hidden_effect = { set_state_flag = GEA_shipbuilding_focus_selected }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_coastal = yes
+					NOT = { has_state_flag = GEA_shipbuilding_focus_selected }
+				}
+				hidden_effect = { set_state_flag = GEA_shipbuilding_focus_selected }
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+			hidden_effect = {
+				every_owned_state = {
+					limit = { has_state_flag = GEA_shipbuilding_focus_selected }
+					clr_state_flag = GEA_shipbuilding_focus_selected
+				}
+			}
 		}
+		search_filters = { FOCUS_FILTER_NAVY_BONUS }
 	}
 	focus = { #造舰计划
 		id = GEA_Shipbuilding_plan
@@ -10476,8 +10544,11 @@ focus_tree = {
 		relative_position_id = GEA_Thielpitz_s_far-sightedness
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Shipbuilding_plan"
-
+			unlock_decision_category_tooltip = GEA_Naval_decisions
+			custom_effect_tooltip = GEA_Shipbuilding_plan_production_tt
+			hidden_effect = { GEA_Shipbuilding_plan_production_effect = yes }
 		}
+		search_filters = { FOCUS_FILTER_NAVY_BONUS }
 	}
 	focus = { #阿尔弗雷德·马汉之教诲
 		id = GEA_Alfred_Mahan_s_teachings
@@ -10496,8 +10567,12 @@ focus_tree = {
 		relative_position_id = GEA_Asia_Grand_Navy
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Alfred_Mahan_s_teachings"
-
+			navy_experience = 50
+			add_to_variable = { GEA_navy_naval_coordination = 0.05 }
+			add_to_variable = { GEA_navy_positioning = 0.05 }
+			custom_effect_tooltip = GEA_Alfred_Mahan_s_teachings_navy_tt
 		}
+		search_filters = { FOCUS_FILTER_NAVY_BONUS }
 	}
 	focus = { #保卫世界航路
 		id = GEA_Protecting_the_World_Airways_Route
@@ -10516,8 +10591,12 @@ focus_tree = {
 		relative_position_id = GEA_Alfred_Mahan_s_teachings
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Protecting_the_World_Airways_Route"
-
+			add_to_variable = { GEA_navy_convoy_escort_efficiency = 0.1 }
+			add_to_variable = { GEA_navy_invasion_preparation = -0.05 }
+			add_to_variable = { GEA_navy_production_speed_naval_base_factor = 0.05 }
+			custom_effect_tooltip = GEA_Protecting_the_World_Airways_Route_navy_tt
 		}
+		search_filters = { FOCUS_FILTER_NAVY_BONUS }
 	}
 	focus = { #擦拭东亚明珠
 		id = GEA_Wiping_the_Oriental_Pearl_Tower
@@ -10536,13 +10615,34 @@ focus_tree = {
 		relative_position_id = GEA_Alfred_Mahan_s_teachings
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Wiping_the_Oriental_Pearl_Tower"
-
+			336 = { #新加坡
+				add_extra_state_shared_building_slots = 3
+				increase_state_category_by_one_level = yes
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = coastal_bunker
+					province = 12299
+					level = 3
+					instant_build = yes
+				}
+				add_state_modifier = {
+					modifier = {
+						state_production_speed_dockyard_factor = 0.10    #海军船坞建造速度
+						state_production_speed_naval_base_factor = 0.10  #海军基地建造速度
+					}
+				}
+			}
 		}
+		search_filters = { FOCUS_FILTER_NAVY_BONUS }
 	}
 	focus = { #扬帆远航
 		id = GEA_Set_sail_and_sail_far
 		icon = GFX_GEA_Set_sail_and_sail_far
-		cost = 5
+		cost = 1
 		x = 1
 		y = 1
 		ai_will_do = {
@@ -10565,8 +10665,13 @@ focus_tree = {
 		relative_position_id = GEA_The_shipbuilding_industry_is_operating_at_full_capacity
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Set_sail_and_sail_far"
-
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 1
+				category = naval_doctrine
+			}
 		}
+		search_filters = { FOCUS_FILTER_NAVY_BONUS }
 	}
 	focus = { #东方公海舰队
 		id = GEA_Eastern_Ocean_Fleet
@@ -10575,18 +10680,43 @@ focus_tree = {
 		x = -7
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 10
+			modifier = {
+				factor = 20
+				OR = {
+					has_war_with = JAP
+					has_war_with = USA
+				}
+			}
 		}
 		available = {
 		}	
 		prerequisite = {
 			focus = GEA_Set_sail_and_sail_far
 		}	
+		mutually_exclusive = {
+			focus = GEA_Ocean_Falcon
+		}
 		relative_position_id = GEA_Set_sail_and_sail_far
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Eastern_Ocean_Fleet"
-
+			add_to_variable = { GEA_navy_navy_capital_ship_attack_factor = 0.05 }
+			custom_effect_tooltip = GEA_Eastern_Ocean_Fleet_navy_tt
+			add_tech_bonus = {
+				category = bb_tech
+				uses = 1
+				bonus = 1
+			}
+			add_daily_mastery = {
+				amount = 0.1
+				days = 730
+				name = GEA_mastery_battleships
+				# FILTERS:
+				folder = naval
+				track = capital_ships
+			}
 		}
+		search_filters = { FOCUS_FILTER_NAVY_BONUS }
 	}
 	focus = { #改进旧船壳
 		id = GEA_Improve_the_old_hull
@@ -10595,7 +10725,14 @@ focus_tree = {
 		x = -3
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 10
+			modifier = {
+				factor = 20
+				OR = {
+					has_war_with = JAP
+					has_war_with = USA
+				}
+			}
 		}
 		available = {
 		}	
@@ -10605,8 +10742,12 @@ focus_tree = {
 		relative_position_id = GEA_Eastern_Ocean_Fleet
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Improve_the_old_hull"
-
+			add_timed_idea = {
+				idea = GEA_Modification_of_heavy_warships
+				days = 365
+			}
 		}
+		search_filters = { FOCUS_FILTER_NAVY_BONUS }
 	}
 	focus = { #撕碎海鸟
 		id = GEA_Tear_apart_the_seabirds
@@ -10615,7 +10756,14 @@ focus_tree = {
 		x = 3
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 10
+			modifier = {
+				factor = 20
+				OR = {
+					has_war_with = JAP
+					has_war_with = USA
+				}
+			}
 		}
 		available = {
 		}	
@@ -10625,8 +10773,15 @@ focus_tree = {
 		relative_position_id = GEA_Eastern_Ocean_Fleet
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Tear_apart_the_seabirds"
-
+			add_to_variable = { GEA_navy_navy_anti_air_attack_factor = 0.1 }
+			custom_effect_tooltip = GEA_Tear_apart_the_seabirds_navy_tt
+			add_tech_bonus = {
+				category = cat_anti_air
+				uses = 1
+				bonus = 1
+			}
 		}
+		search_filters = { FOCUS_FILTER_NAVY_BONUS }
 	}
 	focus = { #深海堡垒
 		id = GEA_Ocean_Fortress
@@ -10635,7 +10790,14 @@ focus_tree = {
 		x = 1
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 10
+			modifier = {
+				factor = 20
+				OR = {
+					has_war_with = JAP
+					has_war_with = USA
+				}
+			}
 		}
 		available = {
 		}	
@@ -10645,8 +10807,21 @@ focus_tree = {
 		relative_position_id = GEA_Eastern_Ocean_Fleet
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Ocean_Fortress"
-
+			add_to_variable = { GEA_navy_navy_capital_ship_defence_factor = 0.1 }
+			custom_effect_tooltip = GEA_Ocean_Fortress_navy_tt
+			add_unit_bonus = {
+				battleship = {
+					max_organisation = 10
+					armor_value = 0.1
+				}
+				
+				battle_cruiser = {
+					max_organisation = 10
+					armor_value = 0.1
+				}
+			}
 		}
+		search_filters = { FOCUS_FILTER_NAVY_BONUS }
 	}
 	focus = { #帝国重炮
 		id = GEA_Imperial_Cannons
@@ -10655,7 +10830,14 @@ focus_tree = {
 		x = -1
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 10
+			modifier = {
+				factor = 20
+				OR = {
+					has_war_with = JAP
+					has_war_with = USA
+				}
+			}
 		}
 		available = {
 		}	
@@ -10665,8 +10847,30 @@ focus_tree = {
 		relative_position_id = GEA_Eastern_Ocean_Fleet
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Imperial_Cannons"
-
+			add_to_variable = { GEA_navy_naval_damage_factor = 0.05 }
+			custom_effect_tooltip = GEA_Imperial_Cannons_navy_tt
+			if = {
+				limit = {
+					has_dlc_mtg = yes
+				}
+				add_tech_bonus = {
+					category = naval_artillery
+					uses = 1
+					bonus = 1
+					ahead_reduction = 0.5
+				}
+			}
+			add_equipment_bonus = {
+				name = GEA_Imperial_Cannons
+				bonus = {
+					ship_hull_heavy = {
+						hg_attack = 0.1
+						hg_armor_piercing = 0.1
+					}
+				}
+			}
 		}
+		search_filters = { FOCUS_FILTER_NAVY_BONUS }
 	}
 	focus = { #预备舰队决战
 		id = GEA_IPreparatory_Fleet_Battle
@@ -10675,7 +10879,14 @@ focus_tree = {
 		x = 1
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 10
+			modifier = {
+				factor = 20
+				OR = {
+					has_war_with = JAP
+					has_war_with = USA
+				}
+			}
 		}
 		available = {
 		}	
@@ -10688,8 +10899,19 @@ focus_tree = {
 		relative_position_id = GEA_Imperial_Cannons
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_IPreparatory_Fleet_Battle"
-
+			add_to_variable = { GEA_navy_navy_capital_ship_attack_factor = 0.1 }
+			add_to_variable = { GEA_navy_positioning = 0.05 }
+			custom_effect_tooltip = GEA_IPreparatory_Fleet_Battle_navy_tt
+			add_daily_mastery = {
+				amount = 0.25
+				days = 365
+				name = USA_mastery_battleships
+				# FILTERS:
+				folder = naval
+				track = capital_ships
+			}
 		}
+		search_filters = { FOCUS_FILTER_NAVY_BONUS }
 	}
 	focus = { #地狱打击
 		id = GEA_Hell_Strike
@@ -10698,7 +10920,14 @@ focus_tree = {
 		x = -1
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 10
+			modifier = {
+				factor = 20
+				OR = {
+					has_war_with = JAP
+					has_war_with = USA
+				}
+			}
 		}
 		available = {
 		}	
@@ -10711,8 +10940,12 @@ focus_tree = {
 		relative_position_id = GEA_IPreparatory_Fleet_Battle
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Hell_Strike"
-
+			add_to_variable = { GEA_navy_shore_bombardment_bonus = 0.15 }
+			add_to_variable = { GEA_navy_naval_damage_factor = 0.05 }
+			add_to_variable = { GEA_navy_naval_critical_score_chance_factor = 0.10 }
+			custom_effect_tooltip = GEA_Hell_Strike_navy_tt
 		}
+		search_filters = { FOCUS_FILTER_NAVY_BONUS }
 	}
 	focus = { #高速即真理
 		id = GEA_High_speed_equals_truth
@@ -10721,7 +10954,14 @@ focus_tree = {
 		x = 1
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 10
+			modifier = {
+				factor = 20
+				OR = {
+					has_war_with = JAP
+					has_war_with = USA
+				}
+			}
 		}
 		available = {
 		}	
@@ -10734,8 +10974,19 @@ focus_tree = {
 		relative_position_id = GEA_IPreparatory_Fleet_Battle
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_High_speed_equals_truth"
-
+			add_to_variable = { GEA_navy_naval_speed_factor = 0.10 }
+			add_to_variable = { GEA_navy_naval_retreat_chance = 0.05 }
+			custom_effect_tooltip = GEA_High_speed_equals_truth_navy_tt
+			add_unit_bonus = {
+				battleship = {
+					naval_speed = 0.1
+				}
+				battle_cruiser = {
+					naval_speed = 0.1
+				}
+			}
 		}
+		search_filters = { FOCUS_FILTER_NAVY_BONUS }
 	}
 	focus = { #反潜作战
 		id = GEA_Anti-submarine_warfare
@@ -10744,7 +10995,14 @@ focus_tree = {
 		x = 0
 		y = 2
 		ai_will_do = {
-			factor = 100
+			factor = 10
+			modifier = {
+				factor = 20
+				OR = {
+					has_war_with = JAP
+					has_war_with = USA
+				}
+			}
 		}
 		available = {
 		}	
@@ -10754,8 +11012,19 @@ focus_tree = {
 		relative_position_id = GEA_Improve_the_old_hull
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Anti-submarine_warfare"
-
+			add_to_variable = { GEA_navy_spotting_chance = 0.05 }
+			custom_effect_tooltip = GEA_Anti-submarine_warfare_navy_tt
+			add_equipment_bonus = {
+				name = GEA_Anti-submarine_warfare
+				bonus = {
+					ship_hull_light = {
+						naval_speed = 0.05
+						sub_detection = 0.1
+					}
+				}
+			}
 		}
+		search_filters = { FOCUS_FILTER_NAVY_BONUS }
 	}
 	focus = { #精确打击
 		id = GEA_Precision_strike
@@ -10764,7 +11033,14 @@ focus_tree = {
 		x = 0
 		y = 2
 		ai_will_do = {
-			factor = 100
+			factor = 10
+			modifier = {
+				factor = 20
+				OR = {
+					has_war_with = JAP
+					has_war_with = USA
+				}
+			}
 		}
 		available = {
 		}	
@@ -10774,8 +11050,11 @@ focus_tree = {
 		relative_position_id = GEA_Tear_apart_the_seabirds
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Precision_strike"
-
+			add_to_variable = { GEA_navy_naval_heavy_gun_hit_chance_factor = 0.1 }
+			add_to_variable = { GEA_navy_naval_hit_chance = 0.1 }
+			custom_effect_tooltip = GEA_Precision_strike_navy_tt
 		}
+		search_filters = { FOCUS_FILTER_NAVY_BONUS }
 	}
 	focus = { #大洋猎鹰
 		id = GEA_Ocean_Falcon
@@ -10784,18 +11063,48 @@ focus_tree = {
 		x = 7
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 10
+			modifier = {
+				factor = 20
+				OR = {
+					has_war_with = JAP
+					has_war_with = USA
+				}
+			}
 		}
 		available = {
 		}	
 		prerequisite = {
 			focus = GEA_Set_sail_and_sail_far
+		}
+		mutually_exclusive = {
+			focus = GEA_Eastern_Ocean_Fleet
 		}	
 		relative_position_id = GEA_Set_sail_and_sail_far
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Ocean_Falcon"
-
+			add_to_variable = { GEA_navy_carrier_traffic = 0.1 }
+			custom_effect_tooltip = GEA_Ocean_Falcon_navy_tt
+			add_unit_bonus = {
+				carrier = {
+					max_organisation = 10
+				}
+			}
+			add_tech_bonus = {
+				category = cv_tech
+				uses = 1
+				bonus = 1
+			}
+			add_daily_mastery = {
+				amount = 0.1
+				days = 730
+				name = GEA_mastery_battleships
+				# FILTERS:
+				folder = naval
+				track = carriers
+			}
 		}
+		search_filters = { FOCUS_FILTER_NAVY_BONUS }
 	}
 	focus = { #注重护航舰队
 		id = GEA_Focus_on_the_escort_fleet
@@ -10804,7 +11113,14 @@ focus_tree = {
 		x = -1
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 10
+			modifier = {
+				factor = 20
+				OR = {
+					has_war_with = JAP
+					has_war_with = USA
+				}
+			}
 		}
 		available = {
 		}	
@@ -10814,8 +11130,21 @@ focus_tree = {
 		relative_position_id = GEA_Ocean_Falcon
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Focus_on_the_escort_fleet"
-
+			add_to_variable = { GEA_navy_navy_screen_defence_factor = 0.05 }
+			add_to_variable = { GEA_navy_screening_efficiency = 0.05 }
+			custom_effect_tooltip = GEA_Focus_on_the_escort_fleet_navy_tt
+			add_equipment_bonus = {
+				name = GEA_Focus_on_the_escort_fleet
+				bonus = {
+					ship_hull_light = {
+						naval_speed = 0.05
+						sub_detection = 0.05
+						build_cost_ic = -0.03
+					}
+				}
+			}
 		}
+		search_filters = { FOCUS_FILTER_NAVY_BONUS }
 	}
 	focus = { #航母作战群
 		id = GEA_Aircraft_Carrier_Battle_Group
@@ -10824,7 +11153,14 @@ focus_tree = {
 		x = 1
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 10
+			modifier = {
+				factor = 20
+				OR = {
+					has_war_with = JAP
+					has_war_with = USA
+				}
+			}
 		}
 		available = {
 		}	
@@ -10834,8 +11170,21 @@ focus_tree = {
 		relative_position_id = GEA_Ocean_Falcon
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Aircraft_Carrier_Battle_Group"
-
+			navy_experience = 30
+			add_to_variable = { GEA_navy_naval_coordination = 0.05 }
+			custom_effect_tooltip = GEA_Aircraft_Carrier_Battle_Group_navy_tt
+			add_equipment_bonus = {
+				name = GEA_Aircraft_Carrier_Battle_Group
+				bonus = {
+					carrier = {
+						surface_visibility = 0.05
+						surface_detection  = 0.05
+						build_cost_ic = -0.05
+					}
+				}
+			}
 		}
+		search_filters = { FOCUS_FILTER_NAVY_BONUS }
 	}
 	focus = { #集群狩猎
 		id = GEA_Cluster_hunting
@@ -10844,7 +11193,14 @@ focus_tree = {
 		x = -1
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 10
+			modifier = {
+				factor = 20
+				OR = {
+					has_war_with = JAP
+					has_war_with = USA
+				}
+			}
 		}
 		available = {
 		}	
@@ -10857,8 +11213,12 @@ focus_tree = {
 		relative_position_id = GEA_Aircraft_Carrier_Battle_Group
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Cluster_hunting"
-
-		}
+			add_to_variable = { GEA_navy_air_nav_efficiency = 0.10 }
+			add_to_variable = { GEA_navy_navy_carrier_air_targetting_factor = 0.05 }
+			add_to_variable = { GEA_navy_night_spotting_chance = 0.05 }
+			custom_effect_tooltip = GEA_Cluster_hunting_navy_tt
+		}	
+		search_filters = { FOCUS_FILTER_NAVY_BONUS }
 	}
 	focus = { #装甲甲板作业
 		id = GEA_Armor_deck_protection
@@ -10867,18 +11227,37 @@ focus_tree = {
 		x = -1
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 10
+			modifier = {
+				factor = 20
+				OR = {
+					has_war_with = JAP
+					has_war_with = USA
+				}
+			}
 		}
 		available = {
 		}	
 		prerequisite = {
 			focus = GEA_Cluster_hunting
 		}	
+		mutually_exclusive = {
+			focus = GEA_Covering_the_sky_and_blocking_the_sun
+		}
 		relative_position_id = GEA_Cluster_hunting
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Armor_deck_protection"
-
+			add_to_variable = { GEA_navy_critical_receive_chance = -0.2 }
+			add_to_variable = { GEA_navy_navy_capital_ship_defence_factor = 0.05 }
+			custom_effect_tooltip = GEA_Armor_deck_protection_navy_tt
+			add_unit_bonus = {
+				carrier = {
+					max_organisation = 10
+					armor_value = 0.2
+				}
+			}
 		}
+		search_filters = { FOCUS_FILTER_NAVY_BONUS }
 	}
 	focus = { #遮天蔽日
 		id = GEA_Covering_the_sky_and_blocking_the_sun
@@ -10887,18 +11266,45 @@ focus_tree = {
 		x = 1
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 10
+			modifier = {
+				factor = 20
+				OR = {
+					has_war_with = JAP
+					has_war_with = USA
+				}
+			}
 		}
 		available = {
 		}	
+		mutually_exclusive = {
+			focus = GEA_Armor_deck_protection
+		}
 		prerequisite = {
 			focus = GEA_Cluster_hunting
 		}	
 		relative_position_id = GEA_Cluster_hunting
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Covering_the_sky_and_blocking_the_sun"
-
+			add_to_variable = { GEA_navy_carrier_traffic = 0.03 }
+			add_to_variable = { GEA_navy_carrier_capacity_penalty_reduction = 0.2 }
+			custom_effect_tooltip = GEA_Covering_the_sky_and_blocking_the_sun_navy_tt
+			add_equipment_bonus = {
+				name = GEA_Covering_the_sky_and_blocking_the_sun
+				bonus = {
+					cv_small_plane_airframe = {
+						build_cost_ic = -0.1
+					}
+					cv_small_plane_naval_bomber_airframe = {
+						build_cost_ic = -0.1
+					}
+					cv_small_plane_naval_bomber_airframe = {
+						build_cost_ic = -0.1
+					}
+				}
+			}
 		}
+		search_filters = { FOCUS_FILTER_NAVY_BONUS }
 	}
 	focus = { #海上斗士无所惧
 		id = GEA_The_sea_warriors_are_fearless
@@ -10907,7 +11313,14 @@ focus_tree = {
 		x = -3
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 10
+			modifier = {
+				factor = 20
+				OR = {
+					has_war_with = JAP
+					has_war_with = USA
+				}
+			}
 		}
 		available = {
 		}	
@@ -10917,8 +11330,21 @@ focus_tree = {
 		relative_position_id = GEA_Ocean_Falcon
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_sea_warriors_are_fearless"
-
+			add_to_variable = { GEA_navy_fighter_sortie_efficiency = 0.1 }
+			add_to_variable = { GEA_navy_carrier_sortie_hours_delay = -8 }
+			custom_effect_tooltip = GEA_The_sea_warriors_are_fearless_navy_tt
+			add_equipment_bonus = {
+				name = GEA_The_sea_warriors_are_fearless
+				bonus = {
+					cv_small_plane_airframe = {
+						sub_detection = 0.1
+						surface_detection = 0.1
+						air_agility = 0.1
+					}
+				}
+			}
 		}
+		search_filters = { FOCUS_FILTER_NAVY_BONUS }
 	}
 	focus = { #舍命俯冲
 		id = GEA_Making_a_desperate_dive
@@ -10927,7 +11353,14 @@ focus_tree = {
 		x = 0
 		y = 2
 		ai_will_do = {
-			factor = 100
+			factor = 10
+			modifier = {
+				factor = 20
+				OR = {
+					has_war_with = JAP
+					has_war_with = USA
+				}
+			}
 		}
 		available = {
 		}	
@@ -10937,8 +11370,24 @@ focus_tree = {
 		relative_position_id = GEA_The_sea_warriors_are_fearless
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Making_a_desperate_dive"
-
+			air_experience = 15
+			add_to_variable = { GEA_navy_navy_carrier_air_agility_factor = 0.05 }
+			custom_effect_tooltip = GEA_Making_a_desperate_dive_navy_tt
+			add_equipment_bonus = {
+				name = GEA_Making_a_desperate_dive
+				bonus = {
+					cv_small_plane_naval_bomber_airframe = {
+						naval_strike_targetting = 0.15
+						air_defence = -0.1
+					}
+					cv_small_plane_naval_bomber_airframe = {
+						naval_strike_targetting = 0.15
+						air_defence = -0.1
+					}
+				}
+			}
 		}
+		search_filters = { FOCUS_FILTER_NAVY_BONUS }
 	}
 	focus = { #扩大巡逻
 		id = GEA_Increase_patrols
@@ -10947,7 +11396,14 @@ focus_tree = {
 		x = 3
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 10
+			modifier = {
+				factor = 20
+				OR = {
+					has_war_with = JAP
+					has_war_with = USA
+				}
+			}
 		}
 		available = {
 		}	
@@ -10957,8 +11413,18 @@ focus_tree = {
 		relative_position_id = GEA_Ocean_Falcon
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Increase_patrols"
-
+			add_to_variable = {  GEA_navy_naval_detection = 0.1 }
+			custom_effect_tooltip = GEA_Increase_patrols_navy_tt
+			add_equipment_bonus = {
+				name = GEA_Increase_patrols
+				bonus = {
+					carrier = {
+						surface_detection  = 0.05
+					}
+				}
+			}
 		}
+		search_filters = { FOCUS_FILTER_NAVY_BONUS }
 	}
 	focus = { #远洋维修补给
 		id = GEA_Oceanic_maintenance_and_supply
@@ -10967,7 +11433,14 @@ focus_tree = {
 		x = 0
 		y = 2
 		ai_will_do = {
-			factor = 100
+			factor = 10
+			modifier = {
+				factor = 20
+				OR = {
+					has_war_with = JAP
+					has_war_with = USA
+				}
+			}
 		}
 		available = {
 		}	
@@ -10977,8 +11450,12 @@ focus_tree = {
 		relative_position_id = GEA_Increase_patrols
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Oceanic_maintenance_and_supply"
-
+			add_to_variable = { GEA_navy_naval_morale_factor = 0.1 }
+			add_to_variable = { GEA_navy_repair_speed_factor = 0.03 }
+			add_to_variable = { GEA_navy_navy_max_range_factor = 0.1 }
+			custom_effect_tooltip = GEA_Oceanic_maintenance_and_supply_navy_tt
 		}
+		search_filters = { FOCUS_FILTER_NAVY_BONUS }
 	}
 	focus = { #水下尖刀
 		id = GEA_Underwater_knife
@@ -10987,7 +11464,14 @@ focus_tree = {
 		x = 0
 		y = 2
 		ai_will_do = {
-			factor = 100
+			factor = 10
+			modifier = {
+				factor = 20
+				OR = {
+					has_war_with = JAP
+					has_war_with = USA
+				}
+			}
 		}
 		available = {
 		}	
@@ -10997,8 +11481,24 @@ focus_tree = {
 		relative_position_id = GEA_Set_sail_and_sail_far
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Underwater_knife"
-
+			add_to_variable = { GEA_navy_submarine_attack = 0.05 }
+			custom_effect_tooltip = GEA_Underwater_knife_navy_tt
+			add_equipment_bonus = {
+				name = GEA_Underwater_knife
+				bonus = {
+					ship_hull_submarine = {
+						sub_visibility = -0.05
+						torpedo_attack = 0.1
+					}
+				}
+			}
+			add_tech_bonus = {
+				category = ship_modules_tech
+				uses = 2
+				bonus = 1
+			}
 		}
+		search_filters = { FOCUS_FILTER_NAVY_BONUS }
 	}
 	focus = { #静默战
 		id = GEA_Silent_War
@@ -11007,7 +11507,14 @@ focus_tree = {
 		x = -1
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 10
+			modifier = {
+				factor = 20
+				OR = {
+					has_war_with = JAP
+					has_war_with = USA
+				}
+			}
 		}
 		available = {
 		}	
@@ -11017,8 +11524,18 @@ focus_tree = {
 		relative_position_id = GEA_Underwater_knife
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Silent_War"
-
+			add_to_variable = { GEA_navy_naval_torpedo_reveal_chance_factor = -0.1 }
+			custom_effect_tooltip = GEA_Silent_War_navy_tt
+			add_equipment_bonus = {
+				name = GEA_Silent_War
+				bonus = {
+					ship_hull_submarine = {
+						sub_visibility = -0.15
+					}
+				}
+			}
 		}
+		search_filters = { FOCUS_FILTER_NAVY_BONUS }
 	}
 	focus = { #微波，无线电与磁控管
 		id = GEA_Microwave_radio_magnetron
@@ -11027,7 +11544,14 @@ focus_tree = {
 		x = 1
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 10
+			modifier = {
+				factor = 20
+				OR = {
+					has_war_with = JAP
+					has_war_with = USA
+				}
+			}
 		}
 		available = {
 		}	
@@ -11037,8 +11561,19 @@ focus_tree = {
 		relative_position_id = GEA_Underwater_knife
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Microwave_radio_magnetron"
-
+			add_to_variable = { GEA_navy_naval_night_attack = 0.05 }
+			add_to_variable = { GEA_navy_naval_coordination = 0.1 }
+			custom_effect_tooltip = GEA_Microwave_radio_magnetron_navy_tt
+			if = {
+				limit = {
+					has_dlc_gtd = yes
+				}
+				sp:sp_air_radar = {
+					add_project_progress_ratio = 0.15
+				}
+			}
 		}
+		search_filters = { FOCUS_FILTER_NAVY_BONUS }
 	}
 	focus = { #不朽动力
 		id = GEA_Immortal_Power
@@ -11047,7 +11582,14 @@ focus_tree = {
 		x = 1
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 10
+			modifier = {
+				factor = 20
+				OR = {
+					has_war_with = JAP
+					has_war_with = USA
+				}
+			}
 		}
 		available = {
 		}	
@@ -11060,8 +11602,18 @@ focus_tree = {
 		relative_position_id = GEA_Silent_War
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Immortal_Power"
-
+			add_to_variable = { GEA_navy_navy_max_range_factor = 0.1 }
+			custom_effect_tooltip = GEA_Immortal_Power_navy_tt
+			add_breakthrough_progress = {
+				specialization = specialization_naval
+				value = 0.25
+			}
+			add_breakthrough_progress = {
+				specialization = specialization_nuclear
+				value = 0.2
+			}
 		}
+		search_filters = { FOCUS_FILTER_NAVY_BONUS }
 	}
 	focus = { #两洋之主
 		id = GEA_The_ruler_of_the_two_oceans
@@ -11070,7 +11622,14 @@ focus_tree = {
 		x = 0
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 10
+			modifier = {
+				factor = 20
+				OR = {
+					has_war_with = JAP
+					has_war_with = USA
+				}
+			}
 		}
 		available = {
 		}	
@@ -11094,8 +11653,13 @@ focus_tree = {
 		relative_position_id = GEA_Immortal_Power
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_ruler_of_the_two_oceans"
-
+			add_war_support = 0.1
+			add_to_variable = { GEA_navy_naval_mastery_gain_factor = 0.1 }
+			add_to_variable = { GEA_navy_ships_at_battle_start = 0.05 }
+			add_to_variable = { GEA_navy_experience_gain_navy = 0.05 }
+			custom_effect_tooltip = GEA_The_ruler_of_the_two_oceans_navy_tt
 		}
+		search_filters = { FOCUS_FILTER_NAVY_BONUS }
 	}
 	### 空军线 ###
 	focus = { #翱翔天际

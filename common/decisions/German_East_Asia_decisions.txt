@@ -799,6 +799,7 @@ GEA_pacify_indochina_decisions = {#平定印度支那
 GEA_decisions = {#德属东亚殖民地决议
 	GEA_Integrate_inc = {#整合印度支那
 		icon = eng_trade_unions_demand
+		allowed = { original_tag = GEA }
 		visible = {
 			GEA = {
 				owns_state = 857
@@ -2975,7 +2976,7 @@ GEA_decisions = {#德属东亚殖民地决议
 			add_to_variable = { GEA_singapore_development = 1 }  
 			custom_effect_tooltip = GEA_development_in_singapore_tt
 			846 = {
-				increase_state_category_by_one_level = yes = yes
+				increase_state_category_by_one_level = yes
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
@@ -3026,7 +3027,7 @@ GEA_decisions = {#德属东亚殖民地决议
 			}
 			add_manpower = 7500
 			846 = {
-				increase_state_category_by_one_level = yes = yes
+				increase_state_category_by_one_level = yes
 				add_extra_state_shared_building_slots = 1
 			}
 			add_to_variable = {
@@ -3877,11 +3878,13 @@ GEA_decisions = {#德属东亚殖民地决议
 			factor = 20
 		}
 
+		visible = {
+			has_country_flag = Guinea_OPEN
+		}
 		available = {
 			owns_state = 757
 			num_of_civilian_factories_available_for_projects > 1
 			has_completed_focus = GEA_Digging_deep_for_underground_resources
-			has_country_flag = Guinea_OPEN
 		}
 
 		modifier = {
@@ -3916,8 +3919,10 @@ GEA_decisions = {#德属东亚殖民地决议
 			factor = 20
 		}
 
-		available = {
+		visible = {
 			has_country_flag = Guinea_OPEN
+		}
+		available = {
 			has_completed_focus = GEA_Tread_flat_the_rainforest
 		}
 
@@ -3968,12 +3973,12 @@ GEA_decisions = {#德属东亚殖民地决议
 
 		visible = {
 			owns_state = 843
+			has_country_flag = Guinea_OPEN
 		}
 
 		available = {
 			owns_state = 843
 			has_completed_focus = GEA_Connect_the_isolated_island
-			has_country_flag = Guinea_OPEN
 		}
 
 		modifier = {
@@ -4012,10 +4017,12 @@ GEA_decisions = {#德属东亚殖民地决议
 			factor = 50
 		}
 
+		visible = {
+			has_country_flag = Guinea_OPEN
+		}
 		available = {
 			owns_state = 757
 			has_completed_focus = GEA_Connect_the_isolated_island
-			has_country_flag = Guinea_OPEN
 		}
 
 		modifier = {
@@ -4055,10 +4062,12 @@ GEA_decisions = {#德属东亚殖民地决议
 			factor = 50
 		}
 
+		visible = {
+			has_country_flag = Guinea_OPEN
+		}
 		available = {
 			owns_state = 737
 			num_of_civilian_factories_available_for_projects > 3
-			has_country_flag = Guinea_OPEN
 		}
 
 		modifier = {
@@ -4098,11 +4107,13 @@ GEA_decisions = {#德属东亚殖民地决议
 		days_remove = 90
 		days_re_enable = 120
 
+		visible = {
+			has_country_flag = Guinea_OPEN
+		}
 		available = {
 			owns_state = 757
 			has_tech =  interwar_antiair
 			has_completed_focus = GEA_Reconstructing_the_East_with_Steel_and_Concrete
-			has_country_flag = Guinea_OPEN
 		}
 
 		ai_will_do = {
@@ -8258,7 +8269,7 @@ GEA_indochina_war_decisions = {#印支战争
 						modifier = GEA_scorched_earth_state_modifier
 					}
 					state_event = {
-						id = GEA.1200
+						id = GEA.12000
 						trigger_for = controller
 						days = 180
 					}
@@ -11368,6 +11379,275 @@ GEA_josias_decisions = {#约西亚斯乞讨决议
 		}
 	}
 
+}
+
+GEA_Naval_decisions = {
+	GEA_Order_destroyers = {
+		icon = GFX_decision_generic_merge_plant_ship
+		allowed = { original_tag = GEA }
+
+		cost = 50
+		days_remove = 150
+		days_re_enable = 180
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = GEA_No_more_than_two_orders
+				check_variable = {
+					GEA_Order_number < 3
+				}
+			}
+		}
+
+		modifier = {
+			consumer_goods_factor = 0.05
+			industrial_capacity_dockyard = -0.05
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_Order_destroyers"
+			add_to_variable = { GEA_Order_number = 1 }
+			if = {
+				limit = { NOT = { date < 1940.1.1 } }
+				set_country_flag = GEA_destroyer_order_1940
+			}
+			else = { clr_country_flag = GEA_destroyer_order_1940 }
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_Order_destroyers"
+			custom_effect_tooltip = GEA_Order_destroyers_tt
+			add_to_variable = { GEA_Order_number = -1 }
+			hidden_effect = {
+				if = {
+					limit = { has_country_flag = GEA_destroyer_order_1940 }
+					GEA_prepare_Z_class_1940 = yes
+					load_oob = GEA_Z_destroyers_1940
+				}
+				else = {
+					GEA_prepare_Z_class_1936 = yes
+					load_oob = GEA_Z_destroyers_1936
+				}
+				clr_country_flag = GEA_destroyer_order_1940
+			}
+		}
+	}
+	
+	GEA_Order_light_cruisers = {
+		icon = GFX_decision_generic_merge_plant_ship
+		allowed = { original_tag = GEA }
+
+		cost = 50
+		custom_cost_text = GEA_cost_30_navy_experience
+		custom_cost_trigger = { has_navy_experience > 29.99 }
+		days_remove = 180
+		days_re_enable = 210
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = GEA_No_more_than_two_orders
+				check_variable = {
+					GEA_Order_number < 3
+				}
+			}
+		}
+
+		modifier = {
+			consumer_goods_factor = 0.05
+			industrial_capacity_dockyard = -0.05
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_Order_light_cruisers"
+			navy_experience = -30
+			add_to_variable = { GEA_Order_number = 1 }
+			if = {
+				limit = { NOT = { date < 1940.1.1 } }
+				set_country_flag = GEA_light_cruiser_order_1940
+			}
+			else = { clr_country_flag = GEA_light_cruiser_order_1940 }
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_Order_light_cruisers"
+			custom_effect_tooltip = GEA_Order_light_cruisers_tt
+			add_to_variable = { GEA_Order_number = -1 }
+			hidden_effect = {
+				if = {
+					limit = { has_country_flag = GEA_light_cruiser_order_1940 }
+					GEA_prepare_light_cruiser_1940 = yes
+					load_oob = GEA_light_cruisers_1940
+				}
+				else = {
+					GEA_prepare_light_cruiser_1936 = yes
+					load_oob = GEA_light_cruisers_1936
+				}
+				clr_country_flag = GEA_light_cruiser_order_1940
+			}
+		}
+	}
+
+	GEA_Order_heavy_cruisers = {
+		icon = GFX_decision_generic_merge_plant_ship
+		allowed = { original_tag = GEA }
+
+		cost = 75
+		custom_cost_text = GEA_cost_40_navy_experience
+		custom_cost_trigger = { has_navy_experience > 39.99 }
+		days_remove = 210
+		days_re_enable = 210
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = GEA_No_more_than_two_orders
+				check_variable = {
+					GEA_Order_number < 3
+				}
+			}
+		}
+
+		modifier = {
+			consumer_goods_factor = 0.05
+			industrial_capacity_dockyard = -0.05
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_Order_heavy_cruisers"
+			navy_experience = -40
+			add_to_variable = { GEA_Order_number = 1 }
+			if = {
+				limit = { NOT = { date < 1940.1.1 } }
+				set_country_flag = GEA_heavy_cruiser_order_1940
+			}
+			else = { clr_country_flag = GEA_heavy_cruiser_order_1940 }
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_Order_heavy_cruisers"
+			custom_effect_tooltip = GEA_Order_heavy_cruisers_tt
+			add_to_variable = { GEA_Order_number = -1 }
+			hidden_effect = {
+				if = {
+					limit = { has_country_flag = GEA_heavy_cruiser_order_1940 }
+					GEA_prepare_heavy_cruiser_1940 = yes
+					load_oob = GEA_heavy_cruisers_1940
+				}
+				else = {
+					GEA_prepare_heavy_cruiser_1936 = yes
+					load_oob = GEA_heavy_cruisers_1936
+				}
+				clr_country_flag = GEA_heavy_cruiser_order_1940
+			}
+		}
+	}
+
+	GEA_Order_battleships = {
+		icon = GFX_decision_generic_merge_plant_ship
+		allowed = { original_tag = GEA }
+
+		cost = 100
+		custom_cost_text = GEA_cost_50_navy_experience
+		custom_cost_trigger = { has_navy_experience > 49.99 }
+		days_remove = 210
+		days_re_enable = 210
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = GEA_No_more_than_two_orders
+				check_variable = {
+					GEA_Order_number < 3
+				}
+			}
+		}
+
+		modifier = {
+			consumer_goods_factor = 0.05
+			industrial_capacity_dockyard = -0.05
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_Order_battleships"
+			navy_experience = -50
+			add_to_variable = { GEA_Order_number = 1 }
+			if = {
+				limit = { NOT = { date < 1940.1.1 } }
+				set_country_flag = GEA_battleship_order_1940
+			}
+			else = { clr_country_flag = GEA_battleship_order_1940 }
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_Order_battleships"
+			custom_effect_tooltip = GEA_Order_battleships_tt
+			add_to_variable = { GEA_Order_number = -1 }
+			hidden_effect = {
+				if = {
+					limit = { has_country_flag = GEA_battleship_order_1940 }
+					GEA_prepare_battleship_1940 = yes
+					load_oob = GEA_battleships_1940
+				}
+				else = {
+					GEA_prepare_battleship_1936 = yes
+					load_oob = GEA_battleships_1936
+				}
+				clr_country_flag = GEA_battleship_order_1940
+			}
+		}
+	}
+
+	GEA_Order_carriers = {
+		icon = GFX_decision_generic_merge_plant_ship
+		allowed = { original_tag = GEA }
+
+		cost = 100
+		custom_cost_text = GEA_cost_50_navy_experience
+		custom_cost_trigger = { has_navy_experience > 49.99 }
+		days_remove = 210
+		days_re_enable = 210
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = GEA_No_more_than_two_orders
+				check_variable = {
+					GEA_Order_number < 3
+				}
+			}
+		}
+
+		modifier = {
+			consumer_goods_factor = 0.05
+			industrial_capacity_dockyard = -0.05
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_Order_carriers"
+			navy_experience = -50
+			add_to_variable = { GEA_Order_number = 1 }
+			if = {
+				limit = { NOT = { date < 1940.1.1 } }
+				set_country_flag = GEA_carrier_order_1940
+			}
+			else = { clr_country_flag = GEA_carrier_order_1940 }
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_Order_carriers"
+			custom_effect_tooltip = GEA_Order_carriers_tt
+			add_to_variable = { GEA_Order_number = -1 }
+			hidden_effect = {
+				if = {
+					limit = { has_country_flag = GEA_carrier_order_1940 }
+					GEA_prepare_carrier_1940 = yes
+					load_oob = GEA_carriers_1940
+				}
+				else = {
+					GEA_prepare_carrier_1936 = yes
+					load_oob = GEA_carriers_1936
+				}
+				clr_country_flag = GEA_carrier_order_1940
+			}
+		}
+	}
 }
 
 political_actions = {

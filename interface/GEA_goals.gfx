@@ -746,11 +746,6 @@ SpriteTypes = {
 	SpriteType = { name = "GFX_GEA_Schorner_Law" texturefile = "gfx/interface/goals/GEA_Schorner_Law.png" }
 	SpriteType = { name = "GFX_GEA_Bloody_Ferdinand_Supreme_Power" texturefile = "gfx/interface/goals/GEA_Bloody_Ferdinand_Supreme_Power.png" }
 	SpriteType = { name = "GFX_GEA_Let_loose_the_blood-stained_black_eagle" texturefile = "gfx/interface/goals/GEA_Let_loose_the_blood-stained_black_eagle.png" }
-	# 海空军国策图标
-	SpriteType = {
-		name = "GFX_GEA_Asia_Grand_Navy"
-		texturefile = "gfx/interface/goals/GEA_Asia_Grand_Navy.png"
-	}
 
 	SpriteType = {
 		name = "GFX_GEA_Thielpitz_s_far-sightedness"

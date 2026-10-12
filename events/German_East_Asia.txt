@@ -5173,17 +5173,7 @@ add_namespace = GEA
         	set_country_flag = GEA_ferdinand_win
 		}
 	}
-#隐藏事件
-	country_event = {
-		id = GEA.10000
-		is_triggered_only = yes
-		fire_only_once = yes
-		hidden = yes
 
-		option = {
-			add_research_slot = -1
-		}
-	}
 #印支事件
 
 
@@ -5204,155 +5194,6 @@ add_namespace = GEA
 			name = Ostasien.100.a
 			add_political_power = 50 # Cost popularity and stability
 			set_global_flag = GEA_Parade
-		}
-	}
-#送船事件
-	country_event = { #送航母
-		id = Ostasien.52
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.52" }
-		title = Ostasien.52.t
-		desc = Ostasien.52.d
-		picture = GFX_report_event_GEA_carrier
-
-		is_triggered_only = yes
-
-		option = {
-			name = Ostasien.52.a
-			custom_effect_tooltip = GEA_new_ship_tooltip
-			set_country_flag = GEA_new_capital_ship_arrived
-			hidden_effect = {
-				load_oob = GEA_CV
-				load_oob = GEA_CV_naval
-			}
-		}
-	}
-
-	country_event = { #送战列
-		id = Ostasien.53
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.53" }
-		title = Ostasien.52.t
-		desc = Ostasien.52.d
-		picture = ger_ship
-
-		is_triggered_only = yes
-
-		option = {
-			name = Ostasien.52.a
-			custom_effect_tooltip = GEA_new_ship_tooltip
-			set_country_flag = GEA_new_capital_ship_arrived
-			hidden_effect = {
-				load_oob = GEA_BB
-			}
-		}
-	}
-
-	country_event = { #战列巡洋舰支援群
-		id = Ostasien.54
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.54" }
-		title = Ostasien.52.t
-		desc = Ostasien.52.d
-		picture = ger_ship
-
-		is_triggered_only = yes
-
-		option = {
-			name = Ostasien.52.a
-			custom_effect_tooltip = GEA_new_ship_tooltip
-			set_country_flag = GEA_new_capital_ship_arrived
-			hidden_effect = {
-				load_oob = GEA_fleet_new
-			}
-		}
-	}
-
-	country_event = { #新轻巡
-		id = Ostasien.55
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.55" }
-		title = Ostasien.52.t
-		desc = Ostasien.52.d
-		picture = ger_ship
-
-		is_triggered_only = yes
-
-		option = { # It will help
-			name = Ostasien.52.a
-			custom_effect_tooltip = GEA_new_ship_tooltip
-			hidden_effect = {
-				load_oob = GEA_CL
-			}
-		}
-	}
-
-	country_event = { #新驱逐舰舰队
-		id = Ostasien.56
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.56" }
-		title = Ostasien.52.t
-		desc = Ostasien.52.d
-		picture = ger_ship
-
-		is_triggered_only = yes
-
-		option = {
-			name = Ostasien.52.a
-			custom_effect_tooltip = GEA_new_ship_tooltip
-			hidden_effect = {
-				load_oob = GEA_DD
-			}
-		}
-	}
-
-	country_event = { #新航母
-		id = Ostasien.57
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.57" }
-		title = Ostasien.52.t
-		desc = Ostasien.52.d
-		picture = ger_ship
-
-		is_triggered_only = yes
-
-		option = {
-			name = Ostasien.52.a
-			custom_effect_tooltip = GEA_new_ship_tooltip
-			hidden_effect = {
-				load_oob = GEA_CV1
-				load_oob = GEA_CV_naval1
-			}
-		}
-	}
-
-	country_event = { #改装重巡
-		id = Ostasien.58
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.58" }
-		title = Ostasien.52.t
-		desc = Ostasien.52.d
-		picture = ger_ship
-
-		is_triggered_only = yes
-
-		option = { # It will help
-			name = Ostasien.52.a
-			custom_effect_tooltip = GEA_new_ship_tooltip
-			hidden_effect = {
-				load_oob = GEA_fleet_old
-			}
-		}
-	}
-
-	country_event = { #战列巡洋
-		id = Ostasien.59
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.59" }
-		title = Ostasien.52.t
-		desc = Ostasien.52.d
-		picture = ger_ship
-
-		is_triggered_only = yes
-
-		option = { # It will help
-			name = Ostasien.52.a
-			custom_effect_tooltip = GEA_new_ship_tooltip
-			hidden_effect = {
-				load_oob = GEA_BC
-			}
 		}
 	}
 #约西亚斯线
@@ -7155,100 +6996,21 @@ add_namespace = GEA
 
 #隐藏事件
 	country_event = {
-		id = Ostasien.10000
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.10000" 
-		clr_country_flag = GEA_finish_mission_1 }
-		title = Ostasien.10000.t
-		desc = Ostasien.10000.d
-		hidden = yes
+		id = GEA.10000
 		is_triggered_only = yes
-	}
-	country_event = {
-		id = Ostasien.10001
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.10001" 
-		clr_country_flag = GEA_finish_mission_2 }
-		title = Ostasien.10000.t
-		desc = Ostasien.10000.d
 		hidden = yes
-		is_triggered_only = yes
-	}
-	country_event = {
-		id = Ostasien.10002
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.10002" 
-		clr_country_flag = GEA_finish_mission_3 }
-		title = Ostasien.10000.t
-		desc = Ostasien.10000.d
-		hidden = yes
-		is_triggered_only = yes
-	}
-	country_event = {
-		id = Ostasien.10003
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.10003" 
-		clr_country_flag = GEA_finish_mission_4 }
-		title = Ostasien.10000.t
-		desc = Ostasien.10000.d
-		hidden = yes
-		is_triggered_only = yes
-	}
-	country_event = {
-		id = Ostasien.10004
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.10004" 
-		clr_country_flag = GEA_finish_mission_5 }
-		title = Ostasien.10000.t
-		desc = Ostasien.10000.d
-		hidden = yes
-		is_triggered_only = yes
-	}
-	country_event = {
-		id = Ostasien.10005
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.10005" 
-		clr_country_flag = GEA_finish_mission_6 }
-		title = Ostasien.10000.t
-		desc = Ostasien.10000.d
-		hidden = yes
-		is_triggered_only = yes
-	}
-	country_event = {
-		id = Ostasien.10006
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.10006" 
-		set_temp_variable = { GEA_d1 = GEA_Borneo_development }
-		add_to_temp_variable = { GEA_d1 = 0.3 }
-		divide_temp_variable = { GEA_d1 = 3 }
-		set_variable = { GEA_Borneo_development_total = GEA_d1}}
-		title = Ostasien.10000.t
-		desc = Ostasien.10000.d
-		hidden = yes
-		fire_only_once = yes
-		trigger = {
-			tag = GEA
-			GEA = {
-				owns_state = 334
-				owns_state = 1016
-			}
-		}
-	}
-	country_event = {
-		id = Ostasien.10007
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.10007" 
-		set_country_flag = GEA_Bao_Dai_Reform_Success
-		}
-		title = Ostasien.10000.t
-		desc = Ostasien.10000.d
-		hidden = yes
-		fire_only_once = yes
-		trigger = {
-			tag = GEA
-			has_country_flag = GEA_Bao_Dai_Reform_1
-			has_country_flag = GEA_Bao_Dai_Reform_2
+
+		option = {
+			add_research_slot = -1
 		}
 	}
 
 	state_event = {
-		id = GEA.1200
+		id = GEA.12000
 		hidden = yes
 		is_triggered_only = yes
 		immediate = {
-			log = "[GetDateText]: State event GEA.1200 in [Root.GetName]"
+			log = "[GetDateText]: State event GEA.12000 in [Root.GetName]"
 			remove_dynamic_modifier = {
 				modifier = GEA_scorched_earth_state_modifier
 			}

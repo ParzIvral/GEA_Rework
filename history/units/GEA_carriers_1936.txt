@@ -1,0 +1,12 @@
+# 1936 年型航空母舰
+units = {
+	fleet = {
+		name = GEA_FLEET_CARRIER_DELIVERY
+		naval_base = 12299
+		task_force = {
+			name = GEA_FLEET_CARRIER_DELIVERY
+			location = 12299
+			ship = { definition = carrier equipment = { ship_hull_carrier_1 = { amount = 1 owner = GEA version_name = "GEA_CV_CLASS_1936_ORDERS" } } }
+		}
+	}
+}

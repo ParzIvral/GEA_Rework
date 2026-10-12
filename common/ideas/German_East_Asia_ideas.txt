@@ -13,18 +13,6 @@ ideas = {
 				surrender_limit = -0.2
 			}
 		}
-		GEA_admirality = { #大舰队
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_admirality"}
-			picture = admirality
-			allowed = { always = no }
-			modifier = {
-				land_doctrine_cost_factor = 0.05
-				naval_doctrine_cost_factor = -0.1
-				experience_gain_navy = 0.01
-				naval_speed_factor = 0.05
-				weekly_manpower = 500
-			}
-		}
 		GEA_The_quagmire_of_Indochina = { #深陷印支泥沼
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_The_quagmire_of_Indochina"}
 			picture = GEA_The_quagmire_of_Indochina
@@ -1749,6 +1737,24 @@ ideas = {
 			}
 	    }
 #navy
+		GEA_Modification_of_heavy_warships = { #重型战舰改装
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Modification_of_heavy_warships"}
+			picture = USA_Support_Ships_Deployment
+			allowed = { always = no }
+			modifier = {
+				industrial_capacity_dockyard = -0.1
+				refit_ic_cost = -0.2
+				refit_speed = 0.4
+			}
+			equipment_bonus = {
+				ship_hull_heavy = {
+					build_cost_ic = -0.15
+				}
+				ship_hull_carrier = {
+					build_cost_ic = -0.05
+				}
+			}
+	    }
 #air
 #BM
 		GEA_plantations_negotiation_idea = {

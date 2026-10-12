@@ -1,0 +1,13 @@
+# 1940 年型重巡洋舰
+units = {
+	fleet = {
+		name = GEA_FLEET_HEAVY_CRUISER_DELIVERY
+		naval_base = 12299
+		task_force = {
+			name = GEA_FLEET_HEAVY_CRUISER_DELIVERY
+			location = 12299
+			ship = { definition = heavy_cruiser equipment = { ship_hull_cruiser_3 = { amount = 1 owner = GEA version_name = "GEA_CA_CLASS_1940_ORDERS" } } }
+			ship = { definition = heavy_cruiser equipment = { ship_hull_cruiser_3 = { amount = 1 owner = GEA version_name = "GEA_CA_CLASS_1940_ORDERS" } } }
+		}
+	}
+}

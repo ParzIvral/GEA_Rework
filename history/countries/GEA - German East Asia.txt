@@ -232,7 +232,6 @@ set_popularities = {
 
 add_ideas = {
 	GEA_colonial_question
-	GEA_admirality
 	free_trade
 	GEA_Paul_Koenig_hog_pau
 	GEA_Rudolph_Firle_for_pau
@@ -252,6 +251,15 @@ if = {
 	add_ideas = GEA_Colonial_Nation
 }
 
+log = "[GetDateText]: [Root.GetName]: add idea GEA_admirality"
+
+
+add_dynamic_modifier = { modifier = GEA_admirality }
+set_variable = { GEA_navy_experience_gain_navy = 0.01 }                                                       # 每日海军经验
+set_variable = { GEA_navy_naval_speed_factor = 0.05 }                                                         # 海军航速
+set_variable = { GEA_navy_weekly_manpower = 500 }                                                             # 每周人力
+set_variable = { GEA_navy_land_doctrine_cost_factor = 0.05 }                                                  # 陆军学说花费
+set_variable = { GEA_navy_naval_doctrine_cost_factor = -0.1 }                                                 # 海军学说花费
 add_dynamic_modifier = { modifier = GEA_gea_army }
 set_variable = { GEA_support_capcity = 1 }
 set_variable = { GEA_army_conscription_factor = -0.85 }
@@ -274,12 +282,6 @@ set_country_flag = GEA_owner_of_guangzhou
 set_country_flag = GEA_owner_of_nantong
 set_country_flag = GEA_owner_of_weihaiwei
 set_country_flag = GEA_owner_of_qingdao
-set_country_flag = GEA_finish_mission_1
-set_country_flag = GEA_finish_mission_2
-set_country_flag = GEA_finish_mission_3
-set_country_flag = GEA_finish_mission_4
-set_country_flag = GEA_finish_mission_5
-set_country_flag = GEA_finish_mission_6
 add_to_tech_sharing_group = german_research
 set_variable = { GEA_josias_effect_political = 0.3}
 set_variable = { GEA_josias_effect_economy = 0.3}

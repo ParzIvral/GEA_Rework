@@ -1,0 +1,12 @@
+# 1940 年型战列舰
+units = {
+	fleet = {
+		name = GEA_FLEET_BATTLESHIP_DELIVERY
+		naval_base = 12299
+		task_force = {
+			name = GEA_FLEET_BATTLESHIP_DELIVERY
+			location = 12299
+			ship = { definition = battleship equipment = { ship_hull_heavy_3 = { amount = 1 owner = GEA version_name = "GEA_BB_CLASS_1940_ORDERS" } } }
+		}
+	}
+}

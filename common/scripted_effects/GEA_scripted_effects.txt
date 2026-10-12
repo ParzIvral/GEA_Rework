@@ -1264,6 +1264,375 @@ GEA_add_malaya_coastal_bunkers_effect = {
 	}
 }
 
+# 按历史早期 Z 系武装创建订购用设计；仅创建一次，后续订单复用。
+GEA_prepare_Z_class_1936 = {
+	if = {
+		limit = { NOT = { has_country_flag = GEA_Z_class_1936_named_design_created } }
+		create_equipment_variant = {
+			name = "GEA_Z_CLASS_1936_ORDERS"
+			name_group = GEA_Z_DESTROYER_NAMES
+			allow_without_tech = yes
+			type = ship_hull_light_2
+			parent_version = 0
+			modules = {
+				fixed_ship_battery_slot = ship_light_battery_3
+				fixed_ship_anti_air_slot = ship_anti_air_2
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+				fixed_ship_radar_slot = ship_sonar_1
+				fixed_ship_engine_slot = light_ship_engine_2
+				fixed_ship_torpedo_slot = ship_torpedo_2
+				mid_1_custom_slot = ship_torpedo_2
+				rear_1_custom_slot = ship_depth_charge_1
+			}
+		}
+		set_country_flag = GEA_Z_class_1936_named_design_created
+	}
+}
+
+# 1940 年型只更换船壳，保持原有武装、设备和发动机配置。
+GEA_prepare_Z_class_1940 = {
+	if = {
+		limit = { NOT = { has_country_flag = GEA_Z_class_1940_named_design_created } }
+		create_equipment_variant = {
+			name = "GEA_Z_CLASS_1940_ORDERS"
+			name_group = GEA_Z_DESTROYER_NAMES
+			allow_without_tech = yes
+			type = ship_hull_light_3
+			parent_version = 0
+			modules = {
+				fixed_ship_battery_slot = ship_light_battery_3
+				fixed_ship_anti_air_slot = ship_anti_air_2
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+				fixed_ship_radar_slot = ship_sonar_1
+				fixed_ship_engine_slot = light_ship_engine_2
+				fixed_ship_torpedo_slot = ship_torpedo_2
+				mid_1_custom_slot = ship_torpedo_2
+				rear_1_custom_slot = ship_depth_charge_1
+			}
+		}
+		set_country_flag = GEA_Z_class_1940_named_design_created
+	}
+}
+
+# 1936 年型轻巡：参考纽伦堡式轻巡；150 mm 主炮、薄装甲、鱼雷和水上飞机。
+# 游戏模块为历史武装的抽象近似，并非每个炮组对应一座炮塔。
+GEA_prepare_light_cruiser_1936 = {
+	if = {
+		limit = { NOT = { has_country_flag = GEA_light_cruiser_1936_design_created } }
+		create_equipment_variant = {
+			name = "GEA_CL_CLASS_1936_ORDERS"
+			name_group = GEA_LIGHT_CRUISER_NAMES
+			allow_without_tech = yes
+			type = ship_hull_cruiser_2
+			parent_version = 0
+			modules = {
+				fixed_ship_battery_slot = ship_light_medium_battery_1
+				fixed_ship_anti_air_slot = ship_anti_air_2
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+				fixed_ship_radar_slot = empty
+				fixed_ship_engine_slot = cruiser_ship_engine_2
+				fixed_ship_secondaries_slot = empty
+				fixed_ship_armor_slot = ship_armor_cruiser_1
+				front_1_custom_slot = ship_anti_air_2
+				mid_1_custom_slot = ship_torpedo_2
+				mid_2_custom_slot = ship_light_medium_battery_1
+				rear_1_custom_slot = ship_airplane_launcher_1
+			}
+		}
+		set_country_flag = GEA_light_cruiser_1936_design_created
+	}
+}
+
+# 1940 年型轻巡：参考 M 级计划；150 mm 主炮、薄装甲、鱼雷、水上飞机及高射副炮。
+# 游戏模块为历史武装的抽象近似，并非每个炮组对应一座炮塔。
+GEA_prepare_light_cruiser_1940 = {
+	if = {
+		limit = { NOT = { has_country_flag = GEA_light_cruiser_1940_design_created } }
+		create_equipment_variant = {
+			name = "GEA_CL_CLASS_1940_ORDERS"
+			name_group = GEA_LIGHT_CRUISER_NAMES
+			allow_without_tech = yes
+			type = ship_hull_cruiser_3
+			parent_version = 0
+			modules = {
+				fixed_ship_battery_slot = ship_light_medium_battery_2
+				fixed_ship_anti_air_slot = ship_anti_air_2
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+				fixed_ship_radar_slot = empty
+				fixed_ship_engine_slot = cruiser_ship_engine_3
+				fixed_ship_secondaries_slot = dp_ship_secondaries_1
+				fixed_ship_armor_slot = ship_armor_cruiser_1
+				front_1_custom_slot = ship_anti_air_2
+				mid_1_custom_slot = ship_torpedo_2
+				mid_2_custom_slot = ship_light_medium_battery_2
+				rear_1_custom_slot = ship_airplane_launcher_1
+			}
+		}
+		set_country_flag = GEA_light_cruiser_1940_design_created
+	}
+}
+
+# 1936 年型重巡洋舰
+GEA_prepare_heavy_cruiser_1936 = {
+	if = {
+		limit = { NOT = { has_country_flag = GEA_heavy_cruiser_1936_design_created } }
+		create_equipment_variant = {
+			name = "GEA_CA_CLASS_1936_ORDERS"
+			name_group = GEA_HEAVY_CRUISER_NAMES
+			allow_without_tech = yes
+			type = ship_hull_cruiser_2
+			parent_version = 0
+			modules = {
+				fixed_ship_battery_slot = ship_medium_battery_2
+				fixed_ship_anti_air_slot = ship_anti_air_2
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+				fixed_ship_radar_slot = ship_radar_1
+				fixed_ship_engine_slot = cruiser_ship_engine_2
+				fixed_ship_secondaries_slot = dp_ship_secondaries_1
+				fixed_ship_armor_slot = ship_armor_cruiser_2
+				front_1_custom_slot = ship_anti_air_2
+				mid_1_custom_slot = ship_torpedo_2
+				mid_2_custom_slot = ship_airplane_launcher_1
+				rear_1_custom_slot = ship_medium_battery_2
+			}
+		}
+		set_country_flag = GEA_heavy_cruiser_1936_design_created
+	}
+}
+
+# 1940 年型重巡洋舰
+GEA_prepare_heavy_cruiser_1940 = {
+	if = {
+		limit = { NOT = { has_country_flag = GEA_heavy_cruiser_1940_design_created } }
+		create_equipment_variant = {
+			name = "GEA_CA_CLASS_1940_ORDERS"
+			name_group = GEA_HEAVY_CRUISER_NAMES
+			allow_without_tech = yes
+			type = ship_hull_cruiser_3
+			parent_version = 0
+			modules = {
+				fixed_ship_battery_slot = ship_medium_battery_3
+				fixed_ship_anti_air_slot = ship_anti_air_3
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_2
+				fixed_ship_radar_slot = ship_radar_1
+				fixed_ship_engine_slot = cruiser_ship_engine_3
+				fixed_ship_secondaries_slot = dp_ship_secondaries_1
+				fixed_ship_armor_slot = ship_armor_cruiser_3
+				front_1_custom_slot = ship_medium_battery_3
+				mid_1_custom_slot = ship_torpedo_2
+				mid_2_custom_slot = ship_airplane_launcher_1
+				rear_1_custom_slot = ship_medium_battery_3
+				rear_2_custom_slot = ship_anti_air_3
+			}
+		}
+		set_country_flag = GEA_heavy_cruiser_1940_design_created
+	}
+}
+
+# 1936 年型战列舰
+GEA_prepare_battleship_1936 = {
+	if = {
+		limit = { NOT = { has_country_flag = GEA_battleship_1936_design_created } }
+		create_equipment_variant = {
+			name = "GEA_BB_CLASS_1936_ORDERS"
+			name_group = GEA_BATTLESHIP_NAMES
+			allow_without_tech = yes
+			type = ship_hull_heavy_2
+			parent_version = 0
+			modules = {
+				fixed_ship_battery_slot = ship_heavy_battery_3
+				fixed_ship_anti_air_slot = ship_anti_air_2
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+				fixed_ship_radar_slot = ship_radar_1
+				fixed_ship_engine_slot = heavy_ship_engine_2
+				fixed_ship_secondaries_slot = ship_secondaries_2
+				fixed_ship_armor_slot = ship_armor_bb_2
+				front_1_custom_slot = ship_anti_air_2
+				mid_1_custom_slot = ship_airplane_launcher_1
+				mid_2_custom_slot = dp_ship_secondaries_1
+				rear_1_custom_slot = ship_heavy_battery_3
+			}
+		}
+		set_country_flag = GEA_battleship_1936_design_created
+	}
+}
+
+# 1940 年型战列舰
+GEA_prepare_battleship_1940 = {
+	if = {
+		limit = { NOT = { has_country_flag = GEA_battleship_1940_design_created } }
+		create_equipment_variant = {
+			name = "GEA_BB_CLASS_1940_ORDERS"
+			name_group = GEA_BATTLESHIP_NAMES
+			allow_without_tech = yes
+			type = ship_hull_heavy_3
+			parent_version = 0
+			modules = {
+				fixed_ship_battery_slot = ship_heavy_battery_4
+				fixed_ship_anti_air_slot = ship_anti_air_3
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_2
+				fixed_ship_radar_slot = ship_radar_1
+				fixed_ship_engine_slot = heavy_ship_engine_3
+				fixed_ship_secondaries_slot = ship_secondaries_2
+				fixed_ship_armor_slot = ship_armor_bb_3
+				front_1_custom_slot = ship_anti_air_3
+				mid_1_custom_slot = ship_airplane_launcher_1
+				mid_2_custom_slot = dp_ship_secondaries_1
+				rear_1_custom_slot = ship_heavy_battery_4
+				mid_3_custom_slot = ship_anti_air_3
+			}
+		}
+		set_country_flag = GEA_battleship_1940_design_created
+	}
+}
+
+# 1936 年型航空母舰
+GEA_prepare_carrier_1936 = {
+	if = {
+		limit = { NOT = { has_country_flag = GEA_carrier_1936_design_created } }
+		create_equipment_variant = {
+			name = "GEA_CV_CLASS_1936_ORDERS"
+			name_group = GEA_CARRIER_NAMES
+			allow_without_tech = yes
+			type = ship_hull_carrier_1
+			parent_version = 0
+			modules = {
+				fixed_ship_deck_slot_1 = ship_deck_space
+				fixed_ship_deck_slot_2 = ship_deck_space
+				fixed_ship_anti_air_slot = ship_anti_air_2
+				fixed_ship_radar_slot = empty
+				fixed_ship_engine_slot = carrier_ship_engine_2
+				fixed_ship_secondaries_slot = ship_secondaries_1
+				fixed_ship_armor_slot = empty
+				front_1_custom_slot = ship_anti_air_2
+				mid_1_custom_slot = dp_ship_secondaries_1
+			}
+		}
+		set_country_flag = GEA_carrier_1936_design_created
+	}
+}
+
+# 1940 年型航空母舰
+GEA_prepare_carrier_1940 = {
+	if = {
+		limit = { NOT = { has_country_flag = GEA_carrier_1940_design_created } }
+		create_equipment_variant = {
+			name = "GEA_CV_CLASS_1940_ORDERS"
+			name_group = GEA_CARRIER_NAMES
+			allow_without_tech = yes
+			type = ship_hull_carrier_2
+			parent_version = 0
+			modules = {
+				fixed_ship_deck_slot_1 = ship_deck_space
+				fixed_ship_deck_slot_2 = ship_deck_space
+				fixed_ship_anti_air_slot = ship_anti_air_3
+				fixed_ship_radar_slot = ship_radar_1
+				fixed_ship_engine_slot = carrier_ship_engine_2
+				fixed_ship_secondaries_slot = dp_ship_secondaries_1
+				fixed_ship_armor_slot = empty
+				front_1_custom_slot = ship_anti_air_3
+				mid_1_custom_slot = dp_ship_secondaries_1
+				mid_2_custom_slot = dp_ship_secondaries_1
+			}
+		}
+		set_country_flag = GEA_carrier_1940_design_created
+	}
+}
+
+GEA_Shipbuilding_plan_production_effect = {
+	if = {
+		limit = { date < 1940.1.1 }
+		GEA_prepare_heavy_cruiser_1936 = yes
+		GEA_prepare_battleship_1936 = yes
+		add_equipment_production = {
+			equipment = {
+				type = ship_hull_cruiser_2
+				creator = GEA
+				version_name = "GEA_CA_CLASS_1936_ORDERS"
+			}
+			requested_factories = 5
+			progress = 0.6
+			amount = 1
+		}
+		add_equipment_production = {
+			equipment = {
+				type = ship_hull_cruiser_2
+				creator = GEA
+				version_name = "GEA_CA_CLASS_1936_ORDERS"
+			}
+			requested_factories = 5
+			progress = 0.6
+			amount = 1
+		}
+		add_equipment_production = {
+			equipment = {
+				type = ship_hull_cruiser_2
+				creator = GEA
+				version_name = "GEA_CA_CLASS_1936_ORDERS"
+			}
+			requested_factories = 5
+			progress = 0.6
+			amount = 1
+		}
+		add_equipment_production = {
+			equipment = {
+				type = ship_hull_heavy_2
+				creator = GEA
+				version_name = "GEA_BB_CLASS_1936_ORDERS"
+			}
+			name = GEA_SHIP_SMS_NECKAR
+			requested_factories = 5
+			progress = 0.4
+			amount = 1
+		}
+	}
+	else = {
+		GEA_prepare_heavy_cruiser_1940 = yes
+		GEA_prepare_battleship_1940 = yes
+		add_equipment_production = {
+			equipment = {
+				type = ship_hull_cruiser_3
+				creator = GEA
+				version_name = "GEA_CA_CLASS_1940_ORDERS"
+			}
+			requested_factories = 5
+			progress = 0.6
+			amount = 1
+		}
+		add_equipment_production = {
+			equipment = {
+				type = ship_hull_cruiser_3
+				creator = GEA
+				version_name = "GEA_CA_CLASS_1940_ORDERS"
+			}
+			requested_factories = 5
+			progress = 0.6
+			amount = 1
+		}
+		add_equipment_production = {
+			equipment = {
+				type = ship_hull_cruiser_3
+				creator = GEA
+				version_name = "GEA_CA_CLASS_1940_ORDERS"
+			}
+			requested_factories = 5
+			progress = 0.6
+			amount = 1
+		}
+		add_equipment_production = {
+			equipment = {
+				type = ship_hull_heavy_3
+				creator = GEA
+				version_name = "GEA_BB_CLASS_1940_ORDERS"
+			}
+			name = GEA_SHIP_SMS_NECKAR
+			requested_factories = 5
+			progress = 0.4
+			amount = 1
+		}
+	}
+}
+
 GEA_add_north_borneo_coastal_bunkers_effect = {
 	hidden_effect = {
 		333 = {

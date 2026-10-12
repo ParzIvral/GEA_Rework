@@ -81,7 +81,7 @@ GEA_pacify_indochina_decisions = {
 }
 
 GEA_War_Experience_decisions = {
-	icon = GFX_decision_GEA_indochina_decisions
+	icon = GFX_decision_category_army_reform
 	allowed = {
 		original_tag = GEA
 	}
@@ -101,5 +101,17 @@ GEA_Kartel_decisions = {
 		#has_completed_focus = GEA_Governor_Kartel		
 	}
 	priority = 1000
+	visible_when_empty = yes
+}
+
+GEA_Naval_decisions = {
+	icon = GFX_decision_category_mtg_naval_treaties
+	allowed = {
+		original_tag = GEA
+	}
+	visible = {
+		#has_completed_focus = GEA_Shipbuilding_plan	
+	}
+	priority = 900
 	visible_when_empty = yes
 }
