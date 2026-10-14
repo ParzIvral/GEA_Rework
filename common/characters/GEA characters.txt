@@ -180,6 +180,31 @@ characters = {
 		}
 	}
 
+	GEA_Hellmuth_Heye = { #赫尔穆特·海耶
+		name = GEA_Hellmuth_Heye
+		portraits = {
+			civilian = {
+				large = GFX_portrait_Portrait_GEA_Hellmuth_Heye
+			}
+			navy = { large = GFX_portrait_Portrait_GEA_Hellmuth_Heye }
+		}
+		country_leader = {
+			desc = POLITICS_HELLMUTH_HEYE_DESC
+			ideology = colonial_govt_subtype
+			traits = {
+
+			}
+		}
+		navy_leader = {
+			traits = { cruiser_captain }
+			skill = 2
+			attack_skill = 3
+			defense_skill = 2
+			maneuvering_skill = 2
+			coordination_skill = 3
+		}
+	}
+
 	GEA_Prinz_Oskar_von_Preussen = { #普鲁士的奥斯卡亲王
 		name = GEA_Prinz_Oskar_von_Preussen
 		portraits = { 
@@ -460,7 +485,15 @@ characters = {
 
 	GEA_Felix_von_Luckner = { #费利克斯·冯·卢克纳尔
 		name = GEA_Felix_von_Luckner
-		portraits = { navy = { large = GFX_portrait_Portrait_GEA_Felix_Von_Luckner } }
+		portraits = {
+			civilian = { large = GFX_portrait_Portrait_GEA_Felix_Von_Luckner }
+			navy = { large = GFX_portrait_Portrait_GEA_Felix_Von_Luckner }
+		}
+		country_leader = {
+			desc = POLITICS_FELIX_VON_LUCKNER_DESC
+			ideology = autocratic_colonial_govt_subtype
+			traits = { hog_old_admiral }
+		}
 		navy_leader = {
 			traits = { superior_tactician }
 			skill = 3
@@ -497,18 +530,6 @@ characters = {
 		}
 	}
 
-	GEA_Hellmuth_Heye = { #赫尔穆特·海耶
-		name = GEA_Hellmuth_Heye
-		portraits = { navy = { large = GFX_portrait_Portrait_GEA_Hellmuth_Heye } }
-		navy_leader = {
-			traits = { cruiser_captain }
-			skill = 2
-			attack_skill = 3
-			defense_skill = 2
-			maneuvering_skill = 2
-			coordination_skill = 3
-		}
-	}
 
 	GEA_Conrad_Patzig = { #康拉德·帕齐希
 		name = GEA_Conrad_Patzig

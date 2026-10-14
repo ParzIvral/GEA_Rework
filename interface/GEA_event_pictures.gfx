@@ -213,6 +213,90 @@ spriteTypes = {
 		name = "GFX_GEA_50"
 		texturefile = "gfx/event_pictures/GFX_GEA_50.png"
 	}
+	spriteType  = {
+		name = "GFX_GEA_51"
+		texturefile = "gfx/event_pictures/GFX_GEA_50.png"
+	}
+	spriteType  = {
+		name = "GFX_GEA_52"
+		texturefile = "gfx/event_pictures/GFX_GEA_50.png"
+	}
+	spriteType  = {
+		name = "GFX_GEA_53"
+		texturefile = "gfx/event_pictures/GFX_GEA_50.png"
+	}
+	spriteType  = {
+		name = "GFX_GEA_54"
+		texturefile = "gfx/event_pictures/GFX_GEA_50.png"
+	}
+	spriteType  = {
+		name = "GFX_GEA_55"
+		texturefile = "gfx/event_pictures/GFX_GEA_50.png"
+	}
+	spriteType  = {
+		name = "GFX_GEA_56"
+		texturefile = "gfx/event_pictures/GFX_GEA_50.png"
+	}
+	spriteType  = {
+		name = "GFX_GEA_57"
+		texturefile = "gfx/event_pictures/GFX_GEA_50.png"
+	}
+	spriteType  = {
+		name = "GFX_GEA_58"
+		texturefile = "gfx/event_pictures/GFX_GEA_50.png"
+	}
+	spriteType  = {
+		name = "GFX_GEA_59"
+		texturefile = "gfx/event_pictures/GFX_GEA_50.png"
+	}
+	spriteType  = {
+		name = "GFX_GEA_60"
+		texturefile = "gfx/event_pictures/GFX_GEA_50.png"
+	}
+	spriteType  = {
+		name = "GFX_GEA_61"
+		texturefile = "gfx/event_pictures/GFX_GEA_50.png"
+	}
+	spriteType  = {
+		name = "GFX_GEA_62"
+		texturefile = "gfx/event_pictures/GFX_GEA_50.png"
+	}
+	spriteType  = {
+		name = "GFX_GEA_63"
+		texturefile = "gfx/event_pictures/GFX_GEA_50.png"
+	}
+	spriteType  = {
+		name = "GFX_GEA_64"
+		texturefile = "gfx/event_pictures/GFX_GEA_50.png"
+	}
+	spriteType  = {
+		name = "GFX_GEA_65"
+		texturefile = "gfx/event_pictures/GFX_GEA_50.png"
+	}
+	spriteType  = {
+		name = "GFX_GEA_66"
+		texturefile = "gfx/event_pictures/GFX_GEA_50.png"
+	}
+	spriteType  = {
+		name = "GFX_GEA_67"
+		texturefile = "gfx/event_pictures/GFX_GEA_50.png"
+	}
+	spriteType  = {
+		name = "GFX_GEA_68"
+		texturefile = "gfx/event_pictures/GFX_GEA_50.png"
+	}
+	spriteType  = {
+		name = "GFX_GEA_69"
+		texturefile = "gfx/event_pictures/GFX_GEA_50.png"
+	}
+	spriteType  = {
+		name = "GFX_GEA_70"
+		texturefile = "gfx/event_pictures/GFX_GEA_50.png"
+	}
+	spriteType  = {
+		name = "GFX_GEA_71"
+		texturefile = "gfx/event_pictures/GFX_GEA_50.png"
+	}
 
 	spriteType  = {
 		name = "GFX_GEA_Josias_banquet"

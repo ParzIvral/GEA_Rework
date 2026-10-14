@@ -6,11 +6,21 @@ ideas = {
 			picture = colonial_question
 			allowed = { always = no }
 			modifier = {
+				ai_call_ally_desire_factor = -1000
+				ai_join_ally_desire_factor = -1000
 				non_core_manpower = 0.05
 				resistance_growth = 0.2
 				required_garrison_factor = 0.1
 				resistance_decay = -0.05
 				surrender_limit = -0.2
+			}
+			targeted_modifier = {
+				tag = GER
+				trade_cost_for_target_factor = -0.5
+			}
+			rule = {
+				can_not_declare_war = yes
+				can_decline_call_to_war = no
 			}
 		}
 		GEA_The_quagmire_of_Indochina = { #深陷印支泥沼
@@ -521,12 +531,22 @@ ideas = {
 			picture = colonial_question
 			allowed = { always = no }
 			modifier = {
+				ai_call_ally_desire_factor = -1000
+				ai_join_ally_desire_factor = -1000
 				political_power_gain = 0.04
 				non_core_manpower = 0.05
 				resistance_growth = 0.1
 				required_garrison_factor = 0.1
 				resistance_decay = -0.01
 				surrender_limit = -0.15
+			}
+			targeted_modifier = {
+				tag = GER
+				trade_cost_for_target_factor = -0.5
+			}
+			rule = {
+				can_not_declare_war = yes
+				can_decline_call_to_war = no
 			}
 		}
 		GEA_Bureau_Of_Native_Affairs = { #土著事务局
@@ -614,12 +634,22 @@ ideas = {
 			picture = colonial_question
 			allowed = { always = no }
 			modifier = {
+				ai_call_ally_desire_factor = -1000
+				ai_join_ally_desire_factor = -1000
 				political_power_gain = 0.05
 				non_core_manpower = 0.1
 				resistance_growth = 0.1
 				required_garrison_factor = 0.1
 				surrender_limit = -0.10
 				experience_loss_factor = -0.03
+			}
+			targeted_modifier = {
+				tag = GER
+				trade_cost_for_target_factor = -0.5
+			}
+			rule = {
+				can_not_declare_war = yes
+				can_decline_call_to_war = no
 			}
 		}
 		GEA_colonial_question_hahl_3 = { #东亚殖民政府
@@ -628,12 +658,22 @@ ideas = {
 			name = GEA_colonial_question_hahl_2
 			allowed = { always = no }
 			modifier = {
+				ai_call_ally_desire_factor = -1000
+				ai_join_ally_desire_factor = -1000
 				political_power_gain = 0.08
 				non_core_manpower = 0.1
 				resistance_growth = 0.05
 				required_garrison_factor = 0.05
 				surrender_limit = -0.05
 				experience_loss_factor = -0.03
+			}
+			targeted_modifier = {
+				tag = GER
+				trade_cost_for_target_factor = -0.5
+			}
+			rule = {
+				can_not_declare_war = yes
+				can_decline_call_to_war = no
 			}
 		}
 		GEA_colonial_question_hahl_4 = { #东亚殖民政府
@@ -642,6 +682,8 @@ ideas = {
 			name = GEA_colonial_question_hahl_2
 			allowed = { always = no }
 			modifier = {
+				ai_call_ally_desire_factor = -1000
+				ai_join_ally_desire_factor = -1000
 				political_power_gain = 0.11
 				non_core_manpower = 0.2
 				foreign_subversive_activites = -0.10
@@ -651,6 +693,14 @@ ideas = {
 				required_garrison_factor = 0.05
 				surrender_limit = -0.05
 			}
+			targeted_modifier = {
+				tag = GER
+				trade_cost_for_target_factor = -0.5
+			}
+			rule = {
+				can_not_declare_war = yes
+				can_decline_call_to_war = no
+			}
 		}
 		GEA_colonial_question_hahl_5 = { #东亚殖民政府
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_colonial_question_hahl_5"}
@@ -658,6 +708,8 @@ ideas = {
 			name = GEA_colonial_question_hahl_2
 			allowed = { always = no }
 			modifier = {
+				ai_call_ally_desire_factor = -1000
+				ai_join_ally_desire_factor = -1000
 				stability_weekly = 0.005
 				army_defence_factor = 0.1
 				army_core_defence_factor = 0.05
@@ -669,12 +721,22 @@ ideas = {
 				experience_loss_factor = -0.05
 				surrender_limit = -0.05
 			}
+			targeted_modifier = {
+				tag = GER
+				trade_cost_for_target_factor = -0.5
+			}
+			rule = {
+				can_not_declare_war = yes
+				can_decline_call_to_war = no
+			}
 		}
 		GEA_colonial_question_hahl_6 = { #东方的模范殖民地
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_colonial_question_hahl_5"}
 			picture = GEA_colonial_question_hahl_6
 			allowed = { always = no }
 			modifier = {
+				ai_call_ally_desire_factor = -1000
+				ai_join_ally_desire_factor = -1000
 				stability_weekly = 0.0075
 				army_defence_factor = 0.1
 				army_core_defence_factor = 0.1
@@ -683,6 +745,14 @@ ideas = {
 				foreign_subversive_activites = -0.15
 				line_change_production_efficiency_factor = 0.1
 				experience_loss_factor = -0.05
+			}
+			targeted_modifier = {
+				tag = GER
+				trade_cost_for_target_factor = -0.5
+			}
+			rule = {
+				can_not_declare_war = yes
+				can_decline_call_to_war = no
 			}
 		}
 #约西亚斯
@@ -827,6 +897,8 @@ ideas = {
 			picture = colonial_question
 			allowed = { always = no }
 			modifier = {
+				ai_call_ally_desire_factor = -1000
+				ai_join_ally_desire_factor = -1000
 				stability_factor = 0.05
 				stability_weekly = 0.001
 				non_core_manpower = 0.05
@@ -835,6 +907,14 @@ ideas = {
 				resistance_decay = -0.05
 				surrender_limit = -0.1
 			}
+			targeted_modifier = {
+				tag = GER
+				trade_cost_for_target_factor = -0.5
+			}
+			rule = {
+				can_not_declare_war = yes
+				can_decline_call_to_war = no
+			}
 		}
 		GEA_colonial_question_josias_2 = { #东亚殖民政府
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_colonial_question_josias_2"}
@@ -842,6 +922,8 @@ ideas = {
 			picture = GEA_colonial_question_josias
 			allowed = { always = no }
 			modifier = {
+				ai_call_ally_desire_factor = -1000
+				ai_join_ally_desire_factor = -1000
 				stability_factor = 0.1
 				stability_weekly = 0.002
 				non_core_manpower = 0.1
@@ -851,6 +933,14 @@ ideas = {
 				drift_defence_factor = 0.1
 				party_popularity_stability_factor = 0.05
 			}
+			targeted_modifier = {
+				tag = GER
+				trade_cost_for_target_factor = -0.5
+			}
+			rule = {
+				can_not_declare_war = yes
+				can_decline_call_to_war = no
+			}
 		}
 		GEA_colonial_question_josias_3 = { #东亚殖民政府
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_colonial_question_josias_3"}
@@ -858,6 +948,8 @@ ideas = {
 			picture = GEA_colonial_question_josias
 			allowed = { always = no }
 			modifier = {
+				ai_call_ally_desire_factor = -1000
+				ai_join_ally_desire_factor = -1000
 				stability_factor = 0.1
 				stability_weekly = 0.002
 				weekly_manpower = -45
@@ -871,6 +963,14 @@ ideas = {
 				decryption_factor = 0.1
 				conscription = 0.005
 			}
+			targeted_modifier = {
+				tag = GER
+				trade_cost_for_target_factor = -0.5
+			}
+			rule = {
+				can_not_declare_war = yes
+				can_decline_call_to_war = no
+			}
 		}
 		GEA_colonial_question_josias_4 = { #东亚殖民政府
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_colonial_question_josias_4"}
@@ -878,6 +978,8 @@ ideas = {
 			picture = GEA_colonial_question_josias
 			allowed = { always = no }
 			modifier = {
+				ai_call_ally_desire_factor = -1000
+				ai_join_ally_desire_factor = -1000
 				stability_factor = 0.1
 				stability_weekly = 0.003
 				weekly_manpower = -60
@@ -889,6 +991,14 @@ ideas = {
 				encryption_factor = 0.2
 				decryption_factor = 0.2
 				conscription = 0.015
+			}
+			targeted_modifier = {
+				tag = GER
+				trade_cost_for_target_factor = -0.5
+			}
+			rule = {
+				can_not_declare_war = yes
+				can_decline_call_to_war = no
 			}
 		}
 		GEA_Portraying_Japan_as_a_threat = { #渲染日本威胁
@@ -1137,6 +1247,8 @@ ideas = {
 			picture = colonial_question
 			allowed = { always = no }
 			modifier = {
+				ai_call_ally_desire_factor = -1000
+				ai_join_ally_desire_factor = -1000
 				resistance_growth = 0.1
 				required_garrison_factor = 0.1
 				resistance_decay = -0.05
@@ -1145,6 +1257,14 @@ ideas = {
 				army_morale_factor = 0.05
 				paternal_autocrat_drift = 0.01
 			}
+			targeted_modifier = {
+				tag = GER
+				trade_cost_for_target_factor = -0.5
+			}
+			rule = {
+				can_not_declare_war = yes
+				can_decline_call_to_war = no
+			}
 		}
 		GEA_colonial_question_heye_2 = { #海耶的严酷统治
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_colonial_question_heye_2"}
@@ -1152,6 +1272,8 @@ ideas = {
 			name = GEA_colonial_question_heye
 			allowed = { always = no }
 			modifier = {
+				ai_call_ally_desire_factor = -1000
+				ai_join_ally_desire_factor = -1000
 				required_garrison_factor = 0.1
 				resistance_decay = -0.1
 				offensive_war_stability_factor = 0.1
@@ -1162,12 +1284,22 @@ ideas = {
 				conscription_factor = 0.1
 				land_doctrine_cost_factor = -0.05
 			}
+			targeted_modifier = {
+				tag = GER
+				trade_cost_for_target_factor = -0.5
+			}
+			rule = {
+				can_not_declare_war = yes
+				can_decline_call_to_war = no
+			}
 		}
 		GEA_colonial_question_heye_3 = { #海耶的严酷统治
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_colonial_question_heye_3"}
 			picture = GEA_colonial_question_heye_3
 			allowed = { always = no }
 			modifier = {
+				ai_call_ally_desire_factor = -1000
+				ai_join_ally_desire_factor = -1000
 				resistance_decay = -0.1
 				offensive_war_stability_factor = 0.1
 				army_org_factor = 0.1
@@ -1180,6 +1312,14 @@ ideas = {
 				army_defence_against_major_factor = 0.1
 				army_breakthrough_against_major_factor = 0.1
 				max_planning_factor = 0.075
+			}
+			targeted_modifier = {
+				tag = GER
+				trade_cost_for_target_factor = -0.5
+			}
+			rule = {
+				can_not_declare_war = yes
+				can_decline_call_to_war = no
 			}
 		}
 		GEA_In_the_Shadow = { #于阴影之中
@@ -1487,12 +1627,22 @@ ideas = {
 			picture = colonial_question
 			allowed = { always = no }
 			modifier = {
+				ai_call_ally_desire_factor = -1000
+				ai_join_ally_desire_factor = -1000
 				political_power_factor = 0.1
 				non_core_manpower = 0.05
 				resistance_growth = 0.1
 				required_garrison_factor = 0.1
 				surrender_limit = -0.1
 				stability_factor = 0.05
+			}
+			targeted_modifier = {
+				tag = GER
+				trade_cost_for_target_factor = -0.5
+			}
+			rule = {
+				can_not_declare_war = yes
+				can_decline_call_to_war = no
 			}
 		}
 		GEA_colonial_question_Cartel_2_Krupp = { #东亚殖民政府
@@ -1501,11 +1651,21 @@ ideas = {
 			picture = colonial_question
 			allowed = { always = no }
 			modifier = {
+				ai_call_ally_desire_factor = -1000
+				ai_join_ally_desire_factor = -1000
 				political_power_factor = 0.08
 				compliance_growth = 0.04
 				stability_factor = 0.05
 				consumer_goods_expected_value = 0.1
 				production_factory_efficiency_gain_factor = 0.03
+			}
+			targeted_modifier = {
+				tag = GER
+				trade_cost_for_target_factor = -0.5
+			}
+			rule = {
+				can_not_declare_war = yes
+				can_decline_call_to_war = no
 			}
 		}
 		GEA_colonial_question_Cartel_2_IG = { #东亚殖民政府
@@ -1514,11 +1674,21 @@ ideas = {
 			picture = colonial_question
 			allowed = { always = no }
 			modifier = {
+				ai_call_ally_desire_factor = -1000
+				ai_join_ally_desire_factor = -1000
 				political_power_factor = 0.13
 				industrial_capacity_factory = 0.06
 				resistance_growth = 0.1
 				required_garrison_factor = 0.05
 				local_resources_factor = 0.04
+			}
+			targeted_modifier = {
+				tag = GER
+				trade_cost_for_target_factor = -0.5
+			}
+			rule = {
+				can_not_declare_war = yes
+				can_decline_call_to_war = no
 			}
 		}
 		GEA_Industrial_production_never_stops_day_or_night = { #工业生产日夜不停
@@ -1584,7 +1754,41 @@ ideas = {
 				cic_construction_boost_factor = 0.1
 			}
 		} 
+#卢克纳尔
+		GEA_An_undefeated_army_in_pursuit_of_honor = { #海上传奇之军
+			picture = GEA_An_undefeated_army_in_pursuit_of_honor
+			allowed = { always = no }
+			modifier = {
+				naval_has_potf_in_combat_attack = 0.05
+				amphibious_invasion = 0.1
+				naval_invasion_penalty = -0.05
+				navy_org_factor = 0.03
+			}
+		}
+		GEA_An_undefeated_army_in_pursuit_of_honor_2 = { #海上传奇之军
+			name = GEA_An_undefeated_army_in_pursuit_of_honor
+			picture = GEA_An_undefeated_army_in_pursuit_of_honor
+			allowed = { always = no }
+			modifier = {
+				weekly_manpower = 1000
+				navy_leader_start_level = 2
+				naval_coordination = 0.03
+				naval_speed_factor = 0.1
+				naval_has_potf_in_combat_attack = 0.05
+				amphibious_invasion = 0.1
+				naval_invasion_penalty = -0.05
+				navy_org_factor = 0.03
+			}
+		}
 #决议
+		GEA_shipping_routes_raided = { # 航运线遇袭
+			picture = GEN_navy_logistics
+			allowed = { always = no }
+			modifier = {
+				political_power_factor = -0.05
+				consumer_goods_factor = 0.05
+			}
+		}
 		GEA_Integration_of_Siamese_police = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Integration_of_Siamese_police"}
 			picture = GER_Martial_Discipline_Pure_Simple

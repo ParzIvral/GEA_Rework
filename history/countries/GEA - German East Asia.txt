@@ -175,11 +175,6 @@ country_event = {
 	days = 36
 }
 
-country_event = {
-	id = Ostasien.36
-	days = 22
-}
-
 country_event = { 
 	id = GEA.31
 	days = 137
@@ -260,6 +255,18 @@ set_variable = { GEA_navy_naval_speed_factor = 0.05 }                           
 set_variable = { GEA_navy_weekly_manpower = 500 }                                                             # 每周人力
 set_variable = { GEA_navy_land_doctrine_cost_factor = 0.05 }                                                  # 陆军学说花费
 set_variable = { GEA_navy_naval_doctrine_cost_factor = -0.1 }                                                 # 海军学说花费
+# 卢克纳尔海盗行动
+set_variable = { GEA_pirate_loot_stacks = 0 }                                                                # 战利品层数，最低为0
+set_variable = { GEA_pirate_loot_daily_pp = 0 }                                                               # 每层每日政治点增加0.01
+set_variable = { GEA_pirate_loot_consumer_goods_factor = 0 }                                                  # 每层消费品系数减少1%，至多为0，不会转为惩罚
+set_variable = { GEA_pirate_loot_factory_output = 0 }                                                         # 每层工厂产出增加1%
+set_variable = { GEA_pirate_loot_dockyard_output = 0 }                                                        # 每层海军船坞产出增加1%
+set_variable = { GEA_south_china_fence_count = 0 }                                                            # 已启动的华南黑市销赃次数
+set_variable = { GEA_max_concurrent_raids = 2 }                                                              # 同时进行劫掠行动的舰队数量上限
+set_variable = { GEA_active_raids = 0 }                                                                      # 正在同时进行的劫掠行动数量
+set_variable = { GEA_pirate_offsite_civ_chance = 0 }                                                          # 劫掠额外获得地图外民工的概率（0至100，由海上魔鬼国策开启）
+set_variable = { GEA_pirate_fleet_expansions = 0 }                                                            # 已启动的海盗船队扩编次数
+set_variable = { GEA_pirate_discovery_chance = 0 }                                                            # 海盗行动被发现概率（0至100，每次行动增加2）
 add_dynamic_modifier = { modifier = GEA_gea_army }
 set_variable = { GEA_support_capcity = 1 }
 set_variable = { GEA_army_conscription_factor = -0.85 }

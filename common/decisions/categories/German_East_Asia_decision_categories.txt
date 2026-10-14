@@ -80,18 +80,6 @@ GEA_pacify_indochina_decisions = {
 	visible_when_empty = yes
 }
 
-GEA_War_Experience_decisions = {
-	icon = GFX_decision_category_army_reform
-	allowed = {
-		original_tag = GEA
-	}
-	visible = {
-		#has_completed_focus = GEA_Innovate_and_renew
-	}
-	priority = 1200
-	visible_when_empty = yes
-}
-
 GEA_Kartel_decisions = {
 	icon = GFX_decision_GEA_Kartel_decisions
 	allowed = {
@@ -113,5 +101,17 @@ GEA_Naval_decisions = {
 		#has_completed_focus = GEA_Shipbuilding_plan	
 	}
 	priority = 900
+	visible_when_empty = yes
+}
+
+GEA_luckner_decisions = {
+	icon = GFX_decision_GEA_luckner_decisions
+	allowed = {
+		original_tag = GEA
+	}
+	visible = {
+		#has_completed_focus = GEA_Governor_Luckner	
+	}
+	priority = 1500
 	visible_when_empty = yes
 }

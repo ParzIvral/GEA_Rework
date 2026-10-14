@@ -4633,6 +4633,26 @@ GEA_start_naval_variant = {
 			rear_1_custom_slot = ship_heavy_battery_2		}
 	}
 
+	# Restored from current KX so the GEA-owned SMS Prinz Eugen can resolve its OOB design.
+	create_equipment_variant = {
+		name = "Admiral Graf Spee Class"
+		type = ship_hull_cruiser_panzerschiff
+		name_group = GER_CA_IMPERIAL
+		show_position = no
+		parent_version = 0
+		modules = {
+			fixed_ship_anti_air_slot = ship_anti_air_2
+			fixed_ship_battery_slot = ship_heavy_battery_2
+			fixed_ship_secondaries_slot = ship_secondaries_2
+			fixed_ship_armor_slot = ship_armor_cruiser_2
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+			fixed_ship_engine_slot = cruiser_ship_engine_2
+			rear_1_custom_slot = ship_torpedo_2
+			mid_1_custom_slot = ship_airplane_launcher_2
+		}
+		design_team = mio:GER_kaiserliche_werft_danzig_organisation
+	}
+
 	create_equipment_variant = {
 		name = "Deutschland Class "
 		type = ship_hull_super_heavy_1

@@ -483,6 +483,10 @@
  GEA_SHIP_ORDER_BB_FRIEDRICH_BARBAROSSA:0 "Friedrich Barbarossa"
  GEA_SHIP_ORDER_BB_KONIG_WILHELM:0 "König Wilhelm"
 
+ # 日德兰纪念战列舰
+ GEA_SHIP_DOGGERLAND_KRONPRINZ:0 "Kronprinz"
+ GEA_SHIP_DOGGERLAND_KONIG:0 "König"
+
  # 订购航空母舰
  GEA_CARRIER_NAME_THEME:0 "Aircraft Carrier Names"
  GEA_FLEET_CARRIER_DELIVERY:0 "Aircraft Carrier Delivery Squadron"

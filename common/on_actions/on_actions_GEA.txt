@@ -1,4 +1,47 @@
 on_actions = {
+	on_startup = {
+		effect = {
+			if = {
+				limit = { GEA = { exists = yes is_subject_of = GER } }
+				GER = {
+					set_autonomy = {
+						target = GEA
+						autonomy_state = autonomy_free
+					}
+				}
+			}
+			if = {
+				limit = { GEA = { exists = yes } }
+				GEA = {
+					set_rule = {
+						can_not_declare_war = yes
+						can_decline_call_to_war = no
+					}
+				}
+				if = {
+					limit = {
+						GER = { exists = yes is_faction_leader = yes }
+						GEA = { NOT = { is_in_faction_with = GER } }
+					}
+					GER = { add_to_faction = GEA }
+				}
+			}
+		}
+	}
+	# ROOT is the attacker; FROM is the defender.
+	on_war_relation_added = {
+		effect = {
+			if = {
+				limit = {
+					OR = {
+						AND = { tag = JAP FROM = { tag = GEA } }
+						AND = { tag = GEA FROM = { tag = JAP } }
+					}
+				}
+				JAP = { country_event = { id = GEA.10001 } }
+			}
+		}
+	}
 	#ROOT is new controller #FROM is old controller #FROM.FROM is state ID
 	on_state_control_changed = {
 		effect = {

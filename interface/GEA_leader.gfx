@@ -152,4 +152,8 @@ spriteTypes = {
 		name = "GFX_portrait_Portrait_GEA_Felix_Steiner"
 		texturefile = "gfx/leaders/MAF/Portrait_Mittelafrika_Felix_Steiner.png"
 	}
+	spriteType = {
+		name = "GFX_portrait_Portrait_GEA_Hellmuth_Heye"
+		texturefile = "gfx/leaders/GEA/Portrait_GEA_Hellmuth_Heye.png"
+	}
 }

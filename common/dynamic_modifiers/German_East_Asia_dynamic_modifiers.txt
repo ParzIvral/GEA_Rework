@@ -1,3 +1,15 @@
+
+# 卢克纳尔海盗战利品
+GEA_The_benefits_of_plundering = { #大洋魔鬼的战利品
+	icon = GFX_idea_GEA_The_benefits_of_plundering
+	enable = { always = yes }
+	remove_trigger = { always = no }
+	political_power_gain = GEA_pirate_loot_daily_pp
+	consumer_goods_factor = GEA_pirate_loot_consumer_goods_factor
+	industrial_capacity_factory = GEA_pirate_loot_factory_output
+	industrial_capacity_dockyard = GEA_pirate_loot_dockyard_output
+}
+
 GEA_admirality = { #大舰队
 	icon = "GFX_idea_admirality"
 	enable = { always = yes }
@@ -40,11 +52,10 @@ GEA_admirality = { #大舰队
 	convoy_escort_efficiency = GEA_navy_convoy_escort_efficiency                                                 # 运输船护航效率
 	invasion_preparation = GEA_navy_invasion_preparation                                                         # 海军入侵准备时间
 	production_speed_naval_base_factor = GEA_navy_production_speed_naval_base_factor                             # 海军基地建造速度
-
-	#尚未使用
 	weekly_manpower = GEA_navy_weekly_manpower                                                                   # 每周人力
 	land_doctrine_cost_factor = GEA_navy_land_doctrine_cost_factor                                               # 陆军学说花费
 	naval_doctrine_cost_factor = GEA_navy_naval_doctrine_cost_factor                                             # 海军学说花费
+	#尚未使用
 	navy_org_factor = GEA_navy_navy_org_factor                                                                   # 海军组织度（比例）
 	naval_invasion_prep_speed = GEA_navy_naval_invasion_prep_speed                                               # 海军入侵准备速度
 	naval_invasion_capacity = GEA_navy_naval_invasion_capacity                                                   # 海军入侵容量
@@ -60,18 +71,14 @@ GEA_admirality = { #大舰队
 	carrier_night_traffic = GEA_navy_carrier_night_traffic                                                       # 航母夜间起降效率
 	air_carrier_night_penalty_reduction_factor = GEA_navy_air_carrier_night_penalty_reduction_factor             # 舰载机夜间惩罚减免
 	sortie_efficiency = GEA_navy_sortie_efficiency                                                               # 舰载机出击效率
-	navy_org = GEA_navy_navy_org                                                                                 # 海军组织度（基础）
 	naval_torpedo_screen_penetration_factor = GEA_navy_naval_torpedo_screen_penetration_factor                   # 鱼雷屏卫穿透
 	naval_torpedo_cooldown_factor = GEA_navy_naval_torpedo_cooldown_factor                                       # 鱼雷发射冷却
 	naval_torpedo_damage_reduction_factor = GEA_navy_naval_torpedo_damage_reduction_factor                       # 受到鱼雷伤害减免
 	naval_defense_factor = GEA_navy_naval_defense_factor                                                         # 海军防御
-	navy_casualty_on_hit = GEA_navy_navy_casualty_on_hit                                                         # 舰船中弹人员伤亡
 	naval_critical_effect_factor = GEA_navy_naval_critical_effect_factor                                         # 致命一击效果
 	amphibious_invasion = GEA_navy_amphibious_invasion                                                           # 两栖入侵速度
 	experience_gain_navy_factor = GEA_navy_experience_gain_navy_factor                                           # 海军经验获取系数
-	floating_harbor_duration = GEA_navy_floating_harbor_duration                                                 # 浮动港口持续时间
 }
-
 GEA_AOG_BONUS = {
 	consumer_goods_factor = GEA_AOG_consumer_goods_factor
 	industrial_capacity_dockyard = GEA_AOG_SHIPYARD

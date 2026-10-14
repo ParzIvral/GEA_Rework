@@ -8,6 +8,18 @@ spriteTypes = {
 		texturefile = "gfx/interface/decisions/GEA_Kartel_decisions.png"
 	}
 	spriteType = {
+		name = "GFX_decision_GEA_luckner_decisions"
+		texturefile = "gfx/interface/decisions/GEA_luckner_decisions.png"
+	}
+	spriteType = {
+		name = "GFX_GEA_Expand_the_pirate_fleet"
+		texturefile = "gfx/interface/decisions/GFX_GEA_Expand_the_pirate_fleet.png"
+	}
+	spriteType = {
+		name = "GFX_GEA_navy_soldiers"
+		texturefile = "gfx/interface/decisions/GEA_navy_soldiers.png"
+	}
+	spriteType = {
 		name = "GFX_decision_mucke_decision"
 		texturefile = "gfx/interface/decisions/mucke_decision.png"
 	}

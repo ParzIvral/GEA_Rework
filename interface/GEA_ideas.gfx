@@ -5,6 +5,10 @@ spriteTypes = {
 	}
 	#国家精神
 	spriteType = {
+		name = "GFX_idea_GEA_The_benefits_of_plundering"
+		texturefile = "gfx/interface/ideas/gea/GEA_The_benefits_of_plundering.png"
+	}
+	spriteType = {
 		name = "GFX_GEA_Corporation_Rule_Krupp"
 		textureFile = "gfx/interface/autonomy/GEA_Corporation_Rule_Krupp.png"
 	}
@@ -175,5 +179,9 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_idea_GEA_hide_in_shadow"
 		texturefile = "gfx/interface/ideas/gea/GEA_hide_in_shadow.png"
+	}
+	spriteType = {
+		name = "GFX_idea_GEA_An_undefeated_army_in_pursuit_of_honor"
+		texturefile = "gfx/interface/ideas/gea/GEA_An_undefeated_army_in_pursuit_of_honor.png"
 	}
 }

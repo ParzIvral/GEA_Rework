@@ -2106,21 +2106,6 @@ add_namespace = GEA
 					}
 				}
 			}
-			if = {
-				limit = {
-					has_country_flag = GEA_Heye_Appointed
-				}
-				custom_effect_tooltip = GEA_lead_to_schorner
-				hidden_effect = {
-					decrease_ruling_party_popularity_by_10 = yes
-					GEA = {
-						country_event = {
-							id = Ostasien.172
-							days = 5
-						}
-					}
-				}
-			}
 			set_country_flag = GEA_Lost_Uprising #印度支那已落入赤匪之手
 			set_global_flag = GEA_Indochina_War_Lost 
 			GEA = {
@@ -2231,6 +2216,19 @@ add_namespace = GEA
 						}
 						add_manpower = 250000
 					}
+					if = {
+						limit = {
+							has_country_flag = GEA_Governor_Heye_flag
+						}
+						country_event = {
+							id = GEA.504 #失败者
+							days = 5
+						}
+						country_event = {
+							id = GEA.503 #力挽狂澜之选
+							days = 7
+						}
+					}
 				}
 			}
 		}
@@ -2325,8 +2323,15 @@ add_namespace = GEA
 						days = 3
 					}
 				}
-			}
-			hidden_effect = {
+				if = {
+					limit = {
+						has_country_flag = GEA_Governor_Heye_flag
+					}
+					country_event = {
+						id = GEA.500 #海耶退休
+						days = 90
+					}
+				}
 				news_event = {
 					id = worldnews.93
 					days = 2
@@ -4677,6 +4682,294 @@ add_namespace = GEA
 			add_political_power = 50
 		}
 	}
+#卢克纳尔/舍尔纳
+	country_event = { #海耶退休
+		id = GEA.500
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.500" }
+		title = GEA.500.t
+		desc = GEA.500.d
+		
+		picture = GFX_report_event_GEA_dogs
+
+		is_triggered_only = yes
+		
+		option = { #威廉·海耶继续执掌殖民地
+			name = GEA.500.a
+			army_experience = 60
+			add_command_power = 50
+		}
+		
+		option = { #赫尔穆特上台，并放松了其父的家长制作风
+			name = GEA.500.b 
+			add_political_power = 100
+			set_politics = {
+				ruling_party = authoritarian_democrat
+				elections_allowed = no
+			}	
+			hidden_effect = {
+				promote_character = {
+					character = GEA_Hellmuth_Heye
+					ideology = colonial_govt_subtype
+				}
+				set_party_name = {
+					ideology = authoritarian_democrat
+					long_name = GEA_authoritarian_democrat_party2_long
+					name = GEA_authoritarian_democrat_party2
+				}		
+				add_popularity = {
+					ideology = authoritarian_democrat
+					popularity = 0.2
+				}
+				
+			}
+			if = {
+				limit = {
+					has_character = GEA_Wilhelm_Heye
+					GER = { exists = yes }
+				}
+				GEA_Wilhelm_Heye = {
+					set_nationality = GER
+					unit_leader_event = { id = GEA.502 }
+				}
+			}
+		}
+		
+		option = { #皇帝指定卢克纳尔接任海耶的职责
+			name = GEA.500.c
+			set_politics = {
+				ruling_party = paternal_autocrat
+				elections_allowed = no
+			}
+			increase_ruling_party_popularity_by_10 = yes	
+			hidden_effect = {
+				promote_character = {
+					character = GEA_Felix_von_Luckner
+					ideology = autocratic_colonial_govt_subtype
+				}
+				add_authdem_to_coalition = yes
+				set_party_name = {
+					ideology = paternal_autocrat
+					long_name = GEA_paternal_autocrat_party_Felix_long
+					name = GEA_paternal_autocrat_party_Felix
+				}
+			}
+			if = {
+				limit = {
+					has_character = GEA_Wilhelm_Heye
+					GER = { exists = yes }
+				}
+				GEA_Wilhelm_Heye = {
+					set_nationality = GER
+					unit_leader_event = { id = GEA.502 }
+				}
+			}
+		}
+	}
+	country_event = { #新任海军上将
+		id = GEA.501
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.501" }
+		title = GEA.501.t
+		desc = GEA.501.d
+		
+		picture = GFX_report_event_GEA_luckner
+
+		is_triggered_only = yes
+		
+		option = {
+			name = GEA.501.a # Excellent!
+			hidden_effect = {
+				country_event = {
+					id = GEA.507 #马克思与莫里茨
+					days = 12
+				}
+			}
+		}
+	}
+	unit_leader_event = { #骑士归乡
+		id = GEA.502
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.502" }
+		title = GEA.502.t
+		desc = {
+			text = GEA.502.d_won
+			trigger = {
+				NOT = { has_global_flag = GEA_Indochina_War_Lost }
+			}
+		}
+		desc = {
+			text = GEA.502.d_lost
+			trigger = {
+				has_global_flag = GEA_Indochina_War_Lost
+			}
+		}
+		picture = GFX_report_event_military_planning
+	
+		is_triggered_only = yes
+	
+		option = {
+			trigger = {
+				has_global_flag = GEA_Indochina_War_Lost
+			}
+			name = GEA.502.a #你辜负了我们，将军，已经不会再有什么机会了
+			THIS = {
+				retire = yes
+			}
+		}
+		option = {
+			trigger = {
+				NOT = { has_global_flag = GEA_Indochina_War_Lost }
+			}
+			name = GEA.502.b #允许其提前退休
+			THIS = {
+				retire = yes
+			}
+		}
+		option = {
+			name = GEA.502.c #把他安排进总参谋部
+		}
+	}
+	country_event = { #力挽狂澜之选
+		id = GEA.503
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.503" }
+		title = GEA.503.t
+		desc = GEA.503.d
+		picture = GFX_GEA_48
+
+		is_triggered_only = yes
+
+		option = { #费迪南德·舍尔纳将挽救远东危局
+			name = GEA.503.a
+			country_event = {
+				id = GEA.505
+				days = 1
+			}
+		}
+
+		option = { #皇帝指定卢克纳尔接任海耶的职责
+			name = GEA.503.b
+			increase_ruling_party_popularity_by_10 = yes
+			hidden_effect = {
+				promote_character = {
+					character = GEA_Felix_von_Luckner
+					ideology = autocratic_colonial_govt_subtype
+				}
+				add_authdem_to_coalition = yes
+				set_party_name = {
+					ideology = paternal_autocrat
+					long_name = GEA_paternal_autocrat_party_Felix_long
+					name = GEA_paternal_autocrat_party_Felix
+				}
+			}
+			if = {
+				limit = {
+					has_character = GEA_Wilhelm_Heye
+					GER = { exists = yes }
+				}
+				GEA_Wilhelm_Heye = {
+					set_nationality = GER
+					unit_leader_event = { id = GEA.502 }
+				}
+			}
+		}
+	}
+	country_event = { #失败者
+		id = GEA.504
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.504" }
+		title = GEA.504.t
+		desc = GEA.504.d
+		picture = GFX_GEA_loser
+
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = { #在这场生存竞赛中，失败者将赔上一切
+			name = GEA.504.a
+			custom_effect_tooltip = GEA_loser_tt
+			hidden_effect = {
+				country_event = {
+					id = GEA.505
+					days = 2
+				}
+			}
+		}
+	}
+	country_event = { #审判日
+		id = GEA.505
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.505" }
+		title = GEA.505.t
+		desc = GEA.505.d
+		picture = GFX_GEA_49
+		is_triggered_only = yes
+
+		option = { #胜者才永远会是审判者
+			name = GEA.505.a
+			add_stability = -0.05
+			set_politics = {
+				ruling_party = national_populist
+				elections_allowed = no
+			}
+			set_country_flag = GEA_Governor_Schorner_flag
+			clr_country_flag = GEA_Governor_Heye_flag
+			hidden_effect = {
+				promote_character = {
+					character = GEA_Ferdinand_Schorner
+					ideology = natpop_colonial_govt_subtype
+				}
+				set_party_name = {
+					ideology = national_populist
+					long_name = GEA_national_populist_party_long
+					name = GEA_national_populist_party
+				}
+				remove_all_ministers = yes
+				add_ideas = {
+					GEA_Julius_Dorpmueller_hog_npo
+					GEA_Nikolaus_Johnsen_for_pau
+					GEA_Arno_Spindler_eco_pau
+					GEA_Charles_August_Polack_sec_pau
+				}
+			}
+			if = {
+				limit = {
+					has_character = GEA_Wilhelm_Heye
+					GER = { exists = yes }
+				}
+				GEA_Wilhelm_Heye = {
+					set_nationality = GER
+					unit_leader_event = { id = GEA.502 }
+				}
+			}
+		}
+	}
+	country_event = { #舍尔纳事件
+		id = GEA.506
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.506" }
+		title = GEA.506.t
+		desc = GEA.506.d
+		picture = GFX_GEA_schorner
+
+		fire_only_once = yes
+		is_triggered_only = yes
+
+		option = {
+			name = GEA.506.a
+			add_manpower = -196
+		}
+	}
+	country_event = { #马克思与莫里茨
+		id = GEA.507
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.507" }
+		title = GEA.507.t
+		desc = GEA.507.d
+		
+		picture = GFX_report_event_GEA_dogs
+
+		is_triggered_only = yes
+		
+		option = {
+			name = GEA.507.a # Excellent!
+			add_political_power = 20
+			add_stability = 0.02
+		}
+	}
 #经济
 	country_event = { #重点开发
 		id = GEA.1000
@@ -5550,65 +5843,7 @@ add_namespace = GEA
 			}
 		}
 	}
-	country_event = { 
-		id = Ostasien.172
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.172" }
-		title = Ostasien.172.t
-		desc = Ostasien.172.d
-		picture = GFX_GEA_loser
-		is_triggered_only = yes
 
-		option = { 
-			name = Ostasien.172.a
-			custom_effect_tooltip = GEA_loser_tt
-			hidden_effect = {
-				country_event = {
-					id = Ostasien.173
-					days = 2
-				}
-			}
-		}
-	}
-	country_event = { 
-		id = Ostasien.173
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.173" }
-		title = Ostasien.173.t
-		desc = Ostasien.173.d
-		picture = GFX_report_event_GEA_schorner
-		is_triggered_only = yes
-
-		option = { 
-			name = Ostasien.173.a
-			add_stability = -0.05
-			hidden_effect = {
-				create_country_leader = {
-					name = "Ferdinand Schorner"
-					picture = "gfx/leaders/GEA/Portrait_GEA_Ferdinand_Schorner.png"
-					expire = "1.1.1"
-					ideology = natpop_colonial_govt_subtype
-					traits = {}
-				}	
-			}
-			set_politics = {
-				ruling_party = national_populist
-				elections_allowed = no
-			}
-			add_popularity = {
-				ideology = national_populist
-				popularity = 0.3
-			}
-			remove_all_ministers = yes
-			add_ideas = {
-				GEA_Julius_Dorpmueller_hog_npo
-				GEA_Nikolaus_Johnsen_for_pau
-				GEA_Arno_Spindler_eco_pau
-				GEA_Charles_August_Polack_sec_pau
-			}
-			set_country_flag = GEA_bloody_ferdinand_Appointed
-			clr_country_flag = GEA_Heye_Appointed
-			complete_national_focus = GEA_bloody_ferdinand
-		}
-	}
 	country_event = { 
 		id = Ostasien.174
 		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.174" }
@@ -6015,22 +6250,7 @@ add_namespace = GEA
 		}
 	}
 
-	country_event = { #舍尔纳事件
-		id = Ostasien.304
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.304" }
-		title = Ostasien.304.t
-		desc = Ostasien.304.d
-		picture = GFX_GEA_schorner
 
-		fire_only_once = yes
-
-		is_triggered_only = yes
-
-		option = {
-			name = Ostasien.304.a
-			add_manpower = -196
-		}
-	}
 	country_event = { #peace out
 		id = Ostasien.306
 		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.306" }
@@ -6050,7 +6270,7 @@ add_namespace = GEA
 			}
 			GEA = {
 				has_capitulated = yes
-				is_subject_of = GER
+				is_in_faction_with = GER
 			}
 			has_war_with = GER
 			OR = {
@@ -6996,6 +7216,27 @@ add_namespace = GEA
 
 #隐藏事件
 	country_event = {
+		id = GEA.10001
+		hidden = yes
+		is_triggered_only = yes
+
+		trigger = {
+			tag = JAP
+			has_war_with = GEA
+			GER = { exists = yes }
+			NOT = { has_war_with = GER }
+		}
+
+		immediate = {
+			log = "[GetDateText]: GEA.10001: Japan extends the East Asian war to Germany"
+			declare_war_on = {
+				target = GER
+				type = annex_everything
+			}
+		}
+	}
+
+	country_event = {
 		id = GEA.10000
 		is_triggered_only = yes
 		hidden = yes
@@ -7013,6 +7254,45 @@ add_namespace = GEA
 			log = "[GetDateText]: State event GEA.12000 in [Root.GetName]"
 			remove_dynamic_modifier = {
 				modifier = GEA_scorched_earth_state_modifier
+			}
+		}
+	}
+
+	country_event = { # 回收新加坡的临时劫掠资源
+		id = GEA.12001
+		hidden = yes
+		is_triggered_only = yes
+		immediate = {
+			log = "[GetDateText]: Event GEA.12001: temporary raided resources expire"
+			if = {
+				limit = { has_country_flag = GEA_raided_resource_oil }
+				add_resource = { type = oil amount = -60 state = 336 }
+				clr_country_flag = GEA_raided_resource_oil
+			}
+			if = {
+				limit = { has_country_flag = GEA_raided_resource_aluminium }
+				add_resource = { type = aluminium amount = -60 state = 336 }
+				clr_country_flag = GEA_raided_resource_aluminium
+			}
+			if = {
+				limit = { has_country_flag = GEA_raided_resource_steel }
+				add_resource = { type = steel amount = -60 state = 336 }
+				clr_country_flag = GEA_raided_resource_steel
+			}
+			if = {
+				limit = { has_country_flag = GEA_raided_resource_tungsten }
+				add_resource = { type = tungsten amount = -60 state = 336 }
+				clr_country_flag = GEA_raided_resource_tungsten
+			}
+			if = {
+				limit = { has_country_flag = GEA_raided_resource_chromium }
+				add_resource = { type = chromium amount = -60 state = 336 }
+				clr_country_flag = GEA_raided_resource_chromium
+			}
+			if = {
+				limit = { has_country_flag = GEA_raided_resource_coal }
+				add_resource = { type = coal amount = -60 state = 336 }
+				clr_country_flag = GEA_raided_resource_coal
 			}
 		}
 	}
