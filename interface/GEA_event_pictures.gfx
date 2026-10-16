@@ -1,4 +1,9 @@
 spriteTypes = {
+	# 尼亚加拉大劫案新闻占位图，后续直接替换同名 PNG
+	spriteType = {
+		name = "GFX_GEA_news_1"
+		texturefile = "gfx/event_pictures/GFX_GEA_news_1.png"
+	}
 	spriteType  = {
 		name = "GFX_GEA_1"
 		texturefile = "gfx/event_pictures/GFX_GEA_1.png"

@@ -20,6 +20,50 @@ spriteTypes = {
 		texturefile = "gfx/interface/decisions/GEA_navy_soldiers.png"
 	}
 	spriteType = {
+		name = "GFX_GEA_luckner_decision"
+		texturefile = "gfx/interface/decisions/GEA_luckner_decision.png"
+	}
+	spriteType = {
+		name = "GFX_GEA_Niagara_heist"
+		texturefile = "gfx/interface/decisions/GFX_GEA_Niagara_heist.png"
+	}
+	spriteType = {
+		name = "GFX_decision_GEA_Fence_goods_on_the_South_China_black_market"
+		texturefile = "gfx/interface/decisions/GFX_decision_GEA_Fence_goods_on_the_South_China_black_market.png"
+	}
+	spriteType = {
+		name = "GFX_decision_GEA_Raid_coastal_arsenals"
+		texturefile = "gfx/interface/decisions/GFX_decision_GEA_Raid_coastal_arsenals.png"
+	}
+	spriteType = {
+		name = "GFX_decision_GEA_Intercept_ocean_liners"
+		texturefile = "gfx/interface/decisions/GFX_decision_GEA_Intercept_ocean_liners.png"
+	}
+	spriteType = {
+		name = "GFX_decision_GEA_Raid_on_the_Pacific_shipping_routes"
+		texturefile = "gfx/interface/decisions/GFX_decision_GEA_Raid_on_the_Pacific_shipping_routes.png"
+	}
+	spriteType = {
+		name = "GFX_decision_GEA_Secret_operation_Asama_Maru_rescue"
+		texturefile = "gfx/interface/decisions/GFX_decision_GEA_Secret_operation_Asama_Maru_rescue.png"
+	}
+	spriteType = {
+		name = "GFX_decision_GEA_Secret_operation_Black_gold"
+		texturefile = "gfx/interface/decisions/GFX_decision_GEA_Secret_operation_Black_gold.png"
+	}
+	spriteType = {
+		name = "GFX_decision_GEA_Secret_operation_Manila_treasury"
+		texturefile = "gfx/interface/decisions/GFX_decision_GEA_Secret_operation_Manila_treasury.png"
+	}
+	spriteType = {
+		name = "GFX_decision_GEA_Secret_operation_Oriental_treasures_heist"
+		texturefile = "gfx/interface/decisions/GFX_decision_GEA_Secret_operation_Oriental_treasures_heist.png"
+	}
+	spriteType = {
+		name = "GFX_decision_GEA_Secret_operation_Rangitane_heist"
+		texturefile = "gfx/interface/decisions/GFX_decision_GEA_Secret_operation_Rangitane_heist.png"
+	}
+	spriteType = {
 		name = "GFX_decision_mucke_decision"
 		texturefile = "gfx/interface/decisions/mucke_decision.png"
 	}

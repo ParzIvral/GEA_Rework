@@ -6,6 +6,26 @@
 
 add_namespace = Ostasien
 add_namespace = GEA
+add_namespace = GEA_news
+#新闻
+	news_event = { #尼亚加拉大劫案
+		id = GEA_news.1
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA_news.1" }
+		title = GEA_news.1.t
+		desc = GEA_news.1.d
+		picture = GFX_GEA_news_1
+		major = yes
+		is_triggered_only = yes
+		fire_only_once = yes
+		option = {
+			name = GEA_news.1.a #如此完美的手笔
+			trigger = { tag = GEA }
+		}
+		option = {
+			name = GEA_news.1.b #谁做的？
+			trigger = { NOT = { tag = GEA } }
+		}
+	}
 ###开局事件与黑色星期一###
 	country_event = {#1936 Situation
 		id = GEA.0
@@ -4736,6 +4756,7 @@ add_namespace = GEA
 		
 		option = { #皇帝指定卢克纳尔接任海耶的职责
 			name = GEA.500.c
+			set_country_flag = GEA_Governor_Luckner_flag
 			set_politics = {
 				ruling_party = paternal_autocrat
 				elections_allowed = no
@@ -4846,6 +4867,7 @@ add_namespace = GEA
 
 		option = { #皇帝指定卢克纳尔接任海耶的职责
 			name = GEA.503.b
+			set_country_flag = GEA_Governor_Luckner_flag
 			increase_ruling_party_popularity_by_10 = yes
 			hidden_effect = {
 				promote_character = {
@@ -4968,6 +4990,739 @@ add_namespace = GEA
 			name = GEA.507.a # Excellent!
 			add_political_power = 20
 			add_stability = 0.02
+		}
+	}
+	country_event = { #总督登台
+		id = GEA.508
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.508" }
+		title = GEA.508.t
+		desc = GEA.508.d
+		
+		picture = GFX_GEA_50
+
+		is_triggered_only = yes
+		fire_only_once = yes
+		
+		option = {
+			name = GEA.508.a #真乃当世传奇
+			add_political_power = 30
+			custom_effect_tooltip = GEA_Extremely_popular_of_Luckner
+			hidden_effect = {
+				if = {
+					limit = { NOT = { has_country_flag = GEA_pirate_exposure_disabled } }
+					add_to_variable = { GEA_pirate_discovery_chance = -8 }
+					clamp_variable = { var = GEA_pirate_discovery_chance min = 0 max = 100 }
+				}
+				set_country_flag = GEA_monthly_pirate_risk_decay_unlocked
+			}
+		}
+	}
+	country_event = { #“海鹰”号的又一次航行
+		id = GEA.509
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.509" }
+		title = GEA.509.t
+		desc = GEA.509.d
+
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = GEA.509.a #为巡洋舰命名
+			ai_chance = { factor = 25 }
+			hidden_effect = {
+				GEA_prepare_heavy_cruiser_1936 = yes
+				GEA_prepare_battleship_1936 = yes
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_2
+					creator = GEA
+					version_name = "GEA_CA_CLASS_1936_ORDERS"
+				}
+				name = GEA_SHIP_SEEADLER
+				requested_factories = 5
+				progress = 0.5
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_2
+					creator = GEA
+					version_name = "GEA_CA_CLASS_1936_ORDERS"
+				}
+				name = GEA_SHIP_ORDER_CA_ADMIRAL_HIPPER
+				requested_factories = 5
+				progress = 0.5
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_heavy_2
+					creator = GEA
+					version_name = "GEA_BB_CLASS_1936_ORDERS"
+				}
+				name = GEA_SHIP_ORDER_BB_TIRPITZ
+				requested_factories = 5
+				progress = 0.2
+				amount = 1
+			}
+		}
+
+		option = {
+			name = GEA.509.b #为战列舰命名
+			ai_chance = { factor = 25 }
+			hidden_effect = {
+				GEA_prepare_heavy_cruiser_1936 = yes
+				GEA_prepare_battleship_1936 = yes
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_2
+					creator = GEA
+					version_name = "GEA_CA_CLASS_1936_ORDERS"
+				}
+				name = GEA_SHIP_ORDER_CA_ADMIRAL_HIPPER
+				requested_factories = 5
+				progress = 0.5
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_2
+					creator = GEA
+					version_name = "GEA_CA_CLASS_1936_ORDERS"
+				}
+				name = GEA_SHIP_ORDER_CA_PRINZ_EUGEN
+				requested_factories = 5
+				progress = 0.5
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_heavy_2
+					creator = GEA
+					version_name = "GEA_BB_CLASS_1936_ORDERS"
+				}
+				name = GEA_SHIP_SEEADLER
+				requested_factories = 5
+				progress = 0.2
+				amount = 1
+			}
+		}
+
+		option = {
+			name = GEA.509.c #为战列巡洋舰命名
+			ai_chance = { factor = 25 }
+			hidden_effect = {
+				GEA_prepare_battlecruiser_o_class = yes
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_heavy_3
+					creator = GEA
+					version_name = "GEA_BC_CLASS_O_1939"
+				}
+				name = GEA_SHIP_SEEADLER
+				requested_factories = 5
+				progress = 0.1
+				amount = 1
+			}
+		}
+
+		option = {
+			name = GEA.509.e #为航空母舰命名
+			ai_chance = { factor = 25 }
+			hidden_effect = {
+				GEA_prepare_carrier_1936 = yes
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_carrier_1
+					creator = GEA
+					version_name = "GEA_CV_CLASS_1936_ORDERS"
+				}
+				name = GEA_SHIP_SEEADLER
+				requested_factories = 5
+				progress = 0.1
+				amount = 1
+			}
+		}
+	}
+	country_event = { #海盗破交战：挑选劫掠对象
+		id = GEA.510
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.510" }
+		title = GEA.510.t
+		desc = GEA.510.d
+
+		is_triggered_only = yes
+
+		option = {
+			name = GEA.510.a #日本
+			trigger = { has_war_with = JAP }
+			ai_chance = { factor = 25 }
+			custom_override_tooltip = {
+				tooltip = GEA_pirate_war_target_selected_tt
+				clear_global_event_target = GEA_pirate_war_target
+				JAP = { save_global_event_target_as = GEA_pirate_war_target }
+				set_country_flag = GEA_pirate_war_target_selected
+				clr_country_flag = GEA_pirate_war_target_selection_pending
+			}
+		}
+
+		option = {
+			name = GEA.510.b #澳大利亚
+			trigger = { has_war_with = AST }
+			ai_chance = { factor = 25 }
+			custom_override_tooltip = {
+				tooltip = GEA_pirate_war_target_selected_tt
+				clear_global_event_target = GEA_pirate_war_target
+				AST = { save_global_event_target_as = GEA_pirate_war_target }
+				set_country_flag = GEA_pirate_war_target_selected
+				clr_country_flag = GEA_pirate_war_target_selection_pending
+			}
+		}
+
+		option = {
+			name = GEA.510.c #美国
+			trigger = { has_war_with = USA }
+			ai_chance = { factor = 25 }
+			custom_override_tooltip = {
+				tooltip = GEA_pirate_war_target_selected_tt
+				clear_global_event_target = GEA_pirate_war_target
+				USA = { save_global_event_target_as = GEA_pirate_war_target }
+				set_country_flag = GEA_pirate_war_target_selected
+				clr_country_flag = GEA_pirate_war_target_selection_pending
+			}
+		}
+
+		option = {
+			name = GEA.510.e #外阿穆尔
+			trigger = { has_war_with = TRM }
+			ai_chance = { factor = 25 }
+			custom_override_tooltip = {
+				tooltip = GEA_pirate_war_target_selected_tt
+				clear_global_event_target = GEA_pirate_war_target
+				TRM = { save_global_event_target_as = GEA_pirate_war_target }
+				set_country_flag = GEA_pirate_war_target_selected
+				clr_country_flag = GEA_pirate_war_target_selection_pending
+			}
+		}
+
+		option = {
+			name = GEA.510.f
+			trigger = {
+				NOT = {
+					OR = {
+						has_war_with = JAP
+						has_war_with = AST
+						has_war_with = USA
+						has_war_with = TRM
+					}
+				}
+			}
+			hidden_effect = { clr_country_flag = GEA_pirate_war_target_selection_pending }
+		}
+	}
+	country_event = { #柏林问询海盗活动
+		id = GEA.511
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.511" }
+		title = GEA.511.t
+		desc = GEA.511.d
+		picture = GFX_GEA_50
+
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = GEA.511.a #搪塞过去
+			add_stability = -0.05
+			add_political_power = -20
+		}
+	}
+	country_event = { #柏林要求彻查
+		id = GEA.512
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.512" }
+		title = GEA.512.t
+		desc = GEA.512.d
+
+		is_triggered_only = yes
+		fire_only_once = yes
+		
+		option = {
+			name = GEA.512.a #应付柏林的调查
+			hidden_effect = { country_event = { id = GEA.513 days = 3 } }
+		}
+	}
+	country_event = { #柏林来客
+		id = GEA.513
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.513" }
+		title = GEA.513.t
+		desc = GEA.513.d
+		#picture = GFX_GEA_50
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = GEA.513.a
+			hidden_effect = { country_event = { id = GEA.514 days = 3 } }
+		}
+		option = {
+			name = GEA.513.b
+			hidden_effect = { country_event = { id = GEA.526 days = 3 } }
+		}
+		option = {
+			name = GEA.513.c
+			hidden_effect = { country_event = { id = GEA.536 days = 3 } }
+		}
+	}
+
+	country_event = { #南海幽灵
+		id = GEA.514
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.514" }
+		title = GEA.514.t
+		desc = GEA.514.d
+		#picture = GFX_GEA_50
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = GEA.514.a
+			hidden_effect = { country_event = { id = GEA.518 days = 3 } }
+		}
+		option = {
+			name = GEA.514.b
+			hidden_effect = { country_event = { id = GEA.515 days = 3 } }
+		}
+		option = {
+			name = GEA.514.c
+			hidden_effect = { country_event = { id = GEA.521 days = 3 } }
+		}
+	}
+
+	country_event = { #南洋寻踪
+		id = GEA.515
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.515" }
+		title = GEA.515.t
+		desc = GEA.515.d
+		#picture = GFX_GEA_50
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = GEA.515.a
+			hidden_effect = { country_event = { id = GEA.522 days = 3 } }
+		}
+		option = {
+			name = GEA.515.b
+			hidden_effect = { country_event = { id = GEA.523 days = 3 } }
+		}
+		option = {
+			name = GEA.515.c
+			hidden_effect = { country_event = { id = GEA.516 days = 3 } }
+		}
+	}
+
+	country_event = { #老水手
+		id = GEA.516
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.516" }
+		title = GEA.516.t
+		desc = GEA.516.d
+		#picture = GFX_GEA_50
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = GEA.516.a
+			hidden_effect = { country_event = { id = GEA.517 days = 3 } }
+		}
+		option = {
+			name = GEA.516.b
+			hidden_effect = { country_event = { id = GEA.524 days = 3 } }
+		}
+		option = {
+			name = GEA.516.c
+			hidden_effect = { country_event = { id = GEA.525 days = 3 } }
+		}
+	}
+
+	country_event = { #一桩了结的公案
+		id = GEA.517
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.517" }
+		title = GEA.517.t
+		desc = GEA.517.d
+		#picture = GFX_GEA_50
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = GEA.517.a
+			custom_effect_tooltip = GEA_pirate_investigation_good_ending_tt
+			hidden_effect = {
+				set_country_flag = GEA_pirate_exposure_disabled
+				set_variable = { GEA_pirate_discovery_chance = 0 }
+				clr_country_flag = GEA_monthly_pirate_risk_decay_unlocked
+			}
+		}
+	}
+	country_event = { #第一道裂缝
+		id = GEA.518
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.518" }
+		title = GEA.518.t
+		desc = GEA.518.d
+		#picture = GFX_GEA_50
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = GEA.518.a
+			hidden_effect = { GER = { country_event = { id = GEA.519 days = 3 } } }
+		}
+	}
+
+	country_event = { #最后骗局
+		id = GEA.519
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.519" }
+		title = GEA.519.t
+		desc = GEA.519.d
+		#picture = GFX_GEA_50
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = GEA.519.a
+			GER = {
+				add_stability = -0.05
+				add_political_power = -50
+				decrease_ruling_party_popularity_by_10 = yes
+			}
+		}
+		option = {
+			name = GEA.519.b
+			hidden_effect = {
+				GEA = { country_event = { id = GEA.520 days = 3 } }
+			}
+		}
+	}
+
+	country_event = { #海魔的末路
+		id = GEA.520
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.520" }
+		title = GEA.520.t
+		desc = GEA.520.d
+		#picture = GFX_GEA_50
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = GEA.520.a
+			set_politics = {
+				ruling_party = authoritarian_democrat
+				elections_allowed = no
+			}	
+			hidden_effect = {
+				promote_character = {
+					character = GEA_Hellmuth_von_Mucke
+					ideology = colonial_govt_subtype
+				}
+				remove_all_ministers = yes
+				add_ideas = {
+					GEA_Hellmuth_Von_Mucke_hog_ade
+					GEA_Oskar_Trautmann_for_mli
+					GEA_Rudolf_Kaulla_eco_sco
+					GEA_Josias_zu_Waldeck_und_Pyrmont_sec_pau
+				}
+				retire_character = GEA_Felix_von_Luckner
+				add_popularity = { ideology = authoritarian_democrat popularity = 0.2 }
+				add_stability = -0.1
+				clr_country_flag = GEA_Governor_Luckner_flag
+			}
+		}
+		option = {
+			name = GEA.520.b
+			custom_effect_tooltip = GEA_Not_completed
+		}
+	}
+
+	country_event = { #封存的卷宗
+		id = GEA.521
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.521" }
+		title = GEA.521.t
+		desc = GEA.521.d
+		#picture = GFX_GEA_50
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = GEA.521.a
+			hidden_effect = { GER = { country_event = { id = GEA.519 days = 3 } } }
+		}
+	}
+
+	country_event = { #警察局的旧案
+		id = GEA.522
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.522" }
+		title = GEA.522.t
+		desc = GEA.522.d
+		#picture = GFX_GEA_50
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = GEA.522.a
+			hidden_effect = { GER = { country_event = { id = GEA.519 days = 3 } } }
+		}
+	}
+
+	country_event = { #港口登记簿
+		id = GEA.523
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.523" }
+		title = GEA.523.t
+		desc = GEA.523.d
+		#picture = GFX_GEA_50
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = GEA.523.a
+			hidden_effect = { GER = { country_event = { id = GEA.519 days = 3 } } }
+		}
+	}
+
+	country_event = { #不该存在的账户
+		id = GEA.524
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.524" }
+		title = GEA.524.t
+		desc = GEA.524.d
+		#picture = GFX_GEA_50
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = GEA.524.a
+			hidden_effect = { GER = { country_event = { id = GEA.519 days = 3 } } }
+		}
+	}
+
+	country_event = { #海鹰号旧识
+		id = GEA.525
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.525" }
+		title = GEA.525.t
+		desc = GEA.525.d
+		#picture = GFX_GEA_50
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = GEA.525.a
+			hidden_effect = { GER = { country_event = { id = GEA.519 days = 3 } } }
+		}
+	}
+	country_event = { #旭日之下的疑云
+		id = GEA.526
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.526" }
+		title = GEA.526.t
+		desc = GEA.526.d
+		#picture = GFX_GEA_50
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = GEA.526.a
+			hidden_effect = { country_event = { id = GEA.530 days = 3 } }
+		}
+		option = {
+			name = GEA.526.b
+			hidden_effect = { country_event = { id = GEA.527 days = 3 } }
+		}
+		option = {
+			name = GEA.526.c
+			hidden_effect = { country_event = { id = GEA.531 days = 3 } }
+		}
+	}
+
+	country_event = { #账簿上的陌生人
+		id = GEA.527
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.527" }
+		title = GEA.527.t
+		desc = GEA.527.d
+		#picture = GFX_GEA_50
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = GEA.527.a
+			hidden_effect = { country_event = { id = GEA.532 days = 3 } }
+		}
+		option = {
+			name = GEA.527.b
+			hidden_effect = { country_event = { id = GEA.533 days = 3 } }
+		}
+		option = {
+			name = GEA.527.c
+			hidden_effect = { country_event = { id = GEA.528 days = 3 } }
+		}
+	}
+
+	country_event = { #意外的收获
+		id = GEA.528
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.528" }
+		title = GEA.528.t
+		desc = GEA.528.d
+		#picture = GFX_GEA_50
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = GEA.528.a
+			hidden_effect = { country_event = { id = GEA.529 days = 3 } }
+		}
+		option = {
+			name = GEA.528.b
+			hidden_effect = { country_event = { id = GEA.535 days = 3 } }
+		}
+		option = {
+			name = GEA.528.c
+			hidden_effect = { country_event = { id = GEA.534 days = 3 } }
+		}
+	}
+
+	country_event = { #旭日之下的阴谋
+		id = GEA.529
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.529" }
+		title = GEA.529.t
+		desc = GEA.529.d
+		#picture = GFX_GEA_50
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = GEA.529.a
+			custom_effect_tooltip = GEA_pirate_investigation_good_ending_tt
+			hidden_effect = {
+				set_country_flag = GEA_pirate_exposure_disabled
+				set_variable = { GEA_pirate_discovery_chance = 0 }
+				clr_country_flag = GEA_monthly_pirate_risk_decay_unlocked
+			}
+		}
+	}
+
+	country_event = { #死人名单
+		id = GEA.530
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.530" }
+		title = GEA.530.t
+		desc = GEA.530.d
+		#picture = GFX_GEA_50
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = GEA.530.a
+			hidden_effect = { GER = { country_event = { id = GEA.519 days = 3 } } }
+		}
+	}
+
+	country_event = { #导火索照会
+		id = GEA.531
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.531" }
+		title = GEA.531.t
+		desc = GEA.531.d
+		#picture = GFX_GEA_50
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = GEA.531.a
+			hidden_effect = { GER = { country_event = { id = GEA.519 days = 3 } } }
+		}
+	}
+
+	country_event = { #不合作的嫌疑人
+		id = GEA.532
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.532" }
+		title = GEA.532.t
+		desc = GEA.532.d
+		#picture = GFX_GEA_50
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = GEA.532.a
+			hidden_effect = { GER = { country_event = { id = GEA.519 days = 3 } } }
+		}
+	}
+
+	country_event = { #银行家的秘密
+		id = GEA.533
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.533" }
+		title = GEA.533.t
+		desc = GEA.533.d
+		#picture = GFX_GEA_50
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = GEA.533.a
+			hidden_effect = { GER = { country_event = { id = GEA.519 days = 3 } } }
+		}
+	}
+
+	country_event = { #精心安排的汇款
+		id = GEA.534
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.534" }
+		title = GEA.534.t
+		desc = GEA.534.d
+		#picture = GFX_GEA_50
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = GEA.534.a
+			hidden_effect = { GER = { country_event = { id = GEA.519 days = 3 } } }
+		}
+	}
+
+	country_event = { #不该说的别说
+		id = GEA.535
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.535" }
+		title = GEA.535.t
+		desc = GEA.535.d
+		#picture = GFX_GEA_50
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = GEA.535.a
+			hidden_effect = { GER = { country_event = { id = GEA.519 days = 3 } } }
+		}
+	}
+
+	country_event = { #第三份证词
+		id = GEA.536
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.536" }
+		title = GEA.536.t
+		desc = GEA.536.d
+		#picture = GFX_GEA_50
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = GEA.536.a
+			hidden_effect = { country_event = { id = GEA.537 days = 3 } }
+		}
+	}
+
+	country_event = { #办公桌的另一端
+		id = GEA.537
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.537" }
+		title = GEA.537.t
+		desc = GEA.537.d
+		#picture = GFX_GEA_50
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = GEA.537.a
+			hidden_effect = { GER = { country_event = { id = GEA.519 days = 3 } } }
 		}
 	}
 #经济
@@ -7258,6 +8013,7 @@ add_namespace = GEA
 		}
 	}
 
+
 	country_event = { # 回收新加坡的临时劫掠资源
 		id = GEA.12001
 		hidden = yes
@@ -7267,32 +8023,57 @@ add_namespace = GEA
 			if = {
 				limit = { has_country_flag = GEA_raided_resource_oil }
 				add_resource = { type = oil amount = -60 state = 336 }
+				if = {
+					limit = { has_country_flag = GEA_raided_resources_doubled }
+					add_resource = { type = oil amount = -60 state = 336 }
+				}
 				clr_country_flag = GEA_raided_resource_oil
 			}
 			if = {
 				limit = { has_country_flag = GEA_raided_resource_aluminium }
 				add_resource = { type = aluminium amount = -60 state = 336 }
+				if = {
+					limit = { has_country_flag = GEA_raided_resources_doubled }
+					add_resource = { type = aluminium amount = -60 state = 336 }
+				}
 				clr_country_flag = GEA_raided_resource_aluminium
 			}
 			if = {
 				limit = { has_country_flag = GEA_raided_resource_steel }
 				add_resource = { type = steel amount = -60 state = 336 }
+				if = {
+					limit = { has_country_flag = GEA_raided_resources_doubled }
+					add_resource = { type = steel amount = -60 state = 336 }
+				}
 				clr_country_flag = GEA_raided_resource_steel
 			}
 			if = {
 				limit = { has_country_flag = GEA_raided_resource_tungsten }
 				add_resource = { type = tungsten amount = -60 state = 336 }
+				if = {
+					limit = { has_country_flag = GEA_raided_resources_doubled }
+					add_resource = { type = tungsten amount = -60 state = 336 }
+				}
 				clr_country_flag = GEA_raided_resource_tungsten
 			}
 			if = {
 				limit = { has_country_flag = GEA_raided_resource_chromium }
 				add_resource = { type = chromium amount = -60 state = 336 }
+				if = {
+					limit = { has_country_flag = GEA_raided_resources_doubled }
+					add_resource = { type = chromium amount = -60 state = 336 }
+				}
 				clr_country_flag = GEA_raided_resource_chromium
 			}
 			if = {
 				limit = { has_country_flag = GEA_raided_resource_coal }
 				add_resource = { type = coal amount = -60 state = 336 }
+				if = {
+					limit = { has_country_flag = GEA_raided_resources_doubled }
+					add_resource = { type = coal amount = -60 state = 336 }
+				}
 				clr_country_flag = GEA_raided_resource_coal
 			}
+			clr_country_flag = GEA_raided_resources_doubled
 		}
 	}

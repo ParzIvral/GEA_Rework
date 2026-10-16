@@ -1486,6 +1486,34 @@ GEA_prepare_battleship_1940 = {
 	}
 }
 
+# 1939 年 O 级战列巡洋舰
+GEA_prepare_battlecruiser_o_class = {
+	if = {
+		limit = { NOT = { has_country_flag = GEA_battlecruiser_o_class_design_created } }
+		create_equipment_variant = {
+			name = "GEA_BC_CLASS_O_1939"
+			name_group = GEA_BATTLESHIP_NAMES
+			allow_without_tech = yes
+			type = ship_hull_heavy_3
+			parent_version = 0
+			modules = {
+				fixed_ship_battery_slot = ship_heavy_battery_3
+				fixed_ship_anti_air_slot = ship_anti_air_2
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+				fixed_ship_radar_slot = ship_radar_1
+				fixed_ship_engine_slot = heavy_ship_engine_3
+				fixed_ship_secondaries_slot = ship_secondaries_2
+				fixed_ship_armor_slot = ship_armor_bc_2
+				front_1_custom_slot = ship_heavy_battery_3
+				mid_1_custom_slot = ship_airplane_launcher_1
+				mid_2_custom_slot = dp_ship_secondaries_1
+				rear_1_custom_slot = ship_heavy_battery_3
+			}
+		}
+		set_country_flag = GEA_battlecruiser_o_class_design_created
+	}
+}
+
 # 1936 年型航空母舰
 GEA_prepare_carrier_1936 = {
 	if = {
@@ -2039,19 +2067,64 @@ GEA_pirate_offsite_civ_reward = {
 		limit = { has_completed_focus = GEA_The_sea_demon_of_the_Pacific_Ocean }
 		hidden_effect = {
 			set_temp_variable = { GEA_pirate_civ_reward_weight = GEA_pirate_offsite_civ_chance }
+			add_to_temp_variable = { GEA_pirate_civ_reward_weight = GEA_raid_extra_reward_chance }
 			clamp_temp_variable = { var = GEA_pirate_civ_reward_weight min = 0 max = 100 }
 			set_temp_variable = { GEA_pirate_no_civ_reward_weight = 100 }
 			subtract_from_temp_variable = { GEA_pirate_no_civ_reward_weight = GEA_pirate_civ_reward_weight }
 			meta_effect = {
 				text = {
 					random_list = {
-						[CIV_REWARD_CHANCE] = { add_offsite_building = { type = industrial_complex level = 1 } }
+						[CIV_REWARD_CHANCE] = { add_offsite_building = { type = industrial_complex level = [REWARD_MULTIPLIER] } }
 						[NO_CIV_REWARD_CHANCE] = { }
 					}
 				}
 				CIV_REWARD_CHANCE = "[?GEA_pirate_civ_reward_weight|0]"
 				NO_CIV_REWARD_CHANCE = "[?GEA_pirate_no_civ_reward_weight|0]"
+				REWARD_MULTIPLIER = "[?GEA_raid_reward_multiplier|0]"
 			}
+		}
+	}
+}
+
+# 秘密行动：按结算后暴露概率判定，黄金劫案与浅间丸营救不调用
+GEA_roll_secret_operation_discovery = {
+	if = {
+		limit = { NOT = { has_country_flag = GEA_pirate_exposure_disabled } }
+		set_temp_variable = { GEA_secret_discovery_weight = GEA_pirate_discovery_chance }
+		clamp_temp_variable = { var = GEA_secret_discovery_weight min = 0 max = 100 }
+		set_temp_variable = { GEA_secret_safe_weight = 100 }
+		subtract_from_temp_variable = { GEA_secret_safe_weight = GEA_secret_discovery_weight }
+		meta_effect = {
+			text = {
+				random_list = {
+					[DISCOVERY_CHANCE] = { GEA_pirate_discovery_consequences = yes }
+					[SAFE_CHANCE] = { }
+				}
+			}
+			DISCOVERY_CHANCE = "[?GEA_secret_discovery_weight|0]"
+			SAFE_CHANCE = "[?GEA_secret_safe_weight|0]"
+		}
+	}
+}
+
+# 卢克纳尔海盗行动：实际被发现次数与柏林问责
+GEA_pirate_discovery_consequences = {
+	if = {
+		limit = { NOT = { has_country_flag = GEA_pirate_exposure_disabled } }
+		add_to_variable = { GEA_pirate_discoveries = 1 }
+		if = {
+			limit = { check_variable = { GEA_pirate_discoveries = 1 } }
+			add_stability = -0.1
+			hidden_effect = { country_event = { id = GEA.511 days = 3 } }
+		}
+		else_if = {
+			limit = { check_variable = { GEA_pirate_discoveries = 2 } }
+			hidden_effect = { country_event = { id = GEA.512 days = 3 } }
+		}
+		else = { #第三次及以后被发现
+			add_political_power = -50
+			add_stability = -0.05
+			decrease_ruling_party_popularity_by_5 = yes
 		}
 	}
 }
@@ -2070,7 +2143,7 @@ GEA_update_pirate_loot_values = {
 GEA_add_pirate_loot = {
 	custom_override_tooltip = {
 		tooltip = GEA_pirate_loot_gain_tt
-		add_to_variable = { GEA_pirate_loot_stacks = 1 }
+		add_to_variable = { GEA_pirate_loot_stacks = GEA_raid_reward_multiplier }
 		GEA_update_pirate_loot_values = yes
 	}
 }

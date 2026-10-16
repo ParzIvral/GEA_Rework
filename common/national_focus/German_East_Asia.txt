@@ -2406,7 +2406,8 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Reconstruction_of_the_breakwater_project"
-			unlock_decision_category_tooltip = GEA_heye_Breakwater_project_decisions
+			unlock_decision_tooltip = GEA_Start_construction_progress_1_in_indochina
+			unlock_decision_tooltip = GEA_Start_construction_progress_1_in_malaya
 		}
 	}
 	focus = { #本土来电
@@ -4561,12 +4562,12 @@ focus_tree = {
 		id = GEA_Dressed_in_a_navy_uniform
 		icon = GFX_GEA_Dressed_in_a_navy_uniform
 
-		cost = 1
+		cost = 5
 		x = -2
 		y = 1
 
 		available = {
-
+			has_country_flag = GEA_Governor_Luckner_flag
 		}
 		prerequisite = {
 			focus = GEA_Governor_Luckner
@@ -4578,20 +4579,57 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Dressed_in_a_navy_uniform"
+			custom_effect_tooltip = GEA_Dressed_in_a_navy_uniform_marines_tt
+			hidden_effect = {
+				if = {
+					limit = { NOT = { has_template = "GEA_marine_division" } }
+					division_template = {
+						name = "GEA_marine_division"
+						division_names_group = GEA_MAR_02
+						regiments = {
+							marine = { x = 0 y = 0 }
+							marine = { x = 0 y = 1 }
+							marine = { x = 0 y = 2 }
+							marine = { x = 1 y = 0 }
+							marine = { x = 1 y = 1 }
+							marine = { x = 1 y = 2 }
+						}
+						support = {
+							artillery = { x = 0 y = 0 }
+							engineer = { x = 0 y = 1 }
+							recon = { x = 0 y = 2 }
+							field_hospital = { x = 0 y = 3 }
+							logistics_company = { x = 0 y = 4 }
+						}
+					}
+				}
+				capital_scope = {
+					create_unit = {
+						division = "division_template = \"GEA_marine_division\" start_equipment_factor = 1 start_manpower_factor = 1"
+						owner = GEA
+					}
+					create_unit = {
+						division = "division_template = \"GEA_marine_division\" start_equipment_factor = 1 start_manpower_factor = 1"
+						owner = GEA
+					}
+				}
+			}
+			add_manpower = 1000
+			navy_experience = 20 
 			unlock_decision_tooltip = GEA_Select_elites_from_the_navy
-			
+			unlock_decision_tooltip = GEA_Governors_speaking_tour
 		}
 	}
 	focus = { #手扼亚细亚咽喉
 		id = GEA_Seizing_the_throat_of_Asia
 		icon = GFX_GEA_Seizing_the_throat_of_Asia
 
-		cost = 1
+		cost = 5
 		x = -1
 		y = 1
 
 		available = {
-
+			has_country_flag = GEA_Governor_Luckner_flag
 		}
 		prerequisite = {
 			focus = GEA_Dressed_in_a_navy_uniform
@@ -4603,7 +4641,8 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Seizing_the_throat_of_Asia"
-		
+			add_political_power = 50
+			add_ideas = GEA_The_benefits_of_rent_seeking
 		}
 	}
 
@@ -4611,12 +4650,12 @@ focus_tree = {
 		id = GEA_The_secret_operation_under_the_glow_of_black_white_and_red_lights
 		icon = GFX_GEA_The_secret_operation_under_the_glow_of_black_white_and_red_lights
 
-		cost = 1
+		cost = 5
 		x = 1
 		y = 1
 
 		available = {
-
+			has_country_flag = GEA_Governor_Luckner_flag
 		}
 		prerequisite = {
 			focus = GEA_Seizing_the_throat_of_Asia
@@ -4628,7 +4667,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_secret_operation_under_the_glow_of_black_white_and_red_lights"
-		
+			custom_effect_tooltip = GEA_The_secret_operation_under_the_glow_of_black_white_and_red_lights_tt
 		}
 	}
 
@@ -4636,12 +4675,12 @@ focus_tree = {
 		id = GEA_The_pursuit_of_glory_and_victory
 		icon = GFX_GEA_The_pursuit_of_glory_and_victory
 
-		cost = 1
+		cost = 5
 		x = 2
 		y = 1
 
 		available = {
-
+			has_country_flag = GEA_Governor_Luckner_flag
 		}
 		prerequisite = {
 			focus = GEA_Governor_Luckner
@@ -4661,12 +4700,12 @@ focus_tree = {
 		id = GEA_Unless_necessary_no_death
 		icon = GFX_GEA_Unless_necessary_no_death
 
-		cost = 1
+		cost = 5
 		x = 1
 		y = 1
 
 		available = {
-
+			has_country_flag = GEA_Governor_Luckner_flag
 		}
 		prerequisite = {
 			focus = GEA_The_pursuit_of_glory_and_victory
@@ -4678,19 +4717,24 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Unless_necessary_no_death"
-		
+			add_stability = 0.07
+			add_manpower = 4000
+			swap_ideas = {
+				remove_idea = GEA_An_undefeated_army_in_pursuit_of_honor
+				add_idea = GEA_An_undefeated_army_in_pursuit_of_honor_2
+			}
 		}
 	}
 	focus = { #伯爵的忠实水手
 		id = GEA_The_loyal_sailor_of_the_count
 		icon = GFX_GEA_The_loyal_sailor_of_the_count
 
-		cost = 1
+		cost = 5
 		x = -1
 		y = 1
 
 		available = {
-
+			has_country_flag = GEA_Governor_Luckner_flag
 		}
 		prerequisite = {
 			focus = GEA_Unless_necessary_no_death
@@ -4702,10 +4746,13 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_loyal_sailor_of_the_count"
+			unlock_decision_tooltip = GEA_Prepare_for_a_secret_operation
+			unlock_decision_tooltip = GEA_Train_seamen_quality
+			unlock_decision_tooltip = GEA_Inspire_loyal_seamen
 			navy_experience = 40
 			swap_ideas = {
-				remove_idea = GEA_An_undefeated_army_in_pursuit_of_honor
-				add_idea = GEA_An_undefeated_army_in_pursuit_of_honor_2
+				remove_idea = GEA_An_undefeated_army_in_pursuit_of_honor_2
+				add_idea = GEA_An_undefeated_army_in_pursuit_of_honor_3
 			}
 		}
 	}
@@ -4718,7 +4765,7 @@ focus_tree = {
 		y = 1
 
 		available = {
-
+			has_country_flag = GEA_Governor_Luckner_flag
 		}
 		prerequisite = {
 			focus = GEA_Governor_Luckner
@@ -4739,8 +4786,11 @@ focus_tree = {
 				}
 			}
 			hidden_effect = {
-				add_to_variable = { GEA_pirate_discovery_chance = -10 }
-				clamp_variable = { var = GEA_pirate_discovery_chance min = 0 max = 100 }
+				if = {
+					limit = { NOT = { has_country_flag = GEA_pirate_exposure_disabled } }
+					add_to_variable = { GEA_pirate_discovery_chance = -10 }
+					clamp_variable = { var = GEA_pirate_discovery_chance min = 0 max = 100 }
+				}
 				set_variable = { GEA_pirate_offsite_civ_chance = 10 }
 			}
 		}
@@ -4749,12 +4799,12 @@ focus_tree = {
 		id = GEA_Remembering_the_Glory_of_the_Doggerland_Battle
 		icon = GFX_GEA_Remembering_the_Glory_of_the_Doggerland_Battle
 
-		cost = 1
+		cost = 5
 		x = -1
 		y = 1
 
 		available = {
-
+			has_country_flag = GEA_Governor_Luckner_flag
 		}
 		prerequisite = {
 			focus = GEA_The_sea_demon_of_the_Pacific_Ocean
@@ -4824,12 +4874,12 @@ focus_tree = {
 		id = GEA_The_seagull_soars_into_the_sky
 		icon = GFX_GEA_The_seagull_soars_into_the_sky
 
-		cost = 1
+		cost = 5
 		x = 1
 		y = 1
 
 		available = {
-
+			has_country_flag = GEA_Governor_Luckner_flag
 		}
 		prerequisite = {
 			focus = GEA_The_sea_demon_of_the_Pacific_Ocean
@@ -4841,19 +4891,20 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_seagull_soars_into_the_sky"
-			
+			country_event = { id = GEA.509 days = 1 }
 		}
 	}
 	focus = { #驰骋大洋的帝国海盗
 		id = GEA_The_imperial_pirates_roaming_the_vast_ocean
 		icon = GFX_GEA_The_imperial_pirates_roaming_the_vast_ocean
 
-		cost = 1
+		cost = 5
 		x = -1
 		y = 1
 
 		available = {
-
+			has_country_flag = GEA_Governor_Luckner_flag
+			has_completed_focus = GEA_The_loyal_sailor_of_the_count
 		}
 		prerequisite = {
 			focus = GEA_Remembering_the_Glory_of_the_Doggerland_Battle
@@ -4868,19 +4919,22 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_imperial_pirates_roaming_the_vast_ocean"
-		
+			custom_effect_tooltip = GEA_The_imperial_pirates_roaming_the_vast_ocean_tt
+			unlock_decision_tooltip = GEA_Start_pirate_commerce_warfare
+			add_command_power = 50
+			add_ideas = GEA_Riding_across_the_vast_oceans
 		}
 	}
 	focus = { #大洋魔鬼征服七海！
 		id = GEA_The_ocean_demon_conquers_the_seven_seas
 		icon = GFX_GEA_The_ocean_demon_conquers_the_seven_seas
 
-		cost = 1
+		cost = 5
 		x = 0
 		y = 1
 
 		available = {
-
+			has_country_flag = GEA_Governor_Luckner_flag
 		}
 		prerequisite = {
 			focus = GEA_The_secret_operation_under_the_glow_of_black_white_and_red_lights
@@ -4898,7 +4952,21 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_ocean_demon_conquers_the_seven_seas"
-		
+			custom_effect_tooltip = GEA_The_ocean_demon_conquers_the_seven_seas_tt
+			swap_ideas = {
+				remove_idea = GEA_Riding_across_the_vast_oceans
+				add_idea = GEA_Riding_across_the_vast_oceans_2
+			}
+			hidden_effect = {
+				set_variable = { GEA_pirate_cooldown_60 = 30 }
+				set_variable = { GEA_pirate_cooldown_90 = 45 }
+				set_variable = { GEA_pirate_cooldown_120 = 60 }
+				if = {
+					limit = { NOT = { has_country_flag = GEA_pirate_exposure_disabled } }
+					add_to_variable = { GEA_pirate_discovery_chance = -10 }
+					clamp_variable = { var = GEA_pirate_discovery_chance min = 0 max = 100 }
+				}
+			}
 		}
 	}
 	focus = { #唯有血腥费迪南德 
@@ -4934,7 +5002,7 @@ focus_tree = {
 		y = 1
 
 		available = {
-
+			has_country_flag = GEA_Governor_Schorner_flag
 		}
 		prerequisite = {
 			focus = GEA_Governor_Schorner
@@ -4957,7 +5025,7 @@ focus_tree = {
 		y = 1
 
 		available = {
-
+			has_country_flag = GEA_Governor_Schorner_flag
 		}
 		prerequisite = {
 			focus = GEA_Governor_Schorner
@@ -4981,7 +5049,7 @@ focus_tree = {
 		y = 1
 
 		available = {
-
+			has_country_flag = GEA_Governor_Schorner_flag
 		}
 		prerequisite = {
 			focus = GEA_Only_liquidation_is_the_most_important
@@ -5001,12 +5069,12 @@ focus_tree = {
 		id = GEA_Loyalty_is_the_foundation_of_all_things
 		icon = GFX_GEA_Loyalty_is_the_foundation_of_all_things
 
-		cost = 1
+		cost = 5
 		x = -2
 		y = 1
 
 		available = {
-
+			has_country_flag = GEA_Governor_Schorner_flag
 		}
 		prerequisite = {
 			focus = GEA_Governor_Schorner
@@ -5030,7 +5098,7 @@ focus_tree = {
 		y = 1
 
 		available = {
-
+			has_country_flag = GEA_Governor_Schorner_flag
 		}
 		prerequisite = {
 			focus = GEA_Only_liquidation_is_the_most_important
@@ -5055,7 +5123,7 @@ focus_tree = {
 		y = 2
 
 		available = {
-
+			has_country_flag = GEA_Governor_Schorner_flag
 		}
 		prerequisite = {
 			focus = GEA_Release_the_tame_wild_beasts
@@ -5079,7 +5147,7 @@ focus_tree = {
 		y = 2
 
 		available = {
-
+			has_country_flag = GEA_Governor_Schorner_flag
 		}
 		prerequisite = {
 			focus = GEA_To_be_enslaved_for_the_sake_of_rule
@@ -5103,7 +5171,7 @@ focus_tree = {
 		y = 1
 
 		available = {
-			
+			has_country_flag = GEA_Governor_Schorner_flag
 		}
 
 		prerequisite = {
@@ -5137,7 +5205,7 @@ focus_tree = {
 		y = 3
 
 		available = {
-
+			has_country_flag = GEA_Governor_Schorner_flag
 		}
 		prerequisite = {
 			focus = GEA_Loyalty_is_the_foundation_of_all_things
@@ -5161,7 +5229,7 @@ focus_tree = {
 		y = 3
 
 		available = {
-
+			has_country_flag = GEA_Governor_Schorner_flag
 		}
 		prerequisite = {
 			focus = GEA_Strength_is_the_foundation_of_an_empire
@@ -5180,12 +5248,12 @@ focus_tree = {
 		id = GEA_Overcome_difficulties_and_obstacles
 		icon = GFX_GEA_Overcome_difficulties_and_obstacles
 
-		cost = 1
+		cost = 5
 		x = -1
 		y = 1
 
 		available = {
-
+			has_country_flag = GEA_Governor_Schorner_flag
 		}
 
 		prerequisite = {
@@ -5209,12 +5277,12 @@ focus_tree = {
 		id = GEA_On-the-spot_trial
 		icon = GFX_GEA_On-the-spot_trial
 
-		cost = 1
+		cost = 5
 		x = -1
 		y = 1
 
 		available = {
-
+			has_country_flag = GEA_Governor_Schorner_flag
 		}
 
 		prerequisite = {
@@ -5238,12 +5306,12 @@ focus_tree = {
 		id = GEA_Schorner_Law
 		icon = GFX_GEA_Schorner_Law
 
-		cost = 1
+		cost = 5
 		x = 0
 		y = 2
 
 		available = {
-
+			has_country_flag = GEA_Governor_Schorner_flag
 		}
 
 		prerequisite = {
@@ -5263,12 +5331,12 @@ focus_tree = {
 		id = GEA_Bloody_Ferdinand_Supreme_Power
 		icon = GFX_GEA_Bloody_Ferdinand_Supreme_Power
 
-		cost = 1
+		cost = 5
 		x = 0
 		y = 1
 
 		available = {
-
+			has_country_flag = GEA_Governor_Schorner_flag
 		}
 		prerequisite = {
 			focus = GEA_On-the-spot_trial
@@ -5293,12 +5361,12 @@ focus_tree = {
 		id = GEA_Let_loose_the_blood-stained_black_eagle
 		icon = GFX_GEA_Let_loose_the_blood-stained_black_eagle
 
-		cost = 1
+		cost = 5
 		x = 0
 		y = 1
 
 		available = {
-
+			has_country_flag = GEA_Governor_Schorner_flag
 		}
 		prerequisite = {
 			focus = GEA_Bloody_Ferdinand_Supreme_Power

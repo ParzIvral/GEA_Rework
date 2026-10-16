@@ -4577,6 +4577,7 @@ GEA_decisions = {#德属东亚殖民地决议
 			} 
 		}
 		visible = {
+			has_country_flag = Tai_OPEN
 			GEA = {
 				owns_state = 823
 				owns_state = 825
@@ -4773,6 +4774,10 @@ GEA_decisions = {#德属东亚殖民地决议
 		icon = cavalry
 		allowed = { original_tag = GEA }
 
+		visible = {
+			has_country_flag = Tai_OPEN
+		}
+
 		days_remove = 180
 		days_re_enable = 180
 
@@ -4828,6 +4833,10 @@ GEA_decisions = {#德属东亚殖民地决议
 		icon = GFX_decision_generic_political_discourse
 		allowed = { original_tag = GEA }
 
+		visible = {
+			has_country_flag = Tai_OPEN
+		}
+
 		cost = 50
 		days_remove = 120
 		days_re_enable = 180
@@ -4851,6 +4860,10 @@ GEA_decisions = {#德属东亚殖民地决议
 	GEA_Killing_socialist = { #扫荡社会主义者
 		icon = GFX_decision_generic_reorganize_irregulars
 		allowed = { original_tag = GEA }
+
+		visible = {
+			has_country_flag = Tai_OPEN
+		}
 
 		days_remove = 90
 		days_re_enable = 180
@@ -4892,6 +4905,10 @@ GEA_decisions = {#德属东亚殖民地决议
 		icon = GFX_decision_generic_belgian_colonial_helmet
 		allowed = { original_tag = GEA }
 
+		visible = {
+			has_country_flag = Tai_OPEN
+		}
+
 		days_remove = 120
 		fire_only_once = yes
 
@@ -4926,6 +4943,10 @@ GEA_decisions = {#德属东亚殖民地决议
 	GEA_Expropriation_of_national_enterprises = { #征收企业
 		icon = factories
 		allowed = { original_tag = GEA }
+
+		visible = {
+			has_country_flag = Tai_OPEN
+		}
 
 		cost = 100
 		days_remove = 180
@@ -5464,6 +5485,10 @@ GEA_decisions = {#德属东亚殖民地决议
 		icon = GFX_decision_generic_merge_plant_materiel
 		allowed = { original_tag = GEA }
 
+		visible = {
+			has_country_flag = Phi_OPEN
+		}
+
 		cost = 100
 		days_remove = 180
 		fire_only_once = yes
@@ -5528,6 +5553,10 @@ GEA_decisions = {#德属东亚殖民地决议
 	GEA_Fortify_north = {#强化北方防御
 		icon = bunker
 		allowed = { original_tag = GEA }
+
+		visible = {
+			has_country_flag = Phi_OPEN
+		}
 
 		cost = 30
 		days_remove = 120
@@ -5598,6 +5627,10 @@ GEA_decisions = {#德属东亚殖民地决议
 	GEA_Fortify_south = {#建设棉兰老
 		icon = bunker
 		allowed = { original_tag = GEA }
+
+		visible = {
+			has_country_flag = Phi_OPEN
+		}
 
 		cost = 50
 		days_remove = 180
@@ -5890,1215 +5923,6 @@ GEA_decisions = {#德属东亚殖民地决议
 					instant_build = yes 
 				}
 			}
-		}
-	}
-}
-
-GEA_heye_Breakwater_project_decisions = {
-	GEA_Start_construction_progress_1_in_indochina = {
-		icon = fortress
-		cost = 10
-		allowed = { original_tag = GEA }
-
-		available = {
-			num_of_civilian_factories_available_for_projects > 4
-			NOT = { has_country_flag = GEA_breakwater_project_under_construction }
-		}
-
-		visible = {
-			NOT = {
-				has_country_flag = GEA_bunker_construction_progress_1_done_in_indochina
-			}
-		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision GEA_Start_construction_progress_1_in_indochina"
-			set_country_flag = GEA_breakwater_project_under_construction
-			add_ideas = GEA_construction_fiscal_expenditure
-			GEA = {
-				activate_mission = GEA_Start_construction_project_of_the_indochina
-			}
-		}
-	}
-	GEA_Start_construction_progress_2_in_indochina = {
-		icon = fortress
-		cost = 10
-		allowed = { original_tag = GEA }
-
-		available = {
-			num_of_civilian_factories_available_for_projects > 4
-			NOT = { has_country_flag = GEA_breakwater_project_under_construction }
-		}
-
-		visible = {
-			NOT = {
-				has_country_flag = GEA_bunker_construction_progress_2_done_in_indochina
-			}
-			has_country_flag = GEA_bunker_construction_progress_1_done_in_indochina
-		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision GEA_Start_construction_progress_2_in_indochina"
-			set_country_flag = GEA_breakwater_project_under_construction
-			add_ideas = GEA_construction_fiscal_expenditure
-			GEA = {
-				activate_mission = GEA_Start_construction_project_of_the_indochina_2
-			}
-		}
-	}
-	GEA_Start_construction_progress_3_in_indochina = {
-		icon = fortress
-		cost = 10
-		allowed = { original_tag = GEA }
-
-		available = {
-			num_of_civilian_factories_available_for_projects > 4
-			NOT = { has_country_flag = GEA_breakwater_project_under_construction }
-		}
-
-		visible = {
-			NOT = {
-				has_country_flag = GEA_bunker_construction_progress_3_done_in_indochina
-			}
-			has_country_flag = GEA_bunker_construction_progress_2_done_in_indochina
-		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision GEA_Start_construction_progress_3_in_indochina"
-			set_country_flag = GEA_breakwater_project_under_construction
-			add_ideas = GEA_construction_fiscal_expenditure
-			GEA = {
-				activate_mission = GEA_Start_construction_project_of_the_indochina_3
-			}
-		}
-	}
-    GEA_Start_construction_progress_1_in_malaya = {
-		icon = fortress
-		cost = 10
-		allowed = { original_tag = GEA }
-
-		available = {
-			num_of_civilian_factories_available_for_projects > 4
-			NOT = { has_country_flag = GEA_breakwater_project_under_construction }
-		}
-
-		visible = {
-			NOT = {
-				has_country_flag = GEA_bunker_construction_progress_1_done_in_malaya
-			}
-		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision GEA_Start_construction_progress_1_in_malaya"
-			set_country_flag = GEA_breakwater_project_under_construction
-			add_ideas = GEA_construction_fiscal_expenditure
-			GEA = {
-				activate_mission = GEA_Start_construction_project_of_the_malaya
-			}
-		}
-	}
-	GEA_Start_construction_progress_2_in_malaya = {
-		icon = fortress
-		cost = 10
-		allowed = { original_tag = GEA }
-
-		available = {
-			num_of_civilian_factories_available_for_projects > 4
-			NOT = { has_country_flag = GEA_breakwater_project_under_construction }
-		}
-
-		visible = {
-			NOT = {
-				has_country_flag = GEA_bunker_construction_progress_2_done_in_malaya
-			}
-			has_country_flag = GEA_bunker_construction_progress_1_done_in_malaya
-		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision GEA_Start_construction_progress_2_in_malaya"
-			set_country_flag = GEA_breakwater_project_under_construction
-			add_ideas = GEA_construction_fiscal_expenditure
-			GEA = {
-				activate_mission = GEA_Start_construction_project_of_the_malaya_2
-			}
-		}
-	}
-	GEA_Start_construction_progress_3_in_malaya = {
-		icon = fortress
-		cost = 10
-		allowed = { original_tag = GEA }
-
-		available = {
-			num_of_civilian_factories_available_for_projects > 4
-			NOT = { has_country_flag = GEA_breakwater_project_under_construction }
-		}
-
-		visible = {
-			NOT = {
-				has_country_flag = GEA_bunker_construction_progress_3_done_in_malaya
-			}
-			has_country_flag = GEA_bunker_construction_progress_2_done_in_malaya
-		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision GEA_Start_construction_progress_3_in_malaya"
-			set_country_flag = GEA_breakwater_project_under_construction
-			add_ideas = GEA_construction_fiscal_expenditure
-			GEA = {
-				activate_mission = GEA_Start_construction_project_of_the_malaya_3
-			}
-		}
-	}
-	GEA_Start_construction_progress_1_in_north_borneo = {
-		icon = fortress
-		cost = 10
-		allowed = { original_tag = GEA }
-
-		available = {
-			num_of_civilian_factories_available_for_projects > 4
-			NOT = { has_country_flag = GEA_breakwater_project_under_construction }
-		}
-
-		visible = {
-			NOT = {
-				has_country_flag = GEA_bunker_construction_progress_1_done_in_north_borneo
-			}
-		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision GEA_Start_construction_progress_1_in_north_borneo"
-			set_country_flag = GEA_breakwater_project_under_construction
-			add_ideas = GEA_construction_fiscal_expenditure
-			GEA = {
-				activate_mission = GEA_Start_construction_project_of_the_north_borneo
-			}
-		}
-	}
-	GEA_Start_construction_progress_2_in_north_borneo = {
-		icon = fortress
-		cost = 10
-		allowed = { original_tag = GEA }
-
-		available = {
-			num_of_civilian_factories_available_for_projects > 4
-			NOT = { has_country_flag = GEA_breakwater_project_under_construction }
-		}
-
-		visible = {
-			NOT = {
-				has_country_flag = GEA_bunker_construction_progress_2_done_in_north_borneo
-			}
-			has_country_flag = GEA_bunker_construction_progress_1_done_in_north_borneo
-		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision GEA_Start_construction_progress_2_in_north_borneo"
-			set_country_flag = GEA_breakwater_project_under_construction
-			add_ideas = GEA_construction_fiscal_expenditure
-			GEA = {
-				activate_mission = GEA_Start_construction_project_of_the_north_borneo_2
-			}
-		}
-	}
-	GEA_Start_construction_progress_3_in_north_borneo = {
-		icon = fortress
-		cost = 10
-		allowed = { original_tag = GEA }
-
-		available = {
-			num_of_civilian_factories_available_for_projects > 4
-			NOT = { has_country_flag = GEA_breakwater_project_under_construction }
-		}
-
-		visible = {
-			NOT = {
-				has_country_flag = GEA_bunker_construction_progress_3_done_in_north_borneo
-			}
-			has_country_flag = GEA_bunker_construction_progress_2_done_in_north_borneo
-		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision GEA_Start_construction_progress_3_in_north_borneo"
-			set_country_flag = GEA_breakwater_project_under_construction
-			add_ideas = GEA_construction_fiscal_expenditure
-			GEA = {
-				activate_mission = GEA_Start_construction_project_of_the_north_borneo_3
-			}
-		}
-	}	
-	GEA_Start_construction_project_of_the_indochina = {   
-		icon = fortress  
-		activation = { 
-			#has_country_flag = GEA_Start_construction_1_in_indochina
-		}     
-		allowed = { always = no } 
-		selectable_mission = no
-		fire_only_once = yes                     
-		
-		priority = 100
-		is_good = yes      
-		
-		cancel_trigger = {
-			GEA = {
-				NOT = {
-					AND = {
-						owns_state = 857 #东北
-						owns_state = 671 #东京
-						owns_state = 856 #湄公河三角洲
-						owns_state = 286 #交趾支那
-						owns_state = 827 #安南
-					}
-				}
-			}
-		}
-
-		cancel_effect = {
-			remove_ideas = GEA_construction_fiscal_expenditure
-			clr_country_flag = GEA_breakwater_project_under_construction
-		}
-
-		available = {
-			num_of_civilian_factories_available_for_projects > 4
-		}
-
-
-		days_mission_timeout = 180
-
-
-		timeout_effect = {
-			remove_ideas = GEA_construction_fiscal_expenditure
-			clr_country_flag = GEA_breakwater_project_under_construction        
-			custom_effect_tooltip = GEA_coast_line_bunker_building_construction_1
-			set_country_flag = GEA_bunker_construction_progress_1_done_in_indochina
-			hidden_effect = {
-				856 = {
-					add_building_construction = {
-						type = coastal_bunker
-						province = 4223
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 4284
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 4341
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 7331
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 7303
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 1423
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 1396
-						level = 2
-						instant_build = yes 
-					}
-				}
-				286 = {
-					add_building_construction = {
-						type = coastal_bunker
-						province = 4401
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 12232
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 10232
-						level = 2
-						instant_build = yes 
-					}
-					
-				}
-				827 = {
-					add_building_construction = {
-						type = coastal_bunker
-						province = 12204
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 1285
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 10162
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 4405
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 4334
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 1300
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 4255
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 10137
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 10309
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 4379
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 1302
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 7280
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 12297
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 4397
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 10016
-						level = 2
-						instant_build = yes 
-					}
-				}
-				671 = {
-					add_building_construction = {
-						type = coastal_bunker
-						province = 11936
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 1185
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 4119
-						level = 2
-						instant_build = yes 
-					}
-				}
-				857 = {
-					add_building_construction = {
-						type = coastal_bunker
-						province = 1157
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 7093
-						level = 2
-						instant_build = yes 
-					}
-				}
-			}
-		}
-	}
-	GEA_Start_construction_project_of_the_indochina_2 = {   
-		icon = fortress  
-		activation = { 
-			
-		}     
-		allowed = { always = no } 
-		selectable_mission = no
-		fire_only_once = yes                     
-		
-		priority = 100
-		is_good = yes      
-		
-		cancel_trigger = {
-			GEA = {
-				NOT = {
-					AND = {
-						owns_state = 857 #东北
-						owns_state = 671 #东京
-						owns_state = 856 #湄公河三角洲
-						owns_state = 286 #交趾支那
-						owns_state = 827 #安南
-					}
-				}
-			}
-		}
-
-		cancel_effect = {
-			remove_ideas = GEA_construction_fiscal_expenditure
-			clr_country_flag = GEA_breakwater_project_under_construction
-		}
-
-		available = {
-			num_of_civilian_factories_available_for_projects > 4
-		}
-
-
-		days_mission_timeout = 180
-
-
-		timeout_effect = {
-			remove_ideas = GEA_construction_fiscal_expenditure
-			clr_country_flag = GEA_breakwater_project_under_construction        
-			custom_effect_tooltip = GEA_coast_line_bunker_building_construction_1
-			set_country_flag = GEA_bunker_construction_progress_2_done_in_indochina
-			hidden_effect = {
-				856 = {
-					add_building_construction = {
-						type = coastal_bunker
-						province = 4223
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 4284
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 4341
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 7331
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 7303
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 1423
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 1396
-						level = 2
-						instant_build = yes 
-					}
-				}
-				286 = {
-					add_building_construction = {
-						type = coastal_bunker
-						province = 4401
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 12232
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 10232
-						level = 2
-						instant_build = yes 
-					}
-					
-				}
-				827 = {
-					add_building_construction = {
-						type = coastal_bunker
-						province = 12204
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 1285
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 10162
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 4405
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 4334
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 1300
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 4255
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 10137
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 10309
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 4379
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 1302
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 7280
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 12297
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 4397
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 10016
-						level = 2
-						instant_build = yes 
-					}
-				}
-				671 = {
-					add_building_construction = {
-						type = coastal_bunker
-						province = 11936
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 1185
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 4119
-						level = 2
-						instant_build = yes 
-					}
-				}
-				857 = {
-					add_building_construction = {
-						type = coastal_bunker
-						province = 1157
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 7093
-						level = 2
-						instant_build = yes 
-					}
-				}
-			}
-		}
-	}
-	GEA_Start_construction_project_of_the_indochina_3 = {   
-		icon = fortress  
-		activation = { 
-			
-		}     
-		allowed = { always = no } 
-		selectable_mission = no
-		fire_only_once = yes                     
-		
-		priority = 100
-		is_good = yes      
-		
-		cancel_trigger = {
-			GEA = {
-				NOT = {
-					AND = {
-						owns_state = 857 #东北
-						owns_state = 671 #东京
-						owns_state = 856 #湄公河三角洲
-						owns_state = 286 #交趾支那
-						owns_state = 827 #安南
-					}
-				}
-			}
-		}
-
-		cancel_effect = {
-			remove_ideas = GEA_construction_fiscal_expenditure
-			clr_country_flag = GEA_breakwater_project_under_construction
-		}
-
-		available = {
-			num_of_civilian_factories_available_for_projects > 4
-		}
-
-
-		days_mission_timeout = 180
-
-
-		timeout_effect = {
-			remove_ideas = GEA_construction_fiscal_expenditure
-			clr_country_flag = GEA_breakwater_project_under_construction        
-			custom_effect_tooltip = GEA_coast_line_bunker_building_construction_1
-			set_country_flag = GEA_bunker_construction_progress_3_done_in_indochina
-			hidden_effect = {
-				856 = {
-					add_building_construction = {
-						type = coastal_bunker
-						province = 4223
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 4284
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 4341
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 7331
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 7303
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 1423
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 1396
-						level = 2
-						instant_build = yes 
-					}
-				}
-				286 = {
-					add_building_construction = {
-						type = coastal_bunker
-						province = 4401
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 12232
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 10232
-						level = 2
-						instant_build = yes 
-					}
-					
-				}
-				827 = {
-					add_building_construction = {
-						type = coastal_bunker
-						province = 12204
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 1285
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 10162
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 4405
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 4334
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 1300
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 4255
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 10137
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 10309
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 4379
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 1302
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 7280
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 12297
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 4397
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 10016
-						level = 2
-						instant_build = yes 
-					}
-				}
-				671 = {
-					add_building_construction = {
-						type = coastal_bunker
-						province = 11936
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 1185
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 4119
-						level = 2
-						instant_build = yes 
-					}
-				}
-				857 = {
-					add_building_construction = {
-						type = coastal_bunker
-						province = 1157
-						level = 2
-						instant_build = yes 
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						province = 7093
-						level = 2
-						instant_build = yes 
-					}
-				}
-			}
-		}
-	}
-	GEA_Start_construction_project_of_the_malaya = {
-		icon = fortress
-		activation = {
-			#has_country_flag = GEA_Start_construction_1_in_malaya
-		}
-		allowed = { always = no }
-		selectable_mission = no
-		fire_only_once = yes
-
-		priority = 100
-		is_good = yes
-
-		cancel_trigger = {
-			GEA = {
-				NOT = {
-					AND = {
-						owns_state = 846 #马来亚
-						owns_state = 336 #新加坡
-					}
-				}
-			}
-		}
-
-		cancel_effect = {
-			remove_ideas = GEA_construction_fiscal_expenditure
-			clr_country_flag = GEA_breakwater_project_under_construction
-		}
-
-		available = {
-			num_of_civilian_factories_available_for_projects > 4
-		}
-
-
-		days_mission_timeout = 180
-
-		timeout_effect = {
-			remove_ideas = GEA_construction_fiscal_expenditure
-			clr_country_flag = GEA_breakwater_project_under_construction
-			custom_effect_tooltip = GEA_coast_line_bunker_building_construction_malaya
-			set_country_flag = GEA_bunker_construction_progress_1_done_in_malaya
-			GEA_add_malaya_coastal_bunkers_effect = yes
-		}
-	}
-	GEA_Start_construction_project_of_the_malaya_2 = {
-		icon = fortress
-		activation = {
-			#has_country_flag = GEA_Start_construction_2_in_malaya
-		}
-		allowed = { always = no }
-		selectable_mission = no
-		fire_only_once = yes
-
-		priority = 100
-		is_good = yes
-
-		cancel_trigger = {
-			GEA = {
-				NOT = {
-					AND = {
-						owns_state = 846 #马来亚
-						owns_state = 336 #新加坡
-					}
-				}
-			}
-		}
-
-		cancel_effect = {
-			remove_ideas = GEA_construction_fiscal_expenditure
-			clr_country_flag = GEA_breakwater_project_under_construction
-		}
-
-		available = {
-			num_of_civilian_factories_available_for_projects > 4
-		}
-
-
-		days_mission_timeout = 180
-
-		timeout_effect = {
-			remove_ideas = GEA_construction_fiscal_expenditure
-			clr_country_flag = GEA_breakwater_project_under_construction
-			custom_effect_tooltip = GEA_coast_line_bunker_building_construction_malaya
-			set_country_flag = GEA_bunker_construction_progress_2_done_in_malaya
-			GEA_add_malaya_coastal_bunkers_effect = yes
-		}
-	}
-	GEA_Start_construction_project_of_the_malaya_3 = {
-		icon = fortress
-		activation = {
-			#has_country_flag = GEA_Start_construction_3_in_malaya
-		}
-		allowed = { always = no }
-		selectable_mission = no
-		fire_only_once = yes
-
-		priority = 100
-		is_good = yes
-
-		cancel_trigger = {
-			GEA = {
-				NOT = {
-					AND = {
-						owns_state = 846 #马来亚
-						owns_state = 336 #新加坡
-					}
-				}
-			}
-		}
-
-		cancel_effect = {
-			remove_ideas = GEA_construction_fiscal_expenditure
-			clr_country_flag = GEA_breakwater_project_under_construction
-		}
-
-		available = {
-			num_of_civilian_factories_available_for_projects > 4
-		}
-
-
-		days_mission_timeout = 180
-
-		timeout_effect = {
-			remove_ideas = GEA_construction_fiscal_expenditure
-			clr_country_flag = GEA_breakwater_project_under_construction
-			custom_effect_tooltip = GEA_coast_line_bunker_building_construction_malaya
-			set_country_flag = GEA_bunker_construction_progress_3_done_in_malaya
-			GEA_add_malaya_coastal_bunkers_effect = yes
-		}
-	}
-	GEA_Start_construction_project_of_the_north_borneo = {
-		icon = fortress
-		activation = {
-			#has_country_flag = GEA_Start_construction_1_in_north_borneo
-		}
-		allowed = { always = no }
-		selectable_mission = no
-		fire_only_once = yes
-
-		priority = 100
-		is_good = yes
-
-		cancel_trigger = {
-			GEA = {
-				NOT = {
-					AND = {
-						owns_state = 333 #北婆罗洲
-						owns_state = 828 #沙巴
-					}
-				}
-			}
-		}
-
-		cancel_effect = {
-			remove_ideas = GEA_construction_fiscal_expenditure
-			clr_country_flag = GEA_breakwater_project_under_construction
-		}
-
-		available = {
-			num_of_civilian_factories_available_for_projects > 4
-		}
-
-
-		days_mission_timeout = 180
-
-		timeout_effect = {
-			remove_ideas = GEA_construction_fiscal_expenditure
-			clr_country_flag = GEA_breakwater_project_under_construction
-			custom_effect_tooltip = GEA_coast_line_bunker_building_construction_north_borneo
-			set_country_flag = GEA_bunker_construction_progress_1_done_in_north_borneo
-			GEA_add_north_borneo_coastal_bunkers_effect = yes
-		}
-	}
-	GEA_Start_construction_project_of_the_north_borneo_2 = {
-		icon = fortress
-		activation = {
-			#has_country_flag = GEA_Start_construction_2_in_north_borneo
-		}
-		allowed = { always = no }
-		selectable_mission = no
-		fire_only_once = yes
-
-		priority = 100
-		is_good = yes
-
-		cancel_trigger = {
-			GEA = {
-				NOT = {
-					AND = {
-						owns_state = 333 #北婆罗洲
-						owns_state = 828 #沙巴
-					}
-				}
-			}
-		}
-
-		cancel_effect = {
-			remove_ideas = GEA_construction_fiscal_expenditure
-			clr_country_flag = GEA_breakwater_project_under_construction
-		}
-
-		available = {
-			num_of_civilian_factories_available_for_projects > 4
-		}
-
-
-		days_mission_timeout = 180
-
-		timeout_effect = {
-			remove_ideas = GEA_construction_fiscal_expenditure
-			clr_country_flag = GEA_breakwater_project_under_construction
-			custom_effect_tooltip = GEA_coast_line_bunker_building_construction_north_borneo
-			set_country_flag = GEA_bunker_construction_progress_2_done_in_north_borneo
-			GEA_add_north_borneo_coastal_bunkers_effect = yes
-		}
-	}
-	GEA_Start_construction_project_of_the_north_borneo_3 = {
-		icon = fortress
-		activation = {
-			#has_country_flag = GEA_Start_construction_3_in_north_borneo
-		}
-		allowed = { always = no }
-		selectable_mission = no
-		fire_only_once = yes
-
-		priority = 100
-		is_good = yes
-
-		cancel_trigger = {
-			GEA = {
-				NOT = {
-					AND = {
-						owns_state = 333 #北婆罗洲
-						owns_state = 828 #沙巴
-					}
-				}
-			}
-		}
-
-		cancel_effect = {
-			remove_ideas = GEA_construction_fiscal_expenditure
-			clr_country_flag = GEA_breakwater_project_under_construction
-		}
-
-		available = {
-			num_of_civilian_factories_available_for_projects > 4
-		}
-
-
-		days_mission_timeout = 180
-
-		timeout_effect = {
-			remove_ideas = GEA_construction_fiscal_expenditure
-			clr_country_flag = GEA_breakwater_project_under_construction
-			custom_effect_tooltip = GEA_coast_line_bunker_building_construction_north_borneo
-			set_country_flag = GEA_bunker_construction_progress_3_done_in_north_borneo
-			GEA_add_north_borneo_coastal_bunkers_effect = yes
 		}
 	}
 }
@@ -9667,7 +8491,7 @@ GEA_heye_decisions = {#海耶相关决议
 	}
 }
 
-GEA_focus_china_decisions = {#支援八省
+GEA_focus_china_decisions = {#第二次对华远征
 	GEA_give_guns_to_lep = {
 		visible = {
 			has_completed_focus = GEA_second_expedition_to_China
@@ -12021,6 +10845,1012 @@ GEA_Naval_decisions = { #送船
 }
 
 political_actions = {
+	GEA_Start_construction_progress_1_in_indochina = {
+		icon = fortress
+		cost = 10
+		allowed = { original_tag = GEA }
+
+		available = {
+			num_of_civilian_factories_available_for_projects > 4
+			NOT = { has_country_flag = GEA_breakwater_project_under_construction }
+		}
+
+		visible = {
+			has_completed_focus = GEA_Reconstruction_of_the_breakwater_project
+			NOT = {
+				has_country_flag = GEA_bunker_construction_progress_1_done_in_indochina
+			}
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_Start_construction_progress_1_in_indochina"
+			set_country_flag = GEA_breakwater_project_under_construction
+			add_ideas = GEA_construction_fiscal_expenditure
+			GEA = {
+				activate_mission = GEA_Start_construction_project_of_the_indochina
+			}
+		}
+	}
+	GEA_Start_construction_progress_2_in_indochina = {
+		icon = fortress
+		cost = 10
+		allowed = { original_tag = GEA }
+
+		available = {
+			num_of_civilian_factories_available_for_projects > 4
+			NOT = { has_country_flag = GEA_breakwater_project_under_construction }
+		}
+
+		visible = {
+			has_completed_focus = GEA_Reconstruction_of_the_breakwater_project
+			NOT = {
+				has_country_flag = GEA_bunker_construction_progress_2_done_in_indochina
+			}
+			has_country_flag = GEA_bunker_construction_progress_1_done_in_indochina
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_Start_construction_progress_2_in_indochina"
+			set_country_flag = GEA_breakwater_project_under_construction
+			add_ideas = GEA_construction_fiscal_expenditure
+			GEA = {
+				activate_mission = GEA_Start_construction_project_of_the_indochina_2
+			}
+		}
+	}
+	GEA_Start_construction_progress_3_in_indochina = {
+		icon = fortress
+		cost = 10
+		allowed = { original_tag = GEA }
+
+		available = {
+			num_of_civilian_factories_available_for_projects > 4
+			NOT = { has_country_flag = GEA_breakwater_project_under_construction }
+		}
+
+		visible = {
+			has_completed_focus = GEA_Reconstruction_of_the_breakwater_project
+			NOT = {
+				has_country_flag = GEA_bunker_construction_progress_3_done_in_indochina
+			}
+			has_country_flag = GEA_bunker_construction_progress_2_done_in_indochina
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_Start_construction_progress_3_in_indochina"
+			set_country_flag = GEA_breakwater_project_under_construction
+			add_ideas = GEA_construction_fiscal_expenditure
+			GEA = {
+				activate_mission = GEA_Start_construction_project_of_the_indochina_3
+			}
+		}
+	}
+    GEA_Start_construction_progress_1_in_malaya = {
+		icon = fortress
+		cost = 10
+		allowed = { original_tag = GEA }
+
+		available = {
+			num_of_civilian_factories_available_for_projects > 4
+			NOT = { has_country_flag = GEA_breakwater_project_under_construction }
+		}
+
+		visible = {
+			has_completed_focus = GEA_Reconstruction_of_the_breakwater_project
+			NOT = {
+				has_country_flag = GEA_bunker_construction_progress_1_done_in_malaya
+			}
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_Start_construction_progress_1_in_malaya"
+			set_country_flag = GEA_breakwater_project_under_construction
+			add_ideas = GEA_construction_fiscal_expenditure
+			GEA = {
+				activate_mission = GEA_Start_construction_project_of_the_malaya
+			}
+		}
+	}
+	GEA_Start_construction_progress_2_in_malaya = {
+		icon = fortress
+		cost = 10
+		allowed = { original_tag = GEA }
+
+		available = {
+			num_of_civilian_factories_available_for_projects > 4
+			NOT = { has_country_flag = GEA_breakwater_project_under_construction }
+		}
+
+		visible = {
+			has_completed_focus = GEA_Reconstruction_of_the_breakwater_project
+			NOT = {
+				has_country_flag = GEA_bunker_construction_progress_2_done_in_malaya
+			}
+			has_country_flag = GEA_bunker_construction_progress_1_done_in_malaya
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_Start_construction_progress_2_in_malaya"
+			set_country_flag = GEA_breakwater_project_under_construction
+			add_ideas = GEA_construction_fiscal_expenditure
+			GEA = {
+				activate_mission = GEA_Start_construction_project_of_the_malaya_2
+			}
+		}
+	}
+	GEA_Start_construction_progress_3_in_malaya = {
+		icon = fortress
+		cost = 10
+		allowed = { original_tag = GEA }
+
+		available = {
+			num_of_civilian_factories_available_for_projects > 4
+			NOT = { has_country_flag = GEA_breakwater_project_under_construction }
+		}
+
+		visible = {
+			has_completed_focus = GEA_Reconstruction_of_the_breakwater_project
+			NOT = {
+				has_country_flag = GEA_bunker_construction_progress_3_done_in_malaya
+			}
+			has_country_flag = GEA_bunker_construction_progress_2_done_in_malaya
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_Start_construction_progress_3_in_malaya"
+			set_country_flag = GEA_breakwater_project_under_construction
+			add_ideas = GEA_construction_fiscal_expenditure
+			GEA = {
+				activate_mission = GEA_Start_construction_project_of_the_malaya_3
+			}
+		}
+	}
+	GEA_Start_construction_project_of_the_indochina = {   
+		icon = fortress  
+		activation = { 
+			#has_country_flag = GEA_Start_construction_1_in_indochina
+		}     
+		allowed = { always = no } 
+		selectable_mission = no
+		fire_only_once = yes                     
+		
+		priority = 100
+		is_good = yes      
+		
+		cancel_trigger = {
+			GEA = {
+				NOT = {
+					AND = {
+						owns_state = 857 #东北
+						owns_state = 671 #东京
+						owns_state = 856 #湄公河三角洲
+						owns_state = 286 #交趾支那
+						owns_state = 827 #安南
+					}
+				}
+			}
+		}
+
+		cancel_effect = {
+			remove_ideas = GEA_construction_fiscal_expenditure
+			clr_country_flag = GEA_breakwater_project_under_construction
+		}
+
+		available = {
+			num_of_civilian_factories_available_for_projects > 4
+		}
+
+
+		days_mission_timeout = 180
+
+
+		timeout_effect = {
+			remove_ideas = GEA_construction_fiscal_expenditure
+			clr_country_flag = GEA_breakwater_project_under_construction        
+			custom_effect_tooltip = GEA_coast_line_bunker_building_construction_1
+			set_country_flag = GEA_bunker_construction_progress_1_done_in_indochina
+			hidden_effect = {
+				856 = {
+					add_building_construction = {
+						type = coastal_bunker
+						province = 4223
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 4284
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 4341
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 7331
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 7303
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 1423
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 1396
+						level = 2
+						instant_build = yes 
+					}
+				}
+				286 = {
+					add_building_construction = {
+						type = coastal_bunker
+						province = 4401
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 12232
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 10232
+						level = 2
+						instant_build = yes 
+					}
+					
+				}
+				827 = {
+					add_building_construction = {
+						type = coastal_bunker
+						province = 12204
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 1285
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 10162
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 4405
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 4334
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 1300
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 4255
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 10137
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 10309
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 4379
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 1302
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 7280
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 12297
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 4397
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 10016
+						level = 2
+						instant_build = yes 
+					}
+				}
+				671 = {
+					add_building_construction = {
+						type = coastal_bunker
+						province = 11936
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 1185
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 4119
+						level = 2
+						instant_build = yes 
+					}
+				}
+				857 = {
+					add_building_construction = {
+						type = coastal_bunker
+						province = 1157
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 7093
+						level = 2
+						instant_build = yes 
+					}
+				}
+			}
+		}
+	}
+	GEA_Start_construction_project_of_the_indochina_2 = {   
+		icon = fortress  
+		activation = { 
+			
+		}     
+		allowed = { always = no } 
+		selectable_mission = no
+		fire_only_once = yes                     
+		
+		priority = 100
+		is_good = yes      
+		
+		cancel_trigger = {
+			GEA = {
+				NOT = {
+					AND = {
+						owns_state = 857 #东北
+						owns_state = 671 #东京
+						owns_state = 856 #湄公河三角洲
+						owns_state = 286 #交趾支那
+						owns_state = 827 #安南
+					}
+				}
+			}
+		}
+
+		cancel_effect = {
+			remove_ideas = GEA_construction_fiscal_expenditure
+			clr_country_flag = GEA_breakwater_project_under_construction
+		}
+
+		available = {
+			num_of_civilian_factories_available_for_projects > 4
+		}
+
+
+		days_mission_timeout = 180
+
+
+		timeout_effect = {
+			remove_ideas = GEA_construction_fiscal_expenditure
+			clr_country_flag = GEA_breakwater_project_under_construction        
+			custom_effect_tooltip = GEA_coast_line_bunker_building_construction_1
+			set_country_flag = GEA_bunker_construction_progress_2_done_in_indochina
+			hidden_effect = {
+				856 = {
+					add_building_construction = {
+						type = coastal_bunker
+						province = 4223
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 4284
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 4341
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 7331
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 7303
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 1423
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 1396
+						level = 2
+						instant_build = yes 
+					}
+				}
+				286 = {
+					add_building_construction = {
+						type = coastal_bunker
+						province = 4401
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 12232
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 10232
+						level = 2
+						instant_build = yes 
+					}
+					
+				}
+				827 = {
+					add_building_construction = {
+						type = coastal_bunker
+						province = 12204
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 1285
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 10162
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 4405
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 4334
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 1300
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 4255
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 10137
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 10309
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 4379
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 1302
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 7280
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 12297
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 4397
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 10016
+						level = 2
+						instant_build = yes 
+					}
+				}
+				671 = {
+					add_building_construction = {
+						type = coastal_bunker
+						province = 11936
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 1185
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 4119
+						level = 2
+						instant_build = yes 
+					}
+				}
+				857 = {
+					add_building_construction = {
+						type = coastal_bunker
+						province = 1157
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 7093
+						level = 2
+						instant_build = yes 
+					}
+				}
+			}
+		}
+	}
+	GEA_Start_construction_project_of_the_indochina_3 = {   
+		icon = fortress  
+		activation = { 
+			
+		}     
+		allowed = { always = no } 
+		selectable_mission = no
+		fire_only_once = yes                     
+		
+		priority = 100
+		is_good = yes      
+		
+		cancel_trigger = {
+			GEA = {
+				NOT = {
+					AND = {
+						owns_state = 857 #东北
+						owns_state = 671 #东京
+						owns_state = 856 #湄公河三角洲
+						owns_state = 286 #交趾支那
+						owns_state = 827 #安南
+					}
+				}
+			}
+		}
+
+		cancel_effect = {
+			remove_ideas = GEA_construction_fiscal_expenditure
+			clr_country_flag = GEA_breakwater_project_under_construction
+		}
+
+		available = {
+			num_of_civilian_factories_available_for_projects > 4
+		}
+
+
+		days_mission_timeout = 180
+
+
+		timeout_effect = {
+			remove_ideas = GEA_construction_fiscal_expenditure
+			clr_country_flag = GEA_breakwater_project_under_construction        
+			custom_effect_tooltip = GEA_coast_line_bunker_building_construction_1
+			set_country_flag = GEA_bunker_construction_progress_3_done_in_indochina
+			hidden_effect = {
+				856 = {
+					add_building_construction = {
+						type = coastal_bunker
+						province = 4223
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 4284
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 4341
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 7331
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 7303
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 1423
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 1396
+						level = 2
+						instant_build = yes 
+					}
+				}
+				286 = {
+					add_building_construction = {
+						type = coastal_bunker
+						province = 4401
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 12232
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 10232
+						level = 2
+						instant_build = yes 
+					}
+					
+				}
+				827 = {
+					add_building_construction = {
+						type = coastal_bunker
+						province = 12204
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 1285
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 10162
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 4405
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 4334
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 1300
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 4255
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 10137
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 10309
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 4379
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 1302
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 7280
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 12297
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 4397
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 10016
+						level = 2
+						instant_build = yes 
+					}
+				}
+				671 = {
+					add_building_construction = {
+						type = coastal_bunker
+						province = 11936
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 1185
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 4119
+						level = 2
+						instant_build = yes 
+					}
+				}
+				857 = {
+					add_building_construction = {
+						type = coastal_bunker
+						province = 1157
+						level = 2
+						instant_build = yes 
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						province = 7093
+						level = 2
+						instant_build = yes 
+					}
+				}
+			}
+		}
+	}
+	GEA_Start_construction_project_of_the_malaya = {
+		icon = fortress
+		activation = {
+			#has_country_flag = GEA_Start_construction_1_in_malaya
+		}
+		allowed = { always = no }
+		selectable_mission = no
+		fire_only_once = yes
+
+		priority = 100
+		is_good = yes
+
+		cancel_trigger = {
+			GEA = {
+				NOT = {
+					AND = {
+						owns_state = 846 #马来亚
+						owns_state = 336 #新加坡
+					}
+				}
+			}
+		}
+
+		cancel_effect = {
+			remove_ideas = GEA_construction_fiscal_expenditure
+			clr_country_flag = GEA_breakwater_project_under_construction
+		}
+
+		available = {
+			num_of_civilian_factories_available_for_projects > 4
+		}
+
+
+		days_mission_timeout = 180
+
+		timeout_effect = {
+			remove_ideas = GEA_construction_fiscal_expenditure
+			clr_country_flag = GEA_breakwater_project_under_construction
+			custom_effect_tooltip = GEA_coast_line_bunker_building_construction_malaya
+			set_country_flag = GEA_bunker_construction_progress_1_done_in_malaya
+			GEA_add_malaya_coastal_bunkers_effect = yes
+		}
+	}
+	GEA_Start_construction_project_of_the_malaya_2 = {
+		icon = fortress
+		activation = {
+			#has_country_flag = GEA_Start_construction_2_in_malaya
+		}
+		allowed = { always = no }
+		selectable_mission = no
+		fire_only_once = yes
+
+		priority = 100
+		is_good = yes
+
+		cancel_trigger = {
+			GEA = {
+				NOT = {
+					AND = {
+						owns_state = 846 #马来亚
+						owns_state = 336 #新加坡
+					}
+				}
+			}
+		}
+
+		cancel_effect = {
+			remove_ideas = GEA_construction_fiscal_expenditure
+			clr_country_flag = GEA_breakwater_project_under_construction
+		}
+
+		available = {
+			num_of_civilian_factories_available_for_projects > 4
+		}
+
+
+		days_mission_timeout = 180
+
+		timeout_effect = {
+			remove_ideas = GEA_construction_fiscal_expenditure
+			clr_country_flag = GEA_breakwater_project_under_construction
+			custom_effect_tooltip = GEA_coast_line_bunker_building_construction_malaya
+			set_country_flag = GEA_bunker_construction_progress_2_done_in_malaya
+			GEA_add_malaya_coastal_bunkers_effect = yes
+		}
+	}
+	GEA_Start_construction_project_of_the_malaya_3 = {
+		icon = fortress
+		activation = {
+			#has_country_flag = GEA_Start_construction_3_in_malaya
+		}
+		allowed = { always = no }
+		selectable_mission = no
+		fire_only_once = yes
+
+		priority = 100
+		is_good = yes
+
+		cancel_trigger = {
+			GEA = {
+				NOT = {
+					AND = {
+						owns_state = 846 #马来亚
+						owns_state = 336 #新加坡
+					}
+				}
+			}
+		}
+
+		cancel_effect = {
+			remove_ideas = GEA_construction_fiscal_expenditure
+			clr_country_flag = GEA_breakwater_project_under_construction
+		}
+
+		available = {
+			num_of_civilian_factories_available_for_projects > 4
+		}
+
+
+		days_mission_timeout = 180
+
+		timeout_effect = {
+			remove_ideas = GEA_construction_fiscal_expenditure
+			clr_country_flag = GEA_breakwater_project_under_construction
+			custom_effect_tooltip = GEA_coast_line_bunker_building_construction_malaya
+			set_country_flag = GEA_bunker_construction_progress_3_done_in_malaya
+			GEA_add_malaya_coastal_bunkers_effect = yes
+		}
+	}
 	GEA_take_east_asian_navy = {
 		icon = generic_naval
 		allowed = { tag = GER }
@@ -12044,6 +11874,196 @@ political_actions = {
 }
 
 GEA_luckner_decisions = {
+	GEA_Start_pirate_commerce_warfare = { #开启海盗破交战
+		allowed = { original_tag = GEA }
+		icon = GFX_decision_GEA_Raid_on_the_Pacific_shipping_routes
+		custom_cost_text = GEA_pirate_commerce_warfare_cost
+		custom_cost_trigger = { has_navy_experience > 9.99 }
+		visible = {
+			has_completed_focus = GEA_The_imperial_pirates_roaming_the_vast_ocean
+			has_war = yes
+			any_enemy_country = { is_major = yes }
+		}
+		available = {
+			NOT = { has_country_flag = GEA_pirate_war_target_selection_pending }
+			custom_trigger_tooltip = {
+				tooltip = GEA_pirate_commerce_warfare_enemy_tt
+				OR = {
+					has_war_with = JAP
+					has_war_with = AST
+					has_war_with = USA
+					has_war_with = TRM
+				}
+			}
+		}
+		complete_effect = {
+			navy_experience = -10
+			hidden_effect = { set_country_flag = GEA_pirate_war_target_selection_pending }
+			country_event = { id = GEA.510 }
+		}
+	}
+	GEA_Sabotage_enemy_naval_ports = { #潜入破坏海军军港
+		allowed = { original_tag = GEA }
+		icon = GFX_decision_GEA_Raid_coastal_arsenals
+		custom_cost_text = GEA_wartime_pirate_raid_cost
+		custom_cost_trigger = { command_power > 49.99 }
+		days_remove = 60
+		days_re_enable = 90
+
+		visible = {
+			has_completed_focus = GEA_The_imperial_pirates_roaming_the_vast_ocean
+			#has_country_flag = GEA_pirate_war_target_selected
+			event_target:GEA_pirate_war_target = { exists = yes }
+		}
+		available = {
+			has_manpower > 200
+			has_navy_size = { size > 50 }
+			event_target:GEA_pirate_war_target = { has_war_with = ROOT }
+			has_country_flag = GEA_pirate_war_target_selected
+			custom_trigger_tooltip = {
+				tooltip = GEA_pirate_raid_capacity_available_tt
+				check_variable = { GEA_active_raids < GEA_max_concurrent_raids }
+			}
+		}
+		complete_effect = {
+			add_command_power = -50
+			add_manpower = -200
+			hidden_effect = {
+				add_to_variable = { GEA_active_raids = 1 }
+				# 行动目标在启动时锁定，不随之后重新选择破交对象而改变
+				event_target:GEA_pirate_war_target = { save_global_event_target_as = GEA_naval_port_raid_target }
+			}
+		}
+		cancel_trigger = {
+			NOT = { event_target:GEA_naval_port_raid_target = { exists = yes has_war_with = ROOT } }
+		}
+		cancel_effect = {
+			hidden_effect = {
+				add_to_variable = { GEA_active_raids = -1 }
+				clamp_variable = { var = GEA_active_raids min = 0 }
+				clear_global_event_target = GEA_naval_port_raid_target
+			}
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Sabotage_enemy_naval_ports"
+			event_target:GEA_naval_port_raid_target = {
+				add_timed_idea = { idea = GEA_naval_ports_attacked days = 100 }
+			}
+			hidden_effect = {
+				add_to_variable = { GEA_active_raids = -1 }
+				clamp_variable = { var = GEA_active_raids min = 0 }
+				clear_global_event_target = GEA_naval_port_raid_target
+			}
+		}
+	}
+	GEA_Attack_enemy_civilian_shipping = { #打击民用航线
+		allowed = { original_tag = GEA }
+		icon = generic_naval
+		custom_cost_text = GEA_wartime_pirate_raid_cost
+		custom_cost_trigger = { command_power > 49.99 }
+		days_remove = 60
+		days_re_enable = 90
+
+		visible = {
+			has_completed_focus = GEA_The_imperial_pirates_roaming_the_vast_ocean
+			#has_country_flag = GEA_pirate_war_target_selected
+			event_target:GEA_pirate_war_target = { exists = yes }
+		}
+		available = {
+			has_manpower > 200
+			has_navy_size = { size > 50 }
+			event_target:GEA_pirate_war_target = { has_war_with = ROOT }
+			custom_trigger_tooltip = {
+				tooltip = GEA_pirate_raid_capacity_available_tt
+				check_variable = { GEA_active_raids < GEA_max_concurrent_raids }
+			}
+		}
+		complete_effect = {
+			add_command_power = -50
+			add_manpower = -200
+			has_country_flag = GEA_pirate_war_target_selected
+			hidden_effect = {
+				add_to_variable = { GEA_active_raids = 1 }
+				# 行动目标在启动时锁定，不随之后重新选择破交对象而改变
+				event_target:GEA_pirate_war_target = { save_global_event_target_as = GEA_civilian_shipping_raid_target }
+			}
+		}
+		cancel_trigger = {
+			NOT = { event_target:GEA_civilian_shipping_raid_target = { exists = yes has_war_with = ROOT } }
+		}
+		cancel_effect = {
+			hidden_effect = {
+				add_to_variable = { GEA_active_raids = -1 }
+				clamp_variable = { var = GEA_active_raids min = 0 }
+				clear_global_event_target = GEA_civilian_shipping_raid_target
+			}
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Attack_enemy_civilian_shipping"
+			event_target:GEA_civilian_shipping_raid_target = {
+				add_timed_idea = { idea = GEA_rampant_pirate_activity days = 90 }
+			}
+			hidden_effect = {
+				add_to_variable = { GEA_active_raids = -1 }
+				clamp_variable = { var = GEA_active_raids min = 0 }
+				clear_global_event_target = GEA_civilian_shipping_raid_target
+			}
+		}
+	}
+	GEA_Harass_enemy_fleet = { #袭扰敌方舰队
+		allowed = { original_tag = GEA }
+		icon = GFX_GEA_Expand_the_pirate_fleet
+		custom_cost_text = GEA_wartime_pirate_raid_cost
+		custom_cost_trigger = { command_power > 49.99 }
+		days_remove = 60
+		days_re_enable = 90
+
+		visible = {
+			has_completed_focus = GEA_The_imperial_pirates_roaming_the_vast_ocean
+			#has_country_flag = GEA_pirate_war_target_selected
+			event_target:GEA_pirate_war_target = { exists = yes }
+		}
+		available = {
+			has_manpower > 200
+			has_navy_size = { size > 40 unit = submarine }
+			event_target:GEA_pirate_war_target = { has_war_with = ROOT }
+			has_country_flag = GEA_pirate_war_target_selected
+			custom_trigger_tooltip = {
+				tooltip = GEA_pirate_raid_capacity_available_tt
+				check_variable = { GEA_active_raids < GEA_max_concurrent_raids }
+			}
+		}
+		complete_effect = {
+			add_command_power = -50
+			add_manpower = -200
+			hidden_effect = {
+				add_to_variable = { GEA_active_raids = 1 }
+				# 行动目标在启动时锁定，不随之后重新选择破交对象而改变
+				event_target:GEA_pirate_war_target = { save_global_event_target_as = GEA_submarine_raid_target }
+			}
+		}
+		cancel_trigger = {
+			NOT = { event_target:GEA_submarine_raid_target = { exists = yes has_war_with = ROOT } }
+		}
+		cancel_effect = {
+			hidden_effect = {
+				add_to_variable = { GEA_active_raids = -1 }
+				clamp_variable = { var = GEA_active_raids min = 0 }
+				clear_global_event_target = GEA_submarine_raid_target
+			}
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Harass_enemy_fleet"
+			event_target:GEA_submarine_raid_target = {
+				add_timed_idea = { idea = GEA_unrestricted_submarine_warfare days = 90 }
+			}
+			hidden_effect = {
+				add_to_variable = { GEA_active_raids = -1 }
+				clamp_variable = { var = GEA_active_raids min = 0 }
+				clear_global_event_target = GEA_submarine_raid_target
+			}
+		}
+	}
 	GEA_Expand_the_pirate_fleet = { #扩大海盗船队
 	 	allowed = { original_tag = GEA }
 		icon = GFX_GEA_Expand_the_pirate_fleet
@@ -12104,14 +12124,13 @@ GEA_luckner_decisions = {
 			}
 		}
 	}
-
 	GEA_Raid_on_the_Pacific_shipping_routes = { #劫掠太平洋航线
 		allowed = { original_tag = GEA }
-		icon = GFX_decision_dec_GER_armeehelferinnen_logistics
+		icon = GFX_decision_GEA_Raid_on_the_Pacific_shipping_routes
 
-		cost = 10
+		cost = 20
 		days_remove = 60
-		days_re_enable = 60
+		days_re_enable = GEA_pirate_cooldown_60?60
 
 		available = {
 			custom_trigger_tooltip = {
@@ -12121,10 +12140,32 @@ GEA_luckner_decisions = {
 		}
 		complete_effect = {
 			add_to_variable = { GEA_active_raids = 1 }
+			hidden_effect = {
+				if = {
+					limit = { has_country_flag = GEA_seamen_quality_ready }
+					set_country_flag = GEA_Raid_on_the_Pacific_shipping_routes_silent
+					clr_country_flag = GEA_seamen_quality_ready
+				}
+				if = {
+					limit = { has_country_flag = GEA_loyal_seamen_ready }
+					set_country_flag = GEA_Raid_on_the_Pacific_shipping_routes_inspired
+					clr_country_flag = GEA_loyal_seamen_ready
+				}
+			}
 		}
 		cancel_effect = {
 			add_to_variable = { GEA_active_raids = -1 }
 			clamp_variable = { var = GEA_active_raids min = 0 }
+			if = {
+				limit = { has_country_flag = GEA_Raid_on_the_Pacific_shipping_routes_silent }
+				set_country_flag = GEA_seamen_quality_ready
+				clr_country_flag = GEA_Raid_on_the_Pacific_shipping_routes_silent
+			}
+			if = {
+				limit = { has_country_flag = GEA_Raid_on_the_Pacific_shipping_routes_inspired }
+				set_country_flag = GEA_loyal_seamen_ready
+				clr_country_flag = GEA_Raid_on_the_Pacific_shipping_routes_inspired
+			}
 		}
 
 		modifier = {
@@ -12135,34 +12176,52 @@ GEA_luckner_decisions = {
 
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Raid_on_the_Pacific_shipping_routes"
+			hidden_effect = {
+				set_temp_variable = { GEA_raid_reward_multiplier = 1 }
+				set_temp_variable = { GEA_raid_extra_reward_chance = 0 }
+				if = {
+					limit = { has_country_flag = GEA_Raid_on_the_Pacific_shipping_routes_inspired }
+					set_temp_variable = { GEA_raid_reward_multiplier = 2 }
+					set_temp_variable = { GEA_raid_extra_reward_chance = 15 }
+				}
+			}
 			GEA_add_pirate_loot = yes
 			GEA_pirate_offsite_civ_reward = yes
 			hidden_effect = {
 				add_to_variable = { GEA_active_raids = -1 }
 				clamp_variable = { var = GEA_active_raids min = 0 }
 			}
-			custom_override_tooltip = {
-				tooltip = GEA_pirate_discovery_chance_increase_tt
-				add_to_variable = { GEA_pirate_discovery_chance = 2 }
-				clamp_variable = { var = GEA_pirate_discovery_chance min = 0 max = 100 }
-			}
-			hidden_effect = {
-				set_temp_variable = { GEA_pirate_discovery_weight = GEA_pirate_discovery_chance }
-				set_temp_variable = { GEA_pirate_safe_weight = 100 }
-				subtract_from_temp_variable = { GEA_pirate_safe_weight = GEA_pirate_discovery_chance }
-				meta_effect = {
-					text = {
-						random_list = {
-							[DISCOVERY_CHANCE] = {
-								# 被发现后的效果暂留空
-							}
-							[SAFE_CHANCE] = {
-								# 未被发现，无事发生
+			if = {
+				limit = {
+					NOT = { has_country_flag = GEA_Raid_on_the_Pacific_shipping_routes_silent }
+					NOT = { has_country_flag = GEA_pirate_exposure_disabled }
+				}
+				if = {
+					limit = { NOT = { has_country_flag = GEA_pirate_exposure_disabled } }
+					custom_override_tooltip = {
+						tooltip = GEA_pirate_discovery_chance_increase_tt
+						add_to_variable = { GEA_pirate_discovery_chance = 2 }
+						clamp_variable = { var = GEA_pirate_discovery_chance min = 0 max = 100 }
+					}
+				}
+				hidden_effect = {
+					set_temp_variable = { GEA_pirate_discovery_weight = GEA_pirate_discovery_chance }
+					set_temp_variable = { GEA_pirate_safe_weight = 100 }
+					subtract_from_temp_variable = { GEA_pirate_safe_weight = GEA_pirate_discovery_chance }
+					meta_effect = {
+						text = {
+							random_list = {
+								[DISCOVERY_CHANCE] = {
+									GEA_pirate_discovery_consequences = yes
+								}
+								[SAFE_CHANCE] = {
+									# 未被发现，无事发生
+								}
 							}
 						}
+						DISCOVERY_CHANCE = "[?GEA_pirate_discovery_weight|0]"
+						SAFE_CHANCE = "[?GEA_pirate_safe_weight|0]"
 					}
-					DISCOVERY_CHANCE = "[?GEA_pirate_discovery_weight|0]"
-					SAFE_CHANCE = "[?GEA_pirate_safe_weight|0]"
 				}
 			}
 			custom_effect_tooltip = GEA_pacific_shipping_raid_target_tt
@@ -12181,16 +12240,19 @@ GEA_luckner_decisions = {
 					add_timed_idea = { idea = GEA_shipping_routes_raided days = 30 }
 				}
 			}
+			hidden_effect = {
+				clr_country_flag = GEA_Raid_on_the_Pacific_shipping_routes_silent
+				clr_country_flag = GEA_Raid_on_the_Pacific_shipping_routes_inspired
+			}
 		}
 	}
-
 	GEA_Raid_on_the_Indian_Ocean_shipping_routes = { #劫掠印度洋航线
 		allowed = { original_tag = GEA }
-		icon = GFX_decision_dec_GER_armeehelferinnen_logistics
+		icon = GFX_decision_GEA_Raid_on_the_Pacific_shipping_routes
 
-		cost = 10
+		cost = 20
 		days_remove = 60
-		days_re_enable = 60
+		days_re_enable = GEA_pirate_cooldown_60?60
 
 		available = {
 			custom_trigger_tooltip = {
@@ -12198,12 +12260,35 @@ GEA_luckner_decisions = {
 				check_variable = { GEA_active_raids < GEA_max_concurrent_raids }
 			}
 		}
+
 		complete_effect = {
 			add_to_variable = { GEA_active_raids = 1 }
+			hidden_effect = {
+				if = {
+					limit = { has_country_flag = GEA_seamen_quality_ready }
+					set_country_flag = GEA_Raid_on_the_Indian_Ocean_shipping_routes_silent
+					clr_country_flag = GEA_seamen_quality_ready
+				}
+				if = {
+					limit = { has_country_flag = GEA_loyal_seamen_ready }
+					set_country_flag = GEA_Raid_on_the_Indian_Ocean_shipping_routes_inspired
+					clr_country_flag = GEA_loyal_seamen_ready
+				}
+			}
 		}
 		cancel_effect = {
 			add_to_variable = { GEA_active_raids = -1 }
 			clamp_variable = { var = GEA_active_raids min = 0 }
+			if = {
+				limit = { has_country_flag = GEA_Raid_on_the_Indian_Ocean_shipping_routes_silent }
+				set_country_flag = GEA_seamen_quality_ready
+				clr_country_flag = GEA_Raid_on_the_Indian_Ocean_shipping_routes_silent
+			}
+			if = {
+				limit = { has_country_flag = GEA_Raid_on_the_Indian_Ocean_shipping_routes_inspired }
+				set_country_flag = GEA_loyal_seamen_ready
+				clr_country_flag = GEA_Raid_on_the_Indian_Ocean_shipping_routes_inspired
+			}
 		}
 
 		modifier = {
@@ -12214,34 +12299,52 @@ GEA_luckner_decisions = {
 
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Raid_on_the_Indian_Ocean_shipping_routes"
+			hidden_effect = {
+				set_temp_variable = { GEA_raid_reward_multiplier = 1 }
+				set_temp_variable = { GEA_raid_extra_reward_chance = 0 }
+				if = {
+					limit = { has_country_flag = GEA_Raid_on_the_Indian_Ocean_shipping_routes_inspired }
+					set_temp_variable = { GEA_raid_reward_multiplier = 2 }
+					set_temp_variable = { GEA_raid_extra_reward_chance = 15 }
+				}
+			}
 			GEA_add_pirate_loot = yes
 			GEA_pirate_offsite_civ_reward = yes
 			hidden_effect = {
 				add_to_variable = { GEA_active_raids = -1 }
 				clamp_variable = { var = GEA_active_raids min = 0 }
 			}
-			custom_override_tooltip = {
-				tooltip = GEA_pirate_discovery_chance_increase_tt
-				add_to_variable = { GEA_pirate_discovery_chance = 2 }
-				clamp_variable = { var = GEA_pirate_discovery_chance min = 0 max = 100 }
-			}
-			hidden_effect = {
-				set_temp_variable = { GEA_pirate_discovery_weight = GEA_pirate_discovery_chance }
-				set_temp_variable = { GEA_pirate_safe_weight = 100 }
-				subtract_from_temp_variable = { GEA_pirate_safe_weight = GEA_pirate_discovery_chance }
-				meta_effect = {
-					text = {
-						random_list = {
-							[DISCOVERY_CHANCE] = {
-								# 被发现后的效果暂留空
-							}
-							[SAFE_CHANCE] = {
-								# 未被发现，无事发生
+			if = {
+				limit = {
+					NOT = { has_country_flag = GEA_Raid_on_the_Indian_Ocean_shipping_routes_silent }
+					NOT = { has_country_flag = GEA_pirate_exposure_disabled }
+				}
+				if = {
+					limit = { NOT = { has_country_flag = GEA_pirate_exposure_disabled } }
+					custom_override_tooltip = {
+						tooltip = GEA_pirate_discovery_chance_increase_tt
+						add_to_variable = { GEA_pirate_discovery_chance = 2 }
+						clamp_variable = { var = GEA_pirate_discovery_chance min = 0 max = 100 }
+					}
+				}
+				hidden_effect = {
+					set_temp_variable = { GEA_pirate_discovery_weight = GEA_pirate_discovery_chance }
+					set_temp_variable = { GEA_pirate_safe_weight = 100 }
+					subtract_from_temp_variable = { GEA_pirate_safe_weight = GEA_pirate_discovery_chance }
+					meta_effect = {
+						text = {
+							random_list = {
+								[DISCOVERY_CHANCE] = {
+									GEA_pirate_discovery_consequences = yes
+								}
+								[SAFE_CHANCE] = {
+									# 未被发现，无事发生
+								}
 							}
 						}
+						DISCOVERY_CHANCE = "[?GEA_pirate_discovery_weight|0]"
+						SAFE_CHANCE = "[?GEA_pirate_safe_weight|0]"
 					}
-					DISCOVERY_CHANCE = "[?GEA_pirate_discovery_weight|0]"
-					SAFE_CHANCE = "[?GEA_pirate_safe_weight|0]"
 				}
 			}
 			custom_effect_tooltip = GEA_indian_ocean_shipping_raid_target_tt
@@ -12261,16 +12364,19 @@ GEA_luckner_decisions = {
 					add_timed_idea = { idea = GEA_shipping_routes_raided days = 30 }
 				}
 			}
+			hidden_effect = {
+				clr_country_flag = GEA_Raid_on_the_Indian_Ocean_shipping_routes_silent
+				clr_country_flag = GEA_Raid_on_the_Indian_Ocean_shipping_routes_inspired
+			}
 		}
 	}
-
 	GEA_Intercept_ocean_liners = { #拦截远洋客轮
 		allowed = { original_tag = GEA }
-		icon = GFX_decision_dec_GER_armeehelferinnen_logistics
+		icon = GFX_decision_GEA_Intercept_ocean_liners
 
-		cost = 15
+		cost = 20
 		days_remove = 60
-		days_re_enable = 90
+		days_re_enable = GEA_pirate_cooldown_90?90
 
 		available = {
 			custom_trigger_tooltip = {
@@ -12280,10 +12386,32 @@ GEA_luckner_decisions = {
 		}
 		complete_effect = {
 			add_to_variable = { GEA_active_raids = 1 }
+			hidden_effect = {
+				if = {
+					limit = { has_country_flag = GEA_seamen_quality_ready }
+					set_country_flag = GEA_Intercept_ocean_liners_silent
+					clr_country_flag = GEA_seamen_quality_ready
+				}
+				if = {
+					limit = { has_country_flag = GEA_loyal_seamen_ready }
+					set_country_flag = GEA_Intercept_ocean_liners_inspired
+					clr_country_flag = GEA_loyal_seamen_ready
+				}
+			}
 		}
 		cancel_effect = {
 			add_to_variable = { GEA_active_raids = -1 }
 			clamp_variable = { var = GEA_active_raids min = 0 }
+			if = {
+				limit = { has_country_flag = GEA_Intercept_ocean_liners_silent }
+				set_country_flag = GEA_seamen_quality_ready
+				clr_country_flag = GEA_Intercept_ocean_liners_silent
+			}
+			if = {
+				limit = { has_country_flag = GEA_Intercept_ocean_liners_inspired }
+				set_country_flag = GEA_loyal_seamen_ready
+				clr_country_flag = GEA_Intercept_ocean_liners_inspired
+			}
 		}
 
 		modifier = {
@@ -12293,6 +12421,15 @@ GEA_luckner_decisions = {
 
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Intercept_ocean_liners"
+			hidden_effect = {
+				set_temp_variable = { GEA_raid_reward_multiplier = 1 }
+				set_temp_variable = { GEA_raid_extra_reward_chance = 0 }
+				if = {
+					limit = { has_country_flag = GEA_Intercept_ocean_liners_inspired }
+					set_temp_variable = { GEA_raid_reward_multiplier = 2 }
+					set_temp_variable = { GEA_raid_extra_reward_chance = 15 }
+				}
+			}
 			GEA_add_pirate_loot = yes
 			GEA_pirate_offsite_civ_reward = yes
 			hidden_effect = {
@@ -12300,28 +12437,41 @@ GEA_luckner_decisions = {
 				clamp_variable = { var = GEA_active_raids min = 0 }
 			}
 			add_political_power = 75
-			custom_override_tooltip = {
-				tooltip = GEA_ocean_liner_discovery_chance_tt
-				add_to_variable = { GEA_pirate_discovery_chance = 3 }
-				clamp_variable = { var = GEA_pirate_discovery_chance min = 0 max = 100 }
+			if = {
+				limit = { has_country_flag = GEA_Intercept_ocean_liners_inspired }
+				add_political_power = 75
 			}
-			hidden_effect = {
-				set_temp_variable = { GEA_pirate_discovery_weight = GEA_pirate_discovery_chance }
-				set_temp_variable = { GEA_pirate_safe_weight = 100 }
-				subtract_from_temp_variable = { GEA_pirate_safe_weight = GEA_pirate_discovery_chance }
-				meta_effect = {
-					text = {
-						random_list = {
-							[DISCOVERY_CHANCE] = {
-								# 被发现后的效果暂留空
-							}
-							[SAFE_CHANCE] = {
-								# 未被发现，无事发生
+			if = {
+				limit = {
+					NOT = { has_country_flag = GEA_Intercept_ocean_liners_silent }
+					NOT = { has_country_flag = GEA_pirate_exposure_disabled }
+				}
+				if = {
+					limit = { NOT = { has_country_flag = GEA_pirate_exposure_disabled } }
+					custom_override_tooltip = {
+						tooltip = GEA_ocean_liner_discovery_chance_tt
+						add_to_variable = { GEA_pirate_discovery_chance = 3 }
+						clamp_variable = { var = GEA_pirate_discovery_chance min = 0 max = 100 }
+					}
+				}
+				hidden_effect = {
+					set_temp_variable = { GEA_pirate_discovery_weight = GEA_pirate_discovery_chance }
+					set_temp_variable = { GEA_pirate_safe_weight = 100 }
+					subtract_from_temp_variable = { GEA_pirate_safe_weight = GEA_pirate_discovery_chance }
+					meta_effect = {
+						text = {
+							random_list = {
+								[DISCOVERY_CHANCE] = {
+									GEA_pirate_discovery_consequences = yes
+								}
+								[SAFE_CHANCE] = {
+									# 未被发现，无事发生
+								}
 							}
 						}
+						DISCOVERY_CHANCE = "[?GEA_pirate_discovery_weight|0]"
+						SAFE_CHANCE = "[?GEA_pirate_safe_weight|0]"
 					}
-					DISCOVERY_CHANCE = "[?GEA_pirate_discovery_weight|0]"
-					SAFE_CHANCE = "[?GEA_pirate_safe_weight|0]"
 				}
 			}
 			hidden_effect = {
@@ -12340,16 +12490,19 @@ GEA_luckner_decisions = {
 					add_stability = -0.05
 				}
 			}
+			hidden_effect = {
+				clr_country_flag = GEA_Intercept_ocean_liners_silent
+				clr_country_flag = GEA_Intercept_ocean_liners_inspired
+			}
 		}
 	}
-
 	GEA_Raid_resource_shipping_routes = { #劫掠资源货运航线
 		allowed = { original_tag = GEA }
-		icon = GFX_decision_dec_GER_armeehelferinnen_logistics
+		icon = GFX_decision_GEA_Intercept_ocean_liners
 
 		cost = 20
 		days_remove = 60
-		days_re_enable = 90
+		days_re_enable = GEA_pirate_cooldown_90?90
 
 		available = {
 			custom_trigger_tooltip = {
@@ -12359,10 +12512,32 @@ GEA_luckner_decisions = {
 		}
 		complete_effect = {
 			add_to_variable = { GEA_active_raids = 1 }
+			hidden_effect = {
+				if = {
+					limit = { has_country_flag = GEA_seamen_quality_ready }
+					set_country_flag = GEA_Raid_resource_shipping_routes_silent
+					clr_country_flag = GEA_seamen_quality_ready
+				}
+				if = {
+					limit = { has_country_flag = GEA_loyal_seamen_ready }
+					set_country_flag = GEA_Raid_resource_shipping_routes_inspired
+					clr_country_flag = GEA_loyal_seamen_ready
+				}
+			}
 		}
 		cancel_effect = {
 			add_to_variable = { GEA_active_raids = -1 }
 			clamp_variable = { var = GEA_active_raids min = 0 }
+			if = {
+				limit = { has_country_flag = GEA_Raid_resource_shipping_routes_silent }
+				set_country_flag = GEA_seamen_quality_ready
+				clr_country_flag = GEA_Raid_resource_shipping_routes_silent
+			}
+			if = {
+				limit = { has_country_flag = GEA_Raid_resource_shipping_routes_inspired }
+				set_country_flag = GEA_loyal_seamen_ready
+				clr_country_flag = GEA_Raid_resource_shipping_routes_inspired
+			}
 		}
 
 		modifier = {
@@ -12372,34 +12547,52 @@ GEA_luckner_decisions = {
 
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Raid_resource_shipping_routes"
+			hidden_effect = {
+				set_temp_variable = { GEA_raid_reward_multiplier = 1 }
+				set_temp_variable = { GEA_raid_extra_reward_chance = 0 }
+				if = {
+					limit = { has_country_flag = GEA_Raid_resource_shipping_routes_inspired }
+					set_temp_variable = { GEA_raid_reward_multiplier = 2 }
+					set_temp_variable = { GEA_raid_extra_reward_chance = 15 }
+				}
+			}
 			GEA_add_pirate_loot = yes
 			GEA_pirate_offsite_civ_reward = yes
 			hidden_effect = {
 				add_to_variable = { GEA_active_raids = -1 }
 				clamp_variable = { var = GEA_active_raids min = 0 }
 			}
-			custom_override_tooltip = {
-				tooltip = GEA_ocean_liner_discovery_chance_tt
-				add_to_variable = { GEA_pirate_discovery_chance = 3 }
-				clamp_variable = { var = GEA_pirate_discovery_chance min = 0 max = 100 }
-			}
-			hidden_effect = {
-				set_temp_variable = { GEA_pirate_discovery_weight = GEA_pirate_discovery_chance }
-				set_temp_variable = { GEA_pirate_safe_weight = 100 }
-				subtract_from_temp_variable = { GEA_pirate_safe_weight = GEA_pirate_discovery_chance }
-				meta_effect = {
-					text = {
-						random_list = {
-							[DISCOVERY_CHANCE] = {
-								# 被发现后的效果暂留空
-							}
-							[SAFE_CHANCE] = {
-								# 未被发现，无事发生
+			if = {
+				limit = {
+					NOT = { has_country_flag = GEA_Raid_resource_shipping_routes_silent }
+					NOT = { has_country_flag = GEA_pirate_exposure_disabled }
+				}
+				if = {
+					limit = { NOT = { has_country_flag = GEA_pirate_exposure_disabled } }
+					custom_override_tooltip = {
+						tooltip = GEA_ocean_liner_discovery_chance_tt
+						add_to_variable = { GEA_pirate_discovery_chance = 3 }
+						clamp_variable = { var = GEA_pirate_discovery_chance min = 0 max = 100 }
+					}
+				}
+				hidden_effect = {
+					set_temp_variable = { GEA_pirate_discovery_weight = GEA_pirate_discovery_chance }
+					set_temp_variable = { GEA_pirate_safe_weight = 100 }
+					subtract_from_temp_variable = { GEA_pirate_safe_weight = GEA_pirate_discovery_chance }
+					meta_effect = {
+						text = {
+							random_list = {
+								[DISCOVERY_CHANCE] = {
+									GEA_pirate_discovery_consequences = yes
+								}
+								[SAFE_CHANCE] = {
+									# 未被发现，无事发生
+								}
 							}
 						}
+						DISCOVERY_CHANCE = "[?GEA_pirate_discovery_weight|0]"
+						SAFE_CHANCE = "[?GEA_pirate_safe_weight|0]"
 					}
-					DISCOVERY_CHANCE = "[?GEA_pirate_discovery_weight|0]"
-					SAFE_CHANCE = "[?GEA_pirate_safe_weight|0]"
 				}
 			}
 			hidden_effect = {
@@ -12407,40 +12600,71 @@ GEA_luckner_decisions = {
 					1 = {
 						add_resource = { type = oil amount = 60 state = 336 }
 						set_country_flag = GEA_raided_resource_oil
+						if = {
+							limit = { has_country_flag = GEA_Raid_resource_shipping_routes_inspired }
+							add_resource = { type = oil amount = 60 state = 336 }
+						}
 					}
 					1 = {
 						add_resource = { type = aluminium amount = 60 state = 336 }
 						set_country_flag = GEA_raided_resource_aluminium
+						if = {
+							limit = { has_country_flag = GEA_Raid_resource_shipping_routes_inspired }
+							add_resource = { type = aluminium amount = 60 state = 336 }
+						}
 					}
 					1 = {
 						add_resource = { type = steel amount = 60 state = 336 }
 						set_country_flag = GEA_raided_resource_steel
+						if = {
+							limit = { has_country_flag = GEA_Raid_resource_shipping_routes_inspired }
+							add_resource = { type = steel amount = 60 state = 336 }
+						}
 					}
 					1 = {
 						add_resource = { type = tungsten amount = 60 state = 336 }
 						set_country_flag = GEA_raided_resource_tungsten
+						if = {
+							limit = { has_country_flag = GEA_Raid_resource_shipping_routes_inspired }
+							add_resource = { type = tungsten amount = 60 state = 336 }
+						}
 					}
 					1 = {
 						add_resource = { type = chromium amount = 60 state = 336 }
 						set_country_flag = GEA_raided_resource_chromium
+						if = {
+							limit = { has_country_flag = GEA_Raid_resource_shipping_routes_inspired }
+							add_resource = { type = chromium amount = 60 state = 336 }
+						}
 					}
 					1 = {
 						add_resource = { type = coal amount = 60 state = 336 }
 						set_country_flag = GEA_raided_resource_coal
+						if = {
+							limit = { has_country_flag = GEA_Raid_resource_shipping_routes_inspired }
+							add_resource = { type = coal amount = 60 state = 336 }
+						}
 					}
+				}
+				if = {
+					limit = { has_country_flag = GEA_Raid_resource_shipping_routes_inspired }
+					set_country_flag = GEA_raided_resources_doubled
 				}
 				country_event = { id = GEA.12001 days = 90 }
 			}
+			hidden_effect = {
+				clr_country_flag = GEA_Raid_resource_shipping_routes_silent
+				clr_country_flag = GEA_Raid_resource_shipping_routes_inspired
+			}
 		}
 	}
-
 	GEA_Raid_coastal_arsenals = { #袭击沿海军火库
 		allowed = { original_tag = GEA }
-		icon = GFX_decision_dec_GER_armeehelferinnen_logistics
+		icon = GFX_decision_GEA_Raid_coastal_arsenals
 
 		cost = 20
 		days_remove = 90
-		days_re_enable = 120
+		days_re_enable = GEA_pirate_cooldown_120?120
 
 		available = {
 			custom_trigger_tooltip = {
@@ -12450,10 +12674,32 @@ GEA_luckner_decisions = {
 		}
 		complete_effect = {
 			add_to_variable = { GEA_active_raids = 1 }
+			hidden_effect = {
+				if = {
+					limit = { has_country_flag = GEA_seamen_quality_ready }
+					set_country_flag = GEA_Raid_coastal_arsenals_silent
+					clr_country_flag = GEA_seamen_quality_ready
+				}
+				if = {
+					limit = { has_country_flag = GEA_loyal_seamen_ready }
+					set_country_flag = GEA_Raid_coastal_arsenals_inspired
+					clr_country_flag = GEA_loyal_seamen_ready
+				}
+			}
 		}
 		cancel_effect = {
 			add_to_variable = { GEA_active_raids = -1 }
 			clamp_variable = { var = GEA_active_raids min = 0 }
+			if = {
+				limit = { has_country_flag = GEA_Raid_coastal_arsenals_silent }
+				set_country_flag = GEA_seamen_quality_ready
+				clr_country_flag = GEA_Raid_coastal_arsenals_silent
+			}
+			if = {
+				limit = { has_country_flag = GEA_Raid_coastal_arsenals_inspired }
+				set_country_flag = GEA_loyal_seamen_ready
+				clr_country_flag = GEA_Raid_coastal_arsenals_inspired
+			}
 		}
 
 		modifier = {
@@ -12463,59 +12709,92 @@ GEA_luckner_decisions = {
 
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Raid_coastal_arsenals"
+			hidden_effect = {
+				set_temp_variable = { GEA_raid_reward_multiplier = 1 }
+				set_temp_variable = { GEA_raid_extra_reward_chance = 0 }
+				if = {
+					limit = { has_country_flag = GEA_Raid_coastal_arsenals_inspired }
+					set_temp_variable = { GEA_raid_reward_multiplier = 2 }
+					set_temp_variable = { GEA_raid_extra_reward_chance = 15 }
+				}
+			}
 			GEA_add_pirate_loot = yes
 			GEA_pirate_offsite_civ_reward = yes
 			hidden_effect = {
 				add_to_variable = { GEA_active_raids = -1 }
 				clamp_variable = { var = GEA_active_raids min = 0 }
 			}
-			custom_override_tooltip = {
-				tooltip = GEA_coastal_arsenal_discovery_chance_tt
-				add_to_variable = { GEA_pirate_discovery_chance = 10 }
-				clamp_variable = { var = GEA_pirate_discovery_chance min = 0 max = 100 }
-			}
-			hidden_effect = {
-				set_temp_variable = { GEA_pirate_discovery_weight = GEA_pirate_discovery_chance }
-				set_temp_variable = { GEA_pirate_safe_weight = 100 }
-				subtract_from_temp_variable = { GEA_pirate_safe_weight = GEA_pirate_discovery_chance }
-				meta_effect = {
-					text = {
-						random_list = {
-							[DISCOVERY_CHANCE] = {
-								# 被发现后的效果暂留空
-							}
-							[SAFE_CHANCE] = {
-								# 未被发现，无事发生
+			if = {
+				limit = {
+					NOT = { has_country_flag = GEA_Raid_coastal_arsenals_silent }
+					NOT = { has_country_flag = GEA_pirate_exposure_disabled }
+				}
+				if = {
+					limit = { NOT = { has_country_flag = GEA_pirate_exposure_disabled } }
+					custom_override_tooltip = {
+						tooltip = GEA_coastal_arsenal_discovery_chance_tt
+						add_to_variable = { GEA_pirate_discovery_chance = 10 }
+						clamp_variable = { var = GEA_pirate_discovery_chance min = 0 max = 100 }
+					}
+				}
+				hidden_effect = {
+					set_temp_variable = { GEA_pirate_discovery_weight = GEA_pirate_discovery_chance }
+					set_temp_variable = { GEA_pirate_safe_weight = 100 }
+					subtract_from_temp_variable = { GEA_pirate_safe_weight = GEA_pirate_discovery_chance }
+					meta_effect = {
+						text = {
+							random_list = {
+								[DISCOVERY_CHANCE] = {
+									GEA_pirate_discovery_consequences = yes
+								}
+								[SAFE_CHANCE] = {
+									# 未被发现，无事发生
+								}
 							}
 						}
+						DISCOVERY_CHANCE = "[?GEA_pirate_discovery_weight|0]"
+						SAFE_CHANCE = "[?GEA_pirate_safe_weight|0]"
 					}
-					DISCOVERY_CHANCE = "[?GEA_pirate_discovery_weight|0]"
-					SAFE_CHANCE = "[?GEA_pirate_safe_weight|0]"
 				}
 			}
 			hidden_effect = {
 				random_list = {
 					1 = {
 						add_equipment_to_stockpile = { type = infantry_equipment amount = 2000 producer = GEA }
+						if = {
+							limit = { has_country_flag = GEA_Raid_coastal_arsenals_inspired }
+							add_equipment_to_stockpile = { type = infantry_equipment amount = 2000 producer = GEA }
+						}
 					}
 					1 = {
 						add_equipment_to_stockpile = { type = support_equipment amount = 500 producer = GEA }
+						if = {
+							limit = { has_country_flag = GEA_Raid_coastal_arsenals_inspired }
+							add_equipment_to_stockpile = { type = support_equipment amount = 500 producer = GEA }
+						}
 					}
 					1 = {
 						add_equipment_to_stockpile = { type = artillery_equipment amount = 200 producer = GEA }
+						if = {
+							limit = { has_country_flag = GEA_Raid_coastal_arsenals_inspired }
+							add_equipment_to_stockpile = { type = artillery_equipment amount = 200 producer = GEA }
+						}
 					}
 				}
 			}
+			hidden_effect = {
+				clr_country_flag = GEA_Raid_coastal_arsenals_silent
+				clr_country_flag = GEA_Raid_coastal_arsenals_inspired
+			}
 		}
 	}
-
 	GEA_Select_elites_from_the_navy = { #从海军中挑选精锐
 		allowed = { original_tag = GEA }
 		icon = GFX_GEA_navy_soldiers
 
 		cost = 30
 		days_remove = 30
-		days_re_enable = 60
+		days_re_enable = GEA_pirate_cooldown_60?60
 		visible = {
 			has_completed_focus = GEA_Dressed_in_a_navy_uniform
 		}
@@ -12533,20 +12812,80 @@ GEA_luckner_decisions = {
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Select_elites_from_the_navy"
-			custom_override_tooltip = {
-				tooltip = GEA_naval_elites_reduce_discovery_tt
-				add_to_variable = { GEA_pirate_discovery_chance = -5 }
-				clamp_variable = { var = GEA_pirate_discovery_chance min = 0 max = 100 }
+			if = {
+				limit = { NOT = { has_country_flag = GEA_pirate_exposure_disabled } }
+				custom_override_tooltip = {
+					tooltip = GEA_naval_elites_reduce_discovery_tt
+					add_to_variable = { GEA_pirate_discovery_chance = -5 }
+					clamp_variable = { var = GEA_pirate_discovery_chance min = 0 max = 100 }
+				}
 			}
 		}
 	}
-
+	GEA_Train_seamen_quality = { #训练海员素质
+		allowed = { original_tag = GEA }
+		icon = GFX_GEA_navy_soldiers
+		custom_cost_text = GEA_seamen_training_cost
+		custom_cost_trigger = { has_political_power > 19.99 has_navy_experience > 9.99 }
+		days_remove = 45
+		days_re_enable = 120
+		visible = { has_completed_focus = GEA_The_loyal_sailor_of_the_count }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = GEA_seamen_training_plan_not_started_tt
+				NOT = { has_country_flag = GEA_seamen_training_plan_started }
+			}
+		}
+		modifier = { experience_gain_navy_factor = -0.03 }
+		complete_effect = {
+			add_political_power = -20
+			navy_experience = -10
+			set_country_flag = GEA_seamen_training_plan_started
+		}
+		cancel_effect = { clr_country_flag = GEA_seamen_training_plan_started }
+		remove_effect = {
+			clr_country_flag = GEA_seamen_training_plan_started
+			custom_override_tooltip = {
+				tooltip = GEA_seamen_quality_ready_tt
+				set_country_flag = GEA_seamen_quality_ready
+			}
+		}
+	}
+	GEA_Inspire_loyal_seamen = { #鼓舞忠诚海员
+		allowed = { original_tag = GEA }
+		icon = GFX_GEA_navy_soldiers
+		custom_cost_text = GEA_seamen_training_cost
+		custom_cost_trigger = { has_political_power > 19.99 has_navy_experience > 9.99 }
+		days_remove = 45
+		days_re_enable = 120
+		visible = { has_completed_focus = GEA_The_loyal_sailor_of_the_count }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = GEA_seamen_training_plan_not_started_tt
+				NOT = { has_country_flag = GEA_seamen_training_plan_started }
+			}
+		}
+		modifier = { experience_gain_navy_factor = -0.03 }
+		complete_effect = {
+			add_political_power = -20
+			navy_experience = -10
+			set_country_flag = GEA_seamen_training_plan_started
+		}
+		cancel_effect = { clr_country_flag = GEA_seamen_training_plan_started }
+		remove_effect = {
+			clr_country_flag = GEA_seamen_training_plan_started
+			custom_override_tooltip = {
+				tooltip = GEA_loyal_seamen_ready_tt
+				set_country_flag = GEA_loyal_seamen_ready
+			}
+		}
+	}
 	GEA_Fence_goods_on_the_South_China_black_market = { #在华南黑市销赃
 		allowed = { original_tag = GEA }
-		icon = GFX_decision_dec_GER_armeehelferinnen_logistics
+		icon = GFX_decision_GEA_Fence_goods_on_the_South_China_black_market
 		cost = 100
 		days_remove = 90
-		days_re_enable = 120
+		days_re_enable = GEA_pirate_cooldown_120?120
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = GEA_pirate_loot_available_tt
@@ -12567,13 +12906,16 @@ GEA_luckner_decisions = {
 			add_to_variable = { GEA_south_china_fence_count = 1 }
 			if = {
 				limit = { check_variable = { GEA_south_china_fence_count > 1 } }
-				custom_override_tooltip = {
-					if = {
-						limit = { check_variable = { GEA_south_china_fence_count = 2 } }
-						add_to_variable = { GEA_pirate_discovery_chance = 5 }
+				if = {
+					limit = { NOT = { has_country_flag = GEA_pirate_exposure_disabled } }
+					custom_override_tooltip = {
+						if = {
+							limit = { check_variable = { GEA_south_china_fence_count = 2 } }
+							add_to_variable = { GEA_pirate_discovery_chance = 5 }
+						}
+						else = { add_to_variable = { GEA_pirate_discovery_chance = 10 } }
+						clamp_variable = { var = GEA_pirate_discovery_chance min = 0 max = 100 }
 					}
-					else = { add_to_variable = { GEA_pirate_discovery_chance = 10 } }
-					clamp_variable = { var = GEA_pirate_discovery_chance min = 0 max = 100 }
 				}
 			}
 		}
@@ -12581,6 +12923,539 @@ GEA_luckner_decisions = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Fence_goods_on_the_South_China_black_market"
 			add_stability = 0.05
 			increase_ruling_party_popularity_by_3 = yes
+		}
+	}
+	GEA_Governors_speaking_tour = { #总督的巡回演说
+		allowed = { original_tag = GEA }
+		icon = GFX_GEA_luckner_decision
+
+		cost = 40
+		days_remove = 60
+		days_re_enable = 90
+
+		visible = {
+			has_completed_focus = GEA_Dressed_in_a_navy_uniform
+		}
+		modifier = {
+			daily_popularity_drift = 0.01
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Governors_speaking_tour"
+			if = {
+				limit = { NOT = { has_country_flag = GEA_pirate_exposure_disabled } }
+				custom_override_tooltip = {
+					tooltip = GEA_governors_tour_reduce_risk_tt
+					add_to_variable = { GEA_pirate_discovery_chance = -5 }
+					clamp_variable = { var = GEA_pirate_discovery_chance min = 0 max = 100 }
+				}
+			}
+			add_stability = 0.02
+			if = {
+				limit = { NOT = { has_country_flag = GEA_governor_tour_first_finished } }
+				set_country_flag = GEA_governor_tour_first_finished
+				country_event = { id = GEA.508 }
+			}
+		}
+	}
+	GEA_Prepare_for_a_secret_operation = { #为秘密大行动做准备
+		allowed = { original_tag = GEA }
+		icon = GFX_GEA_navy_soldiers
+		custom_cost_text = GEA_secret_operation_preparation_cost
+		custom_cost_trigger = { has_political_power > 49.99 has_navy_experience > 29.99 }
+		days_remove = 60
+		visible = { has_completed_focus = GEA_The_loyal_sailor_of_the_count }
+		available = {
+			has_manpower > 499
+			custom_trigger_tooltip = {
+				tooltip = GEA_secret_operation_preparation_available_tt
+				OR = {
+					NOT = { has_variable = GEA_secret_operation_preparations }
+					check_variable = { GEA_secret_operation_preparations < 1 }
+				}
+			}
+		}
+		modifier = { experience_gain_navy_factor = -0.05 }
+		complete_effect = {
+			add_political_power = -50
+			navy_experience = -30
+			add_manpower = -500
+		}
+		remove_effect = {
+			custom_override_tooltip = {
+				tooltip = GEA_secret_operation_preparation_ready_tt
+				add_to_variable = { GEA_secret_operation_preparations = 1 }
+			}
+		}
+	}
+	GEA_Secret_operation_Niagara_heist = { #秘密行动：尼亚加拉大劫案
+		allowed = { original_tag = GEA }
+		icon = GFX_GEA_Niagara_heist
+
+		custom_cost_text = GEA_niagara_heist_cost
+		custom_cost_trigger = { command_power > 99.99 has_navy_experience > 49.99 }
+
+		days_remove = 120
+		fire_only_once = yes
+
+		visible = { has_completed_focus = GEA_The_secret_operation_under_the_glow_of_black_white_and_red_lights }
+
+		available = {
+			has_manpower > 1000
+			custom_trigger_tooltip = {
+				tooltip = GEA_niagara_preparation_available_tt
+				check_variable = { GEA_secret_operation_preparations > 0 }
+			}
+			custom_trigger_tooltip = {
+				tooltip = GEA_two_pirate_fleets_available_tt
+				OR = {
+					AND = { check_variable = { GEA_max_concurrent_raids > 1 } check_variable = { GEA_active_raids < 1 } }
+					AND = { check_variable = { GEA_max_concurrent_raids > 2 } check_variable = { GEA_active_raids < 2 } }
+					AND = { check_variable = { GEA_max_concurrent_raids > 3 } check_variable = { GEA_active_raids < 3 } }
+					AND = { check_variable = { GEA_max_concurrent_raids > 4 } check_variable = { GEA_active_raids < 4 } }
+					AND = { check_variable = { GEA_max_concurrent_raids > 5 } check_variable = { GEA_active_raids < 5 } }
+					AND = { check_variable = { GEA_max_concurrent_raids > 6 } check_variable = { GEA_active_raids < 6 } }
+				}
+			}
+		}
+
+		complete_effect = {
+			add_command_power = -100
+			navy_experience = -50
+			custom_override_tooltip = {
+				tooltip = GEA_niagara_preparation_spent_tt
+				subtract_from_variable = { GEA_secret_operation_preparations = 1 }
+			}
+			custom_override_tooltip = {
+				tooltip = GEA_niagara_two_fleets_assigned_tt
+				add_to_variable = { GEA_active_raids = 2 }
+			}
+		}
+
+		cancel_effect = {
+			hidden_effect = {
+				add_to_variable = { GEA_active_raids = -2 }
+				clamp_variable = { var = GEA_active_raids min = 0 }
+			}
+		}
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Secret_operation_Niagara_heist"
+			add_timed_idea = { idea = GEA_Niagara_gold days = 365 }
+			add_political_power = 200
+			hidden_effect = {
+				add_to_variable = { GEA_active_raids = -2 }
+				clamp_variable = { var = GEA_active_raids min = 0 }
+			}
+			news_event = { id = GEA_news.1 }
+		}
+	}
+	GEA_Secret_operation_Oriental_treasures_heist = { #秘密行动：东方珍藏劫案
+		allowed = { original_tag = GEA }
+		icon = GFX_decision_GEA_Secret_operation_Oriental_treasures_heist
+
+		custom_cost_text = GEA_niagara_heist_cost
+		custom_cost_trigger = { command_power > 99.99 has_navy_experience > 49.99 }
+
+		days_remove = 120
+		fire_only_once = yes
+
+		visible = { has_completed_focus = GEA_The_secret_operation_under_the_glow_of_black_white_and_red_lights }
+
+		available = {
+			has_manpower > 1000
+			custom_trigger_tooltip = {
+				tooltip = GEA_niagara_preparation_available_tt
+				check_variable = { GEA_secret_operation_preparations > 0 }
+			}
+			custom_trigger_tooltip = {
+				tooltip = GEA_two_pirate_fleets_available_tt
+				OR = {
+					AND = { check_variable = { GEA_max_concurrent_raids > 1 } check_variable = { GEA_active_raids < 1 } }
+					AND = { check_variable = { GEA_max_concurrent_raids > 2 } check_variable = { GEA_active_raids < 2 } }
+					AND = { check_variable = { GEA_max_concurrent_raids > 3 } check_variable = { GEA_active_raids < 3 } }
+					AND = { check_variable = { GEA_max_concurrent_raids > 4 } check_variable = { GEA_active_raids < 4 } }
+					AND = { check_variable = { GEA_max_concurrent_raids > 5 } check_variable = { GEA_active_raids < 5 } }
+					AND = { check_variable = { GEA_max_concurrent_raids > 6 } check_variable = { GEA_active_raids < 6 } }
+				}
+			}
+		}
+
+		complete_effect = {
+			add_command_power = -100
+			navy_experience = -50
+			custom_override_tooltip = {
+				tooltip = GEA_niagara_preparation_spent_tt
+				subtract_from_variable = { GEA_secret_operation_preparations = 1 }
+			}
+			custom_override_tooltip = {
+				tooltip = GEA_niagara_two_fleets_assigned_tt
+				add_to_variable = { GEA_active_raids = 2 }
+			}
+		}
+
+		cancel_effect = {
+			hidden_effect = {
+				add_to_variable = { GEA_active_raids = -2 }
+				clamp_variable = { var = GEA_active_raids min = 0 }
+			}
+		}
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Secret_operation_Oriental_treasures_heist"
+			if = {
+				limit = { NOT = { has_country_flag = GEA_pirate_exposure_disabled } }
+				custom_override_tooltip = {
+					tooltip = GEA_secret_operation_discovery_chance_tt
+					add_to_variable = { GEA_pirate_discovery_chance = 10 }
+					clamp_variable = { var = GEA_pirate_discovery_chance min = 0 max = 100 }
+				}
+			}
+			hidden_effect = { GEA_roll_secret_operation_discovery = yes }
+			custom_override_tooltip = {
+				tooltip = GEA_oriental_treasures_loot_tt
+				add_to_variable = { GEA_pirate_loot_stacks = 5 }
+				GEA_update_pirate_loot_values = yes
+			}
+			add_political_power = 200
+			add_stability = 0.1
+			608 = { #北京：按行动结算时的地块拥有者判定
+				owner = { decrease_ruling_party_popularity_by_10 = yes }
+			}
+			hidden_effect = {
+				add_to_variable = { GEA_active_raids = -2 }
+				clamp_variable = { var = GEA_active_raids min = 0 }
+			}
+		}
+	}
+	GEA_Secret_operation_Rangitane_heist = { #秘密行动：朗吉塔尼号绝密档案
+		allowed = { original_tag = GEA }
+		icon = GFX_decision_GEA_Secret_operation_Rangitane_heist
+
+		custom_cost_text = GEA_niagara_heist_cost
+		custom_cost_trigger = { command_power > 99.99 has_navy_experience > 49.99 }
+
+		days_remove = 120
+		fire_only_once = yes
+
+		visible = { has_completed_focus = GEA_The_secret_operation_under_the_glow_of_black_white_and_red_lights }
+
+		available = {
+			has_manpower > 1000
+			custom_trigger_tooltip = {
+				tooltip = GEA_niagara_preparation_available_tt
+				check_variable = { GEA_secret_operation_preparations > 0 }
+			}
+			custom_trigger_tooltip = {
+				tooltip = GEA_two_pirate_fleets_available_tt
+				OR = {
+					AND = { check_variable = { GEA_max_concurrent_raids > 1 } check_variable = { GEA_active_raids < 1 } }
+					AND = { check_variable = { GEA_max_concurrent_raids > 2 } check_variable = { GEA_active_raids < 2 } }
+					AND = { check_variable = { GEA_max_concurrent_raids > 3 } check_variable = { GEA_active_raids < 3 } }
+					AND = { check_variable = { GEA_max_concurrent_raids > 4 } check_variable = { GEA_active_raids < 4 } }
+					AND = { check_variable = { GEA_max_concurrent_raids > 5 } check_variable = { GEA_active_raids < 5 } }
+					AND = { check_variable = { GEA_max_concurrent_raids > 6 } check_variable = { GEA_active_raids < 6 } }
+				}
+			}
+		}
+
+		complete_effect = {
+			add_command_power = -100
+			navy_experience = -50
+			custom_override_tooltip = {
+				tooltip = GEA_niagara_preparation_spent_tt
+				subtract_from_variable = { GEA_secret_operation_preparations = 1 }
+			}
+			custom_override_tooltip = {
+				tooltip = GEA_niagara_two_fleets_assigned_tt
+				add_to_variable = { GEA_active_raids = 2 }
+			}
+		}
+
+		cancel_effect = {
+			hidden_effect = {
+				add_to_variable = { GEA_active_raids = -2 }
+				clamp_variable = { var = GEA_active_raids min = 0 }
+			}
+		}
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Secret_operation_Rangitane_heist"
+			if = {
+				limit = { NOT = { has_country_flag = GEA_pirate_exposure_disabled } }
+				custom_override_tooltip = {
+					tooltip = GEA_secret_operation_discovery_chance_tt
+					add_to_variable = { GEA_pirate_discovery_chance = 10 }
+					clamp_variable = { var = GEA_pirate_discovery_chance min = 0 max = 100 }
+				}
+			}
+			hidden_effect = { GEA_roll_secret_operation_discovery = yes }
+			add_tech_bonus = {
+				name = GEA_Rangitane_electronics_bonus
+				ahead_reduction = 2
+				bonus = 1
+				uses = 2
+				category = electronics
+			}
+			add_tech_bonus = {
+				name = GEA_Rangitane_naval_bonus
+				bonus = 1.5
+				uses = 1
+				category = naval_equipment
+			}
+			add_breakthrough_points = {
+				specialization = specialization_naval
+				value = 1
+			}
+			add_breakthrough_points = {
+				specialization = specialization_air
+				value = 1
+			}
+			hidden_effect = {
+				add_to_variable = { GEA_active_raids = -2 }
+				clamp_variable = { var = GEA_active_raids min = 0 }
+			}
+		}
+	}
+	GEA_Secret_operation_Asama_Maru_rescue = { #秘密行动：浅间丸营救行动
+		allowed = { original_tag = GEA }
+		icon = GFX_decision_GEA_Secret_operation_Asama_Maru_rescue
+
+		custom_cost_text = GEA_niagara_heist_cost
+		custom_cost_trigger = { command_power > 99.99 has_navy_experience > 49.99 }
+
+		days_remove = 120
+		fire_only_once = yes
+
+		visible = {
+			has_completed_focus = GEA_The_secret_operation_under_the_glow_of_black_white_and_red_lights
+			GER = { has_war_with = JAP }
+		}
+
+		available = {
+			has_manpower > 1000
+			custom_trigger_tooltip = {
+				tooltip = GEA_niagara_preparation_available_tt
+				check_variable = { GEA_secret_operation_preparations > 0 }
+			}
+			custom_trigger_tooltip = {
+				tooltip = GEA_two_pirate_fleets_available_tt
+				OR = {
+					AND = { check_variable = { GEA_max_concurrent_raids > 1 } check_variable = { GEA_active_raids < 1 } }
+					AND = { check_variable = { GEA_max_concurrent_raids > 2 } check_variable = { GEA_active_raids < 2 } }
+					AND = { check_variable = { GEA_max_concurrent_raids > 3 } check_variable = { GEA_active_raids < 3 } }
+					AND = { check_variable = { GEA_max_concurrent_raids > 4 } check_variable = { GEA_active_raids < 4 } }
+					AND = { check_variable = { GEA_max_concurrent_raids > 5 } check_variable = { GEA_active_raids < 5 } }
+					AND = { check_variable = { GEA_max_concurrent_raids > 6 } check_variable = { GEA_active_raids < 6 } }
+				}
+			}
+		}
+
+		complete_effect = {
+			add_command_power = -100
+			navy_experience = -50
+			custom_override_tooltip = {
+				tooltip = GEA_niagara_preparation_spent_tt
+				subtract_from_variable = { GEA_secret_operation_preparations = 1 }
+			}
+			custom_override_tooltip = {
+				tooltip = GEA_niagara_two_fleets_assigned_tt
+				add_to_variable = { GEA_active_raids = 2 }
+			}
+		}
+
+		cancel_effect = {
+			hidden_effect = {
+				add_to_variable = { GEA_active_raids = -2 }
+				clamp_variable = { var = GEA_active_raids min = 0 }
+			}
+		}
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Secret_operation_Asama_Maru_rescue"
+			if = {
+				limit = { NOT = { has_country_flag = GEA_pirate_exposure_disabled } }
+				custom_override_tooltip = {
+					tooltip = GEA_secret_operation_discovery_chance_tt
+					add_to_variable = { GEA_pirate_discovery_chance = 10 }
+					clamp_variable = { var = GEA_pirate_discovery_chance min = 0 max = 100 }
+				}
+			}
+			GER = { add_political_power = 100 }
+			add_stability = 0.1
+			increase_ruling_party_popularity_by_5 = yes
+			JAP = {
+				add_stability = -0.1
+				decrease_ruling_party_popularity_by_10 = yes
+			}
+			hidden_effect = {
+				add_to_variable = { GEA_active_raids = -2 }
+				clamp_variable = { var = GEA_active_raids min = 0 }
+			}
+		}
+	}
+	GEA_Secret_operation_Manila_treasury = { #秘密行动：马尼拉金库
+		allowed = { original_tag = GEA }
+		icon = GFX_decision_GEA_Secret_operation_Manila_treasury
+
+		custom_cost_text = GEA_niagara_heist_cost
+		custom_cost_trigger = { command_power > 99.99 has_navy_experience > 49.99 }
+
+		days_remove = 120
+		fire_only_once = yes
+
+		visible = { has_completed_focus = GEA_The_secret_operation_under_the_glow_of_black_white_and_red_lights }
+
+		available = {
+			NOT = { has_idea = GEA_Niagara_gold }
+			PHI = { exists = yes is_subject = no }
+			has_manpower > 1000
+			custom_trigger_tooltip = {
+				tooltip = GEA_niagara_preparation_available_tt
+				check_variable = { GEA_secret_operation_preparations > 0 }
+			}
+			custom_trigger_tooltip = {
+				tooltip = GEA_two_pirate_fleets_available_tt
+				OR = {
+					AND = { check_variable = { GEA_max_concurrent_raids > 1 } check_variable = { GEA_active_raids < 1 } }
+					AND = { check_variable = { GEA_max_concurrent_raids > 2 } check_variable = { GEA_active_raids < 2 } }
+					AND = { check_variable = { GEA_max_concurrent_raids > 3 } check_variable = { GEA_active_raids < 3 } }
+					AND = { check_variable = { GEA_max_concurrent_raids > 4 } check_variable = { GEA_active_raids < 4 } }
+					AND = { check_variable = { GEA_max_concurrent_raids > 5 } check_variable = { GEA_active_raids < 5 } }
+					AND = { check_variable = { GEA_max_concurrent_raids > 6 } check_variable = { GEA_active_raids < 6 } }
+				}
+			}
+		}
+
+		complete_effect = {
+			add_command_power = -100
+			navy_experience = -50
+			custom_override_tooltip = {
+				tooltip = GEA_niagara_preparation_spent_tt
+				subtract_from_variable = { GEA_secret_operation_preparations = 1 }
+			}
+			custom_override_tooltip = {
+				tooltip = GEA_niagara_two_fleets_assigned_tt
+				add_to_variable = { GEA_active_raids = 2 }
+			}
+		}
+
+		cancel_effect = {
+			hidden_effect = {
+				add_to_variable = { GEA_active_raids = -2 }
+				clamp_variable = { var = GEA_active_raids min = 0 }
+			}
+		}
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Secret_operation_Manila_treasury"
+			if = {
+				limit = { NOT = { has_country_flag = GEA_pirate_exposure_disabled } }
+				custom_override_tooltip = {
+					tooltip = GEA_secret_operation_discovery_chance_tt
+					add_to_variable = { GEA_pirate_discovery_chance = 10 }
+					clamp_variable = { var = GEA_pirate_discovery_chance min = 0 max = 100 }
+				}
+			}
+			hidden_effect = { GEA_roll_secret_operation_discovery = yes }
+			add_timed_idea = { idea = GEA_Niagara_gold days = 365 }
+			add_political_power = 150
+			hidden_effect = {
+				add_to_variable = { GEA_active_raids = -2 }
+				clamp_variable = { var = GEA_active_raids min = 0 }
+			}
+		}
+	}
+	GEA_Secret_operation_Black_gold = { #秘密行动：黑金
+		allowed = { original_tag = GEA }
+		icon = GFX_decision_GEA_Secret_operation_Black_gold
+
+		custom_cost_text = GEA_niagara_heist_cost
+		custom_cost_trigger = { command_power > 99.99 has_navy_experience > 49.99 }
+
+		days_remove = 120
+		fire_only_once = yes
+
+		visible = { has_completed_focus = GEA_The_secret_operation_under_the_glow_of_black_white_and_red_lights }
+
+		available = {
+			JAP = { exists = yes }
+			OR = {
+				AND = { #美国尚未爆发内战，美日贸易仍然开放
+					NOT = { has_global_flag = USA_civil_war_begun_flag }
+					USA = { exists = yes }
+					JAP = { NOT = { has_war_with = USA } }
+				}
+				AND = { #内战爆发后，由太平洋国继续对日贸易
+					has_global_flag = USA_civil_war_begun_flag
+					CAL = { exists = yes }
+					JAP = { NOT = { has_war_with = CAL } }
+				}
+			}
+			has_manpower > 1000
+			custom_trigger_tooltip = {
+				tooltip = GEA_niagara_preparation_available_tt
+				check_variable = { GEA_secret_operation_preparations > 0 }
+			}
+			custom_trigger_tooltip = {
+				tooltip = GEA_two_pirate_fleets_available_tt
+				OR = {
+					AND = { check_variable = { GEA_max_concurrent_raids > 1 } check_variable = { GEA_active_raids < 1 } }
+					AND = { check_variable = { GEA_max_concurrent_raids > 2 } check_variable = { GEA_active_raids < 2 } }
+					AND = { check_variable = { GEA_max_concurrent_raids > 3 } check_variable = { GEA_active_raids < 3 } }
+					AND = { check_variable = { GEA_max_concurrent_raids > 4 } check_variable = { GEA_active_raids < 4 } }
+					AND = { check_variable = { GEA_max_concurrent_raids > 5 } check_variable = { GEA_active_raids < 5 } }
+					AND = { check_variable = { GEA_max_concurrent_raids > 6 } check_variable = { GEA_active_raids < 6 } }
+				}
+			}
+		}
+
+		complete_effect = {
+			add_command_power = -100
+			navy_experience = -50
+			custom_override_tooltip = {
+				tooltip = GEA_niagara_preparation_spent_tt
+				subtract_from_variable = { GEA_secret_operation_preparations = 1 }
+			}
+			custom_override_tooltip = {
+				tooltip = GEA_niagara_two_fleets_assigned_tt
+				add_to_variable = { GEA_active_raids = 2 }
+			}
+		}
+
+		cancel_effect = {
+			hidden_effect = {
+				add_to_variable = { GEA_active_raids = -2 }
+				clamp_variable = { var = GEA_active_raids min = 0 }
+			}
+		}
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Secret_operation_Black_gold"
+			if = {
+				limit = { NOT = { has_country_flag = GEA_pirate_exposure_disabled } }
+				custom_override_tooltip = {
+					tooltip = GEA_secret_operation_discovery_chance_tt
+					add_to_variable = { GEA_pirate_discovery_chance = 10 }
+					clamp_variable = { var = GEA_pirate_discovery_chance min = 0 max = 100 }
+				}
+			}
+			hidden_effect = { GEA_roll_secret_operation_discovery = yes }
+			custom_override_tooltip = {
+				tooltip = GEA_black_gold_fill_fuel_tt
+				set_fuel_ratio = 1
+			}
+			add_resource = { type = oil amount = 300 state = 336 days = 120 }
+			custom_override_tooltip = {
+				tooltip = GEA_black_gold_loot_modifier_tt
+				add_to_variable = { GEA_pirate_loot_stacks = 2 }
+				GEA_update_pirate_loot_values = yes
+			}
+			JAP = { add_timed_idea = { idea = GEA_oil_trade_routes_disrupted days = 120 } }
+			hidden_effect = {
+				add_to_variable = { GEA_active_raids = -2 }
+				clamp_variable = { var = GEA_active_raids min = 0 }
+			}
 		}
 	}
 }

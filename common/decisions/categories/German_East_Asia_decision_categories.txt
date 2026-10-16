@@ -15,6 +15,11 @@ GEA_colonial_decisions = {
 	allowed = {
 		original_tag = GEA
 	}
+	visible = {
+		NOT = {
+			has_completed_focus = GEA_Germany_Calling
+		}
+	}
 }
 
 GEA_heye_decisions = {
@@ -26,18 +31,6 @@ GEA_heye_decisions = {
 		has_completed_focus = GEA_Germany_Calling
 	}
 	priority = 102
-	visible_when_empty = yes
-}
-
-GEA_heye_Breakwater_project_decisions = {
-	icon = GFX_decision_category_generic_mountain_fortification
-	allowed = {
-		original_tag = GEA
-	}
-	visible = {
-		has_completed_focus = GEA_Reconstruction_of_the_breakwater_project
-	}
-	priority = 101
 	visible_when_empty = yes
 }
 
@@ -98,7 +91,7 @@ GEA_Naval_decisions = {
 		original_tag = GEA
 	}
 	visible = {
-		#has_completed_focus = GEA_Shipbuilding_plan	
+		has_completed_focus = GEA_Shipbuilding_plan	
 	}
 	priority = 900
 	visible_when_empty = yes
@@ -111,6 +104,7 @@ GEA_luckner_decisions = {
 	}
 	visible = {
 		#has_completed_focus = GEA_Governor_Luckner	
+		#has_country_flag = GEA_Governor_Luckner_flag
 	}
 	priority = 1500
 	visible_when_empty = yes

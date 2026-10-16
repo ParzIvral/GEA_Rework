@@ -181,6 +181,14 @@ spriteTypes = {
 		texturefile = "gfx/interface/ideas/gea/GEA_hide_in_shadow.png"
 	}
 	spriteType = {
+		name = "GFX_idea_GEA_Riding_across_the_vast_oceans"
+		texturefile = "gfx/interface/ideas/gea/GEA_Riding_across_the_vast_oceans"
+	}
+	spriteType = {
+		name = "GFX_idea_GEA_The_benefits_of_rent_seeking"
+		texturefile = "gfx/interface/ideas/gea/GEA_The_benefits_of_rent_seeking"
+	}
+	spriteType = {
 		name = "GFX_idea_GEA_An_undefeated_army_in_pursuit_of_honor"
 		texturefile = "gfx/interface/ideas/gea/GEA_An_undefeated_army_in_pursuit_of_honor.png"
 	}

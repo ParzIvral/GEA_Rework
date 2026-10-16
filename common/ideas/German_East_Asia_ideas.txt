@@ -1770,17 +1770,90 @@ ideas = {
 			picture = GEA_An_undefeated_army_in_pursuit_of_honor
 			allowed = { always = no }
 			modifier = {
-				weekly_manpower = 1000
-				navy_leader_start_level = 2
-				naval_coordination = 0.03
-				naval_speed_factor = 0.1
+				weekly_manpower = 200
+				conscription_factor = 0.08
+				war_support_weekly = 0.01
+				army_attack_factor = -0.02
+				naval_strike_attack_factor = 0.04
 				naval_has_potf_in_combat_attack = 0.05
 				amphibious_invasion = 0.1
 				naval_invasion_penalty = -0.05
 				navy_org_factor = 0.03
 			}
 		}
+		GEA_An_undefeated_army_in_pursuit_of_honor_3 = { #海上传奇之军
+			name = GEA_An_undefeated_army_in_pursuit_of_honor
+			picture = GEA_An_undefeated_army_in_pursuit_of_honor
+			allowed = { always = no }
+			modifier = {
+				weekly_manpower = 1000
+				navy_leader_start_level = 2
+				naval_coordination = 0.03
+				naval_speed_factor = 0.1
+				conscription_factor = 0.08
+				war_support_weekly = 0.01
+				army_attack_factor = -0.02
+				naval_strike_attack_factor = 0.04
+				naval_has_potf_in_combat_attack = 0.05
+				amphibious_invasion = 0.1
+				naval_invasion_penalty = -0.05
+				navy_org_factor = 0.03
+			}
+		}
+		GEA_Riding_across_the_vast_oceans = { #纵横大洋
+			picture = GEA_Riding_across_the_vast_oceans
+			allowed = { always = no }
+			modifier = {
+				political_power_factor = 0.06
+				navy_org_factor = 0.05
+				navy_fuel_consumption_factor = -0.1
+				industrial_capacity_dockyard = 0.03
+			}
+		}
+		GEA_Riding_across_the_vast_oceans_2 = { #纵横大洋
+			picture = GEA_Riding_across_the_vast_oceans
+			allowed = { always = no }
+			modifier = {
+				political_power_factor = 0.1
+				war_support_factor = 0.1
+				navy_org_factor = 0.075
+				navy_fuel_consumption_factor = -0.2
+				industrial_capacity_dockyard = 0.1
+				naval_has_potf_in_combat_attack = 0.05
+				convoy_raiding_efficiency_factor = 0.1
+			}
+		}
+		GEA_The_benefits_of_rent_seeking = { #寻租之利
+			picture = GEA_The_benefits_of_rent_seeking
+			allowed = { always = no }
+			modifier = {
+				political_power_gain = 0.03
+				industrial_capacity_factory = 0.03
+				consumer_goods_factor = -0.05
+				industrial_factory_donations = 5
+			}
+		}
+		GEA_Purge_the_General_Staff = { #清洗总参谋部
+			picture = GEA_Purge_the_General_Staff
+			allowed = { always = no }
+			modifier = {
+				political_power_gain = 0.03
+				industrial_capacity_factory = 0.03
+				consumer_goods_factor = -0.05
+				industrial_factory_donations = 5
+			}
+		}
 #决议
+		GEA_Niagara_gold = { #尼亚加拉黄金
+			picture = SPR_seize_the_gold_reserves
+			allowed = { always = no }
+			modifier = {
+				political_power_factor = 0.2
+				consumer_goods_factor = -0.2
+				industrial_capacity_factory = 0.1
+				industrial_capacity_dockyard = 0.1
+			}
+		}
 		GEA_shipping_routes_raided = { # 航运线遇袭
 			picture = GEN_navy_logistics
 			allowed = { always = no }
@@ -1973,6 +2046,36 @@ ideas = {
 	}
 #隐藏精神
 	hidden_ideas = {
+		GEA_oil_trade_routes_disrupted = { #原油贸易线路中断
+			allowed = { always = no }
+			modifier = {
+				army_fuel_consumption_factor = 0.2
+				navy_fuel_consumption_factor = 0.2
+				air_fuel_consumption_factor = 0.2
+			}
+		}
+		GEA_naval_ports_attacked = { #军港遇袭
+			allowed = { always = no }
+			modifier = {
+				navy_org_factor = -0.05
+				navy_max_range_factor = -0.05
+			}
+		}
+		GEA_rampant_pirate_activity = { #猖獗的海盗活动
+			allowed = { always = no }
+			modifier = {
+				consumer_goods_factor = 0.05
+				industrial_capacity_factory = -0.05
+				stability_factor = -0.05
+			}
+		}
+		GEA_unrestricted_submarine_warfare = { #无限制潜艇战
+			allowed = { always = no }
+			modifier = {
+				convoy_escort_efficiency = -0.1
+				naval_speed_factor = -0.05
+			}
+		}
 		GEA_far_eastern_abwehr_idea = { #远东阿勃维尔
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_far_eastern_abwehr_idea"}
 			allowed = { always = no }
