@@ -17,11 +17,11 @@ spriteTypes = {
 	}
 	spriteType = {
 		name = "GFX_GEA_navy_soldiers"
-		texturefile = "gfx/interface/decisions/GEA_navy_soldiers.png"
+		texturefile = "gfx/interface/decisions/GFX_GEA_navy_soldiers.png"
 	}
 	spriteType = {
 		name = "GFX_GEA_luckner_decision"
-		texturefile = "gfx/interface/decisions/GEA_luckner_decision.png"
+		texturefile = "gfx/interface/decisions/GFX_GEA_luckner_decision.png"
 	}
 	spriteType = {
 		name = "GFX_GEA_Niagara_heist"
@@ -64,16 +64,28 @@ spriteTypes = {
 		texturefile = "gfx/interface/decisions/GFX_decision_GEA_Secret_operation_Rangitane_heist.png"
 	}
 	spriteType = {
-		name = "GFX_decision_mucke_decision"
-		texturefile = "gfx/interface/decisions/mucke_decision.png"
+		name = "GFX_GEA_schorner_slave_decision"
+		texturefile = "gfx/interface/decisions/GFX_GEA_schorner_slave_decision.png"
+	}
+	spriteType = {
+		name = "GFX_GEA_schorner_burning_decision"
+		texturefile = "gfx/interface/decisions/GFX_GEA_schorner_burning_decision.png"
+	}
+	spriteType = {
+		name = "GFX_GEA_schorner_skull_decision"
+		texturefile = "gfx/interface/decisions/GFX_GEA_schorner_skull_decision.png"
+	}
+	spriteType = {
+		name = "GFX_GEA_schorner_bandit_decision"
+		texturefile = "gfx/interface/decisions/GFX_GEA_schorner_bandit_decision.png"
+	}
+	spriteType = {
+		name = "GFX_GEA_schorner_money_decision"
+		texturefile = "gfx/interface/decisions/GFX_GEA_schorner_money_decision.png"
 	}
 	spriteType = {
 		name = "GFX_decision_schorner_decision"
 		texturefile = "gfx/interface/decisions/schorner_decision.png"
-	}
-	spriteType = {
-		name = "GFX_decision_GEA_Heydrich"
-		texturefile = "gfx/interface/decisions/GEA_Heydrich.png"
 	}
 	spriteType = {
 		name = "GFX_decision_GEA_army"
@@ -110,34 +122,6 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_decision_GEA_Borneo_decisions"
 		texturefile = "gfx/interface/decisions/GEA_Borneo_decisions.png"
-	}
-	spriteType = {
-		name = "GFX_decision_GEA_Burma_decisions"
-		texturefile = "gfx/interface/decisions/GEA_Burma_decisions.png"
-	}
-	spriteType = {
-		name = "GFX_decision_GEA_dei_decisions"
-		texturefile = "gfx/interface/decisions/GEA_dei_decisions.png"
-	}
-	spriteType = {
-		name = "GFX_decision_GEA_Guinea_decisions"
-		texturefile = "gfx/interface/decisions/GEA_Guinea_decisions.png"
-	}
-	spriteType = {
-		name = "GFX_decision_GEA_Hawaii_decisions"
-		texturefile = "gfx/interface/decisions/GEA_Hawaii_decisions.png"
-	}
-	spriteType = {
-		name = "GFX_decision_GEA_malaya_decisions"
-		texturefile = "gfx/interface/decisions/GEA_malaya_decisions.png"
-	}
-	spriteType = {
-		name = "GFX_decision_GEA_Philippines_decisions"
-		texturefile = "gfx/interface/decisions/GEA_Philippines_decisions.png"
-	}
-	spriteType = {
-		name = "GFX_decision_GEA_Thailand_decisions"
-		texturefile = "gfx/interface/decisions/GEA_Thailand_decisions.png"
 	}
 	spriteType = {
 		name = "GFX_decision_iron_fist"

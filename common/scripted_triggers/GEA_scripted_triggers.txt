@@ -1,0 +1,10 @@
+# 舍尔纳路线：与整合印度支那决议一致的七个地区均已拥有并核心化
+GEA_indochina_fully_pacified_trigger = {
+	857 = { is_owned_by = GEA is_core_of = GEA }
+	671 = { is_owned_by = GEA is_core_of = GEA }
+	827 = { is_owned_by = GEA is_core_of = GEA }
+	670 = { is_owned_by = GEA is_core_of = GEA }
+	826 = { is_owned_by = GEA is_core_of = GEA }
+	286 = { is_owned_by = GEA is_core_of = GEA }
+	856 = { is_owned_by = GEA is_core_of = GEA }
+}

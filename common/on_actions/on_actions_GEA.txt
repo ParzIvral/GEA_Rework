@@ -1,4 +1,13 @@
 on_actions = {
+	# 舍尔纳路线的独立抵抗度：每日仅校正范围，不自动增减
+	on_daily_GEA = {
+		effect = {
+			if = {
+				limit = { has_variable = GEA_indochina_resistance }
+				clamp_variable = { var = GEA_indochina_resistance min = 0 max = 100 }
+			}
+		}
+	}
 	# 卢克纳尔的国际形象：风险高于40%时每月回落1个百分点
 	on_monthly = {
 		effect = {

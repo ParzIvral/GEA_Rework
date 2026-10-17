@@ -1,0 +1,10 @@
+defined_text = {
+	name = GetGEAIndochinaDescription
+	text = {
+		trigger = { GEA = { has_country_flag = GEA_Governor_Schorner_flag } }
+		localization_key = GEA_Indochina_Schorner_DESC
+	}
+	text = {
+		localization_key = GEA_Indochina_Default_DESC
+	}
+}

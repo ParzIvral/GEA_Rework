@@ -1369,6 +1369,51 @@ ideas = {
 				root_out_resistance_effectiveness_factor = 0.2
 			}
 		}
+		GEA_In_the_Shadow_schorner = { #于阴影之中：舍尔纳整顿
+			name = GEA_In_the_Shadow
+			picture = GER_Hundred_Years_Night
+			allowed = { always = no }
+			modifier = {
+				operative_slot = 1
+				intel_network_gain_factor = 0.05
+				encryption = 2
+				decryption = 2
+				agency_upgrade_time = -0.2
+			}
+		}
+		GEA_In_the_Shadow_2_schorner = { #于阴影之中：舍尔纳整顿
+			name = GEA_In_the_Shadow
+			picture = GER_Hundred_Years_Night
+			allowed = { always = no }
+			modifier = {
+				operative_slot = 2
+				intel_network_gain_factor = 0.2
+				encryption = 2
+				decryption = 2
+				agency_upgrade_time = -0.2
+				foreign_subversive_activites = -0.2
+				subversive_activites_upkeep = -0.2
+				operation_cost = -0.1
+				root_out_resistance_effectiveness_factor = 0.15
+			}
+		}
+		GEA_In_the_Shadow_3_schorner = { #于阴影之中：舍尔纳整顿
+			name = GEA_In_the_Shadow
+			picture = GER_Hundred_Years_Night
+			allowed = { always = no }
+			modifier = {
+				operative_slot = 3
+				intel_network_gain_factor = 0.3
+				encryption = 3
+				decryption = 3
+				agency_upgrade_time = -0.3
+				foreign_subversive_activites = -0.2
+				subversive_activites_upkeep = -0.2
+				operation_cost = -0.1
+				operation_risk = -0.1
+				root_out_resistance_effectiveness_factor = 0.2
+			}
+		}
 		GEA_The_quagmire_of_Indochina_heye = { #深陷印支泥沼
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_The_quagmire_of_Indochina_heye"}
 			name = GEA_The_quagmire_of_Indochina
@@ -1834,17 +1879,63 @@ ideas = {
 			}
 		}
 		GEA_Purge_the_General_Staff = { #清洗总参谋部
-			picture = GEA_Purge_the_General_Staff
+			picture = GER_Purged_Military
 			allowed = { always = no }
 			modifier = {
-				political_power_gain = 0.03
-				industrial_capacity_factory = 0.03
-				consumer_goods_factor = -0.05
-				industrial_factory_donations = 5
+				political_power_factor = 0.15
+				land_doctrine_cost_factor = 0.25
+				army_org_factor = -0.1
+				max_planning = -0.1
+			}
+		}
+		GEA_German_Feldgendarmerie = { #战地宪兵
+			picture = GEA_German_Feldgendarmerie
+			allowed = { always = no }
+			modifier = {
+				war_support_factor = -0.05
+				army_attack_factor = 0.03
+				army_defence_factor = 0.03
+				army_org_factor = 0.075
+				army_morale_factor = -0.05
+			}
+		}
+		GEA_schorner_bloody_reign = { #舍尔纳的血腥之治
+			picture = GEA_schorner_bloody_reign
+			allowed = { always = no }
+			modifier = {
+				production_speed_arms_factory_factor = 0.05
+				monthly_population = -0.05
+				war_support_weekly = 0.005
+			}
+		}
+		GEA_schorner_bloody_reign_2 = { #舍尔纳的血腥之治
+			picture = GEA_schorner_bloody_reign
+			name = GEA_schorner_bloody_reign
+			allowed = { always = no }
+			modifier = {
+				production_speed_arms_factory_factor = 0.05
+				monthly_population = -0.15
+				war_support_weekly = 0.005
+				production_factory_start_efficiency_factor = -0.03
+				production_factory_max_efficiency_factor = 0.07
+				industrial_capacity_factory = 0.06
+				industrial_capacity_dockyard = 0.06
+				industry_free_repair_factor = 0.1
+				weekly_manpower = -300
 			}
 		}
 #决议
 		GEA_Niagara_gold = { #尼亚加拉黄金
+			picture = SPR_seize_the_gold_reserves
+			allowed = { always = no }
+			modifier = {
+				political_power_factor = 0.2
+				consumer_goods_factor = -0.2
+				industrial_capacity_factory = 0.1
+				industrial_capacity_dockyard = 0.1
+			}
+		}
+		GEA_Manila_gold = { #马尼拉黄金
 			picture = SPR_seize_the_gold_reserves
 			allowed = { always = no }
 			modifier = {

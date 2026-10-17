@@ -4932,6 +4932,8 @@ add_namespace = GEA_news
 			set_country_flag = GEA_Governor_Schorner_flag
 			clr_country_flag = GEA_Governor_Heye_flag
 			hidden_effect = {
+				set_variable = { GEA_indochina_resistance = 90 } #舍尔纳路线：印度支那抵抗度
+				clamp_variable = { var = GEA_indochina_resistance min = 0 max = 100 }
 				promote_character = {
 					character = GEA_Ferdinand_Schorner
 					ideology = natpop_colonial_govt_subtype
@@ -5442,7 +5444,6 @@ add_namespace = GEA_news
 			custom_effect_tooltip = GEA_Not_completed
 		}
 	}
-
 	country_event = { #封存的卷宗
 		id = GEA.521
 		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.521" }
@@ -5457,7 +5458,6 @@ add_namespace = GEA_news
 			hidden_effect = { GER = { country_event = { id = GEA.519 days = 3 } } }
 		}
 	}
-
 	country_event = { #警察局的旧案
 		id = GEA.522
 		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.522" }
@@ -5472,7 +5472,6 @@ add_namespace = GEA_news
 			hidden_effect = { GER = { country_event = { id = GEA.519 days = 3 } } }
 		}
 	}
-
 	country_event = { #港口登记簿
 		id = GEA.523
 		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.523" }
@@ -5487,7 +5486,6 @@ add_namespace = GEA_news
 			hidden_effect = { GER = { country_event = { id = GEA.519 days = 3 } } }
 		}
 	}
-
 	country_event = { #不该存在的账户
 		id = GEA.524
 		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.524" }
@@ -5502,7 +5500,6 @@ add_namespace = GEA_news
 			hidden_effect = { GER = { country_event = { id = GEA.519 days = 3 } } }
 		}
 	}
-
 	country_event = { #海鹰号旧识
 		id = GEA.525
 		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.525" }
@@ -5539,7 +5536,6 @@ add_namespace = GEA_news
 			hidden_effect = { country_event = { id = GEA.531 days = 3 } }
 		}
 	}
-
 	country_event = { #账簿上的陌生人
 		id = GEA.527
 		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.527" }
@@ -5562,7 +5558,6 @@ add_namespace = GEA_news
 			hidden_effect = { country_event = { id = GEA.528 days = 3 } }
 		}
 	}
-
 	country_event = { #意外的收获
 		id = GEA.528
 		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.528" }
@@ -5585,7 +5580,6 @@ add_namespace = GEA_news
 			hidden_effect = { country_event = { id = GEA.534 days = 3 } }
 		}
 	}
-
 	country_event = { #旭日之下的阴谋
 		id = GEA.529
 		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.529" }
@@ -5605,7 +5599,6 @@ add_namespace = GEA_news
 			}
 		}
 	}
-
 	country_event = { #死人名单
 		id = GEA.530
 		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.530" }
@@ -5620,7 +5613,6 @@ add_namespace = GEA_news
 			hidden_effect = { GER = { country_event = { id = GEA.519 days = 3 } } }
 		}
 	}
-
 	country_event = { #导火索照会
 		id = GEA.531
 		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.531" }
@@ -5635,7 +5627,6 @@ add_namespace = GEA_news
 			hidden_effect = { GER = { country_event = { id = GEA.519 days = 3 } } }
 		}
 	}
-
 	country_event = { #不合作的嫌疑人
 		id = GEA.532
 		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.532" }
@@ -5650,7 +5641,6 @@ add_namespace = GEA_news
 			hidden_effect = { GER = { country_event = { id = GEA.519 days = 3 } } }
 		}
 	}
-
 	country_event = { #银行家的秘密
 		id = GEA.533
 		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.533" }
@@ -5665,7 +5655,6 @@ add_namespace = GEA_news
 			hidden_effect = { GER = { country_event = { id = GEA.519 days = 3 } } }
 		}
 	}
-
 	country_event = { #精心安排的汇款
 		id = GEA.534
 		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.534" }
@@ -5680,7 +5669,6 @@ add_namespace = GEA_news
 			hidden_effect = { GER = { country_event = { id = GEA.519 days = 3 } } }
 		}
 	}
-
 	country_event = { #不该说的别说
 		id = GEA.535
 		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.535" }
@@ -5695,7 +5683,6 @@ add_namespace = GEA_news
 			hidden_effect = { GER = { country_event = { id = GEA.519 days = 3 } } }
 		}
 	}
-
 	country_event = { #第三份证词
 		id = GEA.536
 		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.536" }
@@ -5710,7 +5697,6 @@ add_namespace = GEA_news
 			hidden_effect = { country_event = { id = GEA.537 days = 3 } }
 		}
 	}
-
 	country_event = { #办公桌的另一端
 		id = GEA.537
 		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.537" }
@@ -5723,6 +5709,296 @@ add_namespace = GEA_news
 		option = {
 			name = GEA.537.a
 			hidden_effect = { GER = { country_event = { id = GEA.519 days = 3 } } }
+		}
+	}
+
+	country_event = { #失败者之家
+		id = GEA.540
+		immediate = { 
+			log = "[GetDateText]: [Root.GetName]: event GEA.540"
+			hidden_effect = {
+				country_event = {
+					id = GEA.541
+					days = 7
+				}
+			}
+		}
+		title = GEA.540.t
+		desc = GEA.540.d
+		picture = GFX_GEA_51
+
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = GEA.540.a
+			custom_effect_tooltip = GEA_Schorner_keep_control_tt
+			hidden_effect = { add_to_variable = { GEA_Schorner_control_count = 1 } }
+			add_war_support = -0.1
+			army_experience = -30
+			add_manpower = -200
+		}
+
+		option = {
+			name = GEA.540.b
+			custom_effect_tooltip = GEA_Schorner_keep_control_tt
+			hidden_effect = { add_to_variable = { GEA_Schorner_control_count = 1 } }
+			add_stability = -0.1
+			add_popularity = {
+				ideology = authoritarian_democrat
+				popularity = -0.05
+			}
+			add_popularity = {
+				ideology = paternal_autocrat
+				popularity = -0.05
+			}
+			decrease_ruling_party_popularity_by_10 = yes
+			add_manpower = -100
+		}
+
+		option = {
+			name = GEA.540.c
+			custom_effect_tooltip = GEA_Schorner_keep_control_tt
+			hidden_effect = { add_to_variable = { GEA_Schorner_control_count = 1 } }
+			add_command_power = -50
+			add_political_power = -50
+		}
+	}
+
+	country_event = { #绅士战争
+		id = GEA.541
+		immediate = { 
+			log = "[GetDateText]: [Root.GetName]: event GEA.541" 
+			hidden_effect = {
+				country_event = {
+					id = GEA.542
+					days = 7
+				}
+			}
+		}
+		title = GEA.541.t
+		desc = GEA.541.d
+		picture = GFX_GEA_52
+
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = GEA.541.a
+			custom_effect_tooltip = GEA_Schorner_keep_control_tt
+			hidden_effect = { add_to_variable = { GEA_Schorner_control_count = 1 } }
+			army_experience = -20
+			add_to_variable = { GEA_army_experience_gain_army = -0.05 }
+
+		}
+
+		option = {
+			name = GEA.541.b
+			add_popularity = { ideology = paternal_autocrat popularity = 0.05 }
+			add_war_support = 0.05
+		}
+
+		option = {
+			name = GEA.541.c
+			custom_effect_tooltip = GEA_Schorner_keep_control_tt
+			hidden_effect = { add_to_variable = { GEA_Schorner_control_count = 1 } }
+			add_political_power = -50
+		}
+	}
+
+	country_event = { #两面旗帜下的军官
+		id = GEA.542
+		immediate = { 
+			log = "[GetDateText]: [Root.GetName]: event GEA.542" 
+			hidden_effect = {
+				country_event = {
+					id = GEA.543
+					days = 7
+				}
+			}
+		}
+		title = GEA.542.t
+		desc = GEA.542.d
+		picture = GFX_GEA_53
+
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = GEA.542.a
+			custom_effect_tooltip = GEA_Schorner_keep_control_tt
+			hidden_effect = { add_to_variable = { GEA_Schorner_control_count = 1 } }
+			navy_experience = -20
+			add_to_variable = { GEA_navy_experience_gain_navy = -0.05 }
+			add_to_variable = { GEA_navy_naval_morale_factor = -0.02 }
+		}
+
+		option = {
+			name = GEA.542.b
+			add_war_support = 0.05
+			navy_experience = 30
+		}
+
+		option = {
+			name = GEA.542.c
+			custom_effect_tooltip = GEA_Schorner_keep_control_tt
+			hidden_effect = { add_to_variable = { GEA_Schorner_control_count = 1 } }
+			add_political_power = -50
+			add_stability = -0.02
+			decrease_ruling_party_popularity_by_2 = yes
+		}
+	}
+
+	country_event = { #帝国的耳目
+		id = GEA.543
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.543"  }
+		title = GEA.543.t
+		desc = GEA.543.d
+		picture = GFX_GEA_54
+
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = GEA.543.a
+			custom_effect_tooltip = GEA_Schorner_keep_control_tt
+			hidden_effect = { add_to_variable = { GEA_Schorner_control_count = 1 } }
+			gain_random_agency_upgrade = yes
+			gain_random_agency_upgrade = yes
+			if = {
+				limit = {
+					has_idea = GEA_In_the_Shadow
+				}
+				remove_ideas = GEA_In_the_Shadow
+			}
+			if = {
+				limit = {
+					has_idea = GEA_In_the_Shadow_2
+				}
+				remove_ideas = GEA_In_the_Shadow_2
+			}
+			if = {
+				limit = {
+					has_idea = GEA_In_the_Shadow_3
+				}
+				remove_ideas = GEA_In_the_Shadow_3
+			}
+		}
+
+		option = {
+			name = GEA.543.b
+			if = {
+				limit = { has_idea = GEA_In_the_Shadow }
+				swap_ideas = {
+					remove_idea = GEA_In_the_Shadow
+					add_idea = GEA_In_the_Shadow_schorner
+				}
+			}
+			else_if = {
+				limit = { has_idea = GEA_In_the_Shadow_2 }
+				swap_ideas = {
+					remove_idea = GEA_In_the_Shadow_2
+					add_idea = GEA_In_the_Shadow_2_schorner
+				}
+			}
+			else_if = {
+				limit = { has_idea = GEA_In_the_Shadow_3 }
+				swap_ideas = {
+					remove_idea = GEA_In_the_Shadow_3
+					add_idea = GEA_In_the_Shadow_3_schorner
+				}
+			}
+		}
+
+		option = {
+			name = GEA.543.c
+			custom_effect_tooltip = GEA_Schorner_keep_control_tt
+			hidden_effect = { add_to_variable = { GEA_Schorner_control_count = 1 } }
+			add_political_power = -20
+			army_experience = -10
+		}
+	}
+	country_event = { #懦夫
+		id = GEA.544
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.544" }
+		title = GEA.544.t
+		desc = GEA.544.d
+		picture = GFX_GEA_55
+		fire_only_once = yes
+		trigger = {
+			tag = GEA
+			has_country_flag = GEA_Governor_Schorner_flag
+			has_war_with = INC
+			count_triggers = { #控制至少两个印度支那地区
+				amount = 2
+				controls_state = 827 #安南
+				controls_state = 286 #交趾支那
+				controls_state = 856 #湄公河三角洲
+				controls_state = 671 #东京
+				controls_state = 857 #东北
+				controls_state = 750 #金边
+				controls_state = 826 #上丁
+				controls_state = 825 #马德望
+				controls_state = 670 #老挝
+				controls_state = 882 #沙耶武里
+			}
+		}
+		mean_time_to_happen = { days = 14 }
+		option = {
+			name = GEA.544.a
+			add_manpower = -1
+		}
+	}
+	country_event = { #锁链犬
+		id = GEA.545
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.545" }
+		title = GEA.545.t
+		desc = GEA.545.d
+		picture = GFX_GEA_56
+		is_triggered_only = yes
+		fire_only_once = yes
+		option = {
+			name = GEA.545.a
+			add_manpower = -1
+		}
+	}
+	country_event = { #反攻印度支那的筹划
+		id = GEA.546
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.546" }
+		title = GEA.546.t
+		desc = GEA.546.d
+
+		is_triggered_only = yes
+		fire_only_once = yes
+		
+		option = {
+			name = GEA.546.a
+			custom_effect_tooltip = GEA_indochina_counteroffensive_30_days_tt
+			hidden_effect = { set_country_flag = GEA_indochina_counteroffensive_plan_a }
+		}
+		option = {
+			name = GEA.546.b
+			custom_effect_tooltip = GEA_indochina_counteroffensive_90_days_tt
+			hidden_effect = { set_country_flag = GEA_indochina_counteroffensive_plan_b }
+		}
+		option = {
+			name = GEA.546.c
+			custom_effect_tooltip = GEA_indochina_counteroffensive_half_year_tt
+			hidden_effect = { set_country_flag = GEA_indochina_counteroffensive_plan_c }
+		}
+	}
+	country_event = { #老熟人
+		id = GEA.547
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.547" }
+		title = GEA.547.t
+		desc = GEA.547.d
+
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = GEA.547.a
+			add_manpower = -7
 		}
 	}
 #经济
@@ -6610,8 +6886,11 @@ add_namespace = GEA_news
 		option = { 
 			name = Ostasien.174.a
 			add_manpower = -124
-			add_to_variable = { GEA_indochina_schorner = -10 } 
-			custom_effect_tooltip = GEA_Slaughter_the_village_tt
+			custom_override_tooltip = {
+				tooltip = GEA_indochina_resistance_reduce_10_tt
+				add_to_variable = { GEA_indochina_resistance = -10 }
+				clamp_variable = { var = GEA_indochina_resistance min = 0 max = 100 }
+			}
 		}
 	}
 #增援与八省联合

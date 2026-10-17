@@ -4990,19 +4990,24 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Governor_Schorner"
-		
+			add_popularity = {
+				ideology = national_populist
+				popularity = 0.1
+			}
+			add_ideas = GEA_schorner_bloody_reign
 		}
 	}
 	focus = { #唯有清算为要
 		id = GEA_Only_liquidation_is_the_most_important
 		icon = GFX_GEA_Only_liquidation_is_the_most_important
 
-		cost = 1
+		cost = 5
 		x = 0
 		y = 1
 
 		available = {
 			has_country_flag = GEA_Governor_Schorner_flag
+			
 		}
 		prerequisite = {
 			focus = GEA_Governor_Schorner
@@ -5037,7 +5042,68 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Strength_is_the_foundation_of_an_empire"
-		
+			army_experience = 30
+			add_mastery_bonus = {
+				name = GEA_Strength_is_the_foundation_of_an_empire
+				folder = land
+				bonus = 0.1
+				days = 180
+			}
+			custom_effect_tooltip = GEA_Strength_is_the_foundation_of_an_empire_units_tt
+			hidden_effect = {
+				if = {
+					limit = { NOT = { has_template = "GEA_schorner_elite_infantry_division" } }
+					division_template = {
+						name = "GEA_schorner_elite_infantry_division"
+						regiments = {
+							infantry = { x = 0 y = 0 }
+							infantry = { x = 0 y = 1 }
+							infantry = { x = 0 y = 2 }
+							infantry = { x = 1 y = 0 }
+							infantry = { x = 1 y = 1 }
+							infantry = { x = 1 y = 2 }
+							infantry = { x = 2 y = 0 }
+							infantry = { x = 2 y = 1 }
+							infantry = { x = 2 y = 2 }
+							artillery_brigade = { x = 3 y = 0 }
+							artillery_brigade = { x = 3 y = 1 }
+							artillery_brigade = { x = 3 y = 2 }
+						}
+						support = {
+							engineer = { x = 0 y = 0 }
+							recon = { x = 0 y = 1 }
+							artillery = { x = 0 y = 2 }
+						}
+					}
+				}
+				336 = { #新加坡
+					create_unit = {
+						division = "division_template = \"GEA_schorner_elite_infantry_division\" start_experience_factor = 0.3 start_equipment_factor = 1 start_manpower_factor = 1"
+						owner = GEA
+						prioritize_location = 12299
+					}
+					create_unit = {
+						division = "division_template = \"GEA_schorner_elite_infantry_division\" start_experience_factor = 0.3 start_equipment_factor = 1 start_manpower_factor = 1"
+						owner = GEA
+						prioritize_location = 12299
+					}
+					create_unit = {
+						division = "division_template = \"GEA_schorner_elite_infantry_division\" start_experience_factor = 0.3 start_equipment_factor = 1 start_manpower_factor = 1"
+						owner = GEA
+						prioritize_location = 12299
+					}
+					create_unit = {
+						division = "division_template = \"GEA_schorner_elite_infantry_division\" start_experience_factor = 0.3 start_equipment_factor = 1 start_manpower_factor = 1"
+						owner = GEA
+						prioritize_location = 12299
+					}
+					create_unit = {
+						division = "division_template = \"GEA_schorner_elite_infantry_division\" start_experience_factor = 0.3 start_equipment_factor = 1 start_manpower_factor = 1"
+						owner = GEA
+						prioritize_location = 12299
+					}
+				}
+			}
 		}
 	}
 	focus = { #为统治而奴役
@@ -5062,7 +5128,18 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_To_be_enslaved_for_the_sake_of_rule"
-		
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			swap_ideas = {
+				remove_idea = GEA_schorner_bloody_reign
+				add_idea = GEA_schorner_bloody_reign_2
+			}
 		}
 	}
 	focus = { #忠诚乃万事之先
@@ -5086,14 +5163,20 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Loyalty_is_the_foundation_of_all_things"
-		
+			add_war_support = 0.05
+			add_timed_idea = {
+				idea = GEA_Purge_the_General_Staff days = 90
+			}
+			country_event = {
+				id = GEA.540
+			}
 		}
 	}
 	focus = { #释放制服野兽
 		id = GEA_Release_the_tame_wild_beasts
 		icon = GFX_GEA_Release_the_tame_wild_beasts
 
-		cost = 1
+		cost = 5
 		x = 1
 		y = 1
 
@@ -5118,7 +5201,7 @@ focus_tree = {
 		id = GEA_Subdue_the_armies
 		icon = GFX_GEA_Subdue_the_armies
 
-		cost = 1
+		cost = 5
 		x = 0
 		y = 2
 
@@ -5241,7 +5324,47 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Polish_the_muzzle_sharpen_the_knife_and_gun"
-		
+			random_owned_state = {
+				save_event_target_as = GEA_polish_arms_factory_state_1
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = { NOT = { state = event_target:GEA_polish_arms_factory_state_1 } }
+				save_event_target_as = GEA_polish_arms_factory_state_2
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					NOT = { state = event_target:GEA_polish_arms_factory_state_1 }
+					NOT = { state = event_target:GEA_polish_arms_factory_state_2 }
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 1000
+				producer = GEA
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 200
+				producer = GEA
+			}
 		}
 	}
 	focus = { #克服艰难险阻
@@ -5299,7 +5422,10 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_On-the-spot_trial"
-		
+			add_manpower = -200
+			army_experience = 15
+			add_ideas = GEA_German_Feldgendarmerie
+			hidden_effect = { country_event = { id = GEA.545 days = 3 } }
 		}
 	}
 	focus = { #舍尔纳法令
@@ -5324,7 +5450,12 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Schorner_Law"
-		
+			hidden_effect = {
+				country_event = {
+					id = GEA.547
+					days = 14
+				}
+			}
 		}
 	}
 	focus = { #血腥费迪南德至高无上
