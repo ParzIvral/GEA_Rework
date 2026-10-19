@@ -200,6 +200,11 @@ country_event = {
 	days = 162
 }
 
+country_event = { #宵禁之后：安排在逮捕事件与南圻局势事件之间
+	id = GEA.53
+	days = 230
+}
+
 country_event = { 
 	id = GEA.20
 	days = 260 

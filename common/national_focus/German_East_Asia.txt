@@ -157,7 +157,7 @@ focus_tree = {
 		id = GEA_Governor_Hahl #阿尔伯特·哈尔走马上任
 		icon = GFX_GEA_Governor_Hahl
 		cost = 1	
-		x = -20
+		x = -18
 		y = 1
 		available = {		
 			has_country_flag = GEA_Governor_Hahl_flag
@@ -2369,7 +2369,7 @@ focus_tree = {
 		id = GEA_Governor_Heye #海耶元帅经略东方
 		icon = GFX_GEA_Governor_Heye
 		cost = 1	
-		x = 15
+		x = 13
 		y = 1
 		available = {		
 			has_country_flag = GEA_Governor_Heye_flag
@@ -3520,7 +3520,7 @@ focus_tree = {
 		id = GEA_Governor_Kartel
 		icon = GFX_GEA_Governor_Kartel
 		cost = 1	
-		x = 34
+		x = 30
 		y = 1
 		available = {		
 	
@@ -5001,13 +5001,20 @@ focus_tree = {
 		id = GEA_Only_liquidation_is_the_most_important
 		icon = GFX_GEA_Only_liquidation_is_the_most_important
 
-		cost = 5
+		cost = 2
 		x = 0
 		y = 1
 
 		available = {
 			has_country_flag = GEA_Governor_Schorner_flag
-			
+			NOT = { country_exists = INC }
+			controls_state = 857
+			controls_state = 671
+			controls_state = 827
+			controls_state = 670
+			controls_state = 826
+			controls_state = 286
+			controls_state = 856
 		}
 		prerequisite = {
 			focus = GEA_Governor_Schorner
@@ -5019,13 +5026,14 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Only_liquidation_is_the_most_important"
-		
+			custom_effect_tooltip = GEA_Only_liquidation_is_the_most_important_tt
+			hidden_effect = { country_event = { id = GEA.549 days = 8 } }
 		}
 	}
 	focus = { #力量乃帝国之基
 		id = GEA_Strength_is_the_foundation_of_an_empire
 		icon = GFX_GEA_Strength_is_the_foundation_of_an_empire
-		cost = 1
+		cost = 5
 		x = 2
 		y = 1
 
@@ -5110,7 +5118,7 @@ focus_tree = {
 		id = GEA_To_be_enslaved_for_the_sake_of_rule
 		icon = GFX_GEA_To_be_enslaved_for_the_sake_of_rule
 
-		cost = 1
+		cost = 5
 		x = -1
 		y = 1
 
@@ -5194,7 +5202,12 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Release_the_tame_wild_beasts"
-		
+			add_manpower = 10000
+			add_popularity = {
+				ideology = national_populist
+				popularity = 0.03
+			}
+			add_ideas = GEA_leash_dog_out 
 		}
 	}
 	focus = { #驯服三军
@@ -5218,14 +5231,64 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Subdue_the_armies"
-		
+			custom_effect_tooltip = GEA_Subdue_the_armies_tt
+			if = { #第四档：四次及以上清洗
+				limit = { check_variable = { GEA_Schorner_control_count > 3 } }
+				add_ideas = GEA_The_obedient_army
+				add_command_power = -30
+				add_doctrine_cost_reduction = {
+					name = land_doc_bonus
+					cost_reduction = 0.5
+					uses = 1
+					category = land_doctrine
+				}
+				add_doctrine_cost_reduction = {
+					name = naval_doc_bonus
+					cost_reduction = 0.5
+					uses = 1
+					category = naval_doctrine
+				}
+				gain_random_agency_upgrade = yes
+				gain_random_agency_upgrade = yes
+				add_mastery_bonus = {
+					name = GEA_Subdue_the_armies
+					bonus = 0.05
+					days = 180
+				}
+			}
+			else_if = { #第三档：三次清洗
+				limit = { check_variable = { GEA_Schorner_control_count > 2 } }
+				add_ideas = GEA_The_completely_obedient_General_Staff
+				add_doctrine_cost_reduction = {
+					name = land_doc_bonus
+					cost_reduction = 0.25
+					uses = 1
+					category = land_doctrine
+				}
+				add_doctrine_cost_reduction = {
+					name = naval_doc_bonus
+					cost_reduction = 0.25
+					uses = 1
+					category = naval_doctrine
+				}
+			}
+			else_if = { #第二档：两次清洗
+				limit = { check_variable = { GEA_Schorner_control_count > 1 } }
+				add_ideas = GEA_A_seemingly_eccentric_army
+				add_war_support = 0.05
+			}
+			else = { #最低档：一次清洗；未设置计数时同样适用
+				add_ideas = GEA_Difficult-to-manage_military_forces
+				add_manpower = 5000
+			}
+			
 		}
 	}
 	focus = { #于前线战死，于后方牺牲
 		id = GEA_die_in_the_front_die_behind
 		icon = GFX_GEA_die_in_the_front_die_behind
 
-		cost = 1
+		cost = 5
 		x = 0
 		y = 2
 
@@ -5242,14 +5305,21 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_die_in_the_front_die_behind"
-		
+			add_popularity = {
+				ideology = paternal_autocrat
+				popularity = 0.04
+			}
+			swap_ideas = {
+				remove_idea = GEA_schorner_bloody_reign_2
+				add_idea = GEA_schorner_bloody_reign_3
+			}
 		}
 	}
 	focus = { #无人例外，无人幸免
 		id = GEA_No_one_is_exempt_no_one_is_spared
 		icon = GFX_GEA_No_one_is_exempt_no_one_is_spared
 
-		cost = 1
+		cost = 5
 		x = -1
 		y = 1
 
@@ -5271,19 +5341,33 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_No_one_is_exempt_no_one_is_spared"
-			hidden_effect = {
-				country_event = {
-					id = GEA.506
-					days = 7
-				}
+			custom_override_tooltip = {
+				tooltip = GEA_indochina_resistance_reduce_15_tt
+				add_to_variable = { GEA_indochina_resistance = -15 }
+				clamp_variable = { var = GEA_indochina_resistance min = 0 max = 100 }
 			}
+			add_manpower = -1000
+			857 = { add_compliance = 20 add_resistance = 10 }
+			671 = { add_compliance = 20 add_resistance = 10 }
+			827 = { add_compliance = 20 add_resistance = 10 }
+			670 = { add_compliance = 20 add_resistance = 10 }
+			826 = { add_compliance = 20 add_resistance = 10 }
+			286 = { add_compliance = 20 add_resistance = 10 }
+			856 = { add_compliance = 20 add_resistance = 10 }
+			unlock_decision_tooltip = GEA_expand_slaughter_in_the_South
+			add_stability = -0.05
+			country_event = {
+				id = GEA.506
+				days = 7
+			}
+			
 		}
 	}
-		focus = { #无受君命
+	focus = { #无受君命
 		id = GEA_Not_acting_under_the_order_of_the_monarch
 		icon = GFX_GEA_Not_acting_under_the_order_of_the_monarch
 
-		cost = 1
+		cost = 5
 		x = -1
 		y = 3
 
@@ -5300,14 +5384,20 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Not_acting_under_the_order_of_the_monarch"
-		
+			country_event = { id = GEA.550 }
+			add_popularity = {
+				ideology = national_populist
+				popularity = 0.075
+			}
+			add_political_power = 50
+
 		}
 	}
 	focus = { #擦亮炮口，磨砺刀枪
 		id = GEA_Polish_the_muzzle_sharpen_the_knife_and_gun
 		icon = GFX_GEA_Polish_the_muzzle_sharpen_the_knife_and_gun
 
-		cost = 1
+		cost = 5
 		x = 1
 		y = 3
 
@@ -5393,7 +5483,9 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Overcome_difficulties_and_obstacles"
-		
+			army_experience = 50
+			add_war_support = 0.07
+			add_ideas = GEA_We_Fearless
 		}
 	}
 	focus = { #就地审判
@@ -5450,6 +5542,28 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Schorner_Law"
+			every_owned_state = {
+				limit = { NOT = { is_core_of = ROOT } }
+				add_manpower = -2000
+				add_compliance = 20
+				add_resistance = 10
+				add_state_modifier = {
+					modifier = {
+						local_manpower = 0.1
+						monthly_population = -0.05
+						state_production_speed_buildings_factor = 0.05
+					}
+				}
+			}
+			add_stability = 0.05
+			add_popularity = {
+				ideology = national_populist
+				popularity = 0.05
+			}
+			swap_ideas = {
+				remove_idea = GEA_schorner_bloody_reign_3
+				add_idea = GEA_schorner_bloody_reign_4
+			}
 			hidden_effect = {
 				country_event = {
 					id = GEA.547
@@ -5485,7 +5599,19 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Bloody_Ferdinand_Supreme_Power"
-		
+			if = {
+				limit = { has_character = GEA_Ferdinand_Schorner }
+				custom_effect_tooltip = GEA_Schorner_gains_Butcher_and_Bloody_Ferdinand_tt
+				hidden_effect = {
+					GEA_Ferdinand_Schorner = {
+						add_country_leader_trait = GEA_Butcher
+						add_country_leader_trait = GEA_Bloody_Ferdinand
+					}
+				}
+			}
+			add_political_power = 100
+
+			hidden_effect = { country_event = { id = GEA.551 days = 2 } }
 		}
 	}
 	focus = { #放飞染血黑鹰
@@ -5508,7 +5634,31 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Let_loose_the_blood-stained_black_eagle"
-		
+			hidden_effect = {
+				every_state = {
+					limit = {
+						OR = {
+							is_china_claim_area = yes #中国，含新疆、西藏、台湾
+							is_mongolia = yes #蒙古
+							region = 154 #日本本土
+							is_core_of = JAP #日本离岛
+							region = 191 #朝鲜
+							is_southeast_asia = yes #东南亚
+							is_russian_far_east = yes #俄国远东
+						}
+					}
+					add_claim_by = ROOT
+				}
+			}
+			add_war_support = 0.1
+			add_popularity = {
+				ideology = national_populist
+				popularity = 0.2
+			}
+			swap_ideas = {
+				remove_idea = GEA_schorner_bloody_reign_4
+				add_idea = GEA_schorner_bloody_reign_5
+			}
 		}
 	}
 #经济
@@ -5517,7 +5667,7 @@ focus_tree = {
 		icon = GFX_goal_GER_Colonial_Spring_Cleaning
 		cost = 1
 		x = -10
-		y = 15
+		y = 12
 		ai_will_do = {
 			factor = 1000
 		}
@@ -5958,6 +6108,7 @@ focus_tree = {
 			add_to_variable = { GEA_Economic_civilian_speed	= 0.05 }
 			add_to_variable = { GEA_Economic_stability_weekly = 0.001 }
 			custom_effect_tooltip = GEA_The_German_cultural_craze_economic_modifier_tt
+			hidden_effect = { country_event = { id = GEA.54 days = 7 } }
 		}
 	}
 	focus = { #裁撤无用机构
@@ -7410,7 +7561,7 @@ focus_tree = {
 		icon = GFX_GEA_The_Far_East_is_at_war_again
 		cost = 0.3
 		x = 20
-		y = 15
+		y = 12
 		ai_will_do = {
 			factor = 1000
 		}
@@ -7430,7 +7581,7 @@ focus_tree = {
 		id = GEA_Innovate_and_renew
 		icon = GFX_GEA_Innovate_and_renew
 		cost = 2
-		x = 2
+		x = 1
 		y = 1
 		ai_will_do = {
 			factor = 50
@@ -8161,7 +8312,7 @@ focus_tree = {
 		id = GEA_Ostasiatische_Heer
 		icon = GFX_GEA_Ostasiatische_Heer
 		cost = 1
-		x = 40
+		x = 38
 		y = 15
 		ai_will_do = {
 			factor = 1000
@@ -8234,7 +8385,7 @@ focus_tree = {
 		id = GEA_The_younger_generation_triumph
 		icon = GFX_GEA_The_younger_generation_triumph
 		cost = 1
-		x = -7
+		x = -6
 		y = 1
 		ai_will_do = {
 			factor = 1000
@@ -8266,7 +8417,7 @@ focus_tree = {
 		id = GEA_Trust_the_General_Staff_Department
 		icon = GFX_GEA_Trust_the_General_Staff_Department
 		cost = 1
-		x = 9
+		x = 8
 		y = 1
 		ai_will_do = {
 			factor = 1000
@@ -12476,6 +12627,1983 @@ focus_tree = {
 		relative_position_id = GEA_Flying_Comrade_Cavalry
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Rule_the_sky"
+		}	
+	}
+
+
+	### 外交线 ###
+	focus = { #舰队离港
+		id = GEA_Fleet_departure
+		icon = GFX_GEA_Fleet_departure
+		cost = 5
+		x = 5
+		y = 20
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+			OR = {
+				has_country_flag = GEA_Indochina_Uprising_Fired
+				has_country_flag = GEA_Indochina_Uprising_got_cancelled
+			}
+		}			
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Fleet_departure"
+		}	
+	}
+	focus = { #戳破流亡者的迷梦
+		id = GEA_Burst_the_illusions_of_the_exiles
+		icon = GFX_GEA_Burst_the_illusions_of_the_exiles
+		cost = 5
+		x = -9
+		y = 1
+
+		ai_will_do = {
+			factor = 25
+		}
+		available = {
+
+		}			
+
+		prerequisite = {
+			focus = GEA_Fleet_departure
+		}
+		relative_position_id = GEA_Fleet_departure
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Burst_the_illusions_of_the_exiles"
+		}	
+	}
+	focus = { #拯救莱希哈特
+		id = GEA_Save_Leichhardt
+		icon = GFX_GEA_Save_Leichhardt
+		cost = 5
+		x = 0
+		y = 2
+
+		ai_will_do = {
+			factor = 25
+		}
+		available = {
+
+		}			
+
+		prerequisite = {
+			focus = GEA_Burst_the_illusions_of_the_exiles
+		}
+		relative_position_id = GEA_Burst_the_illusions_of_the_exiles
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Save_Leichhardt"
+		}	
+	}
+	focus = { #四十年的未竟之事
+		id = GEA_The_unfinished_business_of_forty_years
+		icon = GFX_GEA_The_unfinished_business_of_forty_years
+		cost = 5
+		x = 2
+		y = 2
+
+		ai_will_do = {
+			factor = 25
+		}
+		available = {
+
+		}			
+
+		prerequisite = {
+			focus = GEA_Burst_the_illusions_of_the_exiles
+		}
+		relative_position_id = GEA_Burst_the_illusions_of_the_exiles
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_unfinished_business_of_forty_years"
+		}	
+	}
+	focus = { #里斯本热线
+		id = GEA_Lisbon_Hotline
+		icon = GFX_GEA_Lisbon_Hotline
+		cost = 5
+		x = 4
+		y = 2
+
+		ai_will_do = {
+			factor = 25
+		}
+		available = {
+
+		}			
+
+		prerequisite = {
+			focus = GEA_Burst_the_illusions_of_the_exiles
+		}
+		relative_position_id = GEA_Burst_the_illusions_of_the_exiles
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Lisbon_Hotline"
+		}	
+	}
+	focus = { #清理后花园杂草
+		id = GEA_Taking_care_of_the_back_garden
+		icon = GFX_GEA_Taking_care_of_the_back_garden
+		cost = 5
+		x = 1
+		y = 1
+
+		ai_will_do = {
+			factor = 25
+		}
+		available = {
+
+		}			
+
+		prerequisite = {
+			focus = GEA_Fleet_departure
+		}
+		relative_position_id = GEA_Fleet_departure
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Taking_care_of_the_back_garden"
+		}	
+	}
+	focus = { #干涉南亚乱局
+		id = GEA_Interfering_in_the_chaos_in_South_Asia
+		icon = GFX_GEA_Interfering_in_the_chaos_in_South_Asia
+		cost = 5
+		x = 2
+		y = 1
+
+		ai_will_do = {
+			factor = 25
+		}
+		available = {
+
+		}			
+
+		prerequisite = {
+			focus = GEA_Taking_care_of_the_back_garden
+		}
+		relative_position_id = GEA_Taking_care_of_the_back_garden
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Interfering_in_the_chaos_in_South_Asia"
+		}	
+	}
+	focus = { #跋涉世界屋脊
+		id = GEA_Traversing_the_Roof_of_the_World
+		icon = GFX_GEA_Traversing_the_Roof_of_the_World
+		cost = 5
+		x = 0
+		y = 1
+
+		ai_will_do = {
+			factor = 25
+		}
+		available = {
+
+		}			
+
+		prerequisite = {
+			focus = GEA_Interfering_in_the_chaos_in_South_Asia
+		}
+		relative_position_id = GEA_Interfering_in_the_chaos_in_South_Asia
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Traversing_the_Roof_of_the_World"
+		}	
+	}
+	focus = { #照料孔雀
+		id = GEA_Taking_care_of_peacocks
+		icon = GFX_GEA_Taking_care_of_peacocks
+		cost = 5
+		x = -2
+		y = 1
+
+		ai_will_do = {
+			factor = 25
+		}
+		available = {
+
+		}			
+
+		prerequisite = {
+			focus = GEA_Taking_care_of_the_back_garden
+		}
+		relative_position_id = GEA_Taking_care_of_the_back_garden
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Taking_care_of_peacocks"
+		}	
+	}
+
+	focus = { #黑尔弗的最后远征
+		id = GEA_Helfer_final_expedition
+		icon = GFX_GEA_Helfer_final_expedition
+		cost = 5
+		x = 0
+		y = 1
+
+		ai_will_do = {
+			factor = 25
+		}
+		available = {
+
+		}			
+
+		prerequisite = {
+			focus = GEA_Taking_care_of_peacocks
+		}
+		relative_position_id = GEA_Taking_care_of_peacocks
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Helfer_final_expedition"
+		}	
+	}
+
+	focus = { #调停暹缅战争
+		id = GEA_Mediating_the_Siam-Myanmar_War
+		icon = GFX_GEA_Mediating_the_Siam-Myanmar_War
+		cost = 5
+		x = 0
+		y = 1
+
+		ai_will_do = {
+			factor = 25
+		}
+		available = {
+
+		}			
+
+		prerequisite = {
+			focus = GEA_Taking_care_of_the_back_garden
+		}
+		relative_position_id = GEA_Taking_care_of_the_back_garden
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Mediating_the_Siam-Myanmar_War"
+		}	
+	}
+
+	focus = { #欧伦堡行动
+		id = GEA_Operation_Eulenburg
+		icon = GFX_GEA_Operation_Eulenburg
+		cost = 5
+		x = 0
+		y = 1
+
+		ai_will_do = {
+			factor = 25
+		}
+		available = {
+
+		}			
+
+		prerequisite = {
+			focus = GEA_Mediating_the_Siam-Myanmar_War
+		}
+		relative_position_id = GEA_Mediating_the_Siam-Myanmar_War
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Operation_Eulenburg"
+		}	
+	}
+
+	focus = { #试探海上马车夫
+		id = GEA_Test_the_sea_charioteer
+		icon = GFX_GEA_Test_the_sea_charioteer
+		cost = 5
+		x = -5
+		y = 1
+
+		ai_will_do = {
+			factor = 25
+		}
+		available = {
+
+		}			
+
+		prerequisite = {
+			focus = GEA_Fleet_departure
+		}
+		relative_position_id = GEA_Fleet_departure
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Test_the_sea_charioteer"
+		}	
+	}
+
+	focus = { #海牙仲裁
+		id = GEA_The_Hague_Arbitration
+		icon = GFX_GEA_The_Hague_Arbitration
+		cost = 5
+		x = -3
+		y = 1
+
+		ai_will_do = {
+			factor = 25
+		}
+		available = {
+
+		}			
+		mutually_exclusive = {
+			focus = GEA_The_travel_of_Rumphius
+		}
+		mutually_exclusive = {
+			focus = GEA_Work_together_side_by_side
+		}
+		prerequisite = {
+			focus = GEA_Test_the_sea_charioteer
+		}
+		relative_position_id = GEA_Test_the_sea_charioteer
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_Hague_Arbitration"
+		}	
+	}
+
+	focus = { #携手并肩
+		id = GEA_Work_together_side_by_side
+		icon = GFX_GEA_Work_together_side_by_side
+		cost = 5
+		x = 1
+		y = 1
+
+		ai_will_do = {
+			factor = 25
+		}
+		available = {
+
+		}			
+		mutually_exclusive = {
+			focus = GEA_The_travel_of_Rumphius
+		}
+		mutually_exclusive = {
+			focus = GEA_The_Hague_Arbitration
+		}
+		prerequisite = {
+			focus = GEA_Test_the_sea_charioteer
+		}
+		relative_position_id = GEA_Test_the_sea_charioteer
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Work_together_side_by_side"
+		}	
+	}
+
+	focus = { #龙菲乌斯的探索
+		id = GEA_The_travel_of_Rumphius
+		icon = GFX_GEA_The_travel_of_Rumphius
+		cost = 5
+		x = -1
+		y = 1
+
+		ai_will_do = {
+			factor = 25
+		}
+		available = {
+
+		}			
+		mutually_exclusive = {
+			focus = GEA_Work_together_side_by_side
+		}
+		mutually_exclusive = {
+			focus = GEA_The_Hague_Arbitration
+		}
+		prerequisite = {
+			focus = GEA_Test_the_sea_charioteer
+		}
+		relative_position_id = GEA_Test_the_sea_charioteer
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_travel_of_Rumphius"
+		}	
+	}
+
+	focus = { #一雪迈耶-瓦尔德克之耻
+		id = GEA_Atone_for_Meyer-Waldeck_disgrace
+		icon = GFX_GEA_Atone_for_Meyer-Waldeck_disgrace
+		cost = 5
+		x = 7
+		y = 1
+
+		ai_will_do = {
+			factor = 25
+		}
+		available = {
+
+		}			
+
+		prerequisite = {
+			focus = GEA_Fleet_departure
+		}
+		relative_position_id = GEA_Fleet_departure
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Atone_for_Meyer-Waldeck_disgrace"
+		}	
+	}
+
+	focus = { #重启青岛炮台
+		id = GEA_Restart_the_Qingdao_Fortifications
+		icon = GFX_GEA_Restart_the_Qingdao_Fortifications
+		cost = 5
+		x = 0
+		y = 1
+
+		ai_will_do = {
+			factor = 25
+		}
+		available = {
+
+		}			
+
+		prerequisite = {
+			focus = GEA_Atone_for_Meyer-Waldeck_disgrace
+		}
+		relative_position_id = GEA_Atone_for_Meyer-Waldeck_disgrace
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Restart_the_Qingdao_Fortifications"
+		}	
+	}
+
+	focus = { #丛林泥淖
+		id = GEA_Jungle_mud_pit
+		icon = GFX_GEA_Jungle_mud_pit
+		cost = 5
+		x = 0
+		y = 1
+
+		ai_will_do = {
+			factor = 25
+		}
+		available = {
+
+		}			
+
+		prerequisite = {
+			focus = GEA_Restart_the_Qingdao_Fortifications
+		}
+		relative_position_id = GEA_Restart_the_Qingdao_Fortifications
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Jungle_mud_pit"
+		}	
+	}
+
+	focus = { #裕仁的远东溃疡
+		id = GEA_Hirohito_Far_East_ulcer
+		icon = GFX_GEA_Hirohito_Far_East_ulcer
+		cost = 5
+		x = 2
+		y = 1
+
+		ai_will_do = {
+			factor = 25
+		}
+		available = {
+
+		}			
+
+		prerequisite = {
+			focus = GEA_Restart_the_Qingdao_Fortifications
+		}
+		relative_position_id = GEA_Restart_the_Qingdao_Fortifications
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Hirohito_Far_East_ulcer"
+		}	
+	}
+
+	focus = { #奔赴太平洋之心
+		id = GEA_Head_for_the_center_of_the_Pacific_Ocean
+		icon = GFX_GEA_Head_for_the_center_of_the_Pacific_Ocean
+		cost = 5
+		x = 3
+		y = 1
+
+		ai_will_do = {
+			factor = 25
+		}
+		available = {
+
+		}			
+
+		prerequisite = {
+			focus = GEA_Atone_for_Meyer-Waldeck_disgrace
+		}
+		relative_position_id = GEA_Atone_for_Meyer-Waldeck_disgrace
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Head_for_the_center_of_the_Pacific_Ocean"
+		}	
+	}
+
+	focus = { #探查联合舰队底细
+		id = GEA_Investigate_the_details_of_the_joint_fleet
+		icon = GFX_GEA_Investigate_the_details_of_the_joint_fleet
+		cost = 5
+		x = 6
+		y = 1
+
+		ai_will_do = {
+			factor = 25
+		}
+		available = {
+
+		}			
+
+		prerequisite = {
+			focus = GEA_Atone_for_Meyer-Waldeck_disgrace
+		}
+		relative_position_id = GEA_Atone_for_Meyer-Waldeck_disgrace
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Investigate_the_details_of_the_joint_fleet"
+		}	
+	}
+
+	focus = { #双鹰射日
+		id = GEA_Double_Eagles_Shooting_the_Sun
+		icon = GFX_GEA_Double_Eagles_Shooting_the_Sun
+		cost = 5
+		x = 0
+		y = 1
+
+		ai_will_do = {
+			factor = 25
+		}
+		available = {
+
+		}			
+
+		prerequisite = {
+			focus = GEA_Investigate_the_details_of_the_joint_fleet
+		}
+		relative_position_id = GEA_Investigate_the_details_of_the_joint_fleet
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Double_Eagles_Shooting_the_Sun"
+		}	
+	}
+
+	focus = { #猎杀山本五十六
+		id = GEA_The_hunt_for_Yamamoto
+		icon = GFX_GEA_The_hunt_for_Yamamoto
+		cost = 5
+		x = -2
+		y = 1
+
+		ai_will_do = {
+			factor = 25
+		}
+		available = {
+
+		}			
+
+		prerequisite = {
+			focus = GEA_Investigate_the_details_of_the_joint_fleet
+		}
+		relative_position_id = GEA_Investigate_the_details_of_the_joint_fleet
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_hunt_for_Yamamoto"
+		}	
+	}
+
+	###第二次对华远征
+	focus = { #第二次对华远征
+		id = GEA_The_second_expedition_to_China
+		icon = GFX_GEA_The_second_expedition_to_China
+		cost = 0.5
+		x = 5
+		y = 25
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}			
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_second_expedition_to_China"
+		}	
+	}
+
+	focus = { #南京特快
+		id = GEA_Nanjing_xpress
+		icon = GFX_GEA_Nanjing_xpress
+		cost = 0.5
+		x = 0
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}			
+		prerequisite = {
+			focus = GEA_The_second_expedition_to_China
+		}
+		relative_position_id = GEA_The_second_expedition_to_China
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Nanjing_xpress"
+		}	
+	}
+
+	focus = { #华南业务扩张
+		id = GEA_The_usiness_expansion_of_AOG
+		icon = GFX_GEA_The_usiness_expansion_of_AOG
+		cost = 4
+		x = -1
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}			
+		prerequisite = {
+			focus = GEA_Nanjing_xpress
+		}
+		relative_position_id = GEA_Nanjing_xpress
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_usiness_expansion_of_AOG"
+		}	
+	}
+
+	focus = { #货出去，钱进来...
+		id = GEA_Goods_out_money_in
+		icon = GFX_GEA_Goods_out_money_in
+		cost = 4
+		x = 1
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}			
+		prerequisite = {
+			focus = GEA_Nanjing_xpress
+		}
+		relative_position_id = GEA_Nanjing_xpress
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Goods_out_money_in"
+		}	
+	}
+
+	focus = { #建设东南诸省路网
+		id = GEA_Building_a_road_network_in_Southeast_provinces
+		icon = GFX_GEA_Building_a_road_network_in_Southeast_provinces
+		cost = 4
+		x = -3
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}			
+		prerequisite = {
+			focus = GEA_Goods_out_money_in
+		}
+		prerequisite = {
+			focus = GEA_The_usiness_expansion_of_AOG
+		}
+		relative_position_id = GEA_The_usiness_expansion_of_AOG
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Building_a_road_network_in_Southeast_provinces"
+		}	
+	}
+
+	focus = { #敬我们的开采事业
+		id = GEA_Best_regards_to_our_mining_operation
+		icon = GFX_GEA_Best_regards_to_our_mining_operation
+		cost = 4
+		x = -1
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}			
+		prerequisite = {
+			focus = GEA_Goods_out_money_in
+		}
+		prerequisite = {
+			focus = GEA_The_usiness_expansion_of_AOG
+		}
+		relative_position_id = GEA_The_usiness_expansion_of_AOG
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Best_regards_to_our_mining_operation"
+		}	
+	}
+
+	focus = { #把控粮仓
+		id = GEA_Manage_the_grain_storage_facility
+		icon = GFX_GEA_Manage_the_grain_storage_facility
+		cost = 4
+		x = 1
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}			
+		prerequisite = {
+			focus = GEA_Goods_out_money_in
+		}
+		prerequisite = {
+			focus = GEA_The_usiness_expansion_of_AOG
+		}
+		relative_position_id = GEA_The_usiness_expansion_of_AOG
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Manage_the_grain_storage_facility"
+		}	
+	}
+
+	focus = { #金融家的伎俩
+		id = GEA_The_tricks_of_financiers
+		icon = GFX_GEA_The_tricks_of_financiers
+		cost = 4
+		x = 3
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}			
+		prerequisite = {
+			focus = GEA_Goods_out_money_in
+		}
+		prerequisite = {
+			focus = GEA_The_usiness_expansion_of_AOG
+		}
+		relative_position_id = GEA_The_usiness_expansion_of_AOG
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_tricks_of_financiers"
+		}	
+	}
+
+	focus = { #德意志制造
+		id = GEA_German_manufacturing
+		icon = GFX_GEA_German_manufacturing
+		cost = 4
+		x = 5
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}			
+		prerequisite = {
+			focus = GEA_Goods_out_money_in
+		}
+		prerequisite = {
+			focus = GEA_The_usiness_expansion_of_AOG
+		}
+		relative_position_id = GEA_The_usiness_expansion_of_AOG
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_German_manufacturing"
+		}	
+	}
+
+	focus = { #财富之源...
+		id = GEA_Source_of_Wealth
+		icon = GFX_GEA_Source_of_Wealth
+		cost = 4
+		x = 0
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}	
+		prerequisite = {
+			focus = GEA_The_usiness_expansion_of_AOG
+			focus = GEA_The_usiness_expansion_of_AOG
+			focus = GEA_Manage_the_grain_storage_facility
+			focus = GEA_The_usiness_expansion_of_AOG
+			focus = GEA_German_manufacturing
+		}
+		relative_position_id = GEA_Manage_the_grain_storage_facility
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Source_of_Wealth"
+		}	
+	}
+
+	focus = { #二次干涉的褪色记忆
+		id = GEA_The_fading_memories_of_the_second_interference
+		icon = GFX_GEA_The_fading_memories_of_the_second_interference
+		cost = 0.5
+		x = 4
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}			
+		prerequisite = {
+			focus = GEA_The_second_expedition_to_China
+		}
+		relative_position_id = GEA_The_second_expedition_to_China
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_fading_memories_of_the_second_interference"
+		}	
+	}
+
+	focus = { #东南剿匪记
+		id = GEA_The_Campaign_to_Suppress_Bandits_in_the_Southeast
+		icon = GFX_GEA_The_Campaign_to_Suppress_Bandits_in_the_Southeast
+		cost = 0.5
+		x = 0
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}			
+		prerequisite = {
+			focus = GEA_The_fading_memories_of_the_second_interference
+		}
+		relative_position_id = GEA_The_fading_memories_of_the_second_interference
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_Campaign_to_Suppress_Bandits_in_the_Southeast"
+		}	
+	}
+
+	focus = { #查封他国门户
+		id = GEA_Seal_off_the_borders_of_other_countries
+		icon = GFX_GEA_Seal_off_the_borders_of_other_countries
+		cost = 5
+		x = -4
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}			
+		prerequisite = {
+			focus = GEA_The_second_expedition_to_China
+		}
+		relative_position_id = GEA_The_second_expedition_to_China
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Seal_off_the_borders_of_other_countries"
+		}	
+	}
+
+	focus = { #旧地重游
+		id = GEA_revisit_old_site
+		icon = GFX_GEA_revisit_old_site
+		cost = 0.5
+		x = -6
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}			
+		prerequisite = {
+			focus = GEA_The_second_expedition_to_China
+		}
+		relative_position_id = GEA_The_second_expedition_to_China
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_revisit_old_site"
+		}	
+	}
+
+	focus = { #摇摆不定的商团们
+		id = GEA_The_wavering_business_group
+		icon = GFX_GEA_The_wavering_business_group
+		cost = 4
+		x = 1
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}			
+		prerequisite = {
+			focus = GEA_revisit_old_site
+		}
+		relative_position_id = GEA_revisit_old_site
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_wavering_business_group"
+		}	
+	}
+
+	focus = { #除恶务尽
+		id = GEA_Eliminate_all_evil_forces
+		icon = GFX_GEA_Eliminate_all_evil_forces
+		cost = 4
+		x = -1
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}			
+		prerequisite = {
+			focus = GEA_revisit_old_site
+		}
+		relative_position_id = GEA_revisit_old_site
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Eliminate_all_evil_forces"
+		}	
+	}
+
+	focus = { #金马克的主导权
+		id = GEA_The_dominant_position_of_Golden_Mark
+		icon = GFX_GEA_The_dominant_position_of_Golden_Mark
+		cost = 4
+		x = -3
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}			
+		prerequisite = {
+			focus = GEA_revisit_old_site
+		}
+		relative_position_id = GEA_revisit_old_site
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_dominant_position_of_Golden_Mark"
+		}	
+	}
+
+	focus = { #建设蛮荒之地
+		id = GEA_Developing_the_uninhabited_wilderness
+		icon = GFX_GEA_Developing_the_uninhabited_wilderness
+		cost = 4
+		x = -5
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}			
+		prerequisite = {
+			focus = GEA_revisit_old_site
+		}
+		relative_position_id = GEA_revisit_old_site
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Developing_the_uninhabited_wilderness"
+		}	
+	}
+
+	focus = { #重申我们的地位
+		id = GEA_Reaffirm_our_position
+		icon = GFX_GEA_Reaffirm_our_position
+		cost = 4
+		x = -2
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}	
+		prerequisite = {
+			focus = GEA_Eliminate_all_evil_forces
+		}		
+		prerequisite = {
+			focus = GEA_The_wavering_business_group
+		}
+		relative_position_id = GEA_The_wavering_business_group
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Reaffirm_our_position"
+		}	
+	}
+
+	focus = { #广州无战事
+		id = GEA_Peace_in_Guangzhou
+		icon = GFX_GEA_Peace_in_Guangzhou
+		cost = 4
+		x = -5
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}	
+		prerequisite = {
+			focus = GEA_Developing_the_uninhabited_wilderness
+		}		
+		prerequisite = {
+			focus = GEA_The_dominant_position_of_Golden_Mark
+		}
+		relative_position_id = GEA_The_wavering_business_group
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Peace_in_Guangzhou"
+		}	
+	}
+
+	focus = { #殖民版图的第二明珠
+		id = GEA_The_second_jewel_of_colonial_territory
+		icon = GFX_GEA_The_second_jewel_of_colonial_territory
+		cost = 4
+		x = 0
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}	
+		prerequisite = {
+			focus = GEA_Reaffirm_our_position
+		}		
+		prerequisite = {
+			focus = GEA_Peace_in_Guangzhou
+		}
+		relative_position_id = GEA_Reaffirm_our_position
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_second_jewel_of_colonial_territory"
+		}	
+	}
+
+	focus = { #紫禁城中的提线木偶
+		id = GEA_The_marionettes_in_the_Forbidden_City
+		icon = GFX_GEA_The_marionettes_in_the_Forbidden_City
+		cost = 0.5
+		x = 9
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}			
+		prerequisite = {
+			focus = GEA_The_second_expedition_to_China
+		}
+		relative_position_id = GEA_The_second_expedition_to_China
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_marionettes_in_the_Forbidden_City"
+		}	
+	}
+
+	focus = { #施压玉帅
+		id = GEA_Pressure_the_Jade_Marshal
+		icon = GFX_GEA_Pressure_the_Jade_Marshal
+		cost = 1
+		x = 2
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}		
+		mutually_exclusive = {
+			focus = GEA_The_embers_of_the_declining_empire
+		}	
+		prerequisite = {
+			focus = GEA_The_marionettes_in_the_Forbidden_City
+		}
+		relative_position_id = GEA_The_marionettes_in_the_Forbidden_City
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Pressure_the_Jade_Marshal"
+		}	
+	}
+
+	focus = { #衰朽帝国的火种
+		id = GEA_The_embers_of_the_declining_empire
+		icon = GFX_GEA_The_embers_of_the_declining_empire
+		cost = 1
+		x = -1
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}			
+		mutually_exclusive = {
+			focus = GEA_Pressure_the_Jade_Marshal
+		}
+		prerequisite = {
+			focus = GEA_The_marionettes_in_the_Forbidden_City
+		}
+		relative_position_id = GEA_The_marionettes_in_the_Forbidden_City
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_embers_of_the_declining_empire"
+		}	
+	}
+
+	focus = { #扶植繁荣联盟
+		id = GEA_Supporting_Prosperity_Alliance
+		icon = GFX_GEA_Supporting_Prosperity_Alliance
+		cost = 1
+		x = 2
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}			
+		prerequisite = {
+			focus = GEA_Pressure_the_Jade_Marshal
+			focus = GEA_The_embers_of_the_declining_empire
+		}
+		relative_position_id = GEA_The_embers_of_the_declining_empire
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Supporting_Prosperity_Alliance"
+		}	
+	}
+
+	focus = { #拉紧缰绳
+		id = GEA_Tighten_the_reins
+		icon = GFX_GEA_Tighten_the_reins
+		cost = 1
+		x = 0
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}			
+		prerequisite = {
+			focus = GEA_Pressure_the_Jade_Marshal
+			focus = GEA_The_embers_of_the_declining_empire
+		}
+		relative_position_id = GEA_The_embers_of_the_declining_empire
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Tighten_the_reins"
+		}	
+	}
+
+	focus = { #效忠自有奖赏
+		id = GEA_Loyalty_has_its_rewards
+		icon = GFX_GEA_Loyalty_has_its_rewards
+		cost = 1
+		x = -2
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}			
+		prerequisite = {
+			focus = GEA_The_embers_of_the_declining_empire
+		}
+		relative_position_id = GEA_The_embers_of_the_declining_empire
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Loyalty_has_its_rewards"
+		}	
+	}
+	focus = { #划定发展特区
+		id = GEA_Establish_a_development_special_zone
+		icon = GFX_GEA_Establish_a_development_special_zone
+		cost = 4
+		x = 1
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}			
+		prerequisite = {
+			focus = GEA_Pressure_the_Jade_Marshal
+			focus = GEA_The_embers_of_the_declining_empire
+		}
+		relative_position_id = GEA_Pressure_the_Jade_Marshal
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Establish_a_development_special_zone"
+		}	
+	}
+	focus = { #保卫我们的产权
+		id = GEA_Protect_our_property_rights
+		icon = GFX_GEA_Protect_our_property_rights
+		cost = 8
+		x = 3
+		y = 2
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}			
+		prerequisite = {
+			focus = GEA_Pressure_the_Jade_Marshal
+		}
+		relative_position_id = GEA_Pressure_the_Jade_Marshal
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Protect_our_property_rights"
+		}	
+	}
+
+	focus = { #臣服...
+		id = GEA_Submission
+		icon = GFX_GEA_Submission
+		cost = 4
+		x = 0
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}			
+		prerequisite = {
+			focus = GEA_Tighten_the_reins
+			focus = GEA_Loyalty_has_its_rewards
+			focus = GEA_Supporting_Prosperity_Alliance
+			focus = GEA_Establish_a_development_special_zone
+		}
+		mutually_exclusive = {
+			focus = GEA_The_Great_Wall_of_Zhili_Province
+		}
+		relative_position_id = GEA_Tighten_the_reins
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Submission"
+		}	
+	}
+
+	focus = { #直隶长城
+		id = GEA_The_Great_Wall_of_Zhili_Province
+		icon = GFX_GEA_The_Great_Wall_of_Zhili_Province
+		cost = 4
+		x = 2
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}			
+		prerequisite = {
+			focus = GEA_Tighten_the_reins
+			focus = GEA_Loyalty_has_its_rewards
+			focus = GEA_Supporting_Prosperity_Alliance
+			focus = GEA_Establish_a_development_special_zone
+		}
+		mutually_exclusive = {
+			focus = GEA_Submission
+		}
+		relative_position_id = GEA_Tighten_the_reins
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_Great_Wall_of_Zhili_Province"
+		}	
+	}
+
+	focus = { #建设半岛
+		id = GEA_Build_the_peninsula
+		icon = GFX_GEA_Build_the_peninsula
+		cost = 0.5
+		x = 14
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}			
+		prerequisite = {
+			focus = GEA_The_second_expedition_to_China
+		}
+		relative_position_id = GEA_The_second_expedition_to_China
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Build_the_peninsula"
+		}	
+	}
+
+	focus = { #复制青岛模式
+		id = GEA_Copy_the_Qingdao_model
+		icon = GFX_GEA_Copy_the_Qingdao_model
+		cost = 3
+		x = 0
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}			
+		prerequisite = {
+			focus = GEA_Build_the_peninsula
+		}
+		relative_position_id = GEA_Build_the_peninsula
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Copy_the_Qingdao_model"
+		}	
+	}
+	focus = { #处理“两张会”
+		id = GEA_deal_with_the_shandong_clique
+		icon = GFX_GEA_deal_with_the_shandong_clique
+		cost = 3
+		x = 2
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}			
+		prerequisite = {
+			focus = GEA_Build_the_peninsula
+		}
+		relative_position_id = GEA_Build_the_peninsula
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_deal_with_the_shandong_clique"
+		}	
+	}
+
+	focus = { #美丽的胶州湾
+		id = GEA_The_beautiful_Jiaozhou_Bay
+		icon = GFX_GEA_The_beautiful_Jiaozhou_Bay
+		cost = 3
+		x = 1
+		y = 2
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}			
+		prerequisite = {
+			focus = GEA_Build_the_peninsula
+		}
+		relative_position_id = GEA_Build_the_peninsula
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_beautiful_Jiaozhou_Bay"
+		}	
+	}
+	
+	focus = { #深入大山
+		id = GEA_Deep_into_the_mountains
+		icon = GFX_GEA_Deep_into_the_mountains
+		cost = 5
+		x = -3
+		y = 4
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}			
+		prerequisite = {
+			focus = GEA_The_second_expedition_to_China
+		}
+		relative_position_id = GEA_The_second_expedition_to_China
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Deep_into_the_mountains"
+		}	
+	}
+
+	focus = { #云贵矿业再谈判
+		id = GEA_Renegotiation_of_Yunnan-Guizhou_Mining_Company
+		icon = GFX_GEA_Renegotiation_of_Yunnan-Guizhou_Mining_Company
+		cost = 5
+		x = 0
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}			
+		prerequisite = {
+			focus = GEA_Deep_into_the_mountains
+		}
+		relative_position_id = GEA_Deep_into_the_mountains
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Renegotiation_of_Yunnan-Guizhou_Mining_Company"
+		}	
+	}
+
+	focus = { #为烟土贸易分一杯羹
+		id = GEA_To_get_a_share_of_the_tobacco_trade
+		icon = GFX_GEA_To_get_a_share_of_the_tobacco_trade
+		cost = 5
+		x = -2
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}			
+		prerequisite = {
+			focus = GEA_Deep_into_the_mountains
+		}
+		relative_position_id = GEA_Deep_into_the_mountains
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_To_get_a_share_of_the_tobacco_trade"
+		}	
+	}
+
+	focus = { #打通滇越交通线
+		id = GEA_Open_Yunnan-Vietnam_communication_line
+		icon = GFX_GEA_Open_Yunnan-Vietnam_communication_line
+		cost = 5
+		x = 1
+		y = 2
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}			
+		prerequisite = {
+			focus = GEA_Deep_into_the_mountains
+		}
+		relative_position_id = GEA_Deep_into_the_mountains
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Open_Yunnan-Vietnam_communication_line"
+		}	
+	}
+
+	focus = { #开放内地
+		id = GEA_Opening_up_the_mainland
+		icon = GFX_GEA_Opening_up_the_mainland
+		cost = 5
+		x = -1
+		y = 2
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}			
+		prerequisite = {
+			focus = GEA_Deep_into_the_mountains
+		}
+		relative_position_id = GEA_Deep_into_the_mountains
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Opening_up_the_mainland"
+		}	
+	}
+
+	focus = { #天府之国
+		id = GEA_The_Land_of_Abundance
+		icon = GFX_GEA_The_Land_of_Abundance
+		cost = 5
+		x = 3
+		y = 4
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}			
+		prerequisite = {
+			focus = GEA_The_second_expedition_to_China
+		}
+		relative_position_id = GEA_The_second_expedition_to_China
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_Land_of_Abundance"
+		}	
+	}
+
+	focus = { #饥者得食
+		id = GEA_The_hungry_are_fed
+		icon = GFX_GEA_The_hungry_are_fed
+		cost = 5
+		x = 0
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}			
+		prerequisite = {
+			focus = GEA_The_Land_of_Abundance
+		}
+		relative_position_id = GEA_The_Land_of_Abundance
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_hungry_are_fed"
+		}	
+	}
+
+	focus = { #镇压民族主义者
+		id = GEA_suppress_nationalism
+		icon = GFX_GEA_suppress_nationalism
+		cost = 5
+		x = -3
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}			
+		prerequisite = {
+			focus = GEA_The_Land_of_Abundance
+			focus = GEA_Deep_into_the_mountains
+		}
+		relative_position_id = GEA_The_Land_of_Abundance
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_suppress_nationalism"
+		}	
+	}
+
+	focus = { #协助搜捕流亡者
+		id = GEA_Assist_in_the_search_for_fugitives
+		icon = GFX_GEA_Assist_in_the_search_for_fugitives
+		cost = 5
+		x = 0
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}			
+		prerequisite = {
+			focus = GEA_suppress_nationalism
+		}
+		relative_position_id = GEA_suppress_nationalism
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Assist_in_the_search_for_fugitives"
+		}	
+	}
+
+	focus = { #竭泽而渔
+		id = GEA_Draining_the_pond_to_catch_all_the_fish
+		icon = GFX_GEA_Draining_the_pond_to_catch_all_the_fish
+		cost = 5
+		x = 2
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}			
+		prerequisite = {
+			focus = GEA_The_Land_of_Abundance
+			focus = GEA_Deep_into_the_mountains
+		}
+		relative_position_id = GEA_The_Land_of_Abundance
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Draining_the_pond_to_catch_all_the_fish"
+		}	
+	}
+
+	focus = { #推动有限现代化
+		id = GEA_Promoting_limited_modernization
+		icon = GFX_GEA_Promoting_limited_modernization
+		cost = 5
+		x = 1
+		y = 2
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}			
+		prerequisite = {
+			focus = GEA_The_Land_of_Abundance
+			focus = GEA_Deep_into_the_mountains
+		}
+		relative_position_id = GEA_The_Land_of_Abundance
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Promoting_limited_modernization"
+		}	
+	}
+	focus = { #造不如买
+		id = GEA_Buy_Buy_Buy
+		icon = GFX_GEA_Buy_Buy_Buy
+		cost = 5
+		x = -1
+		y = 2
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}			
+		prerequisite = {
+			focus = GEA_The_Land_of_Abundance
+			focus = GEA_Deep_into_the_mountains
+		}
+		relative_position_id = GEA_The_Land_of_Abundance
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Buy_Buy_Buy"
+		}	
+	}
+
+	focus = { #焕然一新
+		id = GEA_Look_brand-new
+		icon = GFX_GEA_Look_brand-new
+		cost = 5
+		x = 0
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}			
+		prerequisite = {
+			focus = GEA_To_get_a_share_of_the_tobacco_trade
+			focus = GEA_Renegotiation_of_Yunnan-Guizhou_Mining_Company
+			focus = GEA_Opening_up_the_mainland
+			focus = GEA_Open_Yunnan-Vietnam_communication_line
+		}
+		prerequisite = {
+			focus = GEA_Draining_the_pond_to_catch_all_the_fish
+			focus = GEA_The_hungry_are_fed
+			focus = GEA_Promoting_limited_modernization
+			focus = GEA_Buy_Buy_Buy
+		}
+		relative_position_id = GEA_Assist_in_the_search_for_fugitives
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Look_brand-new"
+		}	
+	}
+
+	### 流亡 ###
+	focus = { #至暗时刻
+		id = GEA_THE_DH
+		icon = GFX_GEA_THE_DH
+		cost = 5
+		x = -13
+		y = 20
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}			
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_THE_DH"
+		}	
+	}
+
+	focus = { #召集忠智之士
+		id = GEA_Summon_the_wise_and_capable_individuals
+		icon = GFX_GEA_Summon_the_wise_and_capable_individuals
+		cost = 5
+		x = -2
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}			
+		prerequisite = {
+			focus = GEA_THE_DH
+		}
+		relative_position_id = GEA_THE_DH
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Summon_the_wise_and_capable_individuals"
+		}	
+	}
+
+	focus = { #收拢余烬
+		id = GEA_Consume_the_embers
+		icon = GFX_GEA_Consume_the_embers
+		cost = 5
+		x = 2
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}			
+		prerequisite = {
+			focus = GEA_THE_DH
+		}		
+		relative_position_id = GEA_THE_DH
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Consume_the_embers"
+		}	
+	}
+
+	focus = { #扩大征发
+		id = GEA_Expand_conscription
+		icon = GFX_GEA_Expand_conscription
+		cost = 5
+		x = 0
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}			
+		prerequisite = {
+			focus = GEA_THE_DH
+		}
+		relative_position_id = GEA_THE_DH
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Expand_conscription"
+		}	
+	}
+
+	focus = { #苦涩和平
+		id = GEA_Sourness_and_Peace
+		icon = GFX_GEA_Sourness_and_Peace
+		cost = 5
+		x = 1
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}	
+		prerequisite = {
+			focus = GEA_Expand_conscription
+		}
+		prerequisite = {
+			focus = GEA_Consume_the_embers
+		}		
+		prerequisite = {
+			focus = GEA_Summon_the_wise_and_capable_individuals
+		}
+		mutually_exclusive = {
+			focus = GEA_A_desperate_last_ditch_effort
+		}
+		relative_position_id = GEA_Summon_the_wise_and_capable_individuals
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Sourness_and_Peace"
+		}	
+	}
+
+	focus = { #殊死一搏
+		id = GEA_A_desperate_last_ditch_effort
+		icon = GFX_GEA_A_desperate_last_ditch_effort
+		cost = 5
+		x = 3
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}	
+		prerequisite = {
+			focus = GEA_Expand_conscription
+		}
+		prerequisite = {
+			focus = GEA_Consume_the_embers
+		}		
+		prerequisite = {
+			focus = GEA_Summon_the_wise_and_capable_individuals
+		}
+		mutually_exclusive = {
+			focus = GEA_Sourness_and_Peace
+		}
+		relative_position_id = GEA_Summon_the_wise_and_capable_individuals
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_A_desperate_last_ditch_effort"
+		}	
+	}
+
+	focus = { #征用联合舰队
+		id = GEA_Conscript_the_Combined_Fleet
+		icon = GFX_GEA_Conscript_the_Combined_Fleet
+		cost = 5
+		x = 2
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}	
+		prerequisite = {
+			focus = GEA_A_desperate_last_ditch_effort
+		}
+		relative_position_id = GEA_A_desperate_last_ditch_effort
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Conscript_the_Combined_Fleet"
+		}	
+	}
+
+	focus = { #于惨淡事实前奋力求生
+		id = GEA_Struggling_to_survive_in_the_face_of_harsh_reality
+		icon = GFX_GEA_Struggling_to_survive_in_the_face_of_harsh_reality
+		cost = 5
+		x = -4
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}	
+		prerequisite = {
+			focus = GEA_Sourness_and_Peace
+		}
+		relative_position_id = GEA_A_desperate_last_ditch_effort
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Struggling_to_survive_in_the_face_of_harsh_reality"
+		}	
+	}
+
+	focus = { #总结大战经验
+		id = GEA_Summarize_the_lessons_learned_from_the_war
+		icon = GFX_GEA_Summarize_the_lessons_learned_from_the_war
+		cost = 5
+		x = -1
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}	
+		prerequisite = {
+			focus = GEA_Sourness_and_Peace
+			focus = GEA_A_desperate_last_ditch_effort
+		}
+		relative_position_id = GEA_A_desperate_last_ditch_effort
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Summarize_the_lessons_learned_from_the_war"
+		}	
+	}
+
+	focus = { #少而精的部队
+		id = GEA_A_small_but_highly_efficient_force
+		icon = GFX_GEA_A_small_but_highly_efficient_force
+		cost = 5
+		x = -2
+		y = 2
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}	
+		prerequisite = {
+			focus = GEA_Sourness_and_Peace
+			focus = GEA_A_desperate_last_ditch_effort
+		}
+		relative_position_id = GEA_A_desperate_last_ditch_effort
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_A_small_but_highly_efficient_force"
+		}	
+	}
+
+	focus = { #勒紧裤腰带
+		id = GEA_tighten_the_belt
+		icon = GFX_GEA_tighten_the_belt
+		cost = 5
+		x = 0
+		y = 2
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}	
+		prerequisite = {
+			focus = GEA_Sourness_and_Peace
+			focus = GEA_A_desperate_last_ditch_effort
+		}
+		relative_position_id = GEA_A_desperate_last_ditch_effort
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_tighten_the_belt"
+		}	
+	}
+
+	focus = { #归乡者的共识
+		id = GEA_The_consensus_of_the_returnees
+		icon = GFX_GEA_The_consensus_of_the_returnees
+		cost = 5
+		x = -1
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}	
+		prerequisite = {
+			focus = GEA_A_small_but_highly_efficient_force
+		}
+		prerequisite = {
+			focus = GEA_Summarize_the_lessons_learned_from_the_war
+		}
+		prerequisite = {
+			focus = GEA_tighten_the_belt
+		}
+		relative_position_id = GEA_A_small_but_highly_efficient_force
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_consensus_of_the_returnees"
+		}	
+	}
+
+	focus = { #跋山涉水
+		id = GEA_Crossing_mountains_and_rivers
+		icon = GFX_GEA_Crossing_mountains_and_rivers
+		cost = 5
+		x = 3
+		y = 1
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}	
+		prerequisite = {
+			focus = GEA_A_small_but_highly_efficient_force
+		}
+		prerequisite = {
+			focus = GEA_Summarize_the_lessons_learned_from_the_war
+		}
+		prerequisite = {
+			focus = GEA_tighten_the_belt
+		}
+		relative_position_id = GEA_A_small_but_highly_efficient_force
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Crossing_mountains_and_rivers"
+		}	
+	}
+
+	focus = { #再会了，甜蜜的欧罗巴
+		id = GEA_Goodbye_sweet_Europa
+		icon = GFX_GEA_Goodbye_sweet_Europa
+		cost = 5
+		x = 1
+		y = 2
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+
+		}	
+		prerequisite = {
+			focus = GEA_A_small_but_highly_efficient_force
+		}
+		prerequisite = {
+			focus = GEA_Summarize_the_lessons_learned_from_the_war
+		}
+		prerequisite = {
+			focus = GEA_tighten_the_belt
+		}
+		relative_position_id = GEA_A_small_but_highly_efficient_force
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Goodbye_sweet_Europa"
 		}	
 	}
 }

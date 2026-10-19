@@ -1,5 +1,14 @@
 ideas = {
 		country = {
+		GEA_naval_attache_idea = { #兼容KX海军代表团事件
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_naval_attache_idea" }
+			picture = GEA_naval_yards
+			allowed = { always = no }
+			modifier = {
+				experience_gain_navy_factor = 0.1
+				naval_doctrine_cost_factor = -0.05
+			}
+		}
 # starting ideas
 		GEA_colonial_question = { #东亚殖民政府
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_colonial_question"}
@@ -1801,6 +1810,7 @@ ideas = {
 		} 
 #卢克纳尔
 		GEA_An_undefeated_army_in_pursuit_of_honor = { #海上传奇之军
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_An_undefeated_army_in_pursuit_of_honor"}
 			picture = GEA_An_undefeated_army_in_pursuit_of_honor
 			allowed = { always = no }
 			modifier = {
@@ -1811,6 +1821,7 @@ ideas = {
 			}
 		}
 		GEA_An_undefeated_army_in_pursuit_of_honor_2 = { #海上传奇之军
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_An_undefeated_army_in_pursuit_of_honor_2"}
 			name = GEA_An_undefeated_army_in_pursuit_of_honor
 			picture = GEA_An_undefeated_army_in_pursuit_of_honor
 			allowed = { always = no }
@@ -1827,6 +1838,7 @@ ideas = {
 			}
 		}
 		GEA_An_undefeated_army_in_pursuit_of_honor_3 = { #海上传奇之军
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_An_undefeated_army_in_pursuit_of_honor_3"}
 			name = GEA_An_undefeated_army_in_pursuit_of_honor
 			picture = GEA_An_undefeated_army_in_pursuit_of_honor
 			allowed = { always = no }
@@ -1846,6 +1858,7 @@ ideas = {
 			}
 		}
 		GEA_Riding_across_the_vast_oceans = { #纵横大洋
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Riding_across_the_vast_oceans"}
 			picture = GEA_Riding_across_the_vast_oceans
 			allowed = { always = no }
 			modifier = {
@@ -1856,6 +1869,7 @@ ideas = {
 			}
 		}
 		GEA_Riding_across_the_vast_oceans_2 = { #纵横大洋
+		 	on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Riding_across_the_vast_oceans_2"}
 			picture = GEA_Riding_across_the_vast_oceans
 			allowed = { always = no }
 			modifier = {
@@ -1869,6 +1883,7 @@ ideas = {
 			}
 		}
 		GEA_The_benefits_of_rent_seeking = { #寻租之利
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_The_benefits_of_rent_seeking"}
 			picture = GEA_The_benefits_of_rent_seeking
 			allowed = { always = no }
 			modifier = {
@@ -1879,6 +1894,7 @@ ideas = {
 			}
 		}
 		GEA_Purge_the_General_Staff = { #清洗总参谋部
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Purge_the_General_Staff"}
 			picture = GER_Purged_Military
 			allowed = { always = no }
 			modifier = {
@@ -1888,7 +1904,69 @@ ideas = {
 				max_planning = -0.1
 			}
 		}
+		GEA_leash_dog_out = { #放狗出笼
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_leash_dog_out"}
+			picture = GEA_leash_dog_out
+			allowed = { always = no }
+			modifier = {
+				army_org_factor = 0.06
+				breakthrough_factor = 0.07
+				army_attack_factor = 0.02
+				experience_gain_army = 0.05
+				org_loss_when_moving = -0.2
+				planning_speed = -0.05
+			}
+		}
+		GEA_Difficult-to-manage_military_forces = { #无羁之军
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Difficult-to-manage_military_forces"}
+			picture = GER_Tyranny_King_Wilhelm
+			allowed = { always = no }
+			modifier = {
+				conscription_factor = 0.1
+				attrition = 0.05
+				army_speed_factor = 0.05
+			}
+		}
+		GEA_A_seemingly_eccentric_army = { #貌合神离的军队
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_A_seemingly_eccentric_army"}
+			picture = GER_Woe_Vanquished
+			allowed = { always = no }
+			modifier = {
+				army_org_factor = 0.05
+				conscription_factor = 0.05
+				planning_speed = 0.03
+				out_of_supply_factor = -0.05	
+			}
+		}
+		GEA_The_completely_obedient_General_Staff = { #完全服从的总参谋部
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_The_completely_obedient_General_Staff"}
+			picture = GER_Unions_Organized_1914s_Image
+			allowed = { always = no }
+			modifier = {
+				army_org_factor = 0.1
+				breakthrough_factor = 0.003
+				max_planning = 0.03
+				out_of_supply_factor = -0.1
+				naval_morale_factor = 0.75
+				air_mission_efficiency = 0.02			
+			}
+		}
+		GEA_The_obedient_army = { #唯舍尔纳之命是从
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_The_obedient_army"}
+			picture = GEA_The_completely_obedient_General_Staff
+			allowed = { always = no }
+			modifier = {
+				army_org_factor = 0.1
+				breakthrough_factor = 0.05
+				max_planning = 0.05
+				out_of_supply_factor = -0.1
+				naval_morale_factor = 0.1
+				air_mission_efficiency = 0.08
+				national_populist_drift = 0.01
+			}
+		}
 		GEA_German_Feldgendarmerie = { #战地宪兵
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_German_Feldgendarmerie"}
 			picture = GEA_German_Feldgendarmerie
 			allowed = { always = no }
 			modifier = {
@@ -1899,7 +1977,21 @@ ideas = {
 				army_morale_factor = -0.05
 			}
 		}
+		GEA_We_Fearless = { #我们，无所畏惧
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_We_Fearless"}
+			picture = GEA_We_Fearless
+			allowed = { always = no }
+			modifier = {
+				consumer_goods_factor = -0.03
+				mobilization_speed = 0.1
+				conscription = 0.005
+				experience_loss_factor = -0.05
+				attrition = -0.1
+				army_strength_factor = 0.06
+			}
+		}
 		GEA_schorner_bloody_reign = { #舍尔纳的血腥之治
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_schorner_bloody_reign"}
 			picture = GEA_schorner_bloody_reign
 			allowed = { always = no }
 			modifier = {
@@ -1909,6 +2001,7 @@ ideas = {
 			}
 		}
 		GEA_schorner_bloody_reign_2 = { #舍尔纳的血腥之治
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_schorner_bloody_reign_2"}
 			picture = GEA_schorner_bloody_reign
 			name = GEA_schorner_bloody_reign
 			allowed = { always = no }
@@ -1922,6 +2015,72 @@ ideas = {
 				industrial_capacity_dockyard = 0.06
 				industry_free_repair_factor = 0.1
 				weekly_manpower = -300
+			}
+		}
+		GEA_schorner_bloody_reign_3 = { #舍尔纳的血腥之治
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_schorner_bloody_reign_3"}
+			picture = GEA_schorner_bloody_reign
+			name = GEA_schorner_bloody_reign
+			allowed = { always = no }
+			modifier = {
+				production_speed_arms_factory_factor = 0.05
+				monthly_population = -0.15
+				war_support_weekly = 0.005
+				production_factory_start_efficiency_factor = -0.05
+				production_factory_max_efficiency_factor = 0.1
+				industrial_capacity_factory = 0.1
+				industrial_capacity_dockyard = 0.1
+				industry_free_repair_factor = 0.1
+				army_org_factor = 0.05
+				conscription_factor = 0.1
+				weekly_manpower = -400
+			}
+		}
+		GEA_schorner_bloody_reign_4 = { #舍尔纳的血腥之治
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_schorner_bloody_reign_4"}
+			picture = GEA_schorner_bloody_reign
+			name = GEA_schorner_bloody_reign
+			allowed = { always = no }
+			modifier = {
+				political_power_factor = 0.1
+				production_speed_arms_factory_factor = 0.05
+				monthly_population = -0.2
+				war_support_weekly = 0.005
+				production_factory_start_efficiency_factor = -0.05
+				production_factory_max_efficiency_factor = 0.1
+				industrial_capacity_factory = 0.12
+				industrial_capacity_dockyard = 0.12
+				industry_free_repair_factor = 0.1
+				army_org_factor = 0.1
+				conscription_factor = 0.1
+				weekly_manpower = -400
+				resistance_growth = 0.05
+				compliance_growth = 0.15
+			}
+		}
+		GEA_schorner_bloody_reign_5 = { #舍尔纳的血腥之治
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_schorner_bloody_reign_5"}
+			picture = GEA_schorner_bloody_reign
+			name = GEA_schorner_bloody_reign
+			allowed = { always = no }
+			modifier = {
+				political_power_factor = 0.2
+				production_speed_arms_factory_factor = 0.15
+				monthly_population = -0.25
+				war_support_weekly = 0.01
+				production_factory_start_efficiency_factor = -0.05
+				production_factory_max_efficiency_factor = 0.1
+				industrial_capacity_factory = 0.15
+				industrial_capacity_dockyard = 0.15
+				industry_free_repair_factor = 0.1
+				army_org_factor = 0.1
+				conscription_factor = 0.1
+				weekly_manpower = -400
+				resistance_growth = 0.05
+				compliance_growth = 0.15
+				justify_war_goal_time = -0.3
+				offensive_war_stability_factor = 0.1
+				party_popularity_stability_factor = 0.1
 			}
 		}
 #决议

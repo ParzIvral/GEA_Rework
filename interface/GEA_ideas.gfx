@@ -201,4 +201,16 @@ spriteTypes = {
 		name = "GFX_idea_GEA_German_Feldgendarmerie"
 		texturefile = "gfx/interface/ideas/gea/GEA_German_Feldgendarmerie.png"
 	}
+	spriteType = {
+		name = "GFX_idea_GEA_leash_dog_out"
+		texturefile = "gfx/interface/ideas/gea/GEA_leash_dog_out.png"
+	}
+	spriteType = {
+		name = "GFX_idea_GEA_The_completely_obedient_General_Staff"
+		texturefile = "gfx/interface/ideas/gea/GEA_The_completely_obedient_General_Staff.png"
+	}
+	spriteType = {
+		name = "GFX_idea_GEA_We_Fearless"
+		texturefile = "gfx/interface/ideas/gea/GEA_We_Fearless.png"
+	}
 }

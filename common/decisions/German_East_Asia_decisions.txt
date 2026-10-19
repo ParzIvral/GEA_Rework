@@ -955,7 +955,11 @@ GEA_decisions = {#德属东亚殖民地决议
 					custom_trigger_tooltip = {
 						tooltip = GEA_indochina_resistance_integration_tt
 						has_variable = GEA_indochina_resistance
-						check_variable = { GEA_indochina_resistance <= 10 }
+						check_variable = {
+							var = GEA_indochina_resistance
+							value = 10
+							compare = less_than_or_equals
+						}
 					}
 				}
 				AND = { #其他路线：保留原有顺从度条件
@@ -1007,9 +1011,9 @@ GEA_decisions = {#德属东亚殖民地决议
 
 		visible = {
 			check_variable = { GEA_indochina_resistance > 0 }
-			NOT = {country_exists = INC}
-			has_completed_focus = GEA_liquid_combustion_bomb
+			has_completed_focus = GEA_Only_liquidation_is_the_most_important
 		}
+
 		target_trigger = {
 			FROM = {
 				is_owned_and_controlled_by = GEA
@@ -1334,6 +1338,15 @@ GEA_decisions = {#德属东亚殖民地决议
 		modifier = {
 			daily_popularity_drift = -0.01
 			political_power_gain = -0.01
+		}
+		complete_effect = {
+			hidden_effect = {
+				if = {
+					limit = { NOT = { has_country_flag = GEA_plunder_enterprises_first_selected } }
+					set_country_flag = GEA_plunder_enterprises_first_selected
+					country_event = { id = GEA.548 }
+				}
+			}
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Plunder_local_enterprises"
@@ -7137,10 +7150,6 @@ GEA_indochina_war_decisions = {#印支战争
 		ai_will_do = { 
 			factor = 100 
 		}
-
-		visible = {
-			has_completed_focus = GEA_prepare_for_assault
-		}
 		custom_cost_text = 2500RIFLE_300sup_40CP
 		custom_cost_trigger = {
 			has_equipment = { infantry_equipment > 2500 }
@@ -7308,7 +7317,7 @@ GEA_indochina_war_decisions = {#印支战争
 	GEA_Activate_liquid_incendiary_bombs = { #启用液体燃烧弹
 		icon = bomber
 		visible = {
-			has_completed_focus = GEA_weapons_of_mass_destruction
+			has_completed_focus = GEA_Eliminate_the_hiding_place
 		}
 		
 		cost = 20
@@ -7334,7 +7343,7 @@ GEA_indochina_war_decisions = {#印支战争
 		visible = {
 			OR = {
 				has_completed_focus = GEA_Malicious_poison
-				has_completed_focus = GEA_weapons_of_mass_destruction
+				has_completed_focus = GEA_Eliminate_the_hiding_place
 			}
 		}
 		available = {
@@ -7373,7 +7382,7 @@ GEA_indochina_war_decisions = {#印支战争
 		visible = {
 			OR = {
 				has_completed_focus = GEA_Malicious_poison
-				has_completed_focus = GEA_weapons_of_mass_destruction
+				has_completed_focus = GEA_Eliminate_the_hiding_place
 			}
 		}
 		available = {

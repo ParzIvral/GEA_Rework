@@ -237,6 +237,7 @@ add_namespace = GEA_news
 					country_event = { id = yun.44 days = 2 }
 				}
 				country_event = { id = Ostasien.208 days = 2 }
+				country_event = { id = GEA.52 days = 30 }
 			}
 		}
 		title = GEA.6.t
@@ -1069,8 +1070,8 @@ add_namespace = GEA_news
 				}
 				hidden_effect = {
 					country_event = {
-						id = Ostasien.28
-						days = 1
+						id = GEA.26
+						days = 3
 					}
 				}
 			}
@@ -1101,8 +1102,8 @@ add_namespace = GEA_news
 					}
 					hidden_effect = {
 						country_event = {
-							id = Ostasien.27
-							days = 1
+							id = GEA.25
+							days = 3
 						}
 					}
 				}
@@ -1137,7 +1138,7 @@ add_namespace = GEA_news
 			}
 			hidden_effect = {
 				country_event = {
-					id = Ostasien.27
+					id = GEA.25
 					days = 1
 				}
 			}
@@ -2466,6 +2467,65 @@ add_namespace = GEA_news
 		}
 	}
 	
+	country_event = { #军费削减之争
+		id = GEA.52
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.52" }
+		title = GEA.52.t
+		desc = GEA.52.d
+		picture = GFX_report_event_INC_vietunit
+
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = GEA.52.a
+			add_political_power = 50
+			add_stability = 0.05
+			increase_ruling_party_popularity_by_5 = yes
+		}
+		option = {
+			name = GEA.52.b
+			add_political_power = 20
+		}
+		option = {
+			name = GEA.52.c
+			custom_effect_tooltip = GEA_Affect_Abandoning_the_savage_nature_tt
+			hidden_effect = {
+				add_to_variable = { GEA_Handling_the_savage_army = 1 }
+			}
+		}
+	}
+	country_event = { #宵禁之后
+		id = GEA.53
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.53" }
+		title = GEA.53.t
+		desc = GEA.53.d
+		picture = GFX_GEA_Arrest_operation
+
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = GEA.53.a
+			add_manpower = -1
+		}
+	}
+	country_event = { #东方小巴黎
+		id = GEA.54
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.54" }
+		title = GEA.54.t
+		desc = GEA.54.d
+		picture = GFX_report_event_SIA_German_Economical_Dominance
+
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = GEA.54.a
+			add_stability = 0.02
+		}
+	}
+
 #阿尔伯特·哈尔路线
 	country_event = { #驾驭三头驮兽
 		id = GEA.101
@@ -5929,7 +5989,7 @@ add_namespace = GEA_news
 			tag = GEA
 			has_country_flag = GEA_Governor_Schorner_flag
 			has_war_with = INC
-			count_triggers = { #控制至少两个印度支那地区
+			count_triggers = { #至少两个地区
 				amount = 2
 				controls_state = 827 #安南
 				controls_state = 286 #交趾支那
@@ -5999,6 +6059,65 @@ add_namespace = GEA_news
 		option = {
 			name = GEA.547.a
 			add_manpower = -7
+		}
+	}
+	country_event = { #无法拒绝
+		id = GEA.548
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.548" }
+		title = GEA.548.t
+		desc = GEA.548.d
+
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = GEA.548.a
+			add_offsite_building = { type = industrial_complex level = 1 }
+		}
+	}
+	country_event = { 
+		id = GEA.549
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.549" }
+		title = GEA.549.t
+		desc = GEA.549.d
+		picture = GFX_report_event_GEA_schorner
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = { 
+			name = GEA.549.a
+			add_manpower = -100
+			add_stability = 0.01
+		}
+	}
+	country_event = {
+		id = GEA.550
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.550" }
+		title = GEA.550.t
+		desc = GEA.550.d
+		picture = GFX_report_event_GEA_schorner
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = GEA.550.a
+			set_rule = {
+				can_not_declare_war = no
+				can_decline_call_to_war = yes
+			}
+		}
+	}
+	country_event = {
+		id = GEA.551
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.551" }
+		title = GEA.551.t
+		desc = GEA.551.d
+		picture = GFX_report_event_GEA_schorner
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = GEA.551.a
 		}
 	}
 #经济
@@ -6807,92 +6926,7 @@ add_namespace = GEA_news
 			increase_ruling_party_popularity_by_5 = yes
 		}
 	}
-#舍尔纳事件
-	country_event = { 
-		id = Ostasien.170
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.170" }
-		title = Ostasien.170.t
-		desc = Ostasien.170.d
-		picture = GFX_GEA_meet_kaiser
-		is_triggered_only = yes
-
-		option = { 
-			name = Ostasien.170.a
-			add_popularity = {
-				ideology = national_populist
-				popularity = 0.06
-			}
-			add_political_power = 75
-		}
-	}
-	country_event = { 
-		id = Ostasien.171
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.171" }
-		title = Ostasien.171.t
-		desc = Ostasien.171.d
-		picture = GFX_GEA_ferdinand_schorner_1
-		is_triggered_only = yes
-
-		option = { 
-			name = Ostasien.171.a
-			increase_ruling_party_popularity_by_10 = yes
-			set_party_name = {
-				ideology = social_conservative
-				name = GEA_social_conservative_party1_Schorner
-				long_name = GEA_social_conservative_party1_Schorner
-			}	
-			create_country_leader = {
-				name = "Ferdinand Schorner"
-				picture = "gfx/leaders/GEA/Portrait_GEA_Ferdinand_Schorner.png"
-				expire = "1.1.1"
-				ideology = soccon_colonial_govt_subtype
-				traits = {}
-			}	
-			set_party_name = {
-				ideology = authoritarian_democrat
-				name = GEA_authoritarian_democrat_Schorner_party
-				long_name = GEA_authoritarian_democrat_Schorner_party_long
-			}
-			create_country_leader = {
-				name = "Ferdinand Schorner"
-				picture = "gfx/leaders/GEA/Portrait_GEA_Ferdinand_Schorner.png"
-				expire = "1.1.1"
-				ideology = colonial_govt_subtype
-				traits = {}
-			}	
-			set_party_name = {
-				ideology = paternal_autocrat
-				name = GEA_paternal_autocrat_Schorner_party
-				long_name = GEA_paternal_autocrat_Schorner_party_long
-			}	
-			create_country_leader = {
-				name = "Ferdinand Schorner"
-				picture = "gfx/leaders/GEA/Portrait_GEA_Ferdinand_Schorner.png"
-				expire = "1.1.1"
-				ideology = autocratic_colonial_govt_subtype
-				traits = {}
-			}
-		}
-	}
-
-	country_event = { 
-		id = Ostasien.174
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.174" }
-		title = Ostasien.174.t
-		desc = Ostasien.174.d
-		picture = GFX_report_event_GEA_schorner
-		is_triggered_only = yes
-
-		option = { 
-			name = Ostasien.174.a
-			add_manpower = -124
-			custom_override_tooltip = {
-				tooltip = GEA_indochina_resistance_reduce_10_tt
-				add_to_variable = { GEA_indochina_resistance = -10 }
-				clamp_variable = { var = GEA_indochina_resistance min = 0 max = 100 }
-			}
-		}
-	}
+	
 #增援与八省联合
 	country_event = { # Steal manpower from home
 		id = Ostasien.200
@@ -7989,224 +8023,7 @@ add_namespace = GEA_news
 		}
 	}
 #越战事件
-	country_event = {#殖民地的求援信
-		id = Ostasien.900
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.900" }
-		title = Ostasien.900.t
-		desc = Ostasien.900.d
 
-		fire_only_once = yes
-		is_triggered_only = yes
-
-		option = {#all 
-			name = Ostasien.900.a 
-			ai_chance = {
-				factor = 60
-			}
-			add_manpower = -4000
-			add_equipment_to_stockpile = {
-				type = infantry_equipment_0
-				amount = -2000
-				producer = GER
-			}
-			add_equipment_to_stockpile = {
-				type = artillery_equipment
-				amount = -200
-				producer = GER
-			}
-			GEA = {
-				country_event = {
-					id = Ostasien.901
-					days = 3
-				}
-			}
-		}
-		
-		option = {#little 
-			name = Ostasien.900.b 
-			ai_chance = {
-				factor = 30
-			}
-			add_manpower = -2000
-			add_equipment_to_stockpile = {
-				type = infantry_equipment_0
-				amount = -1000
-				producer = GER
-			}
-			add_equipment_to_stockpile = {
-				type = artillery_equipment
-				amount = -100
-				producer = GER
-			}
-			GEA = {
-				country_event = {
-					id = Ostasien.902
-					days = 3
-				}
-			}
-		}
-		
-		option = {#no 
-			name = Ostasien.900.c 
-			ai_chance = {
-				factor = 10
-			}
-			add_political_power = 20
-			GEA = {
-				country_event = {
-					id = Ostasien.903
-					days = 3
-				}
-			}
-		}
-	}
-
-	country_event = {#援助到货
-		id = Ostasien.901
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.901" }
-		title = Ostasien.901.t
-		desc = Ostasien.901.d
-
-		fire_only_once = yes
-		is_triggered_only = yes
-
-		option = { 
-			name = Ostasien.901.a 
-			add_manpower = 4000
-			add_equipment_to_stockpile = {
-				type = infantry_equipment_0
-				amount = 2000
-				producer = GER
-			}
-			add_equipment_to_stockpile = {
-				type = artillery_equipment
-				amount = 200
-				producer = GER
-			}
-		}
-	}
-
-	country_event = {#援助到货
-		id = Ostasien.902
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.902" }
-		title = Ostasien.902.t
-		desc = Ostasien.902.d
-
-		fire_only_once = yes
-		is_triggered_only = yes
-
-		option = { 
-			name = Ostasien.902.a 
-			add_manpower = 2000
-			add_equipment_to_stockpile = {
-				type = infantry_equipment_0
-				amount = 1000
-				producer = GER
-			}
-			add_equipment_to_stockpile = {
-				type = artillery_equipment
-				amount = 100
-				producer = GER
-			}
-		}
-	}
-
-	country_event = {#援助到货
-		id = Ostasien.903
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.903" }
-		title = Ostasien.903.t
-		desc = Ostasien.903.d
-
-		fire_only_once = yes
-		is_triggered_only = yes
-
-		option = { 
-			name = Ostasien.903.a 
-			add_stability = -0.02
-			add_war_support = -0.02
-		}
-	}
-
-	country_event = {
-		id = Ostasien.1001
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.1001" }
-		title = Ostasien.1001.t
-		desc = Ostasien.1001.d
-		picture = GFX_GEA_training_panzer
-	
-		fire_only_once = yes
-	
-		is_triggered_only = yes
-	
-		option = { 
-			name = Ostasien.1001.a
-			ai_chance = {
-				factor = 70
-			}
-			GEA = {
-				create_equipment_variant = {
-					name = "Panzer III(training)"
-					type = light_tank_chassis_2
-					modules = {
-						main_armament_slot = tank_small_cannon
-						turret_type_slot = tank_light_three_man_tank_turret
-						suspension_type_slot = tank_christie_suspension
-						armor_type_slot = tank_welded_armor
-						engine_type_slot = tank_gasoline_engine
-						special_type_slot_1 = tank_radio_1
-						special_type_slot_2 = smoke_launchers
-						special_type_slot_3 = extra_ammo_storage
-						special_type_slot_4 = secondary_turret_hmg
-					}
-					upgrades = {
-						tank_nsb_engine_upgrade = 5
-						tank_nsb_armor_upgrade = 4
-					}
-				}
-			}
-			GEA = {add_equipment_to_stockpile = {
-				type = light_tank_chassis_2
-				amount = 250
-				producer = GER
-			}}
-			add_political_power = -75		
-		}
-		option = { 
-			name = Ostasien.1001.b
-			ai_chance = {
-				factor = 30
-			}
-			GEA = {
-				create_equipment_variant = {
-					name = "Panzer III(training)"
-					type = light_tank_chassis_2
-					modules = {
-						main_armament_slot = tank_small_cannon
-						turret_type_slot = tank_light_three_man_tank_turret
-						suspension_type_slot = tank_christie_suspension
-						armor_type_slot = tank_welded_armor
-						engine_type_slot = tank_gasoline_engine
-						special_type_slot_1 = tank_radio_1
-						special_type_slot_2 = smoke_launchers
-						special_type_slot_3 = extra_ammo_storage
-						special_type_slot_4 = secondary_turret_hmg
-					}
-					upgrades = {
-						tank_nsb_engine_upgrade = 5
-						tank_nsb_armor_upgrade = 4
-					}
-				}
-			}
-			GEA = {
-				add_equipment_to_stockpile = {
-					type = light_tank_chassis_2
-					amount = 100
-					producer = GER
-				}
-			}	
-			add_political_power = -25
-		}
-	}
 	country_event = {
 		id = Ostasien.1002
 		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.1002" }

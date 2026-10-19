@@ -249,7 +249,6 @@ GEA_The_private_estate_of_Josias_modifier = {
 }
 
 GEA_CARL_EDWARD_modifier = {
-	hidden = yes
 	enable = { always = yes }
 	remove_trigger = { 
 		NOT = { 
@@ -262,7 +261,6 @@ GEA_CARL_EDWARD_modifier = {
 }
 
 GEA_NIKOLAUS_modifier = {
-	hidden = yes
 	enable = { always = yes }
 	remove_trigger = { 
 		NOT = { 
@@ -275,7 +273,6 @@ GEA_NIKOLAUS_modifier = {
 }
 
 GEA_ELARD_VON_OLDENBURG_modifier = {
-	hidden = yes
 	enable = { always = yes }
 	remove_trigger = { 
 		NOT = { 
@@ -288,7 +285,6 @@ GEA_ELARD_VON_OLDENBURG_modifier = {
 }
 
 GEA_SCHLEICHER_modifier = {
-	hidden = yes
 	enable = { always = yes }
 	remove_trigger = { 
 		NOT = { 
@@ -301,7 +297,6 @@ GEA_SCHLEICHER_modifier = {
 }
 
 GEA_HUGENBERG_modifier = {
-	hidden = yes
 	enable = { always = yes }
 	remove_trigger = { 
 		NOT = { 
@@ -314,7 +309,6 @@ GEA_HUGENBERG_modifier = {
 }
 
 GEA_WERNER_VON_ALVENSLEBEN_modifier = {
-	hidden = yes
 	enable = { always = yes }
 	remove_trigger = { 
 		NOT = { 
@@ -327,7 +321,6 @@ GEA_WERNER_VON_ALVENSLEBEN_modifier = {
 }
 
 GEA_Carl_Schmitt_modifier = {
-	hidden = yes
 	enable = { always = yes }
 	remove_trigger = { 
 		NOT = { 
@@ -340,7 +333,6 @@ GEA_Carl_Schmitt_modifier = {
 }
 
 GEA_Dorpmuller_modifier = {
-	hidden = yes
 	enable = { always = yes }
 	remove_trigger = { 
 		NOT = { 
@@ -353,7 +345,6 @@ GEA_Dorpmuller_modifier = {
 }
 
 GEA_Emil_Helfferich_modifier = {
-	hidden = yes
 	enable = { always = yes }
 	remove_trigger = { 
 		NOT = { 
@@ -366,7 +357,6 @@ GEA_Emil_Helfferich_modifier = {
 }
 
 GEA_Fritz_Thyssen_modifier = {
-	hidden = yes
 	enable = { always = yes }
 	remove_trigger = { 
 		NOT = { 
@@ -379,7 +369,6 @@ GEA_Fritz_Thyssen_modifier = {
 }
 
 GEA_Hermann_Goring_modifier = {
-	hidden = yes
 	enable = { always = yes }
 	remove_trigger = { 
 		NOT = { 
@@ -392,7 +381,6 @@ GEA_Hermann_Goring_modifier = {
 }
 
 GEA_Siegmund_Bodenheimer_modifier = {
-	hidden = yes
 	enable = { always = yes }
 	remove_trigger = { 
 		NOT = { 
@@ -405,7 +393,6 @@ GEA_Siegmund_Bodenheimer_modifier = {
 }
 
 GEA_Josef_Abs_modifier = {
-	hidden = yes
 	enable = { always = yes }
 	remove_trigger = { 
 		NOT = { 
@@ -418,7 +405,6 @@ GEA_Josef_Abs_modifier = {
 }
 
 GEA_Fritz_Meer_modifier = {
-	hidden = yes
 	enable = { always = yes }
 	remove_trigger = { 
 		NOT = { 
@@ -431,7 +417,6 @@ GEA_Fritz_Meer_modifier = {
 }
 
 GEA_Hermann_Bucher_modifier = {
-	hidden = yes
 	enable = { always = yes }
 	remove_trigger = { 
 		NOT = { 
@@ -444,7 +429,6 @@ GEA_Hermann_Bucher_modifier = {
 }
 
 GEA_Hermann_Siemens_modifier = {
-	hidden = yes
 	enable = { always = yes }
 	remove_trigger = { 
 		NOT = { 
@@ -457,7 +441,6 @@ GEA_Hermann_Siemens_modifier = {
 }
 
 GEA_Otto_Jeidels_modifier = {
-	hidden = yes
 	enable = { always = yes }
 	remove_trigger = { 
 		NOT = { 
@@ -470,7 +453,6 @@ GEA_Otto_Jeidels_modifier = {
 }
 
 GEA_Alfred_Krupp_modifier = {
-	hidden = yes
 	enable = { always = yes }
 	remove_trigger = { 
 		NOT = { 
