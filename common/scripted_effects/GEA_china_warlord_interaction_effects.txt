@@ -74,3 +74,63 @@ GEA_warlord_add_german_influence_effect = {
 		}
 	}
 }
+
+# Arms purchases increase capital influence only, using the same regional precedence.
+GEA_warlord_add_german_capital_influence_effect = {
+	if = {
+		limit = { OR = { owns_state = 613 original_tag = LEP original_tag = ANQ } }
+		GEA = {
+			add_to_variable = { GEA_china_lep_capital_influence = $AMOUNT$ }
+			clamp_variable = { var = GEA_china_lep_capital_influence min = 0 max = 100 }
+		}
+	}
+	else_if = {
+		limit = { original_tag = QIE }
+		GEA = {
+			add_to_variable = { GEA_china_zhili_capital_influence = $AMOUNT$ }
+			clamp_variable = { var = GEA_china_zhili_capital_influence min = 0 max = 100 }
+		}
+	}
+	else_if = {
+		limit = { original_tag = SQI }
+		GEA = {
+			add_to_variable = { GEA_china_sqi_capital_influence = $AMOUNT$ }
+			clamp_variable = { var = GEA_china_sqi_capital_influence min = 0 max = 100 }
+		}
+	}
+	else_if = {
+		limit = { original_tag = GXC }
+		GEA = {
+			add_to_variable = { GEA_china_gxc_capital_influence = $AMOUNT$ }
+			clamp_variable = { var = GEA_china_gxc_capital_influence min = 0 max = 100 }
+		}
+	}
+	else_if = {
+		limit = { original_tag = YUN }
+		GEA = {
+			add_to_variable = { GEA_china_yun_capital_influence = $AMOUNT$ }
+			clamp_variable = { var = GEA_china_yun_capital_influence min = 0 max = 100 }
+		}
+	}
+	else_if = {
+		limit = { original_tag = SZC }
+		GEA = {
+			add_to_variable = { GEA_china_szc_capital_influence = $AMOUNT$ }
+			clamp_variable = { var = GEA_china_szc_capital_influence min = 0 max = 100 }
+		}
+	}
+	else_if = {
+		limit = { original_tag = SHX }
+		GEA = {
+			add_to_variable = { GEA_china_shx_capital_influence = $AMOUNT$ }
+			clamp_variable = { var = GEA_china_shx_capital_influence min = 0 max = 100 }
+		}
+	}
+	else_if = {
+		limit = { original_tag = HNN }
+		GEA = {
+			add_to_variable = { GEA_china_hnn_capital_influence = $AMOUNT$ }
+			clamp_variable = { var = GEA_china_hnn_capital_influence min = 0 max = 100 }
+		}
+	}
+}

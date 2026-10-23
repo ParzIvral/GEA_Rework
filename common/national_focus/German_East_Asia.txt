@@ -13295,6 +13295,14 @@ focus_tree = {
 		relative_position_id = GEA_Nanjing_xpress
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_usiness_expansion_of_AOG"
+			custom_effect_tooltip = GEA_lep_business_expansion_discount_tt
+			hidden_effect = {
+				set_variable = { GEA_lep_investment_cost = 10 }
+				set_variable = { GEA_lep_enterprise_cost = 30 }
+				set_variable = { GEA_lep_investment_cooldown = 46 }
+				set_variable = { GEA_lep_enterprise_cooldown = 86 }
+				set_variable = { GEA_lep_export_cooldown = 106 }
+			}
 			
 		}	
 	}
@@ -13323,8 +13331,9 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Goods_out_money_in"
 			custom_effect_tooltip = GEA_Goods_out_money_in_tt
+			unlock_decision_tooltip = GEA_Expand_military_equipment_exports
+			unlock_decision_tooltip = GEA_Expand_the_export_of_strategic_resources
 			add_ideas = GEA_Trade_surplus_with_China
-			
 		}	
 	}
 

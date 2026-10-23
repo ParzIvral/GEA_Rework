@@ -2320,6 +2320,22 @@ ideas = {
 	}
 #隐藏精神
 	hidden_ideas = {
+		GEA_German_military_equipment_imports = { #德制军械进口
+			allowed = { always = no }
+			modifier = {
+				political_power_gain = -0.03
+				industrial_capacity_factory = 0.10
+				consumer_goods_factor = 0.05
+			}
+		}
+		GEA_German_East_Asia_resource_trade = { #德属东亚资源贸易
+			allowed = { always = no }
+			modifier = {
+				political_power_gain = -0.03
+				local_resources_factor = 0.10
+				consumer_goods_factor = 0.05
+			}
+		}
 		GEA_oil_trade_routes_disrupted = { #原油贸易线路中断
 			allowed = { always = no }
 			modifier = {

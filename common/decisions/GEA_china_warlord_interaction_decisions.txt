@@ -67,4 +67,44 @@ GEA_china_warlord_interaction = {
 			hidden_effect = { GEA_warlord_add_german_influence_effect = { AMOUNT = 3 } }
 		}
 	}
+
+	GEA_warlord_buy_german_arms = {
+		icon = GFX_decision_generic_industry
+		allowed = { GEA_china_warlord_eligible_trigger = yes }
+		visible = {
+			country_exists = GEA
+			GEA_china_warlord_can_interact_trigger = yes
+		}
+		available = { NOT = { has_war_with = GEA } }
+		cost = 0
+		custom_cost_text = CP_50
+		custom_cost_trigger = { command_power > 49.99 }
+		days_remove = 60
+		days_re_enable = 120
+		ai_will_do = {
+			factor = 30
+			modifier = {
+				add = 30
+				GEA_china_warlord_positive_cooperation_trigger = yes
+			}
+			modifier = {
+				add = 30
+				GEA = { has_completed_focus = GEA_Goods_out_money_in }
+			}
+		}
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_warlord_buy_german_arms"
+			hidden_effect = { add_command_power = -50 }
+		}
+		remove_effect = {
+			random_list = {
+				50 = { add_equipment_to_stockpile = { type = infantry_equipment amount = 3000 producer = GER } }
+				30 = { add_equipment_to_stockpile = { type = artillery_equipment amount = 100 producer = GER } }
+				20 = { add_equipment_to_stockpile = { type = support_equipment amount = 500 producer = GER } }
+			}
+			add_popularity = { ideology = market_liberal popularity = 0.02 }
+			custom_effect_tooltip = GEA_china_capital_influence_add_5_tt
+			hidden_effect = { GEA_warlord_add_german_capital_influence_effect = { AMOUNT = 5 } }
+		}
+	}
 }

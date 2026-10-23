@@ -328,3 +328,14 @@ defined_text = {
 	}
 	text = { localization_key = GEA_warlord_region_value_unavailable }
 }
+
+defined_text = {
+	name = GetGEALepExportCommandPowerCost
+	text = {
+		trigger = { has_completed_focus = GEA_The_usiness_expansion_of_AOG }
+		localization_key = CP_20
+	}
+	text = {
+		localization_key = CP_30
+	}
+}

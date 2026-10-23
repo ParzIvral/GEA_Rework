@@ -9046,9 +9046,9 @@ GEA_focus_china_decisions = {#第二次对华远征
 		icon = GFX_GEA_Invest_in_East_China_decision
 		allowed = { original_tag = GEA }
 
-		cost = 20
+		cost = GEA_lep_investment_cost?20
 		days_remove = 30
-		days_re_enable = 60
+		days_re_enable = GEA_lep_investment_cooldown?60
 
 		visible = {
 			has_completed_focus = GEA_Nanjing_xpress
@@ -9092,9 +9092,9 @@ GEA_focus_china_decisions = {#第二次对华远征
 		icon = GFX_GEA_Invest_in_East_China_decision
 		allowed = { original_tag = GEA }
 
-		cost = 40
+		cost = GEA_lep_enterprise_cost?40
 		days_remove = 60
-		days_re_enable = 100
+		days_re_enable = GEA_lep_enterprise_cooldown?100
 
 		visible = {
 			has_completed_focus = GEA_Nanjing_xpress
@@ -9144,9 +9144,9 @@ GEA_focus_china_decisions = {#第二次对华远征
 		icon = GFX_GEA_Invest_in_East_China_decision
 		allowed = { original_tag = GEA }
 
-		cost = 40
+		cost = GEA_lep_enterprise_cost?40
 		days_remove = 60
-		days_re_enable = 100
+		days_re_enable = GEA_lep_enterprise_cooldown?100
 
 		visible = {
 			has_completed_focus = GEA_Nanjing_xpress
@@ -9198,19 +9198,27 @@ GEA_focus_china_decisions = {#第二次对华远征
 		allowed = { original_tag = GEA }
 
 
+		cost = 0
+		custom_cost_text = GEA_lep_export_cp_cost
+		custom_cost_trigger = {
+			OR = {
+				AND = {
+					has_completed_focus = GEA_The_usiness_expansion_of_AOG
+					command_power > 19.99
+				}
+				AND = {
+					NOT = { has_completed_focus = GEA_The_usiness_expansion_of_AOG }
+					command_power > 29.99
+				}
+			}
+		}
 		days_remove = 60
-		days_re_enable = 120
+		days_re_enable = GEA_lep_export_cooldown?120
 
 		visible = {
 			has_completed_focus = GEA_Goods_out_money_in
 			has_country_flag = GEA_east_china_investment_unlocked
 			has_country_flag = LEP_OPEN
-		}
-
-		modifier = {
-			political_power_gain = 0.03
-			industrial_capacity_factory = -0.1
-			consumer_goods_factor = -0.05
 		}
 
 		targets_dynamic = yes
@@ -9226,30 +9234,62 @@ GEA_focus_china_decisions = {#第二次对华远征
 			FROM = { owns_state = 613 }
 		}
 
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_Expand_military_equipment_exports target: [From.GetName]"
+			hidden_effect = {
+				if = {
+					limit = { has_completed_focus = GEA_The_usiness_expansion_of_AOG }
+					add_command_power = -20
+				}
+				else = { add_command_power = -30 }
+			}
+			FROM = { add_ideas = GEA_German_military_equipment_imports }
+		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Expand_military_equipment_exports target: [From.GetName]"
-
-
+			FROM = {
+				remove_ideas = GEA_German_military_equipment_imports
+				add_popularity = { ideology = market_liberal popularity = 0.02 }
+			}
+			custom_effect_tooltip = GEA_china_lep_name_tt
+			custom_effect_tooltip = GEA_china_attitude_add_5_tt
+			custom_effect_tooltip = GEA_china_capital_influence_add_5_tt
+			hidden_effect = {
+				add_to_variable = { GEA_china_lep_attitude = 5 }
+				clamp_variable = { var = GEA_china_lep_attitude min = 0 max = 100 }
+				add_to_variable = { GEA_china_lep_capital_influence = 5 }
+				clamp_variable = { var = GEA_china_lep_capital_influence min = 0 max = 100 }
+			}
+		}
+		cancel_effect = {
+			FROM = { remove_ideas = GEA_German_military_equipment_imports }
 		}
 	}
-	GEA_Expand_military_equipment_exports = { #扩大战略资源出口
+	GEA_Expand_the_export_of_strategic_resources = { #扩大战略资源出口
 		icon = GFX_GEA_Invest_in_East_China_decision
 		allowed = { original_tag = GEA }
 
-
+		cost = 0
+		custom_cost_text = GEA_lep_export_cp_cost
+		custom_cost_trigger = {
+			OR = {
+				AND = {
+					has_completed_focus = GEA_The_usiness_expansion_of_AOG
+					command_power > 19.99
+				}
+				AND = {
+					NOT = { has_completed_focus = GEA_The_usiness_expansion_of_AOG }
+					command_power > 29.99
+				}
+			}
+		}
 		days_remove = 60
-		days_re_enable = 120
+		days_re_enable = GEA_lep_export_cooldown?120
 
 		visible = {
 			has_completed_focus = GEA_Goods_out_money_in
 			has_country_flag = GEA_east_china_investment_unlocked
 			has_country_flag = LEP_OPEN
-		}
-
-		modifier = {
-			political_power_gain = 0.03
-			industrial_capacity_factory = -0.1
-			consumer_goods_factor = -0.05
 		}
 
 		targets_dynamic = yes
@@ -9265,10 +9305,35 @@ GEA_focus_china_decisions = {#第二次对华远征
 			FROM = { owns_state = 613 }
 		}
 
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_Expand_the_export_of_strategic_resources target: [From.GetName]"
+			hidden_effect = {
+				if = {
+					limit = { has_completed_focus = GEA_The_usiness_expansion_of_AOG }
+					add_command_power = -20
+				}
+				else = { add_command_power = -30 }
+			}
+			FROM = { add_ideas = GEA_German_East_Asia_resource_trade }
+		}
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Expand_military_equipment_exports target: [From.GetName]"
-
-			
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Expand_the_export_of_strategic_resources target: [From.GetName]"
+			FROM = {
+				remove_ideas = GEA_German_East_Asia_resource_trade
+				add_popularity = { ideology = market_liberal popularity = 0.02 }
+			}
+			custom_effect_tooltip = GEA_china_lep_name_tt
+			custom_effect_tooltip = GEA_china_attitude_add_5_tt
+			custom_effect_tooltip = GEA_china_capital_influence_add_5_tt
+			hidden_effect = {
+				add_to_variable = { GEA_china_lep_attitude = 5 }
+				clamp_variable = { var = GEA_china_lep_attitude min = 0 max = 100 }
+				add_to_variable = { GEA_china_lep_capital_influence = 5 }
+				clamp_variable = { var = GEA_china_lep_capital_influence min = 0 max = 100 }
+			}
+		}
+		cancel_effect = {
+			FROM = { remove_ideas = GEA_German_East_Asia_resource_trade }
 		}
 	}
 
