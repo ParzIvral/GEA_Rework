@@ -2852,7 +2852,7 @@ add_namespace = GEA_news
 			hidden_effect = {
 				country_event = {
 					id = GEA.107
-					days = 7
+					days = 30
 				}
 			}
 		}
@@ -3179,6 +3179,20 @@ add_namespace = GEA_news
 					add_idea = GEA_Support_from_the_Vietnamese_partners_8
 				}
 			}
+		}
+		option = {
+			name = GEA.107.e
+			ai_chance = {
+				factor = 5
+			}
+			increase_ruling_party_popularity_by_5 = yes
+			add_political_power = 200
+			add_stability = -0.1
+			modify_country_flag = {
+				flag = GEA_Indochinese_Anger
+				value = 2
+			}
+			custom_effect_tooltip = GEA_Indochina_Anger_Up_More
 		}
 	}
 	country_event = {#双皇之治
@@ -6075,7 +6089,7 @@ add_namespace = GEA_news
 			add_offsite_building = { type = industrial_complex level = 1 }
 		}
 	}
-	country_event = { 
+	country_event = { #猎杀
 		id = GEA.549
 		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.549" }
 		title = GEA.549.t
@@ -6090,12 +6104,12 @@ add_namespace = GEA_news
 			add_stability = 0.01
 		}
 	}
-	country_event = {
+	country_event = { #皇帝陛下的晚宴
 		id = GEA.550
 		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.550" }
 		title = GEA.550.t
 		desc = GEA.550.d
-		picture = GFX_report_event_GEA_schorner
+		picture = GFX_GEA_57
 		is_triggered_only = yes
 		fire_only_once = yes
 
@@ -6107,17 +6121,384 @@ add_namespace = GEA_news
 			}
 		}
 	}
-	country_event = {
+	country_event = { #人主
 		id = GEA.551
 		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.551" }
 		title = GEA.551.t
 		desc = GEA.551.d
-		picture = GFX_report_event_GEA_schorner
+		picture = GFX_GEA_58
 		is_triggered_only = yes
 		fire_only_once = yes
 
 		option = {
 			name = GEA.551.a
+			add_stability = 0.1
+		}
+	}
+
+	country_event = { #最后航程
+		id = GEA.552
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.552" }
+		title = GEA.552.t
+		desc = GEA.552.d
+		picture = GFX_GEA_59
+
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = GEA.552.a
+			custom_override_tooltip = {
+				tooltip = GEA_indochina_resistance_reduce_5_tt
+				add_to_variable = { GEA_indochina_resistance = -5 }
+				clamp_variable = { var = GEA_indochina_resistance min = 0 max = 100 }
+			}
+			add_stability = 0.02
+			add_popularity = {
+				ideology = authoritarian_democrat
+				popularity = -0.04
+			}
+			add_manpower = -1
+			hidden_effect = {
+				country_event = {
+					id = GEA.553
+					days = 5
+				}
+			}
+		}
+	}
+
+	country_event = { #斩草除根
+		id = GEA.553
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.553" }
+		title = GEA.553.t
+		desc = GEA.553.d
+		picture = GFX_GEA_60
+
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = GEA.553.a
+			custom_override_tooltip = {
+				tooltip = GEA_indochina_resistance_reduce_10_tt
+				add_to_variable = { GEA_indochina_resistance = -10 }
+				clamp_variable = { var = GEA_indochina_resistance min = 0 max = 100 }
+			}
+			add_stability = -0.03
+			add_manpower = -104
+			hidden_effect = {
+				country_event = {
+					id = GEA.554
+					days = 5
+				}
+			}
+		}
+	}
+
+	country_event = { #焚尸
+		id = GEA.554
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.554" }
+		title = GEA.554.t
+		desc = GEA.554.d
+		picture = GFX_GEA_61
+
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = GEA.554.a
+			custom_override_tooltip = {
+				tooltip = GEA_indochina_resistance_increase_15_tt
+				add_to_variable = { GEA_indochina_resistance = 15 }
+				clamp_variable = { var = GEA_indochina_resistance min = 0 max = 100 }
+			}
+			add_stability = -0.05
+			add_manpower = -64
+			hidden_effect = {
+				country_event = {
+					id = GEA.556
+					days = 5
+				}
+			}
+		}
+	}
+
+	country_event = { #忠犬
+		id = GEA.555
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.555" }
+		title = GEA.555.t
+		desc = GEA.555.d
+		picture = GFX_GEA_62
+
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = GEA.555.a
+			custom_override_tooltip = {
+				tooltip = GEA_indochina_resistance_reduce_5_tt
+				add_to_variable = { GEA_indochina_resistance = -5 }
+				clamp_variable = { var = GEA_indochina_resistance min = 0 max = 100 }
+			}
+			increase_ruling_party_popularity_by_3 = yes
+		}
+	}
+
+	country_event = { #葛亨隆夫人的末日
+		id = GEA.556
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.556" }
+		title = GEA.556.t
+		desc = GEA.556.d
+		picture = GFX_GEA_63
+
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = GEA.556.a
+			custom_override_tooltip = {
+				tooltip = GEA_indochina_resistance_reduce_5_tt
+				add_to_variable = { GEA_indochina_resistance = -5 }
+				clamp_variable = { var = GEA_indochina_resistance min = 0 max = 100 }
+			}
+			add_offsite_building = { type = industrial_complex level = 1 }
+			add_political_power = 50
+			add_manpower = -8
+		}
+	}
+#外交
+	country_event = {
+		id = GEA.800
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.800" }
+		title = GEA.800.t
+		desc = GEA.800.d
+		picture = GFX_GEA_eight_provience
+
+		fire_only_once = yes
+
+		trigger = {
+			tag = GEA
+			LEP = { 
+				has_country_flag = LEP_collapsed
+			}
+		}
+
+		option = { 
+			name = GEA.800.a
+			set_country_flag = GEA_nanjing_crisis
+			complete_national_focus = GEA_second_expedition_to_China
+		}
+	}
+	country_event = { #德国向我们提供武器
+		id = GEA.801
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.801" }
+		title = GEA.801.t
+		desc = GEA.801.d
+		picture = GFX_report_event_SIA_German_Economical_Dominance
+
+		is_triggered_only = yes
+
+		option = {
+			name = GEA.801.a
+			GEA = {
+				send_equipment = {
+					equipment = infantry_equipment
+					amount = 2500
+					target = LEP
+				}
+				hidden_effect = {
+					add_to_variable = { GEA_china_lep_attitude = 5 }
+					clamp_variable = { var = GEA_china_lep_attitude min = 0 max = 100 }
+					add_to_variable = { GEA_china_lep_military_projection = 2 }
+					clamp_variable = { var = GEA_china_lep_military_projection min = 0 max = 100 }
+				}
+			}
+			custom_effect_tooltip = GEA_801_accept_aid_tt
+			ai_chance = {
+				factor = 90
+			}
+
+		}
+
+		option = {
+			name = GEA.801.b
+			ai_chance = {
+				factor = 10
+			}
+			GEA = {
+				add_opinion_modifier = {
+					target = LEP
+					modifier = LEP_refused_help_modifier
+				}
+			}
+		}
+	}
+	country_event = { #八省内战结果
+		id = GEA.802
+		title = {
+			text = GEA.802.t.ningxi
+			trigger = {
+				LEP = { check_variable = { var = LEP_league_war_victor value = LEP compare = equals } }
+				LEP = { owns_state = 613 controls_state = 613 }
+			}
+		}
+		desc = {
+			text = GEA.802.d.ningxi
+			trigger = {
+				LEP = { check_variable = { var = LEP_league_war_victor value = LEP compare = equals } }
+				LEP = { owns_state = 613 controls_state = 613 }
+			}
+		}
+		title = {
+			text = GEA.802.t.shandong
+			trigger = {
+				LEP = { check_variable = { var = LEP_league_war_victor value = SQI compare = equals } }
+				SQI = { owns_state = 613 controls_state = 613 has_country_leader = { name = "Zhang Zongchang" ruling_only = yes } }
+			}
+		}
+		desc = {
+			text = GEA.802.d.shandong
+			trigger = {
+				LEP = { check_variable = { var = LEP_league_war_victor value = SQI compare = equals } }
+				SQI = { owns_state = 613 controls_state = 613 has_country_leader = { name = "Zhang Zongchang" ruling_only = yes } }
+			}
+		}
+		title = {
+			text = GEA.802.t.anqing
+			trigger = {
+				LEP = { check_variable = { var = LEP_league_war_victor value = ANQ compare = equals } }
+				ANQ = { owns_state = 613 controls_state = 613 }
+			}
+		}
+		desc = {
+			text = GEA.802.d.anqing
+			trigger = {
+				LEP = { check_variable = { var = LEP_league_war_victor value = ANQ compare = equals } }
+				ANQ = { owns_state = 613 controls_state = 613 }
+			}
+		}
+		title = {
+			text = GEA.802.t.leftkmt
+			trigger = {
+				LEP = { check_variable = { var = LEP_league_war_victor value = CHI compare = equals } }
+				CHI = { owns_state = 613 controls_state = 613 }
+			}
+		}
+		desc = {
+			text = GEA.802.d.leftkmt
+			trigger = {
+				LEP = { check_variable = { var = LEP_league_war_victor value = CHI compare = equals } }
+				CHI = { owns_state = 613 controls_state = 613 }
+			}
+		}
+		picture = GFX_GEA_eight_provience
+		fire_only_once = yes
+
+		trigger = {
+			tag = GEA
+			has_global_flag = LEP_league_war_over
+			NOT = { has_country_flag = GEA_eight_provinces_war_resolved }
+			OR = {
+				AND = {
+					LEP = { check_variable = { var = LEP_league_war_victor value = LEP compare = equals } }
+					LEP = { owns_state = 613 controls_state = 613 }
+				}
+				AND = {
+					LEP = { check_variable = { var = LEP_league_war_victor value = SQI compare = equals } }
+					SQI = { owns_state = 613 controls_state = 613 has_country_leader = { name = "Zhang Zongchang" ruling_only = yes } }
+				}
+				AND = {
+					LEP = { check_variable = { var = LEP_league_war_victor value = ANQ compare = equals } }
+					ANQ = { owns_state = 613 controls_state = 613 }
+				}
+				AND = {
+					LEP = { check_variable = { var = LEP_league_war_victor value = CHI compare = equals } }
+					CHI = { owns_state = 613 controls_state = 613 }
+				}
+			}
+		}
+
+		mean_time_to_happen = { days = 1 }
+
+		immediate = {
+			log = "[GetDateText]: [Root.GetName]: event GEA.802"
+			set_country_flag = GEA_eight_provinces_war_resolved
+			if = {
+				limit = {
+					LEP = { check_variable = { var = LEP_league_war_victor value = LEP compare = equals } }
+					LEP = { owns_state = 613 controls_state = 613 }
+				}
+				set_country_flag = GEA_eight_provinces_winner_ningxi
+				set_variable = { GEA_china_lep_attitude = 75 }
+				set_variable = { GEA_china_lep_capital_influence = 45 }
+				set_variable = { GEA_china_lep_military_projection = 30 }
+			}
+			else_if = {
+				limit = {
+					LEP = { check_variable = { var = LEP_league_war_victor value = SQI compare = equals } }
+					SQI = { owns_state = 613 controls_state = 613 has_country_leader = { name = "Zhang Zongchang" ruling_only = yes } }
+				}
+				set_country_flag = GEA_eight_provinces_winner_shandong
+				set_variable = { GEA_china_lep_attitude = 40 }
+				set_variable = { GEA_china_lep_capital_influence = 35 }
+				set_variable = { GEA_china_lep_military_projection = 20 }
+			}
+			else_if = {
+				limit = {
+					LEP = { check_variable = { var = LEP_league_war_victor value = ANQ compare = equals } }
+					ANQ = { owns_state = 613 controls_state = 613 }
+				}
+				set_country_flag = GEA_eight_provinces_winner_anqing
+				set_variable = { GEA_china_lep_attitude = 10 }
+				set_variable = { GEA_china_lep_capital_influence = 20 }
+				set_variable = { GEA_china_lep_military_projection = 15 }
+			}
+			else_if = {
+				limit = {
+					LEP = { check_variable = { var = LEP_league_war_victor value = CHI compare = equals } }
+					CHI = { owns_state = 613 controls_state = 613 }
+				}
+				set_country_flag = GEA_eight_provinces_winner_leftkmt
+				set_variable = { GEA_china_lep_attitude = 0 }
+				set_variable = { GEA_china_lep_capital_influence = 0 }
+				set_variable = { GEA_china_lep_military_projection = 0 }
+			}
+		}
+
+		option = {
+			name = GEA.802.a
+			trigger = {
+				LEP = { check_variable = { var = LEP_league_war_victor value = LEP compare = equals } }
+				LEP = { owns_state = 613 controls_state = 613 }
+			}
+			set_country_flag = GEA_east_china_investment_unlocked
+			unlock_decision_tooltip = GEA_Invest_in_East_China
+		}
+		option = {
+			name = GEA.802.b
+			trigger = {
+				LEP = { check_variable = { var = LEP_league_war_victor value = SQI compare = equals } }
+				SQI = { owns_state = 613 controls_state = 613 has_country_leader = { name = "Zhang Zongchang" ruling_only = yes } }
+			}
+			set_country_flag = GEA_east_china_investment_unlocked
+			unlock_decision_tooltip = GEA_Invest_in_East_China
+		}
+		option = {
+			name = GEA.802.c
+			trigger = {
+				LEP = { check_variable = { var = LEP_league_war_victor value = ANQ compare = equals } }
+				ANQ = { owns_state = 613 controls_state = 613 }
+			}
+			set_country_flag = GEA_east_china_investment_unlocked
+			unlock_decision_tooltip = GEA_Invest_in_East_China
+		}
+		option = {
+			name = GEA.802.e
+			trigger = {
+				LEP = { check_variable = { var = LEP_league_war_victor value = CHI compare = equals } }
+				CHI = { owns_state = 613 controls_state = 613 }
+			}
 		}
 	}
 #经济
@@ -6962,102 +7343,6 @@ add_namespace = GEA_news
 		}
 	}
 
-	country_event = { # give guns to lep
-		id = Ostasien.202
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.202" }
-		title = Ostasien.202.t
-		desc = Ostasien.202.d
-		picture = GFX_report_event_SIA_German_Economical_Dominance
-
-		is_triggered_only = yes
-
-		option = {
-			name = Ostasien.202.a
-			GEA = {
-				send_equipment = {
-					equipment = infantry_equipment
-					amount = 2500
-					target = LEP
-				}
-			}
-			ai_chance = {
-				factor = 80
-			}
-			add_to_variable = {
-				GEA.GEA_payback_for_lep_involvement = 1
-			}
-		}
-
-		option = {
-			name = Ostasien.202.b
-			ai_chance = {
-				factor = 20
-			}
-			GEA = {
-				add_opinion_modifier = {
-					target = LEP
-					modifier = LEP_refused_help_modifier
-				}
-			}
-		}
-	}
-
-
-	country_event = { # give factories to lep
-		id = Ostasien.203
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.203" }
-		title = Ostasien.203.t
-		desc = Ostasien.203.d
-		picture = GFX_report_event_SIA_German_Economical_Dominance
-
-		is_triggered_only = yes
-
-		option = {
-			name = Ostasien.203.a
-			ai_chance = {
-				factor = 80
-			}
-			add_offsite_building = { type = arms_factory level = 2 }
-			add_to_variable = {
-				GEA.GEA_payback_for_lep_involvement = 1
-			}
-			country_event = {
-				id = Ostasien.204
-				days = 120
-			}
-		}
-
-		option = {
-			name = Ostasien.203.b
-			ai_chance = {
-				factor = 20
-			}
-			GEA = {
-				add_opinion_modifier = {
-					target = LEP
-					modifier = LEP_refused_help_modifier
-				}
-				set_country_flag = GEA_no_factory_lease
-			}
-		}
-	}
-
-	country_event = { # get factories back from lep
-		id = Ostasien.204
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.204" }
-		title = Ostasien.204.t
-		desc = Ostasien.204.d
-		picture = GFX_report_event_SIA_German_Economical_Dominance
-
-		is_triggered_only = yes
-
-		option = {
-			name = Ostasien.204.a
-
-			add_offsite_building = { type = arms_factory level = -2 }
-		}
-	}
-
 	country_event = { # collapse of the kramat pulai deposit 1
 		id = Ostasien.205
 		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.205" }
@@ -7383,26 +7668,7 @@ add_namespace = GEA_news
 		}
 	}
 #外交事件
-	country_event = {
-		id = Ostasien.800
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.800" }
-		title = Ostasien.800.t
-		desc = Ostasien.800.d
-		picture = GFX_GEA_eight_provience
 
-		fire_only_once = yes
-
-		trigger = {
-			tag = GEA
-			LEP = { has_war_with = CHI}
-		}
-
-		option = { 
-			name = Ostasien.800.a
-			set_country_flag = GEA_nanjing_crisis
-			complete_national_focus = GEA_second_expedition_to_China
-		}
-	}
 	country_event = {
 		id = Ostasien.801
 		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.801" }

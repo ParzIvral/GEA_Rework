@@ -66,6 +66,72 @@ spriteTypes = {
 	}
 
 	spriteType = {
+		name = "GEA_China_background"
+		texturefile = "gfx/interface/GEAGUI/GEA_China_background.png"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "GEA_GXC"
+		texturefile = "gfx/interface/GEAGUI/GEA_GXC.png"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "GEA_HNN"
+		texturefile = "gfx/interface/GEAGUI/GEA_HNN.png"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "GEA_Jap"
+		texturefile = "gfx/interface/GEAGUI/GEA_Jap.png"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "GEA_Lec"
+		texturefile = "gfx/interface/GEAGUI/GEA_Lec.png"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "GEA_Lep"
+		texturefile = "gfx/interface/GEAGUI/GEA_Lep.png"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "GEA_SZC"
+		texturefile = "gfx/interface/GEAGUI/GEA_SZC.png"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "GEA_Shanxi"
+		texturefile = "gfx/interface/GEAGUI/GEA_Shanxi.png"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "GEA_YUN"
+		texturefile = "gfx/interface/GEAGUI/GEA_YUN.png"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "GEA_Zhili"
+		texturefile = "gfx/interface/GEAGUI/GEA_Zhili.png"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "GEA_Shandong_china"
+		texturefile = "gfx/interface/GEAGUI/GEA_Shandong_china.png"
+		transparencecheck = yes
+	}
+
+	spriteType = {
 		name = "GEA_Shandong"
 		texturefile = "gfx/interface/GEAGUI/GEA_Shandong.png"
 		transparencecheck = yes
@@ -131,14 +197,6 @@ spriteTypes = {
 		texturefile = "gfx/interface/GEAGUI/GEA_Hawaii_ger.png"
 		transparencecheck = yes
 	}
-
-
-
-
-
-
-
-
 
 	spriteType = {
 		name = "GEA_Josias_Portraits"

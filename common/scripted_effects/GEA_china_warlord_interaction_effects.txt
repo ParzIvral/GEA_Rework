@@ -1,0 +1,76 @@
+# Called in the Chinese country's scope. Keep all regional counters in GEA.
+# The current Nanjing owner uses the same LEP-region counters as investment from GEA.
+GEA_warlord_add_german_influence_effect = {
+	if = {
+		limit = { OR = { owns_state = 613 original_tag = LEP original_tag = ANQ } }
+		GEA = {
+			add_to_variable = { GEA_china_lep_attitude = $AMOUNT$ }
+			clamp_variable = { var = GEA_china_lep_attitude min = 0 max = 100 }
+			add_to_variable = { GEA_china_lep_capital_influence = $AMOUNT$ }
+			clamp_variable = { var = GEA_china_lep_capital_influence min = 0 max = 100 }
+		}
+	}
+	else_if = {
+		limit = { original_tag = QIE }
+		GEA = {
+			add_to_variable = { GEA_china_zhili_attitude = $AMOUNT$ }
+			clamp_variable = { var = GEA_china_zhili_attitude min = 0 max = 100 }
+			add_to_variable = { GEA_china_zhili_capital_influence = $AMOUNT$ }
+			clamp_variable = { var = GEA_china_zhili_capital_influence min = 0 max = 100 }
+		}
+	}
+	else_if = {
+		limit = { original_tag = SQI }
+		GEA = {
+			add_to_variable = { GEA_china_sqi_attitude = $AMOUNT$ }
+			clamp_variable = { var = GEA_china_sqi_attitude min = 0 max = 100 }
+			add_to_variable = { GEA_china_sqi_capital_influence = $AMOUNT$ }
+			clamp_variable = { var = GEA_china_sqi_capital_influence min = 0 max = 100 }
+		}
+	}
+	else_if = {
+		limit = { original_tag = GXC }
+		GEA = {
+			add_to_variable = { GEA_china_gxc_attitude = $AMOUNT$ }
+			clamp_variable = { var = GEA_china_gxc_attitude min = 0 max = 100 }
+			add_to_variable = { GEA_china_gxc_capital_influence = $AMOUNT$ }
+			clamp_variable = { var = GEA_china_gxc_capital_influence min = 0 max = 100 }
+		}
+	}
+	else_if = {
+		limit = { original_tag = YUN }
+		GEA = {
+			add_to_variable = { GEA_china_yun_attitude = $AMOUNT$ }
+			clamp_variable = { var = GEA_china_yun_attitude min = 0 max = 100 }
+			add_to_variable = { GEA_china_yun_capital_influence = $AMOUNT$ }
+			clamp_variable = { var = GEA_china_yun_capital_influence min = 0 max = 100 }
+		}
+	}
+	else_if = {
+		limit = { original_tag = SZC }
+		GEA = {
+			add_to_variable = { GEA_china_szc_attitude = $AMOUNT$ }
+			clamp_variable = { var = GEA_china_szc_attitude min = 0 max = 100 }
+			add_to_variable = { GEA_china_szc_capital_influence = $AMOUNT$ }
+			clamp_variable = { var = GEA_china_szc_capital_influence min = 0 max = 100 }
+		}
+	}
+	else_if = {
+		limit = { original_tag = SHX }
+		GEA = {
+			add_to_variable = { GEA_china_shx_attitude = $AMOUNT$ }
+			clamp_variable = { var = GEA_china_shx_attitude min = 0 max = 100 }
+			add_to_variable = { GEA_china_shx_capital_influence = $AMOUNT$ }
+			clamp_variable = { var = GEA_china_shx_capital_influence min = 0 max = 100 }
+		}
+	}
+	else_if = {
+		limit = { original_tag = HNN }
+		GEA = {
+			add_to_variable = { GEA_china_hnn_attitude = $AMOUNT$ }
+			clamp_variable = { var = GEA_china_hnn_attitude min = 0 max = 100 }
+			add_to_variable = { GEA_china_hnn_capital_influence = $AMOUNT$ }
+			clamp_variable = { var = GEA_china_hnn_capital_influence min = 0 max = 100 }
+		}
+	}
+}

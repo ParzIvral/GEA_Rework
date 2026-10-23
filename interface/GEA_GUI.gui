@@ -906,4 +906,119 @@ guiTypes = {
 			pdx_tooltip = "GEA_JOSIAS_NAME_ALFRED_KRUPP_TT"
 		}
 	}
+
+
+	containerWindowType = {
+		name = "GEA_china_map_gui_game"
+		position = { x = 0 y = 0 }
+		size = { width = 275 height = 500 }
+		
+		iconType = {
+			name = "GEA_China_background"
+			orientation = center
+			position = { x = -130 y = -200 }
+			spriteType = "GEA_China_background"
+			scale = 0.7
+		}
+
+		buttonType = {
+			name = "GEA_HNN_Map"
+			orientation = center
+			position = { x = -130 y = -200 }
+			spriteType = "GEA_HNN"
+			pdx_tooltip = "GEA_HNN_Map"
+			pdx_tooltip_delayed = "GEA_HNN_Map_DESC"
+			scale = 0.7
+		}
+
+		buttonType = {
+			name = "GEA_Shanxi_Map"
+			orientation = center
+			position = { x = -130 y = -200 }
+			spriteType = "GEA_Shanxi"
+			pdx_tooltip = "GEA_Shanxi_Map"
+			pdx_tooltip_delayed = "GEA_Shanxi_Map_DESC"
+			scale = 0.7
+		}
+
+		buttonType = {
+			name = "GEA_SZC_Map"
+			orientation = center
+			position = { x = -130 y = -200 }
+			spriteType = "GEA_SZC"
+			pdx_tooltip = "GEA_SZC_Map"
+			pdx_tooltip_delayed = "GEA_SZC_Map_DESC"
+			scale = 0.7
+		}
+
+		buttonType = {
+			name = "GEA_YUN_Map"
+			orientation = center
+			position = { x = -130 y = -200 }
+			spriteType = "GEA_YUN"
+			pdx_tooltip = "GEA_YUN_Map"
+			pdx_tooltip_delayed = "GEA_YUN_Map_DESC"
+			scale = 0.7
+		}
+
+		buttonType = {
+			name = "GEA_GXC_Map"
+			orientation = center
+			position = { x = -130 y = -200 }
+			spriteType = "GEA_GXC"
+			pdx_tooltip = "GEA_GXC_Map"
+			pdx_tooltip_delayed = "GEA_GXC_Map_DESC"
+			scale = 0.7
+		}
+
+		buttonType = {
+			name = "GEA_Shandong_china_Map"
+			orientation = center
+			position = { x = -130 y = -200 }
+			spriteType = "GEA_Shandong_china"
+			pdx_tooltip = "GEA_Shandong_china_Map"
+			pdx_tooltip_delayed = "GEA_Shandong_china_Map_DESC"
+			scale = 0.7
+		}
+
+		buttonType = {
+			name = "GEA_Lec_Map"
+			orientation = center
+			position = { x = -130 y = -200 }
+			spriteType = "GEA_Lec"
+			pdx_tooltip = "GEA_Lec_Map"
+			pdx_tooltip_delayed = "GEA_Lec_Map_DESC"
+			scale = 0.7
+		}
+
+		buttonType = {
+			name = "GEA_Jap_Map"
+			orientation = center
+			position = { x = -130 y = -200 }
+			spriteType = "GEA_Jap"
+			pdx_tooltip = "GEA_Jap_Map"
+			pdx_tooltip_delayed = "GEA_Jap_Map_DESC"
+			scale = 0.7
+		}
+
+		buttonType = {
+			name = "GEA_Zhili_Map"
+			orientation = center
+			position = { x = -130 y = -200 }
+			spriteType = "GEA_Zhili"
+			pdx_tooltip = "GEA_Zhili_Map"
+			pdx_tooltip_delayed = "GEA_Zhili_Map_DESC"
+			scale = 0.7
+		}
+
+		buttonType = {
+			name = "GEA_Lep_Map"
+			orientation = center
+			position = { x = -130 y = -200 }
+			spriteType = "GEA_Lep"
+			pdx_tooltip = "GEA_Lep_Map"
+			pdx_tooltip_delayed = "GEA_Lep_Map_DESC"
+			scale = 0.7
+		}
+	}
 }

@@ -1,4 +1,4 @@
-# 舍尔纳路线：与整合印度支那决议一致的七个地区均已拥有并核心化
+#与整合印度支那决议一致的七个地区均已拥有并核心化
 GEA_indochina_fully_pacified_trigger = {
 	857 = { is_owned_by = GEA is_core_of = GEA }
 	671 = { is_owned_by = GEA is_core_of = GEA }
@@ -7,4 +7,24 @@ GEA_indochina_fully_pacified_trigger = {
 	826 = { is_owned_by = GEA is_core_of = GEA }
 	286 = { is_owned_by = GEA is_core_of = GEA }
 	856 = { is_owned_by = GEA is_core_of = GEA }
+}
+
+#检查南京实际控制者
+GEA_nanjing_non_anti_concession_controller_trigger = {
+	custom_trigger_tooltip = {
+		tooltip = GEA_nanjing_non_anti_concession_controller_tt
+		613 = {
+			controller = {
+				NOT = {
+					OR = {
+						tag = CHI
+						is_ruled_by_left_kmt = yes
+						has_country_leader = { name = "Zhang Tianran" ruling_only = yes }
+						has_country_leader = { name = "Chen Mingshu" ruling_only = yes }
+						has_country_leader = { name = "Zhu De" ruling_only = yes }
+					}
+				}
+			}
+		}
+	}
 }

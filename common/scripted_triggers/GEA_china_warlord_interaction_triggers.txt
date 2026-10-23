@@ -1,0 +1,79 @@
+GEA_china_warlord_eligible_trigger = {
+	OR = {
+		original_tag = SQI
+		original_tag = QIE
+		original_tag = LEP
+		original_tag = ANQ
+		original_tag = HNN
+		original_tag = GXC
+		original_tag = YUN
+		original_tag = SZC
+		original_tag = SHX
+	}
+}
+
+#
+GEA_china_warlord_can_interact_trigger = {
+	GEA_china_warlord_eligible_trigger = yes
+	NOT = {
+		OR = {
+			tag = CHI
+			is_ruled_by_left_kmt = yes
+			has_country_leader = { name = "Zhang Tianran" ruling_only = yes }
+			has_country_leader = { name = "Chen Mingshu" ruling_only = yes }
+			has_country_leader = { name = "Zhu De" ruling_only = yes }
+		}
+	}
+}
+
+# 
+GEA_china_warlord_positive_cooperation_trigger = {
+	GEA_china_warlord_can_interact_trigger = yes
+	OR = {
+		original_tag = LEP
+		AND = {
+			original_tag = SQI
+			has_country_leader = { name = "Zhang Zongchang" ruling_only = yes }
+		}
+		AND = {
+			original_tag = GXC
+			has_country_leader = { name = "Chen Lianbo" ruling_only = yes }
+		}
+		AND = {
+			original_tag = YUN
+			has_country_leader = { name = "Tang Jiyao" ruling_only = yes }
+		}
+		AND = {
+			original_tag = QIE
+			NOT = {
+				OR = {
+					has_country_flag = wu_intervenes_proANQ
+					has_country_flag = QIE_manchu_restoration
+					has_country_flag = QIE_yiguandao_couped
+					has_focus_tree = QIE_manchu
+					has_completed_focus = QIE_nationalize_germans
+					has_completed_focus = QIE_endconcessions
+					has_completed_focus = QIE_destroy_concessions
+					has_completed_focus = QIE_destroy_germany
+					has_completed_focus = QIE_YGD_destroy_concessions
+				}
+			}
+			OR = {
+				has_country_flag = wu_intervenes_proLEP
+				has_country_flag = full_german_support
+				has_completed_focus = QIE_request_german_bailout
+			}
+		}
+		AND = {
+			original_tag = SZC
+			NOT = { has_country_leader = { name = "Chen Jiongming" ruling_only = yes } }
+			NOT = { has_country_leader = { name = "Lü Chao" ruling_only = yes } }
+			NOT = { has_completed_focus = SZC_Eradicate_The_Concessions }
+			OR = {
+				has_country_leader = { name = "Yang Sen" ruling_only = yes }
+				has_country_leader = { name = "Liu Cunhou" ruling_only = yes }
+				has_completed_focus = SZC_Contact_An_Old_Ally
+			}
+		}
+	}
+}

@@ -204,17 +204,6 @@ is_COF_core_controlled_FROM = {
 	is_owned_by = FRA
 }
 
-GER_has_black_monday = {
-	custom_trigger_tooltip = {
-		tooltip = GER_has_black_monday
-		OR = {
-			has_idea = GER_black_monday
-			has_idea = GER_black_monday_recovery_1
-			has_idea = GER_black_monday_recovery_2
-		}
-	}
-}
-
 GER_is_in_mitteleuropa = {
 	custom_trigger_tooltip = {
 		tooltip = GER_is_in_mitteleuropa

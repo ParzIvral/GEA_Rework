@@ -1,0 +1,10 @@
+GEA_china_warlord_interaction = {
+	icon = GFX_decision_generic_industry
+	allowed = { GEA_china_warlord_eligible_trigger = yes }
+	visible = {
+		country_exists = GEA
+		GEA_china_warlord_can_interact_trigger = yes
+	}
+	priority = 1300
+	visible_when_empty = yes
+}

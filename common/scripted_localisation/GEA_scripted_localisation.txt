@@ -8,3 +8,632 @@ defined_text = {
 		localization_key = GEA_Indochina_Default_DESC
 	}
 }
+
+#南京地块 山东军阀变体
+defined_text = {
+	name = GetGEALepCooperation
+	text = {
+		trigger = {
+			OR = {
+				SQI = {
+					owns_state = 613
+					has_country_leader = { name = "Zhang Zongchang" ruling_only = yes }
+				}
+				LEP = { owns_state = 613 }
+			}
+		}
+		localization_key = GEA_china_cooperation_positive
+	}
+	text = {
+		trigger = {
+			OR = {
+				CHI = { owns_state = 613 }
+				ANQ = {
+					owns_state = 613
+					has_country_leader = { name = "Chen Tiaoyuan" ruling_only = yes }
+				}
+				SQI = {
+					owns_state = 613
+					has_country_leader = { name = "Zhang Tianran" ruling_only = yes }
+				}
+			}
+		}
+		localization_key = GEA_china_cooperation_hostile
+	}
+	text = { localization_key = GEA_china_cooperation_evasive }
+}
+
+defined_text = {
+	name = GetGEALepCapitalInfluence
+	text = {
+		trigger = { GEA = { check_variable = { var = GEA_china_lep_capital_influence value = 67 compare = greater_than_or_equals } } }
+		localization_key = GEA_china_level_high
+	}
+	text = {
+		trigger = { GEA = { check_variable = { var = GEA_china_lep_capital_influence value = 34 compare = greater_than_or_equals } } }
+		localization_key = GEA_china_level_medium
+	}
+	text = { localization_key = GEA_china_level_low }
+}
+
+defined_text = {
+	name = GetGEALepMilitaryProjection
+	text = {
+		trigger = { GEA = { check_variable = { var = GEA_china_lep_military_projection value = 67 compare = greater_than_or_equals } } }
+		localization_key = GEA_china_level_high
+	}
+	text = {
+		trigger = { GEA = { check_variable = { var = GEA_china_lep_military_projection value = 34 compare = greater_than_or_equals } } }
+		localization_key = GEA_china_level_medium
+	}
+	text = { localization_key = GEA_china_level_low }
+}
+
+#南京地块描述
+defined_text = {
+	name = GetGEALepRegimeDescription
+	text = {
+		trigger = { SQI = { owns_state = 613 } }
+		localization_key = GEA_Lep_Map_SQI_DESC
+	}
+	text = {
+		trigger = { LEP = { owns_state = 613 } }
+		localization_key = GEA_Lep_Map_LEP_DESC
+	}
+	text = {
+		trigger = { CHI = { owns_state = 613 } }
+		localization_key = GEA_Lep_Map_CHI_DESC
+	}
+	text = {
+		trigger = {
+			ANQ = {
+				owns_state = 613
+				has_country_leader = { name = "Chen Tiaoyuan" ruling_only = yes }
+			}
+		}
+		localization_key = GEA_Lep_Map_ANQ_DESC
+	}
+	text = { localization_key = GEA_Lep_Map_Default_DESC }
+}
+
+#粤系地块：按 GXC 当前执政领袖判断，不与南京地区共用变量。
+defined_text = {
+	name = GetGEAGxcCooperation
+	text = {
+		trigger = {
+			GXC = {
+				OR = {
+					has_country_leader = { name = "Chen Jiongming" ruling_only = yes }
+					has_country_leader = { name = "Chen Qiyou" ruling_only = yes }
+					has_country_leader = { name = "Ma Ji" ruling_only = yes }
+				}
+			}
+		}
+		localization_key = GEA_china_cooperation_evasive
+	}
+	text = {
+		trigger = { GXC = { has_country_leader = { name = "Chen Lianbo" ruling_only = yes } } }
+		localization_key = GEA_china_cooperation_positive
+	}
+	text = {
+		trigger = {
+			GXC = {
+				OR = {
+					has_country_leader = { name = "Chen Mingshu" ruling_only = yes }
+					has_country_leader = { name = "Li Zongren" ruling_only = yes }
+				}
+			}
+		}
+		localization_key = GEA_china_cooperation_hostile
+	}
+	text = { localization_key = GEA_china_cooperation_evasive }
+}
+
+defined_text = {
+	name = GetGEAGxcCapitalInfluence
+	text = {
+		trigger = { GEA = { check_variable = { var = GEA_china_gxc_capital_influence value = 67 compare = greater_than_or_equals } } }
+		localization_key = GEA_china_level_high
+	}
+	text = {
+		trigger = { GEA = { check_variable = { var = GEA_china_gxc_capital_influence value = 34 compare = greater_than_or_equals } } }
+		localization_key = GEA_china_level_medium
+	}
+	text = { localization_key = GEA_china_level_low }
+}
+
+defined_text = {
+	name = GetGEAGxcMilitaryProjection
+	text = {
+		trigger = { GEA = { check_variable = { var = GEA_china_gxc_military_projection value = 67 compare = greater_than_or_equals } } }
+		localization_key = GEA_china_level_high
+	}
+	text = {
+		trigger = { GEA = { check_variable = { var = GEA_china_gxc_military_projection value = 34 compare = greater_than_or_equals } } }
+		localization_key = GEA_china_level_medium
+	}
+	text = { localization_key = GEA_china_level_low }
+}
+
+defined_text = {
+	name = GetGEAGxcRegimeDescription
+	text = {
+		trigger = { GXC = { has_country_leader = { name = "Chen Lianbo" ruling_only = yes } } }
+		localization_key = GEA_GXC_Map_Merchants_DESC
+	}
+	text = {
+		trigger = { GXC = { has_country_leader = { name = "Chen Jiongming" ruling_only = yes } } }
+		localization_key = GEA_GXC_Map_Federalists_DESC
+	}
+	text = {
+		trigger = { GXC = { has_country_leader = { name = "Chen Mingshu" ruling_only = yes } } }
+		localization_key = GEA_GXC_Map_Left_KMT_DESC
+	}
+	text = {
+		trigger = { GXC = { has_country_leader = { name = "Chen Qiyou" ruling_only = yes } } }
+		localization_key = GEA_GXC_Map_Qiyou_DESC
+	}
+	text = {
+		trigger = { GXC = { has_country_leader = { name = "Ma Ji" ruling_only = yes } } }
+		localization_key = GEA_GXC_Map_Old_Guangxi_DESC
+	}
+	text = {
+		trigger = { GXC = { has_country_leader = { name = "Li Zongren" ruling_only = yes } } }
+		localization_key = GEA_GXC_Map_Right_KMT_DESC
+	}
+	text = { localization_key = GEA_GXC_Map_Default_DESC }
+}
+
+#云南地块：唐继尧积极合作；朱德社民政府、朱培德反租界；龙云及其他路线虚与委蛇。
+defined_text = {
+	name = GetGEAYunCooperation
+	text = {
+		trigger = { YUN = { has_country_leader = { name = "Tang Jiyao" ruling_only = yes } } }
+		localization_key = GEA_china_cooperation_positive
+	}
+	text = {
+		trigger = {
+			YUN = {
+				has_country_leader = { name = "Zhu De" ruling_only = yes }
+				has_government = social_democrat
+			}
+		}
+		localization_key = GEA_china_cooperation_hostile
+	}
+	text = {
+		trigger = { YUN = { has_country_leader = { name = "Zhu Peide" ruling_only = yes } } }
+		localization_key = GEA_china_cooperation_hostile
+	}
+	text = {
+		trigger = { YUN = { has_country_leader = { name = "Long Yun" ruling_only = yes } } }
+		localization_key = GEA_china_cooperation_evasive
+	}
+	text = { localization_key = GEA_china_cooperation_evasive }
+}
+
+defined_text = {
+	name = GetGEAYunCapitalInfluence
+	text = {
+		trigger = { GEA = { check_variable = { var = GEA_china_yun_capital_influence value = 67 compare = greater_than_or_equals } } }
+		localization_key = GEA_china_level_high
+	}
+	text = {
+		trigger = { GEA = { check_variable = { var = GEA_china_yun_capital_influence value = 34 compare = greater_than_or_equals } } }
+		localization_key = GEA_china_level_medium
+	}
+	text = { localization_key = GEA_china_level_low }
+}
+
+defined_text = {
+	name = GetGEAYunMilitaryProjection
+	text = {
+		trigger = { GEA = { check_variable = { var = GEA_china_yun_military_projection value = 67 compare = greater_than_or_equals } } }
+		localization_key = GEA_china_level_high
+	}
+	text = {
+		trigger = { GEA = { check_variable = { var = GEA_china_yun_military_projection value = 34 compare = greater_than_or_equals } } }
+		localization_key = GEA_china_level_medium
+	}
+	text = { localization_key = GEA_china_level_low }
+}
+
+defined_text = {
+	name = GetGEAYunRegimeDescription
+	text = {
+		trigger = { YUN = { has_country_leader = { name = "Tang Jiyao" ruling_only = yes } } }
+		localization_key = GEA_YUN_Map_Tang_DESC
+	}
+	text = {
+		trigger = {
+			YUN = {
+				has_country_leader = { name = "Zhu De" ruling_only = yes }
+				has_government = social_democrat
+			}
+		}
+		localization_key = GEA_YUN_Map_Zhu_DESC
+	}
+	text = {
+		trigger = { YUN = { has_country_leader = { name = "Zhu Peide" ruling_only = yes } } }
+		localization_key = GEA_YUN_Map_Zhu_Peide_DESC
+	}
+	text = {
+		trigger = { YUN = { has_country_leader = { name = "Long Yun" ruling_only = yes } } }
+		localization_key = GEA_YUN_Map_Long_Yun_DESC
+	}
+	text = { localization_key = GEA_YUN_Map_Default_DESC }
+}
+
+#四川地块：终结租界优先于亲德合作；其余按执政派系判断。
+defined_text = {
+	name = GetGEASzcCooperation
+	text = {
+		trigger = { SZC = { has_country_leader = { name = "Chen Jiongming" ruling_only = yes } } }
+		localization_key = GEA_china_cooperation_evasive
+	}
+	text = {
+		trigger = {
+			SZC = {
+				OR = {
+					has_completed_focus = SZC_Eradicate_The_Concessions
+					has_country_leader = { name = "Lü Chao" ruling_only = yes }
+				}
+			}
+		}
+		localization_key = GEA_china_cooperation_hostile
+	}
+	text = {
+		trigger = {
+			SZC = {
+				OR = {
+					has_completed_focus = SZC_Contact_An_Old_Ally
+					has_country_leader = { name = "Yang Sen" ruling_only = yes }
+					has_country_leader = { name = "Liu Cunhou" ruling_only = yes }
+				}
+			}
+		}
+		localization_key = GEA_china_cooperation_positive
+	}
+	text = { localization_key = GEA_china_cooperation_evasive }
+}
+
+defined_text = {
+	name = GetGEASzcCapitalInfluence
+	text = {
+		trigger = { GEA = { check_variable = { var = GEA_china_szc_capital_influence value = 67 compare = greater_than_or_equals } } }
+		localization_key = GEA_china_level_high
+	}
+	text = {
+		trigger = { GEA = { check_variable = { var = GEA_china_szc_capital_influence value = 34 compare = greater_than_or_equals } } }
+		localization_key = GEA_china_level_medium
+	}
+	text = { localization_key = GEA_china_level_low }
+}
+
+defined_text = {
+	name = GetGEASzcMilitaryProjection
+	text = {
+		trigger = { GEA = { check_variable = { var = GEA_china_szc_military_projection value = 67 compare = greater_than_or_equals } } }
+		localization_key = GEA_china_level_high
+	}
+	text = {
+		trigger = { GEA = { check_variable = { var = GEA_china_szc_military_projection value = 34 compare = greater_than_or_equals } } }
+		localization_key = GEA_china_level_medium
+	}
+	text = { localization_key = GEA_china_level_low }
+}
+
+defined_text = {
+	name = GetGEASzcRegimeDescription
+	text = {
+		trigger = { SZC = { SZC_zhili_in_exile = yes } }
+		localization_key = GEA_SZC_Map_Zhili_DESC
+	}
+	text = {
+		trigger = { SZC = { OR = { has_country_leader = { name = "Xiong Kewu" ruling_only = yes } has_country_leader = { name = "Chen Jiongming" ruling_only = yes } } } }
+		localization_key = GEA_SZC_Map_Federalist_DESC
+	}
+	text = {
+		trigger = { SZC = { OR = { has_country_leader = { name = "Yang Sen" ruling_only = yes } has_country_leader = { name = "Liu Cunhou" ruling_only = yes } } } }
+		localization_key = GEA_SZC_Map_Wubei_DESC
+	}
+	text = {
+		trigger = { SZC = { OR = { has_country_leader = { name = "Deng Xihou" ruling_only = yes } has_country_leader = { name = "Liu Wenhui" ruling_only = yes } } } }
+		localization_key = GEA_SZC_Map_Baoding_DESC
+	}
+	text = {
+		trigger = { SZC = { has_country_leader = { name = "Liu Xiang" ruling_only = yes } } }
+		localization_key = GEA_SZC_Map_Industrial_DESC
+	}
+	text = {
+		trigger = { SZC = { has_country_leader = { name = "Lü Chao" ruling_only = yes } } }
+		localization_key = GEA_SZC_Map_KMT_DESC
+	}
+	text = { localization_key = GEA_SZC_Map_Default_DESC }
+}
+
+#中国各地区面板数值：0-33 红色、34-66 黄色、67-100 绿色。
+defined_text = {
+	name = GetGEALepAttitudeValue
+	text = {
+		trigger = { GEA = { check_variable = { var = GEA_china_lep_attitude value = 67 compare = greater_than_or_equals } } }
+		localization_key = GEA_china_lep_attitude_value_high
+	}
+	text = {
+		trigger = { GEA = { check_variable = { var = GEA_china_lep_attitude value = 34 compare = greater_than_or_equals } } }
+		localization_key = GEA_china_lep_attitude_value_medium
+	}
+	text = {
+		localization_key = GEA_china_lep_attitude_value_low
+	}
+}
+
+defined_text = {
+	name = GetGEALepCapitalInfluenceValue
+	text = {
+		trigger = { GEA = { check_variable = { var = GEA_china_lep_capital_influence value = 67 compare = greater_than_or_equals } } }
+		localization_key = GEA_china_lep_capital_influence_value_high
+	}
+	text = {
+		trigger = { GEA = { check_variable = { var = GEA_china_lep_capital_influence value = 34 compare = greater_than_or_equals } } }
+		localization_key = GEA_china_lep_capital_influence_value_medium
+	}
+	text = {
+		localization_key = GEA_china_lep_capital_influence_value_low
+	}
+}
+
+defined_text = {
+	name = GetGEALepMilitaryProjectionValue
+	text = {
+		trigger = { GEA = { check_variable = { var = GEA_china_lep_military_projection value = 67 compare = greater_than_or_equals } } }
+		localization_key = GEA_china_lep_military_projection_value_high
+	}
+	text = {
+		trigger = { GEA = { check_variable = { var = GEA_china_lep_military_projection value = 34 compare = greater_than_or_equals } } }
+		localization_key = GEA_china_lep_military_projection_value_medium
+	}
+	text = {
+		localization_key = GEA_china_lep_military_projection_value_low
+	}
+}
+
+defined_text = {
+	name = GetGEAGxcAttitudeValue
+	text = {
+		trigger = { GEA = { check_variable = { var = GEA_china_gxc_attitude value = 67 compare = greater_than_or_equals } } }
+		localization_key = GEA_china_gxc_attitude_value_high
+	}
+	text = {
+		trigger = { GEA = { check_variable = { var = GEA_china_gxc_attitude value = 34 compare = greater_than_or_equals } } }
+		localization_key = GEA_china_gxc_attitude_value_medium
+	}
+	text = {
+		localization_key = GEA_china_gxc_attitude_value_low
+	}
+}
+
+defined_text = {
+	name = GetGEAGxcCapitalInfluenceValue
+	text = {
+		trigger = { GEA = { check_variable = { var = GEA_china_gxc_capital_influence value = 67 compare = greater_than_or_equals } } }
+		localization_key = GEA_china_gxc_capital_influence_value_high
+	}
+	text = {
+		trigger = { GEA = { check_variable = { var = GEA_china_gxc_capital_influence value = 34 compare = greater_than_or_equals } } }
+		localization_key = GEA_china_gxc_capital_influence_value_medium
+	}
+	text = {
+		localization_key = GEA_china_gxc_capital_influence_value_low
+	}
+}
+
+defined_text = {
+	name = GetGEAGxcMilitaryProjectionValue
+	text = {
+		trigger = { GEA = { check_variable = { var = GEA_china_gxc_military_projection value = 67 compare = greater_than_or_equals } } }
+		localization_key = GEA_china_gxc_military_projection_value_high
+	}
+	text = {
+		trigger = { GEA = { check_variable = { var = GEA_china_gxc_military_projection value = 34 compare = greater_than_or_equals } } }
+		localization_key = GEA_china_gxc_military_projection_value_medium
+	}
+	text = {
+		localization_key = GEA_china_gxc_military_projection_value_low
+	}
+}
+
+defined_text = {
+	name = GetGEAYunAttitudeValue
+	text = {
+		trigger = { GEA = { check_variable = { var = GEA_china_yun_attitude value = 67 compare = greater_than_or_equals } } }
+		localization_key = GEA_china_yun_attitude_value_high
+	}
+	text = {
+		trigger = { GEA = { check_variable = { var = GEA_china_yun_attitude value = 34 compare = greater_than_or_equals } } }
+		localization_key = GEA_china_yun_attitude_value_medium
+	}
+	text = {
+		localization_key = GEA_china_yun_attitude_value_low
+	}
+}
+
+defined_text = {
+	name = GetGEAYunCapitalInfluenceValue
+	text = {
+		trigger = { GEA = { check_variable = { var = GEA_china_yun_capital_influence value = 67 compare = greater_than_or_equals } } }
+		localization_key = GEA_china_yun_capital_influence_value_high
+	}
+	text = {
+		trigger = { GEA = { check_variable = { var = GEA_china_yun_capital_influence value = 34 compare = greater_than_or_equals } } }
+		localization_key = GEA_china_yun_capital_influence_value_medium
+	}
+	text = {
+		localization_key = GEA_china_yun_capital_influence_value_low
+	}
+}
+
+defined_text = {
+	name = GetGEAYunMilitaryProjectionValue
+	text = {
+		trigger = { GEA = { check_variable = { var = GEA_china_yun_military_projection value = 67 compare = greater_than_or_equals } } }
+		localization_key = GEA_china_yun_military_projection_value_high
+	}
+	text = {
+		trigger = { GEA = { check_variable = { var = GEA_china_yun_military_projection value = 34 compare = greater_than_or_equals } } }
+		localization_key = GEA_china_yun_military_projection_value_medium
+	}
+	text = {
+		localization_key = GEA_china_yun_military_projection_value_low
+	}
+}
+
+defined_text = {
+	name = GetGEASzcAttitudeValue
+	text = {
+		trigger = { GEA = { check_variable = { var = GEA_china_szc_attitude value = 67 compare = greater_than_or_equals } } }
+		localization_key = GEA_china_szc_attitude_value_high
+	}
+	text = {
+		trigger = { GEA = { check_variable = { var = GEA_china_szc_attitude value = 34 compare = greater_than_or_equals } } }
+		localization_key = GEA_china_szc_attitude_value_medium
+	}
+	text = {
+		localization_key = GEA_china_szc_attitude_value_low
+	}
+}
+
+defined_text = {
+	name = GetGEASzcCapitalInfluenceValue
+	text = {
+		trigger = { GEA = { check_variable = { var = GEA_china_szc_capital_influence value = 67 compare = greater_than_or_equals } } }
+		localization_key = GEA_china_szc_capital_influence_value_high
+	}
+	text = {
+		trigger = { GEA = { check_variable = { var = GEA_china_szc_capital_influence value = 34 compare = greater_than_or_equals } } }
+		localization_key = GEA_china_szc_capital_influence_value_medium
+	}
+	text = {
+		localization_key = GEA_china_szc_capital_influence_value_low
+	}
+}
+
+defined_text = {
+	name = GetGEASzcMilitaryProjectionValue
+	text = {
+		trigger = { GEA = { check_variable = { var = GEA_china_szc_military_projection value = 67 compare = greater_than_or_equals } } }
+		localization_key = GEA_china_szc_military_projection_value_high
+	}
+	text = {
+		trigger = { GEA = { check_variable = { var = GEA_china_szc_military_projection value = 34 compare = greater_than_or_equals } } }
+		localization_key = GEA_china_szc_military_projection_value_medium
+	}
+	text = {
+		localization_key = GEA_china_szc_military_projection_value_low
+	}
+}
+
+#直系地块：按实际对德政策与接管事件判断，反租界立场优先。
+defined_text = {
+	name = GetGEAZhiliCooperation
+	text = {
+		trigger = { QIE = { OR = { has_country_flag = wu_intervenes_proANQ has_country_flag = QIE_manchu_restoration has_country_flag = QIE_yiguandao_couped has_focus_tree = QIE_manchu has_completed_focus = QIE_nationalize_germans has_completed_focus = QIE_endconcessions has_completed_focus = QIE_destroy_concessions has_completed_focus = QIE_destroy_germany has_completed_focus = QIE_YGD_destroy_concessions } } }
+		localization_key = GEA_china_cooperation_hostile
+	}
+	text = {
+		trigger = { QIE = { OR = { has_country_flag = wu_intervenes_proLEP has_country_flag = full_german_support has_completed_focus = QIE_request_german_bailout } } }
+		localization_key = GEA_china_cooperation_positive
+	}
+	text = { localization_key = GEA_china_cooperation_evasive }
+}
+
+defined_text = {
+	name = GetGEAZhiliCapitalInfluence
+	text = {
+		trigger = { GEA = { check_variable = { var = GEA_china_zhili_capital_influence value = 67 compare = greater_than_or_equals } } }
+		localization_key = GEA_china_level_high
+	}
+	text = {
+		trigger = { GEA = { check_variable = { var = GEA_china_zhili_capital_influence value = 34 compare = greater_than_or_equals } } }
+		localization_key = GEA_china_level_medium
+	}
+	text = { localization_key = GEA_china_level_low }
+}
+
+defined_text = {
+	name = GetGEAZhiliMilitaryProjection
+	text = {
+		trigger = { GEA = { check_variable = { var = GEA_china_zhili_military_projection value = 67 compare = greater_than_or_equals } } }
+		localization_key = GEA_china_level_high
+	}
+	text = {
+		trigger = { GEA = { check_variable = { var = GEA_china_zhili_military_projection value = 34 compare = greater_than_or_equals } } }
+		localization_key = GEA_china_level_medium
+	}
+	text = { localization_key = GEA_china_level_low }
+}
+
+defined_text = {
+	name = GetGEAZhiliAttitudeValue
+	text = {
+		trigger = { GEA = { check_variable = { var = GEA_china_zhili_attitude value = 67 compare = greater_than_or_equals } } }
+		localization_key = GEA_china_zhili_attitude_value_high
+	}
+	text = {
+		trigger = { GEA = { check_variable = { var = GEA_china_zhili_attitude value = 34 compare = greater_than_or_equals } } }
+		localization_key = GEA_china_zhili_attitude_value_medium
+	}
+	text = {
+		localization_key = GEA_china_zhili_attitude_value_low
+	}
+}
+
+defined_text = {
+	name = GetGEAZhiliCapitalInfluenceValue
+	text = {
+		trigger = { GEA = { check_variable = { var = GEA_china_zhili_capital_influence value = 67 compare = greater_than_or_equals } } }
+		localization_key = GEA_china_zhili_capital_influence_value_high
+	}
+	text = {
+		trigger = { GEA = { check_variable = { var = GEA_china_zhili_capital_influence value = 34 compare = greater_than_or_equals } } }
+		localization_key = GEA_china_zhili_capital_influence_value_medium
+	}
+	text = {
+		localization_key = GEA_china_zhili_capital_influence_value_low
+	}
+}
+
+defined_text = {
+	name = GetGEAZhiliMilitaryProjectionValue
+	text = {
+		trigger = { GEA = { check_variable = { var = GEA_china_zhili_military_projection value = 67 compare = greater_than_or_equals } } }
+		localization_key = GEA_china_zhili_military_projection_value_high
+	}
+	text = {
+		trigger = { GEA = { check_variable = { var = GEA_china_zhili_military_projection value = 34 compare = greater_than_or_equals } } }
+		localization_key = GEA_china_zhili_military_projection_value_medium
+	}
+	text = {
+		localization_key = GEA_china_zhili_military_projection_value_low
+	}
+}
+
+defined_text = {
+	name = GetGEAZhiliRegimeDescription
+	text = {
+		trigger = { QIE = { has_country_flag = QIE_yiguandao_couped } }
+		localization_key = GEA_Zhili_Map_Yiguandao_DESC
+	}
+	text = {
+		trigger = { QIE = { OR = { has_country_flag = QIE_manchu_restoration has_focus_tree = QIE_manchu } } }
+		localization_key = GEA_Zhili_Map_Manchu_DESC
+	}
+	text = {
+		trigger = { QIE = { OR = { has_country_flag = wu_intervenes_proANQ has_country_flag = QIE_manchu_restoration has_country_flag = QIE_yiguandao_couped has_focus_tree = QIE_manchu has_completed_focus = QIE_nationalize_germans has_completed_focus = QIE_endconcessions has_completed_focus = QIE_destroy_concessions has_completed_focus = QIE_destroy_germany has_completed_focus = QIE_YGD_destroy_concessions } } }
+		localization_key = GEA_Zhili_Map_Anti_German_DESC
+	}
+	text = {
+		trigger = { QIE = { OR = { has_country_flag = wu_intervenes_proLEP has_country_flag = full_german_support has_completed_focus = QIE_request_german_bailout } } }
+		localization_key = GEA_Zhili_Map_Pro_German_DESC
+	}
+	text = { localization_key = GEA_Zhili_Map_Default_DESC }
+}

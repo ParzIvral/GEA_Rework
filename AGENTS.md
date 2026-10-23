@@ -14,3 +14,5 @@
 - 每次适配 KX 更新时，主动提醒用户：本子模组覆盖了 `common/scripted_effects/_add_naval_variants.txt`，该文件也需要同步检查和适配更新。
 - 对比新版 KX 的舰船设计定义，并核对德属东亚开局海军编制中的 `version_name` 与设计名称、船体及模块是否匹配，保留本子模组已有的开局舰船改动。
 - 用户当前要求保留该文件；此提醒本身不授权删除或重构该覆盖文件。
+- 每次适配 KX 更新时，主动提醒用户检查原版 `common/scripted_triggers/Germany_scripted_triggers.txt` 中的 `is_germany_or_german_colonial_tag`，对比其定义及全部调用是否变化，尤其是德国 MIO、工业企业与传统设计商的准入条件，核对本子模组将 GEA 排除在该判断之外的覆盖是否仍然适用。
+- 此提醒本身不授权删除该覆盖文件、恢复 GEA 的德国企业资格或改动现有 GEA 专属企业与 MIO。

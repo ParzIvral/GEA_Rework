@@ -371,3 +371,39 @@ recruit_character = GEA_Hellmuth_Heye
 recruit_character = GEA_Conrad_Patzig
 recruit_character = GEA_Ernst_von_Weizsacker
 GEA_start_naval_variant = yes
+
+#八省变量
+set_variable = { GEA_china_lep_attitude = 75 }
+set_variable = { GEA_china_lep_capital_influence = 80 }
+set_variable = { GEA_china_lep_military_projection = 40 }
+
+#粤变量
+set_variable = { GEA_china_gxc_attitude = 45 }
+set_variable = { GEA_china_gxc_capital_influence = 40 }
+set_variable = { GEA_china_gxc_military_projection = 25 }
+
+#滇变量
+set_variable = { GEA_china_yun_attitude = 0 }
+set_variable = { GEA_china_yun_capital_influence = 0 }
+set_variable = { GEA_china_yun_military_projection = 0 }
+
+#川变量
+set_variable = { GEA_china_szc_attitude = 0 }
+set_variable = { GEA_china_szc_capital_influence = 0 }
+set_variable = { GEA_china_szc_military_projection = 0 }
+
+#直系变量（独立于其他中国地区，范围 0-100）
+set_variable = { GEA_china_zhili_attitude = 0 }
+set_variable = { GEA_china_zhili_capital_influence = 0 }
+set_variable = { GEA_china_zhili_military_projection = 0 }
+
+# Independent Shandong, Hunan and Shanxi interaction values.
+set_variable = { GEA_china_sqi_attitude = 0 }
+set_variable = { GEA_china_sqi_capital_influence = 0 }
+set_variable = { GEA_china_sqi_military_projection = 0 }
+set_variable = { GEA_china_hnn_attitude = 0 }
+set_variable = { GEA_china_hnn_capital_influence = 0 }
+set_variable = { GEA_china_hnn_military_projection = 0 }
+set_variable = { GEA_china_shx_attitude = 0 }
+set_variable = { GEA_china_shx_capital_influence = 0 }
+set_variable = { GEA_china_shx_military_projection = 0 }

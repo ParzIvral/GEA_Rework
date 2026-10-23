@@ -488,74 +488,6 @@ focus_tree = {
 		}
 	}
 
-	focus = {
-		id = GEA_Small_farmers_Chinese_merchants_and_exiles #小农，华商与异乡人
-		icon = GFX_GEA_Small_farmers_Chinese_merchants_and_exiles
-		cost = 3	
-		x = -2
-		y = 3
-		available = {		
-		}
-        prerequisite = {
-			focus = GEA_Domesticating_the_unrestrained_countryside
-		}
-
-		relative_position_id = GEA_Revive_The_Luluai_Principle
-		ai_will_do = {
-			factor = 100
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_Small_farmers_Chinese_merchants_and_exiles"
-			add_stability = 0.03
-			add_political_power = 60
-			random_owned_state = {
-				limit = {
-					is_core_of = GEA
-					is_controlled_by = GEA
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}	
-			}
-			random_owned_state = {
-				limit = {
-					is_core_of = GEA
-					is_controlled_by = GEA
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}	
-			}
-			random_owned_state = {
-				limit = {
-					is_core_of = GEA
-					is_controlled_by = GEA
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}	
-			}
-			country_event = {
-				id = GEA.113
-				days = 3
-			}
-			hidden_effect = {
-				country_event = {
-					id = GEA.114
-					days = 14
-				}
-			}
-		}
-	}
 
 	focus = {
 		id = GEA_Domesticating_the_unrestrained_countryside #驯服无羁乡村
@@ -628,6 +560,74 @@ focus_tree = {
 					is_controlled_by = GEA
 				}
 				add_extra_state_shared_building_slots = 1			
+			}
+		}
+	}
+	focus = {
+		id = GEA_Small_farmers_Chinese_merchants_and_exiles #小农，华商与异乡人
+		icon = GFX_GEA_Small_farmers_Chinese_merchants_and_exiles
+		cost = 3	
+		x = -2
+		y = 3
+		available = {		
+		}
+        prerequisite = {
+			focus = GEA_Domesticating_the_unrestrained_countryside
+		}
+
+		relative_position_id = GEA_Revive_The_Luluai_Principle
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Small_farmers_Chinese_merchants_and_exiles"
+			add_stability = 0.03
+			add_political_power = 60
+			random_owned_state = {
+				limit = {
+					is_core_of = GEA
+					is_controlled_by = GEA
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}	
+			}
+			random_owned_state = {
+				limit = {
+					is_core_of = GEA
+					is_controlled_by = GEA
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}	
+			}
+			random_owned_state = {
+				limit = {
+					is_core_of = GEA
+					is_controlled_by = GEA
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}	
+			}
+			country_event = {
+				id = GEA.113
+				days = 3
+			}
+			hidden_effect = {
+				country_event = {
+					id = GEA.114
+					days = 14
+				}
 			}
 		}
 	}
@@ -4117,37 +4117,6 @@ focus_tree = {
 			}
 		}
 	}
-	focus = { #扩张带来繁荣
-		id = GEA_Expansion_leads_to_prosperity
-		icon = GFX_GEA_Expansion_leads_to_prosperity
-		cost = 4	
-		x = 0
-		y = 1
-		available = {		
-
-		}
-		prerequisite = {
-			focus = GEA_Rapid_industrialization
-			focus = GEA_Rushing_headlong_into_technological_progress
-		}
-        prerequisite = {
-			focus = GEA_Get_rid_of_the_epidemic_of_red_tape
-		}
-
-		relative_position_id = GEA_Get_rid_of_the_epidemic_of_red_tape
-		ai_will_do = {
-			factor = 100
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_Expansion_leads_to_prosperity"
-			increase_ruling_party_popularity_by_3 = yes
-			unlock_decision_tooltip = GEA_Franchise_Regulations
-			swap_ideas = {
-				remove_idea = GEA_The_garden_of_the_cartel
-				add_idea = GEA_The_garden_of_the_cartel_Cartel_1
-			}
-		}
-	}
 	focus = { #远东工业之心
 		id = GEA_Rapid_industrialization
 		icon = GFX_GEA_Rapid_industrialization
@@ -4226,6 +4195,37 @@ focus_tree = {
 				bonus = 1
 				uses = 1
 				category = industry
+			}
+		}
+	}
+	focus = { #扩张带来繁荣
+		id = GEA_Expansion_leads_to_prosperity
+		icon = GFX_GEA_Expansion_leads_to_prosperity
+		cost = 4	
+		x = 0
+		y = 1
+		available = {		
+
+		}
+		prerequisite = {
+			focus = GEA_Rapid_industrialization
+			focus = GEA_Rushing_headlong_into_technological_progress
+		}
+        prerequisite = {
+			focus = GEA_Get_rid_of_the_epidemic_of_red_tape
+		}
+
+		relative_position_id = GEA_Get_rid_of_the_epidemic_of_red_tape
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Expansion_leads_to_prosperity"
+			increase_ruling_party_popularity_by_3 = yes
+			unlock_decision_tooltip = GEA_Franchise_Regulations
+			swap_ideas = {
+				remove_idea = GEA_The_garden_of_the_cartel
+				add_idea = GEA_The_garden_of_the_cartel_Cartel_1
 			}
 		}
 	}
@@ -5208,6 +5208,10 @@ focus_tree = {
 				popularity = 0.03
 			}
 			add_ideas = GEA_leash_dog_out 
+			country_event = {
+				id = GEA.555
+				days = 3
+			}
 		}
 	}
 	focus = { #驯服三军
@@ -5319,14 +5323,19 @@ focus_tree = {
 		id = GEA_No_one_is_exempt_no_one_is_spared
 		icon = GFX_GEA_No_one_is_exempt_no_one_is_spared
 
-		cost = 5
+		cost = 2
 		x = -1
 		y = 1
 
 		available = {
 			has_country_flag = GEA_Governor_Schorner_flag
 		}
-
+		select_effect = {
+			country_event = {
+				id = GEA.552
+				days = 5
+			}
+		}
 		prerequisite = {
 			focus = GEA_Only_liquidation_is_the_most_important
 		}
@@ -5997,178 +6006,6 @@ focus_tree = {
 			custom_effect_tooltip = GEA_The_idyllic_life_in_German_East_Asia_economic_modifier_tt
 		}
 	}
-	focus = { #加大征地力度
-		id = GEA_Increase_the_intensity_of_land_acquisition
-		icon = GFX_GEA_Increase_the_intensity_of_land_acquisition
-		cost = 3
-		x = 2
-		y = 1
-		ai_will_do = {
-			factor = 50
-		}
-		available = {
-
-		}
-		relative_position_id = GEA_Guaranteeing_grain_exports
-		prerequisite = {
-			focus = GEA_Krupp_brought_armaments
-			focus = GEA_IG_fraben_brought_progress
-			focus = GEA_OSRAM_brings_prosperity
-		}
-		prerequisite = {
-			focus = GEA_Guaranteeing_grain_exports
-		}
-		mutually_exclusive = {
-			focus = GEA_The_idyllic_life_in_German_East_Asia
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_Increase_the_intensity_of_land_acquisition"
-			random_owned_state = {
-				add_extra_state_shared_building_slots = 2	
-			}
-			random_owned_state = {
-				add_extra_state_shared_building_slots = 2	
-			}
-			random_owned_state = {
-				add_extra_state_shared_building_slots = 2		
-			}
-			add_to_variable = { GEA_Economic_political_power = -0.075 }
-			add_to_variable = { GEA_Economic_infrastructure_speed = 0.05 }
-			add_to_variable = { GEA_Economic_local_resources = 0.15 }
-			custom_effect_tooltip = GEA_Increase_the_intensity_of_land_acquisition_economic_modifier_tt
-		}
-	}
-	focus = { #以钢铁与混凝土重塑东方
-		id = GEA_Reconstructing_the_East_with_Steel_and_Concrete
-		icon = GFX_GEA_Reconstructing_the_East_with_Steel_and_Concrete
-		cost = 5
-		x = 0
-		y = 1
-		ai_will_do = {
-			factor = 50
-		}
-		available = {
-
-		}
-		relative_position_id = GEA_The_idyllic_life_in_German_East_Asia
-		prerequisite = {
-			focus = GEA_The_idyllic_life_in_German_East_Asia
-			focus = GEA_Increase_the_intensity_of_land_acquisition
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_Reconstructing_the_East_with_Steel_and_Concrete"
-			unlock_decision_tooltip = GEA_develop_aa_in_singapore
-			unlock_decision_tooltip = GEA_develop_aa_in_William_port
-			unlock_decision_tooltip = GEA_Building_Batavia
-			unlock_decision_tooltip = GEA_Develop_Sumatra
-			unlock_decision_tooltip = GEA_Building_Manila
-			unlock_decision_tooltip = GEA_Fortify_south
-			random_owned_state = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
-				}			
-			}
-			random_owned_state = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}			
-			}
-			add_to_variable = { GEA_Economic_construction_speed	= 0.05 }
-			add_to_variable = { GEA_Economic_civilian_speed	= 0.05 }
-			add_to_variable = { GEA_Economic_industry_free_repair_factor = 0.15 }
-			custom_effect_tooltip = GEA_Reconstructing_the_East_with_Steel_and_Concrete_economic_modifier_tt
-		}
-	}
-	focus = { #德意志文化狂潮
-		id = GEA_The_German_cultural_craze
-		icon = GFX_GEA_The_German_cultural_craze
-		cost = 3
-		x = 0
-		y = 1
-		ai_will_do = {
-			factor = 50
-		}
-		available = {
-
-		}
-		relative_position_id = GEA_Reconstructing_the_East_with_Steel_and_Concrete
-		prerequisite = {
-			focus = GEA_Reconstructing_the_East_with_Steel_and_Concrete
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_German_cultural_craze"
-			add_stability = 0.06
-			increase_ruling_party_popularity_by_5 = yes
-			add_to_variable = { GEA_Economic_civilian_speed	= 0.05 }
-			add_to_variable = { GEA_Economic_stability_weekly = 0.001 }
-			custom_effect_tooltip = GEA_The_German_cultural_craze_economic_modifier_tt
-			hidden_effect = { country_event = { id = GEA.54 days = 7 } }
-		}
-	}
-	focus = { #裁撤无用机构
-		id = GEA_Abolish_unnecessary_institutions
-		icon = GFX_GEA_Abolish_unnecessary_institutions
-		cost = 3
-		x = 2
-		y = 1
-		ai_will_do = {
-			factor = 50
-		}
-		available = {
-
-		}
-		relative_position_id = GEA_Reconstructing_the_East_with_Steel_and_Concrete
-		prerequisite = {
-			focus = GEA_Reconstructing_the_East_with_Steel_and_Concrete
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_Abolish_unnecessary_institutions"
-			add_political_power = 50
-			add_to_variable = { GEA_Economic_political_power = -0.03 }
-			add_to_variable = { GEA_Economic_efficiency_gain = 0.06 }
-			add_to_variable = { GEA_Economic_research_speed	= 0.02 }
-			custom_effect_tooltip = GEA_Abolish_unnecessary_institutions_economic_modifier_tt
-		}
-	}
-	focus = { #殖民皇冠之上，明珠熠熠生辉
-		id = GEA_On_the_colonial_crown_the_pearl_is_shining
-		icon = GFX_GEA_On_the_colonial_crown_the_pearl_is_shining
-		cost = 3
-		x = -2
-		y = 1
-		ai_will_do = {
-			factor = 50
-		}
-		available = {
-			OR = {
-				has_completed_focus = GEA_Iron_within_Iron_without
-				has_completed_focus = GEA_The_Eastern_Palace_of_the_Gods
-				has_completed_focus = GEA_Move_further_towards_the_future
-				has_completed_focus = GEA_AOG_Hegemony
-				has_completed_focus = GEA_The_era_of_the_middle_class
-			}
-		}
-		relative_position_id = GEA_Abolish_unnecessary_institutions
-		prerequisite = {
-			focus = GEA_The_Eastern_Treasure_House_of_the_Empire
-		}
-		prerequisite = {
-			focus = GEA_The_German_cultural_craze
-		}
-		prerequisite = {
-			focus = GEA_Abolish_unnecessary_institutions
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus GEA_On_the_colonial_crown_the_pearl_is_shining"
-
-		}
-	}
 	focus = { #克虏伯带来军备
 		id = GEA_Krupp_brought_armaments
 		icon = GFX_GEA_Krupp_brought_armaments
@@ -6554,6 +6391,178 @@ focus_tree = {
 			add_to_variable = { GEA_Economic_production_speed_buildings_powered_factor = 0.075 }
 			add_to_variable = { GEA_Economic_industrial_capacity_factory_powered = 0.09 }
 			custom_effect_tooltip = GEA_OSRAM_brings_prosperity_economic_modifier_tt
+		}
+	}
+	focus = { #加大征地力度
+		id = GEA_Increase_the_intensity_of_land_acquisition
+		icon = GFX_GEA_Increase_the_intensity_of_land_acquisition
+		cost = 3
+		x = 2
+		y = 1
+		ai_will_do = {
+			factor = 50
+		}
+		available = {
+
+		}
+		relative_position_id = GEA_Guaranteeing_grain_exports
+		prerequisite = {
+			focus = GEA_Krupp_brought_armaments
+			focus = GEA_IG_fraben_brought_progress
+			focus = GEA_OSRAM_brings_prosperity
+		}
+		prerequisite = {
+			focus = GEA_Guaranteeing_grain_exports
+		}
+		mutually_exclusive = {
+			focus = GEA_The_idyllic_life_in_German_East_Asia
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Increase_the_intensity_of_land_acquisition"
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 2	
+			}
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 2	
+			}
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 2		
+			}
+			add_to_variable = { GEA_Economic_political_power = -0.075 }
+			add_to_variable = { GEA_Economic_infrastructure_speed = 0.05 }
+			add_to_variable = { GEA_Economic_local_resources = 0.15 }
+			custom_effect_tooltip = GEA_Increase_the_intensity_of_land_acquisition_economic_modifier_tt
+		}
+	}
+	focus = { #以钢铁与混凝土重塑东方
+		id = GEA_Reconstructing_the_East_with_Steel_and_Concrete
+		icon = GFX_GEA_Reconstructing_the_East_with_Steel_and_Concrete
+		cost = 5
+		x = 0
+		y = 1
+		ai_will_do = {
+			factor = 50
+		}
+		available = {
+
+		}
+		relative_position_id = GEA_The_idyllic_life_in_German_East_Asia
+		prerequisite = {
+			focus = GEA_The_idyllic_life_in_German_East_Asia
+			focus = GEA_Increase_the_intensity_of_land_acquisition
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Reconstructing_the_East_with_Steel_and_Concrete"
+			unlock_decision_tooltip = GEA_develop_aa_in_singapore
+			unlock_decision_tooltip = GEA_develop_aa_in_William_port
+			unlock_decision_tooltip = GEA_Building_Batavia
+			unlock_decision_tooltip = GEA_Develop_Sumatra
+			unlock_decision_tooltip = GEA_Building_Manila
+			unlock_decision_tooltip = GEA_Fortify_south
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}			
+			}
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}			
+			}
+			add_to_variable = { GEA_Economic_construction_speed	= 0.05 }
+			add_to_variable = { GEA_Economic_civilian_speed	= 0.05 }
+			add_to_variable = { GEA_Economic_industry_free_repair_factor = 0.15 }
+			custom_effect_tooltip = GEA_Reconstructing_the_East_with_Steel_and_Concrete_economic_modifier_tt
+		}
+	}
+	focus = { #裁撤无用机构
+		id = GEA_Abolish_unnecessary_institutions
+		icon = GFX_GEA_Abolish_unnecessary_institutions
+		cost = 3
+		x = 2
+		y = 1
+		ai_will_do = {
+			factor = 50
+		}
+		available = {
+
+		}
+		relative_position_id = GEA_Reconstructing_the_East_with_Steel_and_Concrete
+		prerequisite = {
+			focus = GEA_Reconstructing_the_East_with_Steel_and_Concrete
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_Abolish_unnecessary_institutions"
+			add_political_power = 50
+			add_to_variable = { GEA_Economic_political_power = -0.03 }
+			add_to_variable = { GEA_Economic_efficiency_gain = 0.06 }
+			add_to_variable = { GEA_Economic_research_speed	= 0.02 }
+			custom_effect_tooltip = GEA_Abolish_unnecessary_institutions_economic_modifier_tt
+		}
+	}
+	focus = { #德意志文化狂潮
+		id = GEA_The_German_cultural_craze
+		icon = GFX_GEA_The_German_cultural_craze
+		cost = 3
+		x = 0
+		y = 1
+		ai_will_do = {
+			factor = 50
+		}
+		available = {
+
+		}
+		relative_position_id = GEA_Reconstructing_the_East_with_Steel_and_Concrete
+		prerequisite = {
+			focus = GEA_Reconstructing_the_East_with_Steel_and_Concrete
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_German_cultural_craze"
+			add_stability = 0.06
+			increase_ruling_party_popularity_by_5 = yes
+			add_to_variable = { GEA_Economic_civilian_speed	= 0.05 }
+			add_to_variable = { GEA_Economic_stability_weekly = 0.001 }
+			custom_effect_tooltip = GEA_The_German_cultural_craze_economic_modifier_tt
+			hidden_effect = { country_event = { id = GEA.54 days = 7 } }
+		}
+	}
+	focus = { #殖民皇冠之上，明珠熠熠生辉
+		id = GEA_On_the_colonial_crown_the_pearl_is_shining
+		icon = GFX_GEA_On_the_colonial_crown_the_pearl_is_shining
+		cost = 3
+		x = -2
+		y = 1
+		ai_will_do = {
+			factor = 50
+		}
+		available = {
+			OR = {
+				has_completed_focus = GEA_Iron_within_Iron_without
+				has_completed_focus = GEA_The_Eastern_Palace_of_the_Gods
+				has_completed_focus = GEA_Move_further_towards_the_future
+				has_completed_focus = GEA_AOG_Hegemony
+				has_completed_focus = GEA_The_era_of_the_middle_class
+			}
+		}
+		relative_position_id = GEA_Abolish_unnecessary_institutions
+		prerequisite = {
+			focus = GEA_The_Eastern_Treasure_House_of_the_Empire
+		}
+		prerequisite = {
+			focus = GEA_The_German_cultural_craze
+		}
+		prerequisite = {
+			focus = GEA_Abolish_unnecessary_institutions
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GEA_On_the_colonial_crown_the_pearl_is_shining"
+
 		}
 	}
 	focus = { #点亮城市街头
@@ -12656,7 +12665,7 @@ focus_tree = {
 		id = GEA_Burst_the_illusions_of_the_exiles
 		icon = GFX_GEA_Burst_the_illusions_of_the_exiles
 		cost = 5
-		x = -9
+		x = -8
 		y = 1
 
 		ai_will_do = {
@@ -12909,11 +12918,11 @@ focus_tree = {
 		}	
 	}
 
-	focus = { #试探海上马车夫
+	focus = { #再叙亲戚之谊
 		id = GEA_Test_the_sea_charioteer
 		icon = GFX_GEA_Test_the_sea_charioteer
 		cost = 5
-		x = -5
+		x = -4
 		y = 1
 
 		ai_will_do = {
@@ -13024,7 +13033,7 @@ focus_tree = {
 		id = GEA_Atone_for_Meyer-Waldeck_disgrace
 		icon = GFX_GEA_Atone_for_Meyer-Waldeck_disgrace
 		cost = 5
-		x = 7
+		x = 6
 		y = 1
 
 		ai_will_do = {
@@ -13225,9 +13234,13 @@ focus_tree = {
 		available = {
 
 		}			
+		bypass = {
+			has_country_flag = GEA_nanjing_crisis
+		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_second_expedition_to_China"
+			add_war_support = 0.05
 		}	
 	}
 
@@ -13241,7 +13254,8 @@ focus_tree = {
 			factor = 100
 		}
 		available = {
-
+			GEA_nanjing_non_anti_concession_controller_trigger = yes
+			has_country_flag = GEA_nanjing_crisis
 		}			
 		prerequisite = {
 			focus = GEA_The_second_expedition_to_China
@@ -13249,20 +13263,31 @@ focus_tree = {
 		relative_position_id = GEA_The_second_expedition_to_China
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Nanjing_xpress"
+			unlock_decision_tooltip = GEA_give_guns_to_lep
+			LEP = {
+				add_timed_idea = {  
+					idea = GEA_German_Military_Advisory_Group
+					days = 365
+				}
+			}
 		}	
 	}
 
-	focus = { #华南业务扩张
+	focus = { #华东业务扩张
 		id = GEA_The_usiness_expansion_of_AOG
 		icon = GFX_GEA_The_usiness_expansion_of_AOG
-		cost = 4
+		cost = 3
 		x = -1
 		y = 1
 		ai_will_do = {
 			factor = 100
 		}
 		available = {
-
+			custom_trigger_tooltip = {
+				tooltip = GEA_eight_provinces_war_resolved_tt
+				has_country_flag = GEA_eight_provinces_war_resolved
+			}
+			GEA_nanjing_non_anti_concession_controller_trigger = yes
 		}			
 		prerequisite = {
 			focus = GEA_Nanjing_xpress
@@ -13270,19 +13295,25 @@ focus_tree = {
 		relative_position_id = GEA_Nanjing_xpress
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_usiness_expansion_of_AOG"
+			
 		}	
 	}
 
 	focus = { #货出去，钱进来...
 		id = GEA_Goods_out_money_in
 		icon = GFX_GEA_Goods_out_money_in
-		cost = 4
+		cost = 3
 		x = 1
 		y = 1
 		ai_will_do = {
 			factor = 100
 		}
 		available = {
+			custom_trigger_tooltip = {
+				tooltip = GEA_eight_provinces_war_resolved_tt
+				has_country_flag = GEA_eight_provinces_war_resolved
+			}
+			GEA_nanjing_non_anti_concession_controller_trigger = yes
 
 		}			
 		prerequisite = {
@@ -13291,6 +13322,9 @@ focus_tree = {
 		relative_position_id = GEA_Nanjing_xpress
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Goods_out_money_in"
+			custom_effect_tooltip = GEA_Goods_out_money_in_tt
+			add_ideas = GEA_Trade_surplus_with_China
+			
 		}	
 	}
 
@@ -13304,6 +13338,7 @@ focus_tree = {
 			factor = 100
 		}
 		available = {
+			GEA_nanjing_non_anti_concession_controller_trigger = yes
 
 		}			
 		prerequisite = {
@@ -13320,7 +13355,7 @@ focus_tree = {
 
 	focus = { #敬我们的开采事业
 		id = GEA_Best_regards_to_our_mining_operation
-		icon = GFX_GEA_Best_regards_to_our_mining_operation
+		icon = GFX_goal_AUS_Towards_National_Autarky
 		cost = 4
 		x = -1
 		y = 1
@@ -13328,6 +13363,7 @@ focus_tree = {
 			factor = 100
 		}
 		available = {
+			GEA_nanjing_non_anti_concession_controller_trigger = yes
 
 		}			
 		prerequisite = {
@@ -13352,6 +13388,7 @@ focus_tree = {
 			factor = 100
 		}
 		available = {
+			GEA_nanjing_non_anti_concession_controller_trigger = yes
 
 		}			
 		prerequisite = {
@@ -13376,6 +13413,7 @@ focus_tree = {
 			factor = 100
 		}
 		available = {
+			GEA_nanjing_non_anti_concession_controller_trigger = yes
 
 		}			
 		prerequisite = {
@@ -13400,6 +13438,7 @@ focus_tree = {
 			factor = 100
 		}
 		available = {
+			GEA_nanjing_non_anti_concession_controller_trigger = yes
 
 		}			
 		prerequisite = {
@@ -13424,13 +13463,14 @@ focus_tree = {
 			factor = 100
 		}
 		available = {
+			GEA_nanjing_non_anti_concession_controller_trigger = yes
 
 		}	
 		prerequisite = {
 			focus = GEA_The_usiness_expansion_of_AOG
-			focus = GEA_The_usiness_expansion_of_AOG
+			focus = GEA_Best_regards_to_our_mining_operation
 			focus = GEA_Manage_the_grain_storage_facility
-			focus = GEA_The_usiness_expansion_of_AOG
+			focus = GEA_Building_a_road_network_in_Southeast_provinces
 			focus = GEA_German_manufacturing
 		}
 		relative_position_id = GEA_Manage_the_grain_storage_facility
@@ -13483,7 +13523,7 @@ focus_tree = {
 
 	focus = { #查封他国门户
 		id = GEA_Seal_off_the_borders_of_other_countries
-		icon = GFX_GEA_Seal_off_the_borders_of_other_countries
+		icon = GFX_goal_NYC_Bolito_King_Controls_Rackets
 		cost = 5
 		x = -4
 		y = 1
@@ -13546,7 +13586,7 @@ focus_tree = {
 
 	focus = { #除恶务尽
 		id = GEA_Eliminate_all_evil_forces
-		icon = GFX_GEA_Eliminate_all_evil_forces
+		icon = GFX_goal_AUS_Disenfranchise_Austromarxism
 		cost = 4
 		x = -1
 		y = 1
@@ -13588,7 +13628,7 @@ focus_tree = {
 
 	focus = { #建设蛮荒之地
 		id = GEA_Developing_the_uninhabited_wilderness
-		icon = GFX_GEA_Developing_the_uninhabited_wilderness
+		icon = GFX_goal_AUS_Present_Firmness_Future_Democracy
 		cost = 4
 		x = -5
 		y = 1
@@ -13681,7 +13721,7 @@ focus_tree = {
 
 	focus = { #紫禁城中的提线木偶
 		id = GEA_The_marionettes_in_the_Forbidden_City
-		icon = GFX_GEA_The_marionettes_in_the_Forbidden_City
+		icon = GFX_goal_AOG_Repair_Emperor
 		cost = 0.5
 		x = 9
 		y = 1
@@ -13702,7 +13742,7 @@ focus_tree = {
 
 	focus = { #施压玉帅
 		id = GEA_Pressure_the_Jade_Marshal
-		icon = GFX_GEA_Pressure_the_Jade_Marshal
+		icon = GFX_goal_AOG_Jade_Marshal_Dead
 		cost = 1
 		x = 2
 		y = 1
@@ -13726,7 +13766,7 @@ focus_tree = {
 
 	focus = { #衰朽帝国的火种
 		id = GEA_The_embers_of_the_declining_empire
-		icon = GFX_GEA_The_embers_of_the_declining_empire
+		icon = GFX_goal_AOG_Chinese_Face
 		cost = 1
 		x = -1
 		y = 1
@@ -13750,7 +13790,7 @@ focus_tree = {
 
 	focus = { #扶植繁荣联盟
 		id = GEA_Supporting_Prosperity_Alliance
-		icon = GFX_GEA_Supporting_Prosperity_Alliance
+		icon = GFX_goal_AOG_Metal_Cog_Economy
 		cost = 1
 		x = 2
 		y = 1
@@ -13772,7 +13812,7 @@ focus_tree = {
 
 	focus = { #拉紧缰绳
 		id = GEA_Tighten_the_reins
-		icon = GFX_GEA_Tighten_the_reins
+		icon = GFX_goal_AOG_Quell_Nobility_alt
 		cost = 1
 		x = 0
 		y = 1
@@ -13794,7 +13834,7 @@ focus_tree = {
 
 	focus = { #效忠自有奖赏
 		id = GEA_Loyalty_has_its_rewards
-		icon = GFX_GEA_Loyalty_has_its_rewards
+		icon = GFX_goal_AOG_Stratocratic_Elan
 		cost = 1
 		x = -2
 		y = 1
@@ -13814,7 +13854,7 @@ focus_tree = {
 	}
 	focus = { #划定发展特区
 		id = GEA_Establish_a_development_special_zone
-		icon = GFX_GEA_Establish_a_development_special_zone
+		icon = GFX_goal_AOG_Cross_Huang_He
 		cost = 4
 		x = 1
 		y = 1
@@ -13835,7 +13875,7 @@ focus_tree = {
 	}
 	focus = { #保卫我们的产权
 		id = GEA_Protect_our_property_rights
-		icon = GFX_GEA_Protect_our_property_rights
+		icon = GFX_goal_AOG_Vanquishing_Warrior
 		cost = 8
 		x = 3
 		y = 2
@@ -13856,7 +13896,7 @@ focus_tree = {
 
 	focus = { #臣服...
 		id = GEA_Submission
-		icon = GFX_GEA_Submission
+		icon = GFX_goal_AOG_Throne_Unity
 		cost = 4
 		x = 0
 		y = 1
@@ -13883,7 +13923,7 @@ focus_tree = {
 
 	focus = { #直隶长城
 		id = GEA_The_Great_Wall_of_Zhili_Province
-		icon = GFX_GEA_The_Great_Wall_of_Zhili_Province
+		icon = GFX_goal_AOG_Reshape_East_Our_Image
 		cost = 4
 		x = 2
 		y = 1
@@ -14077,7 +14117,7 @@ focus_tree = {
 
 	focus = { #开放内地
 		id = GEA_Opening_up_the_mainland
-		icon = GFX_GEA_Opening_up_the_mainland
+		icon = GFX_goal_AUS_freemarket
 		cost = 5
 		x = -1
 		y = 2
@@ -14119,7 +14159,7 @@ focus_tree = {
 
 	focus = { #饥者得食
 		id = GEA_The_hungry_are_fed
-		icon = GFX_GEA_The_hungry_are_fed
+		icon = GFX_goal_AUS_field_over_factory
 		cost = 5
 		x = 0
 		y = 1
@@ -14183,7 +14223,7 @@ focus_tree = {
 
 	focus = { #竭泽而渔
 		id = GEA_Draining_the_pond_to_catch_all_the_fish
-		icon = GFX_GEA_Draining_the_pond_to_catch_all_the_fish
+		icon = GFX_goal_AUS_bring_together_classes
 		cost = 5
 		x = 2
 		y = 1
@@ -14205,7 +14245,7 @@ focus_tree = {
 
 	focus = { #推动有限现代化
 		id = GEA_Promoting_limited_modernization
-		icon = GFX_GEA_Promoting_limited_modernization
+		icon = GFX_goal_AUS_Concordat_With_Dollfuss
 		cost = 5
 		x = 1
 		y = 2
@@ -14287,7 +14327,10 @@ focus_tree = {
 			factor = 100
 		}
 		available = {
-
+			custom_trigger_tooltip = {
+				tooltip = GEX_fled_to_us_tooltip
+				GEX_fled_to_us = yes
+			}
 		}			
 
 		completion_reward = {

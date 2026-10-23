@@ -1329,4 +1329,31 @@ scripted_gui = {
 			}
 		}
 	}
+
+	GEA_CHINA_MAP_DECISION_UI = {
+		context_type = decision_category
+		parent_window_token = topbar
+		window_name = "GEA_china_map_gui_game"
+
+		ai_check = {
+			always = no
+		}
+
+		triggers = {
+
+		}
+		
+		visible = {
+			OR = {
+				tag = GEA
+			}
+		}
+
+		effects = {
+			GEA_Lep_Map_click = {
+				GEA_Lep_click_effect = yes
+			}
+		}
+	}
+
 }

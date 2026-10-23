@@ -2061,7 +2061,7 @@ GEA_roll_nationalist_sabotage_event_effect = {
 	}
 }
 
-# 卢克纳尔海盗行动：额外收益
+#卢克纳尔海盗行动额外收益
 GEA_pirate_offsite_civ_reward = {
 	if = {
 		limit = { has_completed_focus = GEA_The_sea_demon_of_the_Pacific_Ocean }
@@ -2086,7 +2086,7 @@ GEA_pirate_offsite_civ_reward = {
 	}
 }
 
-# 秘密行动：按结算后暴露概率判定，黄金劫案与浅间丸营救不调用
+#秘密行动按结算后暴露概率判定
 GEA_roll_secret_operation_discovery = {
 	if = {
 		limit = { NOT = { has_country_flag = GEA_pirate_exposure_disabled } }
@@ -2107,7 +2107,7 @@ GEA_roll_secret_operation_discovery = {
 	}
 }
 
-# 卢克纳尔海盗行动：实际被发现次数与柏林问责
+# 卢克纳尔海盗行动实际被发现次数
 GEA_pirate_discovery_consequences = {
 	if = {
 		limit = { NOT = { has_country_flag = GEA_pirate_exposure_disabled } }
@@ -2148,3 +2148,17 @@ GEA_add_pirate_loot = {
 	}
 }
 
+
+#华东
+GEA_Lep_click_effect = {
+	if = {
+		limit = {
+			GEA_nanjing_non_anti_concession_controller_trigger = yes
+			NOT = { has_country_flag = LEP_OPEN }
+		}
+		set_country_flag = LEP_OPEN
+	}
+	else = {
+		clr_country_flag = LEP_OPEN
+	}
+}

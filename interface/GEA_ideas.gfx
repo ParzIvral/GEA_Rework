@@ -213,4 +213,8 @@ spriteTypes = {
 		name = "GFX_idea_GEA_We_Fearless"
 		texturefile = "gfx/interface/ideas/gea/GEA_We_Fearless.png"
 	}
+	spriteType = {
+		name = "GFX_idea_GEA_Trade_surplus_with_China"
+		texturefile = "gfx/interface/ideas/gea/GEA_Trade_surplus_with_China.png"
+	}
 }

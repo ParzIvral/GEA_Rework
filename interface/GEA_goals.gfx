@@ -1173,11 +1173,6 @@ SpriteTypes = {
 	}
 
 	SpriteType = {
-		name = "GFX_GEA_Best_regards_to_our_mining_operation"
-		texturefile = "gfx/interface/goals/GEA_Best_regards_to_our_mining_operation.png"
-	}
-
-	SpriteType = {
 		name = "GFX_GEA_Manage_the_grain_storage_facility"
 		texturefile = "gfx/interface/goals/GEA_Manage_the_grain_storage_facility.png"
 	}
@@ -1188,13 +1183,13 @@ SpriteTypes = {
 	}
 
 	SpriteType = {
-		name = "GFX_GEA_German_manufacturing"
-		texturefile = "gfx/interface/goals/GEA_German_manufacturing.png"
+		name = "GFX_GEA_Source_of_Wealth"
+		texturefile = "gfx/interface/goals/GEA_Source_of_Wealth.png"
 	}
 
 	SpriteType = {
-		name = "GFX_GEA_Source_of_Wealth"
-		texturefile = "gfx/interface/goals/GEA_Source_of_Wealth.png"
+		name = "GFX_GEA_German_manufacturing"
+		texturefile = "gfx/interface/goals/GEA_German_manufacturing.png"
 	}
 
 	SpriteType = {
@@ -1221,20 +1216,10 @@ SpriteTypes = {
 		name = "GFX_GEA_The_wavering_business_group"
 		texturefile = "gfx/interface/goals/GEA_The_wavering_business_group.png"
 	}
-
-	SpriteType = {
-		name = "GFX_GEA_Eliminate_all_evil_forces"
-		texturefile = "gfx/interface/goals/GEA_Eliminate_all_evil_forces.png"
-	}
-
+	
 	SpriteType = {
 		name = "GFX_GEA_The_dominant_position_of_Golden_Mark"
 		texturefile = "gfx/interface/goals/GEA_The_dominant_position_of_Golden_Mark.png"
-	}
-
-	SpriteType = {
-		name = "GFX_GEA_Developing_the_uninhabited_wilderness"
-		texturefile = "gfx/interface/goals/GEA_Developing_the_uninhabited_wilderness.png"
 	}
 
 	SpriteType = {
@@ -1250,56 +1235,6 @@ SpriteTypes = {
 	SpriteType = {
 		name = "GFX_GEA_The_second_jewel_of_colonial_territory"
 		texturefile = "gfx/interface/goals/GEA_The_second_jewel_of_colonial_territory.png"
-	}
-
-	SpriteType = {
-		name = "GFX_GEA_The_marionettes_in_the_Forbidden_City"
-		texturefile = "gfx/interface/goals/GEA_The_marionettes_in_the_Forbidden_City.png"
-	}
-
-	SpriteType = {
-		name = "GFX_GEA_Pressure_the_Jade_Marshal"
-		texturefile = "gfx/interface/goals/GEA_Pressure_the_Jade_Marshal.png"
-	}
-
-	SpriteType = {
-		name = "GFX_GEA_The_embers_of_the_declining_empire"
-		texturefile = "gfx/interface/goals/GEA_The_embers_of_the_declining_empire.png"
-	}
-
-	SpriteType = {
-		name = "GFX_GEA_Supporting_Prosperity_Alliance"
-		texturefile = "gfx/interface/goals/GEA_Supporting_Prosperity_Alliance.png"
-	}
-
-	SpriteType = {
-		name = "GFX_GEA_Tighten_the_reins"
-		texturefile = "gfx/interface/goals/GEA_Tighten_the_reins.png"
-	}
-
-	SpriteType = {
-		name = "GFX_GEA_Loyalty_has_its_rewards"
-		texturefile = "gfx/interface/goals/GEA_Loyalty_has_its_rewards.png"
-	}
-
-	SpriteType = {
-		name = "GFX_GEA_Establish_a_development_special_zone"
-		texturefile = "gfx/interface/goals/GEA_Establish_a_development_special_zone.png"
-	}
-
-	SpriteType = {
-		name = "GFX_GEA_Protect_our_property_rights"
-		texturefile = "gfx/interface/goals/GEA_Protect_our_property_rights.png"
-	}
-
-	SpriteType = {
-		name = "GFX_GEA_Submission"
-		texturefile = "gfx/interface/goals/GEA_Submission.png"
-	}
-
-	SpriteType = {
-		name = "GFX_GEA_The_Great_Wall_of_Zhili_Province"
-		texturefile = "gfx/interface/goals/GEA_The_Great_Wall_of_Zhili_Province.png"
 	}
 
 	SpriteType = {
@@ -1343,18 +1278,8 @@ SpriteTypes = {
 	}
 
 	SpriteType = {
-		name = "GFX_GEA_Opening_up_the_mainland"
-		texturefile = "gfx/interface/goals/GEA_Opening_up_the_mainland.png"
-	}
-
-	SpriteType = {
 		name = "GFX_GEA_The_Land_of_Abundance"
 		texturefile = "gfx/interface/goals/GEA_The_Land_of_Abundance.png"
-	}
-
-	SpriteType = {
-		name = "GFX_GEA_The_hungry_are_fed"
-		texturefile = "gfx/interface/goals/GEA_The_hungry_are_fed.png"
 	}
 
 	SpriteType = {
@@ -1365,11 +1290,6 @@ SpriteTypes = {
 	SpriteType = {
 		name = "GFX_GEA_Assist_in_the_search_for_fugitives"
 		texturefile = "gfx/interface/goals/GEA_Assist_in_the_search_for_fugitives.png"
-	}
-
-	SpriteType = {
-		name = "GFX_GEA_Draining_the_pond_to_catch_all_the_fish"
-		texturefile = "gfx/interface/goals/GEA_Draining_the_pond_to_catch_all_the_fish.png"
 	}
 
 	SpriteType = {

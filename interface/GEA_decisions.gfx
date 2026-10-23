@@ -207,4 +207,8 @@ spriteTypes = {
 		name = "GFX_decision_bandit"
 		texturefile = "gfx/interface/decisions/bandit.png"
 	}
+	spriteType = {
+		name = "GFX_GEA_Invest_in_East_China_decision"
+		texturefile = "gfx/interface/decisions/GFX_GEA_Invest_in_East_China_decision.png"
+	}
 }
