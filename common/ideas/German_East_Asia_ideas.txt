@@ -1,17 +1,6 @@
 ideas = {
 		country = {
 # starting ideas
-		# 保留 KX 印支决议仍在调用的德属东亚负面精神。
-		GEA_harassed_by_vc_idea = {
-			picture = tfv_can_conscription_crisis
-			allowed = { always = no }
-			modifier = {
-				attrition = 0.2
-				supply_consumption_factor = 0.20
-			}
-		}
-
-
 		GEA_colonial_question = { #东亚殖民政府
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_colonial_question"}
 			picture = colonial_question
@@ -2131,6 +2120,14 @@ ideas = {
 			targeted_modifier = {
 				tag = INC
 				attack_bonus_against = 0.1
+			}
+		}
+		GEA_harassed_by_vc_idea = {
+			picture = tfv_can_conscription_crisis
+			allowed = { always = no }
+			modifier = {
+				attrition = 0.2
+				supply_consumption_factor = 0.20
 			}
 		}
 #军事线

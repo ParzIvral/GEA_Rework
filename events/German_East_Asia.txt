@@ -6519,6 +6519,8 @@ add_namespace = GEA_news
 			unlock_decision_tooltip = GEA_Establish_a_German_funded_enterprise
 			unlock_decision_tooltip = GEA_Investment_in_the_military_industry
 			unlock_decision_tooltip = GEA_Transfer_German_Enterprises
+			unlock_decision_tooltip = GEA_Dispatch_Military_Advisers
+			unlock_decision_tooltip = GEA_Dispatch_a_Training_Division
 			trigger = {
 				LEP = { check_variable = { var = LEP_league_war_victor value = LEP compare = equals } }
 				LEP = { owns_state = 613 controls_state = 613 }
@@ -6531,6 +6533,8 @@ add_namespace = GEA_news
 			unlock_decision_tooltip = GEA_Establish_a_German_funded_enterprise
 			unlock_decision_tooltip = GEA_Investment_in_the_military_industry
 			unlock_decision_tooltip = GEA_Transfer_German_Enterprises
+			unlock_decision_tooltip = GEA_Dispatch_Military_Advisers
+			unlock_decision_tooltip = GEA_Dispatch_a_Training_Division
 			trigger = {
 				LEP = { check_variable = { var = LEP_league_war_victor value = SQI compare = equals } }
 				SQI = { owns_state = 613 controls_state = 613 has_country_leader = { name = "Zhang Zongchang" ruling_only = yes } }
@@ -6543,6 +6547,8 @@ add_namespace = GEA_news
 			unlock_decision_tooltip = GEA_Establish_a_German_funded_enterprise
 			unlock_decision_tooltip = GEA_Investment_in_the_military_industry
 			unlock_decision_tooltip = GEA_Transfer_German_Enterprises
+			unlock_decision_tooltip = GEA_Dispatch_Military_Advisers
+			unlock_decision_tooltip = GEA_Dispatch_a_Training_Division
 			trigger = {
 				LEP = { check_variable = { var = LEP_league_war_victor value = ANQ compare = equals } }
 				ANQ = { owns_state = 613 controls_state = 613 }

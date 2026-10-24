@@ -14841,6 +14841,10 @@ focus_tree = {
 		relative_position_id = GEA_The_usiness_expansion_of_AOG
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Manage_the_grain_storage_facility"
+			unlock_decision_tooltip = GEA_Subsidise_Seeds_and_Farm_Tools
+			unlock_decision_tooltip = GEA_Restore_Jiangnan_Polder_Dykes
+			unlock_decision_tooltip = GEA_Build_Grain_Depots_and_Rice_Mills
+			unlock_decision_tooltip = GEA_Conclude_Grain_Export_Contracts
 		}	
 	}
 
@@ -14930,7 +14934,6 @@ focus_tree = {
 		}
 		available = {
 			GEA_nanjing_non_anti_concession_controller_trigger = yes
-
 		}	
 		prerequisite = {
 			focus = GEA_The_usiness_expansion_of_AOG
@@ -14942,6 +14945,56 @@ focus_tree = {
 		relative_position_id = GEA_Manage_the_grain_storage_facility
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Source_of_Wealth"
+			custom_effect_tooltip = GEA_china_lep_name_tt
+			add_to_variable = {
+				GEA_china_lep_attitude = 15
+				tooltip = GEA_china_attitude_change_tt
+			}
+			add_to_variable = {
+				GEA_china_lep_capital_influence = 10
+				tooltip = GEA_china_capital_influence_change_tt
+			}
+			add_to_variable = {
+				GEA_china_lep_military_projection = 10
+				tooltip = GEA_china_military_projection_change_tt
+			}
+			hidden_effect = {
+				clamp_variable = { var = GEA_china_lep_attitude min = 0 max = 100 }
+				clamp_variable = { var = GEA_china_lep_capital_influence min = 0 max = 100 }
+				clamp_variable = { var = GEA_china_lep_military_projection min = 0 max = 100 }
+			}
+			add_political_power = 100
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}			
+			}
+			613 = {
+				owner = {
+					add_political_power = 50
+					add_stability = 0.1
+					add_popularity = { ideology = market_liberal popularity = 0.1 }
+					random_owned_state = {
+						add_extra_state_shared_building_slots = 2
+						add_building_construction = {
+							type = industrial_complex
+							level = 2
+							instant_build = yes
+						}			
+					}
+					random_owned_state = {
+						add_extra_state_shared_building_slots = 2
+						add_building_construction = {
+							type = arms_factory
+							level = 2
+							instant_build = yes
+						}			
+					}
+				}
+			}
 		}	
 	}
 
@@ -14983,14 +15036,25 @@ focus_tree = {
 	focus = { #东南剿匪记
 		id = GEA_The_Campaign_to_Suppress_Bandits_in_the_Southeast
 		icon = GFX_GEA_The_Campaign_to_Suppress_Bandits_in_the_Southeast
-		cost = 0.5
+		cost = 5
 		x = 0
 		y = 1
 		ai_will_do = {
 			factor = 100
 		}
 		available = {
-
+			date > 1938.9.1
+			CHI = {
+				OR = {
+					has_war_with = QIE
+					has_war_with = HNN
+					has_war_with = GXC
+					has_war_with = SQI
+					has_war_with = FNG
+					has_war_with = YUN
+					has_war_with = SZC
+				}
+			}
 		}			
 		prerequisite = {
 			focus = GEA_The_fading_memories_of_the_second_interference
@@ -14998,6 +15062,7 @@ focus_tree = {
 		relative_position_id = GEA_The_fading_memories_of_the_second_interference
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_Campaign_to_Suppress_Bandits_in_the_Southeast"
+			unlock_decision_tooltip = GEA_Intervene_in_East_China
 		}	
 	}
 

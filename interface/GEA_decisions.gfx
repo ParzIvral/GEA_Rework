@@ -223,4 +223,17 @@ spriteTypes = {
 		name = "GFX_GEA_Transfer_German_Enterprises_decision"
 		texturefile = "gfx/interface/decisions/GFX_GEA_Transfer_German_Enterprises_decision.png"
 	}
+	spriteType = {
+		name = "GFX_GEA_Intervene_in_East_China_decision"
+		texturefile = "gfx/interface/decisions/GFX_GEA_Intervene_in_East_China_decision.png"
+	}
+	spriteType = {
+		name = "GFX_GEA_Subsidise_Seeds_and_Farm_Tools_decision"
+		texturefile = "gfx/interface/decisions/GFX_GEA_Subsidise_Seeds_and_Farm_Tools_decision.png"
+	}
+
+	spriteType = {
+		name = "GFX_GEA_Dispatch_Military_Advisers_decision"
+		texturefile = "gfx/interface/decisions/GFX_GEA_Dispatch_Military_Advisers_decision.png"
+	}
 }

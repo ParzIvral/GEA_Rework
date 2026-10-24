@@ -1203,11 +1203,6 @@ SpriteTypes = {
 	}
 
 	SpriteType = {
-		name = "GFX_GEA_Seal_off_the_borders_of_other_countries"
-		texturefile = "gfx/interface/goals/GEA_Seal_off_the_borders_of_other_countries.png"
-	}
-
-	SpriteType = {
 		name = "GFX_GEA_revisit_old_site"
 		texturefile = "gfx/interface/goals/GEA_revisit_old_site.png"
 	}
@@ -1290,11 +1285,6 @@ SpriteTypes = {
 	SpriteType = {
 		name = "GFX_GEA_Assist_in_the_search_for_fugitives"
 		texturefile = "gfx/interface/goals/GEA_Assist_in_the_search_for_fugitives.png"
-	}
-
-	SpriteType = {
-		name = "GFX_GEA_Promoting_limited_modernization"
-		texturefile = "gfx/interface/goals/GEA_Promoting_limited_modernization.png"
 	}
 
 	SpriteType = {

@@ -11152,37 +11152,6 @@ spriteTypes = {
 	}
 
 	SpriteType = {
-		name = "GFX_GEA_Seal_off_the_borders_of_other_countries_shine"
-		texturefile = "gfx/interface/goals/GEA_Seal_off_the_borders_of_other_countries.png"
-		effectFile = "gfx/FX/buttonstate.lua"
-		animation = {
-			animationmaskfile = "gfx/interface/goals/GEA_Seal_off_the_borders_of_other_countries.png"
-			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
-			animationrotation = -90.0
-			animationlooping = no
-			animationtime = 0.75
-			animationdelay = 0
-			animationblendmode = "add"
-			animationtype = "scrolling"
-			animationrotationoffset = { x = 0.0 y = 0.0 }
-			animationtexturescale = { x = 1.0 y = 1.0 }
-		}
-		animation = {
-			animationmaskfile = "gfx/interface/goals/GEA_Seal_off_the_borders_of_other_countries.png"
-			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
-			animationrotation = 90.0
-			animationlooping = no
-			animationtime = 0.75
-			animationdelay = 0
-			animationblendmode = "add"
-			animationtype = "scrolling"
-			animationrotationoffset = { x = 0.0 y = 0.0 }
-			animationtexturescale = { x = 1.0 y = 1.0 }
-		}
-		legacy_lazy_load = no
-	}
-
-	SpriteType = {
 		name = "GFX_GEA_revisit_old_site_shine"
 		texturefile = "gfx/interface/goals/GEA_revisit_old_site.png"
 		effectFile = "gfx/FX/buttonstate.lua"
