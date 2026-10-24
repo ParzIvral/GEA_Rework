@@ -1353,6 +1353,18 @@ scripted_gui = {
 			GEA_Lep_Map_click = {
 				GEA_Lep_click_effect = yes
 			}
+			GEA_Shandong_china_Map_click = {
+				GEA_Sqi_click_effect = yes
+			}
+			GEA_GXC_Map_click = {
+				GEA_Gxc_click_effect = yes
+			}
+			GEA_Zhili_Map_click = {
+				GEA_Zhili_click_effect = yes
+			}
+			GEA_Lec_Map_click = {
+				GEA_Lec_click_effect = yes
+			}
 		}
 	}
 
