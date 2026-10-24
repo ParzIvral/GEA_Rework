@@ -840,10 +840,23 @@ focus_tree = {
 					add_idea = GEA_colonial_question_hahl_2
 				}
 				add_stability = 0.05
-				custom_effect_tooltip = GEA_Abandoning_the_savage_nature_tt_2
-				add_to_variable = { GEA_army_mobilization_speed = 0.10 }
-				add_to_variable = { GEA_army_minimum_training_level = 0.15 }
-				add_to_variable = { GEA_army_conscription_factor = 0.075 }
+				custom_effect_tooltip = tooltip_white_line
+				custom_effect_tooltip = {
+					localization_key = tooltip_modify_dynmod
+					DYNMOD = GEA_gea_army
+				}
+				add_to_variable = {
+					GEA_army_mobilization_speed = 0.10
+					tooltip = mobilization_speed_tt
+				}
+				add_to_variable = {
+					GEA_army_minimum_training_level = 0.15
+					tooltip = minimum_training_level_tt
+				}
+				add_to_variable = {
+					GEA_army_conscription_factor = 0.075
+					tooltip = conscription_factor_tt
+				}
 			}
 			else_if = {
 				limit = { 
@@ -858,10 +871,23 @@ focus_tree = {
 					add_idea = GEA_colonial_question_hahl_2
 				}
 				add_stability = 0.02
-				custom_effect_tooltip = GEA_Abandoning_the_savage_nature_tt_3 
-				add_to_variable = { GEA_army_mobilization_speed = 0.05 }
-				add_to_variable = { GEA_army_minimum_training_level = 0.10 }
-				add_to_variable = { GEA_army_conscription_factor = 0.05 }
+				custom_effect_tooltip = tooltip_white_line
+				custom_effect_tooltip = {
+					localization_key = tooltip_modify_dynmod
+					DYNMOD = GEA_gea_army
+				}
+				add_to_variable = {
+					GEA_army_mobilization_speed = 0.05
+					tooltip = mobilization_speed_tt
+				}
+				add_to_variable = {
+					GEA_army_minimum_training_level = 0.10
+					tooltip = minimum_training_level_tt
+				}
+				add_to_variable = {
+					GEA_army_conscription_factor = 0.05
+					tooltip = conscription_factor_tt
+				}
 			}
 			else = {
 				swap_ideas = {
@@ -871,9 +897,19 @@ focus_tree = {
 				add_war_support = 0.04
 				army_experience = 15
 				add_political_power = -50
-				custom_effect_tooltip = GEA_Abandoning_the_savage_nature_tt_4
-				add_to_variable = { GEA_army_minimum_training_level = -0.05 }
-				add_to_variable = { GEA_army_conscription_factor = 0.025 }
+				custom_effect_tooltip = tooltip_white_line
+				custom_effect_tooltip = {
+					localization_key = tooltip_modify_dynmod
+					DYNMOD = GEA_gea_army
+				}
+				add_to_variable = {
+					GEA_army_minimum_training_level = -0.05
+					tooltip = minimum_training_level_tt
+				}
+				add_to_variable = {
+					GEA_army_conscription_factor = 0.025
+					tooltip = conscription_factor_tt
+				}
 			}
 		}
 	}
@@ -1843,10 +1879,23 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Domesticating_the_General_Staff_Department"
 			add_war_support = 0.06
-			custom_effect_tooltip = GEA_Domesticating_the_General_Staff_Department_tt
-			add_to_variable = { GEA_army_conscription_factor = 0.10 }
-			add_to_variable = { GEA_army_land_doctrine_cost_factor = -0.10 }
-			add_to_variable = { GEA_army_experience_loss_factor = -0.05 }
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_gea_army
+			}
+			add_to_variable = {
+				GEA_army_conscription_factor = 0.10
+				tooltip = conscription_factor_tt
+			}
+			add_to_variable = {
+				GEA_army_land_doctrine_cost_factor = -0.10
+				tooltip = land_doctrine_cost_factor_tt
+			}
+			add_to_variable = {
+				GEA_army_experience_loss_factor = -0.05
+				tooltip = experience_loss_factor_tt
+			}
 		}
 	}
 
@@ -3364,6 +3413,10 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Fidelity_Service"
 			custom_effect_tooltip = GEA_Fidelity_Service_effect_tt
+			show_ideas_tooltip = GEA_krupp2
+			show_ideas_tooltip = GEA_aeg_2
+			show_ideas_tooltip = GEA_vestag_2
+			show_ideas_tooltip = GEA_ig_farben_2
 			hidden_effect = {
 				if = {
 					limit = { has_idea = GEA_krupp }
@@ -3587,10 +3640,23 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Pour_a_tight_and_economical_chain"
-			add_to_variable = { GEA_Corporation_Rulec_building_slots = 0.15 }				
-			add_to_variable = { GEA_Corporation_Rule_construction_speed = 0.1 }		
-			add_to_variable = { GEA_Corporation_Rule_civilian_speed = 0.05 }	
-			custom_effect_tooltip = GEA_Pour_a_tight_and_economical_chain_corporation_rule_modifier_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_Corporation_Rule
+			}
+			add_to_variable = {
+				GEA_Corporation_Rulec_building_slots = 0.15
+				tooltip = local_building_slots_factor_tooltip
+			}
+			add_to_variable = {
+				GEA_Corporation_Rule_construction_speed = 0.1
+				tooltip = production_speed_buildings_factor_tt
+			}
+			add_to_variable = {
+				GEA_Corporation_Rule_civilian_speed = 0.05
+				tooltip = production_speed_industrial_complex_factor_tt
+			}
 		}
 	}
 	focus = { #枪炮，钢铁与熔炉
@@ -3614,9 +3680,19 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Guns_steel_and_furnaces"
 			unlock_decision_tooltip = GEA_Increase_production_tasks
 			unlock_decision_tooltip = GEA_Strengthening_military_armaments
-			add_to_variable = { GEA_Corporation_Rule_local_resources_steel_factor = 0.10 }	
-			add_to_variable = { GEA_Corporation_Rule_factory_output = 0.05 }
-			custom_effect_tooltip = GEA_Guns_steel_and_furnaces_corporation_rule_modifier_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_Corporation_Rule
+			}
+			add_to_variable = {
+				GEA_Corporation_Rule_local_resources_steel_factor = 0.10
+				tooltip = GEA_modifier_local_resources_steel_factor_tt
+			}
+			add_to_variable = {
+				GEA_Corporation_Rule_factory_output = 0.05
+				tooltip = industrial_capacity_factory_tt
+			}
 			hidden_effect = {
 				country_event = {
 					id = GEA.406
@@ -3652,10 +3728,23 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Humanitarian_construction"
-			add_to_variable = { GEA_Corporation_Rule_cic_construction_boost_factor = 0.15 }				
-			add_to_variable = { GEA_Corporation_Rule_start_efficiency = 0.08 }		
-			add_to_variable = { GEA_Corporation_Rule_consumer_goods = 0.05 }	
-			custom_effect_tooltip = GEA_Humanitarian_construction_corporation_rule_modifier_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_Corporation_Rule
+			}
+			add_to_variable = {
+				GEA_Corporation_Rule_cic_construction_boost_factor = 0.15
+				tooltip = cic_construction_boost_factor_tt
+			}
+			add_to_variable = {
+				GEA_Corporation_Rule_start_efficiency = 0.08
+				tooltip = production_factory_start_efficiency_factor_tt
+			}
+			add_to_variable = {
+				GEA_Corporation_Rule_consumer_goods = 0.05
+				tooltip = consumer_goods_factor_tt
+			}
 			country_event = {
 				id = GEA.402 #划清界限
 				days = 3
@@ -3691,10 +3780,23 @@ focus_tree = {
 			random_owned_state = {
 				add_extra_state_shared_building_slots = 1
 			}
-			add_to_variable = { GEA_Corporation_Rule_monthly_population= 0.3 }
-			add_to_variable = { GEA_Corporation_Rule_infrastructure_speed = 0.1 }
-			add_to_variable = { GEA_Corporation_Rule_consumer_goods = 0.1 }
-			custom_effect_tooltip = GEA_Establish_the_security_status_of_agricultural_products_corporation_rule_modifier_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_Corporation_Rule
+			}
+			add_to_variable = {
+				GEA_Corporation_Rule_monthly_population = 0.3
+				tooltip = monthly_population_tt
+			}
+			add_to_variable = {
+				GEA_Corporation_Rule_infrastructure_speed = 0.1
+				tooltip = production_speed_infrastructure_factor_tt
+			}
+			add_to_variable = {
+				GEA_Corporation_Rule_consumer_goods = 0.1
+				tooltip = consumer_goods_factor_tt
+			}
 		}
 	}
 	focus = { #引进格鲁松的遗产
@@ -3715,8 +3817,15 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Das_Erbe_des_Grusonwerks"
-			add_to_variable = { GEA_Corporation_Rule_factory_output = 0.075 }	
-			custom_effect_tooltip = GEA_Das_Erbe_des_Grusonwerks_corporation_rule_modifier_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_Corporation_Rule
+			}
+			add_to_variable = {
+				GEA_Corporation_Rule_factory_output = 0.075
+				tooltip = industrial_capacity_factory_tt
+			}
 			random_owned_state = {
 				limit = {
 					OR = {
@@ -3789,8 +3898,15 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Treue_verpflichtet_beide_Seiten"
 			unlock_decision_tooltip = GEA_The_Military_Support_and_Assistance_Act
 			add_war_support = 0.1
-			add_to_variable = { GEA_Economic_stability_weekly = 0.002 }
-			custom_effect_tooltip = GEA_Treue_verpflichtet_beide_Seiten_economic_modifier_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_Economic_modifier
+			}
+			add_to_variable = {
+				GEA_Economic_stability_weekly = 0.002
+				tooltip = stability_weekly_tooltip
+			}
 			country_event = {
 				id = GEA.411
 				days = 1
@@ -3863,9 +3979,19 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_foundation_of_the_war_industry"
 			unlock_decision_tooltip = GEA_War_time_Management_Law
-			add_to_variable = { GEA_Corporation_Rule_military_speed = 0.05 }
-			add_to_variable = { GEA_Corporation_Rule_refinery_speed = 0.1 }
-			custom_effect_tooltip = GEA_The_foundation_of_the_war_industry_corporation_rule_modifier_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_Corporation_Rule
+			}
+			add_to_variable = {
+				GEA_Corporation_Rule_military_speed = 0.05
+				tooltip = production_speed_arms_factory_factor_tt
+			}
+			add_to_variable = {
+				GEA_Corporation_Rule_refinery_speed = 0.1
+				tooltip = production_speed_synthetic_refinery_factor_tt
+			}
 			random_owned_state = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -3911,10 +4037,23 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Reinventing_the_East_through_Chemistry"
-			add_to_variable = { GEA_Corporation_Rule_construction_speed	= 0.03 }
-			add_to_variable = { GEA_Corporation_Rule_local_resources = 0.06 }
-			add_to_variable = { GEA_Corporation_Rule_efficiency_max = 0.04 }
-			custom_effect_tooltip = GEA_Reinventing_the_East_through_Chemistry_corporation_rule_modifier_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_Corporation_Rule
+			}
+			add_to_variable = {
+				GEA_Corporation_Rule_construction_speed = 0.03
+				tooltip = production_speed_buildings_factor_tt
+			}
+			add_to_variable = {
+				GEA_Corporation_Rule_local_resources = 0.06
+				tooltip = local_resources_factor_tt
+			}
+			add_to_variable = {
+				GEA_Corporation_Rule_efficiency_max = 0.04
+				tooltip = production_factory_max_efficiency_factor_tt
+			}
 			random_owned_state = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
@@ -3952,9 +4091,19 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_wisdom_of_the_Central_Committee"
 			custom_effect_tooltip = GEA_Enlightenment_and_the_Mission_of_Education_tt
 			add_research_slot = 1
-			add_to_variable = { GEA_Corporation_Rule_efficiency_max = 0.06 }
-			add_to_variable = { GEA_Corporation_Rule_political_power = 0.04 }
-			custom_effect_tooltip = GEA_The_wisdom_of_the_Central_Committee_corporation_rule_modifier_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_Corporation_Rule
+			}
+			add_to_variable = {
+				GEA_Corporation_Rule_efficiency_max = 0.06
+				tooltip = production_factory_max_efficiency_factor_tt
+			}
+			add_to_variable = {
+				GEA_Corporation_Rule_political_power = 0.04
+				tooltip = political_power_factor_tt
+			}
 			country_event = {
 				id = GEA.415
 				days = 2
@@ -3986,10 +4135,23 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_For_the_sake_of_progress_to_plunder"
-			add_to_variable = { GEA_Corporation_Rule_local_resources = 0.13 }
-			add_to_variable = { GEA_Corporation_Rule_factory_output = 0.04 }
-			add_to_variable = { GEA_Corporation_Rule_lack_resource_penalty = -0.06 }
-			custom_effect_tooltip = GEA_For_the_sake_of_progress_to_plunder_corporation_rule_modifier_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_Corporation_Rule
+			}
+			add_to_variable = {
+				GEA_Corporation_Rule_local_resources = 0.13
+				tooltip = local_resources_factor_tt
+			}
+			add_to_variable = {
+				GEA_Corporation_Rule_factory_output = 0.04
+				tooltip = industrial_capacity_factory_tt
+			}
+			add_to_variable = {
+				GEA_Corporation_Rule_lack_resource_penalty = -0.06
+				tooltip = production_lack_of_resource_penalty_factor_tt
+			}
 			country_event = {
 				id = GEA.407
 				days = 7
@@ -4017,10 +4179,23 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Being_unfeeling_due_to_the_necessity_of_evil"
-			add_to_variable = { GEA_Corporation_Rule_monthly_population = -0.09 }
-			add_to_variable = { GEA_Corporation_Rule_construction_speed = 0.04 }
-			add_to_variable = { GEA_Corporation_Rule_efficiency_max = 0.06 }
-			custom_effect_tooltip = GEA_Being_unfeeling_due_to_the_necessity_of_evil_corporation_rule_modifier_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_Corporation_Rule
+			}
+			add_to_variable = {
+				GEA_Corporation_Rule_monthly_population = -0.09
+				tooltip = monthly_population_tt
+			}
+			add_to_variable = {
+				GEA_Corporation_Rule_construction_speed = 0.04
+				tooltip = production_speed_buildings_factor_tt
+			}
+			add_to_variable = {
+				GEA_Corporation_Rule_efficiency_max = 0.06
+				tooltip = production_factory_max_efficiency_factor_tt
+			}
 			country_event = {
 				id = GEA.404
 				days = 3
@@ -4051,10 +4226,23 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Taking_the_first_step_towards_greatness"
-			add_to_variable = { GEA_Corporation_Rule_efficiency_max = 0.04 }
-			add_to_variable = { GEA_Corporation_Rule_political_power = 0.07 }
-			add_to_variable = { GEA_Corporation_Rule_consumer_goods = -0.06 }
-			custom_effect_tooltip = GEA_Taking_the_first_step_towards_greatness_corporation_rule_modifier_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_Corporation_Rule
+			}
+			add_to_variable = {
+				GEA_Corporation_Rule_efficiency_max = 0.04
+				tooltip = production_factory_max_efficiency_factor_tt
+			}
+			add_to_variable = {
+				GEA_Corporation_Rule_political_power = 0.07
+				tooltip = political_power_factor_tt
+			}
+			add_to_variable = {
+				GEA_Corporation_Rule_consumer_goods = -0.06
+				tooltip = consumer_goods_factor_tt
+			}
 			country_event = {
 				id = GEA.408 #化学家的国度
 				days = 7
@@ -4079,12 +4267,31 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Another_scientific_center_of_the_empire"
-			add_to_variable = { GEA_Corporation_Rulec_building_slots = 0.11 }
-			add_to_variable = { GEA_Corporation_Rule_production_oil = 0.2 }
-			add_to_variable = { GEA_Corporation_Rule_research_speed = 0.07 }
-			add_to_variable = { GEA_Corporation_Rule_army_fuel_consumption_factor = -0.1 }
-			add_to_variable = { GEA_Corporation_Rule_efficiency_max = 0.05 }
-			custom_effect_tooltip = GEA_Another_scientific_center_of_the_empire_corporation_rule_modifier_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_Corporation_Rule
+			}
+			add_to_variable = {
+				GEA_Corporation_Rulec_building_slots = 0.11
+				tooltip = local_building_slots_factor_tooltip
+			}
+			add_to_variable = {
+				GEA_Corporation_Rule_production_oil = 0.2
+				tooltip = production_oil_factor_tt
+			}
+			add_to_variable = {
+				GEA_Corporation_Rule_research_speed = 0.07
+				tooltip = research_speed_factor_tt
+			}
+			add_to_variable = {
+				GEA_Corporation_Rule_army_fuel_consumption_factor = -0.1
+				tooltip = army_fuel_consumption_factor_tt
+			}
+			add_to_variable = {
+				GEA_Corporation_Rule_efficiency_max = 0.05
+				tooltip = production_factory_max_efficiency_factor_tt
+			}
 			country_event = {
 				id = GEA.410
 				days = 4
@@ -4496,9 +4703,19 @@ focus_tree = {
 					instant_build = yes 
 				}
 			}
-			add_to_variable = { GEA_Corporation_Rule_local_resources = 0.05 }
-			add_to_variable = { GEA_Corporation_Rule_local_resources = 0.05 }
-			custom_effect_tooltip = GEA_The_factorys_thick_smoke_wealth_and_German_East_Asia_corporation_rule_modifier_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_Corporation_Rule
+			}
+			add_to_variable = {
+				GEA_Corporation_Rule_local_resources = 0.05
+				tooltip = local_resources_factor_tt
+			}
+			add_to_variable = {
+				GEA_Corporation_Rule_local_resources = 0.05
+				tooltip = local_resources_factor_tt
+			}
 		}
 	}
 #舍尔纳
@@ -5886,9 +6103,19 @@ focus_tree = {
 					instant_build = yes
 				}			
 			}
-			add_to_variable = { GEA_Economic_production_speed_dockyard_factor = 0.05 }
-			add_to_variable = { GEA_Economic_production_speed_naval_base_factor = 0.15 }
-			custom_effect_tooltip = GEA_Connect_the_isolated_island_economic_modifier_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_Economic_modifier
+			}
+			add_to_variable = {
+				GEA_Economic_production_speed_dockyard_factor = 0.05
+				tooltip = production_speed_dockyard_factor_tt
+			}
+			add_to_variable = {
+				GEA_Economic_production_speed_naval_base_factor = 0.15
+				tooltip = production_speed_naval_base_factor_tt
+			}
 		}
 	}
 	focus = { #深掘地下财富
@@ -5935,10 +6162,23 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_Eastern_Treasure_House_of_the_Empire"
-			add_to_variable = { GEA_Economic_consumer_goods = -0.10 }
-			add_to_variable = { GEA_Economic_stability = 0.03 }
-			add_to_variable = { GEA_Economic_local_resources = 0.05 }
-			custom_effect_tooltip = GEA_The_Eastern_Treasure_House_of_the_Empire_economic_modifier_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_Economic_modifier
+			}
+			add_to_variable = {
+				GEA_Economic_consumer_goods = -0.10
+				tooltip = consumer_goods_factor_tt
+			}
+			add_to_variable = {
+				GEA_Economic_stability = 0.03
+				tooltip = stability_factor_tt
+			}
+			add_to_variable = {
+				GEA_Economic_local_resources = 0.05
+				tooltip = local_resources_factor_tt
+			}
 		}
 	}
 	focus = { #保障粮食出口
@@ -5959,10 +6199,23 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Guaranteeing_grain_exports"
-			add_to_variable = { GEA_Economic_cic_construction_boost_factor = 0.1 }
-			add_to_variable = { GEA_Economic_monthly_population = 0.15 }
-			add_to_variable = { GEA_Economic_consumer_goods_expected_value = 0.1 }
-			custom_effect_tooltip = GEA_Guaranteeing_grain_exports_economic_modifier_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_Economic_modifier
+			}
+			add_to_variable = {
+				GEA_Economic_cic_construction_boost_factor = 0.1
+				tooltip = cic_construction_boost_factor_tt
+			}
+			add_to_variable = {
+				GEA_Economic_monthly_population = 0.15
+				tooltip = monthly_population_tt
+			}
+			add_to_variable = {
+				GEA_Economic_consumer_goods_expected_value = 0.1
+				tooltip = consumer_goods_expected_value_tooltip
+			}
 		}
 	}
 	focus = { #德属东亚的田园生活
@@ -6001,9 +6254,19 @@ focus_tree = {
 					instant_build = yes
 				}			
 			}
-			add_to_variable = { GEA_Economic_monthly_population = 0.10 }
-			add_to_variable = { GEA_Economic_start_efficiency = 0.05 }
-			custom_effect_tooltip = GEA_The_idyllic_life_in_German_East_Asia_economic_modifier_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_Economic_modifier
+			}
+			add_to_variable = {
+				GEA_Economic_monthly_population = 0.10
+				tooltip = monthly_population_tt
+			}
+			add_to_variable = {
+				GEA_Economic_start_efficiency = 0.05
+				tooltip = production_factory_start_efficiency_factor_tt
+			}
 		}
 	}
 	focus = { #克虏伯带来军备
@@ -6045,9 +6308,19 @@ focus_tree = {
 					instant_build = yes
 				}			
 			}
-			add_to_variable = { GEA_Economic_factory_output = 0.06 }
-			add_to_variable = { GEA_Economic_military_speed = 0.1 }
-			custom_effect_tooltip = GEA_Krupp_brought_armaments_economic_modifier_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_Economic_modifier
+			}
+			add_to_variable = {
+				GEA_Economic_factory_output = 0.06
+				tooltip = industrial_capacity_factory_tt
+			}
+			add_to_variable = {
+				GEA_Economic_military_speed = 0.1
+				tooltip = production_speed_arms_factory_factor_tt
+			}
 			add_to_variable = {
 				GEA_support_times = 1
 			}
@@ -6073,9 +6346,19 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Work_for_our_great_cause"
 			add_war_support = 0.03
 			add_manpower = -3000
-			add_to_variable = { GEA_Economic_factory_output = 0.03 }
-			add_to_variable = { GEA_Economic_efficiency_max = 0.05 }
-			custom_effect_tooltip = GEA_Work_for_our_great_cause_economic_modifier_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_Economic_modifier
+			}
+			add_to_variable = {
+				GEA_Economic_factory_output = 0.03
+				tooltip = industrial_capacity_factory_tt
+			}
+			add_to_variable = {
+				GEA_Economic_efficiency_max = 0.05
+				tooltip = production_factory_max_efficiency_factor_tt
+			}
 			custom_effect_tooltip = GEA_Work_for_our_great_cause_unlock_forced_labour_policy_tt
 		}
 	}
@@ -6116,8 +6399,15 @@ focus_tree = {
 				uses = 2
 				category = industry
 			}
-			add_to_variable = { GEA_Economic_research_speed = 0.08 }
-			custom_effect_tooltip = GEA_IG_fraben_brought_progress_economic_modifier_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_Economic_modifier
+			}
+			add_to_variable = {
+				GEA_Economic_research_speed = 0.08
+				tooltip = research_speed_factor_tt
+			}
 		}
 	}
 	focus = { #绘制工业画卷
@@ -6164,9 +6454,19 @@ focus_tree = {
 					}			
 				}
 			}
-			add_to_variable = { GEA_Economic_production_oil = 0.1 }
-			add_to_variable = { GEA_Economic_efficiency_max = 0.04 }
-			custom_effect_tooltip = GEA_Draw_the_industrial_panorama_economic_modifier_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_Economic_modifier
+			}
+			add_to_variable = {
+				GEA_Economic_production_oil = 0.1
+				tooltip = production_oil_factor_tt
+			}
+			add_to_variable = {
+				GEA_Economic_efficiency_max = 0.04
+				tooltip = production_factory_max_efficiency_factor_tt
+			}
 		}
 	}
 	focus = { #廉价原料
@@ -6187,10 +6487,23 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Cheap_raw_materials"
-			add_to_variable = { GEA_Economic_political_power = -0.04 }
-			add_to_variable = { GEA_Economic_lack_resource_penalty = -0.1 }
-			add_to_variable = { GEA_Economic_local_resources = 0.15 }
-			custom_effect_tooltip = GEA_Cheap_raw_materials_economic_modifier_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_Economic_modifier
+			}
+			add_to_variable = {
+				GEA_Economic_political_power = -0.04
+				tooltip = political_power_factor_tt
+			}
+			add_to_variable = {
+				GEA_Economic_lack_resource_penalty = -0.1
+				tooltip = production_lack_of_resource_penalty_factor_tt
+			}
+			add_to_variable = {
+				GEA_Economic_local_resources = 0.15
+				tooltip = local_resources_factor_tt
+			}
 		}
 	}
 	focus = { #恶意毒物
@@ -6212,10 +6525,23 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Malicious_poison"
 			custom_effect_tooltip = GEA_Malicious_poison_army_tt_2
-			custom_effect_tooltip = GEA_Malicious_poison_army_tt
-			add_to_variable = { GEA_army_army_morale_factor = -0.1 }
-			add_to_variable = { GEA_army_attack_factor = 0.06 }
-			add_to_variable = { GEA_army_breakthrough_factor = 0.09 }
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_gea_army
+			}
+			add_to_variable = {
+				GEA_army_army_morale_factor = -0.1
+				tooltip = army_morale_factor_tt
+			}
+			add_to_variable = {
+				GEA_army_attack_factor = 0.06
+				tooltip = army_attack_factor_tt
+			}
+			add_to_variable = {
+				GEA_army_breakthrough_factor = 0.09
+				tooltip = breakthrough_factor_tt
+			}
 		}
 	}
 	focus = { #复现合成氨之魔术
@@ -6239,14 +6565,37 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Reproducing_the_Magic_of_Synthesizing_Ammonia"
-			add_to_variable = { GEA_Economic_monthly_population = 0.25 }
-			add_to_variable = { GEA_Economic_building_slots = 0.1 }
-			add_to_variable = { GEA_Economic_research_speed = 0.03 }
-			custom_effect_tooltip = GEA_Reproducing_the_Magic_of_Synthesizing_Ammonia_economic_modifier_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_Economic_modifier
+			}
+			add_to_variable = {
+				GEA_Economic_monthly_population = 0.25
+				tooltip = monthly_population_tt
+			}
+			add_to_variable = {
+				GEA_Economic_building_slots = 0.1
+				tooltip = local_building_slots_factor_tooltip
+			}
+			add_to_variable = {
+				GEA_Economic_research_speed = 0.03
+				tooltip = research_speed_factor_tt
+			}
 
-			add_to_variable = { GEA_army_no_supply_grace = 48 }
-			add_to_variable = { GEA_army_supply_consumption_factor = -0.1 }
-			custom_effect_tooltip = GEA_Reproducing_the_Magic_of_Synthesizing_Ammonia_army_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_gea_army
+			}
+			add_to_variable = {
+				GEA_army_no_supply_grace = 48
+				tooltip = no_supply_grace_tooltip
+			}
+			add_to_variable = {
+				GEA_army_supply_consumption_factor = -0.1
+				tooltip = supply_consumption_factor_tt
+			}
 		}
 	}
 	focus = { #热带病理之问
@@ -6267,12 +6616,29 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Questions_of_Tropical_Pathology"
-			add_to_variable = { GEA_Economic_research_speed = 0.06 }
-			custom_effect_tooltip = GEA_Questions_of_Tropical_Pathology_economic_modifier_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_Economic_modifier
+			}
+			add_to_variable = {
+				GEA_Economic_research_speed = 0.06
+				tooltip = research_speed_factor_tt
+			}
 
-			add_to_variable = { GEA_army_army_morale_factor = 0.08 }
-			add_to_variable = { GEA_army_acclimatization_hot_climate_gain_factor = 0.15 }
-			custom_effect_tooltip = GEA_Questions_of_Tropical_Pathology_army_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_gea_army
+			}
+			add_to_variable = {
+				GEA_army_army_morale_factor = 0.08
+				tooltip = army_morale_factor_tt
+			}
+			add_to_variable = {
+				GEA_army_acclimatization_hot_climate_gain_factor = 0.15
+				tooltip = acclimatization_hot_climate_gain_factor_tt
+			}
 		}
 	}
 	focus = { #远东倾销网络
@@ -6320,11 +6686,27 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_Eastern_Palace_of_the_Gods"
 			add_research_slot = 1
-			add_to_variable = { GEA_Economic_research_speed = 0.05 }
-			add_to_variable = { GEA_Economic_political_power = 0.10 }
-			add_to_variable = { GEA_Economic_refinery_speed = 0.06 }
-			add_to_variable = { GEA_Economic_efficiency_max = 0.07 }
-			custom_effect_tooltip = GEA_The_Eastern_Palace_of_the_Gods_economic_modifier_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_Economic_modifier
+			}
+			add_to_variable = {
+				GEA_Economic_research_speed = 0.05
+				tooltip = research_speed_factor_tt
+			}
+			add_to_variable = {
+				GEA_Economic_political_power = 0.10
+				tooltip = political_power_factor_tt
+			}
+			add_to_variable = {
+				GEA_Economic_refinery_speed = 0.06
+				tooltip = production_speed_synthetic_refinery_factor_tt
+			}
+			add_to_variable = {
+				GEA_Economic_efficiency_max = 0.07
+				tooltip = production_factory_max_efficiency_factor_tt
+			}
 		}
 	}
 	focus = { #电气化带来繁荣
@@ -6388,9 +6770,19 @@ focus_tree = {
 				uses = 2
 				category = electronics
 			}
-			add_to_variable = { GEA_Economic_production_speed_buildings_powered_factor = 0.075 }
-			add_to_variable = { GEA_Economic_industrial_capacity_factory_powered = 0.09 }
-			custom_effect_tooltip = GEA_OSRAM_brings_prosperity_economic_modifier_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_Economic_modifier
+			}
+			add_to_variable = {
+				GEA_Economic_production_speed_buildings_powered_factor = 0.075
+				tooltip = production_speed_buildings_powered_factor_tt
+			}
+			add_to_variable = {
+				GEA_Economic_industrial_capacity_factory_powered = 0.09
+				tooltip = industrial_capacity_factory_powered_tt
+			}
 		}
 	}
 	focus = { #加大征地力度
@@ -6428,10 +6820,23 @@ focus_tree = {
 			random_owned_state = {
 				add_extra_state_shared_building_slots = 2		
 			}
-			add_to_variable = { GEA_Economic_political_power = -0.075 }
-			add_to_variable = { GEA_Economic_infrastructure_speed = 0.05 }
-			add_to_variable = { GEA_Economic_local_resources = 0.15 }
-			custom_effect_tooltip = GEA_Increase_the_intensity_of_land_acquisition_economic_modifier_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_Economic_modifier
+			}
+			add_to_variable = {
+				GEA_Economic_political_power = -0.075
+				tooltip = political_power_factor_tt
+			}
+			add_to_variable = {
+				GEA_Economic_infrastructure_speed = 0.05
+				tooltip = production_speed_infrastructure_factor_tt
+			}
+			add_to_variable = {
+				GEA_Economic_local_resources = 0.15
+				tooltip = local_resources_factor_tt
+			}
 		}
 	}
 	focus = { #以钢铁与混凝土重塑东方
@@ -6475,10 +6880,23 @@ focus_tree = {
 					instant_build = yes
 				}			
 			}
-			add_to_variable = { GEA_Economic_construction_speed	= 0.05 }
-			add_to_variable = { GEA_Economic_civilian_speed	= 0.05 }
-			add_to_variable = { GEA_Economic_industry_free_repair_factor = 0.15 }
-			custom_effect_tooltip = GEA_Reconstructing_the_East_with_Steel_and_Concrete_economic_modifier_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_Economic_modifier
+			}
+			add_to_variable = {
+				GEA_Economic_construction_speed = 0.05
+				tooltip = production_speed_buildings_factor_tt
+			}
+			add_to_variable = {
+				GEA_Economic_civilian_speed = 0.05
+				tooltip = production_speed_industrial_complex_factor_tt
+			}
+			add_to_variable = {
+				GEA_Economic_industry_free_repair_factor = 0.15
+				tooltip = industry_free_repair_factor_tt
+			}
 		}
 	}
 	focus = { #裁撤无用机构
@@ -6500,10 +6918,23 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Abolish_unnecessary_institutions"
 			add_political_power = 50
-			add_to_variable = { GEA_Economic_political_power = -0.03 }
-			add_to_variable = { GEA_Economic_efficiency_gain = 0.06 }
-			add_to_variable = { GEA_Economic_research_speed	= 0.02 }
-			custom_effect_tooltip = GEA_Abolish_unnecessary_institutions_economic_modifier_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_Economic_modifier
+			}
+			add_to_variable = {
+				GEA_Economic_political_power = -0.03
+				tooltip = political_power_factor_tt
+			}
+			add_to_variable = {
+				GEA_Economic_efficiency_gain = 0.06
+				tooltip = production_factory_efficiency_gain_factor_tt
+			}
+			add_to_variable = {
+				GEA_Economic_research_speed = 0.02
+				tooltip = research_speed_factor_tt
+			}
 		}
 	}
 	focus = { #德意志文化狂潮
@@ -6526,9 +6957,19 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_German_cultural_craze"
 			add_stability = 0.06
 			increase_ruling_party_popularity_by_5 = yes
-			add_to_variable = { GEA_Economic_civilian_speed	= 0.05 }
-			add_to_variable = { GEA_Economic_stability_weekly = 0.001 }
-			custom_effect_tooltip = GEA_The_German_cultural_craze_economic_modifier_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_Economic_modifier
+			}
+			add_to_variable = {
+				GEA_Economic_civilian_speed = 0.05
+				tooltip = production_speed_industrial_complex_factor_tt
+			}
+			add_to_variable = {
+				GEA_Economic_stability_weekly = 0.001
+				tooltip = stability_weekly_tooltip
+			}
 			hidden_effect = { country_event = { id = GEA.54 days = 7 } }
 		}
 	}
@@ -6716,10 +7157,23 @@ focus_tree = {
 					instant_build = yes
 				}			
 			}
-			add_to_variable = { GEA_Economic_production_speed_energy_infrastructure_factor = 0.15 }
-			add_to_variable = { GEA_Economic_building_slots = 0.10 }
-			add_to_variable = { GEA_Economic_construction_speed = 0.06 }
-			custom_effect_tooltip = GEA_Build_city_that_never_sleeps_economic_modifier_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_Economic_modifier
+			}
+			add_to_variable = {
+				GEA_Economic_production_speed_energy_infrastructure_factor = 0.15
+				tooltip = GEA_modifier_production_speed_energy_infrastructure_factor_tt
+			}
+			add_to_variable = {
+				GEA_Economic_building_slots = 0.10
+				tooltip = local_building_slots_factor_tooltip
+			}
+			add_to_variable = {
+				GEA_Economic_construction_speed = 0.06
+				tooltip = production_speed_buildings_factor_tt
+			}
 		}
 	}
 	focus = { #本土技术优先
@@ -6751,9 +7205,19 @@ focus_tree = {
 					category = electronics
 				}
 			}
-			add_to_variable = { GEA_Economic_radar_speed = 0.05 }
-			add_to_variable = { GEA_Economic_factory_energy_consumption = -0.1 }
-			custom_effect_tooltip = GEA_Introduce_local_technologies_economic_modifier_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_Economic_modifier
+			}
+			add_to_variable = {
+				GEA_Economic_radar_speed = 0.05
+				tooltip = production_speed_radar_station_factor_tt
+			}
+			add_to_variable = {
+				GEA_Economic_factory_energy_consumption = -0.1
+				tooltip = factory_energy_consumption_tt
+			}
 		}
 	}
 	focus = { #引进布朗-博韦里
@@ -6808,12 +7272,29 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Lorenz_brings_the_sounds_from_beyond"
 			increase_ruling_party_popularity_by_3 = yes
-			add_to_variable = { GEA_army_land_reinforce_rate = 0.08 }
-			add_to_variable = { GEA_army_combat_width_factor = -0.05 }
-			custom_effect_tooltip = GEA_Lorenz_brings_the_sounds_from_beyond_army_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_gea_army
+			}
+			add_to_variable = {
+				GEA_army_land_reinforce_rate = 0.08
+				tooltip = land_reinforce_rate_tooltip
+			}
+			add_to_variable = {
+				GEA_army_combat_width_factor = -0.05
+				tooltip = combat_width_factor_tooltip
+			}
 
-			add_to_variable = { GEA_Economic_research_speed = 0.06 }
-			custom_effect_tooltip = GEA_Lorenz_brings_the_sounds_from_beyond_economic_modifier_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_Economic_modifier
+			}
+			add_to_variable = {
+				GEA_Economic_research_speed = 0.06
+				tooltip = research_speed_factor_tt
+			}
 		}
 	}
 	focus = { #向未来更进一步
@@ -6857,10 +7338,23 @@ focus_tree = {
 				uses = 1
 				category = electronics
 			}
-			add_to_variable = { GEA_Economic_industry_repair_factor = 0.1 }
-			add_to_variable = { GEA_Economic_research_speed = 0.09 }
-			add_to_variable = { GEA_Economic_efficiency_gain = 0.04 }
-			custom_effect_tooltip = GEA_Move_further_towards_the_future_economic_modifier_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_Economic_modifier
+			}
+			add_to_variable = {
+				GEA_Economic_industry_repair_factor = 0.1
+				tooltip = industry_repair_factor_tt
+			}
+			add_to_variable = {
+				GEA_Economic_research_speed = 0.09
+				tooltip = research_speed_factor_tt
+			}
+			add_to_variable = {
+				GEA_Economic_efficiency_gain = 0.04
+				tooltip = production_factory_efficiency_gain_factor_tt
+			}
 		}
 	}
 	focus = { #注资德华银行
@@ -6887,10 +7381,23 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_inject_capital_into_Deutsche_Bank"
 			add_political_power = 30
-			add_to_variable = { GEA_Economic_political_power = 0.1 }
-			add_to_variable = { GEA_Economic_railway_speed = 0.03 }
-			add_to_variable = { GEA_Economic_consumer_goods = -0.05 }
-			custom_effect_tooltip = GEA_inject_capital_into_Deutsche_Bank_economic_modifier_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_Economic_modifier
+			}
+			add_to_variable = {
+				GEA_Economic_political_power = 0.1
+				tooltip = political_power_factor_tt
+			}
+			add_to_variable = {
+				GEA_Economic_railway_speed = 0.03
+				tooltip = production_speed_rail_way_factor_tt
+			}
+			add_to_variable = {
+				GEA_Economic_consumer_goods = -0.05
+				tooltip = consumer_goods_factor_tt
+			}
 		}
 	}
 	focus = { #放宽信贷
@@ -6913,9 +7420,19 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Relax_credit_conditions"
 			add_stability = -0.03
 			add_political_power = 40
-			add_to_variable = { GEA_Economic_consumer_goods = -0.1 }
-			add_to_variable = { GEA_Economic_political_power = 0.06 }
-			custom_effect_tooltip = GEA_Relax_credit_conditions_economic_modifier_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_Economic_modifier
+			}
+			add_to_variable = {
+				GEA_Economic_consumer_goods = -0.1
+				tooltip = consumer_goods_factor_tt
+			}
+			add_to_variable = {
+				GEA_Economic_political_power = 0.06
+				tooltip = political_power_factor_tt
+			}
 		}
 	}
 	focus = { #扩大银行券发行
@@ -6959,10 +7476,23 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Industrial_Credit_Committee"
 			add_political_power = 35
-			add_to_variable = { GEA_Economic_political_power = 0.04 }
-			add_to_variable = { GEA_Economic_building_slots = 0.08 }
-			add_to_variable = { GEA_Economic_efficiency_max = 0.09 }
-			custom_effect_tooltip = GEA_Industrial_Credit_Committee_economic_modifier_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_Economic_modifier
+			}
+			add_to_variable = {
+				GEA_Economic_political_power = 0.04
+				tooltip = political_power_factor_tt
+			}
+			add_to_variable = {
+				GEA_Economic_building_slots = 0.08
+				tooltip = local_building_slots_factor_tooltip
+			}
+			add_to_variable = {
+				GEA_Economic_efficiency_max = 0.09
+				tooltip = production_factory_max_efficiency_factor_tt
+			}
 		}
 	}
 	focus = { #加紧控制东方铁路网
@@ -7000,9 +7530,19 @@ focus_tree = {
 					}
 				}
 			}			
-			add_to_variable = { GEA_Economic_infrastructure_speed = 0.04 }
-			add_to_variable = { GEA_Economic_railway_speed = 0.11 }
-			custom_effect_tooltip = GEA_Tighten_control_of_the_eastern_railway_network_economic_modifier_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_Economic_modifier
+			}
+			add_to_variable = {
+				GEA_Economic_infrastructure_speed = 0.04
+				tooltip = production_speed_infrastructure_factor_tt
+			}
+			add_to_variable = {
+				GEA_Economic_railway_speed = 0.11
+				tooltip = production_speed_rail_way_factor_tt
+			}
 		}
 	}
 	focus = { #清算东亚不良资产
@@ -7129,10 +7669,23 @@ focus_tree = {
 					instant_build = yes
 				}			
 			}
-			add_to_variable = { GEA_Economic_civilian_speed = 0.12 }
-			add_to_variable = { GEA_Economic_consumer_goods = -0.06 }
-			add_to_variable = { GEA_Economic_stability_weekly = 0.003 }
-			custom_effect_tooltip = GEA_Provide_protection_for_local_enterprises_economic_modifier_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_Economic_modifier
+			}
+			add_to_variable = {
+				GEA_Economic_civilian_speed = 0.12
+				tooltip = production_speed_industrial_complex_factor_tt
+			}
+			add_to_variable = {
+				GEA_Economic_consumer_goods = -0.06
+				tooltip = consumer_goods_factor_tt
+			}
+			add_to_variable = {
+				GEA_Economic_stability_weekly = 0.003
+				tooltip = stability_weekly_tooltip
+			}
 		}
 	}
 	focus = { #落实企业法度
@@ -7154,10 +7707,23 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Implement_corporate_regulations"
 			add_political_power = 30
-			add_to_variable = { GEA_Economic_political_power = -0.03 }
-			add_to_variable = { GEA_Economic_monthly_population = 0.18 }
-			add_to_variable = { GEA_Economic_consumer_goods = -0.03 }
-			custom_effect_tooltip = GEA_Implement_corporate_regulations_economic_modifier_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_Economic_modifier
+			}
+			add_to_variable = {
+				GEA_Economic_political_power = -0.03
+				tooltip = political_power_factor_tt
+			}
+			add_to_variable = {
+				GEA_Economic_monthly_population = 0.18
+				tooltip = monthly_population_tt
+			}
+			add_to_variable = {
+				GEA_Economic_consumer_goods = -0.03
+				tooltip = consumer_goods_factor_tt
+			}
 		}
 	}
 	focus = { #减轻小微企业负担
@@ -7216,10 +7782,23 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Ordering_a_cartel"
 			add_stability = 0.04
 			add_political_power = 60
-			add_to_variable = { GEA_Economic_efficiency_gain = 0.15 }
-			add_to_variable = { GEA_Economic_consumer_goods = -0.05 }
-			add_to_variable = { GEA_Economic_efficiency_retention = -0.1 }
-			custom_effect_tooltip = GEA_Ordering_a_cartel_economic_modifier_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_Economic_modifier
+			}
+			add_to_variable = {
+				GEA_Economic_efficiency_gain = 0.15
+				tooltip = production_factory_efficiency_gain_factor_tt
+			}
+			add_to_variable = {
+				GEA_Economic_consumer_goods = -0.05
+				tooltip = consumer_goods_factor_tt
+			}
+			add_to_variable = {
+				GEA_Economic_efficiency_retention = -0.1
+				tooltip = line_change_production_efficiency_factor_tt
+			}
 		}
 	}
 	focus = { #为投资者作保
@@ -7257,8 +7836,15 @@ focus_tree = {
 					instant_build = yes
 				}			
 			}
-			add_to_variable = { GEA_Economic_consumer_goods = -0.11 }
-			custom_effect_tooltip = GEA_Guarantee_for_investors_economic_modifier_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_Economic_modifier
+			}
+			add_to_variable = {
+				GEA_Economic_consumer_goods = -0.11
+				tooltip = consumer_goods_factor_tt
+			}
 		}
 	}
 	focus = { #贸易时代
@@ -7280,10 +7866,23 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_Age_of_Trade"
 			increase_ruling_party_popularity_by_5 = yes
-			add_to_variable = { GEA_Economic_cic_construction_boost_factor = 0.15 }
-			add_to_variable = { GEA_Economic_trade_opinion_factor = 0.5 }
-			add_to_variable = { GEA_Economic_dockyard_output = 0.05 }
-			custom_effect_tooltip = GEA_The_Age_of_Trade_economic_modifier_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_Economic_modifier
+			}
+			add_to_variable = {
+				GEA_Economic_cic_construction_boost_factor = 0.15
+				tooltip = cic_construction_boost_factor_tt
+			}
+			add_to_variable = {
+				GEA_Economic_trade_opinion_factor = 0.5
+				tooltip = trade_opinion_factor_tt
+			}
+			add_to_variable = {
+				GEA_Economic_dockyard_output = 0.05
+				tooltip = industrial_capacity_dockyard_tt
+			}
 		}
 	}
 	focus = { #消费带来秩序
@@ -7305,11 +7904,27 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Consumption_brings_order"
 			add_stability = 0.08
-			add_to_variable = { GEA_Economic_consumer_goods_expected_value = 0.1 }
-			add_to_variable = { GEA_Economic_construction_speed = 0.13 }
-			add_to_variable = { GEA_Economic_stability_weekly = 0.002 }
-			add_to_variable = { GEA_Economic_infrastructure_speed = 0.1 }
-			custom_effect_tooltip = GEA_Consumption_brings_order_economic_modifier_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_Economic_modifier
+			}
+			add_to_variable = {
+				GEA_Economic_consumer_goods_expected_value = 0.1
+				tooltip = consumer_goods_expected_value_tooltip
+			}
+			add_to_variable = {
+				GEA_Economic_construction_speed = 0.13
+				tooltip = production_speed_buildings_factor_tt
+			}
+			add_to_variable = {
+				GEA_Economic_stability_weekly = 0.002
+				tooltip = stability_weekly_tooltip
+			}
+			add_to_variable = {
+				GEA_Economic_infrastructure_speed = 0.1
+				tooltip = production_speed_infrastructure_factor_tt
+			}
 		}
 	}
 	focus = { #中产阶级时代
@@ -7377,10 +7992,23 @@ focus_tree = {
 				add_extra_state_shared_building_slots = 1
 				increase_state_category_by_one_level = yes 		
 			}
-			add_to_variable = { GEA_Economic_efficiency_max = 0.05 }
-			add_to_variable = { GEA_Economic_efficiency_gain = 0.07 }
-			add_to_variable = { GEA_Economic_industry_free_repair_factor = 0.03 }
-			custom_effect_tooltip = GEA_The_era_of_the_middle_class_economic_modifier_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_Economic_modifier
+			}
+			add_to_variable = {
+				GEA_Economic_efficiency_max = 0.05
+				tooltip = production_factory_max_efficiency_factor_tt
+			}
+			add_to_variable = {
+				GEA_Economic_efficiency_gain = 0.07
+				tooltip = production_factory_efficiency_gain_factor_tt
+			}
+			add_to_variable = {
+				GEA_Economic_industry_free_repair_factor = 0.03
+				tooltip = industry_free_repair_factor_tt
+			}
 		}
 	}
 	focus = { #远东鲁尔
@@ -7409,9 +8037,19 @@ focus_tree = {
 					instant_build = yes
 				}				
 			}
-			add_to_variable = { GEA_Economic_building_slots = 0.12 }
-			add_to_variable = { GEA_Economic_efficiency_max = 0.03 }
-			custom_effect_tooltip = GEA_Far_East_Ruhr_economic_modifier_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_Economic_modifier
+			}
+			add_to_variable = {
+				GEA_Economic_building_slots = 0.12
+				tooltip = local_building_slots_factor_tooltip
+			}
+			add_to_variable = {
+				GEA_Economic_efficiency_max = 0.03
+				tooltip = production_factory_max_efficiency_factor_tt
+			}
 			country_event = {
 				id = GEA.1000
 				days = 2
@@ -7448,10 +8086,23 @@ focus_tree = {
 					amount = 25
 				}
 			}
-			add_to_variable = { GEA_Economic_infrastructure_speed = 0.04 }
-			add_to_variable = { GEA_Economic_lack_resource_penalty = -0.03 }
-			add_to_variable = { GEA_Economic_local_resources_steel_factor = 0.1 }
-			custom_effect_tooltip = GEA_The_Steel_City_economic_modifier_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_Economic_modifier
+			}
+			add_to_variable = {
+				GEA_Economic_infrastructure_speed = 0.04
+				tooltip = production_speed_infrastructure_factor_tt
+			}
+			add_to_variable = {
+				GEA_Economic_lack_resource_penalty = -0.03
+				tooltip = production_lack_of_resource_penalty_factor_tt
+			}
+			add_to_variable = {
+				GEA_Economic_local_resources_steel_factor = 0.1
+				tooltip = GEA_modifier_local_resources_steel_factor_tt
+			}
 		}
 	}
 	focus = { #全面掌控
@@ -7472,11 +8123,27 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Full_control"
-			add_to_variable = { GEA_Economic_stability = 0.04 }
-			add_to_variable = { GEA_Economic_political_power = 0.03 }
-			add_to_variable = { GEA_Economic_efficiency_retention = 0.05 }
-			add_to_variable = { GEA_Economic_monthly_population = 0.07 }
-			custom_effect_tooltip = GEA_Full_control_economic_modifier_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_Economic_modifier
+			}
+			add_to_variable = {
+				GEA_Economic_stability = 0.04
+				tooltip = stability_factor_tt
+			}
+			add_to_variable = {
+				GEA_Economic_political_power = 0.03
+				tooltip = political_power_factor_tt
+			}
+			add_to_variable = {
+				GEA_Economic_efficiency_retention = 0.05
+				tooltip = line_change_production_efficiency_factor_tt
+			}
+			add_to_variable = {
+				GEA_Economic_monthly_population = 0.07
+				tooltip = monthly_population_tt
+			}
 		}
 	}
 	focus = { #奏响高炉之曲
@@ -7521,9 +8188,19 @@ focus_tree = {
 					instant_build = yes
 				}			
 			}
-			add_to_variable = { GEA_Economic_political_power = -0.08 }
-			add_to_variable = { GEA_Economic_factory_output = 0.12 }
-			custom_effect_tooltip = GEA_Play_the_song_of_the_blast_furnace_economic_modifier_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_Economic_modifier
+			}
+			add_to_variable = {
+				GEA_Economic_political_power = -0.08
+				tooltip = political_power_factor_tt
+			}
+			add_to_variable = {
+				GEA_Economic_factory_output = 0.12
+				tooltip = industrial_capacity_factory_tt
+			}
 		}
 	}
 	focus = { #内外皆钢
@@ -7555,11 +8232,27 @@ focus_tree = {
 					instant_build = yes
 				}			
 			}
-			add_to_variable = { GEA_Economic_military_speed = 0.06 }
-			add_to_variable = { GEA_Economic_political_power = -0.02 }
-			add_to_variable = { GEA_Economic_factory_output = 0.07 }
-			add_to_variable = { GEA_Economic_industry_air_damage_factor = -0.1 }
-			custom_effect_tooltip = GEA_Iron_within_Iron_without_economic_modifier_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_Economic_modifier
+			}
+			add_to_variable = {
+				GEA_Economic_military_speed = 0.06
+				tooltip = production_speed_arms_factory_factor_tt
+			}
+			add_to_variable = {
+				GEA_Economic_political_power = -0.02
+				tooltip = political_power_factor_tt
+			}
+			add_to_variable = {
+				GEA_Economic_factory_output = 0.07
+				tooltip = industrial_capacity_factory_tt
+			}
+			add_to_variable = {
+				GEA_Economic_industry_air_damage_factor = -0.1
+				tooltip = industry_air_damage_factor_tt
+			}
 		}
 	}
 
@@ -7627,11 +8320,27 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Fear_and_Discipline"
-			custom_effect_tooltip = GEA_Fear_and_Discipline_tt
-			add_to_variable = { GEA_army_breakthrough_factor = 0.05 }
-			add_to_variable = { GEA_army_army_org_factor = 0.05 }
-			add_to_variable = { GEA_army_army_morale_factor = -0.10 }
-			add_to_variable = { GEA_army_attack_speed_factor = 0.10 }
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_gea_army
+			}
+			add_to_variable = {
+				GEA_army_breakthrough_factor = 0.05
+				tooltip = breakthrough_factor_tt
+			}
+			add_to_variable = {
+				GEA_army_army_org_factor = 0.05
+				tooltip = army_org_factor_tt
+			}
+			add_to_variable = {
+				GEA_army_army_morale_factor = -0.10
+				tooltip = army_morale_factor_tt
+			}
+			add_to_variable = {
+				GEA_army_attack_speed_factor = 0.10
+				tooltip = army_attack_speed_factor_tt
+			}
 		}
 	}
 	focus = { #改进武器设计
@@ -7675,10 +8384,23 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Wave_Defense"
-			custom_effect_tooltip = GEA_Wave_Defense_tt
-			add_to_variable = { GEA_army_defence_factor = 0.10 }
-			add_to_variable = { GEA_army_org_loss_when_moving = -0.40 }
-			add_to_variable = { GEA_army_experience_loss_factor = -0.08 }
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_gea_army
+			}
+			add_to_variable = {
+				GEA_army_defence_factor = 0.10
+				tooltip = army_defence_factor_tt
+			}
+			add_to_variable = {
+				GEA_army_org_loss_when_moving = -0.40
+				tooltip = org_loss_when_moving_tt
+			}
+			add_to_variable = {
+				GEA_army_experience_loss_factor = -0.08
+				tooltip = experience_loss_factor_tt
+			}
 		}
 	}
 	focus = { #驱策将死之人
@@ -8055,7 +8777,15 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Invitation_to_Hunters"
 			custom_effect_tooltip = GEA_Invitation_to_Hunters_tt
-			add_to_variable = { GEA_army_experience_loss_factor = -0.05 }
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_gea_army
+			}
+			add_to_variable = {
+				GEA_army_experience_loss_factor = -0.05
+				tooltip = experience_loss_factor_tt
+			}
 			army_experience = 40
 			hidden_effect = {
 				random_army_leader = {
@@ -8101,8 +8831,15 @@ focus_tree = {
 			unlock_decision_tooltip = GEA_Activate_liquid_incendiary_bombs
 			unlock_decision_tooltip = GEA_Activate_the_gas_bomb
 			unlock_decision_tooltip = GEA_Activate_Agent_Orange
-			custom_effect_tooltip = GEA_Eliminate_the_hiding_place_tt
-			add_to_variable = { GEA_army_bonus_air_superiority_factor = 0.10 }
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_gea_army
+			}
+			add_to_variable = {
+				GEA_army_bonus_air_superiority_factor = 0.10
+				tooltip = army_bonus_air_superiority_factor_tt
+			}
 		}
 	}
 	focus = { #自力更生
@@ -8192,8 +8929,15 @@ focus_tree = {
 			unlock_decision_tooltip = GEA_Enforcing_the_recruitment_of_soldiers
 			decrease_ruling_party_popularity_by_5 = yes
 			add_manpower = 30000
-			custom_effect_tooltip = GEA_Recruit_all_available_soldiers_tt
-			add_to_variable = { GEA_army_conscription_factor = 0.35 }
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_gea_army
+			}
+			add_to_variable = {
+				GEA_army_conscription_factor = 0.35
+				tooltip = conscription_factor_tt
+			}
 		}
 	}
 	focus = { #绝不重蹈覆辙
@@ -8336,10 +9080,20 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Ostasiatische_Heer"
-			custom_effect_tooltip = GEA_Ostasiatische_Heer_tt
 			army_experience = 50
-			add_to_variable = { GEA_army_command_power_gain_mult = 0.10 }
-			add_to_variable = { GEA_max_command_power = 30 }
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_gea_army
+			}
+			add_to_variable = {
+				GEA_army_command_power_gain_mult = 0.10
+				tooltip = command_power_gain_mult_tt
+			}
+			add_to_variable = {
+				GEA_max_command_power = 30
+				tooltip = max_command_power_tt
+			}
 			336 = {
 				construct_building_in_random_province = {
 					land_facility = 1 
@@ -8371,21 +9125,31 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_emergency_meeting"
-			custom_effect_tooltip = GEA_Ostasiatische_Heer_tt
 			add_doctrine_cost_reduction = {
 				cost_reduction = 0.5
 				uses = 1
 				category = land_doctrine
 			}
-			add_to_variable = { GEA_army_command_power_gain_mult = 0.10 }
-			add_to_variable = { GEA_max_command_power = 30 }
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_gea_army
+			}
+			add_to_variable = {
+				GEA_army_command_power_gain_mult = 0.10
+				tooltip = command_power_gain_mult_tt
+			}
+			add_to_variable = {
+				GEA_max_command_power = 30
+				tooltip = max_command_power_tt
+			}
 			336 = {
 				construct_building_in_random_province = {
 					land_facility = 1 
 				}
 			}
 			country_event = {
-				id = Ostasien.1002
+				id = GEA.1201
 				days = 1
 			}
 		}		
@@ -8499,9 +9263,19 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Rebuild_the_mobilization_system"
 			add_war_support = -0.05
 			add_manpower = 10000
-			add_to_variable = { GEA_army_conscription_factor = 0.1 }
-			add_to_variable = { GEA_army_mobilization_speed = 0.15 }
-			custom_effect_tooltip = GEA_Rebuild_the_mobilization_system_army_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_gea_army
+			}
+			add_to_variable = {
+				GEA_army_conscription_factor = 0.1
+				tooltip = conscription_factor_tt
+			}
+			add_to_variable = {
+				GEA_army_mobilization_speed = 0.15
+				tooltip = mobilization_speed_tt
+			}
 		}		
 	}
 	focus = {#阿勃维尔之城
@@ -8616,8 +9390,15 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Stauffenberg_s_strategy"
-			add_to_variable = { GEA_army_minimum_training_level = 0.1 }
-			custom_effect_tooltip = GEA_Stauffenberg_s_strategy_army_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_gea_army
+			}
+			add_to_variable = {
+				GEA_army_minimum_training_level = 0.1
+				tooltip = minimum_training_level_tt
+			}
 			add_mastery_bonus = {
 				name = GEA_Stauffenberg_s_strategy
 				bonus = 0.1
@@ -8678,11 +9459,27 @@ focus_tree = {
 		
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_riding_of_the_Valkyries"
-			add_to_variable = { GEA_army_armor_attack_factor = 0.1 }
-			add_to_variable = { GEA_army_armor_attack_factor = 0.1 }
-			add_to_variable = { GEA_army_motorized_attack_factor = 0.1 }
-			add_to_variable = { GEA_army_mechanized_attack_factor = 0.1 }
-			custom_effect_tooltip = GEA_The_riding_of_the_Valkyries_army_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_gea_army
+			}
+			add_to_variable = {
+				GEA_army_armor_attack_factor = 0.1
+				tooltip = army_armor_attack_factor_tt
+			}
+			add_to_variable = {
+				GEA_army_armor_attack_factor = 0.1
+				tooltip = army_armor_attack_factor_tt
+			}
+			add_to_variable = {
+				GEA_army_motorized_attack_factor = 0.1
+				tooltip = motorized_attack_factor_tt
+			}
+			add_to_variable = {
+				GEA_army_mechanized_attack_factor = 0.1
+				tooltip = mechanized_attack_factor_tt
+			}
 			
 		}	
 		search_filters = { FOCUS_FILTER_ARMY_BONUS }	
@@ -8731,10 +9528,23 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Emphasize_the_mobility_of_the_troops"
-			add_to_variable = { GEA_army_attack_speed_factor = 0.15 }
-			add_to_variable = { GEA_army_speed_factor = 0.1 }
-			add_to_variable = { GEA_army_breakthrough_factor = 0.1 }
-			custom_effect_tooltip = GEA_Emphasize_the_mobility_of_the_troops_army_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_gea_army
+			}
+			add_to_variable = {
+				GEA_army_attack_speed_factor = 0.15
+				tooltip = army_attack_speed_factor_tt
+			}
+			add_to_variable = {
+				GEA_army_speed_factor = 0.1
+				tooltip = army_speed_factor_tt
+			}
+			add_to_variable = {
+				GEA_army_breakthrough_factor = 0.1
+				tooltip = breakthrough_factor_tt
+			}
 		}		
 	}
 	focus = {#擦亮矛头
@@ -8781,10 +9591,23 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Sharpen_the_spearhead"
-			add_to_variable = { GEA_army_army_org_factor = 0.075 }
-			add_to_variable = { GEA_army_attack_factor = 0.05 }
-			add_to_variable = { GEA_army_breakthrough_factor = 0.05 }
-			custom_effect_tooltip = GEA_Sharpen_the_spearhead_army_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_gea_army
+			}
+			add_to_variable = {
+				GEA_army_army_org_factor = 0.075
+				tooltip = army_org_factor_tt
+			}
+			add_to_variable = {
+				GEA_army_attack_factor = 0.05
+				tooltip = army_attack_factor_tt
+			}
+			add_to_variable = {
+				GEA_army_breakthrough_factor = 0.05
+				tooltip = breakthrough_factor_tt
+			}
 		}		
 	}
 	focus = {#确保基层火力
@@ -8835,11 +9658,27 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Ensure_the_strength_at_the_grassroots_level"
 			add_war_support = 0.05
-			add_to_variable = { GEA_army_land_reinforce_rate = 0.05 }
-			add_to_variable = { GEA_army_experience_loss_factor = -0.05 }
-			add_to_variable = { GEA_army_infantry_attack_factor = 0.05 }
-			add_to_variable = { GEA_army_infantry_defence_factor = 0.05 }
-			custom_effect_tooltip = GEA_Ensure_the_strength_at_the_grassroots_level_army_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_gea_army
+			}
+			add_to_variable = {
+				GEA_army_land_reinforce_rate = 0.05
+				tooltip = land_reinforce_rate_tooltip
+			}
+			add_to_variable = {
+				GEA_army_experience_loss_factor = -0.05
+				tooltip = experience_loss_factor_tt
+			}
+			add_to_variable = {
+				GEA_army_infantry_attack_factor = 0.05
+				tooltip = army_infantry_attack_factor_tt
+			}
+			add_to_variable = {
+				GEA_army_infantry_defence_factor = 0.05
+				tooltip = army_infantry_defence_factor_tt
+			}
 		}		
 	}
 	focus = {#紧急装甲改造
@@ -8959,8 +9798,15 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Tresckow_s_brilliant_plan"
-			add_to_variable = { GEA_army_minimum_training_level = 0.1 }
-			custom_effect_tooltip = GEA_Tresckow_s_brilliant_plan_army_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_gea_army
+			}
+			add_to_variable = {
+				GEA_army_minimum_training_level = 0.1
+				tooltip = minimum_training_level_tt
+			}
 			add_mastery_bonus = {
 				name = EA_Tresckow_s_brilliant_plan
 				bonus = 0.1
@@ -9022,11 +9868,27 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Siloed_operations"
-			add_to_variable = { GEA_army_bonus_air_superiority_factor = 0.1 }
-			add_to_variable = { GEA_army_railway_gun_bombardment_factor = 0.1 }
-			add_to_variable = { GEA_air_cas_present_factor = 0.15 }
-			add_to_variable = { GEA_army_shore_bombardment_bonus = 0.25 }
-			custom_effect_tooltip = GEA_Siloed_operations_army_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_gea_army
+			}
+			add_to_variable = {
+				GEA_army_bonus_air_superiority_factor = 0.1
+				tooltip = army_bonus_air_superiority_factor_tt
+			}
+			add_to_variable = {
+				GEA_army_railway_gun_bombardment_factor = 0.1
+				tooltip = GEA_modifier_railway_gun_bombardment_factor_tt
+			}
+			add_to_variable = {
+				GEA_air_cas_present_factor = 0.15
+				tooltip = air_cas_present_factor_tt
+			}
+			add_to_variable = {
+				GEA_army_shore_bombardment_bonus = 0.25
+				tooltip = shore_bombardment_bonus_tt
+			}
 		}		
 	}
 	focus = {#精简编制
@@ -9075,8 +9937,15 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Streamline_the_organization_structure"
 			army_experience = 40
 			add_ideas = GEA_Flexible_organization_idea
-			add_to_variable = { GEA_army_combat_width_factor = -0.15 }
-			custom_effect_tooltip = GEA_Streamline_the_organization_structure_army_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_gea_army
+			}
+			add_to_variable = {
+				GEA_army_combat_width_factor = -0.15
+				tooltip = combat_width_factor_tooltip
+			}
 		}		
 	}
 	focus = {#深入恶土
@@ -9127,9 +9996,19 @@ focus_tree = {
 			hidden_effect = {
 				set_technology = { GEA_adverse_terrain_warfare_tech = 1 }
 			}
-			add_to_variable = { GEA_army_terrain_penalty_reduction = 0.1 }
-			add_to_variable = { GEA_army_acclimatization_hot_climate_gain_factor = 0.1 }
-			custom_effect_tooltip = GEA_deep_into_the_earth_army_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_gea_army
+			}
+			add_to_variable = {
+				GEA_army_terrain_penalty_reduction = 0.1
+				tooltip = terrain_penalty_reduction_tooltip
+			}
+			add_to_variable = {
+				GEA_army_acclimatization_hot_climate_gain_factor = 0.1
+				tooltip = acclimatization_hot_climate_gain_factor_tt
+			}
 		}		
 	}
 	focus = {#坚守补给线
@@ -9179,10 +10058,23 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Maintain_the_supply_line"
-			add_to_variable = { GEA_army_defence_factor = 0.15 }
-			add_to_variable = { GEA_army_supply_node_range = 0.25 }
-			add_to_variable = { GEA_army_supply_consumption_factor = -0.05 }
-			custom_effect_tooltip = GEA_Maintain_the_supply_line_army_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_gea_army
+			}
+			add_to_variable = {
+				GEA_army_defence_factor = 0.15
+				tooltip = army_defence_factor_tt
+			}
+			add_to_variable = {
+				GEA_army_supply_node_range = 0.25
+				tooltip = supply_node_range_tt
+			}
+			add_to_variable = {
+				GEA_army_supply_consumption_factor = -0.05
+				tooltip = supply_consumption_factor_tt
+			}
 		}		
 	}
 	focus = {#依赖装甲火炮
@@ -9294,10 +10186,23 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Full_firepower_readiness"
-			add_to_variable = { GEA_army_attack_factor = 0.05 }
-			add_to_variable = { GEA_army_artillery_attack_factor = 0.2 }
-			add_to_variable = { GEA_army_railway_gun_bombardment_factor = 0.1 }
-			custom_effect_tooltip = GEA_Full_firepower_readiness_army_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_gea_army
+			}
+			add_to_variable = {
+				GEA_army_attack_factor = 0.05
+				tooltip = army_attack_factor_tt
+			}
+			add_to_variable = {
+				GEA_army_artillery_attack_factor = 0.2
+				tooltip = army_artillery_attack_factor_tt
+			}
+			add_to_variable = {
+				GEA_army_railway_gun_bombardment_factor = 0.1
+				tooltip = GEA_modifier_railway_gun_bombardment_factor_tt
+			}
 		}		
 	}
 	focus = {#破阵穆勒的传承
@@ -9351,10 +10256,23 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Durchbruchmuller_Legacy"
-			add_to_variable = { GEA_army_breakthrough_factor = 0.05 }
-			add_to_variable = { GEA_army_land_reinforce_rate = 0.05 }
-			add_to_variable = { GEA_army_artillery_attack_factor = 0.10 }
-			custom_effect_tooltip = GEA_Durchbruchmuller_Legacy_army_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_gea_army
+			}
+			add_to_variable = {
+				GEA_army_breakthrough_factor = 0.05
+				tooltip = breakthrough_factor_tt
+			}
+			add_to_variable = {
+				GEA_army_land_reinforce_rate = 0.05
+				tooltip = land_reinforce_rate_tooltip
+			}
+			add_to_variable = {
+				GEA_army_artillery_attack_factor = 0.10
+				tooltip = army_artillery_attack_factor_tt
+			}
 		}		
 	}
 	focus = {#灵活组织
@@ -9408,9 +10326,19 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Flexible_organization"
-			add_to_variable = { GEA_army_army_morale_factor = 0.15 }
-			add_to_variable = { GEA_army_combat_width_factor = -0.05 }
-			custom_effect_tooltip = GEA_Flexible_organization_army_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_gea_army
+			}
+			add_to_variable = {
+				GEA_army_army_morale_factor = 0.15
+				tooltip = army_morale_factor_tt
+			}
+			add_to_variable = {
+				GEA_army_combat_width_factor = -0.05
+				tooltip = combat_width_factor_tooltip
+			}
 		}		
 	}
 	focus = {#战斗群至上
@@ -9467,10 +10395,23 @@ focus_tree = {
 				days = 365
 				track = armor
 			}
-			add_to_variable = { GEA_army_army_org_factor = 0.1 }
-			add_to_variable = { GEA_army_org_loss_when_moving = -0.15 }
-			add_to_variable = { GEA_army_land_reinforce_rate = 0.05 }
-			custom_effect_tooltip = GEA_Battle_group_supremacy_army_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_gea_army
+			}
+			add_to_variable = {
+				GEA_army_army_org_factor = 0.1
+				tooltip = army_org_factor_tt
+			}
+			add_to_variable = {
+				GEA_army_org_loss_when_moving = -0.15
+				tooltip = org_loss_when_moving_tt
+			}
+			add_to_variable = {
+				GEA_army_land_reinforce_rate = 0.05
+				tooltip = land_reinforce_rate_tooltip
+			}
 		}		
 	}
 	focus = {#侦察猎兵无所不知
@@ -9524,9 +10465,19 @@ focus_tree = {
 				}
 			}
 			custom_effect_tooltip = improved_recon_units_tech1_effect
-			add_to_variable = { GEA_army_recon_factor = 0.15 }
-			add_to_variable = {GEA_army_special_forces_cap = 0.1 }
-			custom_effect_tooltip = GEA_The_reconnaissance_scouts_are_all-knowing_army_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_gea_army
+			}
+			add_to_variable = {
+				GEA_army_recon_factor = 0.15
+				tooltip = recon_factor_tt
+			}
+			add_to_variable = {
+				GEA_army_special_forces_cap = 0.1
+				tooltip = special_forces_cap_tt
+			}
 		}		
 	}
 	focus = {#革新武备
@@ -9651,10 +10602,23 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_Valkyrie_brandished_her_sharp_sword"
 			add_war_support = 0.1
-			add_to_variable = { GEA_army_conscription_factor = 0.15 }
-			add_to_variable = { GEA_army_experience_gain_army = 0.1 }
-			add_to_variable = { GEA_army_training_time_army_factor = -0.05 }
-			custom_effect_tooltip = GEA_The_Valkyrie_brandished_her_sharp_sword_army_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_gea_army
+			}
+			add_to_variable = {
+				GEA_army_conscription_factor = 0.15
+				tooltip = conscription_factor_tt
+			}
+			add_to_variable = {
+				GEA_army_experience_gain_army = 0.1
+				tooltip = experience_gain_army_tt
+			}
+			add_to_variable = {
+				GEA_army_training_time_army_factor = -0.05
+				tooltip = training_time_army_factor_tooltip
+			}
 		}		
 	}
 	focus = {#谋定而后动
@@ -9701,8 +10665,15 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_planning_before_taking_action"
-			add_to_variable = { GEA_army_max_planning = 0.05 }
-			custom_effect_tooltip = GEA_planning_before_taking_action_army_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_gea_army
+			}
+			add_to_variable = {
+				GEA_army_max_planning = 0.05
+				tooltip = GEA_modifier_max_planning_tt
+			}
 			add_mastery_bonus = {
 				name = GEA_Stauffenberg_s_strategy
 				bonus = 0.1
@@ -9816,11 +10787,27 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_A_well-organized_chain_of_command"
-			add_to_variable = { GEA_army_army_org_factor = 0.05 }
-			add_to_variable = { GEA_army_command_power_gain_mult = 0.1 }
-			add_to_variable = { GEA_army_land_reinforce_rate = 0.1 }
-			add_to_variable = { GEA_army_conscription = 0.005 }
-			custom_effect_tooltip = GEA_A_well-organized_chain_of_command_army_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_gea_army
+			}
+			add_to_variable = {
+				GEA_army_army_org_factor = 0.05
+				tooltip = army_org_factor_tt
+			}
+			add_to_variable = {
+				GEA_army_command_power_gain_mult = 0.1
+				tooltip = command_power_gain_mult_tt
+			}
+			add_to_variable = {
+				GEA_army_land_reinforce_rate = 0.1
+				tooltip = land_reinforce_rate_tooltip
+			}
+			add_to_variable = {
+				GEA_army_conscription = 0.005
+				tooltip = conscription_tt
+			}
 		}		
 	}
 	focus = {#人人恪尽职守
@@ -9867,10 +10854,23 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Everyone_fulfills_their_duties_conscientiously"
-			add_to_variable = { GEA_army_max_planning = 0.05 }
-			add_to_variable = { GEA_army_planning_speed = 0.1 }
-			add_to_variable = { GEA_army_strength_factor = 0.1 }
-			custom_effect_tooltip = GEA_Everyone_fulfills_their_duties_conscientiously_army_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_gea_army
+			}
+			add_to_variable = {
+				GEA_army_max_planning = 0.05
+				tooltip = GEA_modifier_max_planning_tt
+			}
+			add_to_variable = {
+				GEA_army_planning_speed = 0.1
+				tooltip = GEA_modifier_planning_speed_tt
+			}
+			add_to_variable = {
+				GEA_army_strength_factor = 0.1
+				tooltip = GEA_modifier_army_strength_factor_tt
+			}
 		}		
 	}
 	focus = {#改组总参谋部
@@ -9919,10 +10919,23 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Reorganize_the_General_Staff_Department"
 			add_political_power = 40
 			add_command_power = 50
-			add_to_variable = { GEA_max_command_power = 60 }
-			add_to_variable = { GEA_army_command_power_gain_mult = 0.15 }
-			add_to_variable = { GEA_army_military_leader_cost_factor = -0.2 }
-			custom_effect_tooltip = GEA_Reorganize_the_General_Staff_Department_army_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_gea_army
+			}
+			add_to_variable = {
+				GEA_max_command_power = 60
+				tooltip = max_command_power_tt
+			}
+			add_to_variable = {
+				GEA_army_command_power_gain_mult = 0.15
+				tooltip = command_power_gain_mult_tt
+			}
+			add_to_variable = {
+				GEA_army_military_leader_cost_factor = -0.2
+				tooltip = military_leader_cost_factor_tt
+			}
 		}		
 	}
 	focus = {#协调宽大战线
@@ -10017,9 +11030,19 @@ focus_tree = {
 					}
 				}
 			}
-			add_to_variable = { GEA_army_attack_speed_factor = 0.15 }
-			add_to_variable = { GEA_army_combat_width_factor = -0.3 }
-			custom_effect_tooltip = GEA_Coordinate_the_broad_front_of_the_conflict_army_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_gea_army
+			}
+			add_to_variable = {
+				GEA_army_attack_speed_factor = 0.15
+				tooltip = army_attack_speed_factor_tt
+			}
+			add_to_variable = {
+				GEA_army_combat_width_factor = -0.3
+				tooltip = combat_width_factor_tooltip
+			}
 		}		
 	}
 	focus = {#谨慎计划，大胆突破
@@ -10069,11 +11092,27 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Carefully_plan_boldly_innovate"
-			add_to_variable = { GEA_army_breakthrough_factor = 0.10 }
-			add_to_variable = { GEA_army_planning_speed = -0.15 }
-			add_to_variable = { GEA_army_max_planning = 0.15 }
-			add_to_variable = { GEA_army_experience_loss_factor = -0.1 }
-			custom_effect_tooltip = GEA_Carefully_plan_boldly_innovate_army_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_gea_army
+			}
+			add_to_variable = {
+				GEA_army_breakthrough_factor = 0.10
+				tooltip = breakthrough_factor_tt
+			}
+			add_to_variable = {
+				GEA_army_planning_speed = -0.15
+				tooltip = GEA_modifier_planning_speed_tt
+			}
+			add_to_variable = {
+				GEA_army_max_planning = 0.15
+				tooltip = GEA_modifier_max_planning_tt
+			}
+			add_to_variable = {
+				GEA_army_experience_loss_factor = -0.1
+				tooltip = experience_loss_factor_tt
+			}
 		}		
 	}
 	focus = {#意志的胜利
@@ -10120,8 +11159,15 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_victory_of_willpower"
-			add_to_variable = { GEA_army_army_org_factor = 0.1 }
-			custom_effect_tooltip = GEA_The_victory_of_willpower_army_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_gea_army
+			}
+			add_to_variable = {
+				GEA_army_army_org_factor = 0.1
+				tooltip = army_org_factor_tt
+			}
 			add_mastery_bonus = {
 				name = GEA_Stauffenberg_s_strategy
 				bonus = 0.1
@@ -10183,10 +11229,23 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Push_forward_at_all_costs"
-			add_to_variable = { GEA_army_attack_factor = 0.05 }
-			add_to_variable = { GEA_army_infantry_attack_factor = 0.1 }
-			add_to_variable = { GEA_army_infantry_defence_factor = 0.1 }
-			custom_effect_tooltip = GEA_Push_forward_at_all_costs_army_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_gea_army
+			}
+			add_to_variable = {
+				GEA_army_attack_factor = 0.05
+				tooltip = army_attack_factor_tt
+			}
+			add_to_variable = {
+				GEA_army_infantry_attack_factor = 0.1
+				tooltip = army_infantry_attack_factor_tt
+			}
+			add_to_variable = {
+				GEA_army_infantry_defence_factor = 0.1
+				tooltip = army_infantry_defence_factor_tt
+			}
 		}		
 	}
 	focus = {#猎兵破袭
@@ -10233,10 +11292,23 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Hunter_Raid"
-			add_to_variable = { GEA_army_infantry_attack_factor = 0.05 }
-			add_to_variable = { GEA_army_special_forces_attack_factor = 0.15 }
-			add_to_variable = { GEA_army_special_forces_defence_factor = 0.15 }
-			custom_effect_tooltip = GEA_Hunter_Raid_army_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_gea_army
+			}
+			add_to_variable = {
+				GEA_army_infantry_attack_factor = 0.05
+				tooltip = army_infantry_attack_factor_tt
+			}
+			add_to_variable = {
+				GEA_army_special_forces_attack_factor = 0.15
+				tooltip = special_forces_attack_factor_tt
+			}
+			add_to_variable = {
+				GEA_army_special_forces_defence_factor = 0.15
+				tooltip = special_forces_defence_factor_tt
+			}
 		}		
 	}
 	focus = {#后退即怯懦，怯懦即死亡
@@ -10284,11 +11356,27 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Retreating_means_cowardice_and_cowardice_means_death"
 			add_war_support = 0.15
-			add_to_variable = { GEA_army_initiative_factor = 0.15 }
-			add_to_variable = { GEA_army_breakthrough_factor = 0.2 }
-			add_to_variable = { GEA_army_attrition = -0.1 }
-			add_to_variable = { GEA_army_army_morale_factor = -0.1 }
-			custom_effect_tooltip = GEA_Retreating_means_cowardice_and_cowardice_means_death_army_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_gea_army
+			}
+			add_to_variable = {
+				GEA_army_initiative_factor = 0.15
+				tooltip = initiative_factor_tt
+			}
+			add_to_variable = {
+				GEA_army_breakthrough_factor = 0.2
+				tooltip = breakthrough_factor_tt
+			}
+			add_to_variable = {
+				GEA_army_attrition = -0.1
+				tooltip = attrition_tt
+			}
+			add_to_variable = {
+				GEA_army_army_morale_factor = -0.1
+				tooltip = army_morale_factor_tt
+			}
 		}		
 	}
 	focus = {#世界帝国的最后一道防线
@@ -10338,10 +11426,23 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_last_line_of_defense_of_the_world_empire"
-			add_to_variable = { GEA_army_conscription_factor = 0.15 }
-			add_to_variable = { GEA_army_max_dig_in_factor = 0.2 }
-			add_to_variable = { GEA_army_training_time_army_factor = -0.15 }
-			custom_effect_tooltip = GEA_The_last_line_of_defense_of_the_world_empire_army_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_gea_army
+			}
+			add_to_variable = {
+				GEA_army_conscription_factor = 0.15
+				tooltip = conscription_factor_tt
+			}
+			add_to_variable = {
+				GEA_army_max_dig_in_factor = 0.2
+				tooltip = max_dig_in_factor_tt
+			}
+			add_to_variable = {
+				GEA_army_training_time_army_factor = -0.15
+				tooltip = training_time_army_factor_tooltip
+			}
 		}		
 	}
 	focus = {#舍尔纳的秘密部队
@@ -10388,9 +11489,19 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Schorner_secret_forces"
-			add_to_variable = { GEA_army_special_forces_attack_factor = 0.1 }
-			add_to_variable = { GEA_army_special_forces_cap = 0.1 }
-			custom_effect_tooltip = GEA_Schorner_secret_forces_army_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_gea_army
+			}
+			add_to_variable = {
+				GEA_army_special_forces_attack_factor = 0.1
+				tooltip = special_forces_attack_factor_tt
+			}
+			add_to_variable = {
+				GEA_army_special_forces_cap = 0.1
+				tooltip = special_forces_cap_tt
+			}
 		}		
 	}
 	focus = {#人人服役，效力至死
@@ -10414,9 +11525,19 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Everyone_serves_until_death"
 			add_manpower = 20000
-			add_to_variable = { GEA_army_conscription_factor = 0.2 }
-			add_to_variable = { GEA_army_mobilization_speed = 0.3 }
-			custom_effect_tooltip = GEA_Everyone_serves_until_death_army_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_gea_army
+			}
+			add_to_variable = {
+				GEA_army_conscription_factor = 0.2
+				tooltip = conscription_factor_tt
+			}
+			add_to_variable = {
+				GEA_army_mobilization_speed = 0.3
+				tooltip = mobilization_speed_tt
+			}
 		}		
 	}
 	focus = {#实践弹性防御战术
@@ -10470,10 +11591,23 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Implement_flexible_defense_tactics"
-			add_to_variable = { GEA_army_army_org_factor = 0.05 }
-			add_to_variable = { GEA_army_army_morale_factor = 0.1 }
-			add_to_variable = { GEA_army_dig_in_speed_factor = 0.5 }
-			custom_effect_tooltip = GEA_Implement_flexible_defense_tactics_army_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_gea_army
+			}
+			add_to_variable = {
+				GEA_army_army_org_factor = 0.05
+				tooltip = army_org_factor_tt
+			}
+			add_to_variable = {
+				GEA_army_army_morale_factor = 0.1
+				tooltip = army_morale_factor_tt
+			}
+			add_to_variable = {
+				GEA_army_dig_in_speed_factor = 0.5
+				tooltip = dig_in_speed_factor_tt
+			}
 		}		
 	}
 	focus = {#发扬胡蒂尔战术
@@ -10527,8 +11661,15 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Carry_forward_the_Hutier_tactic"
-			add_to_variable = { GEA_army_unit_sturmtruppe_battalion_design_cost_factor = -1 }
-			custom_effect_tooltip = GEA_Carry_forward_the_Hutier_tactic_army_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_gea_army
+			}
+			add_to_variable = {
+				GEA_army_unit_sturmtruppe_battalion_design_cost_factor = -1
+				tooltip = GEA_modifier_unit_sturmtruppe_battalion_design_cost_factor_tt
+			}
 			custom_effect_tooltip = GEA_unlock_sturmtruppe_battalion_tt
 			custom_effect_tooltip = GEA_hutier_tactics_tech_effect
 			hidden_effect = {
@@ -10591,10 +11732,23 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Command_supremacy"
-			add_to_variable = { GEA_army_command_power_gain_mult = 0.2 }
-			add_to_variable = { GEA_army_initiative_factor = 0.1 }
-			add_to_variable = { GEA_army_strength_factor = 0.05 }
-			custom_effect_tooltip = GEA_Command_supremacy_army_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_gea_army
+			}
+			add_to_variable = {
+				GEA_army_command_power_gain_mult = 0.2
+				tooltip = command_power_gain_mult_tt
+			}
+			add_to_variable = {
+				GEA_army_initiative_factor = 0.1
+				tooltip = initiative_factor_tt
+			}
+			add_to_variable = {
+				GEA_army_strength_factor = 0.05
+				tooltip = GEA_modifier_army_strength_factor_tt
+			}
 		}		
 	}
 	focus = {#滚滚洪流
@@ -10809,8 +11963,15 @@ focus_tree = {
 				uses = 1
 				category = land_doctrine
 			}
-			add_to_variable = { GEA_army_coordination_bonus = 0.05 }
-			custom_effect_tooltip = GEA_Play_the_symphony_of_war_army_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_gea_army
+			}
+			add_to_variable = {
+				GEA_army_coordination_bonus = 0.05
+				tooltip = coordination_bonus_tt
+			}
 		}		
 	}
 	focus = {#新时代的军事艺术
@@ -10868,10 +12029,23 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_military_art_of_the_new_era"
-			add_to_variable = { GEA_army_max_planning = 0.05 }
-			add_to_variable = { GEA_army_planning_speed = 0.05 }
-			add_to_variable = { GEA_army_experience_gain_army = 0.2 }
-			custom_effect_tooltip = GEA_The_military_art_of_the_new_era_army_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_gea_army
+			}
+			add_to_variable = {
+				GEA_army_max_planning = 0.05
+				tooltip = GEA_modifier_max_planning_tt
+			}
+			add_to_variable = {
+				GEA_army_planning_speed = 0.05
+				tooltip = GEA_modifier_planning_speed_tt
+			}
+			add_to_variable = {
+				GEA_army_experience_gain_army = 0.2
+				tooltip = experience_gain_army_tt
+			}
 		}		
 	}
 	### 海军线 ###
@@ -11047,9 +12221,19 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Alfred_Mahan_s_teachings"
 			navy_experience = 50
-			add_to_variable = { GEA_navy_naval_coordination = 0.05 }
-			add_to_variable = { GEA_navy_positioning = 0.05 }
-			custom_effect_tooltip = GEA_Alfred_Mahan_s_teachings_navy_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_admirality
+			}
+			add_to_variable = {
+				GEA_navy_naval_coordination = 0.05
+				tooltip = naval_coordination_tt
+			}
+			add_to_variable = {
+				GEA_navy_positioning = 0.05
+				tooltip = positioning_tt
+			}
 		}
 		search_filters = { FOCUS_FILTER_NAVY_BONUS }
 	}
@@ -11070,10 +12254,23 @@ focus_tree = {
 		relative_position_id = GEA_Alfred_Mahan_s_teachings
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Protecting_the_World_Airways_Route"
-			add_to_variable = { GEA_navy_convoy_escort_efficiency = 0.1 }
-			add_to_variable = { GEA_navy_invasion_preparation = -0.05 }
-			add_to_variable = { GEA_navy_production_speed_naval_base_factor = 0.05 }
-			custom_effect_tooltip = GEA_Protecting_the_World_Airways_Route_navy_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_admirality
+			}
+			add_to_variable = {
+				GEA_navy_convoy_escort_efficiency = 0.1
+				tooltip = convoy_escort_efficiency_tt
+			}
+			add_to_variable = {
+				GEA_navy_invasion_preparation = -0.05
+				tooltip = invasion_preparation_tooltip
+			}
+			add_to_variable = {
+				GEA_navy_production_speed_naval_base_factor = 0.05
+				tooltip = production_speed_naval_base_factor_tt
+			}
 		}
 		search_filters = { FOCUS_FILTER_NAVY_BONUS }
 	}
@@ -11179,8 +12376,15 @@ focus_tree = {
 		relative_position_id = GEA_Set_sail_and_sail_far
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Eastern_Ocean_Fleet"
-			add_to_variable = { GEA_navy_navy_capital_ship_attack_factor = 0.05 }
-			custom_effect_tooltip = GEA_Eastern_Ocean_Fleet_navy_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_admirality
+			}
+			add_to_variable = {
+				GEA_navy_navy_capital_ship_attack_factor = 0.05
+				tooltip = navy_capital_ship_attack_factor_tooltip
+			}
 			add_tech_bonus = {
 				category = bb_tech
 				uses = 1
@@ -11252,8 +12456,15 @@ focus_tree = {
 		relative_position_id = GEA_Eastern_Ocean_Fleet
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Tear_apart_the_seabirds"
-			add_to_variable = { GEA_navy_navy_anti_air_attack_factor = 0.1 }
-			custom_effect_tooltip = GEA_Tear_apart_the_seabirds_navy_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_admirality
+			}
+			add_to_variable = {
+				GEA_navy_navy_anti_air_attack_factor = 0.1
+				tooltip = navy_anti_air_attack_factor_tt
+			}
 			add_tech_bonus = {
 				category = cat_anti_air
 				uses = 1
@@ -11286,8 +12497,15 @@ focus_tree = {
 		relative_position_id = GEA_Eastern_Ocean_Fleet
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Ocean_Fortress"
-			add_to_variable = { GEA_navy_navy_capital_ship_defence_factor = 0.1 }
-			custom_effect_tooltip = GEA_Ocean_Fortress_navy_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_admirality
+			}
+			add_to_variable = {
+				GEA_navy_navy_capital_ship_defence_factor = 0.1
+				tooltip = navy_capital_ship_defence_factor_tt
+			}
 			add_unit_bonus = {
 				battleship = {
 					max_organisation = 10
@@ -11326,8 +12544,15 @@ focus_tree = {
 		relative_position_id = GEA_Eastern_Ocean_Fleet
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Imperial_Cannons"
-			add_to_variable = { GEA_navy_naval_damage_factor = 0.05 }
-			custom_effect_tooltip = GEA_Imperial_Cannons_navy_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_admirality
+			}
+			add_to_variable = {
+				GEA_navy_naval_damage_factor = 0.05
+				tooltip = naval_damage_factor_tt
+			}
 			if = {
 				limit = {
 					has_dlc_mtg = yes
@@ -11378,9 +12603,19 @@ focus_tree = {
 		relative_position_id = GEA_Imperial_Cannons
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_IPreparatory_Fleet_Battle"
-			add_to_variable = { GEA_navy_navy_capital_ship_attack_factor = 0.1 }
-			add_to_variable = { GEA_navy_positioning = 0.05 }
-			custom_effect_tooltip = GEA_IPreparatory_Fleet_Battle_navy_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_admirality
+			}
+			add_to_variable = {
+				GEA_navy_navy_capital_ship_attack_factor = 0.1
+				tooltip = navy_capital_ship_attack_factor_tooltip
+			}
+			add_to_variable = {
+				GEA_navy_positioning = 0.05
+				tooltip = positioning_tt
+			}
 			add_daily_mastery = {
 				amount = 0.25
 				days = 365
@@ -11419,10 +12654,23 @@ focus_tree = {
 		relative_position_id = GEA_IPreparatory_Fleet_Battle
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Hell_Strike"
-			add_to_variable = { GEA_navy_shore_bombardment_bonus = 0.15 }
-			add_to_variable = { GEA_navy_naval_damage_factor = 0.05 }
-			add_to_variable = { GEA_navy_naval_critical_score_chance_factor = 0.10 }
-			custom_effect_tooltip = GEA_Hell_Strike_navy_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_admirality
+			}
+			add_to_variable = {
+				GEA_navy_shore_bombardment_bonus = 0.15
+				tooltip = shore_bombardment_bonus_tt
+			}
+			add_to_variable = {
+				GEA_navy_naval_damage_factor = 0.05
+				tooltip = naval_damage_factor_tt
+			}
+			add_to_variable = {
+				GEA_navy_naval_critical_score_chance_factor = 0.10
+				tooltip = naval_critical_score_chance_factor_tt
+			}
 		}
 		search_filters = { FOCUS_FILTER_NAVY_BONUS }
 	}
@@ -11453,9 +12701,19 @@ focus_tree = {
 		relative_position_id = GEA_IPreparatory_Fleet_Battle
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_High_speed_equals_truth"
-			add_to_variable = { GEA_navy_naval_speed_factor = 0.10 }
-			add_to_variable = { GEA_navy_naval_retreat_chance = 0.05 }
-			custom_effect_tooltip = GEA_High_speed_equals_truth_navy_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_admirality
+			}
+			add_to_variable = {
+				GEA_navy_naval_speed_factor = 0.10
+				tooltip = naval_speed_factor_tooltip
+			}
+			add_to_variable = {
+				GEA_navy_naval_retreat_chance = 0.05
+				tooltip = naval_retreat_chance_tooltip
+			}
 			add_unit_bonus = {
 				battleship = {
 					naval_speed = 0.1
@@ -11491,8 +12749,15 @@ focus_tree = {
 		relative_position_id = GEA_Improve_the_old_hull
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Anti-submarine_warfare"
-			add_to_variable = { GEA_navy_spotting_chance = 0.05 }
-			custom_effect_tooltip = GEA_Anti-submarine_warfare_navy_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_admirality
+			}
+			add_to_variable = {
+				GEA_navy_spotting_chance = 0.05
+				tooltip = spotting_chance_tt
+			}
 			add_equipment_bonus = {
 				name = GEA_Anti-submarine_warfare
 				bonus = {
@@ -11529,9 +12794,19 @@ focus_tree = {
 		relative_position_id = GEA_Tear_apart_the_seabirds
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Precision_strike"
-			add_to_variable = { GEA_navy_naval_heavy_gun_hit_chance_factor = 0.1 }
-			add_to_variable = { GEA_navy_naval_hit_chance = 0.1 }
-			custom_effect_tooltip = GEA_Precision_strike_navy_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_admirality
+			}
+			add_to_variable = {
+				GEA_navy_naval_heavy_gun_hit_chance_factor = 0.1
+				tooltip = naval_heavy_gun_hit_chance_factor_tt
+			}
+			add_to_variable = {
+				GEA_navy_naval_hit_chance = 0.1
+				tooltip = naval_hit_chance_tt
+			}
 		}
 		search_filters = { FOCUS_FILTER_NAVY_BONUS }
 	}
@@ -11562,8 +12837,15 @@ focus_tree = {
 		relative_position_id = GEA_Set_sail_and_sail_far
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Ocean_Falcon"
-			add_to_variable = { GEA_navy_carrier_traffic = 0.1 }
-			custom_effect_tooltip = GEA_Ocean_Falcon_navy_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_admirality
+			}
+			add_to_variable = {
+				GEA_navy_carrier_traffic = 0.1
+				tooltip = GEA_navy_carrier_traffic_tt
+			}
 			add_unit_bonus = {
 				carrier = {
 					max_organisation = 10
@@ -11609,9 +12891,19 @@ focus_tree = {
 		relative_position_id = GEA_Ocean_Falcon
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Focus_on_the_escort_fleet"
-			add_to_variable = { GEA_navy_navy_screen_defence_factor = 0.05 }
-			add_to_variable = { GEA_navy_screening_efficiency = 0.05 }
-			custom_effect_tooltip = GEA_Focus_on_the_escort_fleet_navy_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_admirality
+			}
+			add_to_variable = {
+				GEA_navy_navy_screen_defence_factor = 0.05
+				tooltip = navy_screen_defence_factor_tt
+			}
+			add_to_variable = {
+				GEA_navy_screening_efficiency = 0.05
+				tooltip = screening_efficiency_tt
+			}
 			add_equipment_bonus = {
 				name = GEA_Focus_on_the_escort_fleet
 				bonus = {
@@ -11650,8 +12942,15 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Aircraft_Carrier_Battle_Group"
 			navy_experience = 30
-			add_to_variable = { GEA_navy_naval_coordination = 0.05 }
-			custom_effect_tooltip = GEA_Aircraft_Carrier_Battle_Group_navy_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_admirality
+			}
+			add_to_variable = {
+				GEA_navy_naval_coordination = 0.05
+				tooltip = naval_coordination_tt
+			}
 			add_equipment_bonus = {
 				name = GEA_Aircraft_Carrier_Battle_Group
 				bonus = {
@@ -11692,10 +12991,23 @@ focus_tree = {
 		relative_position_id = GEA_Aircraft_Carrier_Battle_Group
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Cluster_hunting"
-			add_to_variable = { GEA_navy_air_nav_efficiency = 0.10 }
-			add_to_variable = { GEA_navy_navy_carrier_air_targetting_factor = 0.05 }
-			add_to_variable = { GEA_navy_night_spotting_chance = 0.05 }
-			custom_effect_tooltip = GEA_Cluster_hunting_navy_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_admirality
+			}
+			add_to_variable = {
+				GEA_navy_air_nav_efficiency = 0.10
+				tooltip = air_nav_efficiency_tt
+			}
+			add_to_variable = {
+				GEA_navy_navy_carrier_air_targetting_factor = 0.05
+				tooltip = GEA_navy_navy_carrier_air_targetting_factor_tt
+			}
+			add_to_variable = {
+				GEA_navy_night_spotting_chance = 0.05
+				tooltip = GEA_navy_night_spotting_chance_tt
+			}
 		}	
 		search_filters = { FOCUS_FILTER_NAVY_BONUS }
 	}
@@ -11726,9 +13038,19 @@ focus_tree = {
 		relative_position_id = GEA_Cluster_hunting
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Armor_deck_protection"
-			add_to_variable = { GEA_navy_critical_receive_chance = -0.2 }
-			add_to_variable = { GEA_navy_navy_capital_ship_defence_factor = 0.05 }
-			custom_effect_tooltip = GEA_Armor_deck_protection_navy_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_admirality
+			}
+			add_to_variable = {
+				GEA_navy_critical_receive_chance = -0.2
+				tooltip = GEA_navy_critical_receive_chance_tt
+			}
+			add_to_variable = {
+				GEA_navy_navy_capital_ship_defence_factor = 0.05
+				tooltip = navy_capital_ship_defence_factor_tt
+			}
 			add_unit_bonus = {
 				carrier = {
 					max_organisation = 10
@@ -11765,9 +13087,19 @@ focus_tree = {
 		relative_position_id = GEA_Cluster_hunting
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Covering_the_sky_and_blocking_the_sun"
-			add_to_variable = { GEA_navy_carrier_traffic = 0.03 }
-			add_to_variable = { GEA_navy_carrier_capacity_penalty_reduction = 0.2 }
-			custom_effect_tooltip = GEA_Covering_the_sky_and_blocking_the_sun_navy_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_admirality
+			}
+			add_to_variable = {
+				GEA_navy_carrier_traffic = 0.03
+				tooltip = GEA_navy_carrier_traffic_tt
+			}
+			add_to_variable = {
+				GEA_navy_carrier_capacity_penalty_reduction = 0.2
+				tooltip = GEA_navy_carrier_capacity_penalty_reduction_tt
+			}
 			add_equipment_bonus = {
 				name = GEA_Covering_the_sky_and_blocking_the_sun
 				bonus = {
@@ -11809,9 +13141,19 @@ focus_tree = {
 		relative_position_id = GEA_Ocean_Falcon
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_sea_warriors_are_fearless"
-			add_to_variable = { GEA_navy_fighter_sortie_efficiency = 0.1 }
-			add_to_variable = { GEA_navy_carrier_sortie_hours_delay = -8 }
-			custom_effect_tooltip = GEA_The_sea_warriors_are_fearless_navy_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_admirality
+			}
+			add_to_variable = {
+				GEA_navy_fighter_sortie_efficiency = 0.1
+				tooltip = GEA_navy_fighter_sortie_efficiency_tt
+			}
+			add_to_variable = {
+				GEA_navy_carrier_sortie_hours_delay = -8
+				tooltip = GEA_navy_carrier_sortie_hours_delay_tt
+			}
 			add_equipment_bonus = {
 				name = GEA_The_sea_warriors_are_fearless
 				bonus = {
@@ -11850,8 +13192,15 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Making_a_desperate_dive"
 			air_experience = 15
-			add_to_variable = { GEA_navy_navy_carrier_air_agility_factor = 0.05 }
-			custom_effect_tooltip = GEA_Making_a_desperate_dive_navy_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_admirality
+			}
+			add_to_variable = {
+				GEA_navy_navy_carrier_air_agility_factor = 0.05
+				tooltip = GEA_navy_navy_carrier_air_agility_factor_tt
+			}
 			add_equipment_bonus = {
 				name = GEA_Making_a_desperate_dive
 				bonus = {
@@ -11892,8 +13241,15 @@ focus_tree = {
 		relative_position_id = GEA_Ocean_Falcon
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Increase_patrols"
-			add_to_variable = {  GEA_navy_naval_detection = 0.1 }
-			custom_effect_tooltip = GEA_Increase_patrols_navy_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_admirality
+			}
+			add_to_variable = {
+				GEA_navy_naval_detection = 0.1
+				tooltip = naval_detection_tt
+			}
 			add_equipment_bonus = {
 				name = GEA_Increase_patrols
 				bonus = {
@@ -11929,10 +13285,23 @@ focus_tree = {
 		relative_position_id = GEA_Increase_patrols
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Oceanic_maintenance_and_supply"
-			add_to_variable = { GEA_navy_naval_morale_factor = 0.1 }
-			add_to_variable = { GEA_navy_repair_speed_factor = 0.03 }
-			add_to_variable = { GEA_navy_navy_max_range_factor = 0.1 }
-			custom_effect_tooltip = GEA_Oceanic_maintenance_and_supply_navy_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_admirality
+			}
+			add_to_variable = {
+				GEA_navy_naval_morale_factor = 0.1
+				tooltip = naval_morale_factor_tt
+			}
+			add_to_variable = {
+				GEA_navy_repair_speed_factor = 0.03
+				tooltip = repair_speed_factor_tt
+			}
+			add_to_variable = {
+				GEA_navy_navy_max_range_factor = 0.1
+				tooltip = navy_max_range_factor_tt
+			}
 		}
 		search_filters = { FOCUS_FILTER_NAVY_BONUS }
 	}
@@ -11960,8 +13329,15 @@ focus_tree = {
 		relative_position_id = GEA_Set_sail_and_sail_far
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Underwater_knife"
-			add_to_variable = { GEA_navy_submarine_attack = 0.05 }
-			custom_effect_tooltip = GEA_Underwater_knife_navy_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_admirality
+			}
+			add_to_variable = {
+				GEA_navy_submarine_attack = 0.05
+				tooltip = GEA_navy_submarine_attack_tt
+			}
 			add_equipment_bonus = {
 				name = GEA_Underwater_knife
 				bonus = {
@@ -12003,8 +13379,15 @@ focus_tree = {
 		relative_position_id = GEA_Underwater_knife
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Silent_War"
-			add_to_variable = { GEA_navy_naval_torpedo_reveal_chance_factor = -0.1 }
-			custom_effect_tooltip = GEA_Silent_War_navy_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_admirality
+			}
+			add_to_variable = {
+				GEA_navy_naval_torpedo_reveal_chance_factor = -0.1
+				tooltip = naval_torpedo_reveal_chance_factor_tt
+			}
 			add_equipment_bonus = {
 				name = GEA_Silent_War
 				bonus = {
@@ -12040,9 +13423,19 @@ focus_tree = {
 		relative_position_id = GEA_Underwater_knife
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Microwave_radio_magnetron"
-			add_to_variable = { GEA_navy_naval_night_attack = 0.05 }
-			add_to_variable = { GEA_navy_naval_coordination = 0.1 }
-			custom_effect_tooltip = GEA_Microwave_radio_magnetron_navy_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_admirality
+			}
+			add_to_variable = {
+				GEA_navy_naval_night_attack = 0.05
+				tooltip = GEA_navy_naval_night_attack_tt
+			}
+			add_to_variable = {
+				GEA_navy_naval_coordination = 0.1
+				tooltip = naval_coordination_tt
+			}
 			if = {
 				limit = {
 					has_dlc_gtd = yes
@@ -12081,8 +13474,15 @@ focus_tree = {
 		relative_position_id = GEA_Silent_War
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Immortal_Power"
-			add_to_variable = { GEA_navy_navy_max_range_factor = 0.1 }
-			custom_effect_tooltip = GEA_Immortal_Power_navy_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_admirality
+			}
+			add_to_variable = {
+				GEA_navy_navy_max_range_factor = 0.1
+				tooltip = navy_max_range_factor_tt
+			}
 			add_breakthrough_progress = {
 				specialization = specialization_naval
 				value = 0.25
@@ -12133,10 +13533,23 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_ruler_of_the_two_oceans"
 			add_war_support = 0.1
-			add_to_variable = { GEA_navy_naval_mastery_gain_factor = 0.1 }
-			add_to_variable = { GEA_navy_ships_at_battle_start = 0.05 }
-			add_to_variable = { GEA_navy_experience_gain_navy = 0.05 }
-			custom_effect_tooltip = GEA_The_ruler_of_the_two_oceans_navy_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_admirality
+			}
+			add_to_variable = {
+				GEA_navy_naval_mastery_gain_factor = 0.1
+				tooltip = GEA_navy_naval_mastery_gain_factor_tt
+			}
+			add_to_variable = {
+				GEA_navy_ships_at_battle_start = 0.05
+				tooltip = GEA_navy_ships_at_battle_start_tt
+			}
+			add_to_variable = {
+				GEA_navy_experience_gain_navy = 0.05
+				tooltip = experience_gain_navy_tt
+			}
 		}
 		search_filters = { FOCUS_FILTER_NAVY_BONUS }
 	}
@@ -13295,6 +14708,7 @@ focus_tree = {
 		relative_position_id = GEA_Nanjing_xpress
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_usiness_expansion_of_AOG"
+			add_political_power = 50
 			custom_effect_tooltip = GEA_lep_business_expansion_discount_tt
 			hidden_effect = {
 				set_variable = { GEA_lep_investment_cost = 10 }
@@ -13303,7 +14717,6 @@ focus_tree = {
 				set_variable = { GEA_lep_enterprise_cooldown = 86 }
 				set_variable = { GEA_lep_export_cooldown = 106 }
 			}
-			
 		}	
 	}
 
@@ -13333,6 +14746,7 @@ focus_tree = {
 			custom_effect_tooltip = GEA_Goods_out_money_in_tt
 			unlock_decision_tooltip = GEA_Expand_military_equipment_exports
 			unlock_decision_tooltip = GEA_Expand_the_export_of_strategic_resources
+			unlock_decision_tooltip = GEA_Expand_drug_smuggling
 			add_ideas = GEA_Trade_surplus_with_China
 		}	
 	}
@@ -13340,7 +14754,7 @@ focus_tree = {
 	focus = { #建设东南诸省路网
 		id = GEA_Building_a_road_network_in_Southeast_provinces
 		icon = GFX_GEA_Building_a_road_network_in_Southeast_provinces
-		cost = 4
+		cost = 3
 		x = -3
 		y = 1
 		ai_will_do = {
@@ -13359,13 +14773,24 @@ focus_tree = {
 		relative_position_id = GEA_The_usiness_expansion_of_AOG
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Building_a_road_network_in_Southeast_provinces"
+			unlock_decision_tooltip = GEA_Upgrade_the_Huning_Railway
+			unlock_decision_tooltip = GEA_Construct_the_Hangjiang_Railway
+			unlock_decision_tooltip = GEA_Complete_the_Zhegan_Railway
+			613 = {
+				owner = {
+					add_timed_idea = {
+						idea = GEA_Large_scale_railway_construction
+						days = 365
+					}
+				}
+			}
 		}	
 	}
 
 	focus = { #敬我们的开采事业
 		id = GEA_Best_regards_to_our_mining_operation
 		icon = GFX_goal_AUS_Towards_National_Autarky
-		cost = 4
+		cost = 3
 		x = -1
 		y = 1
 		ai_will_do = {
@@ -13384,13 +14809,20 @@ focus_tree = {
 		relative_position_id = GEA_The_usiness_expansion_of_AOG
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Best_regards_to_our_mining_operation"
+			unlock_decision_tooltip = GEA_Build_the_Nanjing_Steel_Factory
+			unlock_decision_tooltip = GEA_Investment_in_smelting_technology
+			unlock_decision_tooltip = GEA_Acquire_the_Nanshan_Iron_Mine
+			unlock_decision_tooltip = GEA_Develop_the_Xihuashan_Tungsten_Mine
+			unlock_decision_tooltip = GEA_Develop_the_Gushan_Iron_Mine
+			unlock_decision_tooltip = GEA_Develop_the_Pangushan_Tungsten_Mine
+			unlock_decision_tooltip = GEA_Control_the_Taochong_Iron_Mine
 		}	
 	}
 
 	focus = { #把控粮仓
 		id = GEA_Manage_the_grain_storage_facility
 		icon = GFX_GEA_Manage_the_grain_storage_facility
-		cost = 4
+		cost = 3
 		x = 1
 		y = 1
 		ai_will_do = {
@@ -13415,7 +14847,7 @@ focus_tree = {
 	focus = { #金融家的伎俩
 		id = GEA_The_tricks_of_financiers
 		icon = GFX_GEA_The_tricks_of_financiers
-		cost = 4
+		cost = 3
 		x = 3
 		y = 1
 		ai_will_do = {
@@ -13434,13 +14866,19 @@ focus_tree = {
 		relative_position_id = GEA_The_usiness_expansion_of_AOG
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_tricks_of_financiers"
+			custom_effect_tooltip = GEA_The_tricks_of_financiers_tt
+			unlock_decision_tooltip = GEA_Liquidate_Supervisory_Board_Investments
+			unlock_decision_tooltip = GEA_Issue_a_German_Loan
+			unlock_decision_tooltip = GEA_Open_Village_and_County_Banks
+			unlock_decision_tooltip = GEA_Issue_Agricultural_Loans
+			unlock_decision_tooltip = GEA_Enforce_Overdue_Credit_Liquidation
 		}	
 	}
 
 	focus = { #德意志制造
 		id = GEA_German_manufacturing
 		icon = GFX_GEA_German_manufacturing
-		cost = 4
+		cost = 3
 		x = 5
 		y = 1
 		ai_will_do = {
@@ -13459,6 +14897,25 @@ focus_tree = {
 		relative_position_id = GEA_The_usiness_expansion_of_AOG
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_German_manufacturing"
+			add_political_power = 50
+			custom_effect_tooltip = GEA_china_lep_name_tt
+			add_to_variable = {
+				GEA_china_lep_capital_influence = 15
+				tooltip = GEA_china_capital_influence_change_tt
+			}
+			add_to_variable = {
+				GEA_china_lep_attitude = 10
+				tooltip = GEA_china_attitude_change_tt
+			}
+			hidden_effect = {
+				clamp_variable = { var = GEA_china_lep_capital_influence min = 0 max = 100 }
+				clamp_variable = { var = GEA_china_lep_attitude min = 0 max = 100 }
+			}
+			613 = {
+				owner = {
+					add_ideas = GEA_Made_in_Germany_idea
+				}
+			}
 		}	
 	}
 
@@ -13498,7 +14955,20 @@ focus_tree = {
 			factor = 100
 		}
 		available = {
-
+			country_exists = CHI
+			CHI = {
+				OR = {
+					has_war_with = LEP
+					has_war_with = SQI
+				}
+			}
+		}
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = GEA_left_kmt_won_league_war_tt
+				has_global_flag = LEP_league_war_over
+				country_exists = CHI
+			}
 		}			
 		prerequisite = {
 			focus = GEA_The_second_expedition_to_China
@@ -13506,6 +14976,7 @@ focus_tree = {
 		relative_position_id = GEA_The_second_expedition_to_China
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_fading_memories_of_the_second_interference"
+			CHI = { add_ideas = GEA_fuck_kmt1 }
 		}	
 	}
 

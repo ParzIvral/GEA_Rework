@@ -211,4 +211,16 @@ spriteTypes = {
 		name = "GFX_GEA_Invest_in_East_China_decision"
 		texturefile = "gfx/interface/decisions/GFX_GEA_Invest_in_East_China_decision.png"
 	}
+	spriteType = {
+		name = "GFX_GEA_Build_the_Nanjing_Steel_Factory_decision"
+		texturefile = "gfx/interface/decisions/GFX_GEA_Build_the_Nanjing_Steel_Factory_decision.png"
+	}
+	spriteType = {
+		name = "GFX_GEA_Investment_in_smelting_technology_decision"
+		texturefile = "gfx/interface/decisions/GFX_GEA_Investment_in_smelting_technology_decision.png"
+	}
+	spriteType = {
+		name = "GFX_GEA_Transfer_German_Enterprises_decision"
+		texturefile = "gfx/interface/decisions/GFX_GEA_Transfer_German_Enterprises_decision.png"
+	}
 }

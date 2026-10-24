@@ -1,4 +1,4 @@
-GEA_Indochina_click_effect = {
+GEA_Indochina_click_effect = { #印度支那点击互动
 	if = {
 		limit = {
 			NOT = {
@@ -362,10 +362,7 @@ GEA_Hawaii_click_effect = {
 		clr_country_flag = Hawaii_OPEN
 	}
 }
-
-
-
-GEA_liquidate_partner_assets_effect = {
+GEA_liquidate_partner_assets_effect = { #清算华东不良资产
 	set_temp_variable = { GEA_liquidation_change = party_popularity@market_liberal }
 	divide_temp_variable = { GEA_liquidation_change = 3 }
 	set_temp_variable = { GEA_liquidation_negative = GEA_liquidation_change }
@@ -410,21 +407,21 @@ GEA_liquidate_partner_assets_effect = {
 	}
 }
 
-GEA_liquidate_one_civilian_factory_effect = {
+GEA_liquidate_one_civilian_factory_effect = { #移除一个民工
 	random_owned_state = {
 		limit = { industrial_complex > 0 }
 		remove_building = { type = industrial_complex level = 1 }
 	}
 }
 
-GEA_liquidate_shandong_assets_effect = {
+GEA_liquidate_shandong_assets_effect = { #山东特色清算
 	add_popularity = { ideology = market_liberal popularity = -0.07 }
 	GEA_liquidate_one_civilian_factory_effect = yes
 	GEA_liquidate_one_civilian_factory_effect = yes
 	GEA_liquidate_one_civilian_factory_effect = yes
 }
 
-GEA_Josias_select_Nikolaus_effect = {
+GEA_Josias_select_Nikolaus_effect = { #约西亚斯-尼古拉斯
 	if = { limit = { NOT = { has_dynamic_modifier = { modifier = GEA_NIKOLAUS_modifier } } } add_dynamic_modifier = { modifier = GEA_NIKOLAUS_modifier } }
 	add_to_variable = { var = GEA_NIKOLAUS_friendship value = GEA_Josias_friendship_change }
 	clamp_variable = { var = GEA_NIKOLAUS_friendship min = 0 max = 100 }
@@ -640,7 +637,7 @@ GEA_Josias_select_Siegmund_Bodenheimer_effect = {
 	multiply_variable = { GEA_Siegmund_Bodenheimer_local_building_slots_factor = 0.001 }
 }
 
-GEA_Josias_clear_decision_view_effect = {
+GEA_Josias_clear_decision_view_effect = { #清理决议可见
 	clr_country_flag = GEA_Josias_decision_view_Nikolaus
 	clr_country_flag = GEA_Josias_decision_view_Carl_Edward
 	clr_country_flag = GEA_Josias_decision_view_Elard_von_Oldenburg
@@ -661,7 +658,7 @@ GEA_Josias_clear_decision_view_effect = {
 	clr_country_flag = GEA_Josias_decision_view_Siegmund_Bodenheimer
 }
 
-GEA_Josias_add_5_Nikolaus_effect = {
+GEA_Josias_add_5_Nikolaus_effect = { #加5尼古拉斯
 	custom_effect_tooltip = GEA_Josias_add_5_Nikolaus_effect_tt
 	hidden_effect = {
 		set_variable = { GEA_Josias_friendship_change = 5 }
@@ -1183,7 +1180,7 @@ GEA_Josias_add_20_Siegmund_Bodenheimer_effect = {
 	}
 }
 
-GEA_add_malaya_coastal_bunkers_effect = {
+GEA_add_malaya_coastal_bunkers_effect = { #马来亚驻防
 	hidden_effect = {
 		846 = {
 			add_building_construction = {
@@ -1264,8 +1261,7 @@ GEA_add_malaya_coastal_bunkers_effect = {
 	}
 }
 
-# 按历史早期 Z 系武装创建订购用设计；仅创建一次，后续订单复用。
-GEA_prepare_Z_class_1936 = {
+GEA_prepare_Z_class_1936 = {# 按历史早期 Z 系武装创建订购用设计；仅创建一次，后续订单复用。
 	if = {
 		limit = { NOT = { has_country_flag = GEA_Z_class_1936_named_design_created } }
 		create_equipment_variant = {
@@ -1289,8 +1285,7 @@ GEA_prepare_Z_class_1936 = {
 	}
 }
 
-# 1940 年型只更换船壳，保持原有武装、设备和发动机配置。
-GEA_prepare_Z_class_1940 = {
+GEA_prepare_Z_class_1940 = {# 1940 年型只更换船壳，保持原有武装、设备和发动机配置。
 	if = {
 		limit = { NOT = { has_country_flag = GEA_Z_class_1940_named_design_created } }
 		create_equipment_variant = {
@@ -1314,9 +1309,7 @@ GEA_prepare_Z_class_1940 = {
 	}
 }
 
-# 1936 年型轻巡：参考纽伦堡式轻巡；150 mm 主炮、薄装甲、鱼雷和水上飞机。
-# 游戏模块为历史武装的抽象近似，并非每个炮组对应一座炮塔。
-GEA_prepare_light_cruiser_1936 = {
+GEA_prepare_light_cruiser_1936 = { #1936 年型轻巡：参考纽伦堡式轻巡
 	if = {
 		limit = { NOT = { has_country_flag = GEA_light_cruiser_1936_design_created } }
 		create_equipment_variant = {
@@ -1343,9 +1336,7 @@ GEA_prepare_light_cruiser_1936 = {
 	}
 }
 
-# 1940 年型轻巡：参考 M 级计划；150 mm 主炮、薄装甲、鱼雷、水上飞机及高射副炮。
-# 游戏模块为历史武装的抽象近似，并非每个炮组对应一座炮塔。
-GEA_prepare_light_cruiser_1940 = {
+GEA_prepare_light_cruiser_1940 = {#1940 年型轻巡：参考 M 级计划
 	if = {
 		limit = { NOT = { has_country_flag = GEA_light_cruiser_1940_design_created } }
 		create_equipment_variant = {
@@ -1371,9 +1362,7 @@ GEA_prepare_light_cruiser_1940 = {
 		set_country_flag = GEA_light_cruiser_1940_design_created
 	}
 }
-
-# 1936 年型重巡洋舰
-GEA_prepare_heavy_cruiser_1936 = {
+GEA_prepare_heavy_cruiser_1936 = {# 1936 年型重巡洋舰
 	if = {
 		limit = { NOT = { has_country_flag = GEA_heavy_cruiser_1936_design_created } }
 		create_equipment_variant = {
@@ -1400,8 +1389,7 @@ GEA_prepare_heavy_cruiser_1936 = {
 	}
 }
 
-# 1940 年型重巡洋舰
-GEA_prepare_heavy_cruiser_1940 = {
+GEA_prepare_heavy_cruiser_1940 = {# 1940 年型重巡洋舰
 	if = {
 		limit = { NOT = { has_country_flag = GEA_heavy_cruiser_1940_design_created } }
 		create_equipment_variant = {
@@ -1428,9 +1416,7 @@ GEA_prepare_heavy_cruiser_1940 = {
 		set_country_flag = GEA_heavy_cruiser_1940_design_created
 	}
 }
-
-# 1936 年型战列舰
-GEA_prepare_battleship_1936 = {
+GEA_prepare_battleship_1936 = {# 1936 年型战列舰
 	if = {
 		limit = { NOT = { has_country_flag = GEA_battleship_1936_design_created } }
 		create_equipment_variant = {
@@ -1456,9 +1442,7 @@ GEA_prepare_battleship_1936 = {
 		set_country_flag = GEA_battleship_1936_design_created
 	}
 }
-
-# 1940 年型战列舰
-GEA_prepare_battleship_1940 = {
+GEA_prepare_battleship_1940 = {# 1940 年型战列舰
 	if = {
 		limit = { NOT = { has_country_flag = GEA_battleship_1940_design_created } }
 		create_equipment_variant = {
@@ -1485,9 +1469,7 @@ GEA_prepare_battleship_1940 = {
 		set_country_flag = GEA_battleship_1940_design_created
 	}
 }
-
-# 1939 年 O 级战列巡洋舰
-GEA_prepare_battlecruiser_o_class = {
+GEA_prepare_battlecruiser_o_class = {# 1939 年 O 级战列巡洋舰
 	if = {
 		limit = { NOT = { has_country_flag = GEA_battlecruiser_o_class_design_created } }
 		create_equipment_variant = {
@@ -1513,9 +1495,7 @@ GEA_prepare_battlecruiser_o_class = {
 		set_country_flag = GEA_battlecruiser_o_class_design_created
 	}
 }
-
-# 1936 年型航空母舰
-GEA_prepare_carrier_1936 = {
+GEA_prepare_carrier_1936 = {# 1936 年型航空母舰
 	if = {
 		limit = { NOT = { has_country_flag = GEA_carrier_1936_design_created } }
 		create_equipment_variant = {
@@ -1540,8 +1520,7 @@ GEA_prepare_carrier_1936 = {
 	}
 }
 
-# 1940 年型航空母舰
-GEA_prepare_carrier_1940 = {
+GEA_prepare_carrier_1940 = {# 1940 年型航空母舰
 	if = {
 		limit = { NOT = { has_country_flag = GEA_carrier_1940_design_created } }
 		create_equipment_variant = {
@@ -1567,7 +1546,7 @@ GEA_prepare_carrier_1940 = {
 	}
 }
 
-GEA_carrier_order_aircraft_gift = {
+GEA_carrier_order_aircraft_gift = {#给舰载机
 	if = {
 		limit = { has_dlc = "By Blood Alone" }
 		add_equipment_to_stockpile = {
@@ -1597,7 +1576,7 @@ GEA_carrier_order_aircraft_gift = {
 	}
 }
 
-GEA_Shipbuilding_plan_production_effect = {
+GEA_Shipbuilding_plan_production_effect = { #造船
 	if = {
 		limit = { date < 1940.1.1 }
 		GEA_prepare_heavy_cruiser_1936 = yes
@@ -1691,113 +1670,7 @@ GEA_Shipbuilding_plan_production_effect = {
 	}
 }
 
-GEA_add_north_borneo_coastal_bunkers_effect = {
-	hidden_effect = {
-		333 = {
-			add_building_construction = {
-				type = coastal_bunker
-				province = 1208
-				level = 2
-				instant_build = yes
-			}
-			add_building_construction = {
-				type = coastal_bunker
-				province = 4216
-				level = 2
-				instant_build = yes
-			}
-			add_building_construction = {
-				type = coastal_bunker
-				province = 4396
-				level = 2
-				instant_build = yes
-			}
-			add_building_construction = {
-				type = coastal_bunker
-				province = 7371
-				level = 2
-				instant_build = yes
-			}
-			add_building_construction = {
-				type = coastal_bunker
-				province = 7387
-				level = 2
-				instant_build = yes
-			}
-			add_building_construction = {
-				type = coastal_bunker
-				province = 10285
-				level = 2
-				instant_build = yes
-			}
-			add_building_construction = {
-				type = coastal_bunker
-				province = 12283
-				level = 2
-				instant_build = yes
-			}
-			add_building_construction = {
-				type = coastal_bunker
-				province = 12905
-				level = 2
-				instant_build = yes
-			}
-		}
-		828 = {
-			add_building_construction = {
-				type = coastal_bunker
-				province = 1306
-				level = 2
-				instant_build = yes
-			}
-			add_building_construction = {
-				type = coastal_bunker
-				province = 4282
-				level = 2
-				instant_build = yes
-			}
-			add_building_construction = {
-				type = coastal_bunker
-				province = 10143
-				level = 2
-				instant_build = yes
-			}
-			add_building_construction = {
-				type = coastal_bunker
-				province = 10199
-				level = 2
-				instant_build = yes
-			}
-			add_building_construction = {
-				type = coastal_bunker
-				province = 10212
-				level = 2
-				instant_build = yes
-			}
-			add_building_construction = {
-				type = coastal_bunker
-				province = 10240
-				level = 2
-				instant_build = yes
-			}
-			add_building_construction = {
-				type = coastal_bunker
-				province = 12171
-				level = 2
-				instant_build = yes
-			}
-			add_building_construction = {
-				type = coastal_bunker
-				province = 12228
-				level = 2
-				instant_build = yes
-			}
-		}
-	}
-}
-
-
-GEA_loyal_citizens_progress_effect = {
+GEA_loyal_citizens_progress_effect = { #忠诚市民起义
 	add_to_variable = { GEA_loyal_citizens_preparations = 1 }
 	custom_effect_tooltip = GEA_loyal_citizens_progress_tt
 	if = {
@@ -1814,7 +1687,7 @@ GEA_loyal_citizens_progress_effect = {
 	}
 }
 
-GEA_loyalist_fortification_progress_effect = {
+GEA_loyalist_fortification_progress_effect = { #
 	add_to_variable = { GEA_loyalist_fortification_preparations = 1 }
 	custom_effect_tooltip = GEA_loyalist_fortification_progress_tt
 	if = {
@@ -1842,7 +1715,6 @@ GEA_loyalist_reserve_progress_effect = {
 		custom_effect_tooltip = GEA_loyalist_reserves_ready_tt
 	}
 }
-
 
 GEA_anti_viet_cong_progress_effect = {
 	add_to_variable = { GEA_anti_viet_cong_operations = 1 }
@@ -1981,7 +1853,6 @@ GEA_anti_nationalist_progress_effect = {
 	add_to_variable = { GEA_anti_nationalist_operations = 1 }
 	custom_effect_tooltip = GEA_anti_nationalist_progress_tt
 }
-
 GEA_roll_nationalist_sabotage_event_effect = {
 	if = {
 		limit = { check_variable = { GEA_anti_nationalist_operations < 1 } }
@@ -2061,8 +1932,7 @@ GEA_roll_nationalist_sabotage_event_effect = {
 	}
 }
 
-#卢克纳尔海盗行动额外收益
-GEA_pirate_offsite_civ_reward = {
+GEA_pirate_offsite_civ_reward = {#卢克纳尔海盗行动额外收益
 	if = {
 		limit = { has_completed_focus = GEA_The_sea_demon_of_the_Pacific_Ocean }
 		hidden_effect = {
@@ -2085,9 +1955,7 @@ GEA_pirate_offsite_civ_reward = {
 		}
 	}
 }
-
-#秘密行动按结算后暴露概率判定
-GEA_roll_secret_operation_discovery = {
+GEA_roll_secret_operation_discovery = {#秘密行动按结算后暴露概率判定
 	if = {
 		limit = { NOT = { has_country_flag = GEA_pirate_exposure_disabled } }
 		set_temp_variable = { GEA_secret_discovery_weight = GEA_pirate_discovery_chance }
@@ -2106,9 +1974,7 @@ GEA_roll_secret_operation_discovery = {
 		}
 	}
 }
-
-# 卢克纳尔海盗行动实际被发现次数
-GEA_pirate_discovery_consequences = {
+GEA_pirate_discovery_consequences = {# 卢克纳尔海盗行动实际被发现次数
 	if = {
 		limit = { NOT = { has_country_flag = GEA_pirate_exposure_disabled } }
 		add_to_variable = { GEA_pirate_discoveries = 1 }
@@ -2128,9 +1994,7 @@ GEA_pirate_discovery_consequences = {
 		}
 	}
 }
-
-# 卢克纳尔海盗战利品
-GEA_update_pirate_loot_values = {
+GEA_update_pirate_loot_values = {# 卢克纳尔海盗战利品
 	clamp_variable = { var = GEA_pirate_loot_stacks min = 0 }
 	set_variable = { GEA_pirate_loot_daily_pp = GEA_pirate_loot_stacks }
 	multiply_variable = { GEA_pirate_loot_daily_pp = 0.01 }
@@ -2140,25 +2004,55 @@ GEA_update_pirate_loot_values = {
 	multiply_variable = { GEA_pirate_loot_consumer_goods_factor = -1 }
 }
 
-GEA_add_pirate_loot = {
-	custom_override_tooltip = {
-		tooltip = GEA_pirate_loot_gain_tt
-		add_to_variable = { GEA_pirate_loot_stacks = GEA_raid_reward_multiplier }
+GEA_change_pirate_loot_effect = {
+	set_temp_variable = { GEA_pirate_loot_preview_stacks = GEA_pirate_loot_stacks }
+	add_to_temp_variable = { GEA_pirate_loot_preview_stacks = GEA_pirate_loot_change_amount }
+	clamp_temp_variable = { var = GEA_pirate_loot_preview_stacks min = 0 }
+	set_temp_variable = { GEA_pirate_loot_preview_delta = GEA_pirate_loot_preview_stacks }
+	subtract_from_temp_variable = { GEA_pirate_loot_preview_delta = GEA_pirate_loot_stacks }
+	multiply_temp_variable = { GEA_pirate_loot_preview_delta = 0.01 }
+	set_temp_variable = { GEA_pirate_loot_preview_consumer_goods = GEA_pirate_loot_preview_delta }
+	multiply_temp_variable = { GEA_pirate_loot_preview_consumer_goods = -1 }
+	custom_effect_tooltip = tooltip_white_line
+	custom_effect_tooltip = {
+		localization_key = tooltip_modify_dynmod
+		DYNMOD = GEA_The_benefits_of_plundering
+	}
+	effect_tooltip = {
+		add_to_variable = {
+			GEA_pirate_loot_daily_pp = GEA_pirate_loot_preview_delta
+			tooltip = political_power_gain_tt
+		}
+		add_to_variable = {
+			GEA_pirate_loot_consumer_goods_factor = GEA_pirate_loot_preview_consumer_goods
+			tooltip = consumer_goods_factor_tooltip
+		}
+		add_to_variable = {
+			GEA_pirate_loot_factory_output = GEA_pirate_loot_preview_delta
+			tooltip = industrial_capacity_factory_tt
+		}
+		add_to_variable = {
+			GEA_pirate_loot_dockyard_output = GEA_pirate_loot_preview_delta
+			tooltip = industrial_capacity_dockyard_tt
+		}
+	}
+	hidden_effect = {
+		add_to_variable = { GEA_pirate_loot_stacks = GEA_pirate_loot_change_amount }
 		GEA_update_pirate_loot_values = yes
 	}
 }
 
-
-#华东
-GEA_Lep_click_effect = {
+GEA_add_pirate_loot = {
+	custom_effect_tooltip = GEA_pirate_loot_gain_tt
+	set_temp_variable = { GEA_pirate_loot_change_amount = GEA_raid_reward_multiplier }
+	GEA_change_pirate_loot_effect = yes
+}
+GEA_Lep_click_effect = {#华东
 	if = {
-		limit = {
-			GEA_nanjing_non_anti_concession_controller_trigger = yes
-			NOT = { has_country_flag = LEP_OPEN }
-		}
-		set_country_flag = LEP_OPEN
+		limit = { has_country_flag = LEP_OPEN }
+		clr_country_flag = LEP_OPEN
 	}
 	else = {
-		clr_country_flag = LEP_OPEN
+		set_country_flag = LEP_OPEN
 	}
 }

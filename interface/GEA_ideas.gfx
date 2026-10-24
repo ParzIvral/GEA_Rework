@@ -53,10 +53,6 @@ spriteTypes = {
 		texturefile = "gfx/interface/ideas/gea/GEA_gea_army.png"
 	}
 	spriteType = {
-		name = "GFX_idea_GEA_Defend_indochina"
-		texturefile = "gfx/interface/ideas/gea/GEA_kill_them.png"
-	}
-	spriteType = {
 		name = "GFX_idea_GEA_The_quagmire_of_Indochina"
 		texturefile = "gfx/interface/ideas/gea/GEA_The_quagmire_of_Indochina.png"
 	}
@@ -216,5 +212,9 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_idea_GEA_Trade_surplus_with_China"
 		texturefile = "gfx/interface/ideas/gea/GEA_Trade_surplus_with_China.png"
+	}
+	spriteType = {
+		name = "GFX_idea_GEA_fuck_kmt"
+		texturefile = "gfx/interface/ideas/gea/GEA_fuck_kmt.png"
 	}
 }

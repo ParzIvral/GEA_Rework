@@ -1479,9 +1479,14 @@ add_namespace = GEA_news
 					days = 180
 				}
 			}
-			custom_effect_tooltip = GEA_Improved_Individual_Rations_For_Soldiers
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_gea_army
+			}
 			add_to_variable = {
 				GEA_army_supply_consumption_factor = -0.05
+				tooltip = supply_consumption_factor_tt
 			}
 		}
 		option = {
@@ -3431,12 +3436,18 @@ add_namespace = GEA_news
 		}
 		option = { #在德属东亚咱们就练起来！
 			name = GEA.113.b
-			custom_effect_tooltip = GEA_Mercenaries_tt
-			add_to_variable = {
-				GEA_army_army_org_factor = 0.05
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_gea_army
 			}
 			add_to_variable = {
-				GEA_army_conscription_factor  = 0.05
+				GEA_army_army_org_factor = 0.05
+				tooltip = army_org_factor_tt
+			}
+			add_to_variable = {
+				GEA_army_conscription_factor = 0.05
+				tooltip = conscription_factor_tt
 			}
 		}
 		option = { #遗老们还是少碰为妙
@@ -4560,9 +4571,19 @@ add_namespace = GEA_news
 		option = { 
 			name = GEA.405.a
 			increase_ruling_party_popularity_by_10 = yes
-			add_to_variable = { GEA_Corporation_Rule_political_power = 0.05 }
-			add_to_variable = { GEA_Corporation_Rule_start_efficiency = 0.03 }
-			custom_effect_tooltip = GEA_405_a_corporation_rule_modifier_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_Corporation_Rule
+			}
+			add_to_variable = {
+				GEA_Corporation_Rule_political_power = 0.05
+				tooltip = political_power_factor_tt
+			}
+			add_to_variable = {
+				GEA_Corporation_Rule_start_efficiency = 0.03
+				tooltip = production_factory_start_efficiency_factor_tt
+			}
 		}
 
 		option = { 
@@ -4682,8 +4703,15 @@ add_namespace = GEA_news
 
 		option = { 
 			name = GEA.411.c
-			add_to_variable = { GEA_army_army_org_factor = 0.05 }
-			custom_effect_tooltip = GEA_411_c_army_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_gea_army
+			}
+			add_to_variable = {
+				GEA_army_army_org_factor = 0.05
+				tooltip = army_org_factor_tt
+			}
 		}
 	}
 	country_event = { #红色药剂
@@ -5862,7 +5890,15 @@ add_namespace = GEA_news
 			custom_effect_tooltip = GEA_Schorner_keep_control_tt
 			hidden_effect = { add_to_variable = { GEA_Schorner_control_count = 1 } }
 			army_experience = -20
-			add_to_variable = { GEA_army_experience_gain_army = -0.05 }
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_gea_army
+			}
+			add_to_variable = {
+				GEA_army_experience_gain_army = -0.05
+				tooltip = experience_gain_army_tt
+			}
 
 		}
 
@@ -5903,8 +5939,19 @@ add_namespace = GEA_news
 			custom_effect_tooltip = GEA_Schorner_keep_control_tt
 			hidden_effect = { add_to_variable = { GEA_Schorner_control_count = 1 } }
 			navy_experience = -20
-			add_to_variable = { GEA_navy_experience_gain_navy = -0.05 }
-			add_to_variable = { GEA_navy_naval_morale_factor = -0.02 }
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_admirality
+			}
+			add_to_variable = {
+				GEA_navy_experience_gain_navy = -0.05
+				tooltip = experience_gain_navy_tt
+			}
+			add_to_variable = {
+				GEA_navy_naval_morale_factor = -0.02
+				tooltip = naval_morale_factor_tt
+			}
 		}
 
 		option = {
@@ -6287,7 +6334,7 @@ add_namespace = GEA_news
 		option = { 
 			name = GEA.800.a
 			set_country_flag = GEA_nanjing_crisis
-			complete_national_focus = GEA_second_expedition_to_China
+			complete_national_focus = GEA_The_second_expedition_to_China
 		}
 	}
 	country_event = { #德国向我们提供武器
@@ -6468,30 +6515,39 @@ add_namespace = GEA_news
 
 		option = {
 			name = GEA.802.a
+			unlock_decision_tooltip = GEA_Invest_in_East_China
+			unlock_decision_tooltip = GEA_Establish_a_German_funded_enterprise
+			unlock_decision_tooltip = GEA_Investment_in_the_military_industry
+			unlock_decision_tooltip = GEA_Transfer_German_Enterprises
 			trigger = {
 				LEP = { check_variable = { var = LEP_league_war_victor value = LEP compare = equals } }
 				LEP = { owns_state = 613 controls_state = 613 }
 			}
 			set_country_flag = GEA_east_china_investment_unlocked
-			unlock_decision_tooltip = GEA_Invest_in_East_China
 		}
 		option = {
 			name = GEA.802.b
+			unlock_decision_tooltip = GEA_Invest_in_East_China
+			unlock_decision_tooltip = GEA_Establish_a_German_funded_enterprise
+			unlock_decision_tooltip = GEA_Investment_in_the_military_industry
+			unlock_decision_tooltip = GEA_Transfer_German_Enterprises
 			trigger = {
 				LEP = { check_variable = { var = LEP_league_war_victor value = SQI compare = equals } }
 				SQI = { owns_state = 613 controls_state = 613 has_country_leader = { name = "Zhang Zongchang" ruling_only = yes } }
 			}
 			set_country_flag = GEA_east_china_investment_unlocked
-			unlock_decision_tooltip = GEA_Invest_in_East_China
 		}
 		option = {
 			name = GEA.802.c
+			unlock_decision_tooltip = GEA_Invest_in_East_China
+			unlock_decision_tooltip = GEA_Establish_a_German_funded_enterprise
+			unlock_decision_tooltip = GEA_Investment_in_the_military_industry
+			unlock_decision_tooltip = GEA_Transfer_German_Enterprises
 			trigger = {
 				LEP = { check_variable = { var = LEP_league_war_victor value = ANQ compare = equals } }
 				ANQ = { owns_state = 613 controls_state = 613 }
 			}
 			set_country_flag = GEA_east_china_investment_unlocked
-			unlock_decision_tooltip = GEA_Invest_in_East_China
 		}
 		option = {
 			name = GEA.802.e
@@ -6501,6 +6557,88 @@ add_namespace = GEA_news
 			}
 		}
 	}
+	country_event = {
+		id = GEA.803
+		title = GEA.803.t
+		desc = GEA.803.d
+		is_triggered_only = yes
+		trigger = { country_exists = GEA has_country_flag = GEA_german_loan_offer_pending }
+		option = {
+			name = GEA.803.a
+			ai_chance = { factor = 40 }
+			add_stability = 0.03
+			custom_effect_tooltip = GEA_loan_short_terms_tt
+			GEA_begin_short_german_loan_effect = yes
+		}
+		option = {
+			name = GEA.803.b
+			trigger = { 
+				GEA = { 
+					political_power > 20 
+				} 	
+			}
+			ai_chance = { factor = 35 }
+			add_stability = 0.05
+			custom_effect_tooltip = GEA_loan_medium_terms_tt
+			GEA_begin_medium_german_loan_effect = yes
+		}
+		option = {
+			name = GEA.803.c
+			trigger = { 
+				GEA = { 
+					political_power > 50 
+				} 
+			}
+			ai_chance = { factor = 25 }
+			custom_effect_tooltip = GEA_loan_long_terms_tt
+			GEA_begin_long_german_loan_effect = yes
+		}
+	}
+
+	country_event = {
+		id = GEA.804
+		title = GEA.804.t
+		desc = GEA.804.d
+
+		is_triggered_only = yes
+
+		option = {
+			name = GEA.804.a
+			custom_effect_tooltip = GEA_loan_default_coup_threshold_tt
+		}
+	}
+
+	country_event = {
+		id = GEA.805
+		title = GEA.805.t
+		desc = GEA.805.d
+
+		is_triggered_only = yes
+
+		trigger = { 
+			country_exists = GEA 
+			has_country_flag = GEA_german_coup_pending 
+		}
+		
+		option = {
+			name = GEA.805.a
+			ai_chance = { 
+				factor = 100 
+			}
+			GEA_install_falkenhausen_government_effect = yes
+		}
+
+		option = {
+			name = GEA.805.b
+			ai_chance = { 
+				factor = 0 
+			}
+			clr_country_flag = GEA_german_coup_pending
+			set_country_flag = GEA_german_coup_defeated
+			set_country_flag = GEA_china_warlord_interaction_blocked
+		}
+	}
+
 #经济
 	country_event = { #重点开发
 		id = GEA.1000
@@ -6997,8 +7135,46 @@ add_namespace = GEA_news
         	set_country_flag = GEA_ferdinand_win
 		}
 	}
+	country_event = { 
+		id = GEA.1201
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.1201" }
+		title = GEA.1201.t
+		desc = GEA.1201.d
+		picture = GFX_GEA_The_German_General_Staff
 
-#印支事件
+		fire_only_once = yes
+
+		is_triggered_only = yes
+
+		option = { 
+			name = GEA.1201.a
+			ai_chance = {
+				factor = 25
+			}
+        	set_country_flag = GEA_Stauffenberg_reform
+		}
+		option = { 
+			name = GEA.1201.b
+			ai_chance = {
+				factor = 25
+			}
+        	set_country_flag = GEA_Tresckow_reform
+		}
+		option = { 
+			name = GEA.1201.c
+			ai_chance = {
+				factor = 25
+			}
+        	set_country_flag = GEA_Saucken_reform
+		}
+		option = { 
+			name = GEA.1201.e
+			ai_chance = {
+				factor = 25
+			}
+        	set_country_flag = GEA_ferdinand_win
+		}
+	}
 
 
 	
@@ -8288,48 +8464,7 @@ add_namespace = GEA_news
 			} 
 		}
 	}
-#越战事件
 
-	country_event = {
-		id = Ostasien.1002
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.1002" }
-		title = Ostasien.1002.t
-		desc = Ostasien.1002.d
-		picture = GFX_GEA_The_German_General_Staff
-
-		fire_only_once = yes
-
-		is_triggered_only = yes
-
-		option = { 
-			name = Ostasien.1002.a
-			ai_chance = {
-				factor = 25
-			}
-        	set_country_flag = GEA_Stauffenberg_reform
-		}
-		option = { 
-			name = Ostasien.1002.b
-			ai_chance = {
-				factor = 25
-			}
-        	set_country_flag = GEA_Tresckow_reform
-		}
-		option = { 
-			name = Ostasien.1002.c
-			ai_chance = {
-				factor = 25
-			}
-        	set_country_flag = GEA_Saucken_reform
-		}
-		option = { 
-			name = Ostasien.1002.e
-			ai_chance = {
-				factor = 25
-			}
-        	set_country_flag = GEA_ferdinand_win
-		}
-	}
 
 #隐藏事件
 	country_event = {
@@ -8439,3 +8574,4 @@ add_namespace = GEA_news
 			clr_country_flag = GEA_raided_resources_doubled
 		}
 	}
+

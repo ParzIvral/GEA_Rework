@@ -1,6 +1,17 @@
 ideas = {
 		country = {
 # starting ideas
+		# 保留 KX 印支决议仍在调用的德属东亚负面精神。
+		GEA_harassed_by_vc_idea = {
+			picture = tfv_can_conscription_crisis
+			allowed = { always = no }
+			modifier = {
+				attrition = 0.2
+				supply_consumption_factor = 0.20
+			}
+		}
+
+
 		GEA_colonial_question = { #东亚殖民政府
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_colonial_question"}
 			picture = colonial_question
@@ -2297,6 +2308,27 @@ ideas = {
 				max_planning = 0.1
 			}
 		}	
+		GEA_Large_scale_railway_construction = { #大规模铁路建设
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Large_scale_railway_construction" }
+			picture = GER_High_Speed_Rail_Focus
+			allowed = { always = no }
+			modifier = {
+				production_speed_rail_way_factor = 0.15
+				production_speed_buildings_factor = 0.05
+				repair_speed_rail_way_factor = 0.05
+
+			}
+		}	
+		GEA_Made_in_Germany_idea = { #德国制造
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Made_in_Germany_idea" }
+			picture = GER_Arbeiterkultur_Uber_Alles
+			allowed = { always = no }
+			modifier = {
+				market_liberal_drift = 0.02
+				industrial_capacity_factory = 0.05
+				production_factory_max_efficiency_factor = 0.05
+			}
+		}	
 		GEA_Trade_surplus_with_China = { #对华贸易顺差
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Trade_surplus_with_China" }
 			picture = GEA_Trade_surplus_with_China
@@ -2307,6 +2339,19 @@ ideas = {
 				production_factory_max_efficiency_factor = 0.03
 			}
 		}	
+		GEA_fuck_kmt1 = { #德国海军封锁
+			picture = GEA_fuck_kmt
+			allowed = { always = no }
+			modifier = {
+				consumer_goods_factor = 0.1
+				cannot_receive_volunteers = 1
+			}
+			targeted_modifier = {
+				tag = LEP
+				attack_bonus_against = -0.05
+				defense_bonus_against = -0.05
+			}
+		}
 #BM
 		GEA_plantations_negotiation_idea = { #种植园谈判
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_plantations_negotiation_idea"}
@@ -2320,12 +2365,24 @@ ideas = {
 	}
 #隐藏精神
 	hidden_ideas = {
+		GEA_Repaying_German_Loan = {
+			allowed = { always = no }
+			modifier = { political_power_cost = 0.02 }
+		}
 		GEA_German_military_equipment_imports = { #德制军械进口
 			allowed = { always = no }
 			modifier = {
 				political_power_gain = -0.03
 				industrial_capacity_factory = 0.10
 				consumer_goods_factor = 0.05
+			}
+		}
+		GEA_Southeast_Asia_opium_epidemic = { #东南亚鸦片泛滥
+			allowed = { always = no }
+			modifier = {
+				stability_weekly = 0.01
+				consumer_goods_factor = 0.1
+				army_org_factor = -0.05
 			}
 		}
 		GEA_German_East_Asia_resource_trade = { #德属东亚资源贸易
@@ -2366,6 +2423,13 @@ ideas = {
 				naval_speed_factor = -0.05
 			}
 		}
+		GEA_Modern_smelting_technology = { #现代化冶炼技术
+			allowed = { always = no }
+			modifier = {
+				local_resources_factor = 0.15
+				industrial_capacity_factory = 0.05
+			}
+		}
 		GEA_far_eastern_abwehr_idea = { #远东阿勃维尔
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_far_eastern_abwehr_idea"}
 			allowed = { always = no }
@@ -2373,16 +2437,6 @@ ideas = {
 				operative_slot = 1
 				encryption = 5
 				decryption = 5
-			}
-		}
-		GEA_officer = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_officer"}
-			allowed = { always = no }
-			modifier = {
-				weekly_manpower = 100
-				stability_weekly = 0.005
-				political_power_gain = 0.05
-				authoritarian_democrat_drift = 0.01
 			}
 		}
 		GEA_mio_policy_forced_labour_idea = {

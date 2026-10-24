@@ -58227,7 +58227,7 @@ ideas = {
 					if = {
 						limit = { original_tag = CHI }
 						custom_effect_tooltip = CHI_add_rca_aligned_advisor_tt
-						hidden_effect = { CHI_rca_small_effect = yes }
+						hidden_effect = { CHI_RCA_small_effect = yes }
 					}
 				}		
 			}
@@ -58649,7 +58649,7 @@ ideas = {
 					if = {
 						limit = { original_tag = CHI }
 						custom_effect_tooltip = CHI_add_rca_aligned_advisor_tt
-						hidden_effect = { CHI_rca_small_effect = yes }
+						hidden_effect = { CHI_RCA_small_effect = yes }
 					}
 				}
 			}
@@ -58676,7 +58676,7 @@ ideas = {
 					if = {
 						limit = { original_tag = CHI }
 						custom_effect_tooltip = CHI_add_rca_aligned_advisor_tt
-						hidden_effect = { CHI_rca_small_effect = yes }
+						hidden_effect = { CHI_RCA_small_effect = yes }
 					}
 				}
 			}
@@ -58706,7 +58706,7 @@ ideas = {
 					if = {
 						limit = { original_tag = CHI }
 						custom_effect_tooltip = CHI_add_rca_aligned_advisor_tt
-						hidden_effect = { CHI_rca_small_effect = yes }
+						hidden_effect = { CHI_RCA_small_effect = yes }
 					}
 				}
 			}
@@ -58815,7 +58815,7 @@ ideas = {
 					if = {
 						limit = { original_tag = CHI }
 						custom_effect_tooltip = CHI_add_rca_aligned_advisor_tt
-						hidden_effect = { CHI_rca_small_effect = yes }
+						hidden_effect = { CHI_RCA_small_effect = yes }
 					}
 				}
 			}

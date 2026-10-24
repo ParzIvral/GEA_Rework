@@ -6734,10 +6734,23 @@ GEA_Kartel_decisions = { #东方聚宝盆
 			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Franchise_Regulations"
 			clr_country_flag = GEA_Discussing_the_law
 			increase_ruling_party_popularity_by_3 = yes
-			add_to_variable = { GEA_Economic_political_power = -0.05 }
-			add_to_variable = { GEA_Economic_factory_output = 0.06 }
-			add_to_variable = { GEA_Economic_construction_speed = 0.03 }
-			custom_effect_tooltip = GEA_Franchise_Regulations_economic_modifier_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_Economic_modifier
+			}
+			add_to_variable = {
+				GEA_Economic_political_power = -0.05
+				tooltip = political_power_factor_tt
+			}
+			add_to_variable = {
+				GEA_Economic_factory_output = 0.06
+				tooltip = industrial_capacity_factory_tt
+			}
+			add_to_variable = {
+				GEA_Economic_construction_speed = 0.03
+				tooltip = production_speed_buildings_factor_tt
+			}
 		}
 	}
 	GEA_Labor_Contract_Regulations = { #劳动合同条例
@@ -6784,21 +6797,53 @@ GEA_Kartel_decisions = { #东方聚宝盆
 				limit = {
 					has_country_flag = GEA_Governor_Tilo_flag
 				}
-				add_to_variable = { GEA_Economic_political_power = -0.05 }
-				add_to_variable = { GEA_Economic_monthly_population = 0.1 }
-				add_to_variable = { GEA_Economic_efficiency_gain = 0.04 }
-				add_to_variable = { GEA_Economic_efficiency_retention = 0.02 }
-				custom_effect_tooltip = GEA_Labor_Contract_Regulations_branch_1_economic_modifier_tt
+				custom_effect_tooltip = tooltip_white_line
+				custom_effect_tooltip = {
+					localization_key = tooltip_modify_dynmod
+					DYNMOD = GEA_Economic_modifier
+				}
+				add_to_variable = {
+					GEA_Economic_political_power = -0.05
+					tooltip = political_power_factor_tt
+				}
+				add_to_variable = {
+					GEA_Economic_monthly_population = 0.1
+					tooltip = monthly_population_tt
+				}
+				add_to_variable = {
+					GEA_Economic_efficiency_gain = 0.04
+					tooltip = production_factory_efficiency_gain_factor_tt
+				}
+				add_to_variable = {
+					GEA_Economic_efficiency_retention = 0.02
+					tooltip = line_change_production_efficiency_factor_tt
+				}
 			}
 			else_if = {
 				limit = {
 					has_country_flag = GEA_Governor_Meer_flag
 				}
-				add_to_variable = { GEA_Economic_political_power = -0.05 }
-				add_to_variable = { GEA_Economic_monthly_population = -0.05 }
-				add_to_variable = { GEA_Economic_building_slots = 0.075 }
-				add_to_variable = { GEA_Economic_cic_construction_boost_factor = 0.04 }
-				custom_effect_tooltip = GEA_Labor_Contract_Regulations_branch_2_economic_modifier_tt
+				custom_effect_tooltip = tooltip_white_line
+				custom_effect_tooltip = {
+					localization_key = tooltip_modify_dynmod
+					DYNMOD = GEA_Economic_modifier
+				}
+				add_to_variable = {
+					GEA_Economic_political_power = -0.05
+					tooltip = political_power_factor_tt
+				}
+				add_to_variable = {
+					GEA_Economic_monthly_population = -0.05
+					tooltip = monthly_population_tt
+				}
+				add_to_variable = {
+					GEA_Economic_building_slots = 0.075
+					tooltip = local_building_slots_factor_tooltip
+				}
+				add_to_variable = {
+					GEA_Economic_cic_construction_boost_factor = 0.04
+					tooltip = cic_construction_boost_factor_tt
+				}
 			}
 		}
 	}
@@ -6839,9 +6884,19 @@ GEA_Kartel_decisions = { #东方聚宝盆
 			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Minimum_labor_protection_revision"
 			clr_country_flag = GEA_Discussing_the_law
 			add_stability = 0.05
-			add_to_variable = { GEA_Economic_efficiency_max = 0.06 }
-			add_to_variable = { GEA_Economic_consumer_goods_expected_value = 0.07 }
-			custom_effect_tooltip = GEA_Minimum_labor_protection_revision_economic_modifier_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_Economic_modifier
+			}
+			add_to_variable = {
+				GEA_Economic_efficiency_max = 0.06
+				tooltip = production_factory_max_efficiency_factor_tt
+			}
+			add_to_variable = {
+				GEA_Economic_consumer_goods_expected_value = 0.07
+				tooltip = consumer_goods_expected_value_tooltip
+			}
 
 		}
 	}
@@ -6882,9 +6937,19 @@ GEA_Kartel_decisions = { #东方聚宝盆
 			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Employment_exemption_for_enterprises_revision"
 			clr_country_flag = GEA_Discussing_the_law
 			increase_ruling_party_popularity_by_5 = yes
-			add_to_variable = { GEA_Economic_start_efficiency = 0.07 }
-			add_to_variable = { GEA_Economic_monthly_population = -0.06 }
-			custom_effect_tooltip = GEA_Employment_exemption_for_enterprises_revision_economic_modifier_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_Economic_modifier
+			}
+			add_to_variable = {
+				GEA_Economic_start_efficiency = 0.07
+				tooltip = production_factory_start_efficiency_factor_tt
+			}
+			add_to_variable = {
+				GEA_Economic_monthly_population = -0.06
+				tooltip = monthly_population_tt
+			}
 
 		}
 	}
@@ -6925,10 +6990,23 @@ GEA_Kartel_decisions = { #东方聚宝盆
 			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_War_time_Management_Law"
 			clr_country_flag = GEA_Discussing_the_law
 			add_stability = -0.03
-			add_to_variable = { GEA_Economic_military_speed = 0.06 }
-			add_to_variable = { GEA_Economic_factory_output = 0.02 }
-			add_to_variable = { GEA_Economic_stability_weekly = -0.001 }
-			custom_effect_tooltip = GEA_War_time_Management_Law_economic_modifier_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_Economic_modifier
+			}
+			add_to_variable = {
+				GEA_Economic_military_speed = 0.06
+				tooltip = production_speed_arms_factory_factor_tt
+			}
+			add_to_variable = {
+				GEA_Economic_factory_output = 0.02
+				tooltip = industrial_capacity_factory_tt
+			}
+			add_to_variable = {
+				GEA_Economic_stability_weekly = -0.001
+				tooltip = stability_weekly_tooltip
+			}
 
 		}
 	}
@@ -6968,10 +7046,23 @@ GEA_Kartel_decisions = { #东方聚宝盆
 			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_The_Military_Support_and_Assistance_Act"
 			clr_country_flag = GEA_Discussing_the_law
 			add_war_support = 0.03
-			add_to_variable = { GEA_Economic_consumer_goods = 0.1 }
-			add_to_variable = { GEA_Economic_civilian_speed = -0.05 }
-			add_to_variable = { GEA_Economic_building_slots = 0.1 }
-			custom_effect_tooltip = GEA_The_Military_Support_and_Assistance_Act_economic_modifier_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_Economic_modifier
+			}
+			add_to_variable = {
+				GEA_Economic_consumer_goods = 0.1
+				tooltip = consumer_goods_factor_tt
+			}
+			add_to_variable = {
+				GEA_Economic_civilian_speed = -0.05
+				tooltip = production_speed_industrial_complex_factor_tt
+			}
+			add_to_variable = {
+				GEA_Economic_building_slots = 0.1
+				tooltip = local_building_slots_factor_tooltip
+			}
 			
 		}
 	}
@@ -7032,9 +7123,19 @@ GEA_Kartel_decisions = { #东方聚宝盆
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Strengthening_military_armaments"
 			add_stability = 0.05
-			add_to_variable = { GEA_army_breakthrough_factor = 0.05 }
-			add_to_variable = { GEA_army_army_morale_factor = 0.05 }
-			custom_effect_tooltip = GEA_Strengthening_military_armaments_army_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_gea_army
+			}
+			add_to_variable = {
+				GEA_army_breakthrough_factor = 0.05
+				tooltip = breakthrough_factor_tt
+			}
+			add_to_variable = {
+				GEA_army_army_morale_factor = 0.05
+				tooltip = army_morale_factor_tt
+			}
 		}
 	}
 	GEA_Large_scale_acquisition_of_agricultural_products = { #大规模收购农产品
@@ -7274,9 +7375,19 @@ GEA_indochina_war_decisions = {#印支战争
 
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Reorganize_the_command_structure"
-			custom_effect_tooltip = GEA_Reorganize_the_command_structure_tt
-			add_to_variable = { GEA_max_command_power = 50 }
-			add_to_variable = { GEA_army_experience_gain_army = 0.05 }
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_gea_army
+			}
+			add_to_variable = {
+				GEA_max_command_power = 50
+				tooltip = max_command_power_tt
+			}
+			add_to_variable = {
+				GEA_army_experience_gain_army = 0.05
+				tooltip = experience_gain_army_tt
+			}
 			army_experience = 30
 		}
 	}
@@ -7601,19 +7712,26 @@ GEA_indochina_war_decisions = {#印支战争
 		activation = { always = no }
 		available = { always = no }
 		days_mission_timeout = 120
-		cancel_trigger = { divisions_in_state = { state = 671 size < 3 } }
 		highlight_states = {
 			highlight_state_targets = {
 				state = 671
 			}
 		}
-		cancel_trigger = { NOT = { has_war_with = INC } }
+		cancel_trigger = {
+			OR = {
+				divisions_in_state = { state = 671 size < 3 }
+				NOT = { has_war_with = INC }
+			}
+		}
 		is_good = yes
 		complete_effect = { log = "[GetDateText]: [Root.GetName]: Decision GEA_maintain_Tonkin_control" }
 		timeout_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision timeout GEA_maintain_Tonkin_control"
-			custom_effect_tooltip = GEA_GEA_reinforce_police_tt
-			add_to_variable = { var = GEA_indochina_control value = 1 }
+			add_to_variable = {
+				var = INC.guerilla_activity
+				value = -10
+				tooltip = GEA_guerilla_activity_change_tt
+			}
 		}
 	}
 	GEA_review_infantry_combat_lessons = { #总结步兵作战经验
@@ -7961,11 +8079,11 @@ GEA_indochina_war_decisions = {#印支战争
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_enact_scorched_earth_in_indochina target: [From.GetName]"
 			custom_effect_tooltip = GEA_enact_scorched_earth_in_indochina_tt
-			hidden_effect = {
-				FROM = {
-					add_dynamic_modifier = {
-						modifier = GEA_scorched_earth_state_modifier
-					}
+			FROM = {
+				add_dynamic_modifier = {
+					modifier = GEA_scorched_earth_state_modifier
+				}
+				hidden_effect = {
 					state_event = {
 						id = GEA.12000
 						trigger_for = controller
@@ -9010,6 +9128,7 @@ GEA_heye_decisions = {#海耶相关决议
 GEA_focus_china_decisions = {#第二次对华远征
 	GEA_give_guns_to_lep = { #向宁系提供武器
 		visible = {
+			FROM = { GEA_china_warlord_can_interact_trigger = yes }
 			has_completed_focus = GEA_Nanjing_xpress
 			country_exists = FROM
 			NOT = {
@@ -9051,7 +9170,8 @@ GEA_focus_china_decisions = {#第二次对华远征
 		days_re_enable = GEA_lep_investment_cooldown?60
 
 		visible = {
-			has_completed_focus = GEA_Nanjing_xpress
+			FROM = { GEA_china_warlord_can_interact_trigger = yes }
+			#has_completed_focus = GEA_Nanjing_xpress
 			has_country_flag = GEA_east_china_investment_unlocked
 			has_country_flag = LEP_OPEN
 		}
@@ -9097,7 +9217,8 @@ GEA_focus_china_decisions = {#第二次对华远征
 		days_re_enable = GEA_lep_enterprise_cooldown?100
 
 		visible = {
-			has_completed_focus = GEA_Nanjing_xpress
+			FROM = { GEA_china_warlord_can_interact_trigger = yes }
+			#has_completed_focus = GEA_Nanjing_xpress
 			has_country_flag = GEA_east_china_investment_unlocked
 			has_country_flag = LEP_OPEN
 		}
@@ -9149,7 +9270,8 @@ GEA_focus_china_decisions = {#第二次对华远征
 		days_re_enable = GEA_lep_enterprise_cooldown?100
 
 		visible = {
-			has_completed_focus = GEA_Nanjing_xpress
+			FROM = { GEA_china_warlord_can_interact_trigger = yes }
+			#has_completed_focus = GEA_Nanjing_xpress
 			has_country_flag = GEA_east_china_investment_unlocked
 			has_country_flag = LEP_OPEN
 		}
@@ -9193,6 +9315,99 @@ GEA_focus_china_decisions = {#第二次对华远征
 		}
 	}
 
+	GEA_Transfer_German_Enterprises = { # 转移德资企业
+		icon = GFX_GEA_Transfer_German_Enterprises_decision
+		allowed = { original_tag = GEA }
+		cost = 50
+		custom_cost_text = GEA_cost_50_pp_50_cp
+		custom_cost_trigger = { command_power > 49.99 }
+		days_remove = 120
+		days_re_enable = 120
+
+		visible = {
+			FROM = { GEA_china_warlord_can_interact_trigger = yes }
+			has_country_flag = GEA_eight_provinces_war_resolved
+			has_country_flag = LEP_OPEN
+		}
+		targets_dynamic = yes
+		target_root_trigger = {
+			has_country_flag = GEA_eight_provinces_war_resolved
+			has_country_flag = LEP_OPEN
+		}
+		target_trigger = { FROM = { owns_state = 613 } }
+		available = {
+			FROM = {
+				owns_state = 613
+				any_owned_state = {
+					is_controlled_by = FROM
+					arms_factory > 0
+				}
+				any_owned_state = {
+					is_controlled_by = FROM
+					industrial_complex > 0
+				}
+			}
+		}
+		cancel_trigger = {
+			FROM = {
+				OR = {
+					NOT = { owns_state = 613 }
+					NOT = {
+						any_owned_state = {
+							is_controlled_by = FROM
+							arms_factory > 0
+						}
+					}
+					NOT = {
+						any_owned_state = {
+							is_controlled_by = FROM
+							industrial_complex > 0
+						}
+					}
+				}
+			}
+		}
+		modifier = { political_power_cost = -0.03 }
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_Transfer_German_Enterprises target: [From.GetName]"
+			hidden_effect = { add_command_power = -50 }
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Transfer_German_Enterprises target: [From.GetName]"
+			FROM = {
+				random_owned_state = {
+					limit = {
+						is_controlled_by = FROM
+						arms_factory > 0
+					}
+					remove_building = { type = arms_factory level = 1 }
+				}
+				random_owned_state = {
+					limit = {
+						is_controlled_by = FROM
+						industrial_complex > 0
+					}
+					remove_building = { type = industrial_complex level = 1 }
+				}
+				add_political_power = 100
+				add_popularity = { ideology = market_liberal popularity = -0.03 }
+			}
+			custom_effect_tooltip = GEA_china_lep_name_tt
+			add_to_variable = {
+				GEA_china_lep_attitude = -10
+				tooltip = GEA_china_attitude_change_tt
+			}
+			add_to_variable = {
+				GEA_china_lep_capital_influence = -10
+				tooltip = GEA_china_capital_influence_change_tt
+			}
+			hidden_effect = {
+				clamp_variable = { var = GEA_china_lep_attitude min = 0 max = 100 }
+				clamp_variable = { var = GEA_china_lep_capital_influence min = 0 max = 100 }
+			}
+		}
+	}
+
 	GEA_Expand_military_equipment_exports = { #扩大军械出口
 		icon = GFX_GEA_Invest_in_East_China_decision
 		allowed = { original_tag = GEA }
@@ -9216,6 +9431,7 @@ GEA_focus_china_decisions = {#第二次对华远征
 		days_re_enable = GEA_lep_export_cooldown?120
 
 		visible = {
+			FROM = { GEA_china_warlord_can_interact_trigger = yes }
 			has_completed_focus = GEA_Goods_out_money_in
 			has_country_flag = GEA_east_china_investment_unlocked
 			has_country_flag = LEP_OPEN
@@ -9232,6 +9448,12 @@ GEA_focus_china_decisions = {#第二次对华远征
 		}
 		available = {
 			FROM = { owns_state = 613 }
+		}
+
+		modifier = {
+			political_power_gain = 0.03
+			industrial_capacity_factory = -0.10
+			consumer_goods_factor = -0.05
 		}
 
 		complete_effect = {
@@ -9287,9 +9509,16 @@ GEA_focus_china_decisions = {#第二次对华远征
 		days_re_enable = GEA_lep_export_cooldown?120
 
 		visible = {
+			FROM = { GEA_china_warlord_can_interact_trigger = yes }
 			has_completed_focus = GEA_Goods_out_money_in
 			has_country_flag = GEA_east_china_investment_unlocked
 			has_country_flag = LEP_OPEN
+		}
+
+		modifier = {
+			political_power_gain = 0.03
+			local_resources_factor = -0.10
+			consumer_goods_factor = -0.05
 		}
 
 		targets_dynamic = yes
@@ -9336,11 +9565,1042 @@ GEA_focus_china_decisions = {#第二次对华远征
 			FROM = { remove_ideas = GEA_German_East_Asia_resource_trade }
 		}
 	}
+	GEA_Expand_drug_smuggling = { #扩大毒品走私
+		icon = GFX_GEA_Invest_in_East_China_decision
+		allowed = { original_tag = GEA }
+
+		cost = 0
+		custom_cost_text = GEA_lep_export_cp_cost
+		custom_cost_trigger = {
+			OR = {
+				AND = {
+					has_completed_focus = GEA_The_usiness_expansion_of_AOG
+					command_power > 19.99
+				}
+				AND = {
+					NOT = { has_completed_focus = GEA_The_usiness_expansion_of_AOG }
+					command_power > 29.99
+				}
+			}
+		}
+		days_remove = 60
+		days_re_enable = GEA_lep_export_cooldown?120
+
+		visible = {
+			FROM = { GEA_china_warlord_can_interact_trigger = yes }
+			has_completed_focus = GEA_Goods_out_money_in
+			has_country_flag = GEA_east_china_investment_unlocked
+			has_country_flag = LEP_OPEN
+		}
+
+		targets_dynamic = yes
+		target_root_trigger = {
+			has_completed_focus = GEA_Goods_out_money_in
+			has_country_flag = GEA_east_china_investment_unlocked
+			has_country_flag = LEP_OPEN
+		}
+		target_trigger = {
+			FROM = { owns_state = 613 }
+		}
+		available = {
+			FROM = { owns_state = 613 }
+		}
+
+		modifier = {
+			political_factor = 0.1
+			consumer_goods_factor = -0.1
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_Expand_drug_smuggling target: [From.GetName]"
+			hidden_effect = {
+				if = {
+					limit = { has_completed_focus = GEA_The_usiness_expansion_of_AOG }
+					add_command_power = -20
+				}
+				else = { add_command_power = -30 }
+			}
+			FROM = { add_ideas = GEA_Southeast_Asia_opium_epidemic }
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Expand_drug_smuggling target: [From.GetName]"
+			add_stability = -0.05
+			FROM = {
+				remove_ideas = GEA_Southeast_Asia_opium_epidemic
+				add_popularity = { ideology = market_liberal popularity = 0.02 }
+			}
+			custom_effect_tooltip = GEA_china_lep_name_tt
+			custom_effect_tooltip = GEA_china_attitude_add_5_tt
+			custom_effect_tooltip = GEA_china_capital_influence_add_5_tt
+			hidden_effect = {
+				add_to_variable = { GEA_china_lep_attitude = 5 }
+				clamp_variable = { var = GEA_china_lep_attitude min = 0 max = 100 }
+				add_to_variable = { GEA_china_lep_capital_influence = 5 }
+				clamp_variable = { var = GEA_china_lep_capital_influence min = 0 max = 100 }
+			}
+		}
+		cancel_effect = {
+			FROM = { remove_ideas = GEA_Southeast_Asia_opium_epidemic }
+		}
+	}
+
+	GEA_Build_the_Nanjing_Steel_Factory = { #建设南京制钢厂
+		icon = GFX_GEA_Build_the_Nanjing_Steel_Factory_decision
+		allowed = { original_tag = GEA }
+
+		cost = 20
+		days_remove = 90
+		fire_only_once = yes
+
+		visible = {
+			FROM = { GEA_china_warlord_can_interact_trigger = yes }
+			has_completed_focus = GEA_Best_regards_to_our_mining_operation
+			has_country_flag = GEA_east_china_investment_unlocked
+			has_country_flag = LEP_OPEN
+		}
+
+		targets_dynamic = yes
+		target_root_trigger = {
+			has_completed_focus = GEA_Best_regards_to_our_mining_operation
+			has_country_flag = GEA_east_china_investment_unlocked
+			has_country_flag = LEP_OPEN
+		}
+		target_trigger = {
+			FROM = { owns_state = 613 }
+		}
+		available = {
+			FROM = { owns_state = 613 }
+		}
+
+		modifier = {
+			political_power_cost = 0.03
+			production_speed_buildings_factor = -0.03
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Build_the_Nanjing_Steel_Factory target: [From.GetName]"
+			add_resource = { type = steel amount = 27 state = 613 }
+			613 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			FROM = {
+				add_popularity = { ideology = market_liberal popularity = 0.02 }
+			}
+			custom_effect_tooltip = GEA_china_lep_name_tt
+			add_to_variable = {
+				GEA_china_lep_attitude = 5
+				tooltip = GEA_china_attitude_change_tt
+			}
+			add_to_variable = {
+				GEA_china_lep_capital_influence = 5
+				tooltip = GEA_china_capital_influence_change_tt
+			}
+			hidden_effect = {
+				clamp_variable = { var = GEA_china_lep_attitude min = 0 max = 100 }
+				clamp_variable = { var = GEA_china_lep_capital_influence min = 0 max = 100 }
+			}
+		}
+	}	
+	
+	GEA_Investment_in_smelting_technology = { #冶炼技术投资
+		icon = GFX_GEA_Investment_in_smelting_technology_decision
+		allowed = { original_tag = GEA }
+
+		cost = 40
+		days_remove = 90
+		fire_only_once = yes
+
+		visible = {
+			FROM = { GEA_china_warlord_can_interact_trigger = yes }
+			has_completed_focus = GEA_Best_regards_to_our_mining_operation
+			has_country_flag = GEA_east_china_investment_unlocked
+			has_country_flag = LEP_OPEN
+		}
+
+		targets_dynamic = yes
+		target_root_trigger = {
+			has_completed_focus = GEA_Best_regards_to_our_mining_operation
+			has_country_flag = GEA_east_china_investment_unlocked
+			has_country_flag = LEP_OPEN
+		}
+		target_trigger = {
+			FROM = { owns_state = 613 }
+		}
+		available = {
+			FROM = { owns_state = 613 }
+		}
+
+		modifier = {
+			political_power_cost = 0.03
+			production_speed_buildings_factor = -0.03
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Investment_in_smelting_technology target: [From.GetName]"
+			FROM = {
+				add_ideas = GEA_Modern_smelting_technology
+				add_tech_bonus = {
+					name = GEA_Investment_in_smelting_technology
+					bonus = 0.5
+					uses = 1
+					category = excavation_tech
+				}
+			}
+			custom_effect_tooltip = GEA_china_lep_name_tt
+			add_to_variable = {
+				GEA_china_lep_attitude = 5
+				tooltip = GEA_china_attitude_change_tt
+			}
+			add_to_variable = {
+				GEA_china_lep_capital_influence = 3
+				tooltip = GEA_china_capital_influence_change_tt
+			}
+			hidden_effect = {
+				clamp_variable = { var = GEA_china_lep_attitude min = 0 max = 100 }
+				clamp_variable = { var = GEA_china_lep_capital_influence min = 0 max = 100 }
+			}
+		}
+	}	
+	
+	GEA_Acquire_the_Nanshan_Iron_Mine = { # 收购南山铁矿
+		icon = GFX_GEA_Investment_in_smelting_technology_decision
+		allowed = { original_tag = GEA }
+		cost = 75
+		days_remove = 75
+		fire_only_once = yes
+
+		visible = {
+			FROM = { GEA_china_warlord_can_interact_trigger = yes }
+			has_completed_focus = GEA_Best_regards_to_our_mining_operation
+			has_country_flag = GEA_east_china_investment_unlocked
+			has_country_flag = LEP_OPEN
+		}
+		targets_dynamic = yes
+		target_root_trigger = {
+			has_completed_focus = GEA_Best_regards_to_our_mining_operation
+			has_country_flag = GEA_east_china_investment_unlocked
+			has_country_flag = LEP_OPEN
+		}
+		target_trigger = { FROM = { owns_state = 613 } }
+		available = {
+			FROM = {
+				owns_state = 613
+				owns_state = 1014
+			}
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Acquire_the_Nanshan_Iron_Mine target: [From.GetName]"
+			FROM = {
+				add_political_power = 100
+				decrease_ruling_party_popularity_by_3 = yes
+				add_popularity = { ideology = market_liberal popularity = -0.02 }
+			}
+			custom_effect_tooltip = GEA_china_lep_name_tt
+			add_to_variable = {
+				GEA_china_lep_attitude = -10
+				tooltip = GEA_china_attitude_change_tt
+			}
+			add_to_variable = {
+				GEA_china_lep_capital_influence = -10
+				tooltip = GEA_china_capital_influence_change_tt
+			}
+			hidden_effect = {
+				clamp_variable = { var = GEA_china_lep_attitude min = 0 max = 100 }
+				clamp_variable = { var = GEA_china_lep_capital_influence min = 0 max = 100 }
+			}
+		}
+	}
+
+	GEA_Develop_the_Xihuashan_Tungsten_Mine = { # 开发西华山钨矿
+		icon = GFX_GEA_Investment_in_smelting_technology_decision
+		allowed = { original_tag = GEA }
+		cost = 40
+		days_remove = 90
+		fire_only_once = yes
+
+		visible = {
+			FROM = { GEA_china_warlord_can_interact_trigger = yes }
+			has_completed_focus = GEA_Best_regards_to_our_mining_operation
+			has_country_flag = GEA_east_china_investment_unlocked
+			has_country_flag = LEP_OPEN
+		}
+		targets_dynamic = yes
+		target_root_trigger = {
+			has_completed_focus = GEA_Best_regards_to_our_mining_operation
+			has_country_flag = GEA_east_china_investment_unlocked
+			has_country_flag = LEP_OPEN
+		}
+		target_trigger = { FROM = { owns_state = 613 } }
+		available = {
+			FROM = {
+				owns_state = 613
+				owns_state = 600
+			}
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Develop_the_Xihuashan_Tungsten_Mine target: [From.GetName]"
+			add_resource = { type = tungsten amount = 40 state = 600 }
+			FROM = {
+				add_popularity = { ideology = market_liberal popularity = 0.02 }
+			}
+			custom_effect_tooltip = GEA_china_lep_name_tt
+			add_to_variable = {
+				GEA_china_lep_attitude = 5
+				tooltip = GEA_china_attitude_change_tt
+			}
+			add_to_variable = {
+				GEA_china_lep_capital_influence = 5
+				tooltip = GEA_china_capital_influence_change_tt
+			}
+			hidden_effect = {
+				clamp_variable = { var = GEA_china_lep_attitude min = 0 max = 100 }
+				clamp_variable = { var = GEA_china_lep_capital_influence min = 0 max = 100 }
+			}
+		}
+	}
+
+	GEA_Develop_the_Gushan_Iron_Mine = { # 开发姑山铁矿
+		icon = GFX_GEA_Investment_in_smelting_technology_decision
+		allowed = { original_tag = GEA }
+		cost = 40
+		days_remove = 90
+		fire_only_once = yes
+
+		visible = {
+			FROM = { GEA_china_warlord_can_interact_trigger = yes }
+			has_completed_focus = GEA_Best_regards_to_our_mining_operation
+			has_country_flag = GEA_east_china_investment_unlocked
+			has_country_flag = LEP_OPEN
+		}
+		targets_dynamic = yes
+		target_root_trigger = {
+			has_completed_focus = GEA_Best_regards_to_our_mining_operation
+			has_country_flag = GEA_east_china_investment_unlocked
+			has_country_flag = LEP_OPEN
+		}
+		target_trigger = { FROM = { owns_state = 613 } }
+		available = {
+			FROM = {
+				owns_state = 613
+				owns_state = 1014
+			}
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Develop_the_Gushan_Iron_Mine target: [From.GetName]"
+			add_resource = { type = steel amount = 40 state = 1014 }
+			FROM = {
+				add_popularity = { ideology = market_liberal popularity = 0.02 }
+			}
+			custom_effect_tooltip = GEA_china_lep_name_tt
+			add_to_variable = {
+				GEA_china_lep_attitude = 5
+				tooltip = GEA_china_attitude_change_tt
+			}
+			add_to_variable = {
+				GEA_china_lep_capital_influence = 5
+				tooltip = GEA_china_capital_influence_change_tt
+			}
+			hidden_effect = {
+				clamp_variable = { var = GEA_china_lep_attitude min = 0 max = 100 }
+				clamp_variable = { var = GEA_china_lep_capital_influence min = 0 max = 100 }
+			}
+		}
+	}
+
+	GEA_Develop_the_Pangushan_Tungsten_Mine = { # 开发盘古山钨矿
+		icon = GFX_GEA_Investment_in_smelting_technology_decision
+		allowed = { original_tag = GEA }
+		cost = 40
+		days_remove = 90
+		fire_only_once = yes
+
+		visible = {
+			FROM = { GEA_china_warlord_can_interact_trigger = yes }
+			has_completed_focus = GEA_Best_regards_to_our_mining_operation
+			has_country_flag = GEA_east_china_investment_unlocked
+			has_country_flag = LEP_OPEN
+		}
+		targets_dynamic = yes
+		target_root_trigger = {
+			has_completed_focus = GEA_Best_regards_to_our_mining_operation
+			has_country_flag = GEA_east_china_investment_unlocked
+			has_country_flag = LEP_OPEN
+		}
+		target_trigger = { FROM = { owns_state = 613 } }
+		available = {
+			FROM = {
+				owns_state = 613
+				owns_state = 600
+			}
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Develop_the_Pangushan_Tungsten_Mine target: [From.GetName]"
+			add_resource = { type = tungsten amount = 40 state = 600 }
+			FROM = {
+				add_popularity = { ideology = market_liberal popularity = 0.02 }
+			}
+			custom_effect_tooltip = GEA_china_lep_name_tt
+			add_to_variable = {
+				GEA_china_lep_attitude = 5
+				tooltip = GEA_china_attitude_change_tt
+			}
+			add_to_variable = {
+				GEA_china_lep_capital_influence = 5
+				tooltip = GEA_china_capital_influence_change_tt
+			}
+			hidden_effect = {
+				clamp_variable = { var = GEA_china_lep_attitude min = 0 max = 100 }
+				clamp_variable = { var = GEA_china_lep_capital_influence min = 0 max = 100 }
+			}
+		}
+	}
+
+	GEA_Control_the_Taochong_Iron_Mine = { # 控制桃冲铁矿
+		icon = GFX_GEA_Investment_in_smelting_technology_decision
+		allowed = { original_tag = GEA }
+		cost = 75
+		days_remove = 75
+		fire_only_once = yes
+
+		visible = {
+			FROM = { GEA_china_warlord_can_interact_trigger = yes }
+			has_completed_focus = GEA_Best_regards_to_our_mining_operation
+			has_country_flag = GEA_east_china_investment_unlocked
+			has_country_flag = LEP_OPEN
+		}
+		targets_dynamic = yes
+		target_root_trigger = {
+			has_completed_focus = GEA_Best_regards_to_our_mining_operation
+			has_country_flag = GEA_east_china_investment_unlocked
+			has_country_flag = LEP_OPEN
+		}
+		target_trigger = { FROM = { owns_state = 613 } }
+		available = {
+			FROM = {
+				owns_state = 613
+				owns_state = 1014
+			}
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Control_the_Taochong_Iron_Mine target: [From.GetName]"
+			FROM = {
+				add_political_power = 100
+				decrease_ruling_party_popularity_by_3 = yes
+				add_popularity = { ideology = market_liberal popularity = -0.02 }
+			}
+			custom_effect_tooltip = GEA_china_lep_name_tt
+			add_to_variable = {
+				GEA_china_lep_attitude = -10
+				tooltip = GEA_china_attitude_change_tt
+			}
+			add_to_variable = {
+				GEA_china_lep_capital_influence = -10
+				tooltip = GEA_china_capital_influence_change_tt
+			}
+			hidden_effect = {
+				clamp_variable = { var = GEA_china_lep_attitude min = 0 max = 100 }
+				clamp_variable = { var = GEA_china_lep_capital_influence min = 0 max = 100 }
+			}
+		}
+	}
+
+	GEA_Issue_a_German_Loan = {
+		icon = GFX_GEA_Invest_in_East_China_decision
+		allowed = { original_tag = GEA }
+		cost = 0
+		visible = {
+			FROM = { GEA_china_warlord_can_interact_trigger = yes }
+			has_completed_focus = GEA_The_tricks_of_financiers
+			has_country_flag = LEP_OPEN
+		}
+		targets_dynamic = yes
+		target_root_trigger = {
+			has_completed_focus = GEA_The_tricks_of_financiers
+			has_country_flag = LEP_OPEN
+		}
+		target_trigger = {
+			FROM = { owns_state = 613 GEA_china_warlord_can_interact_trigger = yes }
+		}
+		available = {
+			NOT = { has_war_with = FROM }
+			NOT = { has_country_flag = GEA_german_loan_active }
+			NOT = { has_country_flag = GEA_german_loan_offer_pending }
+			FROM = { NOT = { has_country_flag = GEA_german_loan_active } }
+		}
+		ai_will_do = { factor = 30 }
+		complete_effect = {
+			set_country_flag = GEA_german_loan_offer_pending
+			FROM = {
+				set_country_flag = GEA_german_loan_offer_pending
+				country_event = { id = GEA.803 }
+			}
+		}
+	}
+
+	GEA_Plan_an_East_China_Coup = {
+		icon = GFX_decision_generic_political_reform
+		allowed = { original_tag = GEA }
+		priority = 10000
+		cost = 0
+		days_remove = 60
+		visible = {
+			FROM = { GEA_china_warlord_can_interact_trigger = yes } has_country_flag = LEP_OPEN }
+		targets_dynamic = yes
+		target_root_trigger = { has_country_flag = LEP_OPEN }
+		target_trigger = { FROM = { owns_state = 613 GEA_china_warlord_can_interact_trigger = yes } }
+		available = {
+			GEA_east_china_coup_threshold_trigger = yes
+			NOT = { has_war_with = FROM }
+			FROM = {
+				is_subject = no
+				NOT = { has_country_flag = GEA_german_coup_pending }
+				NOT = { has_country_flag = GEA_german_coup_succeeded }
+			}
+		}
+		cancel_trigger = {
+			OR = { has_war_with = FROM FROM = { NOT = { owns_state = 613 } } }
+		}
+		ai_will_do = { factor = 100 }
+		remove_effect = {
+			FROM = {
+				set_country_flag = GEA_german_coup_pending
+				country_event = { id = GEA.805 }
+			}
+		}
+	}
+
+	GEA_Intervene_in_East_China = {
+		icon = GFX_decision_generic_prepare_civil_war
+		allowed = { original_tag = GEA }
+		priority = 10001
+		cost = 0
+		days_remove = 30
+		visible = {
+			has_country_flag = LEP_OPEN
+			FROM = { GEA_china_warlord_cannot_interact_trigger = yes }
+		}
+		targets_dynamic = yes
+		target_root_trigger = { has_country_flag = LEP_OPEN }
+		target_trigger = {
+			FROM = {
+				owns_state = 613
+				GEA_china_warlord_cannot_interact_trigger = yes
+			}
+		}
+		available = {
+			NOT = { has_war_with = FROM }
+			FROM = { exists = yes NOT = { is_subject_of = GEA } }
+			# 国民党、张天然或其他路线的额外宣战门槛，统一加在此处。
+			# 用 FROM = { ... } 检查目标军阀，不放进普通互动的可见条件。
+		}
+		cancel_trigger = { has_war_with = FROM }
+		ai_will_do = { factor = 0 }
+		remove_effect = { declare_war_on = { target = FROM type = annex_everything } }
+	}
+	GEA_monitor_german_loan_short = {
+		icon = GFX_GEA_Invest_in_East_China_decision
+		allowed = { always = no }
+		activation = { always = no }
+		available = { always = no }
+		visible = { has_country_flag = GEA_german_loan_active }
+		days_mission_timeout = 90
+		is_good = yes
+		cancel_trigger = {
+			NOT = { any_country = { has_country_flag = GEA_german_loan_active NOT = { tag = GEA } } }
+		}
+		cancel_effect = { clr_country_flag = GEA_german_loan_active }
+		timeout_effect = { }
+	}
+	GEA_monitor_german_loan_medium = {
+		icon = GFX_GEA_Invest_in_East_China_decision
+		allowed = { always = no }
+		activation = { always = no }
+		available = { always = no }
+		visible = { has_country_flag = GEA_german_loan_active }
+		days_mission_timeout = 180
+		is_good = yes
+		cancel_trigger = {
+			NOT = { any_country = { has_country_flag = GEA_german_loan_active NOT = { tag = GEA } } }
+		}
+		cancel_effect = { clr_country_flag = GEA_german_loan_active }
+		timeout_effect = { }
+	}
+	GEA_monitor_german_loan_long = {
+		icon = GFX_GEA_Invest_in_East_China_decision
+		allowed = { always = no }
+		activation = { always = no }
+		available = { always = no }
+		visible = { has_country_flag = GEA_german_loan_active }
+		days_mission_timeout = 365
+		is_good = yes
+		cancel_trigger = {
+			NOT = { any_country = { has_country_flag = GEA_german_loan_active NOT = { tag = GEA } } }
+		}
+		cancel_effect = { clr_country_flag = GEA_german_loan_active }
+		timeout_effect = { }
+	}
+
+	GEA_Open_Village_and_County_Banks = { # 开设村县银行
+		icon = GFX_GEA_Transfer_German_Enterprises_decision
+		allowed = { original_tag = GEA }
+		cost = 30
+		days_remove = 90
+		days_re_enable = 90
+
+		visible = {
+			FROM = { GEA_china_warlord_can_interact_trigger = yes }
+			has_completed_focus = GEA_The_tricks_of_financiers
+			has_country_flag = LEP_OPEN
+		}
+		targets_dynamic = yes
+		target_root_trigger = {
+			has_completed_focus = GEA_The_tricks_of_financiers
+			has_country_flag = LEP_OPEN
+		}
+		target_trigger = { FROM = { owns_state = 613 } }
+		available = {
+			NOT = { has_war_with = FROM }
+			FROM = { owns_state = 613 }
+		}
+		cancel_trigger = {
+			OR = {
+				has_war_with = FROM
+				FROM = { NOT = { owns_state = 613 } }
+			}
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Open_Village_and_County_Banks target: [From.GetName]"
+
+			FROM = {
+				add_popularity = { ideology = market_liberal popularity = 0.02 }
+				add_stability = 0.03
+
+			}
+			custom_effect_tooltip = GEA_china_lep_name_tt
+			add_to_variable = {
+				GEA_china_lep_attitude = -5
+				tooltip = GEA_china_attitude_change_tt
+			}
+			add_to_variable = {
+				GEA_china_lep_capital_influence = 3
+				tooltip = GEA_china_capital_influence_change_tt
+			}
+			add_to_variable = {
+				GEA_china_lep_military_projection = 3
+				tooltip = GEA_china_military_projection_change_tt
+			}
+			hidden_effect = {
+				clamp_variable = { var = GEA_china_lep_attitude min = 0 max = 100 }
+				clamp_variable = { var = GEA_china_lep_capital_influence min = 0 max = 100 }
+				clamp_variable = { var = GEA_china_lep_military_projection min = 0 max = 100 }
+			}
+		}
+	}
+
+	GEA_Issue_Agricultural_Loans = { # 发放农业贷款
+		icon = GFX_GEA_Transfer_German_Enterprises_decision
+		allowed = { original_tag = GEA }
+		cost = 30
+		days_remove = 90
+		days_re_enable = 90
+
+		visible = {
+			FROM = { GEA_china_warlord_can_interact_trigger = yes }
+			has_completed_focus = GEA_The_tricks_of_financiers
+			has_country_flag = LEP_OPEN
+		}
+		targets_dynamic = yes
+		target_root_trigger = {
+			has_completed_focus = GEA_The_tricks_of_financiers
+			has_country_flag = LEP_OPEN
+		}
+		target_trigger = { FROM = { owns_state = 613 } }
+		available = {
+			NOT = { has_war_with = FROM }
+			FROM = { owns_state = 613 }
+		}
+		cancel_trigger = {
+			OR = {
+				has_war_with = FROM
+				FROM = { NOT = { owns_state = 613 } }
+			}
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Issue_Agricultural_Loans target: [From.GetName]"
+
+			FROM = {
+				add_popularity = { ideology = market_liberal popularity = 0.03 }
+				add_stability = 0.05
+				add_manpower = 3000
+				random_owned_state = {
+					limit = { is_controlled_by = FROM }
+					add_extra_state_shared_building_slots = 1
+					hidden_effect = { set_state_flag = GEA_agricultural_loan_first_state }
+				}
+				random_owned_state = {
+					limit = {
+						is_controlled_by = FROM
+						NOT = { has_state_flag = GEA_agricultural_loan_first_state }
+					}
+					add_extra_state_shared_building_slots = 1
+				}
+				hidden_effect = {
+					every_owned_state = {
+						limit = { has_state_flag = GEA_agricultural_loan_first_state }
+						clr_state_flag = GEA_agricultural_loan_first_state
+					}
+				}
+			}
+			custom_effect_tooltip = GEA_china_lep_name_tt
+			add_to_variable = {
+				GEA_china_lep_capital_influence = 5
+				tooltip = GEA_china_capital_influence_change_tt
+			}
+			add_to_variable = {
+				GEA_china_lep_military_projection = 3
+				tooltip = GEA_china_military_projection_change_tt
+			}
+			hidden_effect = {
+				clamp_variable = { var = GEA_china_lep_capital_influence min = 0 max = 100 }
+				clamp_variable = { var = GEA_china_lep_military_projection min = 0 max = 100 }
+			}
+		}
+	}
+
+	GEA_Enforce_Overdue_Credit_Liquidation = { # 强制清算逾期信贷
+		icon = GFX_GEA_Transfer_German_Enterprises_decision
+		allowed = { original_tag = GEA }
+		cost = 0
+		days_remove = 60
+		days_re_enable = 90
+		custom_cost_text = GEA_credit_liquidation_cp_cost
+		custom_cost_trigger = { command_power > 9.99 }
+		visible = {
+			FROM = { GEA_china_warlord_can_interact_trigger = yes }
+			has_completed_focus = GEA_The_tricks_of_financiers
+			has_country_flag = LEP_OPEN
+		}
+		targets_dynamic = yes
+		target_root_trigger = {
+			has_completed_focus = GEA_The_tricks_of_financiers
+			has_country_flag = LEP_OPEN
+		}
+		target_trigger = { FROM = { owns_state = 613 } }
+		available = {
+			NOT = { has_war_with = FROM }
+			FROM = { owns_state = 613 }
+		}
+		cancel_trigger = {
+			OR = {
+				has_war_with = FROM
+				FROM = { NOT = { owns_state = 613 } }
+			}
+		}
+		modifier = { consumer_goods_factor = -0.05 }
+		complete_effect = {
+			hidden_effect = { add_command_power = -10 }
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Enforce_Overdue_Credit_Liquidation target: [From.GetName]"
+			add_political_power = 75
+			increase_ruling_party_popularity_by_5 = yes
+			FROM = {
+				add_stability = -0.05
+				add_popularity = { ideology = market_liberal popularity = -0.05 }
+
+			}
+			custom_effect_tooltip = GEA_china_lep_name_tt
+			add_to_variable = {
+				GEA_china_lep_attitude = -5
+				tooltip = GEA_china_attitude_change_tt
+			}
+			add_to_variable = {
+				GEA_china_lep_capital_influence = -5
+				tooltip = GEA_china_capital_influence_change_tt
+			}
+			hidden_effect = {
+				clamp_variable = { var = GEA_china_lep_attitude min = 0 max = 100 }
+				clamp_variable = { var = GEA_china_lep_capital_influence min = 0 max = 100 }
+			}
+		}
+	}
+
+	GEA_Liquidate_Supervisory_Board_Investments = { #变现监事会投资
+		icon = GFX_GEA_Transfer_German_Enterprises_decision
+		allowed = { original_tag = GEA }
+
+		days_remove = 120
+		days_re_enable = 180
+
+		visible = {
+			FROM = { GEA_china_warlord_can_interact_trigger = yes }
+			has_completed_focus = GEA_The_tricks_of_financiers
+			has_country_flag = LEP_OPEN
+		}
+
+		targets_dynamic = yes
+		target_root_trigger = {
+			has_completed_focus = GEA_The_tricks_of_financiers
+			has_country_flag = LEP_OPEN
+		}
+		target_trigger = { FROM = { owns_state = 613 } }
+
+		available = {
+			 FROM = { owns_state = 613 } }
+
+		modifier = { 
+			political_power_gain = 0.05 
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Liquidate_Supervisory_Board_Investments target: [From.GetName]"
+			FROM = {
+				add_offsite_building = { type = industrial_complex level = 1 }
+				add_popularity = { ideology = market_liberal popularity = -0.03 }
+			}
+			add_political_power = 100
+			custom_effect_tooltip = GEA_china_lep_name_tt
+			add_to_variable = {
+				GEA_china_lep_attitude = -5
+				tooltip = GEA_china_attitude_change_tt
+			}
+			add_to_variable = {
+				GEA_china_lep_capital_influence = -7.5
+				tooltip = GEA_china_capital_influence_change_decimal_tt
+			}
+			hidden_effect = {
+				clamp_variable = { var = GEA_china_lep_attitude min = 0 max = 100 }
+				clamp_variable = { var = GEA_china_lep_capital_influence min = 0 max = 100 }
+			}
+		}
+	}
+
+	GEA_Upgrade_the_Huning_Railway = {#沪宁铁路
+		icon = railroad
+		allowed = { original_tag = GEA }
+		cost = 40
+		days_remove = 90
+		days_re_enable = 180
+		fire_only_once = yes
+		visible = {
+			FROM = { GEA_china_warlord_can_interact_trigger = yes }
+			has_completed_focus = GEA_Building_a_road_network_in_Southeast_provinces
+			has_country_flag = GEA_east_china_investment_unlocked
+			has_country_flag = LEP_OPEN
+			NOT = { has_country_flag = GEA_railway_huning_completed }
+		}
+		targets_dynamic = yes
+		target_root_trigger = {
+			has_completed_focus = GEA_Building_a_road_network_in_Southeast_provinces
+			has_country_flag = GEA_east_china_investment_unlocked
+			has_country_flag = LEP_OPEN
+			NOT = { has_country_flag = GEA_railway_huning_completed }
+		}
+		target_trigger = { FROM = { owns_state = 613 } }
+		available = {
+			NOT = { has_war_with = FROM }
+			FROM = {
+				owns_state = 613
+				controls_state = 613
+				can_build_railway = {
+					start_province = 11913
+					target_province = 10076
+					build_only_on_allied = yes
+					controller_priority = {
+						base = -1
+						modifier = { add = 2 tag = FROM }
+					}
+				}
+			}
+		}
+		cancel_trigger = {
+			OR = {
+				has_war_with = FROM
+				FROM = {
+					OR = {
+						NOT = { owns_state = 613 }
+						NOT = { controls_state = 613 }
+					}
+				}
+			}
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Upgrade_the_Huning_Railway target: [From.GetName]"
+			FROM = {
+				build_railway = {
+					level = 3
+					start_province = 11913
+					target_province = 10076
+					build_only_on_allied = yes
+					controller_priority = {
+						base = -1
+						modifier = { add = 2 tag = FROM }
+					}
+				}
+			}
+			set_country_flag = GEA_railway_huning_completed
+			GEA_complete_east_china_railway_effect = yes
+		}
+	}
+
+	GEA_Construct_the_Hangjiang_Railway = {#杭江铁路
+		icon = railroad
+		allowed = { original_tag = GEA }
+		cost = 60
+		days_remove = 150
+		days_re_enable = 240
+		fire_only_once = yes
+		visible = {
+			FROM = { GEA_china_warlord_can_interact_trigger = yes }
+			has_completed_focus = GEA_Building_a_road_network_in_Southeast_provinces
+			has_country_flag = GEA_east_china_investment_unlocked
+			has_country_flag = LEP_OPEN
+			NOT = { has_country_flag = GEA_railway_hangjiang_completed }
+		}
+		targets_dynamic = yes
+		target_root_trigger = {
+			has_completed_focus = GEA_Building_a_road_network_in_Southeast_provinces
+			has_country_flag = GEA_east_china_investment_unlocked
+			has_country_flag = LEP_OPEN
+			NOT = { has_country_flag = GEA_railway_hangjiang_completed }
+		}
+		target_trigger = { FROM = { owns_state = 613 } }
+		available = {
+			NOT = { has_war_with = FROM }
+			FROM = {
+				owns_state = 613
+				owns_state = 596
+				owns_state = 1067
+				controls_state = 596
+				controls_state = 1067
+				can_build_railway = {
+					start_province = 7191
+					target_province = 11920
+					build_only_on_allied = yes
+					controller_priority = {
+						base = -1
+						modifier = { add = 2 tag = FROM }
+					}
+				}
+			}
+		}
+		cancel_trigger = {
+			OR = {
+				has_war_with = FROM
+				FROM = {
+					OR = {
+						NOT = { owns_state = 596 }
+						NOT = { controls_state = 596 }
+						NOT = { owns_state = 613 }
+						NOT = { owns_state = 1067 }
+						NOT = { controls_state = 1067 }
+					}
+				}
+			}
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Construct_the_Hangjiang_Railway target: [From.GetName]"
+			FROM = {
+				build_railway = {
+					level = 2
+					start_province = 7191
+					target_province = 11920
+					build_only_on_allied = yes
+					controller_priority = {
+						base = -1
+						modifier = { add = 2 tag = FROM }
+					}
+				}
+			}
+			set_country_flag = GEA_railway_hangjiang_completed
+			GEA_complete_east_china_railway_effect = yes
+		}
+	}
+
+	GEA_Complete_the_Zhegan_Railway = {#浙赣铁路
+		icon = railroad
+		allowed = { original_tag = GEA }
+		cost = 90
+		days_remove = 210
+		days_re_enable = 360
+		fire_only_once = yes
+		visible = {
+			FROM = { GEA_china_warlord_can_interact_trigger = yes }
+			has_completed_focus = GEA_Building_a_road_network_in_Southeast_provinces
+			has_country_flag = GEA_east_china_investment_unlocked
+			has_country_flag = LEP_OPEN
+			NOT = { has_country_flag = GEA_railway_zhegan_completed }
+		}
+		targets_dynamic = yes
+		target_root_trigger = {
+			has_completed_focus = GEA_Building_a_road_network_in_Southeast_provinces
+			has_country_flag = GEA_east_china_investment_unlocked
+			has_country_flag = LEP_OPEN
+			NOT = { has_country_flag = GEA_railway_zhegan_completed }
+		}
+		target_trigger = { FROM = { owns_state = 613 } }
+		available = {
+			NOT = { has_war_with = FROM }
+			FROM = {
+				owns_state = 613
+				owns_state = 1067
+				owns_state = 1044
+				controls_state = 1067
+				controls_state = 1044
+				can_build_railway = {
+					start_province = 11920
+					target_province = 3992
+					build_only_on_allied = yes
+					controller_priority = {
+						base = -1
+						modifier = { add = 2 tag = FROM }
+					}
+				}
+			}
+		}
+		cancel_trigger = {
+			OR = {
+				has_war_with = FROM
+				FROM = {
+					OR = {
+						NOT = { owns_state = 613 }
+						NOT = { owns_state = 1044 }
+						NOT = { controls_state = 1044 }
+						NOT = { owns_state = 1067 }
+						NOT = { controls_state = 1067 }
+					}
+				}
+			}
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Complete_the_Zhegan_Railway target: [From.GetName]"
+			FROM = {
+				build_railway = {
+					level = 2
+					start_province = 11920
+					target_province = 3992
+					build_only_on_allied = yes
+					controller_priority = {
+						base = -1
+						modifier = { add = 2 tag = FROM }
+					}
+				}
+			}
+			set_country_flag = GEA_railway_zhegan_completed
+			GEA_complete_east_china_railway_effect = yes
+		}
+	}
 
 	GEA_Reaccept_lep_ports = {
 		visible = {
 			country_exists = LEP
-			has_completed_focus = GEA_second_expedition_to_China
+			has_completed_focus = GEA_The_second_expedition_to_China
 			LEP = {
 				has_global_flag = LEP_victory
 			}
@@ -9413,9 +10673,11 @@ GEA_focus_china_decisions = {#第二次对华远征
 	}
 	GEA_Take_over_Weihaiwei_and_Qingdao_again = {
 		visible = {
+			owns_state = 996
+			owns_state = 744
 			NOT = {
-				owns_state = 996
-				owns_state = 744
+				996 = { is_core_of = ROOT }
+				744 = { is_core_of = ROOT }
 			}
 		}
 		available = {
@@ -9434,8 +10696,9 @@ GEA_focus_china_decisions = {#第二次对华远征
 	}
 	GEA_Take_over_Guangzhou = {
 		visible = {
+			owns_state = 592
 			NOT = {
-				owns_state = 592
+				592 = { is_core_of = ROOT }
 			}
 		}
 		available = {
@@ -9451,8 +10714,9 @@ GEA_focus_china_decisions = {#第二次对华远征
 	}
 	GEA_Take_over_dalian = {
 		visible = {
+			owns_state = 745
 			NOT = {
-				owns_state =745
+				745 = { is_core_of = ROOT }
 			}
 		}
 		available = {
@@ -9500,21 +10764,6 @@ GEA_focus_china_decisions = {#第二次对华远征
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Buy_labor"
 			add_manpower = 5000
-		}
-	}
-	GEA_Drug_smuggling = {
-		visible = {
-			has_completed_focus = GEA_invest_china
-		}
-		days_remove = 120
-		days_re_enable = 120
-		modifier = {
-			consumer_goods_factor = -0.2
-		}
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Drug_smuggling"
-			add_stability = -0.05
-			add_political_power = -75
 		}
 	}
 }
@@ -11168,25 +12417,17 @@ GEA_josias_decisions = {#约西亚斯乞讨决议
 		icon = GFX_decision_hol_draw_up_staff_plans
 		visible = {
 			has_country_flag = GEA_Josias_decision_view_Fritz_Thyssen
+			check_variable = { GEA_mining_concessions_count < 3 }
 		}
 		available = {
 			check_variable = { GEA_Fritz_Thyssen_friendship < 100 }
 		}
-
-		visible = {
-			check_variable = {
-				GEA_mining_concessions_count < 3
-			}
-		}
 		cost = 50
 		days_remove = 60
-		fire_only_once = yes
+		days_re_enable = 90
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision GEA_Josias_Fritz_Thyssen_mining_concessions"
-			add_to_variable = {
-				GEA_mining_concessions_count = 1
-			}
 		}
 
 		remove_effect = {
@@ -11223,6 +12464,7 @@ GEA_josias_decisions = {#约西亚斯乞讨决议
 					state = 846
 				}
 			}
+			add_to_variable = { GEA_mining_concessions_count = 1 }
 		}
 	}
 
@@ -12748,6 +13990,7 @@ GEA_luckner_decisions = {
 			has_manpower > 200
 			has_navy_size = { size > 50 }
 			event_target:GEA_pirate_war_target = { has_war_with = ROOT }
+			has_country_flag = GEA_pirate_war_target_selected
 			custom_trigger_tooltip = {
 				tooltip = GEA_pirate_raid_capacity_available_tt
 				check_variable = { GEA_active_raids < GEA_max_concurrent_raids }
@@ -12756,7 +13999,6 @@ GEA_luckner_decisions = {
 		complete_effect = {
 			add_command_power = -50
 			add_manpower = -200
-			has_country_flag = GEA_pirate_war_target_selected
 			hidden_effect = {
 				add_to_variable = { GEA_active_raids = 1 }
 				# 行动目标在启动时锁定，不随之后重新选择破交对象而改变
@@ -13677,11 +14919,9 @@ GEA_luckner_decisions = {
 		}
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision GEA_Fence_goods_on_the_South_China_black_market"
-			custom_override_tooltip = {
-				tooltip = GEA_pirate_loot_spend_tt
-				add_to_variable = { GEA_pirate_loot_stacks = -1 }
-				GEA_update_pirate_loot_values = yes
-			}
+			custom_effect_tooltip = GEA_pirate_loot_spend_tt
+			set_temp_variable = { GEA_pirate_loot_change_amount = -1 }
+			GEA_change_pirate_loot_effect = yes
 			add_to_variable = { GEA_south_china_fence_count = 1 }
 			if = {
 				limit = { check_variable = { GEA_south_china_fence_count > 1 } }
@@ -13892,11 +15132,9 @@ GEA_luckner_decisions = {
 				}
 			}
 			hidden_effect = { GEA_roll_secret_operation_discovery = yes }
-			custom_override_tooltip = {
-				tooltip = GEA_oriental_treasures_loot_tt
-				add_to_variable = { GEA_pirate_loot_stacks = 5 }
-				GEA_update_pirate_loot_values = yes
-			}
+			custom_effect_tooltip = GEA_oriental_treasures_loot_tt
+			set_temp_variable = { GEA_pirate_loot_change_amount = 5 }
+			GEA_change_pirate_loot_effect = yes
 			add_political_power = 200
 			add_stability = 0.1
 			608 = { #北京：按行动结算时的地块拥有者判定
@@ -14227,11 +15465,8 @@ GEA_luckner_decisions = {
 				set_fuel_ratio = 1
 			}
 			add_resource = { type = oil amount = 100 state = 336 days = 120 }
-			custom_override_tooltip = {
-				tooltip = GEA_black_gold_loot_modifier_tt
-				add_to_variable = { GEA_pirate_loot_stacks = 2 }
-				GEA_update_pirate_loot_values = yes
-			}
+			set_temp_variable = { GEA_pirate_loot_change_amount = 2 }
+			GEA_change_pirate_loot_effect = yes
 			JAP = { add_timed_idea = { idea = GEA_oil_trade_routes_disrupted days = 120 } }
 			hidden_effect = {
 				add_to_variable = { GEA_active_raids = -2 }

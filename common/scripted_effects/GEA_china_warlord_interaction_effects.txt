@@ -1,136 +1,735 @@
-# Called in the Chinese country's scope. Keep all regional counters in GEA.
-# The current Nanjing owner uses the same LEP-region counters as investment from GEA.
-GEA_warlord_add_german_influence_effect = {
+#cn军阀效果
+GEA_warlord_add_2_german_influence_effect = {
 	if = {
 		limit = { OR = { owns_state = 613 original_tag = LEP original_tag = ANQ } }
 		GEA = {
-			add_to_variable = { GEA_china_lep_attitude = $AMOUNT$ }
+			add_to_variable = { GEA_china_lep_attitude = 2 }
 			clamp_variable = { var = GEA_china_lep_attitude min = 0 max = 100 }
-			add_to_variable = { GEA_china_lep_capital_influence = $AMOUNT$ }
+			add_to_variable = { GEA_china_lep_capital_influence = 2 }
 			clamp_variable = { var = GEA_china_lep_capital_influence min = 0 max = 100 }
 		}
 	}
 	else_if = {
 		limit = { original_tag = QIE }
 		GEA = {
-			add_to_variable = { GEA_china_zhili_attitude = $AMOUNT$ }
+			add_to_variable = { GEA_china_zhili_attitude = 2 }
 			clamp_variable = { var = GEA_china_zhili_attitude min = 0 max = 100 }
-			add_to_variable = { GEA_china_zhili_capital_influence = $AMOUNT$ }
+			add_to_variable = { GEA_china_zhili_capital_influence = 2 }
 			clamp_variable = { var = GEA_china_zhili_capital_influence min = 0 max = 100 }
 		}
 	}
 	else_if = {
 		limit = { original_tag = SQI }
 		GEA = {
-			add_to_variable = { GEA_china_sqi_attitude = $AMOUNT$ }
+			add_to_variable = { GEA_china_sqi_attitude = 2 }
 			clamp_variable = { var = GEA_china_sqi_attitude min = 0 max = 100 }
-			add_to_variable = { GEA_china_sqi_capital_influence = $AMOUNT$ }
+			add_to_variable = { GEA_china_sqi_capital_influence = 2 }
 			clamp_variable = { var = GEA_china_sqi_capital_influence min = 0 max = 100 }
 		}
 	}
 	else_if = {
 		limit = { original_tag = GXC }
 		GEA = {
-			add_to_variable = { GEA_china_gxc_attitude = $AMOUNT$ }
+			add_to_variable = { GEA_china_gxc_attitude = 2 }
 			clamp_variable = { var = GEA_china_gxc_attitude min = 0 max = 100 }
-			add_to_variable = { GEA_china_gxc_capital_influence = $AMOUNT$ }
+			add_to_variable = { GEA_china_gxc_capital_influence = 2 }
 			clamp_variable = { var = GEA_china_gxc_capital_influence min = 0 max = 100 }
 		}
 	}
 	else_if = {
 		limit = { original_tag = YUN }
 		GEA = {
-			add_to_variable = { GEA_china_yun_attitude = $AMOUNT$ }
+			add_to_variable = { GEA_china_yun_attitude = 2 }
 			clamp_variable = { var = GEA_china_yun_attitude min = 0 max = 100 }
-			add_to_variable = { GEA_china_yun_capital_influence = $AMOUNT$ }
+			add_to_variable = { GEA_china_yun_capital_influence = 2 }
 			clamp_variable = { var = GEA_china_yun_capital_influence min = 0 max = 100 }
 		}
 	}
 	else_if = {
 		limit = { original_tag = SZC }
 		GEA = {
-			add_to_variable = { GEA_china_szc_attitude = $AMOUNT$ }
+			add_to_variable = { GEA_china_szc_attitude = 2 }
 			clamp_variable = { var = GEA_china_szc_attitude min = 0 max = 100 }
-			add_to_variable = { GEA_china_szc_capital_influence = $AMOUNT$ }
+			add_to_variable = { GEA_china_szc_capital_influence = 2 }
 			clamp_variable = { var = GEA_china_szc_capital_influence min = 0 max = 100 }
 		}
 	}
 	else_if = {
 		limit = { original_tag = SHX }
 		GEA = {
-			add_to_variable = { GEA_china_shx_attitude = $AMOUNT$ }
+			add_to_variable = { GEA_china_shx_attitude = 2 }
 			clamp_variable = { var = GEA_china_shx_attitude min = 0 max = 100 }
-			add_to_variable = { GEA_china_shx_capital_influence = $AMOUNT$ }
+			add_to_variable = { GEA_china_shx_capital_influence = 2 }
 			clamp_variable = { var = GEA_china_shx_capital_influence min = 0 max = 100 }
 		}
 	}
 	else_if = {
 		limit = { original_tag = HNN }
 		GEA = {
-			add_to_variable = { GEA_china_hnn_attitude = $AMOUNT$ }
+			add_to_variable = { GEA_china_hnn_attitude = 2 }
 			clamp_variable = { var = GEA_china_hnn_attitude min = 0 max = 100 }
-			add_to_variable = { GEA_china_hnn_capital_influence = $AMOUNT$ }
+			add_to_variable = { GEA_china_hnn_capital_influence = 2 }
 			clamp_variable = { var = GEA_china_hnn_capital_influence min = 0 max = 100 }
 		}
 	}
 }
 
-# Arms purchases increase capital influence only, using the same regional precedence.
-GEA_warlord_add_german_capital_influence_effect = {
+GEA_warlord_add_3_german_influence_effect = {
 	if = {
 		limit = { OR = { owns_state = 613 original_tag = LEP original_tag = ANQ } }
 		GEA = {
-			add_to_variable = { GEA_china_lep_capital_influence = $AMOUNT$ }
+			add_to_variable = { GEA_china_lep_attitude = 3 }
+			clamp_variable = { var = GEA_china_lep_attitude min = 0 max = 100 }
+			add_to_variable = { GEA_china_lep_capital_influence = 3 }
 			clamp_variable = { var = GEA_china_lep_capital_influence min = 0 max = 100 }
 		}
 	}
 	else_if = {
 		limit = { original_tag = QIE }
 		GEA = {
-			add_to_variable = { GEA_china_zhili_capital_influence = $AMOUNT$ }
+			add_to_variable = { GEA_china_zhili_attitude = 3 }
+			clamp_variable = { var = GEA_china_zhili_attitude min = 0 max = 100 }
+			add_to_variable = { GEA_china_zhili_capital_influence = 3 }
 			clamp_variable = { var = GEA_china_zhili_capital_influence min = 0 max = 100 }
 		}
 	}
 	else_if = {
 		limit = { original_tag = SQI }
 		GEA = {
-			add_to_variable = { GEA_china_sqi_capital_influence = $AMOUNT$ }
+			add_to_variable = { GEA_china_sqi_attitude = 3 }
+			clamp_variable = { var = GEA_china_sqi_attitude min = 0 max = 100 }
+			add_to_variable = { GEA_china_sqi_capital_influence = 3 }
 			clamp_variable = { var = GEA_china_sqi_capital_influence min = 0 max = 100 }
 		}
 	}
 	else_if = {
 		limit = { original_tag = GXC }
 		GEA = {
-			add_to_variable = { GEA_china_gxc_capital_influence = $AMOUNT$ }
+			add_to_variable = { GEA_china_gxc_attitude = 3 }
+			clamp_variable = { var = GEA_china_gxc_attitude min = 0 max = 100 }
+			add_to_variable = { GEA_china_gxc_capital_influence = 3 }
 			clamp_variable = { var = GEA_china_gxc_capital_influence min = 0 max = 100 }
 		}
 	}
 	else_if = {
 		limit = { original_tag = YUN }
 		GEA = {
-			add_to_variable = { GEA_china_yun_capital_influence = $AMOUNT$ }
+			add_to_variable = { GEA_china_yun_attitude = 3 }
+			clamp_variable = { var = GEA_china_yun_attitude min = 0 max = 100 }
+			add_to_variable = { GEA_china_yun_capital_influence = 3 }
 			clamp_variable = { var = GEA_china_yun_capital_influence min = 0 max = 100 }
 		}
 	}
 	else_if = {
 		limit = { original_tag = SZC }
 		GEA = {
-			add_to_variable = { GEA_china_szc_capital_influence = $AMOUNT$ }
+			add_to_variable = { GEA_china_szc_attitude = 3 }
+			clamp_variable = { var = GEA_china_szc_attitude min = 0 max = 100 }
+			add_to_variable = { GEA_china_szc_capital_influence = 3 }
 			clamp_variable = { var = GEA_china_szc_capital_influence min = 0 max = 100 }
 		}
 	}
 	else_if = {
 		limit = { original_tag = SHX }
 		GEA = {
-			add_to_variable = { GEA_china_shx_capital_influence = $AMOUNT$ }
+			add_to_variable = { GEA_china_shx_attitude = 3 }
+			clamp_variable = { var = GEA_china_shx_attitude min = 0 max = 100 }
+			add_to_variable = { GEA_china_shx_capital_influence = 3 }
 			clamp_variable = { var = GEA_china_shx_capital_influence min = 0 max = 100 }
 		}
 	}
 	else_if = {
 		limit = { original_tag = HNN }
 		GEA = {
-			add_to_variable = { GEA_china_hnn_capital_influence = $AMOUNT$ }
+			add_to_variable = { GEA_china_hnn_attitude = 3 }
+			clamp_variable = { var = GEA_china_hnn_attitude min = 0 max = 100 }
+			add_to_variable = { GEA_china_hnn_capital_influence = 3 }
 			clamp_variable = { var = GEA_china_hnn_capital_influence min = 0 max = 100 }
 		}
+	}
+}
+
+GEA_warlord_add_5_german_capital_influence_effect = {
+	if = {
+		limit = { OR = { owns_state = 613 original_tag = LEP original_tag = ANQ } }
+		GEA = {
+			add_to_variable = { GEA_china_lep_capital_influence = 5 }
+			clamp_variable = { var = GEA_china_lep_capital_influence min = 0 max = 100 }
+		}
+	}
+	else_if = {
+		limit = { original_tag = QIE }
+		GEA = {
+			add_to_variable = { GEA_china_zhili_capital_influence = 5 }
+			clamp_variable = { var = GEA_china_zhili_capital_influence min = 0 max = 100 }
+		}
+	}
+	else_if = {
+		limit = { original_tag = SQI }
+		GEA = {
+			add_to_variable = { GEA_china_sqi_capital_influence = 5 }
+			clamp_variable = { var = GEA_china_sqi_capital_influence min = 0 max = 100 }
+		}
+	}
+	else_if = {
+		limit = { original_tag = GXC }
+		GEA = {
+			add_to_variable = { GEA_china_gxc_capital_influence = 5 }
+			clamp_variable = { var = GEA_china_gxc_capital_influence min = 0 max = 100 }
+		}
+	}
+	else_if = {
+		limit = { original_tag = YUN }
+		GEA = {
+			add_to_variable = { GEA_china_yun_capital_influence = 5 }
+			clamp_variable = { var = GEA_china_yun_capital_influence min = 0 max = 100 }
+		}
+	}
+	else_if = {
+		limit = { original_tag = SZC }
+		GEA = {
+			add_to_variable = { GEA_china_szc_capital_influence = 5 }
+			clamp_variable = { var = GEA_china_szc_capital_influence min = 0 max = 100 }
+		}
+	}
+	else_if = {
+		limit = { original_tag = SHX }
+		GEA = {
+			add_to_variable = { GEA_china_shx_capital_influence = 5 }
+			clamp_variable = { var = GEA_china_shx_capital_influence min = 0 max = 100 }
+		}
+	}
+	else_if = {
+		limit = { original_tag = HNN }
+		GEA = {
+			add_to_variable = { GEA_china_hnn_capital_influence = 5 }
+			clamp_variable = { var = GEA_china_hnn_capital_influence min = 0 max = 100 }
+		}
+	}
+}
+GEA_add_east_china_railway_revenue_effect = { #铁路收益增加
+	custom_effect_tooltip = tooltip_white_line
+	custom_effect_tooltip = {
+		localization_key = tooltip_modify_dynmod
+		DYNMOD = GEA_east_china_railway_revenue
+	}
+	add_to_variable = {
+		GEA_east_china_railway_consumer_goods_factor = -0.025
+		tooltip = consumer_goods_factor_tooltip
+	}
+	hidden_effect = {
+		clamp_variable = { var = GEA_east_china_railway_consumer_goods_factor min = -0.15 max = 0 }
+		if = {
+			limit = { NOT = { has_dynamic_modifier = GEA_east_china_railway_revenue } }
+			add_dynamic_modifier = { modifier = GEA_east_china_railway_revenue }
+		}
+	}
+}
+
+GEA_remove_east_china_railway_revenue_effect = { #铁路收益减少
+	custom_effect_tooltip = tooltip_white_line
+	custom_effect_tooltip = {
+		localization_key = tooltip_modify_dynmod
+		DYNMOD = GEA_east_china_railway_revenue
+	}
+	add_to_variable = {
+		GEA_east_china_railway_consumer_goods_factor = 0.025
+		tooltip = consumer_goods_factor_tooltip
+	}
+	hidden_effect = {
+		clamp_variable = { var = GEA_east_china_railway_consumer_goods_factor min = -0.15 max = 0 }
+		if = {
+			limit = { NOT = { has_dynamic_modifier = GEA_east_china_railway_revenue } }
+			add_dynamic_modifier = { modifier = GEA_east_china_railway_revenue }
+		}
+	}
+}
+
+GEA_complete_east_china_railway_effect = { #完成铁路决议效果
+	custom_effect_tooltip = GEA_china_lep_name_tt
+	add_to_variable = {
+		GEA_china_lep_attitude = 10
+		tooltip = GEA_china_attitude_change_tt
+	}
+	add_to_variable = {
+		GEA_china_lep_capital_influence = 3.5
+		tooltip = GEA_china_capital_influence_change_decimal_tt
+	}
+	add_to_variable = {
+		GEA_china_lep_military_projection = 3
+		tooltip = GEA_china_military_projection_change_tt
+	}
+	hidden_effect = {
+		clamp_variable = { var = GEA_china_lep_attitude min = 0 max = 100 }
+		clamp_variable = { var = GEA_china_lep_capital_influence min = 0 max = 100 }
+		clamp_variable = { var = GEA_china_lep_military_projection min = 0 max = 100 }
+	}
+	GEA_add_east_china_railway_revenue_effect = yes
+	FROM = {
+		add_popularity = { ideology = market_liberal popularity = 0.03 }
+	}
+}
+GEA_warlord_add_5_german_military_projection_effect = { #增加5军事干涉
+	if = {
+		limit = { OR = { owns_state = 613 original_tag = LEP original_tag = ANQ } }
+		GEA = {
+			add_to_variable = { GEA_china_lep_military_projection = 5 }
+			clamp_variable = { var = GEA_china_lep_military_projection min = 0 max = 100 }
+		}
+	}
+	else_if = {
+		limit = { original_tag = QIE }
+		GEA = {
+			add_to_variable = { GEA_china_zhili_military_projection = 5 }
+			clamp_variable = { var = GEA_china_zhili_military_projection min = 0 max = 100 }
+		}
+	}
+	else_if = {
+		limit = { original_tag = SQI }
+		GEA = {
+			add_to_variable = { GEA_china_sqi_military_projection = 5 }
+			clamp_variable = { var = GEA_china_sqi_military_projection min = 0 max = 100 }
+		}
+	}
+	else_if = {
+		limit = { original_tag = GXC }
+		GEA = {
+			add_to_variable = { GEA_china_gxc_military_projection = 5 }
+			clamp_variable = { var = GEA_china_gxc_military_projection min = 0 max = 100 }
+		}
+	}
+	else_if = {
+		limit = { original_tag = YUN }
+		GEA = {
+			add_to_variable = { GEA_china_yun_military_projection = 5 }
+			clamp_variable = { var = GEA_china_yun_military_projection min = 0 max = 100 }
+		}
+	}
+	else_if = {
+		limit = { original_tag = SZC }
+		GEA = {
+			add_to_variable = { GEA_china_szc_military_projection = 5 }
+			clamp_variable = { var = GEA_china_szc_military_projection min = 0 max = 100 }
+		}
+	}
+	else_if = {
+		limit = { original_tag = SHX }
+		GEA = {
+			add_to_variable = { GEA_china_shx_military_projection = 5 }
+			clamp_variable = { var = GEA_china_shx_military_projection min = 0 max = 100 }
+		}
+	}
+	else_if = {
+		limit = { original_tag = HNN }
+		GEA = {
+			add_to_variable = { GEA_china_hnn_military_projection = 5 }
+			clamp_variable = { var = GEA_china_hnn_military_projection min = 0 max = 100 }
+		}
+	}
+}
+GEA_begin_short_german_loan_effect = { #短期借贷
+	set_variable = { GEA_german_loan_repayment = 50 }
+	clr_country_flag = GEA_german_loan_equity_settlement_used
+	clr_country_flag = GEA_german_loan_offer_pending
+	set_country_flag = GEA_german_loan_active
+	add_political_power = 50
+	add_popularity = { ideology = market_liberal popularity = 0.02 }
+	GEA = {
+		add_to_variable = {
+			GEA_china_lep_capital_influence = 2
+			tooltip = GEA_china_capital_influence_change_tt
+		}
+		hidden_effect = { clamp_variable = { var = GEA_china_lep_capital_influence min = 0 max = 100 } }
+	}
+	add_ideas = GEA_Repaying_German_Loan
+	activate_mission = GEA_warlord_repay_german_loan_short
+	GEA = {
+		clr_country_flag = GEA_german_loan_offer_pending
+		set_country_flag = GEA_german_loan_active
+		add_political_power = -10
+		activate_mission = GEA_monitor_german_loan_short
+	}
+}
+
+GEA_begin_medium_german_loan_effect = { #中期借贷
+	set_variable = { GEA_german_loan_repayment = 100 }
+	clr_country_flag = GEA_german_loan_equity_settlement_used
+	clr_country_flag = GEA_german_loan_offer_pending
+	set_country_flag = GEA_german_loan_active
+	add_political_power = 100
+	add_popularity = { ideology = market_liberal popularity = 0.03 }
+	GEA = {
+		add_to_variable = {
+			GEA_china_lep_capital_influence = 3
+			tooltip = GEA_china_capital_influence_change_tt
+		}
+		hidden_effect = { clamp_variable = { var = GEA_china_lep_capital_influence min = 0 max = 100 } }
+	}
+	add_ideas = GEA_Repaying_German_Loan
+	activate_mission = GEA_warlord_repay_german_loan_medium
+	GEA = {
+		clr_country_flag = GEA_german_loan_offer_pending
+		set_country_flag = GEA_german_loan_active
+		add_political_power = -50
+		activate_mission = GEA_monitor_german_loan_medium
+	}
+}
+
+GEA_begin_long_german_loan_effect = { #长期借贷
+	set_variable = { GEA_german_loan_repayment = 200 }
+	clr_country_flag = GEA_german_loan_equity_settlement_used
+	clr_country_flag = GEA_german_loan_offer_pending
+	set_country_flag = GEA_german_loan_active
+	add_political_power = 200
+	add_popularity = { ideology = market_liberal popularity = 0.05 }
+	GEA = {
+		add_to_variable = {
+			GEA_china_lep_capital_influence = 5
+			tooltip = GEA_china_capital_influence_change_tt
+		}
+		hidden_effect = { clamp_variable = { var = GEA_china_lep_capital_influence min = 0 max = 100 } }
+	}
+	add_ideas = GEA_Repaying_German_Loan
+	activate_mission = GEA_warlord_repay_german_loan_long
+	GEA = {
+		clr_country_flag = GEA_german_loan_offer_pending
+		set_country_flag = GEA_german_loan_active
+		add_political_power = -75
+		activate_mission = GEA_monitor_german_loan_long
+	}
+}
+
+GEA_clear_german_loan_effect = { #终结借贷
+	clear_variable = GEA_german_loan_repayment
+	clr_country_flag = GEA_german_loan_equity_settlement_used
+	clr_country_flag = GEA_german_loan_active
+	clr_country_flag = GEA_german_loan_offer_pending
+	remove_ideas = GEA_Repaying_German_Loan
+	remove_mission = GEA_warlord_repay_german_loan_short
+	remove_mission = GEA_warlord_repay_german_loan_medium
+	remove_mission = GEA_warlord_repay_german_loan_long
+	GEA = {
+		clr_country_flag = GEA_german_loan_active
+		clr_country_flag = GEA_german_loan_offer_pending
+		remove_mission = GEA_monitor_german_loan_short
+		remove_mission = GEA_monitor_german_loan_medium
+		remove_mission = GEA_monitor_german_loan_long
+	}
+}
+
+GEA_repay_short_german_loan_effect = { #偿还短期借贷
+	if = {
+		limit = { has_country_flag = GEA_german_loan_active }
+		hidden_effect = {
+			# 兼容尚未写入应还本金变量的旧存档贷款。
+			if = {
+				limit = { NOT = { has_variable = GEA_german_loan_repayment } }
+				set_variable = { GEA_german_loan_repayment = 50 }
+			}
+			set_temp_variable = { GEA_german_loan_repayment_delta = GEA_german_loan_repayment }
+			multiply_temp_variable = { GEA_german_loan_repayment_delta = -1 }
+		}
+		add_political_power = GEA_german_loan_repayment_delta
+		GEA = { add_political_power = 75 }
+		hidden_effect = { GEA_clear_german_loan_effect = yes }
+	}
+}
+
+GEA_repay_medium_german_loan_effect = { #偿还中期借贷
+	if = {
+		limit = { has_country_flag = GEA_german_loan_active }
+		hidden_effect = {
+			# 兼容尚未写入应还本金变量的旧存档贷款。
+			if = {
+				limit = { NOT = { has_variable = GEA_german_loan_repayment } }
+				set_variable = { GEA_german_loan_repayment = 100 }
+			}
+			set_temp_variable = { GEA_german_loan_repayment_delta = GEA_german_loan_repayment }
+			multiply_temp_variable = { GEA_german_loan_repayment_delta = -1 }
+		}
+		add_political_power = GEA_german_loan_repayment_delta
+		GEA = { add_political_power = 150 }
+		hidden_effect = { GEA_clear_german_loan_effect = yes }
+	}
+}
+
+GEA_repay_long_german_loan_effect = { #偿还长期借贷
+	if = {
+		limit = { has_country_flag = GEA_german_loan_active }
+		hidden_effect = {
+			# 兼容尚未写入应还本金变量的旧存档贷款。
+			if = {
+				limit = { NOT = { has_variable = GEA_german_loan_repayment } }
+				set_variable = { GEA_german_loan_repayment = 200 }
+			}
+			set_temp_variable = { GEA_german_loan_repayment_delta = GEA_german_loan_repayment }
+			multiply_temp_variable = { GEA_german_loan_repayment_delta = -1 }
+		}
+		add_political_power = GEA_german_loan_repayment_delta
+		GEA = { add_political_power = 250 }
+		hidden_effect = { GEA_clear_german_loan_effect = yes }
+	}
+}
+
+GEA_default_german_loan_effect = {#傻逼军阀赖账
+	if = {
+		limit = { has_country_flag = GEA_german_loan_active }
+		custom_effect_tooltip = GEA_loan_default_projection_tt
+		hidden_effect = {
+			GEA_warlord_add_5_german_military_projection_effect = yes
+			if = {
+				limit = { NOT = { has_variable = GEA_coup_capital_requirement } }
+				set_variable = { GEA_coup_capital_requirement = 90 }
+				set_variable = { GEA_coup_military_requirement = 80 }
+			}
+			add_to_variable = { GEA_german_loan_defaults = 1 }
+			add_to_variable = { GEA_coup_capital_requirement = -5 }
+			add_to_variable = { GEA_coup_military_requirement = -5 }
+			clamp_variable = { var = GEA_coup_capital_requirement min = 0 max = 90 }
+			clamp_variable = { var = GEA_coup_military_requirement min = 0 max = 80 }
+			GEA_clear_german_loan_effect = yes
+		}
+		custom_effect_tooltip = GEA_loan_default_coup_threshold_tt
+		GEA = { country_event = { id = GEA.804 } }
+	}
+}
+
+GEA_install_falkenhausen_government_effect = { #政变华东
+	remove_ideas_with_trait = head_of_government
+	remove_all_ministers_but_hog = yes
+	LEP_SETUP_AOG = yes
+	set_politics = {
+		ruling_party = market_liberal
+		elections_allowed = no
+	}
+	set_party_name = {
+		ideology = authoritarian_democrat
+		name = LEP_authoritarian_democrat_party_aog
+		long_name = LEP_authoritarian_democrat_party_aog_long
+	}
+	add_ideas = {
+		AOG_Alexander_von_Falkenhausen_hog_ade
+		AOG_He_Fengshang_for_ade
+		AOG_John_Rabe_eco_ade
+		AOG_Lei_Zhong_sec_ade
+	}
+	GEA = {
+		set_autonomy = { target = PREV autonomy_state = kr_default_puppet }
+	}
+	set_country_flag = GEA_german_coup_succeeded
+	clr_country_flag = GEA_german_coup_pending
+}
+
+GEA_warlord_add_3_german_capital_influence_effect = {
+	if = {
+		limit = { OR = { owns_state = 613 original_tag = LEP original_tag = ANQ } }
+		GEA = {
+			add_to_variable = { GEA_china_lep_capital_influence = 3 }
+			clamp_variable = { var = GEA_china_lep_capital_influence min = 0 max = 100 }
+		}
+	}
+	else_if = {
+		limit = { original_tag = QIE }
+		GEA = {
+			add_to_variable = { GEA_china_zhili_capital_influence = 3 }
+			clamp_variable = { var = GEA_china_zhili_capital_influence min = 0 max = 100 }
+		}
+	}
+	else_if = {
+		limit = { original_tag = SQI }
+		GEA = {
+			add_to_variable = { GEA_china_sqi_capital_influence = 3 }
+			clamp_variable = { var = GEA_china_sqi_capital_influence min = 0 max = 100 }
+		}
+	}
+	else_if = {
+		limit = { original_tag = GXC }
+		GEA = {
+			add_to_variable = { GEA_china_gxc_capital_influence = 3 }
+			clamp_variable = { var = GEA_china_gxc_capital_influence min = 0 max = 100 }
+		}
+	}
+	else_if = {
+		limit = { original_tag = YUN }
+		GEA = {
+			add_to_variable = { GEA_china_yun_capital_influence = 3 }
+			clamp_variable = { var = GEA_china_yun_capital_influence min = 0 max = 100 }
+		}
+	}
+	else_if = {
+		limit = { original_tag = SZC }
+		GEA = {
+			add_to_variable = { GEA_china_szc_capital_influence = 3 }
+			clamp_variable = { var = GEA_china_szc_capital_influence min = 0 max = 100 }
+		}
+	}
+	else_if = {
+		limit = { original_tag = SHX }
+		GEA = {
+			add_to_variable = { GEA_china_shx_capital_influence = 3 }
+			clamp_variable = { var = GEA_china_shx_capital_influence min = 0 max = 100 }
+		}
+	}
+	else_if = {
+		limit = { original_tag = HNN }
+		GEA = {
+			add_to_variable = { GEA_china_hnn_capital_influence = 3 }
+			clamp_variable = { var = GEA_china_hnn_capital_influence min = 0 max = 100 }
+		}
+	}
+}
+
+GEA_warlord_reduce_5_german_capital_influence_effect = {
+	if = {
+		limit = { OR = { owns_state = 613 original_tag = LEP original_tag = ANQ } }
+		GEA = {
+			add_to_variable = { GEA_china_lep_capital_influence = -5 }
+			clamp_variable = { var = GEA_china_lep_capital_influence min = 0 max = 100 }
+		}
+	}
+	else_if = {
+		limit = { original_tag = QIE }
+		GEA = {
+			add_to_variable = { GEA_china_zhili_capital_influence = -5 }
+			clamp_variable = { var = GEA_china_zhili_capital_influence min = 0 max = 100 }
+		}
+	}
+	else_if = {
+		limit = { original_tag = SQI }
+		GEA = {
+			add_to_variable = { GEA_china_sqi_capital_influence = -5 }
+			clamp_variable = { var = GEA_china_sqi_capital_influence min = 0 max = 100 }
+		}
+	}
+	else_if = {
+		limit = { original_tag = GXC }
+		GEA = {
+			add_to_variable = { GEA_china_gxc_capital_influence = -5 }
+			clamp_variable = { var = GEA_china_gxc_capital_influence min = 0 max = 100 }
+		}
+	}
+	else_if = {
+		limit = { original_tag = YUN }
+		GEA = {
+			add_to_variable = { GEA_china_yun_capital_influence = -5 }
+			clamp_variable = { var = GEA_china_yun_capital_influence min = 0 max = 100 }
+		}
+	}
+	else_if = {
+		limit = { original_tag = SZC }
+		GEA = {
+			add_to_variable = { GEA_china_szc_capital_influence = -5 }
+			clamp_variable = { var = GEA_china_szc_capital_influence min = 0 max = 100 }
+		}
+	}
+	else_if = {
+		limit = { original_tag = SHX }
+		GEA = {
+			add_to_variable = { GEA_china_shx_capital_influence = -5 }
+			clamp_variable = { var = GEA_china_shx_capital_influence min = 0 max = 100 }
+		}
+	}
+	else_if = {
+		limit = { original_tag = HNN }
+		GEA = {
+			add_to_variable = { GEA_china_hnn_capital_influence = -5 }
+			clamp_variable = { var = GEA_china_hnn_capital_influence min = 0 max = 100 }
+		}
+	}
+}
+
+GEA_ensure_german_loan_repayment_effect = {
+	if = {
+		limit = {
+			has_country_flag = GEA_german_loan_active
+			NOT = { has_variable = GEA_german_loan_repayment }
+		}
+		if = {
+			limit = { has_active_mission = GEA_warlord_repay_german_loan_short }
+			set_variable = { GEA_german_loan_repayment = 50 }
+		}
+		else_if = {
+			limit = { has_active_mission = GEA_warlord_repay_german_loan_medium }
+			set_variable = { GEA_german_loan_repayment = 100 }
+		}
+		else_if = {
+			limit = { has_active_mission = GEA_warlord_repay_german_loan_long }
+			set_variable = { GEA_german_loan_repayment = 200 }
+		}
+	}
+}
+
+GEA_extend_german_loan_effect = {
+	if = {
+		limit = { has_active_mission = GEA_warlord_repay_german_loan_short }
+		add_days_mission_timeout = { mission = GEA_warlord_repay_german_loan_short days = 60 }
+		GEA = {
+			if = {
+				limit = { has_active_mission = GEA_monitor_german_loan_short }
+				add_days_mission_timeout = { mission = GEA_monitor_german_loan_short days = 60 }
+			}
+		}
+	}
+	else_if = {
+		limit = { has_active_mission = GEA_warlord_repay_german_loan_medium }
+		add_days_mission_timeout = { mission = GEA_warlord_repay_german_loan_medium days = 60 }
+		GEA = {
+			if = {
+				limit = { has_active_mission = GEA_monitor_german_loan_medium }
+				add_days_mission_timeout = { mission = GEA_monitor_german_loan_medium days = 60 }
+			}
+		}
+	}
+	else_if = {
+		limit = { has_active_mission = GEA_warlord_repay_german_loan_long }
+		add_days_mission_timeout = { mission = GEA_warlord_repay_german_loan_long days = 60 }
+		GEA = {
+			if = {
+				limit = { has_active_mission = GEA_monitor_german_loan_long }
+				add_days_mission_timeout = { mission = GEA_monitor_german_loan_long days = 60 }
+			}
+		}
+	}
+}
+
+GEA_repay_german_loan_early_effect = {
+	if = {
+		limit = { has_active_mission = GEA_warlord_repay_german_loan_short }
+		hidden_effect = {
+			GEA = {
+				if = {
+					limit = { has_active_mission = GEA_monitor_german_loan_short }
+					add_days_mission_timeout = { mission = GEA_monitor_german_loan_short days = -365 }
+				}
+			}
+			add_days_mission_timeout = { mission = GEA_warlord_repay_german_loan_short days = -365 }
+		}
+		GEA_repay_short_german_loan_effect = yes
+	}
+	else_if = {
+		limit = { has_active_mission = GEA_warlord_repay_german_loan_medium }
+		hidden_effect = {
+			GEA = {
+				if = {
+					limit = { has_active_mission = GEA_monitor_german_loan_medium }
+					add_days_mission_timeout = { mission = GEA_monitor_german_loan_medium days = -365 }
+				}
+			}
+			add_days_mission_timeout = { mission = GEA_warlord_repay_german_loan_medium days = -365 }
+		}
+		GEA_repay_medium_german_loan_effect = yes
+	}
+	else_if = {
+		limit = { has_active_mission = GEA_warlord_repay_german_loan_long }
+		hidden_effect = {
+			GEA = {
+				if = {
+					limit = { has_active_mission = GEA_monitor_german_loan_long }
+					add_days_mission_timeout = { mission = GEA_monitor_german_loan_long days = -365 }
+				}
+			}
+			add_days_mission_timeout = { mission = GEA_warlord_repay_german_loan_long days = -365 }
+		}
+		GEA_repay_long_german_loan_effect = yes
 	}
 }

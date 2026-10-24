@@ -311,9 +311,6 @@ set_variable = { GEA_socialist_power = 35}
 set_variable = { GEA_nationalist_power = 20}
 set_variable = { GEA_mucke_reform_stability = 0.05}
 set_variable = { GEA_mucke_reform_war_support = 0.05}
-set_variable = { GEA_Defend_indochina_stability = 0.1}
-set_variable = { GEA_Defend_indochina_production_speed_buildings_factor = 0.05}
-set_variable = { GEA_Defend_indochina_industrial_capacity_factory = 0.05}
 set_variable = { GEA_colonial_decision_cost_100 = 100 }
 set_variable = { GEA_colonial_decision_cost_50 = 50 }
 set_variable = { GEA_colonial_decision_cost_25 = 25 }

@@ -168,20 +168,6 @@ GEA_gea_army = {
 	coordination_bonus = GEA_army_coordination_bonus 								#协同性
 }
 
-GEA_Defend_indochina = {
-	icon = "GFX_idea_GEA_Defend_indochina"
-	enable = { always = yes }
-	remove_trigger = { always = no }
-	stability_factor = GEA_Defend_indochina_stability
-	conscription_factor = GEA_Defend_indochina_army_conscription_factor
-	production_speed_buildings_factor = GEA_Defend_indochina_production_speed_buildings_factor   
-	required_garrison_factor = GEA_Defend_indochina_required_garrison_factor  
-	industrial_capacity_factory = GEA_Defend_indochina_industrial_capacity_factory
-	monthly_population = GEA_Defend_indochina_monthly_population
-	resistance_decay = GEA_Defend_indochina_resistance_decay
-	compliance_growth = GEA_Defend_indochina_compliance_growth
-}
-
 GEA_martial_law_modifier = { #GEA_has_martial_law_at_there
 	icon = "GFX_paternal_autocrat_texticon"
 	enable = { always = yes }
@@ -514,7 +500,6 @@ GEA_Economic_modifier = {
 }
 
 GEA_Corporation_Rul_Krupp = {
-	name = GEA_Corporation_Rule
 	icon = "GFX_GEA_Corporation_Rule_Krupp"
 	enable = { always = yes }
 	remove_trigger = { always = no }
@@ -561,7 +546,6 @@ GEA_Corporation_Rul_Krupp = {
 }
 
 GEA_Corporation_Rul_IG = {
-	name = GEA_Corporation_Rule
 	icon = "GFX_GEA_Corporation_Rule_IG"
 	enable = { always = yes }
 	remove_trigger = { always = no }
@@ -605,4 +589,11 @@ GEA_Corporation_Rul_IG = {
 	industry_air_damage_factor = GEA_Corporation_Rule_industry_air_damage_factor					#工厂受轰炸易损性
 	cic_construction_boost = GEA_Corporation_Rule_cic_construction_boost							#基础建设队列速度加成
 	trade_opinion_factor = GEA_Corporation_Rule_trade_opinion_factor								#贸易协定关系修正
+}
+
+# 华东铁路收益（隐藏动态修正：不设置 icon）
+GEA_east_china_railway_revenue = {
+	enable = { always = yes }
+	remove_trigger = { always = no }
+	consumer_goods_factor = GEA_east_china_railway_consumer_goods_factor
 }

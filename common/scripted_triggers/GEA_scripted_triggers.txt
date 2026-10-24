@@ -14,17 +14,99 @@ GEA_nanjing_non_anti_concession_controller_trigger = {
 	custom_trigger_tooltip = {
 		tooltip = GEA_nanjing_non_anti_concession_controller_tt
 		613 = {
-			controller = {
-				NOT = {
-					OR = {
-						tag = CHI
-						is_ruled_by_left_kmt = yes
-						has_country_leader = { name = "Zhang Tianran" ruling_only = yes }
-						has_country_leader = { name = "Chen Mingshu" ruling_only = yes }
-						has_country_leader = { name = "Zhu De" ruling_only = yes }
-					}
+			controller = { GEA_china_warlord_can_interact_trigger = yes }
+		}
+	}
+}
+
+
+GEA_china_warlord_eligible_trigger = { #能互动的军阀
+	OR = {
+		original_tag = SQI
+		original_tag = QIE
+		original_tag = LEP
+		original_tag = ANQ
+		original_tag = HNN
+		original_tag = GXC
+		original_tag = YUN
+		original_tag = SZC
+		original_tag = SHX
+	}
+}
+
+#
+
+GEA_china_warlord_cannot_interact_trigger = { #能互动的
+	OR = {
+		has_country_flag = GEA_china_warlord_interaction_blocked #没法互动标记
+		has_country_flag = GEA_german_coup_defeated # 政变失败禁用的
+		tag = CHI #国左的傻逼
+		is_ruled_by_left_kmt = yes #也是国左的傻逼
+		has_country_leader = { name = "Zhang Tianran" ruling_only = yes } #神棍
+		has_country_leader = { name = "Chen Mingshu" ruling_only = yes } #还是国左的傻逼
+		has_country_leader = { name = "Zhu De" ruling_only = yes } #...
+	}
+}
+GEA_china_warlord_can_interact_trigger = {#即时判断
+	NOT = { GEA_china_warlord_cannot_interact_trigger = yes }
+}
+GEA_china_warlord_positive_cooperation_trigger = {#积极合作的军阀判定
+	GEA_china_warlord_can_interact_trigger = yes
+	OR = {
+		original_tag = LEP #德国人的狗
+		AND = {
+			original_tag = GXC
+			has_country_leader = { name = "Chen Lianbo" ruling_only = yes } #老霸道了
+		}
+		AND = {
+			original_tag = YUN
+			has_country_leader = { name = "Tang Jiyao" ruling_only = yes } #弱智大唐
+		}
+		AND = {
+			original_tag = QIE
+			NOT = {
+				OR = {
+					has_country_flag = wu_intervenes_proANQ
+					has_country_flag = QIE_manchu_restoration
+					has_country_flag = QIE_yiguandao_couped
+					has_focus_tree = QIE_manchu
+					has_completed_focus = QIE_nationalize_germans
+					has_completed_focus = QIE_endconcessions
+					has_completed_focus = QIE_destroy_concessions
+					has_completed_focus = QIE_destroy_germany
+					has_completed_focus = QIE_YGD_destroy_concessions
 				}
 			}
+			OR = {
+				has_country_flag = wu_intervenes_proLEP
+				has_country_flag = full_german_support
+				has_completed_focus = QIE_request_german_bailout
+			}
+		}
+		AND = {
+			original_tag = SZC
+			NOT = { has_country_leader = { name = "Chen Jiongming" ruling_only = yes } } #联省逼
+			NOT = { has_country_leader = { name = "Lü Chao" ruling_only = yes } } #吕超
+			NOT = { has_completed_focus = SZC_Eradicate_The_Concessions }
+			OR = {
+				has_country_leader = { name = "Yang Sen" ruling_only = yes } #杨森
+				has_country_leader = { name = "Liu Cunhou" ruling_only = yes } #谁？
+				has_completed_focus = SZC_Contact_An_Old_Ally
+			}
+		}
+	}
+}
+GEA_east_china_coup_threshold_trigger = {#可政变条件
+	OR = {
+		AND = {
+			FROM = { NOT = { has_variable = GEA_coup_capital_requirement } }
+			check_variable = { var = GEA_china_lep_capital_influence value = 90 compare = greater_than_or_equals }
+			check_variable = { var = GEA_china_lep_military_projection value = 80 compare = greater_than_or_equals }
+		}
+		AND = {
+			FROM = { has_variable = GEA_coup_capital_requirement }
+			check_variable = { var = GEA_china_lep_capital_influence value = FROM.GEA_coup_capital_requirement compare = greater_than_or_equals }
+			check_variable = { var = GEA_china_lep_military_projection value = FROM.GEA_coup_military_requirement compare = greater_than_or_equals }
 		}
 	}
 }

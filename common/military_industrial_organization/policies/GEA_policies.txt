@@ -20,7 +20,9 @@ GEA_mio_policy_forced_labour = {
 	}
 
 	on_add = {
-		custom_effect_tooltip = GEA_mio_policy_forced_labour_country_effect_tt
+		FROM = {
+			show_ideas_tooltip = GEA_mio_policy_forced_labour_idea
+		}
 		hidden_effect = {
 			FROM = {
 				add_ideas = GEA_mio_policy_forced_labour_idea
