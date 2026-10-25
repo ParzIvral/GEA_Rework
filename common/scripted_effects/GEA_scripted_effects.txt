@@ -2116,3 +2116,30 @@ GEA_Lec_click_effect = { #使馆城市
 		clr_country_flag = QIE_OPEN
 	}
 }
+
+GEA_Economic_Recovery = {
+	if = {
+		limit = {
+			has_idea = GEA_collapsing_colonial_finances
+		}
+		swap_ideas = {
+			remove_idea = GEA_collapsing_colonial_finances
+			add_idea = GEA_collapsing_colonial_finances_2
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = GEA_collapsing_colonial_finances_2
+		}
+		swap_ideas = {
+			remove_idea = GEA_collapsing_colonial_finances_2
+			add_idea = GEA_collapsing_colonial_finances_3
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = GEA_collapsing_colonial_finances_3
+		}
+		remove_ideas = GEA_collapsing_colonial_finances_3
+	}
+}

@@ -1,3 +1,29 @@
+GEA_army_air = { #德属东亚空军司令部
+	icon = "GFX_idea_GEA_army_air"
+	enable = { always = yes }
+	remove_trigger = { always = no }
+
+	air_attack_factor = GEA_airforce_air_attack_factor														#空军攻击
+	air_defence_factor = GEA_airforce_air_defence_factor													#空军防御
+	air_ace_generation_chance_factor = GEA_airforce_air_ace_generation_chance_factor 						#王牌出现概率
+	air_ace_bonuses_factor = GEA_airforce_air_ace_bonuses_factor											#空军王牌
+	air_agility_factor = GEA_airforce_air_agility_factor													#空军机动性
+	naval_strike_targetting_factor = GEA_airforce_naval_strike_targetting_factor							#海军打击瞄准
+	air_mission_efficiency = GEA_airforce_air_mission_efficiency 											#飞机任务效率
+	air_night_penalty = GEA_airforce_air_night_penalty 														#空军夜间惩罚
+	air_weather_penalty = GEA_airforce_air_weather_penalty 													#空军天气惩罚
+	army_bonus_air_superiority_factor = GEA_airforce_army_bonus_air_superiority_factor 						#陆军加成空军优势
+	air_cas_efficiency = GEA_airforce_air_cas_efficiency 													#空军近距支援效率
+	air_intercept_efficiency = GEA_airforce_air_intercept_efficiency 										#空中拦截效率
+	air_maximum_speed_factor = GEA_airforce_air_maximum_speed_factor										#空军最大速度
+	air_range_factor = GEA_airforce_air_range_factor														#空军航程
+	air_escort_efficiency = GEA_airforce_air_escort_efficiency												#空军护航效率
+	air_mission_xp_gain_factor = GEA_airforce_air_mission_xp_gain_factor                       				#空军任务经验获得
+	port_strike = GEA_airforce_port_strike 																	#港口打击
+	air_bombing_targetting = GEA_airforce_air_bombing_targetting 											#空军轰炸瞄准
+	air_close_air_support_org_damage_factor = GEA_airforce_air_close_air_support_org_damage_factor 			#密接支援组织度伤害
+	air_superiority_efficiency = GEA_airforce_air_superiority_efficiency # 夺取制空权任务效率
+}
 
 # 卢克纳尔海盗战利品
 GEA_The_benefits_of_plundering = { #大洋魔鬼的战利品
@@ -55,13 +81,10 @@ GEA_admirality = { #大舰队
 	weekly_manpower = GEA_navy_weekly_manpower                                                                   # 每周人力
 	land_doctrine_cost_factor = GEA_navy_land_doctrine_cost_factor                                               # 陆军学说花费
 	naval_doctrine_cost_factor = GEA_navy_naval_doctrine_cost_factor                                             # 海军学说花费
-	#尚未使用
 	navy_org_factor = GEA_navy_navy_org_factor                                                                   # 海军组织度（比例）
 	naval_invasion_prep_speed = GEA_navy_naval_invasion_prep_speed                                               # 海军入侵准备速度
 	naval_invasion_capacity = GEA_navy_naval_invasion_capacity                                                   # 海军入侵容量
 	naval_invasion_penalty = GEA_navy_naval_invasion_penalty                                                     # 海军入侵惩罚
-	navy_submarine_attack_factor = GEA_navy_navy_submarine_attack_factor                                         # 潜艇攻击
-	navy_submarine_defence_factor = GEA_navy_navy_submarine_defence_factor                                       # 潜艇防御
 	naval_torpedo_hit_chance_factor = GEA_navy_naval_torpedo_hit_chance_factor                                   # 鱼雷命中率
 	navy_visibility = GEA_navy_navy_visibility                                                                   # 舰船可见度
 	convoy_raiding_efficiency_factor = GEA_navy_convoy_raiding_efficiency_factor                                 # 运输船袭击效率
@@ -84,21 +107,7 @@ GEA_AOG_BONUS = {
 	industrial_capacity_dockyard = GEA_AOG_SHIPYARD
 	trade_opinion_factor = GEA_TRADE_FACTOR
 }
-GEA_BEST_COLONIAL= {
-	icon = "GFX_idea_best_of_colonies"
-	enable = { always = yes }
 
-	stability_factor = GEA_BEST_COLONIAL_stability
-	war_support_factor = GEA_BEST_COLONIAL_war_support
-	supply_consumption_factor = GEA_BEST_COLONIAL_supply
-	local_building_slots_factor = GEA_BEST_COLONIAL_local_building_slots
-	local_resources_factor = GEA_BEST_COLONIAL_local_resources
-	industrial_capacity_factory = GEA_BEST_COLONIAL_industrial_capacity
-	repair_speed_factor = GEA_BEST_COLONIAL_repair_speed
-	industrial_capacity_dockyard = GEA_BEST_COLONIAL_shipyard
-	research_speed_factor = GEA_BEST_COLONIAL_research_speed
-	consumer_goods_factor = GEA_BEST_COLONIAL_consumer
-}
 GEA_gea_army = {
 	icon = "GFX_idea_GEA_gea_army"
 	enable = { always = yes }
@@ -591,9 +600,18 @@ GEA_Corporation_Rul_IG = {
 	trade_opinion_factor = GEA_Corporation_Rule_trade_opinion_factor								#贸易协定关系修正
 }
 
-# 华东铁路收益（隐藏动态修正：不设置 icon）
+# 华东铁路收益
 GEA_east_china_railway_revenue = {
 	enable = { always = yes }
 	remove_trigger = { always = no }
 	consumer_goods_factor = GEA_east_china_railway_consumer_goods_factor
+}
+
+GEA_jungle_mud_pit_modifier = {
+	enable = { always = yes }
+	remove_trigger = { always = no }
+	enemy_local_supplies = -0.2
+	enemy_army_speed_factor = -0.1
+	enemy_truck_attrition_factor = -0.1
+	enemy_attrition = -0.1
 }

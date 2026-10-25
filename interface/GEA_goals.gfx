@@ -320,10 +320,6 @@ SpriteTypes = {
 		texturefile = "gfx/interface/goals/GEA_The_normalization_of_martial_law_regime.png"
 	}
 	SpriteType = {
-		name = "GFX_GEA_Special_handling_for_special_cases"
-		texturefile = "gfx/interface/goals/GEA_Special_handling_for_special_cases.png"
-	}
-	SpriteType = {
 		name = "GFX_GEA_Another_peaceful_day_in_Indochina"
 		texturefile = "gfx/interface/goals/GEA_Another_peaceful_day_in_Indochina.png"
 	}

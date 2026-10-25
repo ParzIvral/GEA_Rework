@@ -603,6 +603,11 @@ add_namespace = GEA_news
 					}
 				}
 			}
+			trigger = {
+				NOT = {
+					has_country_flag = GEA_Governor_Hahl_flag
+				}
+			}
 			custom_effect_tooltip = GEA_event_2
 			add_timed_idea = {
 				idea = GEA_falling_price_idea
@@ -639,6 +644,11 @@ add_namespace = GEA_news
 				idea = GEA_conrol_price_idea
 				days = 365
 			}
+			modify_country_flag = {
+				flag = GEA_Indochinese_Anger
+				value = -1
+			}
+			custom_effect_tooltip = GEA_Indochina_Anger_Down
 		}
 
 		option = {
@@ -905,8 +915,8 @@ add_namespace = GEA_news
 		fire_only_once = yes
 		trigger = {
 			tag = GEA
-			#check_variable = { GEA_nationalist_power > 35 }
 		}
+		is_triggered_only = yes
 
 		option = {
 			name = GEA.19.a
@@ -1837,7 +1847,6 @@ add_namespace = GEA_news
 		immediate = {
 			log = "[GetDateText]: [Root.GetName]: event GEA.42"
 			set_global_flag = GEA_Indochina_Uprising_Fired
-			set_country_flag = GEA_indochina_war_broke_out
 			hidden_effect = {
 				country_event = { #现代默示录
 					id = GEA.50
@@ -1901,8 +1910,10 @@ add_namespace = GEA_news
 					}
 					if = { #The rebellion of local guards
 						limit = {
-							NOT = {
-								has_completed_focus = GEA_Return_to_the_Vietnamese_court
+							GEA = {
+								NOT = {
+									has_completed_focus = GEA_Return_to_the_Vietnamese_court
+								}
 							}
 						}
 						division_template = {
@@ -2132,8 +2143,9 @@ add_namespace = GEA_news
 					}
 				}
 			}
-			set_country_flag = GEA_Lost_Uprising #印度支那已落入赤匪之手
-			set_global_flag = GEA_Indochina_War_Lost 
+			GEA = {
+				set_country_flag = GEA_Lost_Uprising #印度支那已落入赤匪之手
+			}
 			GEA = {
 				every_owned_state = {
 					limit = {
@@ -2196,15 +2208,12 @@ add_namespace = GEA_news
 			name = GEA.45.a #酸菜佬滚回家吧！
 			add_political_power = 25
 			clr_global_flag = GEA_Indochina_Uprising_Fired
-			GEA = {
-				clr_country_flag = GEA_indochina_war_broke_out
-			}
 			add_stability = 0.05
 			hidden_effect = {
 				country_event = {
 					id = viet.82
 					days = 365
-					} # Liberation day, triggers every year
+				} # Liberation day, triggers every year
 				news_event = {
 					id = worldnews.92
 					days = 2
@@ -2227,6 +2236,8 @@ add_namespace = GEA_news
 					}
 				}
 				GEA = {
+					remove_ideas = GEA_The_quagmire_of_Indochina
+					remove_ideas = GEA_The_quagmire_of_Indochina_heye
 					if = {
 						limit = {
 							is_ai = yes
@@ -2339,6 +2350,8 @@ add_namespace = GEA_news
 			add_political_power = 100
 			hidden_effect = {
 				GEA = {
+					remove_ideas = GEA_The_quagmire_of_Indochina
+					remove_ideas = GEA_The_quagmire_of_Indochina_heye
 					transfer_state = 286
 					transfer_state = 856
 					transfer_state = 826
@@ -2365,9 +2378,6 @@ add_namespace = GEA_news
 			}
 			set_country_flag = GEA_Defeated_Uprising #印度支那叛匪已然伏诛
 			clr_global_flag = GEA_Indochina_Uprising_Fired
-			GEA = {
-				clr_country_flag = GEA_indochina_war_broke_out
-			}
 		}
 	}
 	country_event = { #印度支那战事升级
@@ -2462,13 +2472,17 @@ add_namespace = GEA_news
 		picture = GFX_report_event_SIA_German_Economical_Dominance
 
 		is_triggered_only = yes
-
+		fire_only_once = yes
+		
 		option = { 
 			name = GEA.51.a
 			add_political_power = 100
 			add_stability = 0.1
 			set_country_flag = GEA_Indochina_Uprising_got_cancelled
 			custom_effect_tooltip = GEA_Ostasien_34_tt
+			hidden_effect = {
+				remove_ideas = GEA_The_quagmire_of_Indochina
+			}
 		}
 	}
 	
@@ -4915,13 +4929,19 @@ add_namespace = GEA_news
 		desc = {
 			text = GEA.502.d_won
 			trigger = {
-				NOT = { has_global_flag = GEA_Indochina_War_Lost }
+				NOT = { 
+					GEA = { 
+						has_country_flag = GEA_Lost_Uprising  
+					} 
+				}
 			}
 		}
 		desc = {
 			text = GEA.502.d_lost
 			trigger = {
-				has_global_flag = GEA_Indochina_War_Lost
+				GEA = { 
+					has_country_flag = GEA_Lost_Uprising  
+				} 
 			}
 		}
 		picture = GFX_report_event_military_planning
@@ -4930,7 +4950,9 @@ add_namespace = GEA_news
 	
 		option = {
 			trigger = {
-				has_global_flag = GEA_Indochina_War_Lost
+				GEA = { 
+					has_country_flag = GEA_Lost_Uprising  
+				}
 			}
 			name = GEA.502.a #你辜负了我们，将军，已经不会再有什么机会了
 			THIS = {
@@ -4939,7 +4961,11 @@ add_namespace = GEA_news
 		}
 		option = {
 			trigger = {
-				NOT = { has_global_flag = GEA_Indochina_War_Lost }
+				NOT = { 
+					GEA = { 
+						has_country_flag = GEA_Lost_Uprising  
+					} 
+				}
 			}
 			name = GEA.502.b #允许其提前退休
 			THIS = {
@@ -4957,14 +4983,11 @@ add_namespace = GEA_news
 		desc = GEA.503.d
 		picture = GFX_GEA_48
 
+		fire_only_once = yes
 		is_triggered_only = yes
 
 		option = { #费迪南德·舍尔纳将挽救远东危局
 			name = GEA.503.a
-			country_event = {
-				id = GEA.505
-				days = 1
-			}
 		}
 
 		option = { #皇帝指定卢克纳尔接任海耶的职责
@@ -5009,9 +5032,18 @@ add_namespace = GEA_news
 			name = GEA.504.a
 			custom_effect_tooltip = GEA_loser_tt
 			hidden_effect = {
-				country_event = {
-					id = GEA.505
-					days = 2
+				remove_ideas = GEA_The_quagmire_of_Indochina
+				remove_ideas = GEA_The_quagmire_of_Indochina_heye
+				if = {
+					limit = {
+						NOT = {
+							has_country_flag = GEA_Governor_Luckner_flag
+						}
+					}
+					country_event = {
+						id = GEA.505
+						days = 3
+					}
 				}
 			}
 		}
@@ -5022,7 +5054,9 @@ add_namespace = GEA_news
 		title = GEA.505.t
 		desc = GEA.505.d
 		picture = GFX_GEA_49
+
 		is_triggered_only = yes
+		fire_only_once = yes
 
 		option = { #胜者才永远会是审判者
 			name = GEA.505.a
@@ -6580,7 +6614,7 @@ add_namespace = GEA_news
 			name = GEA.803.b
 			trigger = { 
 				GEA = { 
-					political_power > 20 
+					has_political_power > 20 
 				} 	
 			}
 			ai_chance = { factor = 35 }
@@ -6592,7 +6626,7 @@ add_namespace = GEA_news
 			name = GEA.803.c
 			trigger = { 
 				GEA = { 
-					political_power > 50 
+					has_political_power > 50 
 				} 
 			}
 			ai_chance = { factor = 25 }
@@ -6642,6 +6676,68 @@ add_namespace = GEA_news
 			clr_country_flag = GEA_german_coup_pending
 			set_country_flag = GEA_german_coup_defeated
 			set_country_flag = GEA_china_warlord_interaction_blocked
+		}
+	}
+
+	country_event = { #帝国公约的邀请
+		id = GEA.806
+		title = GEA.806.t
+		desc = GEA.806.d
+
+		is_triggered_only = yes
+		trigger = {
+			is_in_faction = no
+			GER = { 
+				exists = yes 
+				is_in_faction = yes 
+			}
+		}
+
+		option = {
+			ai_chance = { 
+				factor = 70 
+			}
+			name = GEA.806.a
+			GER = { add_to_faction = ROOT }
+		}
+
+		option = {
+			ai_chance = { 
+				factor = 30 
+			}
+			name = GEA.806.b
+		}
+	}
+
+	country_event = {
+		id = GEA.807
+		title = GEA.807.t
+		desc = GEA.807.d
+
+		is_triggered_only = yes
+		trigger = {
+			tag = HAW
+			is_in_faction = no
+			GER = { exists = yes is_in_faction = yes }
+		}
+
+		option = {
+			ai_chance = { 
+				factor = 70 
+			}
+			name = GEA.807.a
+			GER = { add_to_faction = ROOT }
+		}
+
+		option = {
+			ai_chance = { 
+				factor = 30 
+			}
+			name = GEA.807.b
+			GEA = {
+				set_country_flag = GEA_ocean_heart_war_plan_unlocked
+				unlock_decision_tooltip = GEA_War_plan_Ocean_Heart
+			}
 		}
 	}
 
@@ -7093,7 +7189,7 @@ add_namespace = GEA_news
 				}
 			}
 			add_war_support = -0.1 
-			set_global_flag = GFX_report_event_GER_colony_problems
+			set_global_flag = GER_fighting_in_east_asia
 			add_to_war = {
 				targeted_alliance = GEA
 				enemy = INC
@@ -7233,7 +7329,7 @@ add_namespace = GEA_news
 			name = Ostasien.105.a # yay
 			trigger = {
 				AND = {
-					has_country_flag = GEA_Indochina_Uprising_Fired
+					has_global_flag = GEA_Indochina_Uprising_Fired
 					NOT = {	
 						country_exists = INC
 					}
@@ -7245,7 +7341,7 @@ add_namespace = GEA_news
 			name = Ostasien.105.b # not yay
 			trigger = {
 				AND = {
-					has_country_flag = GEA_Indochina_Uprising_Fired
+					has_global_flag = GEA_Indochina_Uprising_Fired
 					country_exists = INC
 				}
 			}

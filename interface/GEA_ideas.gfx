@@ -10,11 +10,15 @@ spriteTypes = {
 	}
 	spriteType = {
 		name = "GFX_GEA_Corporation_Rule_Krupp"
-		textureFile = "gfx/interface/autonomy/GEA_Corporation_Rule_Krupp.png"
+		textureFile = "gfx/interface/ideas/gea/GEA_Corporation_Rule_Krupp.png"
 	}
 	spriteType = {
 		name = "GFX_GEA_Corporation_Rule_IG"
-		textureFile = "gfx/interface/autonomy/GEA_Corporation_Rule_IG.png"
+		textureFile = "gfx/interface/ideas/gea/GEA_Corporation_Rule_IG.png"
+	}
+	spriteType = {
+		name = "GFX_idea_GEA_army_air"
+		textureFile = "gfx/interface/ideas/gea/GEA_army_air.png"
 	}
 	spriteType = {
 		name = "GFX_idea_GEA_Industrial_production_never_stops_day_or_night"

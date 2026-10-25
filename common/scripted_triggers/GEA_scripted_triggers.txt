@@ -40,7 +40,9 @@ GEA_china_warlord_cannot_interact_trigger = { #能互动的
 	OR = {
 		has_country_flag = GEA_china_warlord_interaction_blocked #没法互动标记
 		has_country_flag = GEA_german_coup_defeated # 政变失败禁用的
-		tag = CHI #国左的傻逼
+		has_socialist_government = yes #国左的傻逼
+		has_government = radical_socialist
+		has_government = social_democrat
 		is_ruled_by_left_kmt = yes #也是国左的傻逼
 		has_country_leader = { name = "Zhang Tianran" ruling_only = yes } #神棍
 		has_country_leader = { name = "Chen Mingshu" ruling_only = yes } #还是国左的傻逼

@@ -9740,7 +9740,7 @@ GEA_Dispatch_Military_Advisers = { #派驻军事顾问团
 		}
 
 		modifier = {
-			political_factor = 0.1
+			political_power_factor = 0.1
 			consumer_goods_factor = -0.1
 		}
 
@@ -9839,67 +9839,6 @@ GEA_Dispatch_Military_Advisers = { #派驻军事顾问团
 			}
 		}
 	}	
-	
-	GEA_Investment_in_smelting_technology = { #冶炼技术投资
-		icon = GFX_GEA_Investment_in_smelting_technology_decision
-		allowed = { original_tag = GEA }
-
-		cost = 40
-		days_remove = 90
-		fire_only_once = yes
-
-		visible = {
-			FROM = { GEA_china_warlord_can_interact_trigger = yes }
-			has_completed_focus = GEA_Best_regards_to_our_mining_operation
-			has_country_flag = GEA_east_china_investment_unlocked
-			has_country_flag = LEP_OPEN
-		}
-
-		targets_dynamic = yes
-		target_root_trigger = {
-			has_completed_focus = GEA_Best_regards_to_our_mining_operation
-			has_country_flag = GEA_east_china_investment_unlocked
-			has_country_flag = LEP_OPEN
-		}
-		target_trigger = {
-			FROM = { owns_state = 613 }
-		}
-		available = {
-			FROM = { owns_state = 613 }
-		}
-
-		modifier = {
-			political_power_cost = 0.03
-			production_speed_buildings_factor = -0.03
-		}
-
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Investment_in_smelting_technology target: [From.GetName]"
-			FROM = {
-				add_ideas = GEA_Modern_smelting_technology
-				add_tech_bonus = {
-					name = GEA_Investment_in_smelting_technology
-					bonus = 0.5
-					uses = 1
-					category = excavation_tech
-				}
-			}
-			custom_effect_tooltip = GEA_china_lep_name_tt
-			add_to_variable = {
-				GEA_china_lep_attitude = 5
-				tooltip = GEA_china_attitude_change_tt
-			}
-			add_to_variable = {
-				GEA_china_lep_capital_influence = 3
-				tooltip = GEA_china_capital_influence_change_tt
-			}
-			hidden_effect = {
-				clamp_variable = { var = GEA_china_lep_attitude min = 0 max = 100 }
-				clamp_variable = { var = GEA_china_lep_capital_influence min = 0 max = 100 }
-			}
-		}
-	}	
-	
 	GEA_Acquire_the_Nanshan_Iron_Mine = { #收购南山铁矿
 		icon = GFX_GEA_Investment_in_smelting_technology_decision
 		allowed = { original_tag = GEA }
@@ -9978,54 +9917,6 @@ GEA_Dispatch_Military_Advisers = { #派驻军事顾问团
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Develop_the_Xihuashan_Tungsten_Mine target: [From.GetName]"
 			add_resource = { type = tungsten amount = 40 state = 600 }
-			FROM = {
-				add_popularity = { ideology = market_liberal popularity = 0.02 }
-			}
-			custom_effect_tooltip = GEA_china_lep_name_tt
-			add_to_variable = {
-				GEA_china_lep_attitude = 5
-				tooltip = GEA_china_attitude_change_tt
-			}
-			add_to_variable = {
-				GEA_china_lep_capital_influence = 5
-				tooltip = GEA_china_capital_influence_change_tt
-			}
-			hidden_effect = {
-				clamp_variable = { var = GEA_china_lep_attitude min = 0 max = 100 }
-				clamp_variable = { var = GEA_china_lep_capital_influence min = 0 max = 100 }
-			}
-		}
-	}
-
-	GEA_Develop_the_Gushan_Iron_Mine = { #开发姑山铁矿
-		icon = GFX_GEA_Investment_in_smelting_technology_decision
-		allowed = { original_tag = GEA }
-		cost = 40
-		days_remove = 90
-		fire_only_once = yes
-
-		visible = {
-			FROM = { GEA_china_warlord_can_interact_trigger = yes }
-			has_completed_focus = GEA_Best_regards_to_our_mining_operation
-			has_country_flag = GEA_east_china_investment_unlocked
-			has_country_flag = LEP_OPEN
-		}
-		targets_dynamic = yes
-		target_root_trigger = {
-			has_completed_focus = GEA_Best_regards_to_our_mining_operation
-			has_country_flag = GEA_east_china_investment_unlocked
-			has_country_flag = LEP_OPEN
-		}
-		target_trigger = { FROM = { owns_state = 613 } }
-		available = {
-			FROM = {
-				owns_state = 613
-				owns_state = 1014
-			}
-		}
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Develop_the_Gushan_Iron_Mine target: [From.GetName]"
-			add_resource = { type = steel amount = 40 state = 1014 }
 			FROM = {
 				add_popularity = { ideology = market_liberal popularity = 0.02 }
 			}
@@ -10502,68 +10393,6 @@ GEA_Dispatch_Military_Advisers = { #派驻军事顾问团
 		}
 	}
 
-	GEA_Conclude_Grain_Export_Contracts = { #签订粮食统购出口合同
-		icon = GFX_GEA_Subsidise_Seeds_and_Farm_Tools_decision
-		allowed = { original_tag = GEA }
-		cost = 25
-		days_remove = 60
-		days_re_enable = 180
-		visible = {
-			has_completed_focus = GEA_Manage_the_grain_storage_facility
-			has_country_flag = LEP_OPEN
-			FROM = { GEA_china_warlord_can_interact_trigger = yes }
-		}
-		targets_dynamic = yes
-		target_root_trigger = {
-			has_completed_focus = GEA_Manage_the_grain_storage_facility
-			has_country_flag = LEP_OPEN
-		}
-		target_trigger = { FROM = { owns_state = 613 } }
-		available = {
-			NOT = { has_war_with = FROM }
-			FROM = { owns_state = 613 }
-			FROM = { controls_state = 613 }
-		}
-		cancel_trigger = {
-			OR = {
-				has_war_with = FROM
-				FROM = {
-					OR = {
-						NOT = { owns_state = 613 }
-						NOT = { controls_state = 613 }
-						GEA_china_warlord_cannot_interact_trigger = yes
-					}
-				}
-			}
-		}
-		ai_will_do = { factor = 30 }
-		modifier = {
-			supply_consumption_factor = -0.05
-			consumer_goods_factor = -0.025
-		}
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Conclude_Grain_Export_Contracts target: [From.GetName]"
-			add_political_power = 60
-			FROM = {
-				add_political_power = 30
-				add_stability = -0.02
-			}
-			custom_effect_tooltip = GEA_china_lep_name_tt
-			add_to_variable = {
-				GEA_china_lep_attitude = -5
-				tooltip = GEA_china_attitude_change_tt
-			}
-			add_to_variable = {
-				GEA_china_lep_capital_influence = 3
-				tooltip = GEA_china_capital_influence_change_tt
-			}
-			hidden_effect = {
-				clamp_variable = { var = GEA_china_lep_attitude min = 0 max = 100 }
-				clamp_variable = { var = GEA_china_lep_capital_influence min = 0 max = 100 }
-			}
-		}
-	}
-
 	GEA_Open_Village_and_County_Banks = { # 开设村县银行
 		icon = GFX_GEA_Transfer_German_Enterprises_decision
 		allowed = { original_tag = GEA }
@@ -10616,77 +10445,6 @@ GEA_Dispatch_Military_Advisers = { #派驻军事顾问团
 			}
 			hidden_effect = {
 				clamp_variable = { var = GEA_china_lep_attitude min = 0 max = 100 }
-				clamp_variable = { var = GEA_china_lep_capital_influence min = 0 max = 100 }
-				clamp_variable = { var = GEA_china_lep_military_projection min = 0 max = 100 }
-			}
-		}
-	}
-
-	GEA_Issue_Agricultural_Loans = { # 发放农业贷款
-		icon = GFX_GEA_Transfer_German_Enterprises_decision
-		allowed = { original_tag = GEA }
-		cost = 30
-		days_remove = 90
-		days_re_enable = 90
-
-		visible = {
-			FROM = { GEA_china_warlord_can_interact_trigger = yes }
-			has_completed_focus = GEA_The_tricks_of_financiers
-			has_country_flag = LEP_OPEN
-		}
-		targets_dynamic = yes
-		target_root_trigger = {
-			has_completed_focus = GEA_The_tricks_of_financiers
-			has_country_flag = LEP_OPEN
-		}
-		target_trigger = { FROM = { owns_state = 613 } }
-		available = {
-			NOT = { has_war_with = FROM }
-			FROM = { owns_state = 613 }
-		}
-		cancel_trigger = {
-			OR = {
-				has_war_with = FROM
-				FROM = { NOT = { owns_state = 613 } }
-			}
-		}
-
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Issue_Agricultural_Loans target: [From.GetName]"
-
-			FROM = {
-				add_popularity = { ideology = market_liberal popularity = 0.03 }
-				add_stability = 0.05
-				add_manpower = 3000
-				random_owned_state = {
-					limit = { is_controlled_by = FROM }
-					add_extra_state_shared_building_slots = 1
-					hidden_effect = { set_state_flag = GEA_agricultural_loan_first_state }
-				}
-				random_owned_state = {
-					limit = {
-						is_controlled_by = FROM
-						NOT = { has_state_flag = GEA_agricultural_loan_first_state }
-					}
-					add_extra_state_shared_building_slots = 1
-				}
-				hidden_effect = {
-					every_owned_state = {
-						limit = { has_state_flag = GEA_agricultural_loan_first_state }
-						clr_state_flag = GEA_agricultural_loan_first_state
-					}
-				}
-			}
-			custom_effect_tooltip = GEA_china_lep_name_tt
-			add_to_variable = {
-				GEA_china_lep_capital_influence = 5
-				tooltip = GEA_china_capital_influence_change_tt
-			}
-			add_to_variable = {
-				GEA_china_lep_military_projection = 3
-				tooltip = GEA_china_military_projection_change_tt
-			}
-			hidden_effect = {
 				clamp_variable = { var = GEA_china_lep_capital_influence min = 0 max = 100 }
 				clamp_variable = { var = GEA_china_lep_military_projection min = 0 max = 100 }
 			}
@@ -13281,6 +13039,340 @@ GEA_Naval_decisions = { #送船
 }
 
 political_actions = {
+	GEA_War_plan_Meyer_Waldeck = { #战争计划：迈耶-瓦尔德克
+		icon = generic_prepare_civil_war
+		allowed = { original_tag = GEA }
+
+		custom_cost_text = GEA_war_plan_meyer_waldeck_cp_cost
+		custom_cost_trigger = { command_power > 9.99 }
+
+		days_remove = 45
+		fire_only_once = yes
+
+		visible = {
+			has_completed_focus = GEA_Atone_for_Meyer-Waldeck_disgrace
+			JAP = {
+				exists = yes
+				NOT = { is_subject_of = GER }
+				any_controlled_state = { region = 191 } #尚未丢掉整个朝鲜
+			}
+			NOT = { has_war_with = JAP }
+			NOT = { GER = { has_war_with = JAP } }
+		}
+		
+		ai_will_do = { factor = 0 }
+		available = { NOT = { is_in_faction_with = JAP } }
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_War_plan_Meyer_Waldeck"
+			hidden_effect = { add_command_power = -10 }
+		}
+
+		cancel_trigger = {
+			OR = {
+				has_war_with = JAP
+				GER = { has_war_with = JAP }
+				NOT = { country_exists = JAP }
+				JAP = { is_subject_of = GER }
+				NOT = { JAP = { any_controlled_state = { region = 191 } } }
+				is_in_faction_with = JAP
+			}
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_War_plan_Meyer_Waldeck"
+			if = {
+				limit = {
+					JAP = {
+						exists = yes
+						NOT = { is_subject_of = GER }
+						any_controlled_state = { region = 191 }
+					}
+					NOT = { has_war_with = JAP }
+					NOT = { GER = { has_war_with = JAP } }
+					NOT = { is_in_faction_with = JAP }
+				}
+				declare_war_on = { target = JAP type = annex_everything }
+			}
+		}
+	}
+	GEA_War_plan_Ocean_Heart = { #战争计划：大洋之心
+		icon = generic_prepare_civil_war
+		allowed = { original_tag = GEA }
+		custom_cost_text = GEA_war_plan_meyer_waldeck_cp_cost
+		custom_cost_trigger = { command_power > 9.99 }
+		days_remove = 45
+		fire_only_once = yes
+
+		visible = {
+			has_completed_focus = GEA_Head_for_the_center_of_the_Pacific_Ocean
+			has_country_flag = GEA_ocean_heart_war_plan_unlocked
+			country_exists = HAW
+		}
+		ai_will_do = { factor = 0 }
+		available = {
+			NOT = { has_war_with = HAW }
+			NOT = { GER = { has_war_with = HAW } }
+			NOT = { is_in_faction_with = HAW }
+			NOT = { owns_state = 629 }
+			HAW = { NOT = { is_subject_of = GER } }
+		}
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_War_plan_Ocean_Heart"
+			hidden_effect = { add_command_power = -10 }
+		}
+		cancel_trigger = {
+			OR = {
+				has_war_with = HAW
+				GER = { has_war_with = HAW }
+				NOT = { country_exists = HAW }
+				HAW = { is_subject_of = GER }
+				is_in_faction_with = HAW
+				owns_state = 629
+			}
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_War_plan_Ocean_Heart"
+			if = {
+				limit = {
+					HAW = { exists = yes NOT = { is_subject_of = GER } }
+					NOT = { has_war_with = HAW }
+					NOT = { GER = { has_war_with = HAW } }
+					NOT = { is_in_faction_with = HAW }
+					NOT = { owns_state = 629 }
+				}
+				declare_war_on = { target = HAW type = annex_everything }
+			}
+		}
+	}
+	GEA_War_operation_Rumphius = { #战争行动：龙菲乌斯
+		icon = generic_prepare_civil_war
+		allowed = { original_tag = GEA }
+		custom_cost_text = GEA_war_plan_meyer_waldeck_cp_cost
+		custom_cost_trigger = { command_power > 9.99 }
+		days_remove = 45
+		fire_only_once = yes
+
+		visible = {
+			has_completed_focus = GEA_The_travel_of_Rumphius
+			country_exists = DEI
+		}
+		ai_will_do = { factor = 0 }
+		available = {
+			NOT = { has_war_with = DEI }
+			NOT = { GER = { has_war_with = DEI } }
+			NOT = { is_in_faction_with = DEI }
+			DEI = { NOT = { is_subject_of = GER } }
+		}
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_War_operation_Rumphius"
+			hidden_effect = { add_command_power = -10 }
+		}
+		cancel_trigger = {
+			OR = {
+				has_war_with = DEI
+				GER = { has_war_with = DEI }
+				NOT = { country_exists = DEI }
+				DEI = { is_subject_of = GER }
+				is_in_faction_with = DEI
+			}
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_War_operation_Rumphius"
+			if = {
+				limit = {
+					DEI = { exists = yes NOT = { is_subject_of = GER } }
+					NOT = { has_war_with = DEI }
+					NOT = { GER = { has_war_with = DEI } }
+					NOT = { is_in_faction_with = DEI }
+				}
+				DEI = {
+					every_owned_state = { add_claim_by = ROOT }
+				}
+				declare_war_on = { target = DEI type = annex_everything }
+			}
+		}
+	}
+	GEA_War_operation_Leichhardt = { #战争行动：莱希哈特
+		icon = generic_prepare_civil_war
+		allowed = { original_tag = GEA }
+		custom_cost_text = GEA_war_plan_meyer_waldeck_cp_cost
+		custom_cost_trigger = { command_power > 9.99 }
+		days_remove = 45
+		fire_only_once = yes
+
+		visible = {
+			has_completed_focus = GEA_Save_Leichhardt
+			country_exists = AST
+		}
+		ai_will_do = { factor = 0 }
+		available = {
+			NOT = { has_war_with = AST }
+			NOT = { GER = { has_war_with = AST } }
+			NOT = { is_in_faction_with = AST }
+			AST = { NOT = { is_subject_of = GER } }
+		}
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_War_operation_Leichhardt"
+			hidden_effect = { add_command_power = -10 }
+		}
+		cancel_trigger = {
+			OR = {
+				has_war_with = AST
+				GER = { has_war_with = AST }
+				NOT = { country_exists = AST }
+				AST = { is_subject_of = GER }
+				is_in_faction_with = AST
+			}
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_War_operation_Leichhardt"
+			if = {
+				limit = {
+					AST = { exists = yes NOT = { is_subject_of = GER } }
+					NOT = { has_war_with = AST }
+					NOT = { GER = { has_war_with = AST } }
+					NOT = { is_in_faction_with = AST }
+				}
+				declare_war_on = { target = AST type = annex_everything }
+			}
+		}
+	}
+	GEA_War_operation_Forty_Years = { #战争行动：四十年的未竟之事
+		icon = generic_prepare_civil_war
+		allowed = { original_tag = GEA }
+		custom_cost_text = GEA_war_plan_meyer_waldeck_cp_cost
+		custom_cost_trigger = { command_power > 9.99 }
+		days_remove = 45
+		fire_only_once = yes
+
+		visible = {
+			has_completed_focus = GEA_The_unfinished_business_of_forty_years
+			country_exists = PHI
+		}
+		ai_will_do = { factor = 0 }
+		available = {
+			NOT = { has_war_with = PHI }
+			NOT = { GER = { has_war_with = PHI } }
+			NOT = { is_in_faction_with = PHI }
+			PHI = { NOT = { is_subject_of = GER } }
+		}
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_War_operation_Forty_Years"
+			hidden_effect = { add_command_power = -10 }
+		}
+		cancel_trigger = {
+			OR = {
+				has_war_with = PHI
+				GER = { has_war_with = PHI }
+				NOT = { country_exists = PHI }
+				PHI = { is_subject_of = GER }
+				is_in_faction_with = PHI
+			}
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_War_operation_Forty_Years"
+			if = {
+				limit = {
+					PHI = { exists = yes NOT = { is_subject_of = GER } }
+					NOT = { has_war_with = PHI }
+					NOT = { GER = { has_war_with = PHI } }
+					NOT = { is_in_faction_with = PHI }
+				}
+				declare_war_on = { target = PHI type = annex_everything }
+			}
+		}
+	}
+	GEA_War_operation_Eulenburg = { #战争行动：欧伦堡
+		icon = generic_prepare_civil_war
+		allowed = { original_tag = GEA }
+		custom_cost_text = GEA_war_plan_meyer_waldeck_cp_cost
+		custom_cost_trigger = { command_power > 9.99 }
+		days_remove = 45
+		fire_only_once = yes
+
+		visible = {
+			has_completed_focus = GEA_Operation_Eulenburg
+			country_exists = SIA
+		}
+		ai_will_do = { factor = 0 }
+		available = {
+			NOT = { has_war_with = SIA }
+			NOT = { GER = { has_war_with = SIA } }
+			NOT = { is_in_faction_with = SIA }
+			SIA = { NOT = { is_subject_of = GER } }
+		}
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_War_operation_Eulenburg"
+			hidden_effect = { add_command_power = -10 }
+		}
+		cancel_trigger = {
+			OR = {
+				has_war_with = SIA
+				GER = { has_war_with = SIA }
+				NOT = { country_exists = SIA }
+				SIA = { is_subject_of = GER }
+				is_in_faction_with = SIA
+			}
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_War_operation_Eulenburg"
+			if = {
+				limit = {
+					SIA = { exists = yes NOT = { is_subject_of = GER } }
+					NOT = { has_war_with = SIA }
+					NOT = { GER = { has_war_with = SIA } }
+					NOT = { is_in_faction_with = SIA }
+				}
+				declare_war_on = { target = SIA type = annex_everything }
+			}
+		}
+	}
+	GEA_War_operation_Helfer = { #战争行动：黑尔弗
+		icon = generic_prepare_civil_war
+		allowed = { original_tag = GEA }
+		custom_cost_text = GEA_war_plan_meyer_waldeck_cp_cost
+		custom_cost_trigger = { command_power > 9.99 }
+		days_remove = 45
+		fire_only_once = yes
+
+		visible = {
+			has_completed_focus = GEA_Helfer_final_expedition
+			country_exists = BRM
+		}
+		ai_will_do = { factor = 0 }
+		available = {
+			NOT = { has_war_with = BRM }
+			NOT = { GER = { has_war_with = BRM } }
+			NOT = { is_in_faction_with = BRM }
+			BRM = { NOT = { is_subject_of = GER } }
+		}
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_War_operation_Helfer"
+			hidden_effect = { add_command_power = -10 }
+		}
+		cancel_trigger = {
+			OR = {
+				has_war_with = BRM
+				GER = { has_war_with = BRM }
+				NOT = { country_exists = BRM }
+				BRM = { is_subject_of = GER }
+				is_in_faction_with = BRM
+			}
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_War_operation_Helfer"
+			if = {
+				limit = {
+					BRM = { exists = yes NOT = { is_subject_of = GER } }
+					NOT = { has_war_with = BRM }
+					NOT = { GER = { has_war_with = BRM } }
+					NOT = { is_in_faction_with = BRM }
+				}
+				declare_war_on = { target = BRM type = annex_everything }
+			}
+		}
+	}
 	GEA_Start_construction_progress_1_in_indochina = {
 		icon = fortress
 		cost = 10

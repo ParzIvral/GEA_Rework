@@ -287,7 +287,6 @@ set_variable = { GEA_AOG_SHIPYARD = 0.15  }
 set_variable = { GEA_AOG_SHIPYARD_loacl = 15  }
 set_variable = { GEA_TRADE_FACTOR = 0.15  }
 set_variable = { GEA_TRADE_FACTOR_local = 15  }
-set_variable = { GEA_BEST_COLONIAL_stability = 0.10 }
 set_country_flag = GEA_owner_of_wenzhou
 set_country_flag = GEA_owner_of_xiamen
 set_country_flag = GEA_owner_of_guangzhou
@@ -297,8 +296,14 @@ set_country_flag = GEA_owner_of_qingdao
 add_to_tech_sharing_group = german_research
 set_variable = { GEA_josias_effect_political = 0.3}
 set_variable = { GEA_josias_effect_economy = 0.3}
-set_variable = { GEA_indochina_stab = 2}
-set_variable = { GEA_indochina_control = 3}
+set_country_flag = {
+	flag = GEA_Indochinese_Stability
+	value = 2
+}
+set_country_flag = {
+	flag = GEA_Indochinese_Anger
+	value = 2
+}
 set_variable = { GEA_singapore_development = 0.5}
 set_variable = { GEA_malaya_development = 0.2}
 set_variable = { GEA_Borneo_development = 0.1}
