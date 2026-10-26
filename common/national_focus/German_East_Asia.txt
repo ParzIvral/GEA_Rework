@@ -198,6 +198,12 @@ focus_tree = {
 			add_stability = 0.02
 			custom_effect_tooltip = GEA_active_indochina_decision
 			custom_effect_tooltip = GEA_The_troublesome_Indochina_region_tt
+			hidden_effect = {
+				country_event = {
+					id = GEA.118 #西贡之虎
+					days = 88
+				}
+			}
 		}
 	}
 
@@ -2049,6 +2055,12 @@ focus_tree = {
 				remove_idea = GEA_colonial_question_josias_3
 				add_idea = GEA_colonial_question_josias_4
 			}
+			hidden_effect = {
+				country_event = {
+					id = GEA.212
+					days = 5
+				}
+			}
 		}
 	}
 
@@ -2812,6 +2824,9 @@ focus_tree = {
 				gain_random_agency_upgrade = yes
 				gain_random_agency_upgrade = yes
 				gain_random_agency_upgrade = yes
+				country_event = {
+					id = GEA.305
+				}
 			}
 		}
 	}
@@ -3423,6 +3438,12 @@ focus_tree = {
 			swap_ideas = {
 				remove_idea = GEA_The_garden_of_the_cartel
 				add_idea = GEA_The_garden_of_the_cartel_heye
+			}
+			hidden_effect = {
+				country_event = {
+					id = GEA.304
+					days = 2
+				}
 			}
 		}
 	}
@@ -4708,11 +4729,10 @@ focus_tree = {
 		prerequisite = {
 			focus = GEA_Enterprise_Exceptionalism
 		}
-		prerequisite = {
-			focus = GEA_The_Essen_Constitution_in_the_Far_East
-		}
+
 		prerequisite = {
 			focus = GEA_Another_scientific_center_of_the_empire
+			focus = GEA_The_Essen_Constitution_in_the_Far_East
 		}
 		relative_position_id = GEA_The_benefits_of_arms_sales
 		ai_will_do = {
@@ -4786,7 +4806,12 @@ focus_tree = {
 		cost = 5
 		x = -4
 		y = 1
-
+		select_effect = {
+			country_event = {
+				id = GEA.501
+				days = 1
+			}
+		}
 		available = {
 			has_country_flag = GEA_Governor_Luckner_flag
 		}
@@ -5586,6 +5611,10 @@ focus_tree = {
 				id = GEA.552
 				days = 5
 			}
+			country_event = {
+				id = GEA.557
+				days = 10
+			}
 		}
 		prerequisite = {
 			focus = GEA_Only_liquidation_is_the_most_important
@@ -5620,7 +5649,12 @@ focus_tree = {
 				id = GEA.506
 				days = 7
 			}
-			
+			hidden_effect = {
+				country_event = {
+					id = GEA.55 #恶魔降临的夜晚
+					days = 200
+				}
+			}
 		}
 	}
 	focus = { #无受君命
@@ -5930,6 +5964,14 @@ focus_tree = {
 		y = 12
 		ai_will_do = {
 			factor = 1000
+		}
+		select_effect = {
+			hidden_effect = {
+				country_event = {
+					id = GEA.38
+					days = 2
+				}
+			}
 		}
 		available = {
 			has_country_flag = GEA_crisis_is_on_hold
@@ -9172,8 +9214,7 @@ focus_tree = {
 				}
 			}
 			country_event = {
-				id = Ostasien.1000
-				days = 0
+				id = GEA.1200
 			}
 		}
 	}
@@ -9198,6 +9239,7 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_emergency_meeting"
 			add_doctrine_cost_reduction = {
+				name = gea_emergency_meeting
 				cost_reduction = 0.5
 				uses = 1
 				category = land_doctrine
@@ -14807,6 +14849,11 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_Hague_Arbitration"
+			GER = {
+				country_event = {
+					id = GEA.808
+				}
+			}
 		}	
 	}
 

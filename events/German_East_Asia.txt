@@ -236,7 +236,7 @@ add_namespace = GEA_news
 				YUN = { #Yunnan's Black Monday event
 					country_event = { id = yun.44 days = 2 }
 				}
-				country_event = { id = Ostasien.208 days = 2 }
+				country_event = { id = GEA.814 days = 2 }
 				country_event = { id = GEA.52 days = 30 }
 			}
 		}
@@ -284,7 +284,31 @@ add_namespace = GEA_news
 	}
 	country_event = {#黑色一周的结束
 		id = GEA.7
-		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.7" }
+		immediate = { 
+			log = "[GetDateText]: [Root.GetName]: event GEA.7"
+			hidden_effect = {
+				country_event = {
+					id = GEA.10 #价格大俯冲
+					days = 5
+				}
+				country_event = {
+					id = GEA.8
+					days = 6
+				}
+				country_event = {
+					id = GEA.11 #不稳定的印度支那
+					days = 17
+				}
+				country_event = {
+					id = GEA.17
+					days = 30
+				}
+				country_event = { #殖民危机暂缓
+					id = GEA.37
+					days = 90
+				}
+			}
+	 	}
 		title = GEA.7.t
 		desc = GEA.7.d
 		picture = GFX_report_event_SIA_German_Economical_Dominance
@@ -296,30 +320,6 @@ add_namespace = GEA_news
 			name = GEA.7.a
 			add_stability = -0.1
 			add_ideas = GEA_colonial_disaster_idea
-			hidden_effect = {
-				country_event = {
-					id = GEA.10 #价格大俯冲
-					days = 5
-				}
-			} 
-			hidden_effect = {
-				country_event = {
-					id = GEA.11 #不稳定的印度支那
-					days = 17
-				}
-			}
-			hidden_effect = {
-				country_event = {
-					id = GEA.17
-					days = 30
-				}
-			}
-			hidden_effect = {
-				country_event = { #殖民危机暂缓
-					id = GEA.37
-					days = 90
-				}
-			}
 		}
 	}
 	country_event = {#阿尔贝特·巴林之死
@@ -460,7 +460,7 @@ add_namespace = GEA_news
 					GEA_Karl_Otto_Koch_sec_pau
 				}
 				country_event = {
-					id = Ostasien.303
+					id = GEA.217
 					days = 20
 				}
 				
@@ -583,6 +583,10 @@ add_namespace = GEA_news
 			log = "[GetDateText]: [Root.GetName]: event GEA.10"
 			hidden_effect = {
 				country_event = {
+					id = GEA.24 #华商请愿
+					days = 38
+				}
+				country_event = {
 					id = GEA.28 #种植园集体罢工
 					days = 17
 				}
@@ -682,7 +686,8 @@ add_namespace = GEA_news
 		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.11" }
 		title = GEA.11.t
 		desc = GEA.11.d
-		picture = GFX_report_event_vietnam
+		picture = GFX_report_event_INC_vietnam
+
 
 		is_triggered_only = yes
 		fire_only_once = yes
@@ -775,6 +780,12 @@ add_namespace = GEA_news
 						id = GEA.16
 						days = 3
 					}
+				}
+				GEA = {
+					country_event = {
+						id = GEA.27 #这他妈谁印的？
+						days = 12
+					}					
 				}
 			}
 		}
@@ -1412,6 +1423,10 @@ add_namespace = GEA_news
 
 		option = { 
 			name = GEA.31.a
+			add_popularity = {
+				ideology = radical_socialist
+				popularity = -0.01
+			}
 		}
 	}
 	country_event = {#专员车队遇袭
@@ -1686,7 +1701,7 @@ add_namespace = GEA_news
 			}
 		}
 		option = { #交给军事法庭秘密处理
-			name = GEA.36.b
+			name = GEA.36.c
 			ai_chance = {
 				factor = 20
 				modifier = {
@@ -1745,7 +1760,10 @@ add_namespace = GEA_news
 		
 		option = { 
 			name = GEA.38.a
-			add_ideas = GEA_Siemens_Investment
+			add_timed_idea = {
+				idea = GEA_Siemens_Investment
+				days = 365
+			}
 			846 = {
 				add_building_construction = {
 					type = infrastructure
@@ -2050,19 +2068,21 @@ add_namespace = GEA_news
 		}
 	}
 	country_event = { #印度支那联盟发出和平倡议
-		id = GEA.43
-		title = GEA.43.t
-		desc = GEA.43.d
-		picture = GFX_report_event_vietnam
+		id = Ostasien.18
+		title = Ostasien.18.t
+		desc = Ostasien.18.d
+		picture = GFX_report_event_INC_vietnam
+
 		is_triggered_only = yes
+
 		immediate = {
-			log = "[GetDateText]: [Root.GetName]: event GEA.43"
+			log = "[GetDateText]: [Root.GetName]: event Ostasien.18"
 			INC = {
 				save_event_target_as = white_peace_receiver
 			}
 		}
 		option = {
-			name = GEA.43.a #不，我们将战斗到底！
+			name = Ostasien.18.a #不，我们将战斗到底！
 			ai_chance = {
 				factor = 90
 				modifier = {
@@ -2127,7 +2147,7 @@ add_namespace = GEA_news
 			}
 		}
 		option = { #我们已经没法继续战斗了
-			name = GEA.43.b 
+			name = Ostasien.18.b 
 			ai_chance = {
 				factor = 10
 				modifier = {
@@ -2275,7 +2295,6 @@ add_namespace = GEA_news
 		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.46" }
 		title = GEA.46.t
 		desc = GEA.46.d
-		picture = GFX_ger_coltroops
 
 		is_triggered_only = yes
 
@@ -2355,6 +2374,10 @@ add_namespace = GEA_news
 					transfer_state = 286
 					transfer_state = 856
 					transfer_state = 826
+					country_event = {
+						id = GEA.55 #恶魔降临的夜晚
+						days = 210
+					}
 				}
 				VIN = {
 					country_event = {
@@ -2482,6 +2505,10 @@ add_namespace = GEA_news
 			custom_effect_tooltip = GEA_Ostasien_34_tt
 			hidden_effect = {
 				remove_ideas = GEA_The_quagmire_of_Indochina
+				country_event = {
+					id = GEA.55
+					days = 189
+				}
 			}
 		}
 	}
@@ -2510,7 +2537,9 @@ add_namespace = GEA_news
 			name = GEA.52.c
 			custom_effect_tooltip = GEA_Affect_Abandoning_the_savage_nature_tt
 			hidden_effect = {
-				add_to_variable = { GEA_Handling_the_savage_army = 1 }
+				add_to_variable = { 
+					GEA_Handling_the_savage_army = 1 
+				}
 			}
 		}
 	}
@@ -2542,6 +2571,77 @@ add_namespace = GEA_news
 		option = {
 			name = GEA.54.a
 			add_stability = 0.02
+		}
+	}
+	country_event = { #恶魔降临的夜晚
+		id = GEA.55
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.55" }
+		title = GEA.55.t
+		desc = GEA.55.d
+		picture = GFX_GEA_65
+
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = GEA.55.a
+			add_stability = -0.02
+		}
+	}
+	country_event = { # collapse of the kramat pulai deposit 1
+		id = GEA.56
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.56" }
+		title = GEA.56.t
+		desc = GEA.56.d
+
+		fire_only_once = yes
+
+		trigger = {
+			tag = GEA
+			owns_state = 846
+			date > 1938.05.01
+		}
+
+
+		option = {
+			name = GEA.56.a
+			846 = {
+				set_state_flag = malaya_tungsten_depletion_1
+				add_resource = {
+					type = tungsten
+					amount = -90
+				}
+			}
+		}
+	}
+
+	country_event = { # collapse of the kramat pulai deposit 2
+		id = GEA.57
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.57" }
+		title = GEA.57.t
+		desc = GEA.57.d
+
+		fire_only_once = yes
+
+		trigger = {
+			tag = GEA
+			owns_state = 846
+			date > 1939.07.01
+			846 = {
+				has_state_flag = malaya_tungsten_depletion_1
+			}
+		}
+
+		option = {
+			name = GEA.57.a
+			846 = {
+				set_state_flag = malaya_tungsten_depletion_2
+				add_resource = {
+					type = tungsten
+					amount = -90
+				}
+
+			}
 		}
 	}
 
@@ -3532,7 +3632,7 @@ add_namespace = GEA_news
 			}
 		}
 		option = { #出动宪兵和水枪，把广场清出来
-			name = GEA.36.b
+			name = GEA.115.b
 			ai_chance = {
 				factor = 20
 			}			
@@ -3547,7 +3647,7 @@ add_namespace = GEA_news
 			}
 		}
 		option = { #对外宣布政府将落实调查这次事件
-			name = GEA.36.b
+			name = GEA.115.c
 			ai_chance = {
 				factor = 70
 				modifier = {
@@ -3594,7 +3694,7 @@ add_namespace = GEA_news
 			set_country_flag = GEA_restrict_military
 		}
 		option = { #限制滥权，但给前线军官留下处置余地
-			name = GEA.36.b
+			name = GEA.116.b
 			ai_chance = {
 				factor = 33
 			}			
@@ -3603,9 +3703,10 @@ add_namespace = GEA_news
 			add_to_variable = {
 				GEA_Handling_the_savage_army = 1
 			}
+			set_country_flag = GEA_restrict_military
 		}
 		option = { #别给帝国士兵们上太多镣铐
-			name = GEA.36.b
+			name = GEA.116.c
 			ai_chance = {
 				factor = 33
 			}
@@ -3614,6 +3715,7 @@ add_namespace = GEA_news
 			add_to_variable = {
 				GEA_Handling_the_savage_army = -1
 			}
+			set_country_flag = GEA_restrict_military
 		}
 	}
 	country_event = {#对民众做出让步
@@ -3633,6 +3735,30 @@ add_namespace = GEA_news
 				value = -1
 			}
 			custom_effect_tooltip = GEA_Indochina_Anger_Down
+		}
+	}
+	country_event = {#西贡之虎
+		id = GEA.118
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.118" }
+		title = GEA.118.t
+		desc = GEA.118.d
+		picture = GFX_GEA_62
+
+		fire_only_once = yes
+		is_triggered_only = yes
+
+		option = { #一把好用的快刀
+			name = GEA.118.a
+			add_stability = 0.02
+			add_popularity = {
+				ideology = paternal_autocrat
+				popularity = 0.02
+			}
+			modify_country_flag = {
+				flag = GEA_Indochinese_Stability
+				value = 1
+			}
+			custom_effect_tooltip = GEA_Indochina_Stability_Up
 		}
 	}
 #约西亚斯
@@ -3690,6 +3816,12 @@ add_namespace = GEA_news
 		option = { #让阿罗尔森在东方再现
 			name = GEA.201.a
 			add_stability = 0.01
+			hidden_effect = {
+				country_event = {
+					id = GEA.202
+					days = 190 
+				}
+			}
 		}
 	}
 
@@ -3876,6 +4008,164 @@ add_namespace = GEA_news
 				remove_idea = GEA_Take_control_of_trade_dominance
 				add_idea = GEA_Take_control_of_trade_dominance_2
 			}
+		}
+	}
+	country_event = {#是谁在暗中破坏？
+		id = GEA.212
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.212" }
+		title = GEA.212.t
+		desc = GEA.212.d
+
+		fire_only_once = yes
+		is_triggered_only = yes
+		
+		option = { #
+			name = GEA.212.a
+			hidden_effect = {
+				country_event = { id = GEA.213 days = 14 }
+			}
+		}
+
+		option = { #
+			name = GEA.212.b
+			hidden_effect = {
+				country_event = { id = GEA.214 days = 14 }
+			}
+		}
+
+		option = { #
+			name = GEA.212.c
+			hidden_effect = {
+				country_event = { id = GEA.215 days = 14 }
+			}
+		}
+	}
+	country_event = { #越工的联络网
+		id = GEA.213
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.213" }
+		title = GEA.213.t
+		desc = GEA.213.d
+
+		fire_only_once = yes
+		is_triggered_only = yes
+
+		option = {
+			name = GEA.213.a
+			modify_country_flag = { flag = GEA_Indochinese_Anger value = -2 }
+			custom_effect_tooltip = GEA_Indochina_Anger_Down_More
+		}
+	}
+	country_event = { #国民党的地下组织
+		id = GEA.214
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.214" }
+		title = GEA.214.t
+		desc = GEA.214.d
+
+		fire_only_once = yes
+		is_triggered_only = yes
+
+		option = {
+			name = GEA.214.a
+			modify_country_flag = { flag = GEA_Indochinese_Stability value = 2 }
+			custom_effect_tooltip = GEA_Indochina_Stability_Up_More
+		}
+	}
+	country_event = { #日本人的秘密活动
+		id = GEA.215
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.215" }
+		title = GEA.215.t
+		desc = GEA.215.d
+
+		fire_only_once = yes
+		is_triggered_only = yes
+
+		option = {
+			name = GEA.215.a
+			JAP = {
+				add_stability = -0.05 
+				add_political_power = -50
+			}
+		}
+	}
+	country_event = { 
+		id = GEA.216
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.216" }
+		title = GEA.216.t
+		desc = {
+			text = GEA.216.d.a
+			trigger = {
+				has_country_flag = GEA_Defeated_Uprising
+			} 
+		}
+		desc = {
+			text = GEA.216.d.b
+			trigger = {
+				has_country_flag = GEA_Lost_Uprising
+			} 
+		}
+		desc = {
+			text = GEA.216.d.c
+			trigger = {
+				has_country_flag = GEA_Indochina_Uprising_got_cancelled
+			}
+		}
+		picture = GFX_report_event_GEA_josias
+
+		is_triggered_only = yes
+
+		option = {
+			name = GEA.216.a 
+			trigger = {
+				AND = {
+					has_global_flag = GEA_Indochina_Uprising_Fired
+					NOT = {	
+						country_exists = INC
+					}
+				}
+			}
+			
+		}
+		option = {
+			name = GEA.216.b
+			trigger = {
+				AND = {
+					has_global_flag = GEA_Indochina_Uprising_Fired
+					country_exists = INC
+				}
+			}
+			
+		}
+		option = {
+			name = GEA.216.c
+			trigger = {
+				has_country_flag = GEA_Indochina_Uprising_got_cancelled
+			}
+		}
+	}
+
+	country_event = { # cuck to nobles
+		id = GEA.217
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.217" }
+		title = GEA.217.t
+		desc = GEA.217.d
+		picture = GFX_report_event_GEA_josias
+
+		fire_only_once = yes
+		is_triggered_only = yes
+
+		option = {
+			name = GEA.217.a
+			add_political_power = -10
+						modify_country_flag = {
+				flag = GEA_Indochinese_Anger
+				value = -1
+			}
+			custom_effect_tooltip = GEA_Indochina_Anger_Down
+			modify_country_flag = {
+				flag = GEA_Indochinese_Stability
+				value = 2
+			}
+			custom_effect_tooltip = GEA_Indochina_Stability_Up_More
 		}
 	}
 
@@ -4540,6 +4830,12 @@ add_namespace = GEA_news
 		option = { 
 			name = GEA.402.a
 			add_stability = 0.01
+			hidden_effect = {
+				country_event = {
+					id = GEA.402
+					days = 1
+				}
+			}
 		}
 	}
 	country_event = { #枪支
@@ -4818,6 +5114,26 @@ add_namespace = GEA_news
 			add_political_power = 50
 		}
 	}
+	country_event = { #钢铁学者
+		id = GEA.416
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.416" }
+		title = GEA.416.t
+		desc = GEA.416.d
+		picture = GFX_GEA_66
+
+		fire_only_once = yes
+		is_triggered_only = yes
+
+		option = { 
+			name = GEA.416.a
+			add_tech_bonus = {
+				name = GEA.416.t
+				bonus = 0.25
+				uses = 1
+				category = industry
+			}
+		}
+	}
 #卢克纳尔/舍尔纳
 	country_event = { #海耶退休
 		id = GEA.500
@@ -4988,6 +5304,10 @@ add_namespace = GEA_news
 
 		option = { #费迪南德·舍尔纳将挽救远东危局
 			name = GEA.503.a
+			country_event = {
+				id = GEA.505
+				days = 3
+			}
 		}
 
 		option = { #皇帝指定卢克纳尔接任海耶的职责
@@ -5034,17 +5354,6 @@ add_namespace = GEA_news
 			hidden_effect = {
 				remove_ideas = GEA_The_quagmire_of_Indochina
 				remove_ideas = GEA_The_quagmire_of_Indochina_heye
-				if = {
-					limit = {
-						NOT = {
-							has_country_flag = GEA_Governor_Luckner_flag
-						}
-					}
-					country_event = {
-						id = GEA.505
-						days = 3
-					}
-				}
 			}
 		}
 	}
@@ -5081,10 +5390,10 @@ add_namespace = GEA_news
 				}
 				remove_all_ministers = yes
 				add_ideas = {
-					GEA_Julius_Dorpmueller_hog_npo
-					GEA_Nikolaus_Johnsen_for_pau
-					GEA_Arno_Spindler_eco_pau
-					GEA_Charles_August_Polack_sec_pau
+					GEA_Josef_Buhler_hog_npo
+					GEA_Wilhelm_Faupel_for_npo
+					GEA_Georg_Thomas_eco_npo
+					GEA_Arthur_Nebe_sec_npo 
 				}
 			}
 			if = {
@@ -6348,6 +6657,25 @@ add_namespace = GEA_news
 			add_manpower = -8
 		}
 	}
+
+	country_event = { #征服秩序
+		id = GEA.557
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.557" }
+		title = GEA.557.t
+		desc = GEA.557.d
+
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = GEA.557.a
+			add_stability = 0.01
+			add_popularity = {
+				ideology = national_populist
+				popularity = -0.01
+			}
+		}
+	}
 #外交
 	country_event = {
 		id = GEA.800
@@ -6740,7 +7068,479 @@ add_namespace = GEA_news
 			}
 		}
 	}
+	country_event = {
+		id = GEA.808
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.808" }
+		title = GEA.808.t
+		desc = GEA.808.d
+		picture = GFX_GEA_Hague
 
+		fire_only_once = yes
+		is_triggered_only = yes
+
+		option = { 
+			name = GEA.808.a
+			ai_chance = {
+				factor = 90
+			}
+			HOL = {
+				country_event = {
+					id = GEA.809
+					days = 1
+				}		
+			}
+		}
+		option = { 
+			name = GEA.808.b
+			ai_chance = {
+			factor = 10
+			}
+			GEA = {
+				country_event = {
+					id = GEA.810
+					days = 1
+				}		
+			}
+		}
+	}
+	country_event = {
+		id = GEA.809
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.809" }
+		title = GEA.809.t
+		desc = GEA.809.d
+		picture = GFX_GEA_Hague
+
+		fire_only_once = yes
+		is_triggered_only = yes
+
+		option = { 
+			name = GEA.809.a
+			ai_chance = {
+				factor = 90
+			}
+			GEA = {
+				annex_country = { target = DEI transfer_troops = no}	
+				every_state = {
+				limit = {
+					is_core_of = DEI
+					}
+					add_claim_by = GEA
+				}
+			}
+		}
+		option = { 
+			name = GEA.809.b
+			ai_chance = {
+			factor = 10
+			}
+			add_war_support = 0.1
+			GER = {
+				country_event = {
+					id = GEA.811
+					days = 1
+				}		
+			}
+		}
+	}
+	country_event = {#德国拒绝仲裁 德属东亚独走
+		id = GEA.810
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.810" }
+		title = GEA.810.t
+		desc = GEA.810.d
+		picture = GFX_GEA_Hague
+
+		fire_only_once = yes
+		is_triggered_only = yes
+
+		option = { 
+			name = GEA.810.a
+			ai_chance = {
+				factor = 50
+			}
+			add_stability = 0.05
+		}
+		option = { 
+			name = GEA.810.b
+			set_country_flag = GEA_rumphius_war_plan_unlocked
+			unlock_decision_tooltip = GEA_War_operation_Rumphius
+			ai_chance = {
+			factor = 50
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = DEI
+			}
+			if = {
+				limit = {country_exists = INS}
+				create_wargoal = {
+					type = annex_everything
+					target = INS
+				}
+			}	
+			hidden_effect = {
+				every_state = {
+					limit = {
+						is_core_of = DEI
+					}
+					add_claim_by = GEA
+				}
+			}
+			if = {
+				limit = {country_exists = INS}
+				create_wargoal = {
+					type = annex_everything
+					target = INS
+				}
+			}	
+		}
+	}
+	country_event = {#德国提案遭拒
+		id = GEA.811
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.811" }
+		title = GEA.811.t
+		desc = GEA.811.d
+		picture = GFX_GEA_Hague
+
+		fire_only_once = yes
+		is_triggered_only = yes
+
+		option = { 
+			name = GEA.811.a
+			ai_chance = {
+				factor = 0
+			}
+			add_stability = 0.05
+			GEA = {
+				country_event = {
+					id = GEA.812
+					days = 1
+				}		
+			}
+		}
+		option = { 
+			name = GEA.811.b
+			ai_chance = {
+			factor = 100
+			}
+			GEA = {
+				create_wargoal = {
+				type = annex_everything
+				target = DEI
+				}
+			}
+			hidden_effect = {
+				every_state = {
+					limit = {
+						is_core_of = DEI
+					}
+					add_claim_by = GEA
+				}
+			}
+			GEA = {
+				country_event = {
+					id = GEA.813
+					days = 1
+				}		
+			}	
+		}
+	}
+	country_event = {#荷兰拒绝提案，德国退让
+		id = GEA.812
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.812" }
+		title = GEA.812.t
+		desc = GEA.812.d
+		picture = GFX_GEA_Hague
+
+		fire_only_once = yes
+		is_triggered_only = yes
+
+		option = { 
+			name = GEA.812.a
+			ai_chance = {
+				factor = 70
+			}
+		}
+		option = { 
+			name = GEA.812.b
+			set_country_flag = GEA_rumphius_war_plan_unlocked
+			unlock_decision_tooltip = GEA_War_operation_Rumphius
+			ai_chance = {
+			factor = 30
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = DEI
+			}
+			if = {
+				limit = {country_exists = INS}
+				create_wargoal = {
+					type = annex_everything
+					target = INS
+				}
+			}	
+			hidden_effect = {
+				every_state = {
+					limit = {
+						is_core_of = DEI
+					}
+					add_claim_by = GEA
+				}
+			}	
+		}
+	}
+	country_event = {#荷兰拒绝提案，德属东亚准备进攻
+		id = GEA.813
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.813" }
+		title = GEA.813.t
+		desc = GEA.813.d
+		picture = GFX_GEA_Hague
+
+		fire_only_once = yes
+		is_triggered_only = yes
+
+		option = { 
+			name = GEA.813.a
+			set_country_flag = GEA_rumphius_war_plan_unlocked
+			unlock_decision_tooltip = GEA_War_operation_Rumphius
+			ai_chance = {
+			factor = 100
+			}
+			if = {
+				limit = {country_exists = INS}
+				create_wargoal = {
+					type = annex_everything
+					target = INS
+				}
+			}	
+			hidden_effect = {
+				every_state = {
+					limit = {
+						is_core_of = DEI
+					}
+					add_claim_by = GEA
+				}
+			}	
+		}
+	}
+	country_event = { #黑色星期一袭击通用东亚公司
+		id = GEA.814
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.814" }
+		title = GEA.814.t
+		desc = GEA.814.d
+		#picture = GFX_report_event_SIA_German_Economical_Dominance
+
+		fire_only_once = yes
+
+		is_triggered_only = yes
+
+
+		option = {
+			name = GEA.814.a
+		}
+	}
+	country_event = { # AOG reacts chinese instability
+		id = GEA.815
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.815" }
+		title = GEA.815.t
+		desc = GEA.815.d
+		#picture = GFX_report_event_SIA_German_Economical_Dominance
+
+		fire_only_once = yes
+
+		trigger = {
+			tag = GEA
+			LEP = {
+				has_war_with = ANQ
+			}
+		}
+
+		option = {
+			name = GEA.815.a
+		}
+	}
+	country_event = { #通用东亚公司保持警惕
+		id = GEA.816
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.816" }
+		title = GEA.816.t
+		desc = GEA.816.d
+		picture = GFX_report_event_falkenhausen
+
+		fire_only_once = yes
+
+		trigger = {
+			tag = AOG
+			NOT = {
+				country_exists = LEP
+			}
+			NOT = {
+				613 = {
+				is_owned_by = AOG
+				}
+			}		
+		}
+
+		option = {
+			name = GEA.816.a
+			hidden_effect = {
+				GEA = { clr_country_flag = Alexander_von_Falkenhausen_dead }
+				LEP = { set_country_flag = Alexander_von_Falkenhausen_dead }
+			}
+		}
+	}
+	country_event = { # AOG reacts to LEP survival
+		id = GEA.817
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.817" }
+		title = GEA.817.t
+		desc = GEA.817.d
+		#picture = GFX_report_event_SIA_German_Economical_Dominance
+
+		fire_only_once = yes
+
+		trigger = {
+			tag = GEA
+			country_exists = LEP
+			NOT = {
+				country_exists = ANQ
+				country_exists = SQI
+				country_exists = CHI
+			}
+		}
+
+
+		option = {
+			name = GEA.817.a
+			transfer_state = 1075
+			transfer_state = 803
+			transfer_state = 802
+		}
+	}
+
+	country_event = { # GEA wants to strengthen ties with qing
+		id = GEA.818
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.818" }
+		title = GEA.818.t
+		desc = GEA.818.d
+		#picture = GFX_report_event_SIA_German_Economical_Dominance
+
+		fire_only_once = yes
+
+		is_triggered_only = yes
+
+		option = {
+			name = GEA.818.a
+			add_tech_bonus = {
+				name = GEA.818.t
+				bonus = 0.5
+				uses = 2
+				category = dd_tech
+				category = ca_tech
+			}
+		}
+
+		option = {
+			name = GEA.818.b
+			add_tech_bonus = {
+				name = GEA.818.t
+				bonus = 0.5
+				uses = 2
+				category = bb_tech
+				category = bc_tech
+			}
+		}
+
+		option = {
+			name = GEA.818.c
+			add_ideas = GEA_naval_attache_idea
+		}
+	}
+
+	country_event = { # GEA reacts to AOG collapse
+		id = GEA.819
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.819" }
+		title = GEA.819.t
+		desc = GEA.819.d
+		picture = GFX_report_event_falkenhausen
+
+		fire_only_once = yes
+
+		trigger = {
+			tag = GEA
+			NOT = {
+				country_exists = AOG
+			}
+		}
+
+		option = {
+			name = GEA.819.a
+			hidden_effect = {
+				GEA = { clr_country_flag = Alexander_von_Falkenhausen_dead }
+				LEP = { set_country_flag = Alexander_von_Falkenhausen_dead }
+			}
+		}
+	}
+	country_event = { #与帝国公约谈和
+		id = GEA.820
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.820" }
+		title = GEA.820.t
+		desc = GEA.820.d
+
+		trigger = {
+			OR = {
+				tag = VIN
+				tag = SIA
+				tag = BRM
+				tag = INS
+				tag = PHI
+				tag = AST
+				tag = NZL
+				tag = JAP
+			}
+			GEA = {
+				has_capitulated = yes
+				is_in_faction_with = GER
+			}
+			has_war_with = GER
+			OR = {
+				AND = {
+					tag = JAP
+					336 = { controller = { is_ally_with = ROOT } }
+					333 = { controller = { is_ally_with = ROOT } }
+					846 = { controller = { is_ally_with = ROOT } }
+				}
+				AND = {
+					NOT = { is_in_faction_with = JAP }
+					controls_state = 336
+					controls_state = 333
+					controls_state = 846
+				}
+			}
+		}
+
+		fire_only_once = yes
+		
+		option = {
+			name = GEA.820.a
+			add_war_support = 0.075
+		}
+
+		option = {
+			name = GEA.820.b	
+			every_enemy_country = {
+				limit = {
+					is_in_faction_with = GER
+				}
+				white_peace_with_ROOT = yes
+			}
+			annex_country = { target = GEA }
+			if = {
+				limit = {
+					is_ai = no
+					DEI = { is_in_faction_with = GER }
+				}
+				annex_country = { target = DEI }
+			}
+		}
+	}
 #经济
 	country_event = { #重点开发
 		id = GEA.1000
@@ -7025,7 +7825,7 @@ add_namespace = GEA_news
 			add_manpower = -30000
 			GEA = {
 				country_event = {
-					id = GEA.1102
+					id = GEA.1106
 					days = 7
 				}
 			}
@@ -7040,7 +7840,7 @@ add_namespace = GEA_news
 			add_manpower = -20000
 			GEA = {
 				country_event = {
-					id = GEA.1103
+					id = GEA.1107
 					days = 7
 				}
 			}
@@ -7054,7 +7854,7 @@ add_namespace = GEA_news
 			add_political_power = -10
 			GEA = {
 				country_event = {
-					id = GEA.1104
+					id = GEA.1108
 					days = 7
 				}
 			}
@@ -7125,20 +7925,21 @@ add_namespace = GEA_news
 		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.1109" }
 		title = GEA.1109.t
 		desc = GEA.1109.d
-		picture = GFX_report_event_vietnam
+		picture = GFX_report_event_INC_vietnam
+
 
 		is_triggered_only = yes
 
 		option = { #他们可以对付的
 			name = GEA.1109.a
 			ai_chance = {
-				factor = 30
+				factor = 10
 			}
 		}
 		option = { #援军过去！
 			name = GEA.1109.b
 			ai_chance = {
-				factor = 60
+				factor = 80
 			}
 			add_political_power = -30
 			add_manpower = -10000
@@ -7196,6 +7997,40 @@ add_namespace = GEA_news
 			}
 		}
 	}
+	country_event = { # Steal manpower from home
+		id = GEA.1110
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.1110" }
+		title = GEA.1110.t
+		desc = GEA.1110.d
+		picture = GFX_report_event_SIA_German_Economical_Dominance
+
+		is_triggered_only = yes
+
+		option = {
+			name = GEA.1110.a
+			add_manpower = -25000
+		}
+	}
+
+	country_event = { # Steal guns from home
+		id = GEA.1111
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.1111" }
+		title = GEA.1111.t
+		desc = GEA.1111.d
+		picture = GFX_report_event_SIA_German_Economical_Dominance
+
+		is_triggered_only = yes
+
+		option = {
+			name = GEA.1111.a
+			send_equipment = {
+				equipment = infantry_equipment
+				amount = 2500
+				target = GEA
+			}
+		}
+	}
+
 #陆军事件
 	country_event = {
 		id = GEA.1200
@@ -7277,86 +8112,7 @@ add_namespace = GEA_news
         	set_country_flag = GEA_ferdinand_win
 		}
 	}
-
-
-	
-
-
-#风味事件
-	country_event = { # Fleet Parade
-		id = Ostasien.100
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.100" }
-		title = Ostasien.100.t
-		desc = Ostasien.100.d
-		picture = GFX_report_event_SIA_German_Economical_Dominance
-
-		is_triggered_only = yes
-
-		option = { # It will help
-			name = Ostasien.100.a
-			add_political_power = 50 # Cost popularity and stability
-			set_global_flag = GEA_Parade
-		}
-	}
-#约西亚斯线
-	country_event = { 
-		id = Ostasien.105
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.105" }
-		title = Ostasien.105.t
-		desc = {
-			text = Ostasien.105.d.a
-			trigger = {
-				has_country_flag = GEA_Defeated_Uprising
-			} 
-		}
-		desc = {
-			text = Ostasien.105.d.b
-			trigger = {
-				has_country_flag = GEA_Lost_Uprising
-			} 
-		}
-		desc = {
-			text = Ostasien.105.d.c
-			trigger = {
-				has_country_flag = GEA_Indochina_Uprising_got_cancelled
-			}
-		}
-		picture = GFX_report_event_GEA_josias
-
-		is_triggered_only = yes
-
-		option = {
-			name = Ostasien.105.a # yay
-			trigger = {
-				AND = {
-					has_global_flag = GEA_Indochina_Uprising_Fired
-					NOT = {	
-						country_exists = INC
-					}
-				}
-			}
-			
-		}
-		option = {
-			name = Ostasien.105.b # not yay
-			trigger = {
-				AND = {
-					has_global_flag = GEA_Indochina_Uprising_Fired
-					country_exists = INC
-				}
-			}
-			
-		}
-		option = {
-			name = Ostasien.105.c # Excellent!
-			trigger = {
-				has_country_flag = GEA_Indochina_Uprising_got_cancelled
-			}
-			
-		}
-	}
-#穆克事件
-
+#事件
 	country_event = {
 		id = Ostasien.135
 		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.135" }
@@ -7559,394 +8315,7 @@ add_namespace = GEA_news
 			}
 		}
 	}
-	country_event = {
-		id = Ostasien.138
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.138" }
-		title = Ostasien.138.t
-		desc = Ostasien.138.d
-		picture = GFX_report_event_GEA_mucke
-		fire_only_once = yes
-		trigger = {
-			tag = GEA
-			OR = {
-				focus_progress = {
-					focus =  GEA_ruler_not_bandit
-					progress > 0
-				}
-				focus_progress = {
-					focus =  GEA_eliminate_ethnic_differences
-					progress > 0
-				}
-			}
-		}
-
-		option = {
-			name = Ostasien.51.a
-			increase_ruling_party_popularity_by_5 = yes
-		}
-	}
-	
-#增援与八省联合
-	country_event = { # Steal manpower from home
-		id = Ostasien.200
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.200" }
-		title = Ostasien.200.t
-		desc = Ostasien.200.d
-		picture = GFX_report_event_SIA_German_Economical_Dominance
-
-		is_triggered_only = yes
-
-		option = {
-			name = Ostasien.200.a
-			add_manpower = -25000
-		}
-	}
-
-	country_event = { # Steal guns from home
-		id = Ostasien.201
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.201" }
-		title = Ostasien.201.t
-		desc = Ostasien.201.d
-		picture = GFX_report_event_SIA_German_Economical_Dominance
-
-		is_triggered_only = yes
-
-		option = {
-			name = Ostasien.201.a
-			send_equipment = {
-				equipment = infantry_equipment
-				amount = 2500
-				target = GEA
-			}
-		}
-	}
-
-	country_event = { # collapse of the kramat pulai deposit 1
-		id = Ostasien.205
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.205" }
-		title = Ostasien.205.t
-		desc = Ostasien.205.d
-		#picture = GFX_report_event_SIA_German_Economical_Dominance
-
-		fire_only_once = yes
-
-		trigger = {
-			tag = GEA
-			owns_state = 846
-			date > 1938.05.01
-		}
-
-
-		option = {
-			name = Ostasien.205.a
-			846 = {
-				set_state_flag = malaya_tungsten_depletion_1
-				add_resource = {
-					type = tungsten
-					amount = -90
-				}
-
-			}
-		}
-	}
-
-	country_event = { # collapse of the kramat pulai deposit 2
-		id = Ostasien.206
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.206" }
-		title = Ostasien.206.t
-		desc = Ostasien.206.d
-		#picture = GFX_report_event_SIA_German_Economical_Dominance
-
-		fire_only_once = yes
-
-		trigger = {
-			tag = GEA
-			owns_state = 846
-			date > 1939.07.01
-			846 = {
-				has_state_flag = malaya_tungsten_depletion_1
-			}
-		}
-
-
-		option = {
-			name = Ostasien.206.a
-			846 = {
-				set_state_flag = malaya_tungsten_depletion_2
-				add_resource = {
-					type = tungsten
-					amount = -90
-				}
-
-			}
-		}
-	}
-
-	country_event = { # AOG buys a boat i mean railway
-		id = Ostasien.207
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.207" }
-		title = Ostasien.207.t
-		desc = Ostasien.207.d
-		#picture = GFX_report_event_SIA_German_Economical_Dominance
-
-		fire_only_once = yes
-		is_triggered_only = yes
-
-
-		option = {
-			name = Ostasien.207.a
-		}
-	}
-
-	country_event = { # AOG black monday
-		id = Ostasien.208
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.208" }
-		title = Ostasien.208.t
-		desc = Ostasien.208.d
-		#picture = GFX_report_event_SIA_German_Economical_Dominance
-
-		fire_only_once = yes
-
-		is_triggered_only = yes
-
-
-		option = {
-			name = Ostasien.208.a
-		}
-	}
-
-	country_event = { # AOG reacts chinese instability
-		id = Ostasien.209
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.209" }
-		title = Ostasien.209.t
-		desc = Ostasien.209.d
-		#picture = GFX_report_event_SIA_German_Economical_Dominance
-
-		fire_only_once = yes
-
-		trigger = {
-			tag = GEA
-			LEP = {
-				has_war_with = ANQ
-			}
-		}
-
-		option = {
-			name = Ostasien.209.a
-		}
-	}
-
-	country_event = { # AOG reacts to LEP collapse
-		id = Ostasien.210
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.210" }
-		title = Ostasien.210.t
-		desc = Ostasien.210.d
-		picture = GFX_report_event_falkenhausen
-
-		fire_only_once = yes
-
-		trigger = {
-			tag = AOG
-			NOT = {
-				country_exists = LEP
-			}
-			NOT = {
-				613 = {
-				is_owned_by = AOG
-				}
-			}		
-		}
-
-		option = {
-			name = Ostasien.210.a
-			hidden_effect = {
-				GEA = { clr_country_flag = Alexander_von_Falkenhausen_dead }
-				LEP = { set_country_flag = Alexander_von_Falkenhausen_dead }
-			}
-		}
-	}
-
-	country_event = { # AOG reacts to LEP survival
-		id = Ostasien.211
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.211" }
-		title = Ostasien.211.t
-		desc = Ostasien.211.d
-		#picture = GFX_report_event_SIA_German_Economical_Dominance
-
-		fire_only_once = yes
-
-		trigger = {
-			tag = GEA
-			country_exists = LEP
-			NOT = {
-				country_exists = ANQ
-				country_exists = SQI
-				country_exists = CHI
-			}
-		}
-
-
-		option = {
-			name = Ostasien.211.a
-			transfer_state = 1075
-			transfer_state = 803
-			transfer_state = 802
-		}
-	}
-
-	country_event = { # GEA wants to strengthen ties with qing
-		id = Ostasien.212
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.212" }
-		title = Ostasien.212.t
-		desc = Ostasien.212.d
-		#picture = GFX_report_event_SIA_German_Economical_Dominance
-
-		fire_only_once = yes
-
-		is_triggered_only = yes
-
-		option = {
-			name = Ostasien.212.a
-			add_tech_bonus = {
-				name = Ostasien.212.t
-				bonus = 0.5
-				uses = 2
-				category = dd_tech
-				category = ca_tech
-			}
-		}
-
-		option = {
-			name = Ostasien.212.b
-			add_tech_bonus = {
-				name = Ostasien.212.t
-				bonus = 0.5
-				uses = 2
-				category = bb_tech
-				category = bc_tech
-			}
-		}
-
-		option = {
-			name = Ostasien.212.c
-			add_ideas = GEA_naval_attache_idea
-		}
-	}
-
-	country_event = { # GEA reacts to AOG collapse
-		id = Ostasien.213
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.213" }
-		title = Ostasien.213.t
-		desc = Ostasien.213.d
-		picture = GFX_report_event_falkenhausen
-
-		fire_only_once = yes
-
-		trigger = {
-			tag = GEA
-			NOT = {
-				country_exists = AOG
-			}
-		}
-
-		option = {
-			name = Ostasien.213.a
-			hidden_effect = {
-				GEA = { clr_country_flag = Alexander_von_Falkenhausen_dead }
-				LEP = { set_country_flag = Alexander_von_Falkenhausen_dead }
-			}
-		}
-	}
-#总督以及后续事件
-	
-
-	
-
-
-	country_event = { # cuck to nobles
-		id = Ostasien.303
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.303" }
-		title = Ostasien.303.t
-		desc = Ostasien.303.d
-		picture = GFX_report_event_GEA_josias
-
-		fire_only_once = yes
-
-		is_triggered_only = yes
-
-		option = {
-			name = Ostasien.303.a
-			add_to_variable = { GEA_nationalist_power = -5 }
-			custom_effect_tooltip = GEA_cuck_to_nobles_tt
-		}
-	}
-
-
-	country_event = { #peace out
-		id = Ostasien.306
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.306" }
-		title = Ostasien.306.t
-		desc = Ostasien.306.d
-
-		trigger = {
-			OR = {
-				tag = VIN
-				tag = SIA
-				tag = BRM
-				tag = INS
-				tag = PHI
-				tag = AST
-				tag = NZL
-				tag = JAP
-			}
-			GEA = {
-				has_capitulated = yes
-				is_in_faction_with = GER
-			}
-			has_war_with = GER
-			OR = {
-				AND = {
-				tag = JAP
-				336 = { controller = { is_ally_with = ROOT } }
-				333 = { controller = { is_ally_with = ROOT } }
-				846 = { controller = { is_ally_with = ROOT } }
-				}
-				AND = {
-				NOT = { is_in_faction_with = JAP }
-				controls_state = 336
-				controls_state = 333
-				controls_state = 846
-				}
-			}
-		}
-
-		fire_only_once = yes
-		
-		option = {
-			name = Ostasien.306.a
-			add_war_support = 0.075
-		}
-
-		option = {
-			name = Ostasien.306.b	
-			every_enemy_country = {
-				limit = {
-					is_in_faction_with = GER
-				}
-				white_peace_with_ROOT = yes
-			}
-			annex_country = { target = GEA }
-			if = {
-				limit = {
-					is_ai = no
-					DEI = { is_in_faction_with = GER }
-				}
-				annex_country = { target = DEI }
-			}
-		}
-	}
 #外交事件
-
 	country_event = {
 		id = Ostasien.801
 		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.801" }
@@ -8030,254 +8399,6 @@ add_namespace = GEA_news
 				add_state_core = 721
 				add_state_core = 321
 			}
-		}
-	}
-	country_event = {
-		id = Ostasien.803
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.803" }
-		title = Ostasien.803.t
-		desc = Ostasien.803.d
-		picture = GFX_GEA_Hague
-
-		fire_only_once = yes
-		is_triggered_only = yes
-
-		option = { 
-			name = Ostasien.803.a
-			ai_chance = {
-				factor = 90
-			}
-			HOL = {
-				country_event = {
-					id = Ostasien.804
-					days = 1
-				}		
-			}
-		}
-		option = { 
-			name = Ostasien.803.b
-			ai_chance = {
-			factor = 10
-			}
-			GEA = {
-				country_event = {
-					id = Ostasien.805
-					days = 1
-				}		
-			}
-		}
-	}
-	country_event = {
-		id = Ostasien.804
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.804" }
-		title = Ostasien.804.t
-		desc = Ostasien.804.d
-		picture = GFX_GEA_Hague
-
-		fire_only_once = yes
-		is_triggered_only = yes
-
-		option = { 
-			name = Ostasien.804.a
-			ai_chance = {
-				factor = 90
-			}
-			GEA = {
-				annex_country = { target = DEI transfer_troops = no}	
-				every_state = {
-				limit = {
-					is_core_of = DEI
-					}
-					add_core_of = GEA
-				}
-			}
-		}
-		option = { 
-			name = Ostasien.804.b
-			ai_chance = {
-			factor = 10
-			}
-			add_war_support = 0.1
-			GER = {
-				country_event = {
-					id = Ostasien.806
-					days = 1
-				}		
-			}
-		}
-	}
-	country_event = {#德国拒绝仲裁 德属东亚独走
-		id = Ostasien.805
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.805" }
-		title = Ostasien.805.t
-		desc = Ostasien.805.d
-		picture = GFX_GEA_Hague
-
-		fire_only_once = yes
-		is_triggered_only = yes
-
-		option = { 
-			name = Ostasien.805.a
-			ai_chance = {
-				factor = 50
-			}
-			add_stability = 0.05
-		}
-		option = { 
-			name = Ostasien.805.b
-			ai_chance = {
-			factor = 50
-			}
-			create_wargoal = {
-				type = annex_everything
-				target = DEI
-			}
-			if = {
-				limit = {country_exists = INS}
-				create_wargoal = {
-					type = annex_everything
-					target = INS
-				}
-			}	
-			hidden_effect = {
-				every_state = {
-					limit = {
-						is_core_of = DEI
-					}
-					add_claim_by = GEA
-				}
-			}
-			if = {
-				limit = {country_exists = INS}
-				create_wargoal = {
-					type = annex_everything
-					target = INS
-				}
-			}	
-		}
-	}
-	country_event = {#德国提案遭拒
-		id = Ostasien.806
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.806" }
-		title = Ostasien.806.t
-		desc = Ostasien.806.d
-		picture = GFX_GEA_Hague
-
-		fire_only_once = yes
-		is_triggered_only = yes
-
-		option = { 
-			name = Ostasien.806.a
-			ai_chance = {
-				factor = 0
-			}
-			add_stability = 0.05
-			GEA = {
-				country_event = {
-					id = Ostasien.807
-					days = 1
-				}		
-			}
-		}
-		option = { 
-			name = Ostasien.806.b
-			ai_chance = {
-			factor = 100
-			}
-			GEA = {
-				create_wargoal = {
-				type = annex_everything
-				target = DEI
-				}
-			}
-			hidden_effect = {
-				every_state = {
-					limit = {
-						is_core_of = DEI
-					}
-					add_claim_by = GEA
-				}
-			}
-			GEA = {
-				country_event = {
-					id = Ostasien.808
-					days = 1
-				}		
-			}	
-		}
-	}
-	country_event = {#荷兰拒绝提案，德国退让
-		id = Ostasien.807
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.807" }
-		title = Ostasien.807.t
-		desc = Ostasien.807.d
-		picture = GFX_GEA_Hague
-
-		fire_only_once = yes
-		is_triggered_only = yes
-
-		option = { 
-			name = Ostasien.807.a
-			ai_chance = {
-				factor = 70
-			}
-		}
-		option = { 
-			name = Ostasien.807.b
-			ai_chance = {
-			factor = 30
-			}
-			create_wargoal = {
-				type = annex_everything
-				target = DEI
-			}
-			if = {
-				limit = {country_exists = INS}
-				create_wargoal = {
-					type = annex_everything
-					target = INS
-				}
-			}	
-			hidden_effect = {
-				every_state = {
-					limit = {
-						is_core_of = DEI
-					}
-					add_claim_by = GEA
-				}
-			}	
-		}
-	}
-	country_event = {#荷兰拒绝提案，德属东亚准备进攻
-		id = Ostasien.808
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.808" }
-		title = Ostasien.808.t
-		desc = Ostasien.808.d
-		picture = GFX_GEA_Hague
-
-		fire_only_once = yes
-		is_triggered_only = yes
-
-		option = { 
-			name = Ostasien.808.a
-			ai_chance = {
-			factor = 100
-			}
-			if = {
-				limit = {country_exists = INS}
-				create_wargoal = {
-					type = annex_everything
-					target = INS
-				}
-			}	
-			hidden_effect = {
-				every_state = {
-					limit = {
-						is_core_of = DEI
-					}
-					add_claim_by = GEA
-				}
-			}	
 		}
 	}
 	country_event = {
@@ -8457,116 +8578,6 @@ add_namespace = GEA_news
 			}
 		}
 	}
-	country_event = {
-		id = Ostasien.812
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.812" }
-		title = Ostasien.812.t
-		desc = Ostasien.812.d
-
-		fire_only_once = yes
-		is_triggered_only = yes
-
-		option = { 
-			name = Ostasien.812.a
-			JAP = {
-				every_owned_state = {
-					limit = {
-						is_controlled_by = ROOT
-						OR = {
-							state = 527
-							state = 525
-							state = 745
-							state = 524
-						}
-					}
-					set_demilitarized_zone = yes
-				}
-				country_event = {
-					id = Ostasien.813
-					days = 60
-				}
-			}
-		}
-	}
-	country_event = {
-		id = Ostasien.813
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.813" }
-		title = Ostasien.813.t
-		desc = Ostasien.813.d
-
-		fire_only_once = yes
-		is_triggered_only = yes
-
-		option = { 
-			name = Ostasien.813.a
-			JAP = {
-				every_owned_state = {
-					limit = {
-						OR = {
-							state = 527
-							state = 525
-							state = 745
-							state = 524
-						}
-					}
-					set_demilitarized_zone = no
-				}
-			}
-		}
-	}
-	country_event = { #处理日本皇室
-		id = Ostasien.814
-		title = Ostasien.814.t
-		desc = Ostasien.814.d
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.814" }
-		fire_only_once = yes
-		is_triggered_only = yes
-
-		option = {#剥夺权力
-			name = Ostasien.814.a
-			log = "[GetLogInfo]: event Ostasien.814 option Ostasien.814.b"
-			ai_chance = { base = 80 }
-			JAP = {
-				add_stability = 0.10
-				add_ideas = JAP_Imperial_Family_powerless #废除特权
-				add_timed_idea = {
-					idea = JAP_country_unrest
-					days = 90
-				}
-			}
-		}
-		option = {#流放
-			log = "[GetLogInfo]: event Ostasien.814 option Ostasien.814.b"
-			name = Ostasien.814.b
-			ai_chance = { base = 15 }
-			JAP = {
-				effect_tooltip = {
-					if = {
-						limit = { has_country_leader = { name = "Hirohito" ruling_only = yes } }
-						retire_country_leader = yes
-					}
-				}
-				add_ideas = JAP_Imperial_Family_exiled #流放皇室家族
-				add_timed_idea = {#日本骚乱
-					idea = JAP_country_unrest
-					days = 160
-				}
-			}
-		}
-		option = {#处决
-			log = "[GetLogInfo]: event Ostasien.814 option Ostasien.814.c"
-			name = Ostasien.814.c
-			ai_chance = { base = 5 }
-			add_political_power = 30
-			JAP = {
-				add_timed_idea = {#日本骚乱
-					idea = JAP_country_unrest
-					days = 320
-				}
-			} 
-		}
-	}
-
 
 #隐藏事件
 	country_event = {
@@ -8677,3 +8688,265 @@ add_namespace = GEA_news
 		}
 	}
 
+
+#事件保留
+# Syndicalist uprising in Phillipines
+	country_event = { # Help the military
+		id = Ostasien.60
+		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.60" }
+		title = Ostasien.60.t
+		desc = Ostasien.60.d
+		picture = GFX_report_event_spain_civil_war_soldiers
+
+		is_triggered_only = yes
+
+		option = { # Sectretly support to Philippine army
+			name = Ostasien.60.a
+			trigger = {
+				has_equipment = { infantry_equipment > 500 }
+			}
+			ai_chance = {
+				factor = 30
+			}
+			add_political_power = -25
+			send_equipment = {
+				target = PHI
+				type = infantry_equipment
+				amount = 500
+			}
+			"PHI" = { set_country_flag = GEA_support_philp_military }
+		}
+
+		option = { # Not our business
+			name = Ostasien.60.b
+			ai_chance = {
+				factor = 70
+			}
+		}
+	}
+
+	country_event = { # Syndicalist victory
+		id = Ostasien.61
+		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.61" }
+		title = Ostasien.61.t
+		desc = Ostasien.61.d
+		picture = GFX_report_event_spain_civil_war_soldiers
+
+		is_triggered_only = yes
+
+		trigger = {
+			FROM = {
+				has_socialist_government = yes
+				NOT = { has_war_with = ROOT }
+			}
+		}
+
+		option = { # Send fleet to secure southern islands
+			name = Ostasien.61.a
+			ai_chance = {
+				factor = 90
+			}
+			add_political_power = -50
+			FROM = {
+				country_event = Ostasien.62
+			}
+			add_state_claim = 626
+			add_state_claim = 627
+		}
+
+		option = { # Better not intervene
+			name = Ostasien.61.b
+			ai_chance = {
+				factor = 10
+			}
+		}
+	}
+
+	country_event = { # GEA intervention
+		id = Ostasien.62
+		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.62" }
+		title = Ostasien.62.t
+		desc = Ostasien.62.d
+		picture = GFX_report_event_spain_civil_war_soldiers
+
+		is_triggered_only = yes
+
+		option = { # We will die heorically
+			name = Ostasien.62.a
+			ai_chance = {
+				factor = 10
+			}
+			add_political_power = 150
+			declare_war_on = {
+				target = GEA
+				type = annex_everything
+			}
+			GEA = {
+				country_event = {
+					id = Ostasien.65
+					days = 3
+				}
+			}
+			GER = {
+				country_event = {
+					id = Ostasien.65 days = 3
+				}
+			}
+		}
+
+		option = { # We can't do anything
+			name = Ostasien.62.b
+			ai_chance = {
+				factor = 90
+			}
+			add_political_power = -50
+			GEA = {
+				country_event = {
+					id = Ostasien.63 days = 15
+				}
+			}
+		}
+	}
+
+	country_event = { # Philippines fold
+		id = Ostasien.63
+		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.63" }
+		title = Ostasien.63.t
+		desc = Ostasien.63.d
+		picture = GFX_report_event_spain_civil_war_soldiers
+
+		is_triggered_only = yes
+
+		option = { # excellent
+			name = Ostasien.61.a
+			add_political_power = 50
+			transfer_state = 626
+			transfer_state = 627
+			GER = {
+				country_event = Ostasien.64
+			}
+		}
+	}
+
+	country_event = { # good news
+		id = Ostasien.64
+		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.64" }
+		title = Ostasien.64.t
+		desc = Ostasien.64.d
+		picture = GFX_report_event_GER_ship
+
+		is_triggered_only = yes
+
+		option = { # excellent job
+			name = Ostasien.64.a
+			add_political_power = 20
+		}
+	}
+
+	country_event = { # bad news
+		id = Ostasien.65
+		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.65" }
+		title = Ostasien.65.t
+		desc = Ostasien.65.d
+		picture = GFX_report_event_GER_ship
+
+		is_triggered_only = yes
+
+		option = { # damn
+			name = Ostasien.65.a
+			add_political_power = -20
+		}
+	}
+	country_event = { #缅甸社会动乱
+		id = Ostasien.66
+		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.66" }
+		title = Ostasien.66.t
+		desc = Ostasien.66.d
+		picture = GFX_report_event_BUR_rangoon_protest
+
+		is_triggered_only = yes
+
+		option = { #把舰队派过去，以表我们的立场
+			name = Ostasien.66.a
+			ai_chance = {
+				factor = 70
+			}
+			add_political_power = -25
+			set_global_flag = GEA_support_burma_military
+			BRM = {
+				country_event = Ostasien.67
+			}
+		}
+
+		option = { #与我们无关
+			name = Ostasien.66.b
+			ai_chance = {
+				factor = 30
+			}
+		}
+	}
+
+	country_event = { #德国舰队抵达仰光
+		id = Ostasien.67
+		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.67" }
+		title = Ostasien.67.t
+		desc = Ostasien.67.d
+		picture = GFX_report_event_GER_ship
+
+		is_triggered_only = yes
+
+		option = { #德意志的强大之处！
+			name = Ostasien.67.a
+			add_political_power = 50
+		}
+	}
+
+	country_event = { #缅甸恢复秩序
+		id = Ostasien.68
+		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.68" }
+		title = Ostasien.68.t
+		desc = Ostasien.68.d
+		picture = GFX_report_event_GER_ship
+
+		is_triggered_only = yes
+
+		option = { # Guarantee their independence
+			name = Ostasien.68.a
+			ai_chance = {
+				factor = 70
+				modifier = {
+					factor = 0 
+					BRM = { is_ai = yes }
+				}
+			}
+			add_political_power = 20
+			give_guarantee = BRM
+		}
+
+		option = { # I don't knwo anything about Burma!
+			name = Ostasien.68.b
+			ai_chance = {
+				factor = 30
+				modifier = {
+					factor = 100
+					BRM = { is_ai = yes }
+				}
+			}
+		}
+	}
+
+	country_event = { # AOG buys a boat i mean railway
+		id = Ostasien.207
+		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.207" }
+		title = Ostasien.207.t
+		desc = Ostasien.207.d
+		#picture = GFX_report_event_SIA_German_Economical_Dominance
+
+		fire_only_once = yes
+		is_triggered_only = yes
+
+
+		option = {
+			name = Ostasien.207.a
+		}
+	}

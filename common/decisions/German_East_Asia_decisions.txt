@@ -8251,7 +8251,7 @@ GEA_colonial_decisions = {#帝国殖民事务部决议
 			hidden_effect = {
 				FROM = {
 					country_event = {
-						id = Ostasien.200
+						id = GEA.1110
 						days = 1
 					}
 				}
@@ -8281,7 +8281,7 @@ GEA_colonial_decisions = {#帝国殖民事务部决议
 			hidden_effect = {
 				GER = {
 					country_event = {
-						id = Ostasien.201
+						id = GEA.1111
 						days = 1
 					}
 				}
@@ -8336,14 +8336,6 @@ GEA_colonial_decisions = {#帝国殖民事务部决议
 				amount = 300
 				producer = GER
 			}			
-			hidden_effect = {
-				FROM = {
-					country_event = {
-						id = Ostasien.201
-						days = 1
-					}
-				}
-			}
 		}
 	}
 	GEA_ask_for_truck = {
@@ -8373,14 +8365,6 @@ GEA_colonial_decisions = {#帝国殖民事务部决议
 				amount = 300
 				producer = GER
 			}			
-			hidden_effect = {
-				FROM = {
-					country_event = {
-						id = Ostasien.201
-						days = 1
-					}
-				}
-			}
 		}
 	}
 	GEA_Demand_supplies = {
@@ -8410,14 +8394,6 @@ GEA_colonial_decisions = {#帝国殖民事务部决议
 				amount = 500
 				producer = GER
 			}			
-			hidden_effect = {
-				FROM = {
-					country_event = {
-						id = Ostasien.201
-						days = 1
-					}
-				}
-			}
 		}
 	}
 	GEA_Request_bureaucrat = {
@@ -10907,42 +10883,7 @@ GEA_Dispatch_Military_Advisers = { #派驻军事顾问团
 			add_state_core = 745
 		}
 	}
-	GEA_Smuggling_arms_to_warlords = {
-		visible = {
-			has_completed_focus = GEA_invest_china
-		}
-		days_remove = 30
-		days_re_enable = 120
-		custom_cost_text = 1000RIFLE
-		custom_cost_trigger = {
-			has_equipment = { infantry_equipment > 1000 }
-		}
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision GEA_Smuggling_arms_to_warlords"
-			add_equipment_to_stockpile = {
-				type = infantry_equipment
-				amount = -1000
-				producer = GEA
-			}
-		}
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Smuggling_arms_to_warlords"
-			add_political_power = 75
-			add_war_support = 0.03
-		}
-	}
-	GEA_Buy_labor = {
-		visible = {
-			has_completed_focus = GEA_invest_china
-		}
-		cost = 50
-		days_remove = 30
-		days_re_enable = 120
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Buy_labor"
-			add_manpower = 5000
-		}
-	}
+
 }
 
 GEA_josias_decisions = {#约西亚斯乞讨决议
@@ -13141,6 +13082,11 @@ political_actions = {
 					NOT = { is_in_faction_with = HAW }
 					NOT = { owns_state = 629 }
 				}
+				hidden_effect = {
+					HAW = {
+						every_owned_state = { add_claim_by = ROOT }
+					}
+				}
 				declare_war_on = { target = HAW type = annex_everything }
 			}
 		}
@@ -13154,7 +13100,10 @@ political_actions = {
 		fire_only_once = yes
 
 		visible = {
-			has_completed_focus = GEA_The_travel_of_Rumphius
+			OR = {
+				has_completed_focus = GEA_The_travel_of_Rumphius
+				has_country_flag = GEA_rumphius_war_plan_unlocked
+			}
 			country_exists = DEI
 		}
 		ai_will_do = { factor = 0 }
@@ -13186,8 +13135,10 @@ political_actions = {
 					NOT = { GER = { has_war_with = DEI } }
 					NOT = { is_in_faction_with = DEI }
 				}
-				DEI = {
-					every_owned_state = { add_claim_by = ROOT }
+				hidden_effect = {
+					DEI = {
+						every_owned_state = { add_claim_by = ROOT }
+					}
 				}
 				declare_war_on = { target = DEI type = annex_everything }
 			}
@@ -13234,6 +13185,11 @@ political_actions = {
 					NOT = { GER = { has_war_with = AST } }
 					NOT = { is_in_faction_with = AST }
 				}
+				hidden_effect = {
+					AST = {
+						every_owned_state = { add_claim_by = ROOT }
+					}
+				}
 				declare_war_on = { target = AST type = annex_everything }
 			}
 		}
@@ -13278,6 +13234,11 @@ political_actions = {
 					NOT = { has_war_with = PHI }
 					NOT = { GER = { has_war_with = PHI } }
 					NOT = { is_in_faction_with = PHI }
+				}
+				hidden_effect = {
+					PHI = {
+						every_owned_state = { add_claim_by = ROOT }
+					}
 				}
 				declare_war_on = { target = PHI type = annex_everything }
 			}
@@ -13324,6 +13285,11 @@ political_actions = {
 					NOT = { GER = { has_war_with = SIA } }
 					NOT = { is_in_faction_with = SIA }
 				}
+				hidden_effect = {
+					SIA = {
+						every_owned_state = { add_claim_by = ROOT }
+					}
+				}
 				declare_war_on = { target = SIA type = annex_everything }
 			}
 		}
@@ -13368,6 +13334,11 @@ political_actions = {
 					NOT = { has_war_with = BRM }
 					NOT = { GER = { has_war_with = BRM } }
 					NOT = { is_in_faction_with = BRM }
+				}
+				hidden_effect = {
+					BRM = {
+						every_owned_state = { add_claim_by = ROOT }
+					}
 				}
 				declare_war_on = { target = BRM type = annex_everything }
 			}

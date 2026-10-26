@@ -196,6 +196,24 @@ ideas = {
 			}
 		}
 
+		GEA_Josef_Buhler_hog_npo = {
+			allowed = { original_tag = GEA }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Josef_Buhler_hog_npo"
+			}
+			traits = {
+				head_of_government
+				np_colonial_affairs_office
+				hog_efficient_resource_manager
+			}
+		}
 	}
 
 	person_of_influence = { ### Person of Influence ###
@@ -311,6 +329,25 @@ ideas = {
 				foreign_minister
 				pa_east_asia_navy
 				for_the_cloak_n_dagger_schemer
+			}
+		}
+
+		GEA_Wilhelm_Faupel_for_npo = {
+			allowed = { original_tag = GEA }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Wilhelm_Faupel_for_npo"
+			}
+			traits = {
+				foreign_minister
+				np_east_asia_army
+				ideological_crusader
 			}
 		}
 
@@ -696,6 +733,24 @@ ideas = {
 			}
 		}
 
+		GEA_Georg_Thomas_eco_npo = {
+			allowed = { original_tag = GEA }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Georg_Thomas_eco_npo"
+			}
+			traits = {
+				economy_minister
+				np_east_asia_army
+				eco_cruel_realist
+			}
+		}
 
 		## Security Minister ##
 		GEA_Dietrich_Bonhoeffer_sec_sde = {
@@ -828,6 +883,25 @@ ideas = {
 				security_minister
 				np_east_asia_army
 				sec_a_cold-blooded_man
+			}
+		}
+
+		GEA_Arthur_Nebe_sec_npo = { #阿图尔·内贝
+			allowed = { original_tag = GEA }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Arthur_Nebe_sec_npo"
+			}
+			traits = {
+				security_minister
+				np_military_police 
+				sec_butcher
 			}
 		}
 	}

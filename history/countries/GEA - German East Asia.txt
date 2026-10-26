@@ -175,6 +175,16 @@ country_event = {
 	days = 36
 }
 
+country_event = { #1936.04.03 手忙脚乱
+	id = GEA.13
+	days = 93
+}
+
+country_event = { #1936.04.25 东京大罢工
+	id = GEA.29
+	days = 115
+}
+
 country_event = { 
 	id = GEA.31
 	days = 137

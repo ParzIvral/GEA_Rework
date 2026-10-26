@@ -37,6 +37,7 @@ GEA_heye_decisions = {
 GEA_focus_china_decisions = {
 	allowed = {
 		original_tag = GEA
+		has_country_flag = GEA_nanjing_crisis
 	}
 	priority = 1300
 	visible_when_empty = yes
@@ -70,7 +71,7 @@ GEA_pacify_indochina_decisions = {
 		original_tag = GEA
 	}
 	visible = {
-		#has_completed_focus = GEA_Strike_hard
+		has_completed_focus = GEA_Strike_hard
 	}
 	priority = 1100
 	visible_when_empty = yes
@@ -82,7 +83,7 @@ GEA_Kartel_decisions = {
 		original_tag = GEA
 	}
 	visible = {
-		#has_completed_focus = GEA_Governor_Kartel		
+		has_completed_focus = GEA_Governor_Kartel		
 	}
 	priority = 1000
 	visible_when_empty = yes
@@ -106,8 +107,8 @@ GEA_luckner_decisions = {
 		original_tag = GEA
 	}
 	visible = {
-		#has_completed_focus = GEA_Governor_Luckner	
-		#has_country_flag = GEA_Governor_Luckner_flag
+		has_completed_focus = GEA_Governor_Luckner	
+		has_country_flag = GEA_Governor_Luckner_flag
 	}
 	priority = 1500
 	visible_when_empty = yes
