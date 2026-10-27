@@ -238,6 +238,9 @@ add_namespace = GEA_news
 				}
 				country_event = { id = GEA.814 days = 2 }
 				country_event = { id = GEA.52 days = 30 }
+				hidden_effect = {
+				
+				}
 			}
 		}
 		title = GEA.6.t
@@ -271,7 +274,7 @@ add_namespace = GEA_news
 			ai_chance = {
 				factor = 1
 			}
-			
+			add_political_power = -100
 			hidden_effect = {
 				LEP = { country_event = lepcollapse.201 }
 				country_event = {
@@ -396,8 +399,10 @@ add_namespace = GEA_news
 				flag = GEA_Indochinese_Anger
 				value = -1
 			}
+			add_to_variable = { GEA_Indochinese_Anger_display = -1 }
 			custom_effect_tooltip = GEA_Indochina_Anger_Down
 			set_country_flag = GEA_Governor_Hahl_flag
+			set_country_flag = GEA_has_promote_new_governer
 			hidden_effect = {
 				promote_character = {
 					character = GEA_Prinz_Josias_zu_Waldeck_und_Pyrmont
@@ -447,6 +452,7 @@ add_namespace = GEA_news
 				ideology = colonial_govt_subtype
 			}
 			set_country_flag = GEA_Governor_Josias_flag
+			set_country_flag = GEA_has_promote_new_governer
 			add_popularity = {
 				ideology = authoritarian_democrat
 				popularity = 0.1
@@ -481,6 +487,7 @@ add_namespace = GEA_news
 				}
 			}
 			set_country_flag = GEA_Governor_Heye_flag
+			set_country_flag = GEA_has_promote_new_governer
 			add_popularity = {
 				ideology = paternal_autocrat
 				popularity = 0.2
@@ -489,6 +496,7 @@ add_namespace = GEA_news
 				flag = GEA_Indochinese_Anger
 				value = 1
 			}
+			add_to_variable = { GEA_Indochinese_Anger_display = 1 }
 			custom_effect_tooltip = GEA_Indochina_Anger_Up
 			hidden_effect = {
 				set_politics = {
@@ -531,6 +539,24 @@ add_namespace = GEA_news
 				ideology = colonial_govt_subtype
 			}
 			set_country_flag = GEA_Governor_Tilo_flag
+			set_party_name = {
+				ideology = authoritarian_democrat
+				name = GEA_authoritarian_democrat_party_Krupp
+				long_name = GEA_authoritarian_democrat_party_Krupp_long
+			}
+			set_party_name = {
+				ideology = paternal_autocrat
+				name = GEA_paternal_autocrat_party_IG
+				long_name = GEA_paternal_autocrat_party_IG_long
+			}
+			remove_all_ministers = yes
+			add_ideas = {
+				GEA_Tilo_von_Wilmowsky_hog_ade
+				GEA_Otto_von_Erdmannsdorff_for_ade
+				GEA_Friedrich_Wilhelm_Janssen_eco_ade
+				GEA_Friedrich_von_Buelow_sec_ade
+			}
+			set_country_flag = GEA_has_promote_new_governer
 			increase_ruling_party_popularity_by_10 = yes
 			hidden_effect = {
 				add_dynamic_modifier = {
@@ -552,15 +578,38 @@ add_namespace = GEA_news
 					}
 				}
 			}
+			set_politics = {
+				ruling_party = paternal_autocrat
+				elections_allowed = no
+			}
 			promote_character = {
 				character = GEA_Fritz_ter_Meer
-				ideology = colonial_govt_subtype
+				ideology = autocratic_colonial_govt_subtype
 			}
 			set_country_flag = GEA_Governor_Meer_flag
+			set_party_name = {
+				ideology = authoritarian_democrat
+				name = GEA_authoritarian_democrat_party_Krupp
+				long_name = GEA_authoritarian_democrat_party_Krupp_long
+			}
+			set_party_name = {
+				ideology = paternal_autocrat
+				name = GEA_paternal_autocrat_party_IG
+				long_name = GEA_paternal_autocrat_party_IG_long
+			}
+			remove_all_ministers = yes
+			add_ideas = {
+				GEA_Fritz_ter_Meer_hog_pau
+				GEA_Otto_von_Erdmannsdorff_for_ade
+				GEA_Max_Ilgner_eco_pau
+				GEA_August_von_Knieriem_sec_pau
+			}
+			set_country_flag = GEA_has_promote_new_governer
 			modify_country_flag = {
 				flag = GEA_Indochinese_Anger
 				value = 1
 			}
+			add_to_variable = { GEA_Indochinese_Anger_display = 1 }
 			custom_effect_tooltip = GEA_Indochina_Anger_Up
 			increase_ruling_party_popularity_by_10 = yes
 			hidden_effect = {
@@ -621,11 +670,13 @@ add_namespace = GEA_news
 				flag = GEA_Indochinese_Stability
 				value = -1
 			}
+			add_to_variable = { GEA_Indochinese_Stability_display = -1 }
 			custom_effect_tooltip = GEA_Indochina_Stability_Down
 			modify_country_flag = {
 				flag = GEA_Indochinese_Anger
 				value = 2
 			}
+			add_to_variable = { GEA_Indochinese_Anger_display = 2 }
 			custom_effect_tooltip = GEA_Indochina_Anger_Up_More
 		}
 
@@ -652,6 +703,7 @@ add_namespace = GEA_news
 				flag = GEA_Indochinese_Anger
 				value = -1
 			}
+			add_to_variable = { GEA_Indochinese_Anger_display = -1 }
 			custom_effect_tooltip = GEA_Indochina_Anger_Down
 		}
 
@@ -678,6 +730,7 @@ add_namespace = GEA_news
 				flag = GEA_Indochinese_Anger
 				value = 1
 			}
+			add_to_variable = { GEA_Indochinese_Anger_display = 1 }
 			custom_effect_tooltip = GEA_Indochina_Anger_Up
 		}
 	}	
@@ -703,6 +756,7 @@ add_namespace = GEA_news
 				flag = GEA_Indochinese_Stability
 				value = -1
 			}
+			add_to_variable = { GEA_Indochinese_Stability_display = -1 }
 			custom_effect_tooltip = GEA_Indochina_Stability_Down
 			hidden_effect = {
 				country_event = {
@@ -729,11 +783,13 @@ add_namespace = GEA_news
 				flag = GEA_Indochinese_Anger
 				value = 1
 			}
+			add_to_variable = { GEA_Indochinese_Anger_display = 1 }
 			custom_effect_tooltip = GEA_Indochina_Anger_Up
 			modify_country_flag = {
 				flag = GEA_Indochinese_Stability
 				value = -1
 			}
+			add_to_variable = { GEA_Indochinese_Stability_display = -1 }
 			custom_effect_tooltip = GEA_Indochina_Stability_Down
 		}
 	}
@@ -811,6 +867,7 @@ add_namespace = GEA_news
 				flag = GEA_Indochinese_Anger
 				value = 1
 			}
+			add_to_variable = { GEA_Indochinese_Anger_display = 1 }
 			custom_effect_tooltip = GEA_Indochina_Anger_Up
 			increase_ruling_party_popularity_by_5 = yes
 		}
@@ -832,6 +889,7 @@ add_namespace = GEA_news
 				flag = GEA_Indochinese_Stability
 				value = -1
 			}
+			add_to_variable = { GEA_Indochinese_Stability_display = -1 }
 			custom_effect_tooltip = GEA_Indochina_Stability_Down
 			add_political_power = -20
 			add_war_support = -0.05
@@ -921,7 +979,7 @@ add_namespace = GEA_news
 		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.19" }
 		title = GEA.19.t
 		desc = GEA.19.d
-		picture = GFX_GEA_Nationalist_riots
+		picture = GFX_report_event_SIA_German_Economical_Dominance
 
 		fire_only_once = yes
 		trigger = {
@@ -946,6 +1004,18 @@ add_namespace = GEA_news
 			add_political_power = -100
 			decrease_ruling_party_popularity_by_10 = yes
 			add_war_support = -0.05
+			modify_country_flag = {
+				flag = GEA_Indochinese_Anger
+				value = -2
+			}
+			add_to_variable = { GEA_Indochinese_Anger_display = -2 }
+			custom_effect_tooltip = GEA_Indochina_Anger_Down_More
+			modify_country_flag = {
+				flag = GEA_Indochinese_Stability
+				value = 1
+			}
+			add_to_variable = { GEA_Indochinese_Stability_display = 1 }
+			custom_effect_tooltip = GEA_Indochina_Stability_Up
 		}
 		option = {
 			name = GEA.19.b
@@ -955,7 +1025,12 @@ add_namespace = GEA_news
 			add_political_power = -40
 			decrease_ruling_party_popularity_by_5 = yes
 			add_war_support = -0.05
-			custom_effect_tooltip = GEA_reforming_colonial_institutions1_tt
+			modify_country_flag = {
+				flag = GEA_Indochinese_Anger
+				value = -1
+			}
+			add_to_variable = { GEA_Indochinese_Anger_display = -1 }
+			custom_effect_tooltip = GEA_Indochina_Anger_Down
 		}
 		option = {
 			name = GEA.19.c
@@ -973,6 +1048,12 @@ add_namespace = GEA_news
 			}
 			add_political_power = 50
 			increase_ruling_party_popularity_by_5 = yes
+			modify_country_flag = {
+				flag = GEA_Indochinese_Anger
+				value = 1
+			}
+			add_to_variable = { GEA_Indochinese_Anger_display = 1 }
+			custom_effect_tooltip = GEA_Indochina_Anger_Up
 		}
 	}
 	country_event = {#南圻国局势不稳
@@ -988,6 +1069,12 @@ add_namespace = GEA_news
 		option = {
 			name = GEA.20.a
 			add_stability = -0.03
+			modify_country_flag = {
+				flag = GEA_Indochinese_Stability
+				value = -1
+			}
+			add_to_variable = { GEA_Indochinese_Stability_display = -1 }
+			custom_effect_tooltip = GEA_Indochina_Stability_Down
 			hidden_effect = {
 				country_event = {
 					id = GEA.21
@@ -1028,6 +1115,13 @@ add_namespace = GEA_news
 				idea = GEA_Give_in_to_longshoremen 
 				days = 90
 			}
+			add_war_support = -0.05
+			modify_country_flag = {
+				flag = GEA_Indochinese_Anger
+				value = -1
+			}
+			add_to_variable = { GEA_Indochinese_Anger_display = -1 }
+			custom_effect_tooltip = GEA_Indochina_Anger_Down
 		}
 		option = {
 			name = GEA.21.b
@@ -1046,6 +1140,18 @@ add_namespace = GEA_news
 			add_manpower = -317
 			add_stability = 0.05
 			add_war_support = 0.05
+			modify_country_flag = {
+				flag = GEA_Indochinese_Anger
+				value = 1
+			}
+			add_to_variable = { GEA_Indochinese_Anger_display = 1 }
+			custom_effect_tooltip = GEA_Indochina_Anger_Up
+			modify_country_flag = {
+				flag = GEA_Indochinese_Stability
+				value = 1
+			}
+			add_to_variable = { GEA_Indochinese_Stability_display = 1 }
+			custom_effect_tooltip = GEA_Indochina_Stability_Up
 		}
 	}
 	country_event = {#在康道尔群岛发生的越狱
@@ -1065,7 +1171,7 @@ add_namespace = GEA_news
 			hidden_effect = {
 				country_event = {
 					id = GEA.23 #平定公社运动
-					days = 6
+					days = 14
 				}
 			}
 		}
@@ -1194,6 +1300,7 @@ add_namespace = GEA_news
 				flag = GEA_Indochinese_Anger
 				value = -1
 			}
+			add_to_variable = { GEA_Indochinese_Anger_display = -1 }
 			custom_effect_tooltip = GEA_Indochina_Anger_Down
 		}
 
@@ -1231,6 +1338,7 @@ add_namespace = GEA_news
 				flag = GEA_Indochinese_Anger
 				value = 1
 			}
+			add_to_variable = { GEA_Indochinese_Anger_display = 1 }
 			custom_effect_tooltip = GEA_Indochina_Anger_Up
 		}
 	}
@@ -1321,6 +1429,13 @@ add_namespace = GEA_news
 				var = INC.guerilla_activity
 				value = 3
 			}
+			add_stability = -0.05
+			modify_country_flag = {
+				flag = GEA_Indochinese_Stability
+				value = -1
+			}
+			add_to_variable = { GEA_Indochinese_Stability_display = -1 }
+			custom_effect_tooltip = GEA_Indochina_Stability_Down
 		}
 		option = {
 			name = GEA.28.b
@@ -1340,6 +1455,12 @@ add_namespace = GEA_news
 				idea = GEA_plantations_negotiation_idea
 				days = 100
 			}
+			modify_country_flag = {
+				flag = GEA_Indochinese_Anger
+				value = -1
+			}
+			add_to_variable = { GEA_Indochinese_Anger_display = -1 }
+			custom_effect_tooltip = GEA_Indochina_Anger_Down
 		}
 	}
 	country_event = {#东京的大罢工
@@ -1368,6 +1489,12 @@ add_namespace = GEA_news
 			}
 			add_manpower = -923
 			add_stability = -0.1
+			modify_country_flag = {
+				flag = GEA_Indochinese_Stability
+				value = -1
+			}
+			add_to_variable = { GEA_Indochinese_Stability_display = -1 }
+			custom_effect_tooltip = GEA_Indochina_Stability_Down
 		}
 		option = { 
 			name = GEA.29.b
@@ -1384,6 +1511,12 @@ add_namespace = GEA_news
 				}
 			}
 			decrease_ruling_party_popularity_by_10 = yes
+			modify_country_flag = {
+				flag = GEA_Indochinese_Anger
+				value = -1
+			}
+			add_to_variable = { GEA_Indochinese_Anger_display = -1 }
+			custom_effect_tooltip = GEA_Indochina_Anger_Down
 		}
 	}
 	country_event = {#武尔坎火山和凯亚火山爆发！
@@ -1668,6 +1801,7 @@ add_namespace = GEA_news
 				flag = GEA_Indochinese_Anger
 				value = 2
 			}
+			add_to_variable = { GEA_Indochinese_Anger_display = 2 }
 			custom_effect_tooltip = GEA_Indochina_Anger_Up_More
 			add_to_variable = {
 				GEA_Handling_the_savage_army = -1
@@ -1694,6 +1828,7 @@ add_namespace = GEA_news
 				flag = GEA_Indochinese_Anger
 				value = -1
 			}
+			add_to_variable = { GEA_Indochinese_Anger_display = -1 }
 			custom_effect_tooltip = GEA_Indochina_Anger_Down
 			decrease_ruling_party_popularity_by_5 = yes
 			add_to_variable = {
@@ -1719,6 +1854,7 @@ add_namespace = GEA_news
 				flag = GEA_Indochinese_Anger
 				value = 1
 			}
+			add_to_variable = { GEA_Indochinese_Anger_display = 1 }
 			custom_effect_tooltip = GEA_Indochina_Anger_Up
 			add_stability = -0.03
 			add_political_power = -20
@@ -2528,18 +2664,26 @@ add_namespace = GEA_news
 			add_political_power = 50
 			add_stability = 0.05
 			increase_ruling_party_popularity_by_5 = yes
+			add_timed_idea = {
+				idea = GEA_Reduce_military_expenditure_idea
+				days = 365
+			}
 		}
 		option = {
 			name = GEA.52.b
-			add_political_power = 20
+			add_political_power = 5
 		}
 		option = {
 			name = GEA.52.c
-			custom_effect_tooltip = GEA_Affect_Abandoning_the_savage_nature_tt
-			hidden_effect = {
+			add_war_support = 0.1
+			if = {
+				limit = {
+					has_country_flag = GEA_Governor_Hahl_flag
+				}
+				custom_effect_tooltip = GEA_Affect_Abandoning_the_savage_nature_tt
 				add_to_variable = { 
 					GEA_Handling_the_savage_army = 1 
-				}
+				}	
 			}
 		}
 	}
@@ -2678,6 +2822,7 @@ add_namespace = GEA_news
 				flag = GEA_Indochinese_Anger
 				value = 1
 			}
+			add_to_variable = { GEA_Indochinese_Anger_display = 1 }
 			custom_effect_tooltip = GEA_Indochina_Anger_Up
 			add_ideas = GEA_Expand_fiscal_and_taxation_sources_salt
 		}
@@ -2721,6 +2866,7 @@ add_namespace = GEA_news
 				flag = GEA_Indochinese_Stability
 				value = 1
 			}
+			add_to_variable = { GEA_Indochinese_Stability_display = 1 }
 			custom_effect_tooltip = GEA_Indochina_Stability_Up
 		}
 	}
@@ -2777,11 +2923,13 @@ add_namespace = GEA_news
 				flag = GEA_Indochinese_Anger
 				value = -1
 			}
+			add_to_variable = { GEA_Indochinese_Anger_display = -1 }
 			custom_effect_tooltip = GEA_Indochina_Anger_Down
 			modify_country_flag = {
 				flag = GEA_Indochinese_Stability
 				value = 1
 			}
+			add_to_variable = { GEA_Indochinese_Stability_display = 1 }
 			custom_effect_tooltip = GEA_Indochina_Stability_Up
 			add_ideas = GEA_Support_from_the_Vietnamese_partners
 			hidden_effect = {
@@ -2811,6 +2959,7 @@ add_namespace = GEA_news
 				flag = GEA_Indochinese_Stability
 				value = 1
 			}
+			add_to_variable = { GEA_Indochinese_Stability_display = 1 }
 			custom_effect_tooltip = GEA_Indochina_Stability_Up
 			add_ideas = GEA_Support_from_the_Vietnamese_partners_2
 			hidden_effect = {
@@ -2840,6 +2989,7 @@ add_namespace = GEA_news
 				flag = GEA_Indochinese_Anger
 				value = 1
 			}
+			add_to_variable = { GEA_Indochinese_Anger_display = 1 }
 			custom_effect_tooltip = GEA_Indochina_Anger_Up
 		}
 	}
@@ -2905,6 +3055,7 @@ add_namespace = GEA_news
 				flag = GEA_Indochinese_Anger
 				value = -1
 			}
+			add_to_variable = { GEA_Indochinese_Anger_display = -1 }
 			custom_effect_tooltip = GEA_Indochina_Anger_Down
 		}
 		option = { 
@@ -2949,6 +3100,7 @@ add_namespace = GEA_news
 				flag = GEA_Indochinese_Stability
 				value = 1
 			}
+			add_to_variable = { GEA_Indochinese_Stability_display = 1 }
 			custom_effect_tooltip = GEA_Indochina_Stability_Up
 			if = {
 				limit = {
@@ -3004,11 +3156,13 @@ add_namespace = GEA_news
 				flag = GEA_Indochinese_Anger
 				value = -2
 			}
+			add_to_variable = { GEA_Indochinese_Anger_display = -2 }
 			custom_effect_tooltip = GEA_Indochina_Anger_Down_More
 			modify_country_flag = {
 				flag = GEA_Indochinese_Stability
 				value = 1
 			}
+			add_to_variable = { GEA_Indochinese_Stability_display = 1 }
 			custom_effect_tooltip = GEA_Indochina_Stability_Up
 			VIN = {
 				change_tag_from = GEA
@@ -3167,11 +3321,13 @@ add_namespace = GEA_news
 				flag = GEA_Indochinese_Anger
 				value = -2
 			}
+			add_to_variable = { GEA_Indochinese_Anger_display = -2 }
 			custom_effect_tooltip = GEA_Indochina_Anger_Down_More
 			modify_country_flag = {
 				flag = GEA_Indochinese_Stability
 				value = 1
 			}
+			add_to_variable = { GEA_Indochinese_Stability_display = 1 }
 			custom_effect_tooltip = GEA_Indochina_Stability_Up
 			VIN = {
 				transfer_state = 827
@@ -3311,6 +3467,7 @@ add_namespace = GEA_news
 				flag = GEA_Indochinese_Anger
 				value = 2
 			}
+			add_to_variable = { GEA_Indochinese_Anger_display = 2 }
 			custom_effect_tooltip = GEA_Indochina_Anger_Up_More
 		}
 	}
@@ -3333,11 +3490,13 @@ add_namespace = GEA_news
 				flag = GEA_Indochinese_Anger
 				value = -1
 			}
+			add_to_variable = { GEA_Indochinese_Anger_display = -1 }
 			custom_effect_tooltip = GEA_Indochina_Anger_Down
 			modify_country_flag = {
 				flag = GEA_Indochinese_Stability
 				value = 1
 			}
+			add_to_variable = { GEA_Indochinese_Stability_display = 1 }
 			custom_effect_tooltip = GEA_Indochina_Stability_Up
 		}
 	}
@@ -3373,11 +3532,13 @@ add_namespace = GEA_news
 				flag = GEA_Indochinese_Anger
 				value = -1
 			}
+			add_to_variable = { GEA_Indochinese_Anger_display = -1 }
 			custom_effect_tooltip = Gea_Indochina_Anger_Down
 			modify_country_flag = {
 				flag = GEA_Indochinese_Stability
 				value = 1
 			}
+			add_to_variable = { GEA_Indochinese_Stability_display = 1 }
 			custom_effect_tooltip = GEA_Indochina_Stability_Up
 		}
 		option = { #给他们席位和勋章就够了
@@ -3400,6 +3561,7 @@ add_namespace = GEA_news
 				flag = GEA_Indochinese_Stability
 				value = 1
 			}
+			add_to_variable = { GEA_Indochinese_Stability_display = 1 }
 			custom_effect_tooltip = GEA_Indochina_Stability_Up
 		}
 	}
@@ -3461,6 +3623,7 @@ add_namespace = GEA_news
 				flag = GEA_Indochinese_Stability
 				value = -1
 			}
+			add_to_variable = { GEA_Indochinese_Stability_display = -1 }
 			custom_effect_tooltip = GEA_Indochina_Stability_Down
 			add_political_power = 10
 			swap_ideas = {
@@ -3488,11 +3651,13 @@ add_namespace = GEA_news
 				flag = GEA_Indochinese_Anger
 				value = 1
 			}
+			add_to_variable = { GEA_Indochinese_Anger_display = 1 }
 			custom_effect_tooltip = GEA_Indochina_Anger_Up
 			modify_country_flag = {
 				flag = GEA_Indochinese_Stability
 				value = -1
 			}
+			add_to_variable = { GEA_Indochinese_Stability_display = -1 }
 			custom_effect_tooltip = GEA_Indochina_Stability_Down
 			swap_ideas = {
 				remove_idea = GEA_Fiscal_reform
@@ -3626,6 +3791,7 @@ add_namespace = GEA_news
 				flag = GEA_Indochinese_Anger
 				value = 1
 			}
+			add_to_variable = { GEA_Indochinese_Anger_display = 1 }
 			custom_effect_tooltip = GEA_Indochina_Anger_Up
 			add_to_variable = {
 				GEA_Handling_the_savage_army = -1
@@ -3665,6 +3831,7 @@ add_namespace = GEA_news
 				flag = GEA_Indochinese_Anger
 				value = -1 
 			}
+			add_to_variable = { GEA_Indochinese_Anger_display = -1 }
 			custom_effect_tooltip = GEA_Indochina_Anger_Down
 			add_political_power = -30
 			add_to_variable = {
@@ -3734,6 +3901,7 @@ add_namespace = GEA_news
 				flag = GEA_Indochinese_Anger
 				value = -1
 			}
+			add_to_variable = { GEA_Indochinese_Anger_display = -1 }
 			custom_effect_tooltip = GEA_Indochina_Anger_Down
 		}
 	}
@@ -3758,6 +3926,7 @@ add_namespace = GEA_news
 				flag = GEA_Indochinese_Stability
 				value = 1
 			}
+			add_to_variable = { GEA_Indochinese_Stability_display = 1 }
 			custom_effect_tooltip = GEA_Indochina_Stability_Up
 		}
 	}
@@ -4052,6 +4221,7 @@ add_namespace = GEA_news
 		option = {
 			name = GEA.213.a
 			modify_country_flag = { flag = GEA_Indochinese_Anger value = -2 }
+			add_to_variable = { GEA_Indochinese_Anger_display = -2 }
 			custom_effect_tooltip = GEA_Indochina_Anger_Down_More
 		}
 	}
@@ -4067,6 +4237,7 @@ add_namespace = GEA_news
 		option = {
 			name = GEA.214.a
 			modify_country_flag = { flag = GEA_Indochinese_Stability value = 2 }
+			add_to_variable = { GEA_Indochinese_Stability_display = 2 }
 			custom_effect_tooltip = GEA_Indochina_Stability_Up_More
 		}
 	}
@@ -4160,11 +4331,13 @@ add_namespace = GEA_news
 				flag = GEA_Indochinese_Anger
 				value = -1
 			}
+						add_to_variable = { GEA_Indochinese_Anger_display = -1 }
 			custom_effect_tooltip = GEA_Indochina_Anger_Down
 			modify_country_flag = {
 				flag = GEA_Indochinese_Stability
 				value = 2
 			}
+			add_to_variable = { GEA_Indochinese_Stability_display = 2 }
 			custom_effect_tooltip = GEA_Indochina_Stability_Up_More
 		}
 	}
@@ -4903,6 +5076,7 @@ add_namespace = GEA_news
 				flag = GEA_Indochinese_Anger
 				value = -1
 			}
+			add_to_variable = { GEA_Indochinese_Anger_display = -1 }
 			custom_effect_tooltip = GEA_Indochina_Anger_Down
 			add_to_variable = { GEA_Other_Corporation_Anger = 1 }
 			custom_effect_tooltip = GEA_Krupp_Other_Corporation_Anger_Up
@@ -5008,6 +5182,7 @@ add_namespace = GEA_news
 				flag = GEA_Indochinese_Stability
 				value = 1
 			}
+			add_to_variable = { GEA_Indochinese_Stability_display = 1 }
 			custom_effect_tooltip = GEA_Indochina_Stability_Up
 		}
 
@@ -6696,7 +6871,14 @@ add_namespace = GEA_news
 		option = { 
 			name = GEA.800.a
 			set_country_flag = GEA_nanjing_crisis
-			complete_national_focus = GEA_The_second_expedition_to_China
+			if = {
+				limit = {
+					NOT = {
+						has_completed_focus = GEA_The_second_expedition_to_China
+					}
+				}
+				complete_national_focus = GEA_The_second_expedition_to_China
+			}
 		}
 	}
 	country_event = { #德国向我们提供武器
@@ -7541,6 +7723,22 @@ add_namespace = GEA_news
 			}
 		}
 	}
+
+	country_event = { #对华远征十年记
+		id = GEA.821
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.821" }
+		title = GEA.821.t
+		desc = GEA.821.d
+		picture = GFX_GEA_eight_provience
+
+		fire_only_once = yes
+		is_triggered_only = yes
+
+		option = {
+			name = GEA.821.a
+
+		}
+	}
 #经济
 	country_event = { #重点开发
 		id = GEA.1000
@@ -7587,6 +7785,7 @@ add_namespace = GEA_news
 				flag = GEA_Indochinese_Anger
 				value = -1
 			}
+			add_to_variable = { GEA_Indochinese_Anger_display = -1 }
 			custom_effect_tooltip = GEA_Indochina_Anger_Down
 			857 = {
 				add_building_construction = {
@@ -8580,6 +8779,50 @@ add_namespace = GEA_news
 	}
 
 #隐藏事件
+	country_event = { #舍尔纳：完全控制最终宣称范围后授予核心
+		id = GEA.12002
+		hidden = yes
+		fire_only_once = yes
+
+		trigger = {
+			tag = GEA
+			has_country_flag = GEA_Governor_Schorner_flag
+			has_completed_focus = GEA_Let_loose_the_blood-stained_black_eagle
+			NOT = {
+				any_state = {
+					OR = {
+						is_china_claim_area = yes
+						is_mongolia = yes
+						region = 154
+						is_core_of = JAP
+						region = 191
+						is_southeast_asia = yes
+						is_russian_far_east = yes
+					}
+					NOT = { is_fully_controlled_by = ROOT }
+				}
+			}
+		}
+
+		immediate = {
+			log = "[GetDateText]: [Root.GetName]: event GEA.12002: Schorner claims become cores"
+			every_state = {
+				limit = {
+					OR = {
+						is_china_claim_area = yes
+						is_mongolia = yes
+						region = 154
+						is_core_of = JAP
+						region = 191
+						is_southeast_asia = yes
+						is_russian_far_east = yes
+					}
+				}
+				add_core_of = ROOT
+			}
+		}
+	}
+
 	country_event = {
 		id = GEA.10001
 		hidden = yes
@@ -8950,3 +9193,4 @@ add_namespace = GEA_news
 			name = Ostasien.207.a
 		}
 	}
+

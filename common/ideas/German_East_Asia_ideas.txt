@@ -66,7 +66,7 @@ ideas = {
 	#黑色星期一相关
 		GEA_black_monday_idea = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_black_monday_idea"}
-			picture = great_depression
+			picture = GER_Black_Monday
 			allowed = { always = no }
 			modifier = {
 				stability_factor = -0.2
@@ -79,7 +79,7 @@ ideas = {
 		}
 		GEA_black_monday_idea_2 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_black_monday_idea_2"}
-			picture = great_depression
+			picture = GER_Black_Monday
 			allowed = { always = no }
 			modifier = {
 				stability_factor = -0.1
@@ -92,7 +92,7 @@ ideas = {
 		}
 		GEA_black_monday_idea_3 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_black_monday_idea_2"}
-			picture = great_depression
+			picture = GER_Black_Monday
 			name = GEA_black_monday_idea_2
 			allowed = { always = no }
 			modifier = {
@@ -139,7 +139,7 @@ ideas = {
 		}
 		GEA_falling_price_idea = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_falling_price_idea"}
-			picture = great_depression
+			picture = GEA_black_monday_idea
 			allowed = { always = no }
 			modifier = {
 				industrial_capacity_factory = -0.2
@@ -149,7 +149,7 @@ ideas = {
 		}
 		GEA_conrol_price_idea = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_conrol_price_idea"}
-			picture = great_depression
+			picture = GER_Black_Monday
 			allowed = { always = no }
 			modifier = {
 				political_power_gain = -0.10
@@ -158,7 +158,7 @@ ideas = {
 		}
 		GEA_Give_in_to_longshoremen = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Give_in_to_longshoremen"}
-			picture = worker_guarantees
+			picture = GER_Chains_Reconstruction
 			allowed = { always = no }
 			modifier = {
 				stability_factor = 0.05
@@ -209,6 +209,26 @@ ideas = {
 				army_org_factor = 0.1
 				conscription_factor = 0.05
 				attrition = -0.075
+			}
+		}
+		GEA_Reduce_military_expenditure_idea = { #削减军费
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_plantations_negotiation_idea"}
+			picture = GER_quenched_militarism
+			allowed = { always = no }
+			modifier = {
+				training_time_army_factor = 0.1
+				experience_gain_army_factor = -0.05
+				army_org_factor = -0.1
+			}
+		}
+
+		GEA_plantations_negotiation_idea = { #种植园谈判
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_plantations_negotiation_idea"}
+			picture = GER_Daggers_Darkness
+			allowed = { always = no }
+			modifier = {
+				industrial_capacity_factory = -0.1
+				min_export = -0.1
 			}
 		}
 		GEA_colonial_disaster_idea = { #殖民骚乱
@@ -2397,14 +2417,101 @@ ideas = {
 				defense_bonus_against = -0.05
 			}
 		}
-#BM
-		GEA_plantations_negotiation_idea = { #种植园谈判
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_plantations_negotiation_idea"}
-			picture = great_depression
+#
+		GEA_prussian_force = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_prussian_force"}
+			picture = advisors_german_east_asia
 			allowed = { always = no }
 			modifier = {
-				industrial_capacity_factory = -0.1
-				min_export = -0.1
+				conscription = 0.05
+				conscription_factor = -0.85
+				army_morale_factor = 0.10
+				army_attack_factor = 0.20
+				max_planning = 0.25
+				special_forces_min = 10
+				special_forces_cap = 0.25
+				training_time_factor = 0.20
+				non_core_manpower = 0.05
+			}
+		}
+
+		GEA_prussian_force_exilewaffen = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_prussian_force"}
+			picture = advisors_german_east_asia
+			allowed = { always = no }
+			modifier = {
+				conscription = 0.05
+				conscription_factor = -0.85
+				army_morale_factor = 0.10
+				army_attack_factor = 0.20
+				max_planning = 0.25
+				special_forces_min = 25
+				special_forces_cap = 0.45
+				training_time_factor = 0.20
+				weekly_manpower = 350
+				non_core_manpower = 0.05
+			}
+		}
+
+		GEA_prussian_force_kaisers_own = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_prussian_force"}
+			picture = advisors_german_east_asia
+			allowed = { always = no }
+			modifier = {
+				conscription = 0.05
+				conscription_factor = -0.70
+				army_morale_factor = 0.10
+				army_attack_factor = 0.20
+				max_planning = 0.25
+				special_forces_min = 20
+				special_forces_cap = 0.25
+				training_time_factor = 0.20
+				non_core_manpower = 0.05
+			}
+		}
+
+		GEA_language = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_language"}
+			picture = advisors_germany
+			allowed = { always = no }
+			modifier = {
+				conscription = 0.05
+				conscription_factor = -0.35
+				non_core_manpower = 0.05
+				compliance_growth = 0.05
+				heat_attrition_factor = -0.1
+			}
+		}
+
+		GEA_language_exilewaffen = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_language"}
+			picture = advisors_germany
+			allowed = { always = no }
+			modifier = {
+				conscription = 0.05
+				conscription_factor = -0.35
+				special_forces_cap = 0.10
+				special_forces_attack_factor = 0.25
+				special_forces_defence_factor = 0.10
+				non_core_manpower = 0.05
+				compliance_growth = 0.05
+				heat_attrition_factor = -0.05
+			}
+		}
+
+		GEA_language_kaisers_own = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_language"}
+			picture = advisors_germany
+			allowed = { always = no }
+			modifier = {
+				conscription = 0.05
+				conscription_factor = -0.35
+				army_morale_factor = 0.05
+				army_attack_factor = 0.05
+				army_defence_factor = 0.05
+				non_core_manpower = 0.05
+				compliance_growth = 0.05
+				heat_attrition_factor = -0.05
 			}
 		}
 	}

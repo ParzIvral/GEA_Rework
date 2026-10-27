@@ -2,42 +2,42 @@ air_wings = {
 	846 = {
 		small_plane_airframe_0 = {
 			owner = "GEA"
-			amount = 96
+			amount = 100
 			version_name = "Fokker D.XVII"
 		}
 		medium_plane_airframe_0 = {
 			owner = "GEA"
-			amount = 48
+			amount = 100
 			version_name = "Junkers Ju 86"
 		}
 		small_plane_naval_bomber_airframe_1 = {
 			owner = "GEA"
-			amount = 24
+			amount = 100
 			version_name = "Fieseler Fi 167"
 		}
 		small_plane_cas_airframe_1 = {
 			owner = "GEA"
-			amount = 80
+			amount = 100
 			version_name = "Blohm & Voss Ha 137"
 		}
 		small_plane_cas_airframe_0 = {
 			owner = "GEA"
-			amount = 96
+			amount = 100
 			version_name = "Heinkel He 50"
 		}
 	}
 
-	"GEA_SHIP_SMS_BLUMENTHAL" = {
+	"SMS Blumenthal" = {
 		cv_small_plane_airframe_1 = { owner = GEA creator = GER amount = 10 version_name = "Heinkel He 112" }
 		cv_small_plane_naval_bomber_airframe_1 = { owner = GEA creator = GEA amount = 10 version_name = "Fieseler Fi 167" }
 	}
 
-	"GEA_SHIP_SMS_ROON" = {
+	"SMS Roon" = {
 		cv_small_plane_airframe_1 = { owner = GEA creator = GER amount = 10 version_name = "Heinkel He 112" }
 		cv_small_plane_naval_bomber_airframe_1 = { owner = GEA creator = GEA amount = 10 version_name = "Fieseler Fi 167" }
 	}
 
-	"GEA_SHIP_SMS_BOELCKE" = {
+	"SMS Boelcke" = {
 		cv_small_plane_airframe_1 = { owner = GEA creator = GER amount = 10 version_name = "Heinkel He 112" }
 		cv_small_plane_naval_bomber_airframe_1 = { owner = GEA creator = GEA amount = 10 version_name = "Fieseler Fi 167" }
 	}

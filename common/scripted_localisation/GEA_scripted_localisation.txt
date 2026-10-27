@@ -637,3 +637,50 @@ defined_text = {
 	}
 	text = { localization_key = GEA_Zhili_Map_Default_DESC }
 }
+
+# Current Indochina crisis values and threshold colours.
+defined_text = {
+	name = GetGEAIndochinaAngerValue
+	text = {
+		trigger = { GEA = { has_country_flag = { flag = GEA_Indochinese_Anger value < 3 } } }
+		localization_key = GEA_Indochina_Anger_value_0
+	}
+	text = {
+		trigger = { GEA = { has_country_flag = { flag = GEA_Indochinese_Anger value < 5 } } }
+		localization_key = GEA_Indochina_Anger_value_1
+	}
+	text = {
+		trigger = { GEA = { has_country_flag = { flag = GEA_Indochinese_Anger value < 7 } } }
+		localization_key = GEA_Indochina_Anger_value_2
+	}
+	text = {
+		trigger = { GEA = { has_country_flag = { flag = GEA_Indochinese_Anger value < 9 } } }
+		localization_key = GEA_Indochina_Anger_value_3
+	}
+	text = {
+		localization_key = GEA_Indochina_Anger_value_4
+	}
+}
+
+defined_text = {
+	name = GetGEAIndochinaStabilityValue
+	text = {
+		trigger = { GEA = { has_country_flag = { flag = GEA_Indochinese_Stability value < 4 } } }
+		localization_key = GEA_Indochina_Stability_value_0
+	}
+	text = {
+		trigger = { GEA = { has_country_flag = { flag = GEA_Indochinese_Stability value < 7 } } }
+		localization_key = GEA_Indochina_Stability_value_1
+	}
+	text = {
+		trigger = { GEA = { has_country_flag = { flag = GEA_Indochinese_Stability value < 10 } } }
+		localization_key = GEA_Indochina_Stability_value_2
+	}
+	text = {
+		trigger = { GEA = { has_country_flag = { flag = GEA_Indochinese_Stability value < 13 } } }
+		localization_key = GEA_Indochina_Stability_value_3
+	}
+	text = {
+		localization_key = GEA_Indochina_Stability_value_4
+	}
+}

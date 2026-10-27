@@ -12,8 +12,11 @@ leader_traits = {
 	pa_independent = {}							#家独 独立人士
 	Josias_group = {}							#约西亚斯集团
 	Reichsbank = {}								#帝国银行
+	Krupp = {}									#克虏伯
+	IG_Farben = {}								#IG法本
 	Werwolf = {}								#狼人
 	np_military_police = {}						#秩序警察
+	ad_colonial_affairs_office = {}				#帝国殖民办公厅
 	np_colonial_affairs_office = {}				#帝国殖民办公厅
 	Noble_diplomat = {							#贵族外交官
 		political_power_factor = 0.04
@@ -23,6 +26,15 @@ leader_traits = {
 		stability_weekly = 0.001
 		industrial_capacity_factory = 0.03
 		max_command_power = 20
+	}
+	hog_industrial_giant = {					#工业巨头
+		production_speed_buildings_factor = 0.1
+		industrial_capacity_factory = 0.05
+	}
+	sec_coal_steel_police = {					#煤钢警察
+		political_power_gain = 0.06
+		production_factory_start_efficiency_factor = 0.03
+		line_change_production_efficiency_factor = 0.03
 	}
 	hog_efficient_resource_manager = {			#高效的资源整合者
 		local_resources_factor = 0.04

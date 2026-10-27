@@ -1,5 +1,5 @@
 GEA_INF_01 = {
-	name = "Colonial Infantry"
+	name = GEA_INF_01_name
 
 	for_countries = { GEA }
 
@@ -7,7 +7,7 @@ GEA_INF_01 = {
 
 	division_types = { "infantry" "mechanized" "marine" }
 
-	fallback_name = "%d. Schutztruppendivision"
+	fallback_name = "第%d殖民地卫戍师"
 
 	ordered = {
 		1 = {"1. Malaiische Schutztruppendivision 'Singapur'"}
@@ -31,14 +31,14 @@ GEA_INF_01 = {
 }
 
 GEA_INF_02 = {
-	name = "Preußische Garde"
+	name = GEA_INF_02_name
 
 	for_countries = { GEA }
 
 	can_use = { always = yes }
 
 	division_types = { "infantry" }
-	fallback_name = "%d. Preuß. Gardedivision (Ostasien)"
+	fallback_name = "第%d普鲁士近卫师（东亚）"
 	ordered = {
 		1 = {"1. Preuß. Gardedivision 'zu Eulenburg'"}
 		2 = {"2. Preuß. Gardedivision (Ostasien)"}
@@ -48,7 +48,7 @@ GEA_INF_02 = {
 }
 
 GEA_INF_03 = {
-	name = "亲王卫队"
+	name = GEA_INF_03_name
 
 	for_countries = { GEA }
 
@@ -59,258 +59,48 @@ GEA_INF_03 = {
 	fallback_name = "亲王卫队第%d. 师"
 
 	ordered = {
-		1 = {"亲王卫队第1师 '瓦尔德克与皮尔蒙特'"}
-		2 = {"亲王卫队第2师 '帝国'"}
-		3 = {"亲王卫队第3师 '女武神'"}
-		4 = {"亲王卫队第4师 '尼伯龙根'"}
+		1 = {"1. Prinzengarde-Division 'Waldeck und Pyrmont'"}
+		2 = {"2. Prinzengarde-Division 'Reich'"}
+		3 = {"3. Prinzengarde-Division 'Walküre'"}
+		4 = {"4. Prinzengarde-Division 'Nibelungen'"}
 	}
 }
 
-GEA_LOYAL_INF_01 = {
-	name = "$GEA_LOYAL_INF_01_name$"
+GEA_GENERIC_INF_01 = {
+	name = GEA_GENERIC_INF_01_name
 
 	for_countries = { GEA }
-
 	can_use = { always = yes }
-
 	division_types = { "infantry" }
 
-	fallback_name = "$GEA_loyal_inf_fallback$"
+	fallback_name = "第%d步兵师"
 
 	ordered = {
-		1 = { "$GEA_loyal_inf_1$" }
-		2 = { "$GEA_loyal_inf_2$" }
-		3 = { "$GEA_loyal_inf_3$" }
-		4 = { "$GEA_loyal_inf_4$" }
-	}
-}
-GEA_IMPERIAL_INF_01 = {
-	name = "$GEA_IMPERIAL_INF_01_name$"
-
-	for_countries = { GEA }
-
-	can_use = { always = yes }
-
-	division_types = { "infantry" }
-
-	fallback_name = "$GEA_imperial_inf_fallback$"
-
-	ordered = {
-		1 = { "$GEA_imperial_inf_1$" }
-		2 = { "$GEA_imperial_inf_2$" }
-		3 = { "$GEA_imperial_inf_3$" }
-		4 = { "$GEA_imperial_inf_4$" }
-		5 = { "$GEA_imperial_inf_5$" }
-		6 = { "$GEA_imperial_inf_6$" }
-		7 = { "$GEA_imperial_inf_7$" }
-		8 = { "$GEA_imperial_inf_8$" }
-		9 = { "$GEA_imperial_inf_9$" }
-		10 = { "$GEA_imperial_inf_10$" }
-		11 = { "$GEA_imperial_inf_11$" }
-		12 = { "$GEA_imperial_inf_12$" }
-		13 = { "$GEA_imperial_inf_13$" }
-		14 = { "$GEA_imperial_inf_14$" }
-		15 = { "$GEA_imperial_inf_15$" }
-		16 = { "$GEA_imperial_inf_16$" }
-		17 = { "$GEA_imperial_inf_17$" }
-		18 = { "$GEA_imperial_inf_18$" }
-		19 = { "$GEA_imperial_inf_19$" }
-		20 = { "$GEA_imperial_inf_20$" }
-		21 = { "$GEA_imperial_inf_21$" }
-		22 = { "$GEA_imperial_inf_22$" }
-		23 = { "$GEA_imperial_inf_23$" }
-		24 = { "$GEA_imperial_inf_24$" }
-		25 = { "$GEA_imperial_inf_25$" }
-		26 = { "$GEA_imperial_inf_26$" }
-		27 = { "$GEA_imperial_inf_27$" }
-		28 = { "$GEA_imperial_inf_28$" }
-		29 = { "$GEA_imperial_inf_29$" }
-		30 = { "$GEA_imperial_inf_30$" }
-		31 = { "$GEA_imperial_inf_31$" }
-		32 = { "$GEA_imperial_inf_32$" }
-		33 = { "$GEA_imperial_inf_33$" }
-		34 = { "$GEA_imperial_inf_34$" }
-		35 = { "$GEA_imperial_inf_35$" }
-		36 = { "$GEA_imperial_inf_36$" }
-		37 = { "$GEA_imperial_inf_37$" }
-		38 = { "$GEA_imperial_inf_38$" }
-		39 = { "$GEA_imperial_inf_39$" }
-		40 = { "$GEA_imperial_inf_40$" }
-		41 = { "$GEA_imperial_inf_41$" }
-		42 = { "$GEA_imperial_inf_42$" }
-		43 = { "$GEA_imperial_inf_43$" }
-		44 = { "$GEA_imperial_inf_44$" }
-		45 = { "$GEA_imperial_inf_45$" }
-		46 = { "$GEA_imperial_inf_46$" }
-		47 = { "$GEA_imperial_inf_47$" }
-		48 = { "$GEA_imperial_inf_48$" }
-		49 = { "$GEA_imperial_inf_49$" }
-		50 = { "$GEA_imperial_inf_50$" }
-		51 = { "$GEA_imperial_inf_51$" }
-		52 = { "$GEA_imperial_inf_52$" }
-		53 = { "$GEA_imperial_inf_53$" }
-		54 = { "$GEA_imperial_inf_54$" }
-		55 = { "$GEA_imperial_inf_55$" }
-		56 = { "$GEA_imperial_inf_56$" }
-		57 = { "$GEA_imperial_inf_57$" }
-		58 = { "$GEA_imperial_inf_58$" }
-		59 = { "$GEA_imperial_inf_59$" }
-		60 = { "$GEA_imperial_inf_60$" }
-		61 = { "$GEA_imperial_inf_61$" }
-		62 = { "$GEA_imperial_inf_62$" }
-		63 = { "$GEA_imperial_inf_63$" }
-		64 = { "$GEA_imperial_inf_64$" }
-		65 = { "$GEA_imperial_inf_65$" }
-		66 = { "$GEA_imperial_inf_66$" }
-		67 = { "$GEA_imperial_inf_67$" }
-		68 = { "$GEA_imperial_inf_68$" }
-		69 = { "$GEA_imperial_inf_69$" }
-		70 = { "$GEA_imperial_inf_70$" }
-		71 = { "$GEA_imperial_inf_71$" }
-		72 = { "$GEA_imperial_inf_72$" }
-		73 = { "$GEA_imperial_inf_73$" }
-		74 = { "$GEA_imperial_inf_74$" }
-		75 = { "$GEA_imperial_inf_75$" }
-		76 = { "$GEA_imperial_inf_76$" }
-		77 = { "$GEA_imperial_inf_77$" }
-		78 = { "$GEA_imperial_inf_78$" }
-		79 = { "$GEA_imperial_inf_79$" }
-		80 = { "$GEA_imperial_inf_80$" }
-		81 = { "$GEA_imperial_inf_81$" }
-		82 = { "$GEA_imperial_inf_82$" }
-		83 = { "$GEA_imperial_inf_83$" }
-		84 = { "$GEA_imperial_inf_84$" }
-		85 = { "$GEA_imperial_inf_85$" }
-		86 = { "$GEA_imperial_inf_86$" }
-		87 = { "$GEA_imperial_inf_87$" }
-		88 = { "$GEA_imperial_inf_88$" }
-		89 = { "$GEA_imperial_inf_89$" }
-		90 = { "$GEA_imperial_inf_90$" }
-		91 = { "$GEA_imperial_inf_91$" }
-		92 = { "$GEA_imperial_inf_92$" }
-		93 = { "$GEA_imperial_inf_93$" }
-		94 = { "$GEA_imperial_inf_94$" }
-		95 = { "$GEA_imperial_inf_95$" }
-		96 = { "$GEA_imperial_inf_96$" }
-		97 = { "$GEA_imperial_inf_97$" }
-		98 = { "$GEA_imperial_inf_98$" }
-		99 = { "$GEA_imperial_inf_99$" }
-		100 = { "$GEA_imperial_inf_100$" }
-		101 = { "$GEA_imperial_inf_101$" }
-		102 = { "$GEA_imperial_inf_102$" }
-		103 = { "$GEA_imperial_inf_103$" }
-		104 = { "$GEA_imperial_inf_104$" }
-		105 = { "$GEA_imperial_inf_105$" }
-		106 = { "$GEA_imperial_inf_106$" }
-		107 = { "$GEA_imperial_inf_107$" }
-		108 = { "$GEA_imperial_inf_108$" }
-		109 = { "$GEA_imperial_inf_109$" }
-		110 = { "$GEA_imperial_inf_110$" }
-		111 = { "$GEA_imperial_inf_111$" }
-		112 = { "$GEA_imperial_inf_112$" }
-		113 = { "$GEA_imperial_inf_113$" }
-		114 = { "$GEA_imperial_inf_114$" }
-		115 = { "$GEA_imperial_inf_115$" }
-		116 = { "$GEA_imperial_inf_116$" }
-		117 = { "$GEA_imperial_inf_117$" }
-		118 = { "$GEA_imperial_inf_118$" }
-		119 = { "$GEA_imperial_inf_119$" }
-		120 = { "$GEA_imperial_inf_120$" }
-		121 = { "$GEA_imperial_inf_121$" }
-		122 = { "$GEA_imperial_inf_122$" }
-		123 = { "$GEA_imperial_inf_123$" }
-		124 = { "$GEA_imperial_inf_124$" }
-		125 = { "$GEA_imperial_inf_125$" }
-		126 = { "$GEA_imperial_inf_126$" }
-		127 = { "$GEA_imperial_inf_127$" }
-		128 = { "$GEA_imperial_inf_128$" }
-		129 = { "$GEA_imperial_inf_129$" }
-		130 = { "$GEA_imperial_inf_130$" }
-		131 = { "$GEA_imperial_inf_131$" }
-		132 = { "$GEA_imperial_inf_132$" }
-		133 = { "$GEA_imperial_inf_133$" }
-		134 = { "$GEA_imperial_inf_134$" }
-		135 = { "$GEA_imperial_inf_135$" }
-		136 = { "$GEA_imperial_inf_136$" }
-		137 = { "$GEA_imperial_inf_137$" }
-		138 = { "$GEA_imperial_inf_138$" }
-		139 = { "$GEA_imperial_inf_139$" }
-		140 = { "$GEA_imperial_inf_140$" }
-		141 = { "$GEA_imperial_inf_141$" }
-		142 = { "$GEA_imperial_inf_142$" }
-		143 = { "$GEA_imperial_inf_143$" }
-		144 = { "$GEA_imperial_inf_144$" }
-		145 = { "$GEA_imperial_inf_145$" }
-		146 = { "$GEA_imperial_inf_146$" }
-		147 = { "$GEA_imperial_inf_147$" }
-		148 = { "$GEA_imperial_inf_148$" }
-		149 = { "$GEA_imperial_inf_149$" }
-		150 = { "$GEA_imperial_inf_150$" }
-		151 = { "$GEA_imperial_inf_151$" }
-		152 = { "$GEA_imperial_inf_152$" }
-		153 = { "$GEA_imperial_inf_153$" }
-		154 = { "$GEA_imperial_inf_154$" }
-		155 = { "$GEA_imperial_inf_155$" }
-		156 = { "$GEA_imperial_inf_156$" }
-		157 = { "$GEA_imperial_inf_157$" }
-		158 = { "$GEA_imperial_inf_158$" }
-		159 = { "$GEA_imperial_inf_159$" }
-		160 = { "$GEA_imperial_inf_160$" }
-		161 = { "$GEA_imperial_inf_161$" }
-		162 = { "$GEA_imperial_inf_162$" }
-		163 = { "$GEA_imperial_inf_163$" }
-		164 = { "$GEA_imperial_inf_164$" }
-		165 = { "$GEA_imperial_inf_165$" }
-		166 = { "$GEA_imperial_inf_166$" }
-		167 = { "$GEA_imperial_inf_167$" }
-		168 = { "$GEA_imperial_inf_168$" }
-		169 = { "$GEA_imperial_inf_169$" }
-		170 = { "$GEA_imperial_inf_170$" }
-		171 = { "$GEA_imperial_inf_171$" }
-		172 = { "$GEA_imperial_inf_172$" }
-		173 = { "$GEA_imperial_inf_173$" }
-		174 = { "$GEA_imperial_inf_174$" }
-		175 = { "$GEA_imperial_inf_175$" }
-		176 = { "$GEA_imperial_inf_176$" }
-		177 = { "$GEA_imperial_inf_177$" }
-		178 = { "$GEA_imperial_inf_178$" }
-		179 = { "$GEA_imperial_inf_179$" }
-		180 = { "$GEA_imperial_inf_180$" }
-		181 = { "$GEA_imperial_inf_181$" }
-		182 = { "$GEA_imperial_inf_182$" }
-		183 = { "$GEA_imperial_inf_183$" }
-		184 = { "$GEA_imperial_inf_184$" }
-		185 = { "$GEA_imperial_inf_185$" }
-		186 = { "$GEA_imperial_inf_186$" }
-		187 = { "$GEA_imperial_inf_187$" }
-		188 = { "$GEA_imperial_inf_188$" }
-		189 = { "$GEA_imperial_inf_189$" }
-		190 = { "$GEA_imperial_inf_190$" }
-		191 = { "$GEA_imperial_inf_191$" }
-		192 = { "$GEA_imperial_inf_192$" }
-		193 = { "$GEA_imperial_inf_193$" }
-		194 = { "$GEA_imperial_inf_194$" }
-		195 = { "$GEA_imperial_inf_195$" }
-		196 = { "$GEA_imperial_inf_196$" }
-		197 = { "$GEA_imperial_inf_197$" }
-		198 = { "$GEA_imperial_inf_198$" }
-		199 = { "$GEA_imperial_inf_199$" }
-		200 = { "$GEA_imperial_inf_200$" }
-		201 = { "$GEA_imperial_inf_201$" }
-		202 = { "$GEA_imperial_inf_202$" }
-		203 = { "$GEA_imperial_inf_203$" }
-		204 = { "$GEA_imperial_inf_204$" }
-		205 = { "$GEA_imperial_inf_205$" }
-		206 = { "$GEA_imperial_inf_206$" }
-		207 = { "$GEA_imperial_inf_207$" }
-		208 = { "$GEA_imperial_inf_208$" }
-		209 = { "$GEA_imperial_inf_209$" }
-		210 = { "$GEA_imperial_inf_210$" }
+		1 = { "第%d步兵师" }
+		2 = { "第%d步兵师" }
+		3 = { "第%d步兵师" }
+		4 = { "第%d步兵师" }
+		5 = { "第%d步兵师" }
+		6 = { "第%d步兵师" }
+		7 = { "第%d步兵师" }
+		8 = { "第%d步兵师" }
+		9 = { "第%d步兵师" }
+		10 = { "第%d步兵师" }
+		11 = { "第%d步兵师" }
+		12 = { "第%d步兵师" }
+		13 = { "第%d步兵师" }
+		14 = { "第%d步兵师" }
+		15 = { "第%d步兵师" }
+		16 = { "第%d步兵师" }
+		17 = { "第%d步兵师" }
+		18 = { "第%d步兵师" }
+		19 = { "第%d步兵师" }
+		20 = { "第%d步兵师" }
 	}
 }
 
 GEA_MAR_02 = {
-	name = "Colonial Marines"
+	name = GEA_MAR_02_name
 
 	for_countries = { GEA }
 
@@ -318,20 +108,16 @@ GEA_MAR_02 = {
 
 	division_types = { "marine" }
 
-	# Number reservation system will tie to another group.
-	#link_numbering_with = { GEA_INF_01 }
 
-	fallback_name = "%d. Singapur-Marine-Division"
 
-	# Names with numbers (only one number per entry).
-	# It's okay to have gaps in numbering.
+	fallback_name = "第%d新加坡海军陆战师"
 	ordered = {
 		1 = {"%d. Singapur-Marine-Division"}
 	}
 }
 
 GEA_GAR_01 = {
-	name = "Overseas Garrison"
+	name = GEA_GAR_01_name
 
 	for_countries = { GEA }
 
@@ -339,13 +125,8 @@ GEA_GAR_01 = {
 
 	division_types = { "infantry" }
 
-	# Number reservation system will tie to another group.
-	#link_numbering_with = { GEA_INF_01 }
 
-	fallback_name = "Festungskommando Ostasien %s"
-
-	# Names with numbers (only one number per entry).
-	# It's okay to have gaps in numbering.
+	fallback_name = "东亚要塞司令部%s"
 	ordered = {
 		1 = { "Festungskommando Fernost" }
 		3 = { "Auslands-Festungskommando" }
@@ -355,7 +136,7 @@ GEA_GAR_01 = {
 }
 
 GEA_GAR_02 = {
-	name = "Native Guard"
+	name = GEA_GAR_02_name
 
 	for_countries = { GEA }
 
@@ -363,13 +144,8 @@ GEA_GAR_02 = {
 
 	division_types = { "infantry" }
 
-	# Number reservation system will tie to another group.
-	#link_numbering_with = { GEA_INF_01 }
+	fallback_name = "守备司令部%s"
 
-	fallback_name = "Garnisonskommando %s"
-
-	# Names with numbers (only one number per entry).
-	# It's okay to have gaps in numbering.
 	ordered = {
 		1 = { "1. Dschohorgarnison" }
 		2 = { "1. Vietnamesische Garde" }
@@ -380,7 +156,7 @@ GEA_GAR_02 = {
 }
 
 GEA_MIL_01 = {
-	name = "Colonial Militia"
+	name = GEA_MIL_01_name
 
 	for_countries = { GEA }
 
@@ -388,13 +164,9 @@ GEA_MIL_01 = {
 
 	division_types = { "militia" }
 
-	# Number reservation system will tie to another group.
-	#link_numbering_with = { GEA_INF_01 }
 
-	fallback_name = "%d. Einheimische Hilfstruppe"
+	fallback_name = "第%d本土辅助部队"
 
-	# Names with numbers (only one number per entry).
-	# It's okay to have gaps in numbering.
 	ordered = {
 		1 = { "Hilfstruppe 'Tonkin'" }
 		2 = { "%d. Einheimische Hilfstruppe" }
@@ -403,7 +175,7 @@ GEA_MIL_01 = {
 }
 
 GEA_MIL_02 = {
-	name = "Native Rifles"
+	name = GEA_MIL_02_name
 
 	for_countries = { GEA }
 
@@ -411,13 +183,9 @@ GEA_MIL_02 = {
 
 	division_types = { "infantry" }
 
-	# Number reservation system will tie to another group.
-	#link_numbering_with = { GEA_INF_01 }
 
-	fallback_name = "%d. Indochinesische Schützendivision"
+	fallback_name = "第%d印度支那步枪师"
 
-	# Names with numbers (only one number per entry).
-	# It's okay to have gaps in numbering.
 	ordered = {
 		1 = { "%d. Indochinesische Schützendivision" }
 		2 = { "%d. Indochinesische Schützendivision" }
@@ -427,7 +195,7 @@ GEA_MIL_02 = {
 }
 
 GEA_CAV_01 = {
-	name = "Mounted Naval Police"
+	name = GEA_CAV_01_name
 
 	for_countries = { GEA }
 
@@ -435,7 +203,7 @@ GEA_CAV_01 = {
 
 	division_types = { "cavalry" }
 
-	fallback_name = "%d. Marinepolizeiregiment"
+	fallback_name = "第%d海军警察团"
 
 	ordered = {
 		1 = { "Marinepolizeiregiment Ostasien" }
@@ -445,7 +213,7 @@ GEA_CAV_01 = {
 }
 
 GEA_MON_01 = {
-	name = "Colonial Alpinists"
+	name = GEA_MON_01_name
 
 	for_countries = { GEA }
 
@@ -455,7 +223,7 @@ GEA_MON_01 = {
 
 	division_types = { "mountaineers"  }
 
-	fallback_name = "%d. Bergschutztruppe"
+	fallback_name = "第%d山地卫戍部队"
 
 	ordered = {
 		20 = { "Bergschutztruppe (Annamitisch)" }
@@ -464,14 +232,14 @@ GEA_MON_01 = {
 }
 
 GEA_ARM_01 = {
-	name = "Colonial Armour"
+	name = GEA_ARM_01_name
 
 	division_types = { "light_armor" "medium_armor" "heavy_armor" "modern_armor"  }
 
 	for_countries = { GEA }
 	link_numbering_with = { GEA_INF_02 }
 
-	fallback_name = "%d. Panzerabteilung (Ostasien)"
+	fallback_name = "第%d东亚装甲营"
 
 	ordered = {
 		1 = { "Panzerabteilung 'zu Eulenburg'" }
@@ -481,7 +249,7 @@ GEA_ARM_01 = {
 }
 
 GEA_MOT_01 = {
-	name = "Motor Divisions"
+	name = GEA_MOT_01_name
 
 	for_countries = { GEA }
 	link_numbering_with = { GEA_INF_02 }
@@ -490,7 +258,7 @@ GEA_MOT_01 = {
 
 	division_types = { "motorized" }
 
-	fallback_name = "%d. Kampfgruppe Division"
+	fallback_name = "第%d战斗群师"
 
 	# Names with numbers (only one number per entry)
 	ordered = {
@@ -508,7 +276,7 @@ GEA_MOT_01 = {
 }
 
 GEA_PAR_01 = {
-	name = "Paratrooper Divisions"
+	name = GEA_PAR_01_name
 
 	for_countries = { GEA }
 
@@ -516,7 +284,7 @@ GEA_PAR_01 = {
 
 	division_types = {  "paratrooper" }
 
-	fallback_name = "%d. Fallschirmjäger Division"
+	fallback_name = "第%d伞兵师"
 
 	# Names with numbers (only one number per entry)
 	ordered = {

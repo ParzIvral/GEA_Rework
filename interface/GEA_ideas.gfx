@@ -53,6 +53,10 @@ spriteTypes = {
 		texturefile = "gfx/interface/ideas/gea/GEA_best_of_colonies.png"
 	}
 	spriteType = {
+		name = "GFX_idea_GEA_black_monday_idea"
+		texturefile = "gfx/interface/ideas/gea/GEA_black_monday_idea.png"
+	}
+	spriteType = {
 		name = "GFX_idea_GEA_gea_army"
 		texturefile = "gfx/interface/ideas/gea/GEA_gea_army.png"
 	}

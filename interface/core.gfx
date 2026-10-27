@@ -516,6 +516,12 @@ spriteTypes = {
 	}
 
 	textSpriteType = {
+		name = "GFX_button_238x38"
+		texturefile = "gfx/interface/button_238x38.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+
+	textSpriteType = {
 		name = "GFX_government_button"
 		texturefile = "gfx//interface//government_button.dds"
 		noOfFrames = 1
@@ -994,6 +1000,7 @@ bitmapfonts = {
 		path = "gfx/fonts/vic_18"
 		color = 0xff000000
 		textcolors = {
+			1 = { 128 120 211 } # KX gradient color used by localized text
 			G = { 24 112 26 }
 			R = { 124 24 24 }
 			Y = { 0 0 0 }
@@ -1007,6 +1014,7 @@ bitmapfonts = {
 		path = "gfx/fonts/vic_18"
 		color = 0xffffffff
 		textcolors = {
+			1 = { 128 120 211 } # KX gradient color used by localized text
 			G = { 44 171 50 }
 			R = { 181 61 61 }
 			Y = { 219 203 71 }
@@ -1029,6 +1037,7 @@ bitmapfonts = {
 		path = "gfx/fonts/vic_18s"
 		color = 0xffffffff
 		textcolors = {
+			1 = { 128 120 211 } # KX gradient color used by localized text
 			G = { 44 171 50 }
 			R = { 181 61 61 }
 			Y = { 219 203 71 }
@@ -1042,6 +1051,7 @@ bitmapfonts = {
 		path = "gfx/fonts/vic_18_grey"
 		color = 0xffffffff
 		textcolors = {
+			1 = { 128 120 211 } # KX gradient color used by localized text
 			G = { 44 171 50 }
 			R = { 181 61 61 }
 			Y = { 219 203 71 }
@@ -1055,6 +1065,7 @@ bitmapfonts = {
 		path = "gfx/fonts/vic_22"
 		color = 0xff000000
 		textcolors = {
+			1 = { 128 120 211 } # KX gradient color used by localized text
 			G = { 24 112 26 }
 			R = { 124 24 24 }
 			Y = { 0 0 0 }
@@ -1068,6 +1079,7 @@ bitmapfonts = {
 		path = "gfx/fonts/vic_22"
 		color = 0xffffffff
 		textcolors = {
+			1 = { 128 120 211 } # KX gradient color used by localized text
 			G = { 44 171 50 }
 			R = { 181 61 61 }
 			Y = { 219 203 71 }
@@ -1090,6 +1102,7 @@ bitmapfonts = {
 		path = "gfx/fonts/vic_22s"
 		color = 0xffffffff
 		textcolors = {
+			1 = { 128 120 211 } # KX gradient color used by localized text
 			G = { 44 171 50 }
 			R = { 181 61 61 }
 			Y = { 219 203 71 }
@@ -1103,6 +1116,7 @@ bitmapfonts = {
 		path = "gfx/fonts/vic_36"
 		color = 0xff000000
 		textcolors = {
+			1 = { 128 120 211 } # KX gradient color used by localized text
 			G = { 24 112 26 }
 			R = { 124 24 24 }
 			Y = { 0 0 0 }
@@ -1116,6 +1130,7 @@ bitmapfonts = {
 		path = "gfx/fonts/vic_36"
 		color = 0xffffffff
 		textcolors = {
+			1 = { 128 120 211 } # KX gradient color used by localized text
 			G = { 44 171 50 }
 			R = { 181 61 61 }
 			Y = { 219 203 71 }
@@ -1138,6 +1153,7 @@ bitmapfonts = {
 		path = "gfx/fonts/vic_36s"
 		color = 0xffffffff
 		textcolors = {
+			1 = { 128 120 211 } # KX gradient color used by localized text
 			G = { 44 171 50 }
 			R = { 181 61 61 }
 			Y = { 219 203 71 }
@@ -1172,6 +1188,7 @@ bitmapfonts = {
 		}
 		color = 0xffffffff
 		textcolors = {
+			1 = { 128 120 211 } # KX gradient color used by localized text
 			G = { 86 172 91 }
 			R = { 222 86 70 }
 			Y = { 238 201 35 }
@@ -1191,6 +1208,7 @@ bitmapfonts = {
 		}
 		color = 0xffffffff
 		textcolors = {
+			1 = { 128 120 211 } # KX gradient color used by localized text
 			G = { 86 172 91 }
 			R = { 222 86 70 }
 			Y = { 238 201 35 }
@@ -1208,6 +1226,7 @@ bitmapfonts = {
 		}
 		color = 0xffffffff
 		textcolors = {
+			1 = { 128 120 211 } # KX gradient color used by localized text
 			G = { 86 172 91 }
 			R = { 222 86 70 }
 			Y = { 238 201 35 }
@@ -1224,6 +1243,7 @@ bitmapfonts = {
 		}
 		color = 0xffffffff
 		textcolors = {
+			1 = { 128 120 211 } # KX gradient color used by localized text
 			G = { 86 172 91 }
 			R = { 222 86 70 }
 			Y = { 238 201 35 }
@@ -1240,6 +1260,7 @@ bitmapfonts = {
 		}
 		color = 0xffffffff
 		textcolors = {
+			1 = { 128 120 211 } # KX gradient color used by localized text
 			G = { 86 172 91 }
 			R = { 222 86 70 }
 			Y = { 238 201 35 }
@@ -1265,6 +1286,7 @@ bitmapfonts = {
 		}
 		color = 0xffffffff
 		textcolors = {
+			1 = { 128 120 211 } # KX gradient color used by localized text
 			G = { 86 172 91 }
 			R = { 222 86 70 }
 			Y = { 238 201 35 }
@@ -1290,6 +1312,7 @@ bitmapfonts = {
 		}
 		color = 0xff000000
 		textcolors = {
+			1 = { 128 120 211 } # KX gradient color used by localized text
 			G = { 86 172 91 }
 			R = { 238 0 0 }
 			Y = { 238 201 35 }
@@ -1315,6 +1338,7 @@ bitmapfonts = {
 		}
 		color = 0xffffffff
 		textcolors = {
+			1 = { 128 120 211 } # KX gradient color used by localized text
 			G = { 86 172 91 }
 			R = { 222 86 70 }
 			Y = { 238 201 35 }
@@ -1342,6 +1366,7 @@ bitmapfonts = {
 		}
 		color = 0xff000000
 		textcolors = {
+			1 = { 128 120 211 } # KX gradient color used by localized text
 			G = { 86 172 91 }
 			R = { 222 86 70 }
 			Y = { 238 201 35 }
@@ -1369,6 +1394,7 @@ bitmapfonts = {
 		}
 		color = 0xffffffff
 		textcolors = {
+			1 = { 128 120 211 } # KX gradient color used by localized text
 			G = { 86 172 91 }
 			R = { 222 86 70 }
 			Y = { 238 201 35 }
@@ -1400,6 +1426,7 @@ bitmapfonts = {
 
 
 		textcolors = {
+			1 = { 128 120 211 } # KX gradient color used by localized text
 			G = { 86 172 91 }
 			R = { 222 86 70 }
 			Y = { 238 201 35 }
@@ -1438,6 +1465,7 @@ bitmapfonts = {
 
 
 		textcolors = {
+			1 = { 128 120 211 } # KX gradient color used by localized text
 			G = { 86 172 91 }
 			R = { 222 86 70 }
 			Y = { 238 201 35 }
@@ -1474,6 +1502,7 @@ bitmapfonts = {
 		color = 0xffffffff
 
 		textcolors = {
+			1 = { 128 120 211 } # KX gradient color used by localized text
 			G = { 86 172 91 }
 			R = { 222 86 70 }
 			Y = { 238 201 35 }
@@ -1509,6 +1538,7 @@ bitmapfonts = {
 		color = 0xffffffff
 
 		textcolors = {
+			1 = { 128 120 211 } # KX gradient color used by localized text
 			G = { 86 172 91 }
 			R = { 222 86 70 }
 			Y = { 238 201 35 }
@@ -1543,6 +1573,7 @@ bitmapfonts = {
 		color = 0xffffffff
 
 		textcolors = {
+			1 = { 128 120 211 } # KX gradient color used by localized text
 			G = { 86 172 91 }
 			R = { 222 86 70 }
 			Y = { 238 201 35 }
@@ -1577,6 +1608,7 @@ bitmapfonts = {
 		color = 0x44ffffff
 
 		textcolors = {
+			1 = { 128 120 211 } # KX gradient color used by localized text
 			G = { 86 172 91 }
 			R = { 222 86 70 }
 			Y = { 238 201 35 }
@@ -1619,6 +1651,7 @@ bitmapfonts = {
 		color = 0x44ffffff
 
 		textcolors = {
+			1 = { 128 120 211 } # KX gradient color used by localized text
 			G = { 86 172 91 }
 			R = { 222 86 70 }
 			Y = { 238 201 35 }
@@ -1643,6 +1676,7 @@ bitmapfonts = {
 		color = 0x44ffffff
 
 		textcolors = {
+			1 = { 128 120 211 } # KX gradient color used by localized text
 			G = { 86 172 91 }
 			R = { 222 86 70 }
 			Y = { 238 201 35 }
@@ -1665,6 +1699,7 @@ bitmapfonts = {
 		color = 0xffffffff
 
 		textcolors = {
+			1 = { 128 120 211 } # KX gradient color used by localized text
 			G = { 86 172 91 }
 			R = { 222 86 70 }
 			Y = { 238 201 35 }
@@ -1689,6 +1724,7 @@ bitmapfonts = {
 		color = 0xffffffff
 
 		textcolors = {
+			1 = { 128 120 211 } # KX gradient color used by localized text
 			G = { 86 172 91 }
 			R = { 222 86 70 }
 			Y = { 238 201 35 }
@@ -1720,6 +1756,7 @@ bitmapfonts = {
 		color = 0xffffffff
 
 		textcolors = {
+			1 = { 128 120 211 } # KX gradient color used by localized text
 			G = { 44 171 50 }
 			R = { 181 61 61 }
 			Y = { 219 203 71 }
@@ -1741,6 +1778,7 @@ bitmapfonts = {
 		path = "gfx/fonts/Arial12"
 		color = 0xffffffff
 		textcolors = {
+			1 = { 128 120 211 } # KX gradient color used by localized text
 			G = { 44 171 50 }
 			R = { 181 61 61 }
 			Y = { 219 203 71 }
@@ -1857,5 +1895,17 @@ bitmapfonts = {
 		texturefile = "gfx//interface//equipmentdesigner//edit_notes_button.dds"
 		noOfFrames = 4
 		effectFile = "gfx/FX/buttonstate.lua"
+	}
+
+	spriteType = {
+		name = "GFX_warning_11x24"
+		texturefile = "gfx//interface//warning_11x24.dds"
+	}
+
+	spriteType = {
+		name = "GFX_generic_circle_background"
+		texturefile = "gfx/interface/generic_text_circle.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		noOfFrames = 5
 	}
 }

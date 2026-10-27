@@ -31,4 +31,44 @@ spriteTypes = {
 		name = "GFX_idea_GEA_Arthur_Nebe_sec_npo"
 		texturefile = "gfx/interface/ministers/GEA/GEA_Arthur_Nebe_sec_npo.png"
 	}
+	spriteType = {
+		name = "GFX_idea_GEA_Josef_Buhler_hog_npo"
+		texturefile = "gfx/interface/ministers/GEA/GEA_Josef_Buhler_hog_npo.png"
+	}
+	spriteType = {
+		name = "GFX_idea_GEA_Wilhelm_Faupel_for_npo"
+		texturefile = "gfx/interface/ministers/GEA/GEA_Wilhelm_Faupel_for_npo.png"
+	}
+	spriteType = {
+		name = "GFX_idea_GEA_Georg_Thomas_eco_npo"
+		texturefile = "gfx/interface/ministers/GEA/GEA_Georg_Thomas_eco_npo.png"
+	}
+	spriteType = {
+		name = "GFX_idea_GEA_Fritz_ter_Meer_hog_pau"
+		texturefile = "gfx/interface/ministers/GEA/GEA_Fritz_ter_Meer_hog_pau.png"
+	}
+	spriteType = {
+		name = "GFX_idea_GEA_Otto_von_Erdmannsdorff_for_ade"
+		texturefile = "gfx/interface/ministers/GEA/GEA_Otto_von_Erdmannsdorff_for_ade.png"
+	}
+	spriteType = {
+		name = "GFX_idea_GEA_Max_Ilgner_eco_pau"
+		texturefile = "gfx/interface/ministers/GEA/GEA_Max_Ilgner_eco_pau.png"
+	}
+	spriteType = {
+		name = "GFX_idea_GEA_August_von_Knieriem_sec_pau"
+		texturefile = "gfx/interface/ministers/GEA/GEA_August_von_Knieriem_sec_pau.png"
+	}
+	spriteType = {
+		name = "GFX_idea_GEA_Tilo_von_Wilmowsky_hog_ade"
+		texturefile = "gfx/interface/ministers/GEA/GEA_Tilo_von_Wilmowsky_hog_ade.png"
+	}
+	spriteType = {
+		name = "GFX_idea_GEA_Friedrich_Wilhelm_Janssen_eco_ade"
+		texturefile = "gfx/interface/ministers/GEA/GEA_Friedrich_Wilhelm_Janssen_eco_ade.png"
+	}
+	spriteType = {
+		name = "GFX_idea_GEA_Friedrich_von_Buelow_sec_ade"
+		texturefile = "gfx/interface/ministers/GEA/GEA_Friedrich_von_Buelow_sec_ade.png"
+	}
 }

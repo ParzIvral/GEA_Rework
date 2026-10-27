@@ -1,5 +1,28 @@
 capital = 336
 
+336 = { #开局工业扩充：新加坡
+	add_extra_state_shared_building_slots = 2
+	add_building_construction = { type = arms_factory level = 1 instant_build = yes }
+	add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+}
+
+846 = { #开局工业扩充：马来亚
+	add_extra_state_shared_building_slots = 1
+	add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+}
+
+671 = { #开局工业扩充：东京（印度支那北部）
+	add_extra_state_shared_building_slots = 2
+	add_building_construction = { type = arms_factory level = 1 instant_build = yes }
+	add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+}
+
+827 = { #开局工业扩充：安南（印度支那中部）
+	add_extra_state_shared_building_slots = 2
+	add_building_construction = { type = arms_factory level = 1 instant_build = yes }
+	add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+}
+
 oob = "GEA"
 set_naval_oob= "GEA_naval"
 
@@ -310,10 +333,12 @@ set_country_flag = {
 	flag = GEA_Indochinese_Stability
 	value = 2
 }
+set_variable = { GEA_Indochinese_Stability_display = 2 }
 set_country_flag = {
 	flag = GEA_Indochinese_Anger
 	value = 2
 }
+set_variable = { GEA_Indochinese_Anger_display = 2 }
 set_variable = { GEA_singapore_development = 0.5}
 set_variable = { GEA_malaya_development = 0.2}
 set_variable = { GEA_Borneo_development = 0.1}
@@ -383,6 +408,32 @@ recruit_character = GEA_Hellmuth_Heye
 recruit_character = GEA_Conrad_Patzig
 recruit_character = GEA_Ernst_von_Weizsacker
 GEA_start_naval_variant = yes
+
+# 开局陆军装备生产线
+add_equipment_production = {
+	equipment = { type = infantry_equipment_1 creator = GEA }
+	requested_factories = 3
+}
+add_equipment_production = {
+	equipment = { type = artillery_equipment_1 creator = GEA }
+	requested_factories = 1
+}
+add_equipment_production = {
+	equipment = { type = support_equipment_1 creator = GEA }
+	requested_factories = 1
+}
+
+# 开局五座船坞建造一艘米尔豪森级重巡洋舰，已完成 70%。
+add_equipment_production = {
+	equipment = {
+		type = ship_hull_cruiser_1
+		creator = GEA
+		version_name = "Mülhausen Class"
+	}
+	requested_factories = 5
+	progress = 0.7
+	amount = 1
+}
 
 #八省变量
 set_variable = { GEA_china_lep_attitude = 75 }

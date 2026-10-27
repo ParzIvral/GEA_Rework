@@ -1444,8 +1444,8 @@ shared_focus = {
 	relative_position_id = GEX_army_of_exile_east
 	available = {
 		OR = {
-			has_completed_focus = GEA_germantroops1
-			has_completed_focus = GEA_localtroops3
+			has_completed_focus = GEA_Ostasiatische_Heer
+			has_completed_focus = GEA_emergency_meeting
 			tag = LEP
 		}
 	}
@@ -1468,14 +1468,14 @@ shared_focus = {
 		}
 		hidden_effect = {
 			if = {
-				limit = { has_completed_focus = GEA_germantroops1 }
+				limit = { has_completed_focus = GEA_Ostasiatische_Heer }
 				swap_ideas = {
 					remove_idea = GEA_prussian_force
 					add_idea = GEA_prussian_force_exilewaffen
 				}
 			}
 			else_if = {
-				limit = { has_completed_focus = GEA_localtroops3 }
+				limit = { has_completed_focus = GEA_emergency_meeting }
 				swap_ideas = {
 					remove_idea = GEA_language
 					add_idea = GEA_language_exilewaffen
@@ -1502,8 +1502,8 @@ shared_focus = {
 	relative_position_id = GEX_army_of_exile_east
 	available = {
 		OR = {
-			has_completed_focus = GEA_germantroops1
-			has_completed_focus = GEA_localtroops3
+			has_completed_focus = GEA_Ostasiatische_Heer
+			has_completed_focus = GEA_emergency_meeting
 			tag = LEP
 		}
 	}
@@ -1532,7 +1532,7 @@ shared_focus = {
 		hidden_effect = {
 			if = {
 				limit = {
-					has_completed_focus = GEA_germantroops1
+					has_completed_focus = GEA_Ostasiatische_Heer
 				}
 				swap_ideas = {
 					remove_idea = GEA_prussian_force
@@ -1541,7 +1541,7 @@ shared_focus = {
 			}
 			else_if = {
 				limit = {
-					has_completed_focus = GEA_localtroops3
+					has_completed_focus = GEA_emergency_meeting
 				}
 				swap_ideas = {
 					remove_idea = GEA_language

@@ -17,7 +17,7 @@ characters = {
 			}
 		}
 		navy_leader = {
-			traits = {}
+			traits = { bold blockade_runner }
 			skill = 4
 			attack_skill = 3
 			defense_skill = 3
@@ -90,7 +90,7 @@ characters = {
 		}
 		corps_commander = {
 			desc = POLITICS_SCHORNER_DESC
-			traits = { harsh_leader }
+			traits = { harsh_leader commando infantry_leader }
 			skill = 3
 			attack_skill = 2
 			defense_skill = 2
@@ -157,7 +157,7 @@ characters = {
 		}
 		country_leader = {
 			desc = POLITICS_FRITZ_TER_MEER_DESC
-			ideology = colonial_govt_subtype
+			ideology = autocratic_colonial_govt_subtype
 			traits = {
 				industrialist
 			}

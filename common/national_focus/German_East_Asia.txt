@@ -32,7 +32,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Step_into_the_peaceful_sea"
-			add_political_power = 20
+			add_stability = 0.08
 			navy_experience = 10
 			hidden_effect = {
 				country_event = {
@@ -64,6 +64,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Expand_the_share_of_exports"
+			add_political_power = 40
 			hidden_effect = {
 				country_event = {
 					id = GEA.3
@@ -94,6 +95,8 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Continue_to_arm"
+			army_experience = 30
+			add_manpower = 2000
 			hidden_effect = {
 				country_event = {
 					id = GEA.4
@@ -107,13 +110,16 @@ focus_tree = {
 	focus = {
 		id = GEA_Budget_draft_1936 #1936预算草案
 		icon = GFX_GEA_Budget_draft_1936
-		cost = 1	
+		cost = 6	
 		x = 1
 		y = 1
 		available = {
 			NOT = {
 				has_country_flag = GEA_Black_Monday_Here
 			}			
+		}
+		bypass = {
+			has_country_flag = GEA_Black_Monday_Here
 		}
         prerequisite = {
 			focus = GEA_Continue_to_arm
@@ -127,6 +133,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Budget_draft_1936"
+			custom_effect_tooltip = GEA_Budget_draft_1936_tt
 		}
 		search_filters = { FOCUS_FILTER_STABILITY }
 	}
@@ -134,20 +141,25 @@ focus_tree = {
 	focus = {
 		id = GEA_Our_position #我们的地位
 		icon = GFX_GEA_Our_position
-		cost = 1	
+		cost = 5	
 		x = 0
 		y = 1
 		available = {		
+			always = no
 		}
         prerequisite = {
 			focus = GEA_Budget_draft_1936
 		}
 		relative_position_id = GEA_Budget_draft_1936
+		bypass = {
+			has_country_flag = GEA_has_promote_new_governer
+		}
 		ai_will_do = {
 			factor = 1000
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Our_position"
+			custom_effect_tooltip = unlock_focuses
 		}
 		search_filters = { FOCUS_FILTER_STABILITY }
 	}
@@ -256,6 +268,7 @@ focus_tree = {
 				flag = GEA_Indochinese_Stability
 				value = 1
 			}
+			add_to_variable = { GEA_Indochinese_Stability_display = 1 }
 			custom_effect_tooltip = GEA_Indochina_Stability_Up
 			add_ideas = GEA_Support_from_the_Vietnamese_partners_9
 		}
@@ -407,11 +420,13 @@ focus_tree = {
 				flag = GEA_Indochinese_Anger
 				value = -1
 			}
+			add_to_variable = { GEA_Indochinese_Anger_display = -1 }
 			custom_effect_tooltip = GEA_Indochina_Anger_Down
 			modify_country_flag = {
 				flag = GEA_Indochinese_Stability
 				value = 1
 			}
+			add_to_variable = { GEA_Indochinese_Stability_display = 1 }
 			custom_effect_tooltip = GEA_Indochina_Stability_Up
 			add_ideas = GEA_Luluai_Principle
 		}
@@ -458,11 +473,13 @@ focus_tree = {
 					flag = GEA_Indochinese_Anger
 					value = -1
 				}
+				add_to_variable = { GEA_Indochinese_Anger_display = -1 }
 				custom_effect_tooltip = GEA_Indochina_Anger_Down
 				modify_country_flag = {
 					flag = GEA_Indochinese_Stability
 					value = 1
 				}
+				add_to_variable = { GEA_Indochinese_Stability_display = 1 }
 				custom_effect_tooltip = GEA_Indochina_Stability_Up
 				swap_ideas = {
 					remove_idea = GEA_Bureau_Of_Native_Affairs
@@ -483,6 +500,7 @@ focus_tree = {
 					flag = GEA_Indochinese_Stability
 					value = 1
 				}
+				add_to_variable = { GEA_Indochinese_Stability_display = 1 }
 				custom_effect_tooltip = GEA_Indochina_Stability_Up
 				swap_ideas = {
 					remove_idea = GEA_Bureau_Of_Native_Affairs
@@ -712,6 +730,7 @@ focus_tree = {
 				flag = GEA_Indochinese_Stability
 				value = 1
 			}
+			add_to_variable = { GEA_Indochinese_Stability_display = 1 }
 			custom_effect_tooltip = GEA_Indochina_Stability_Up
 			856 = { 
 				add_extra_state_shared_building_slots = 1
@@ -758,11 +777,13 @@ focus_tree = {
 				flag = GEA_Indochinese_Anger
 				value = -1
 			}
+			add_to_variable = { GEA_Indochinese_Anger_display = -1 }
 			custom_effect_tooltip = GEA_Indochina_Anger_Down
 			modify_country_flag = {
 				flag = GEA_Indochinese_Stability
 				value = 1
 			}
+			add_to_variable = { GEA_Indochinese_Stability_display = 1 }
 			custom_effect_tooltip = GEA_Indochina_Stability_Up
 		}
 	}
@@ -1087,7 +1108,7 @@ focus_tree = {
 			hidden_effect = {
 				division_template = {
 					name = "Loyalist Infantry Division"
-					division_names_group = GEA_LOYAL_INF_01
+					division_names_group = GEA_GENERIC_INF_01
 					regiments = {
 						infantry = { x = 0 y = 0 }
 						infantry = { x = 0 y = 1 }
@@ -1340,11 +1361,13 @@ focus_tree = {
 					flag = GEA_Indochinese_Anger
 					value = -1
 				}
+				add_to_variable = { GEA_Indochinese_Anger_display = -1 }
 				custom_effect_tooltip = GEA_Indochina_Anger_Down
 				modify_country_flag = {
 					flag = GEA_Indochinese_Stability
 					value = 1
 				}
+				add_to_variable = { GEA_Indochinese_Stability_display = 1 }
 				custom_effect_tooltip = GEA_Indochina_Stability_Up
 			}
 		}
@@ -1848,6 +1871,7 @@ focus_tree = {
 				flag = GEA_Indochinese_Stability
 				value = 2
 			}
+			add_to_variable = { GEA_Indochinese_Stability_display = 2 }
 			custom_effect_tooltip = GEA_Indochina_Stability_Up_More
 			swap_ideas = {
 				remove_idea = GEA_colonial_question
@@ -1878,6 +1902,7 @@ focus_tree = {
 				flag = GEA_Indochinese_Stability
 				value = 1
 			}
+			add_to_variable = { GEA_Indochinese_Stability_display = 1 }
 			custom_effect_tooltip = GEA_Indochina_Stability_Up
 			swap_ideas = {
 				remove_idea = GEA_colonial_question_josias_1
@@ -1908,6 +1933,7 @@ focus_tree = {
 				flag = GEA_Indochinese_Stability
 				value = 1
 			}
+			add_to_variable = { GEA_Indochinese_Stability_display = 1 }
 			custom_effect_tooltip = GEA_Indochina_Stability_Up
 			swap_ideas = {
 				remove_idea = GEA_colonial_question_josias_2
@@ -2050,6 +2076,7 @@ focus_tree = {
 				flag = GEA_Indochinese_Stability
 				value = 2
 			}
+			add_to_variable = { GEA_Indochinese_Stability_display = 2 }
 			custom_effect_tooltip = GEA_Indochina_Stability_Up_More
 			swap_ideas = {
 				remove_idea = GEA_colonial_question_josias_3
@@ -2593,6 +2620,7 @@ focus_tree = {
 				flag = GEA_Indochinese_Anger
 				value = 1
 			}
+			add_to_variable = { GEA_Indochinese_Anger_display = 1 }
 			custom_effect_tooltip = GEA_Indochina_Anger_Up
 			add_war_support = 0.05
 			add_popularity = {
@@ -2626,6 +2654,7 @@ focus_tree = {
 				flag = GEA_Indochinese_Anger
 				value = 1
 			}
+			add_to_variable = { GEA_Indochinese_Anger_display = 1 }
 			custom_effect_tooltip = GEA_Indochina_Anger_Up
 			set_variable = { GEA_anti_nationalist_operations = 0 }
 			add_command_power = 50
@@ -2657,6 +2686,7 @@ focus_tree = {
 				flag = GEA_Indochinese_Anger
 				value = 1
 			}
+			add_to_variable = { GEA_Indochinese_Anger_display = 1 }
 			custom_effect_tooltip = GEA_Indochina_Anger_Up
 			add_political_power = 75
 			set_variable = { GEA_anti_viet_cong_operations = 0 }
@@ -2688,6 +2718,7 @@ focus_tree = {
 				flag = GEA_Indochinese_Anger
 				value = 1
 			}
+			add_to_variable = { GEA_Indochinese_Anger_display = 1 }
 			custom_effect_tooltip = GEA_Indochina_Anger_Up
 			add_manpower = 2000
 			set_variable = { GEA_loyal_citizens_preparations = 0 }
@@ -3195,6 +3226,7 @@ focus_tree = {
 				flag = GEA_Indochinese_Anger
 				value = 1
 			}
+			add_to_variable = { GEA_Indochinese_Anger_display = 1 }
 			custom_effect_tooltip = GEA_Indochina_Anger_Up
 			custom_effect_tooltip = GEA_Amend_the_labor_regulations_tt
 			if = {
@@ -3433,6 +3465,7 @@ focus_tree = {
 				flag = GEA_Indochinese_Anger
 				value = 1
 			}
+			add_to_variable = { GEA_Indochinese_Anger_display = 1 }
 			custom_effect_tooltip = GEA_Indochina_Anger_Up
 			add_stability = -0.05
 			swap_ideas = {
@@ -5836,6 +5869,15 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Schorner_Law"
+			add_stability = 0.05
+			add_popularity = {
+				ideology = national_populist
+				popularity = 0.05
+			}
+			swap_ideas = {
+				remove_idea = GEA_schorner_bloody_reign_3
+				add_idea = GEA_schorner_bloody_reign_4
+			}
 			every_owned_state = {
 				limit = { NOT = { is_core_of = ROOT } }
 				add_manpower = -2000
@@ -5849,15 +5891,7 @@ focus_tree = {
 					}
 				}
 			}
-			add_stability = 0.05
-			add_popularity = {
-				ideology = national_populist
-				popularity = 0.05
-			}
-			swap_ideas = {
-				remove_idea = GEA_schorner_bloody_reign_3
-				add_idea = GEA_schorner_bloody_reign_4
-			}
+
 			hidden_effect = {
 				country_event = {
 					id = GEA.547
@@ -7110,6 +7144,9 @@ focus_tree = {
 			hidden_effect = { force_update_dynamic_modifier = yes }
 			GEA_Economic_Recovery = yes
 			remove_ideas = GEA_black_monday_idea_3
+			add_to_variable = {
+				GEA_support_capcity = 1
+			}
 		}
 	}
 	focus = { #点亮城市街头
@@ -15196,6 +15233,9 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_second_expedition_to_China"
 			add_war_support = 0.05
+			country_event = {
+				id = GEA.821
+			}
 		}	
 	}
 
@@ -15614,7 +15654,7 @@ focus_tree = {
 			factor = 100
 		}
 		available = {
-
+			always = no
 		}			
 		prerequisite = {
 			focus = GEA_The_second_expedition_to_China
@@ -15635,7 +15675,7 @@ focus_tree = {
 			factor = 100
 		}
 		available = {
-
+			always = no
 		}			
 		prerequisite = {
 			focus = GEA_The_second_expedition_to_China
@@ -15812,7 +15852,7 @@ focus_tree = {
 			factor = 100
 		}
 		available = {
-
+			always = no
 		}			
 		prerequisite = {
 			focus = GEA_The_second_expedition_to_China
@@ -16041,7 +16081,7 @@ focus_tree = {
 			factor = 100
 		}
 		available = {
-
+			always = no
 		}			
 		prerequisite = {
 			focus = GEA_The_second_expedition_to_China
@@ -16124,7 +16164,7 @@ focus_tree = {
 			factor = 100
 		}
 		available = {
-
+			always = no
 		}			
 		prerequisite = {
 			focus = GEA_The_second_expedition_to_China
@@ -16229,7 +16269,7 @@ focus_tree = {
 			factor = 100
 		}
 		available = {
-
+			always = no
 		}			
 		prerequisite = {
 			focus = GEA_The_second_expedition_to_China

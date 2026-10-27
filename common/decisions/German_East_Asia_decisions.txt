@@ -1519,6 +1519,7 @@ GEA_decisions = {#德属东亚殖民地决议
 				flag = GEA_Indochinese_Anger
 				value = -1
 			}
+			add_to_variable = { GEA_Indochinese_Anger_display = -1 }
 			custom_effect_tooltip = GEA_Indochina_Anger_Down	
 		}
 	}
@@ -1572,6 +1573,7 @@ GEA_decisions = {#德属东亚殖民地决议
 				flag = GEA_Indochinese_Stability
 				value = 1
 			}
+			add_to_variable = { GEA_Indochinese_Stability_display = 1 }
 			custom_effect_tooltip = GEA_Indochina_Stability_Up
 		}
 	}
@@ -1636,6 +1638,7 @@ GEA_decisions = {#德属东亚殖民地决议
 				flag = GEA_Indochinese_Stability
 				value = 1
 			}
+			add_to_variable = { GEA_Indochinese_Stability_display = 1 }
 			custom_effect_tooltip = GEA_Indochina_Stability_Up
 		}
 	}
@@ -1690,11 +1693,13 @@ GEA_decisions = {#德属东亚殖民地决议
 				flag = GEA_Indochinese_Anger
 				value = 1
 			}
+			add_to_variable = { GEA_Indochinese_Anger_display = 1 }
 			custom_effect_tooltip = GEA_Indochina_Anger_Up
 			modify_country_flag = {
 				flag = GEA_Indochinese_Stability
 				value = 1
 			}
+			add_to_variable = { GEA_Indochinese_Stability_display = 1 }
 			custom_effect_tooltip = GEA_Indochina_Stability_Up
 		}
 	}
@@ -1747,6 +1752,7 @@ GEA_decisions = {#德属东亚殖民地决议
 				flag = GEA_Indochinese_Stability
 				value = 1
 			}
+			add_to_variable = { GEA_Indochinese_Stability_display = 1 }
 			custom_effect_tooltip = GEA_Indochina_Stability_Up
 			every_owned_state = {
 				limit = {
@@ -1853,6 +1859,7 @@ GEA_decisions = {#德属东亚殖民地决议
 				flag = GEA_Indochinese_Anger
 				value = -1
 			}
+			add_to_variable = { GEA_Indochinese_Anger_display = -1 }
 			custom_effect_tooltip = GEA_Indochina_Anger_Down
 			add_stability = 0.03
 			add_political_power = 35
@@ -1898,6 +1905,7 @@ GEA_decisions = {#德属东亚殖民地决议
 				flag = GEA_Indochinese_Stability
 				value = 1
 			}
+			add_to_variable = { GEA_Indochinese_Stability_display = 1 }
 			custom_effect_tooltip = GEA_Indochina_Stability_Up
 			add_stability = 0.03
 			add_popularity = { ideology = social_conservative popularity = 0.02 }
@@ -1995,6 +2003,7 @@ GEA_decisions = {#德属东亚殖民地决议
 				flag = GEA_Indochinese_Anger
 				value = -1
 			}
+			add_to_variable = { GEA_Indochinese_Anger_display = -1 }
 			custom_effect_tooltip = GEA_Indochina_Anger_Down
 			add_political_power = 10
 			856 = {
@@ -2129,6 +2138,7 @@ GEA_decisions = {#德属东亚殖民地决议
 				flag = GEA_Indochinese_Anger
 				value = -1
 			}
+			add_to_variable = { GEA_Indochinese_Anger_display = -1 }
 			custom_effect_tooltip = GEA_Indochina_Anger_Down
 		}
 	}
@@ -2210,6 +2220,7 @@ GEA_decisions = {#德属东亚殖民地决议
 				flag = GEA_Indochinese_Anger
 				value = -1
 			}
+			add_to_variable = { GEA_Indochinese_Anger_display = -1 }
 			custom_effect_tooltip = GEA_Indochina_Anger_Down 
 			add_stability = 0.1	
 		}
@@ -2279,6 +2290,7 @@ GEA_decisions = {#德属东亚殖民地决议
 				flag = GEA_Indochinese_Anger
 				value = -1
 			}
+			add_to_variable = { GEA_Indochinese_Anger_display = -1 }
 			custom_effect_tooltip = GEA_Indochina_Anger_Down 
 			add_stability = 0.05	
 		}
@@ -2337,6 +2349,7 @@ GEA_decisions = {#德属东亚殖民地决议
 				flag = GEA_Indochinese_Stability
 				value = 1
 			}
+			add_to_variable = { GEA_Indochinese_Stability_display = 1 }
 			custom_effect_tooltip = GEA_Indochina_Stability_Up
 			add_stability = 0.04
 			random_owned_state = {
@@ -2517,6 +2530,7 @@ GEA_decisions = {#德属东亚殖民地决议
 				flag = GEA_Indochinese_Anger
 				value = -2
 			}
+			add_to_variable = { GEA_Indochinese_Anger_display = -2 }
 			custom_effect_tooltip = GEA_Indochina_Anger_Down_More
 		}
 		remove_effect = {
@@ -2525,6 +2539,7 @@ GEA_decisions = {#德属东亚殖民地决议
 				flag = GEA_Indochinese_Stability
 				value = 1
 			}
+			add_to_variable = { GEA_Indochinese_Stability_display = 1 }
 			custom_effect_tooltip = GEA_Indochina_Stability_Up
 		}
 	}
@@ -2574,6 +2589,7 @@ GEA_decisions = {#德属东亚殖民地决议
 				flag = GEA_Indochinese_Stability
 				value = 1
 			}
+			add_to_variable = { GEA_Indochinese_Stability_display = 1 }
 			custom_effect_tooltip = GEA_Indochina_Stability_Up
 			add_popularity = { ideology = syndicalist popularity = 0.02 }
 			add_popularity = { ideology = radical_socialist popularity = 0.03 }
@@ -2585,6 +2601,7 @@ GEA_decisions = {#德属东亚殖民地决议
 				flag = GEA_Indochinese_Anger
 				value = -1
 			}
+			add_to_variable = { GEA_Indochinese_Anger_display = -1 }
 			custom_effect_tooltip = GEA_Indochina_Anger_Down  
 			add_stability = 0.02
 			add_war_support = -0.05
@@ -2655,6 +2672,7 @@ GEA_decisions = {#德属东亚殖民地决议
 				flag = GEA_Indochinese_Anger
 				value = 1
 			}
+			add_to_variable = { GEA_Indochinese_Anger_display = 1 }
 			custom_effect_tooltip = GEA_Indochina_Anger_Up
 			add_manpower = 20000
 		}
@@ -2719,6 +2737,7 @@ GEA_decisions = {#德属东亚殖民地决议
 				flag = GEA_Indochinese_Stability
 				value = 1
 			}
+			add_to_variable = { GEA_Indochinese_Stability_display = 1 }
 			custom_effect_tooltip = GEA_Indochina_Stability_Up
 		}
 	}
@@ -2785,6 +2804,7 @@ GEA_decisions = {#德属东亚殖民地决议
 				flag = GEA_Indochinese_Anger
 				value = 1
 			}
+			add_to_variable = { GEA_Indochinese_Anger_display = 1 }
 			custom_effect_tooltip = GEA_Indochina_Anger_Up
 			670 = {
 				add_building_construction = {
@@ -2889,6 +2909,7 @@ GEA_decisions = {#德属东亚殖民地决议
 					flag = GEA_Indochinese_Stability
 					value = 1
 				}
+				add_to_variable = { GEA_Indochinese_Stability_display = 1 }
 				custom_effect_tooltip = GEA_Indochina_Stability_Up
 			}
 			else_if = {
@@ -2901,6 +2922,7 @@ GEA_decisions = {#德属东亚殖民地决议
 					flag = GEA_Indochinese_Stability
 					value = 1
 				}
+				add_to_variable = { GEA_Indochinese_Stability_display = 1 }
 				custom_effect_tooltip = GEA_Indochina_Stability_Up
 			}
 			else_if = {
@@ -2913,6 +2935,7 @@ GEA_decisions = {#德属东亚殖民地决议
 					flag = GEA_Indochinese_Stability
 					value = 1
 				}
+				add_to_variable = { GEA_Indochinese_Stability_display = 1 }
 				custom_effect_tooltip = GEA_Indochina_Stability_Up
 			}
 		}
@@ -2971,11 +2994,13 @@ GEA_decisions = {#德属东亚殖民地决议
 				flag = GEA_Indochinese_Anger
 				value = 1
 			}
+			add_to_variable = { GEA_Indochinese_Anger_display = 1 }
 			custom_effect_tooltip = GEA_Indochina_Anger_Up
 			modify_country_flag = {
 				flag = GEA_Indochinese_Stability
 				value = 1
 			}
+			add_to_variable = { GEA_Indochinese_Stability_display = 1 }
 			custom_effect_tooltip = GEA_Indochina_Stability_Up
 			add_stability = 0.02
 			clr_country_flag = GEA_Rangers_have_been_put_to_the_task
@@ -3040,11 +3065,13 @@ GEA_decisions = {#德属东亚殖民地决议
 				flag = GEA_Indochinese_Anger
 				value = 2
 			}
+			add_to_variable = { GEA_Indochinese_Anger_display = 2 }
 			custom_effect_tooltip = GEA_Indochina_Anger_Up_More
 			modify_country_flag = {
 				flag = GEA_Indochinese_Stability
 				value = 2
 			}
+			add_to_variable = { GEA_Indochinese_Stability_display = 2 }
 			custom_effect_tooltip = GEA_Indochina_Stability_Up_More
 			add_political_power = 40
 			clr_country_flag = GEA_Rangers_have_been_put_to_the_task
@@ -3110,6 +3137,7 @@ GEA_decisions = {#德属东亚殖民地决议
 				flag = GEA_Indochinese_Anger
 				value = 1
 			}
+			add_to_variable = { GEA_Indochinese_Anger_display = 1 }
 			custom_effect_tooltip = GEA_Indochina_Anger_Up
 			random_owned_state = {
 				limit = {
@@ -11926,6 +11954,7 @@ GEA_josias_decisions = {#约西亚斯乞讨决议
 				flag = GEA_Indochinese_Anger
 				value = -1
 			}
+			add_to_variable = { GEA_Indochinese_Anger_display = -1 }
 			custom_effect_tooltip = GEA_Indochina_Anger_Down
 			286 = {
 				add_extra_state_shared_building_slots = 1
@@ -12003,6 +12032,7 @@ GEA_josias_decisions = {#约西亚斯乞讨决议
 				flag = GEA_Indochinese_Stability
 				value = 1
 			}
+			add_to_variable = { GEA_Indochinese_Stability_display = 1 }
 			custom_effect_tooltip = GEA_Indochina_Stability_Up
 			286 = {
 				add_extra_state_shared_building_slots = 1
@@ -12186,6 +12216,7 @@ GEA_josias_decisions = {#约西亚斯乞讨决议
 				flag = GEA_Indochinese_Stability
 				value = 1
 			}
+			add_to_variable = { GEA_Indochinese_Stability_display = 1 }
 			custom_effect_tooltip = GEA_Indochina_Stability_Up
 			671 = {
 				add_extra_state_shared_building_slots = 3
@@ -12350,6 +12381,7 @@ GEA_josias_decisions = {#约西亚斯乞讨决议
 				flag = GEA_Indochinese_Anger
 				value = -1
 			}
+			add_to_variable = { GEA_Indochinese_Anger_display = -1 }
 			custom_effect_tooltip = GEA_Indochina_Anger_Down
 			build_railway = {
 				level = 2
@@ -14412,12 +14444,20 @@ GEA_luckner_decisions = {
 		visible = {
 			has_completed_focus = GEA_The_imperial_pirates_roaming_the_vast_ocean
 			#has_country_flag = GEA_pirate_war_target_selected
-			event_target:GEA_pirate_war_target = { exists = yes }
+			has_event_target = GEA_pirate_war_target
+			if = {
+				limit = { has_event_target = GEA_pirate_war_target }
+				event_target:GEA_pirate_war_target = { exists = yes }
+			}
 		}
 		available = {
 			has_manpower > 200
 			has_navy_size = { size > 50 }
-			event_target:GEA_pirate_war_target = { has_war_with = ROOT }
+			has_event_target = GEA_pirate_war_target
+			if = {
+				limit = { has_event_target = GEA_pirate_war_target }
+				event_target:GEA_pirate_war_target = { has_war_with = ROOT }
+			}
 			has_country_flag = GEA_pirate_war_target_selected
 			custom_trigger_tooltip = {
 				tooltip = GEA_pirate_raid_capacity_available_tt
@@ -14434,7 +14474,11 @@ GEA_luckner_decisions = {
 			}
 		}
 		cancel_trigger = {
-			NOT = { event_target:GEA_naval_port_raid_target = { exists = yes has_war_with = ROOT } }
+			if = {
+				limit = { has_event_target = GEA_naval_port_raid_target }
+				NOT = { event_target:GEA_naval_port_raid_target = { exists = yes has_war_with = ROOT } }
+			}
+			else = { always = yes }
 		}
 		cancel_effect = {
 			hidden_effect = {
@@ -14445,8 +14489,11 @@ GEA_luckner_decisions = {
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Sabotage_enemy_naval_ports"
-			event_target:GEA_naval_port_raid_target = {
-				add_timed_idea = { idea = GEA_naval_ports_attacked days = 100 }
+			if = {
+				limit = { has_event_target = GEA_naval_port_raid_target }
+				event_target:GEA_naval_port_raid_target = {
+					add_timed_idea = { idea = GEA_naval_ports_attacked days = 100 }
+				}
 			}
 			hidden_effect = {
 				add_to_variable = { GEA_active_raids = -1 }
@@ -14466,12 +14513,20 @@ GEA_luckner_decisions = {
 		visible = {
 			has_completed_focus = GEA_The_imperial_pirates_roaming_the_vast_ocean
 			#has_country_flag = GEA_pirate_war_target_selected
-			event_target:GEA_pirate_war_target = { exists = yes }
+			has_event_target = GEA_pirate_war_target
+			if = {
+				limit = { has_event_target = GEA_pirate_war_target }
+				event_target:GEA_pirate_war_target = { exists = yes }
+			}
 		}
 		available = {
 			has_manpower > 200
 			has_navy_size = { size > 50 }
-			event_target:GEA_pirate_war_target = { has_war_with = ROOT }
+			has_event_target = GEA_pirate_war_target
+			if = {
+				limit = { has_event_target = GEA_pirate_war_target }
+				event_target:GEA_pirate_war_target = { has_war_with = ROOT }
+			}
 			has_country_flag = GEA_pirate_war_target_selected
 			custom_trigger_tooltip = {
 				tooltip = GEA_pirate_raid_capacity_available_tt
@@ -14488,7 +14543,11 @@ GEA_luckner_decisions = {
 			}
 		}
 		cancel_trigger = {
-			NOT = { event_target:GEA_civilian_shipping_raid_target = { exists = yes has_war_with = ROOT } }
+			if = {
+				limit = { has_event_target = GEA_civilian_shipping_raid_target }
+				NOT = { event_target:GEA_civilian_shipping_raid_target = { exists = yes has_war_with = ROOT } }
+			}
+			else = { always = yes }
 		}
 		cancel_effect = {
 			hidden_effect = {
@@ -14499,8 +14558,11 @@ GEA_luckner_decisions = {
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Attack_enemy_civilian_shipping"
-			event_target:GEA_civilian_shipping_raid_target = {
-				add_timed_idea = { idea = GEA_rampant_pirate_activity days = 90 }
+			if = {
+				limit = { has_event_target = GEA_civilian_shipping_raid_target }
+				event_target:GEA_civilian_shipping_raid_target = {
+					add_timed_idea = { idea = GEA_rampant_pirate_activity days = 90 }
+				}
 			}
 			hidden_effect = {
 				add_to_variable = { GEA_active_raids = -1 }
@@ -14520,12 +14582,20 @@ GEA_luckner_decisions = {
 		visible = {
 			has_completed_focus = GEA_The_imperial_pirates_roaming_the_vast_ocean
 			#has_country_flag = GEA_pirate_war_target_selected
-			event_target:GEA_pirate_war_target = { exists = yes }
+			has_event_target = GEA_pirate_war_target
+			if = {
+				limit = { has_event_target = GEA_pirate_war_target }
+				event_target:GEA_pirate_war_target = { exists = yes }
+			}
 		}
 		available = {
 			has_manpower > 200
 			has_navy_size = { size > 40 unit = submarine }
-			event_target:GEA_pirate_war_target = { has_war_with = ROOT }
+			has_event_target = GEA_pirate_war_target
+			if = {
+				limit = { has_event_target = GEA_pirate_war_target }
+				event_target:GEA_pirate_war_target = { has_war_with = ROOT }
+			}
 			has_country_flag = GEA_pirate_war_target_selected
 			custom_trigger_tooltip = {
 				tooltip = GEA_pirate_raid_capacity_available_tt
@@ -14542,7 +14612,11 @@ GEA_luckner_decisions = {
 			}
 		}
 		cancel_trigger = {
-			NOT = { event_target:GEA_submarine_raid_target = { exists = yes has_war_with = ROOT } }
+			if = {
+				limit = { has_event_target = GEA_submarine_raid_target }
+				NOT = { event_target:GEA_submarine_raid_target = { exists = yes has_war_with = ROOT } }
+			}
+			else = { always = yes }
 		}
 		cancel_effect = {
 			hidden_effect = {
@@ -14553,8 +14627,11 @@ GEA_luckner_decisions = {
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Harass_enemy_fleet"
-			event_target:GEA_submarine_raid_target = {
-				add_timed_idea = { idea = GEA_unrestricted_submarine_warfare days = 90 }
+			if = {
+				limit = { has_event_target = GEA_submarine_raid_target }
+				event_target:GEA_submarine_raid_target = {
+					add_timed_idea = { idea = GEA_unrestricted_submarine_warfare days = 90 }
+				}
 			}
 			hidden_effect = {
 				add_to_variable = { GEA_active_raids = -1 }

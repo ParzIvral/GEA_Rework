@@ -37,6 +37,8 @@ GEA_heye_decisions = {
 GEA_focus_china_decisions = {
 	allowed = {
 		original_tag = GEA
+	}
+	visible = {
 		has_country_flag = GEA_nanjing_crisis
 	}
 	priority = 1300
