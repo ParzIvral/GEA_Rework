@@ -16063,6 +16063,10 @@ focus_tree = {
 		relative_position_id = GEA_The_embers_of_the_declining_empire
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Tighten_the_reins"
+			unlock_decision_tooltip = GEA_qie_send_north_china_advisers
+			unlock_decision_tooltip = GEA_qie_force_land_purchases
+			unlock_decision_tooltip = GEA_qie_seize_bankrupt_enterprises
+			unlock_decision_tooltip = GEA_qie_enforce_mark_settlement
 		}	
 	}
 

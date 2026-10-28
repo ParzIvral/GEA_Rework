@@ -2449,6 +2449,15 @@ ideas = {
 		}
 #air
 #外交
+		GEA_mark_trade_settlement = { #马克贸易结算：由QIE向GEA提供民用工业
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_mark_trade_settlement" }
+			picture = GER_Bank_Controls
+			allowed = { always = no }
+			targeted_modifier = {
+				tag = GEA
+				cic_to_target_factor = 0.15
+			}
+		}
 		GEA_German_Military_Advisory_Group = { #德国军事援助
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_German_Military_Advisory_Group" }
 			picture = GER_Scion_Germania_Pearl_East
