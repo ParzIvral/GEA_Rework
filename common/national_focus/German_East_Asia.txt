@@ -16090,6 +16090,28 @@ focus_tree = {
 		relative_position_id = GEA_The_embers_of_the_declining_empire
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Loyalty_has_its_rewards"
+			QIE = {
+				add_political_power = 100
+				add_popularity = { ideology = market_liberal popularity = 0.1 }
+				add_offsite_building = { type = industrial_complex level = 3 }
+				add_offsite_building = { type = arms_factory level = 1 }
+			}
+			custom_effect_tooltip = GEA_china_zhili_name_tt
+			add_to_variable = {
+				GEA_china_zhili_capital_influence = 15
+				tooltip = GEA_china_capital_influence_change_tt
+			}
+			add_to_variable = {
+				GEA_china_zhili_military_projection = 10
+				tooltip = GEA_china_military_projection_change_tt
+			}
+			hidden_effect = {
+				clamp_variable = { var = GEA_china_zhili_capital_influence min = 0 max = 100 }
+				clamp_variable = { var = GEA_china_zhili_military_projection min = 0 max = 100 }
+			}
+			unlock_decision_tooltip = GEA_qie_provide_low_interest_loans
+			unlock_decision_tooltip = GEA_qie_expand_arms_aid
+			unlock_decision_tooltip = GEA_qie_dispatch_beijing_attaches
 		}	
 	}
 	focus = { #划定发展特区
@@ -16117,16 +16139,19 @@ focus_tree = {
 		relative_position_id = GEA_Pressure_the_Jade_Marshal
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Establish_a_development_special_zone"
+			unlock_decision_tooltip = GEA_qie_develop_tangshan
+			unlock_decision_tooltip = GEA_qie_develop_kaifeng
+			unlock_decision_tooltip = GEA_qie_develop_wuhan
 		}	
 	}
 	focus = { #保卫我们的产权
 		id = GEA_Protect_our_property_rights
 		icon = GFX_goal_AOG_Vanquishing_Warrior
-		cost = 8
+		cost = 1
 		x = 3
 		y = 2
 		ai_will_do = {
-			factor = 100
+			factor = 0
 		}
 		available = {
 
