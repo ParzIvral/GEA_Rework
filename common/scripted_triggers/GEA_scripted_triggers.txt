@@ -38,6 +38,7 @@ GEA_china_warlord_eligible_trigger = { #能互动的军阀
 
 GEA_china_warlord_cannot_interact_trigger = { #能互动的
 	OR = {
+		original_tag = ANQ #新皖系军阀
 		has_country_flag = GEA_china_warlord_interaction_blocked #没法互动标记
 		has_country_flag = GEA_german_coup_defeated # 政变失败禁用的
 		has_socialist_government = yes #国左的傻逼

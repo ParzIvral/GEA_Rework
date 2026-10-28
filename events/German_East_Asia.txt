@@ -534,29 +534,31 @@ add_namespace = GEA_news
 					}
 				}
 			}
-			promote_character = {
-				character = GEA_Tilo_Freiherr_von_Wilmowsky
-				ideology = colonial_govt_subtype
+			hidden_effect = {
+				promote_character = {
+					character = GEA_Tilo_Freiherr_von_Wilmowsky
+					ideology = colonial_govt_subtype
+				}
+				set_country_flag = GEA_Governor_Tilo_flag
+				set_party_name = {
+					ideology = authoritarian_democrat
+					name = GEA_authoritarian_democrat_party_Krupp
+					long_name = GEA_authoritarian_democrat_party_Krupp_long
+				}
+				set_party_name = {
+					ideology = paternal_autocrat
+					name = GEA_paternal_autocrat_party_IG
+					long_name = GEA_paternal_autocrat_party_IG_long
+				}
+				remove_all_ministers = yes
+				add_ideas = {
+					GEA_Tilo_von_Wilmowsky_hog_ade
+					GEA_Otto_von_Erdmannsdorff_for_ade
+					GEA_Friedrich_Wilhelm_Janssen_eco_ade
+					GEA_Friedrich_von_Buelow_sec_ade
+				}
+				set_country_flag = GEA_has_promote_new_governer
 			}
-			set_country_flag = GEA_Governor_Tilo_flag
-			set_party_name = {
-				ideology = authoritarian_democrat
-				name = GEA_authoritarian_democrat_party_Krupp
-				long_name = GEA_authoritarian_democrat_party_Krupp_long
-			}
-			set_party_name = {
-				ideology = paternal_autocrat
-				name = GEA_paternal_autocrat_party_IG
-				long_name = GEA_paternal_autocrat_party_IG_long
-			}
-			remove_all_ministers = yes
-			add_ideas = {
-				GEA_Tilo_von_Wilmowsky_hog_ade
-				GEA_Otto_von_Erdmannsdorff_for_ade
-				GEA_Friedrich_Wilhelm_Janssen_eco_ade
-				GEA_Friedrich_von_Buelow_sec_ade
-			}
-			set_country_flag = GEA_has_promote_new_governer
 			increase_ruling_party_popularity_by_10 = yes
 			hidden_effect = {
 				add_dynamic_modifier = {
@@ -578,38 +580,40 @@ add_namespace = GEA_news
 					}
 				}
 			}
-			set_politics = {
-				ruling_party = paternal_autocrat
-				elections_allowed = no
+			hidden_effect = {
+				set_politics = {
+					ruling_party = paternal_autocrat
+					elections_allowed = no
+				}
+				promote_character = {
+					character = GEA_Fritz_ter_Meer
+					ideology = autocratic_colonial_govt_subtype
+				}
+				set_country_flag = GEA_Governor_Meer_flag
+				set_party_name = {
+					ideology = authoritarian_democrat
+					name = GEA_authoritarian_democrat_party_Krupp
+					long_name = GEA_authoritarian_democrat_party_Krupp_long
+				}
+				set_party_name = {
+					ideology = paternal_autocrat
+					name = GEA_paternal_autocrat_party_IG
+					long_name = GEA_paternal_autocrat_party_IG_long
+				}
+				remove_all_ministers = yes
+				add_ideas = {
+					GEA_Fritz_ter_Meer_hog_pau
+					GEA_Otto_von_Erdmannsdorff_for_ade
+					GEA_Max_Ilgner_eco_pau
+					GEA_August_von_Knieriem_sec_pau
+				}
+				set_country_flag = GEA_has_promote_new_governer
+				modify_country_flag = {
+					flag = GEA_Indochinese_Anger
+					value = 1
+				}
+				add_to_variable = { GEA_Indochinese_Anger_display = 1 }
 			}
-			promote_character = {
-				character = GEA_Fritz_ter_Meer
-				ideology = autocratic_colonial_govt_subtype
-			}
-			set_country_flag = GEA_Governor_Meer_flag
-			set_party_name = {
-				ideology = authoritarian_democrat
-				name = GEA_authoritarian_democrat_party_Krupp
-				long_name = GEA_authoritarian_democrat_party_Krupp_long
-			}
-			set_party_name = {
-				ideology = paternal_autocrat
-				name = GEA_paternal_autocrat_party_IG
-				long_name = GEA_paternal_autocrat_party_IG_long
-			}
-			remove_all_ministers = yes
-			add_ideas = {
-				GEA_Fritz_ter_Meer_hog_pau
-				GEA_Otto_von_Erdmannsdorff_for_ade
-				GEA_Max_Ilgner_eco_pau
-				GEA_August_von_Knieriem_sec_pau
-			}
-			set_country_flag = GEA_has_promote_new_governer
-			modify_country_flag = {
-				flag = GEA_Indochinese_Anger
-				value = 1
-			}
-			add_to_variable = { GEA_Indochinese_Anger_display = 1 }
 			custom_effect_tooltip = GEA_Indochina_Anger_Up
 			increase_ruling_party_popularity_by_10 = yes
 			hidden_effect = {
@@ -5479,6 +5483,7 @@ add_namespace = GEA_news
 
 		option = { #费迪南德·舍尔纳将挽救远东危局
 			name = GEA.503.a
+			clr_country_flag = GEA_Governor_Heye_flag
 			country_event = {
 				id = GEA.505
 				days = 3
@@ -5487,6 +5492,7 @@ add_namespace = GEA_news
 
 		option = { #皇帝指定卢克纳尔接任海耶的职责
 			name = GEA.503.b
+			clr_country_flag = GEA_Governor_Heye_flag
 			set_country_flag = GEA_Governor_Luckner_flag
 			increase_ruling_party_popularity_by_10 = yes
 			hidden_effect = {
@@ -6680,6 +6686,34 @@ add_namespace = GEA_news
 
 		option = {
 			name = GEA.550.a
+			if = {
+				limit = { has_idea = GEA_colonial_question }
+				swap_ideas = {
+					remove_idea = GEA_colonial_question
+					add_idea = GEA_colonial_question_unrestricted
+				}
+			}
+			if = {
+				limit = { has_idea = GEA_colonial_question_heye }
+				swap_ideas = {
+					remove_idea = GEA_colonial_question_heye
+					add_idea = GEA_colonial_question_heye_unrestricted
+				}
+			}
+			if = {
+				limit = { has_idea = GEA_colonial_question_heye_2 }
+				swap_ideas = {
+					remove_idea = GEA_colonial_question_heye_2
+					add_idea = GEA_colonial_question_heye_2_unrestricted
+				}
+			}
+			if = {
+				limit = { has_idea = GEA_colonial_question_heye_3 }
+				swap_ideas = {
+					remove_idea = GEA_colonial_question_heye_3
+					add_idea = GEA_colonial_question_heye_3_unrestricted
+				}
+			}
 			set_rule = {
 				can_not_declare_war = no
 				can_decline_call_to_war = yes
@@ -7518,6 +7552,21 @@ add_namespace = GEA_news
 
 		option = {
 			name = GEA.814.a
+			custom_effect_tooltip = GEA_china_lep_name_tt
+			hidden_effect = {
+				set_temp_variable = { GEA_china_lep_capital_delta = 25 }
+				subtract_from_temp_variable = { GEA_china_lep_capital_delta = GEA_china_lep_capital_influence }
+				set_temp_variable = { GEA_china_lep_attitude_delta = 40 }
+				subtract_from_temp_variable = { GEA_china_lep_attitude_delta = GEA_china_lep_attitude }
+			}
+			add_to_variable = {
+				GEA_china_lep_capital_influence = GEA_china_lep_capital_delta
+				tooltip = GEA_china_capital_influence_change_tt
+			}
+			add_to_variable = {
+				GEA_china_lep_attitude = GEA_china_lep_attitude_delta
+				tooltip = GEA_china_attitude_change_tt
+			}
 		}
 	}
 	country_event = { # AOG reacts chinese instability
@@ -7580,20 +7629,28 @@ add_namespace = GEA_news
 
 		trigger = {
 			tag = GEA
-			country_exists = LEP
-			NOT = {
-				country_exists = ANQ
-				country_exists = SQI
-				country_exists = CHI
-			}
+			has_global_flag = LEP_league_war_over
+			has_country_flag = GEA_eight_provinces_war_resolved
+			has_country_flag = GEA_eight_provinces_winner_ningxi
+			LEP = { exists = yes owns_state = 613 controls_state = 613 }
 		}
 
 
 		option = {
 			name = GEA.817.a
-			transfer_state = 1075
-			transfer_state = 803
-			transfer_state = 802
+			custom_effect_tooltip = GEA_china_lep_name_tt
+			add_to_variable = {
+				GEA_china_lep_capital_influence = 10
+				tooltip = GEA_china_capital_influence_change_tt
+			}
+			add_to_variable = {
+				GEA_china_lep_military_projection = 10
+				tooltip = GEA_china_military_projection_change_tt
+			}
+			hidden_effect = {
+				clamp_variable = { var = GEA_china_lep_capital_influence min = 0 max = 100 }
+				clamp_variable = { var = GEA_china_lep_military_projection min = 0 max = 100 }
+			}
 		}
 	}
 
@@ -7739,6 +7796,127 @@ add_namespace = GEA_news
 
 		}
 	}
+	country_event = { #德国人发来最后通牒：由施压玉帅国策向QIE触发
+		id = GEA.822
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.822" }
+		title = GEA.822.t
+		desc = GEA.822.d
+		picture = GFX_GEA_eight_provience
+
+		fire_only_once = yes
+		is_triggered_only = yes
+
+		option = {
+			name = GEA.822.a
+			ai_chance = { factor = 70 }
+			hidden_effect = {
+				clr_country_flag = GEA_china_warlord_interaction_blocked
+				GEA = { country_event = { id = GEA.823 } }
+			}
+		}
+		option = {
+			name = GEA.822.b
+			ai_chance = { factor = 30 }
+			increase_ruling_party_popularity_by_5 = yes
+			hidden_effect = {
+				GEA = { country_event = { id = GEA.824 } }
+			}
+		}
+	}
+
+	country_event = { #北京政权允许德资重返华北
+		id = GEA.823
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.823" }
+		title = GEA.823.t
+		desc = GEA.823.d
+		picture = GFX_GEA_eight_provience
+
+		fire_only_once = yes
+		is_triggered_only = yes
+
+		option = { name = GEA.823.a }
+	}
+
+	country_event = { #北京政权拒绝
+		id = GEA.824
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.824" }
+		title = GEA.824.t
+		desc = GEA.824.d
+		picture = GFX_GEA_eight_provience
+
+		fire_only_once = yes
+		is_triggered_only = yes
+
+		option = { name = GEA.824.a }
+	}
+
+	country_event = { #北京方面与我们背道而驰
+		id = GEA.825
+		immediate = {
+			log = "[GetDateText]: [Root.GetName]: event GEA.825"
+			QIE = { set_country_flag = GEA_china_warlord_interaction_blocked }
+		}
+		title = GEA.825.t
+		desc = GEA.825.d
+
+		fire_only_once = yes
+		trigger = {
+			tag = GEA
+			QIE = {
+				exists = yes
+				NOT = {
+					OR = {
+						has_country_flag = QIE_wu_backs_qi
+						has_country_flag = wu_intervenes_proLEP
+					}
+				}
+				OR = {
+					has_country_flag = QIE_wu_backs_chen
+					has_country_flag = wu_intervenes_proANQ
+					has_country_flag = QIE_not_backs_qi
+					has_country_flag = wu_no_intervene
+					has_country_flag = QIE_coup_failed
+					has_country_flag = QIE_manchu_restoration
+				}
+			}
+		}
+
+		option = { name = GEA.825.a }
+	}
+
+	country_event = { #德国资本加大投资
+		id = GEA.826
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.826" }
+		title = GEA.826.t
+		desc = GEA.826.d
+
+		fire_only_once = yes
+		is_triggered_only = yes
+
+		option = {
+			name = GEA.826.a
+			custom_effect_tooltip = GEA_china_zhili_name_tt
+			add_to_variable = {
+				GEA_china_zhili_capital_influence = 10
+				tooltip = GEA_china_capital_influence_change_tt
+			}
+			add_to_variable = {
+				GEA_china_zhili_military_projection = 10
+				tooltip = GEA_china_military_projection_change_tt
+			}
+			hidden_effect = {
+				clamp_variable = { var = GEA_china_zhili_capital_influence min = 0 max = 100 }
+				clamp_variable = { var = GEA_china_zhili_military_projection min = 0 max = 100 }
+			}
+			QIE = {
+				add_offsite_building = { type = industrial_complex level = 2 }
+				decrease_ruling_party_popularity_by_5 = yes
+				add_popularity = { ideology = market_liberal popularity = 0.05 }
+			}
+		}
+	}
+
+
 #经济
 	country_event = { #重点开发
 		id = GEA.1000

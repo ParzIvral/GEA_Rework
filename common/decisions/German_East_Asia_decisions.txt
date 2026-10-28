@@ -1428,7 +1428,7 @@ GEA_decisions = {#德属东亚殖民地决议
 	GEA_expand_slaughter_in_the_South = {#在南方扩大屠杀
 		icon = GFX_GEA_schorner_skull_decision
 		allowed = { original_tag = GEA }
-		custom_cost_text = GEA_Request_field_corps_cost_tt
+		custom_cost_text = CP_50
 		custom_cost_trigger = {
 			command_power > 50
 		}
@@ -6485,7 +6485,146 @@ GEA_decisions = {#德属东亚殖民地决议
 			}
 		}
 	}
+	#山东租借地
+	GEA_Jiaozhou_Bay_development_plan = {
+		icon = GFX_decision_generic_industry
+		allowed = { original_tag = GEA }
+		cost = 50
+		days_remove = 365
+		fire_only_once = yes
+		visible = {
+			has_country_flag = Shandong_OPEN
+			owns_state = 744
+		}
+		available = { 744 = { is_owned_and_controlled_by = ROOT } }
+		cancel_trigger = { 744 = { NOT = { is_owned_and_controlled_by = ROOT } } }
+		ai_will_do = { factor = 30 }
+		highlight_states = { highlight_state_targets = { state = 744 } }
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Jiaozhou_Bay_development_plan"
+			744 = {
+				if = {
+					limit = {
+						OR = {
+							has_state_category = zero
+							has_state_category = one
+							has_state_category = two
+							has_state_category = three
+							has_state_category = four
+							has_state_category = five
+						}
+					}
+					set_state_category = six
+				}
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = { type = arms_factory level = 2 instant_build = yes }
+				add_building_construction = { type = industrial_complex level = 2 instant_build = yes }
+				add_building_construction = { type = infrastructure level = 2 instant_build = yes }
+				add_building_construction = { type = naval_base level = 1 instant_build = yes province = 13669 }
+			}
+		}
+	}
+
+	GEA_Weihaiwei_coastal_defence = {
+		icon = GFX_decision_generic_naval_base
+		allowed = { original_tag = GEA }
+		cost = 50
+		days_remove = 365
+		fire_only_once = yes
+		visible = {
+			has_country_flag = Shandong_OPEN
+			owns_state = 996
+		}
+		available = { 996 = { is_owned_and_controlled_by = ROOT } }
+		cancel_trigger = { 996 = { NOT = { is_owned_and_controlled_by = ROOT } } }
+		ai_will_do = { factor = 30 }
+		highlight_states = { highlight_state_targets = { state = 996 } }
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Weihaiwei_coastal_defence"
+			996 = {
+				add_building_construction = { type = naval_base level = 2 instant_build = yes province = 13670 }
+				add_building_construction = { type = bunker level = 2 instant_build = yes province = 13670 }
+				add_building_construction = { type = coastal_bunker level = 3 instant_build = yes province = 13670 }
+				add_building_construction = { type = anti_air_building level = 2 instant_build = yes }
+			}
+		}
+	}
+
 	#所罗门群岛
+	GEA_Solomon_copra_stations = {
+		icon = GFX_decision_generic_industry
+		allowed = { original_tag = GEA }
+		cost = 25
+		days_remove = 90
+		fire_only_once = yes
+		visible = {
+			has_country_flag = Solomon_OPEN
+			owns_state = 634
+		}
+		available = { 634 = { is_owned_and_controlled_by = ROOT } }
+		cancel_trigger = { 634 = { NOT = { is_owned_and_controlled_by = ROOT } } }
+		ai_will_do = { factor = 30 }
+		highlight_states = { highlight_state_targets = { state = 634 } }
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Solomon_copra_stations"
+			634 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes }
+			}
+		}
+	}
+
+	GEA_Solomon_interisland_shipping = {
+		icon = GFX_decision_generic_naval_base
+		allowed = { original_tag = GEA }
+		cost = 25
+		days_remove = 90
+		fire_only_once = yes
+		visible = {
+			has_country_flag = Solomon_OPEN
+			owns_state = 634
+		}
+		available = { 634 = { is_owned_and_controlled_by = ROOT } }
+		cancel_trigger = { 634 = { NOT = { is_owned_and_controlled_by = ROOT } } }
+		ai_will_do = { factor = 30 }
+		highlight_states = { highlight_state_targets = { state = 634 } }
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Solomon_interisland_shipping"
+			634 = {
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes }
+				add_building_construction = { type = naval_base level = 1 instant_build = yes province = 1269 }
+				add_building_construction = { type = naval_base level = 1 instant_build = yes province = 4378 }
+			}
+		}
+	}
+
+	GEA_Solomon_coastwatch_network = {
+		icon = GFX_decision_generic_military
+		allowed = { original_tag = GEA }
+		cost = 30
+		days_remove = 120
+		fire_only_once = yes
+		visible = {
+			has_country_flag = Solomon_OPEN
+			owns_state = 634
+		}
+		available = { 634 = { is_owned_and_controlled_by = ROOT } }
+		cancel_trigger = { 634 = { NOT = { is_owned_and_controlled_by = ROOT } } }
+		ai_will_do = { factor = 30 }
+		highlight_states = { highlight_state_targets = { state = 634 } }
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Solomon_coastwatch_network"
+			634 = {
+				add_building_construction = { type = air_base level = 1 instant_build = yes }
+				add_building_construction = { type = anti_air_building level = 2 instant_build = yes }
+				add_building_construction = { type = bunker level = 2 instant_build = yes province = 1269 }
+				add_building_construction = { type = coastal_bunker level = 3 instant_build = yes province = 1269 }
+				add_building_construction = { type = coastal_bunker level = 2 instant_build = yes province = 4378 }
+			}
+		}
+	}
+
 	GEA_hahl_Establish_an_Indigenous_Affairs_Bureau_Solomon = {#设立土著事务局
 		name = GEA_hahl_Establish_an_Indigenous_Affairs_Bureau_Indochina
 		icon = GFX_decision_generic_political_address
@@ -6525,6 +6664,78 @@ GEA_decisions = {#德属东亚殖民地决议
 		}
 	}
 	#萨摩亚
+	GEA_Samoa_copra_processing = {
+		icon = GFX_decision_generic_industry
+		allowed = { original_tag = GEA }
+		cost = 25
+		days_remove = 90
+		fire_only_once = yes
+		visible = {
+			has_country_flag = Samoa_OPEN
+			owns_state = 941
+		}
+		available = { 941 = { is_owned_and_controlled_by = ROOT } }
+		cancel_trigger = { 941 = { NOT = { is_owned_and_controlled_by = ROOT } } }
+		ai_will_do = { factor = 30 }
+		highlight_states = { highlight_state_targets = { state = 941 } }
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Samoa_copra_processing"
+			941 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes }
+			}
+		}
+	}
+
+	GEA_Samoa_Apia_harbour = {
+		icon = GFX_decision_generic_naval_base
+		allowed = { original_tag = GEA }
+		cost = 30
+		days_remove = 120
+		fire_only_once = yes
+		visible = {
+			has_country_flag = Samoa_OPEN
+			owns_state = 941
+		}
+		available = { 941 = { is_owned_and_controlled_by = ROOT } }
+		cancel_trigger = { 941 = { NOT = { is_owned_and_controlled_by = ROOT } } }
+		ai_will_do = { factor = 30 }
+		highlight_states = { highlight_state_targets = { state = 941 } }
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Samoa_Apia_harbour"
+			941 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = { type = dockyard level = 1 instant_build = yes }
+				add_building_construction = { type = naval_base level = 2 instant_build = yes province = 7290 }
+			}
+		}
+	}
+
+	GEA_Samoa_ocean_watch = {
+		icon = GFX_decision_generic_military
+		allowed = { original_tag = GEA }
+		cost = 25
+		days_remove = 90
+		fire_only_once = yes
+		visible = {
+			has_country_flag = Samoa_OPEN
+			owns_state = 941
+		}
+		available = { 941 = { is_owned_and_controlled_by = ROOT } }
+		cancel_trigger = { 941 = { NOT = { is_owned_and_controlled_by = ROOT } } }
+		ai_will_do = { factor = 30 }
+		highlight_states = { highlight_state_targets = { state = 941 } }
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Samoa_ocean_watch"
+			941 = {
+				add_building_construction = { type = air_base level = 1 instant_build = yes }
+				add_building_construction = { type = anti_air_building level = 1 instant_build = yes }
+				add_building_construction = { type = coastal_bunker level = 2 instant_build = yes province = 7290 }
+			}
+		}
+	}
+
 	GEA_hahl_Establish_an_Indigenous_Affairs_Bureau_Samoa = {#设立土著事务局
 		name = GEA_hahl_Establish_an_Indigenous_Affairs_Bureau_Indochina
 		icon = GFX_decision_generic_political_address
@@ -9164,7 +9375,36 @@ GEA_focus_china_decisions = {#第二次对华远征
 			}
 		}
 	}
+	GEA_Reaccept_lep_ports = { #收回东南口岸
+		visible = {
+			country_exists = LEP
+			has_completed_focus = GEA_The_second_expedition_to_China
+			has_global_flag = LEP_league_war_over
+			has_country_flag = GEA_eight_provinces_winner_ningxi
+		}
+		available = {
+			LEP = {
+				owns_state = 803
+				owns_state = 1075
+				owns_state = 802
+			}
+		}
+		fire_only_once = yes
+		cost = 30
+		days_remove = 30
 
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Reaccept_lep_ports"
+			
+			transfer_state = 803 #温州
+			transfer_state = 1075 #南通
+			transfer_state = 802 #厦门
+			transfer_state = 592 #广州
+			add_state_core = 803
+			add_state_core = 1075
+			add_state_core = 802
+		}
+	}
 	GEA_Invest_in_East_China = { #投资华东
 		icon = GFX_GEA_Invest_in_East_China_decision
 		allowed = { original_tag = GEA }
@@ -10778,31 +11018,66 @@ GEA_Dispatch_Military_Advisers = { #派驻军事顾问团
 		}
 	}
 
-	GEA_Reaccept_lep_ports = {
+	GEA_North_China_Expedition = { #华北远征
+		icon = GFX_GEA_Intervene_in_East_China_decision
+		allowed = { original_tag = GEA }
+		priority = 10001
+
+		cost = 0 
+		days_remove = 30
+		fire_only_once = yes
+		cancel_if_not_visible = no
+
 		visible = {
-			country_exists = LEP
-			has_completed_focus = GEA_The_second_expedition_to_China
-			LEP = {
-				has_global_flag = LEP_victory
+			has_completed_focus = GEA_Protect_our_property_rights
+			has_country_flag = QIE_OPEN
+			QIE = { exists = yes }
+		}
+		targets = { QIE }
+		target_root_trigger = {
+			has_completed_focus = GEA_Protect_our_property_rights
+			has_country_flag = QIE_OPEN
+		}
+
+		available = {
+			NOT = { has_war_with = QIE }
+			NOT = { is_in_faction_with = QIE }
+			QIE = { exists = yes NOT = { is_subject_of = GEA } }
+			custom_trigger_tooltip = {
+				tooltip = GEA_north_china_expedition_support_tt
+				OR = {
+					SQI = {
+						exists = yes
+						OR = { is_in_faction_with = GEA is_subject_of = GEA }
+					}
+					613 = {
+						owner = {
+							NOT = { tag = GEA }
+							OR = { is_in_faction_with = GEA is_subject_of = GEA }
+						}
+					}
+					LEC = {
+						exists = yes
+						OR = { is_in_faction_with = GEA is_subject_of = GEA }
+					}
+				}
 			}
 		}
-		available = {
-			owns_state = 803
-			owns_state = 1075
-			owns_state = 802
+		cancel_trigger = {
+			OR = {
+				QIE = { exists = no }
+				has_war_with = QIE
+				is_in_faction_with = QIE
+				QIE = { is_subject_of = GEA }
+			}
 		}
-		fire_only_once = yes
-		cost = 30
-		days_remove = 30
-
+		ai_will_do = { factor = 0 }
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Reaccept_lep_ports"
-
-			add_state_core = 803
-			add_state_core = 1075
-			add_state_core = 802
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_North_China_Expedition"
+			declare_war_on = { target = QIE type = annex_everything }
 		}
 	}
+
 	GEA_Take_over_embassy_city = {
 		visible = {
 			NOT = {

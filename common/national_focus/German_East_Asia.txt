@@ -2533,7 +2533,8 @@ focus_tree = {
 		cost = 2	
 		x = 2
 		y = 1
-		available = {		
+		available = {
+			has_country_flag = GEA_Governor_Heye_flag
 		}
         prerequisite = {
 			focus = GEA_Governor_Heye
@@ -2554,7 +2555,8 @@ focus_tree = {
 		cost = 2	
 		x = -2
 		y = 1
-		available = {		
+		available = {
+			has_country_flag = GEA_Governor_Heye_flag
 		}
         prerequisite = {
 			focus = GEA_Governor_Heye
@@ -2577,7 +2579,8 @@ focus_tree = {
 		cost = 5	
 		x = -2
 		y = 2
-		available = {		
+		available = {
+			has_country_flag = GEA_Governor_Heye_flag
 		}
         prerequisite = {
 			focus = GEA_Reconstruction_of_the_breakwater_project
@@ -2604,7 +2607,8 @@ focus_tree = {
 		cost = 2	
 		x = -5
 		y = 1
-		available = {		
+		available = {
+			has_country_flag = GEA_Governor_Heye_flag
 		}
         prerequisite = {
 			focus = GEA_Governor_Heye
@@ -2639,7 +2643,8 @@ focus_tree = {
 		cost = 3	
 		x = -2
 		y = 1
-		available = {		
+		available = {
+			has_country_flag = GEA_Governor_Heye_flag
 		}
         prerequisite = {
 			focus = GEA_Strike_hard
@@ -2671,7 +2676,8 @@ focus_tree = {
 		cost = 3	
 		x = 0
 		y = 1
-		available = {		
+		available = {
+			has_country_flag = GEA_Governor_Heye_flag
 		}
         prerequisite = {
 			focus = GEA_Strike_hard
@@ -2703,7 +2709,8 @@ focus_tree = {
 		cost = 3
 		x = 2
 		y = 1
-		available = {		
+		available = {
+			has_country_flag = GEA_Governor_Heye_flag
 		}
         prerequisite = {
 			focus = GEA_Strike_hard
@@ -2737,7 +2744,8 @@ focus_tree = {
 		cost = 1	
 		x = -2
 		y = 1
-		available = {		
+		available = {
+			has_country_flag = GEA_Governor_Heye_flag
 		}
         prerequisite = {
 			focus = GEA_Smother_the_flames_of_nationalism
@@ -2766,7 +2774,8 @@ focus_tree = {
 		cost = 5	
 		x = 0
 		y = 1
-		available = {		
+		available = {
+			has_country_flag = GEA_Governor_Heye_flag
 		}
         prerequisite = {
 			focus = GEA_In_perfect_order
@@ -2828,7 +2837,8 @@ focus_tree = {
 		cost = 5	
 		x = 2
 		y = 1
-		available = {		
+		available = {
+			has_country_flag = GEA_Governor_Heye_flag
 		}
         prerequisite = {
 			focus = GEA_In_perfect_order
@@ -2867,7 +2877,8 @@ focus_tree = {
 		cost = 3	
 		x = -1
 		y = 1
-		available = {		
+		available = {
+			has_country_flag = GEA_Governor_Heye_flag
 		}
         prerequisite = {
 			focus = GEA_The_armed_executioners_hand
@@ -2909,7 +2920,8 @@ focus_tree = {
 		cost = 4	
 		x = 1
 		y = 1
-		available = {		
+		available = {
+			has_country_flag = GEA_Governor_Heye_flag
 		}
         prerequisite = {
 			focus = GEA_The_surveillance_was_intense
@@ -2932,7 +2944,8 @@ focus_tree = {
 		cost = 4	
 		x = -1
 		y = 1
-		available = {		
+		available = {
+			has_country_flag = GEA_Governor_Heye_flag
 		}
         prerequisite = {
 			focus = GEA_method_from_Abteilung_III_b
@@ -2955,7 +2968,8 @@ focus_tree = {
 		cost = 4	
 		x = -1
 		y = 1
-		available = {		
+		available = {
+			has_country_flag = GEA_Governor_Heye_flag
 		}
         prerequisite = {
 			focus = GEA_The_armed_executioners_hand
@@ -2988,7 +3002,8 @@ focus_tree = {
 		cost = 4	
 		x = 1
 		y = 1
-		available = {		
+		available = {
+			has_country_flag = GEA_Governor_Heye_flag
 		}
         prerequisite = {
 			focus = GEA_Militarization_of_the_police_force
@@ -3016,7 +3031,8 @@ focus_tree = {
 		cost = 1	
 		x = -2
 		y = 1
-		available = {		
+		available = {
+			has_country_flag = GEA_Governor_Heye_flag
 		}
         prerequisite = {
 			focus = GEA_In_perfect_order
@@ -3056,7 +3072,8 @@ focus_tree = {
 		cost = 1	
 		x = 1
 		y = 1
-		available = {		
+		available = {
+			has_country_flag = GEA_Governor_Heye_flag
 			OR = {
 				has_country_flag = GEA_Indochina_Uprising_got_cancelled
 				has_country_flag = GEA_Defeated_Uprising
@@ -3082,7 +3099,8 @@ focus_tree = {
 		cost = 2	
 		x = 5
 		y = 1
-		available = {		
+		available = {
+			has_country_flag = GEA_Governor_Heye_flag
 		}
         prerequisite = {
 			focus = GEA_Governor_Heye
@@ -3105,7 +3123,8 @@ focus_tree = {
 		cost = 4	
 		x = -2
 		y = 1
-		available = {		
+		available = {
+			has_country_flag = GEA_Governor_Heye_flag
 		}
         prerequisite = {
 			focus = GEA_A_deal_with_the_villain
@@ -3148,7 +3167,8 @@ focus_tree = {
 		cost = 4	
 		x = 0
 		y = 1
-		available = {		
+		available = {
+			has_country_flag = GEA_Governor_Heye_flag
 		}
         prerequisite = {
 			focus = GEA_A_deal_with_the_villain
@@ -3210,7 +3230,8 @@ focus_tree = {
 		cost = 4	
 		x = -1
 		y = 1
-		available = {		
+		available = {
+			has_country_flag = GEA_Governor_Heye_flag
 		}
         prerequisite = {
 			focus = GEA_Good_steel_used_for_the_blade
@@ -3283,7 +3304,8 @@ focus_tree = {
 		cost = 4	
 		x = -3
 		y = 1
-		available = {		
+		available = {
+			has_country_flag = GEA_Governor_Heye_flag
 		}
         prerequisite = {
 			focus = GEA_Amend_the_labor_regulations
@@ -3307,7 +3329,8 @@ focus_tree = {
 		cost = 4	
 		x = -1
 		y = 1
-		available = {		
+		available = {
+			has_country_flag = GEA_Governor_Heye_flag
 		}
         prerequisite = {
 			focus = GEA_Amend_the_labor_regulations
@@ -3331,7 +3354,8 @@ focus_tree = {
 		cost = 4	
 		x = 1
 		y = 1
-		available = {		
+		available = {
+			has_country_flag = GEA_Governor_Heye_flag
 		}
         prerequisite = {
 			focus = GEA_Amend_the_labor_regulations
@@ -3352,7 +3376,8 @@ focus_tree = {
 		cost = 4	
 		x = 0
 		y = 1
-		available = {		
+		available = {
+			has_country_flag = GEA_Governor_Heye_flag
 		}
         prerequisite = {
 			focus = GEA_Advocate_selfless_dedication
@@ -3423,7 +3448,8 @@ focus_tree = {
 		cost = 4
 		x = 1
 		y = 1
-		available = {		
+		available = {
+			has_country_flag = GEA_Governor_Heye_flag
 		}
         prerequisite = {
 			focus = GEA_Pure_military_conduct_principles
@@ -3450,7 +3476,8 @@ focus_tree = {
 		cost = 3	
 		x = 2
 		y = 2
-		available = {		
+		available = {
+			has_country_flag = GEA_Governor_Heye_flag
 		}
         prerequisite = {
 			focus = GEA_A_deal_with_the_villain
@@ -3486,7 +3513,8 @@ focus_tree = {
 		cost = 3	
 		x = 0
 		y = 2
-		available = {		
+		available = {
+			has_country_flag = GEA_Governor_Heye_flag
 		}
         prerequisite = {
 			focus = GEA_The_brutal_expansion_under_the_command_of_order
@@ -3540,7 +3568,8 @@ focus_tree = {
 		cost = 3	
 		x = 0
 		y = 1
-		available = {		
+		available = {
+			has_country_flag = GEA_Governor_Heye_flag
 		}
         prerequisite = {
 			focus = GEA_Fidelity_Service
@@ -3576,7 +3605,8 @@ focus_tree = {
 		cost = 4	
 		x = -1
 		y = 1
-		available = {		
+		available = {
+			has_country_flag = GEA_Governor_Heye_flag
 		}
         prerequisite = {
 			focus = GEA_Redraw_the_defense_zone
@@ -3604,7 +3634,8 @@ focus_tree = {
 		cost = 4	
 		x = 0
 		y = 1
-		available = {		
+		available = {
+			has_country_flag = GEA_Governor_Heye_flag
 		}
         prerequisite = {
 			focus = GEA_Taking_the_Herelo_War_as_an_example
@@ -3628,7 +3659,8 @@ focus_tree = {
 		cost = 5	
 		x = 0
 		y = 1
-		available = {		
+		available = {
+			has_country_flag = GEA_Governor_Heye_flag
 		}
         prerequisite = {
 			focus = GEA_Ready_to_dedicate_will_and_determination
@@ -15852,7 +15884,22 @@ focus_tree = {
 			factor = 100
 		}
 		available = {
-			always = no
+			custom_trigger_tooltip = {
+				tooltip = GEA_qing_intervention_decided_tt
+				QIE = {
+					exists = yes
+					OR = {
+						has_country_flag = QIE_wu_backs_chen
+						has_country_flag = QIE_wu_backs_qi
+						has_country_flag = wu_intervenes_proANQ
+						has_country_flag = wu_intervenes_proLEP
+						has_country_flag = QIE_not_backs_qi
+						has_country_flag = wu_no_intervene
+						has_country_flag = QIE_coup_failed
+						has_country_flag = QIE_manchu_restoration
+					}
+				}
+			}
 		}			
 		prerequisite = {
 			focus = GEA_The_second_expedition_to_China
@@ -15873,7 +15920,30 @@ focus_tree = {
 			factor = 100
 		}
 		available = {
-
+			custom_trigger_tooltip = {
+				tooltip = GEA_qing_wu_peifu_in_power_tt
+				QIE = {
+					exists = yes
+					NOT = {
+						OR = {
+							has_country_flag = Wu_Peifu_dead
+							has_country_flag = QIE_manchu_restoration
+							has_country_flag = QIE_yiguandao_couped
+						}
+					}
+					OR = {
+						has_country_leader = { name = "Wu Peifu" ruling_only = yes }
+						AND = {
+							has_country_leader = { name = "Puyi" ruling_only = yes }
+							has_government = authoritarian_democrat
+							OR = {
+								has_country_flag = QIE_wu_backs_chen
+									has_country_flag = wu_intervenes_proANQ
+								}
+						}
+					}
+				}
+			}
 		}		
 		mutually_exclusive = {
 			focus = GEA_The_embers_of_the_declining_empire
@@ -15884,6 +15954,7 @@ focus_tree = {
 		relative_position_id = GEA_The_marionettes_in_the_Forbidden_City
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Pressure_the_Jade_Marshal"
+			QIE = { country_event = { id = GEA.822 } }
 		}	
 	}
 
@@ -15897,7 +15968,18 @@ focus_tree = {
 			factor = 100
 		}
 		available = {
-
+			custom_trigger_tooltip = {
+				tooltip = GEA_qing_puyi_restored_in_power_tt
+				QIE = {
+					exists = yes
+					has_country_leader = { name = "Puyi" ruling_only = yes }
+					OR = {
+						has_country_flag = QIE_manchu_restoration
+						has_country_flag = QIE_wu_backs_qi
+						has_country_flag = wu_intervenes_proLEP
+					}
+				}
+			}
 		}			
 		mutually_exclusive = {
 			focus = GEA_Pressure_the_Jade_Marshal
@@ -15908,6 +15990,23 @@ focus_tree = {
 		relative_position_id = GEA_The_marionettes_in_the_Forbidden_City
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_embers_of_the_declining_empire"
+			if = {
+				limit = {
+					QIE = {
+						has_country_flag = QIE_manchu_restoration
+					}
+				}
+				QIE = {
+					country_event = {
+						id = GEA.822
+					}
+				}
+			}
+			else = {
+				country_event = {
+					id = GEA.826
+				}
+			}
 		}	
 	}
 
@@ -15921,7 +16020,13 @@ focus_tree = {
 			factor = 100
 		}
 		available = {
-
+			custom_trigger_tooltip = {
+				tooltip = GEA_german_influence_established_in_north_china_tt
+				QIE = {
+					exists = yes
+					GEA_china_warlord_can_interact_trigger = yes
+				}
+			}
 		}			
 		prerequisite = {
 			focus = GEA_Pressure_the_Jade_Marshal
@@ -15943,7 +16048,13 @@ focus_tree = {
 			factor = 100
 		}
 		available = {
-
+			custom_trigger_tooltip = {
+				tooltip = GEA_german_influence_established_in_north_china_tt
+				QIE = {
+					exists = yes
+					GEA_china_warlord_can_interact_trigger = yes
+				}
+			}
 		}			
 		prerequisite = {
 			focus = GEA_Pressure_the_Jade_Marshal
@@ -15965,7 +16076,13 @@ focus_tree = {
 			factor = 100
 		}
 		available = {
-
+			custom_trigger_tooltip = {
+				tooltip = GEA_german_influence_established_in_north_china_tt
+				QIE = {
+					exists = yes
+					GEA_china_warlord_can_interact_trigger = yes
+				}
+			}
 		}			
 		prerequisite = {
 			focus = GEA_The_embers_of_the_declining_empire
@@ -15985,7 +16102,13 @@ focus_tree = {
 			factor = 100
 		}
 		available = {
-
+			custom_trigger_tooltip = {
+				tooltip = GEA_german_influence_established_in_north_china_tt
+				QIE = {
+					exists = yes
+					GEA_china_warlord_can_interact_trigger = yes
+				}
+			}
 		}			
 		prerequisite = {
 			focus = GEA_Pressure_the_Jade_Marshal
@@ -16010,10 +16133,12 @@ focus_tree = {
 		}			
 		prerequisite = {
 			focus = GEA_Pressure_the_Jade_Marshal
+			focus = GEA_The_embers_of_the_declining_empire
 		}
 		relative_position_id = GEA_Pressure_the_Jade_Marshal
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Protect_our_property_rights"
+			unlock_decision_tooltip = GEA_North_China_Expedition
 		}	
 	}
 
@@ -16027,7 +16152,25 @@ focus_tree = {
 			factor = 100
 		}
 		available = {
-
+			custom_trigger_tooltip = {
+				tooltip = GEA_german_influence_established_in_north_china_tt
+				QIE = {
+					exists = yes
+					GEA_china_warlord_can_interact_trigger = yes
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = GEA_zhili_attitude_above_80_tt
+				check_variable = { GEA_china_zhili_attitude > 80 }
+			}
+			custom_trigger_tooltip = {
+				tooltip = GEA_zhili_capital_influence_above_90_tt
+				check_variable = { GEA_china_zhili_capital_influence > 90 }
+			}
+			custom_trigger_tooltip = {
+				tooltip = GEA_zhili_military_projection_above_90_tt
+				check_variable = { GEA_china_zhili_military_projection > 90 }
+			}
 		}			
 		prerequisite = {
 			focus = GEA_Tighten_the_reins
@@ -16054,7 +16197,13 @@ focus_tree = {
 			factor = 100
 		}
 		available = {
-
+			custom_trigger_tooltip = {
+				tooltip = GEA_german_influence_established_in_north_china_tt
+				QIE = {
+					exists = yes
+					GEA_china_warlord_can_interact_trigger = yes
+				}
+			}
 		}			
 		prerequisite = {
 			focus = GEA_Tighten_the_reins
@@ -16442,7 +16591,7 @@ focus_tree = {
 	### 流亡 ###
 	focus = { #至暗时刻
 		id = GEA_THE_DH
-		icon = GFX_GEA_THE_DH
+		icon = GFX_goal_GER_Desperate_Struggle
 		cost = 5
 		x = -13
 		y = 20
@@ -16463,7 +16612,7 @@ focus_tree = {
 
 	focus = { #召集忠智之士
 		id = GEA_Summon_the_wise_and_capable_individuals
-		icon = GFX_GEA_Summon_the_wise_and_capable_individuals
+		icon = GFX_goal_GER_Subdue_Misguided_Barons
 		cost = 5
 		x = -2
 		y = 1
@@ -16484,7 +16633,7 @@ focus_tree = {
 
 	focus = { #收拢余烬
 		id = GEA_Consume_the_embers
-		icon = GFX_GEA_Consume_the_embers
+		icon = GFX_goal_GER_Yet_Another_Provisional_Government
 		cost = 5
 		x = 2
 		y = 1
@@ -16505,7 +16654,7 @@ focus_tree = {
 
 	focus = { #扩大征发
 		id = GEA_Expand_conscription
-		icon = GFX_GEA_Expand_conscription
+		icon = GFX_goal_GER_Mitteleuropan_Army
 		cost = 5
 		x = 0
 		y = 1
@@ -16526,7 +16675,7 @@ focus_tree = {
 
 	focus = { #苦涩和平
 		id = GEA_Sourness_and_Peace
-		icon = GFX_GEA_Sourness_and_Peace
+		icon = GFX_goal_GER_Let_Birds_Go_Free
 		cost = 5
 		x = 1
 		y = 1
@@ -16556,7 +16705,7 @@ focus_tree = {
 
 	focus = { #殊死一搏
 		id = GEA_A_desperate_last_ditch_effort
-		icon = GFX_GEA_A_desperate_last_ditch_effort
+		icon = GFX_goal_GER_Perpetual_Harassment
 		cost = 5
 		x = 3
 		y = 1
@@ -16586,7 +16735,7 @@ focus_tree = {
 
 	focus = { #征用联合舰队
 		id = GEA_Conscript_the_Combined_Fleet
-		icon = GFX_GEA_Conscript_the_Combined_Fleet
+		icon = GFX_goal_JAP_Enhance_Implementation_Jeune_Ecole
 		cost = 5
 		x = 2
 		y = 1
@@ -16607,7 +16756,7 @@ focus_tree = {
 
 	focus = { #于惨淡事实前奋力求生
 		id = GEA_Struggling_to_survive_in_the_face_of_harsh_reality
-		icon = GFX_GEA_Struggling_to_survive_in_the_face_of_harsh_reality
+		icon = GFX_goal_GER_Crippling_Infiltration
 		cost = 5
 		x = -4
 		y = 1
@@ -16628,7 +16777,7 @@ focus_tree = {
 
 	focus = { #总结大战经验
 		id = GEA_Summarize_the_lessons_learned_from_the_war
-		icon = GFX_GEA_Summarize_the_lessons_learned_from_the_war
+		icon = GFX_goal_GER_Operational_Arts
 		cost = 5
 		x = -1
 		y = 1
@@ -16650,7 +16799,7 @@ focus_tree = {
 
 	focus = { #少而精的部队
 		id = GEA_A_small_but_highly_efficient_force
-		icon = GFX_GEA_A_small_but_highly_efficient_force
+		icon = GFX_goal_GER_Wiederganger_Terror
 		cost = 5
 		x = -2
 		y = 2
@@ -16672,7 +16821,7 @@ focus_tree = {
 
 	focus = { #勒紧裤腰带
 		id = GEA_tighten_the_belt
-		icon = GFX_GEA_tighten_the_belt
+		icon = GFX_goal_JAP_For_Sun_Set_Die
 		cost = 5
 		x = 0
 		y = 2
@@ -16694,7 +16843,7 @@ focus_tree = {
 
 	focus = { #归乡者的共识
 		id = GEA_The_consensus_of_the_returnees
-		icon = GFX_GEA_The_consensus_of_the_returnees
+		icon = GFX_goal_GER_Very_Wilhelmian_Neo_Victorianism
 		cost = 5
 		x = -1
 		y = 1
@@ -16721,7 +16870,7 @@ focus_tree = {
 
 	focus = { #跋山涉水
 		id = GEA_Crossing_mountains_and_rivers
-		icon = GFX_GEA_Crossing_mountains_and_rivers
+		icon = GFX_goal_GER_Unternehmen_Bifrost
 		cost = 5
 		x = 3
 		y = 1
@@ -16748,7 +16897,7 @@ focus_tree = {
 
 	focus = { #再会了，甜蜜的欧罗巴
 		id = GEA_Goodbye_sweet_Europa
-		icon = GFX_GEA_Goodbye_sweet_Europa
+		icon = GFX_goal_GER_Second_Springtime
 		cost = 5
 		x = 1
 		y = 2

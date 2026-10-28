@@ -23,6 +23,25 @@ ideas = {
 				can_decline_call_to_war = no
 			}
 		}
+		GEA_colonial_question_unrestricted = { #东亚殖民政府
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_colonial_question_unrestricted"}
+			picture = colonial_question
+			name = GEA_colonial_question
+			allowed = { always = no }
+			modifier = {
+				ai_call_ally_desire_factor = -1000
+				ai_join_ally_desire_factor = -1000
+				non_core_manpower = 0.05
+				resistance_growth = 0.2
+				required_garrison_factor = 0.1
+				resistance_decay = -0.05
+				surrender_limit = -0.2
+			}
+			targeted_modifier = {
+				tag = GER
+				trade_cost_for_target_factor = -0.5
+			}
+		}
 		GEA_The_quagmire_of_Indochina = { #深陷印支泥沼
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_The_quagmire_of_Indochina"}
 			picture = GEA_The_quagmire_of_Indochina
@@ -2140,6 +2159,76 @@ ideas = {
 				justify_war_goal_time = -0.3
 				offensive_war_stability_factor = 0.1
 				party_popularity_stability_factor = 0.1
+			}
+		}
+				GEA_colonial_question_heye_unrestricted = { #海耶的严酷统治
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_colonial_question_heye_unrestricted"}
+			picture = colonial_question
+			name = GEA_colonial_question
+			allowed = { always = no }
+			modifier = {
+				ai_call_ally_desire_factor = -1000
+				ai_join_ally_desire_factor = -1000
+				resistance_growth = 0.1
+				required_garrison_factor = 0.1
+				resistance_decay = -0.05
+				surrender_limit = -0.1
+				offensive_war_stability_factor = 0.1
+				army_morale_factor = 0.05
+				paternal_autocrat_drift = 0.01
+			}
+			targeted_modifier = {
+				tag = GER
+				trade_cost_for_target_factor = -0.5
+			}
+		}
+		GEA_colonial_question_heye_2_unrestricted = { #海耶的严酷统治
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_colonial_question_heye_2_unrestricted"}
+			picture = colonial_question
+			name = GEA_colonial_question
+			allowed = { always = no }
+			modifier = {
+				ai_call_ally_desire_factor = -1000
+				ai_join_ally_desire_factor = -1000
+				required_garrison_factor = 0.1
+				resistance_decay = -0.1
+				offensive_war_stability_factor = 0.1
+				army_org_factor = 0.05
+				army_morale_factor = 0.05
+				paternal_autocrat_drift = 0.01
+				conscription = 0.01
+				conscription_factor = 0.1
+				land_doctrine_cost_factor = -0.05
+			}
+			targeted_modifier = {
+				tag = GER
+				trade_cost_for_target_factor = -0.5
+			}
+		}
+		GEA_colonial_question_heye_3_unrestricted = { #海耶的严酷统治
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_colonial_question_heye_3_unrestricted"}
+			picture = GEA_colonial_question_heye_3
+			name = GEA_colonial_question
+			allowed = { always = no }
+			modifier = {
+				ai_call_ally_desire_factor = -1000
+				ai_join_ally_desire_factor = -1000
+				resistance_decay = -0.1
+				offensive_war_stability_factor = 0.1
+				army_org_factor = 0.1
+				army_morale_factor = 0.05
+				paternal_autocrat_drift = 0.02
+				conscription = 0.01
+				conscription_factor = 0.15
+				land_doctrine_cost_factor = -0.1
+				army_attack_against_major_factor = 0.1
+				army_defence_against_major_factor = 0.1
+				army_breakthrough_against_major_factor = 0.1
+				max_planning_factor = 0.075
+			}
+			targeted_modifier = {
+				tag = GER
+				trade_cost_for_target_factor = -0.5
 			}
 		}
 #决议
