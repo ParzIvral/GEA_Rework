@@ -26,6 +26,89 @@ add_namespace = GEA_news
 			trigger = { NOT = { tag = GEA } }
 		}
 	}
+	news_event = { #哈尔上任新闻
+		id = GEA_news.2
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA_news.2" }
+		title = GEA_news.2.t
+		desc = GEA_news.2.d
+		picture = GFX_GEA_news_2
+		major = yes
+		is_triggered_only = yes
+		fire_only_once = yes
+		option = { name = GEA_news.2.a }
+	}
+
+	news_event = { #约西亚斯上任新闻
+		id = GEA_news.3
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA_news.3" }
+		title = GEA_news.3.t
+		desc = GEA_news.3.d
+		picture = GFX_GEA_news_3
+		major = yes
+		is_triggered_only = yes
+		fire_only_once = yes
+		option = { name = GEA_news.3.a }
+	}
+
+	news_event = { #海耶上任新闻
+		id = GEA_news.4
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA_news.4" }
+		title = GEA_news.4.t
+		desc = GEA_news.4.d
+		picture = GFX_GEA_news_4
+		major = yes
+		is_triggered_only = yes
+		fire_only_once = yes
+		option = { name = GEA_news.4.a }
+	}
+
+	news_event = { #蒂洛上任新闻
+		id = GEA_news.5
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA_news.5" }
+		title = GEA_news.5.t
+		desc = GEA_news.5.d
+		picture = GFX_GEA_news_5
+		major = yes
+		is_triggered_only = yes
+		fire_only_once = yes
+		option = { name = GEA_news.5.a }
+	}
+
+	news_event = { #梅尔上任新闻
+		id = GEA_news.6
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA_news.6" }
+		title = GEA_news.6.t
+		desc = GEA_news.6.d
+		picture = GFX_GEA_news_6
+		major = yes
+		is_triggered_only = yes
+		fire_only_once = yes
+		option = { name = GEA_news.6.a }
+	}
+
+	news_event = { #卢克纳尔上任新闻
+		id = GEA_news.7
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA_news.7" }
+		title = GEA_news.7.t
+		desc = GEA_news.7.d
+		picture = GFX_GEA_news_7
+		major = yes
+		is_triggered_only = yes
+		fire_only_once = yes
+		option = { name = GEA_news.7.a }
+	}
+
+	news_event = { #舍尔纳上任新闻
+		id = GEA_news.8
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA_news.8" }
+		title = GEA_news.8.t
+		desc = GEA_news.8.d
+		picture = GFX_GEA_news_8
+		major = yes
+		is_triggered_only = yes
+		fire_only_once = yes
+		option = { name = GEA_news.8.a }
+	}
 ###开局事件与黑色星期一###
 	country_event = {#1936 Situation
 		id = GEA.0
@@ -231,6 +314,7 @@ add_namespace = GEA_news
 		id = GEA.6
 		immediate = {
 			log = "[GetDateText]: [Root.GetName]: event GEA.6"
+			LEP = { transfer_state = 592 } #广州默认交还八省，崩塌后由原版事件交给两广
 			hidden_effect = {
 				add_ideas = GEA_black_monday_idea
 				YUN = { #Yunnan's Black Monday event
@@ -256,7 +340,6 @@ add_namespace = GEA_news
 			}
 			LEP = {
 				transfer_state = 1075
-				transfer_state = 592
 				transfer_state = 802
 				transfer_state = 803
 			}
@@ -296,7 +379,7 @@ add_namespace = GEA_news
 				}
 				country_event = {
 					id = GEA.8
-					days = 6
+					days = 2
 				}
 				country_event = {
 					id = GEA.11 #不稳定的印度支那
@@ -304,7 +387,7 @@ add_namespace = GEA_news
 				}
 				country_event = {
 					id = GEA.17
-					days = 30
+					days = 75
 				}
 				country_event = { #殖民危机暂缓
 					id = GEA.37
@@ -333,7 +416,6 @@ add_namespace = GEA_news
 		picture = GFX_report_event_GEA_ballin
 
 		fire_only_once = yes
-
 		is_triggered_only = yes
 
 		option = { #老朋友，长夜漫漫，一路走好
@@ -353,7 +435,7 @@ add_namespace = GEA_news
 			hidden_effect = {
 				country_event = {
 					id = GEA.9
-					days = 7
+					days = 3
 				}
 			}
 		}
@@ -375,6 +457,7 @@ add_namespace = GEA_news
 
 		option = { #皇帝选择了阿尔伯特·哈尔
 			name = GEA.9.a
+			hidden_effect = { news_event = { id = GEA_news.2 days = 1 } }
 			ai_chance = {
 				factor = 20
 				modifier = {
@@ -435,6 +518,7 @@ add_namespace = GEA_news
 		}
 		option = { #瓦尔德克和皮尔蒙特的约西亚斯亲王被任命
 			name = GEA.9.b
+			hidden_effect = { news_event = { id = GEA_news.3 days = 1 } }
 			ai_chance = {
 				factor = 20
 				modifier = {
@@ -474,6 +558,7 @@ add_namespace = GEA_news
 		}	
 		option = { #奥古斯特·威廉·海耶元帅被任命
 			name = GEA.9.c
+			hidden_effect = { news_event = { id = GEA_news.4 days = 1 } }
 			ai_chance = {
 				factor = 20
 				modifier = {
@@ -522,6 +607,7 @@ add_namespace = GEA_news
 		}
 		option = { #蒂洛·弗赖赫尔·冯·维尔莫夫斯基男爵受指派前来
 			name = GEA.9.e
+			hidden_effect = { news_event = { id = GEA_news.5 days = 1 } }
 			ai_chance = {
 				factor = 20
 				modifier = {
@@ -568,6 +654,7 @@ add_namespace = GEA_news
 		}
 		option = { #弗里茨·梅尔代表IG法本承接这一重担
 			name = GEA.9.f
+			hidden_effect = { news_event = { id = GEA_news.6 days = 1 } }
 			ai_chance = {
 				factor = 20
 				modifier = {
@@ -1315,7 +1402,6 @@ add_namespace = GEA_news
 			}
 			add_stability = 0.01
 			add_political_power = -10
-
 		}
 
 		option = {
@@ -1332,11 +1418,10 @@ add_namespace = GEA_news
 					}
 				}
 			}
-			add_stability = -0.03
 			add_political_power = 50
 			add_popularity = {
 				ideology = paternal_autocrat
-				popularity = 0.05
+				popularity = 0.02
 			}
 			modify_country_flag = {
 				flag = GEA_Indochinese_Anger
@@ -1433,7 +1518,7 @@ add_namespace = GEA_news
 				var = INC.guerilla_activity
 				value = 3
 			}
-			add_stability = -0.05
+			add_stability = -0.03
 			modify_country_flag = {
 				flag = GEA_Indochinese_Stability
 				value = -1
@@ -1491,8 +1576,8 @@ add_namespace = GEA_news
 					}
 				}
 			}
-			add_manpower = -923
-			add_stability = -0.1
+			add_manpower = -900
+			add_stability = -0.03
 			modify_country_flag = {
 				flag = GEA_Indochinese_Stability
 				value = -1
@@ -1514,7 +1599,7 @@ add_namespace = GEA_news
 					}
 				}
 			}
-			decrease_ruling_party_popularity_by_10 = yes
+			decrease_ruling_party_popularity_by_5 = yes
 			modify_country_flag = {
 				flag = GEA_Indochinese_Anger
 				value = -1
@@ -1590,8 +1675,13 @@ add_namespace = GEA_news
 					}
 				}
 			}
-			add_manpower = -2934
-			add_stability = -0.02
+			add_manpower = -1000
+			modify_country_flag = {
+				flag = GEA_Indochinese_Stability
+				value = -1
+			}
+			add_to_variable = { GEA_Indochinese_Stability_display = -1 }
+			custom_effect_tooltip = GEA_Indochina_Stability_Down
 		}
 		option = {
 			name = GEA.32.b
@@ -1607,8 +1697,14 @@ add_namespace = GEA_news
 					}
 				}
 			}
-			add_manpower = -7542
-			add_stability = -0.06
+			add_manpower = -5000
+			add_stability = 0.03
+			modify_country_flag = {
+				flag = GEA_Indochinese_Stability
+				value = 1
+			}
+			add_to_variable = { GEA_Indochinese_Stability_display = 1 }
+			custom_effect_tooltip = GEA_Indochina_Stability_Up
 		}
 	}
 	country_event = {#口腹之欲
@@ -2792,7 +2888,142 @@ add_namespace = GEA_news
 			}
 		}
 	}
+	country_event = { #乂安警报
+		id = GEA.58
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.58" }
+		title = GEA.58.t
+		desc = GEA.58.d
+		picture = GFX_GEA_68
 
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {#不过是些不长记性的乡下赤匪
+			name = GEA.58.a 
+			add_political_power = 30
+			modify_country_flag = {
+				flag = GEA_Indochinese_Stability
+				value = -1
+			}
+			add_to_variable = { GEA_Indochinese_Stability_display = -1 }
+			custom_effect_tooltip = GEA_Indochina_Stability_Down
+		}
+
+		option = {#加大镇压投入
+			name = GEA.58.b 
+			add_manpower = -100
+			modify_country_flag = {
+				flag = GEA_Indochinese_Stability
+				value = 1
+			}
+			add_to_variable = { GEA_Indochinese_Stability_display = 1 }
+			custom_effect_tooltip = GEA_Indochina_Stability_Up
+		}
+	}
+	country_event = { #北圻大饥荒
+		id = GEA.59
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.59" }
+		title = GEA.59.t
+		desc = GEA.59.d
+		picture = GFX_GEA_69
+
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {#让屁民们继续饿着吧
+			name = GEA.59.a 
+			add_political_power = 50
+			modify_country_flag = {
+				flag = GEA_Indochinese_Stability
+				value = -1
+			}
+			add_to_variable = { GEA_Indochinese_Stability_display = -1 }
+			custom_effect_tooltip = GEA_Indochina_Stability_Down
+		}
+
+		option = {#只在城市地区开仓放粮
+			name = GEA.59.b 
+			modify_country_flag = {
+				flag = GEA_Indochinese_Stability
+				value = 1
+			}
+			add_to_variable = { GEA_Indochinese_Stability_display = 1 }
+			custom_effect_tooltip = GEA_Indochina_Stability_Up
+		}
+
+		option = {#只在城市地区开仓放粮
+			name = GEA.59.c 
+			add_political_power = -20
+			decrease_ruling_party_popularity_by_2 = yes
+			modify_country_flag = {
+				flag = GEA_Indochinese_Stability
+				value = 2
+			}
+			add_to_variable = { GEA_Indochinese_Stability_display = 2 }
+			custom_effect_tooltip = GEA_Indochina_Stability_Up_More
+		}
+	}
+	country_event = { #顺化奇人请愿
+		id = GEA.60
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.60" }
+		title = GEA.60.t
+		desc = GEA.60.d
+		picture = GFX_GEA_70
+
+		is_triggered_only = yes
+		fire_only_once = yes
+		trigger = {
+			NOT = {
+				has_country_flag = GEA_Governor_Hahl_flag
+			}
+		}
+
+		option = {#这些安南官僚应该认清自己的地位
+			name = GEA.60.a 
+			add_political_power = 100
+			modify_country_flag = {
+				flag = GEA_Indochinese_Anger
+				value = -1
+			}
+			add_to_variable = { GEA_Indochinese_Anger_display = 1 }
+			custom_effect_tooltip = GEA_Indochina_Anger_Down
+			modify_country_flag = {
+				flag = GEA_Indochinese_Stability
+				value = -1
+			}
+			add_to_variable = { GEA_Indochinese_Stability_display = 1 }
+			custom_effect_tooltip = GEA_Indochina_Stability_Up
+		}
+
+		option = {#适当的自治或许能让他们远离革命
+			name = GEA.60.b 
+			decrease_ruling_party_popularity_by_3 = yes
+			modify_country_flag = {
+				flag = GEA_Indochinese_Stability
+				value = 1
+			}
+			add_to_variable = { GEA_Indochinese_Stability_display = 1 }
+			custom_effect_tooltip = GEA_Indochina_Stability_Up
+		}
+
+		option = {#改革可以，但权力必须留在德国人手中
+			name = GEA.60.c 
+			add_political_power = -20
+			decrease_ruling_party_popularity_by_5 = yes
+			modify_country_flag = {
+				flag = GEA_Indochinese_Anger
+				value = -1
+			}
+			add_to_variable = { GEA_Indochinese_Anger_display = -1 }
+			custom_effect_tooltip = GEA_Indochina_Anger_Down
+			modify_country_flag = {
+				flag = GEA_Indochinese_Stability
+				value = 2
+			}
+			add_to_variable = { GEA_Indochinese_Stability_display = 2 }
+			custom_effect_tooltip = GEA_Indochina_Stability_Up_More
+		}
+	}
 #阿尔伯特·哈尔路线
 	country_event = { #驾驭三头驮兽
 		id = GEA.101
@@ -4359,7 +4590,7 @@ add_namespace = GEA_news
 		option = {
 			name = GEA.300.a
 			set_country_flag = GEA_ask_less_support
-			
+			add_stability = 0.1
 		}
 
 		option = {
@@ -4369,11 +4600,8 @@ add_namespace = GEA_news
 
 		option = {
 			name = GEA.300.c
-			custom_effect_tooltip = GEA_Germany_anger
-			add_to_variable = {
-				GEA_Germany_anger = 1
-			}
 			set_country_flag = GEA_ask_more_support
+			add_political_power = -50
 		}
 	}
 	country_event = { #西贡惨案
@@ -5492,6 +5720,7 @@ add_namespace = GEA_news
 
 		option = { #皇帝指定卢克纳尔接任海耶的职责
 			name = GEA.503.b
+			hidden_effect = { news_event = { id = GEA_news.7 days = 1 } }
 			clr_country_flag = GEA_Governor_Heye_flag
 			set_country_flag = GEA_Governor_Luckner_flag
 			increase_ruling_party_popularity_by_10 = yes
@@ -5550,6 +5779,7 @@ add_namespace = GEA_news
 
 		option = { #胜者才永远会是审判者
 			name = GEA.505.a
+			hidden_effect = { news_event = { id = GEA_news.8 days = 1 } }
 			add_stability = -0.05
 			set_politics = {
 				ruling_party = national_populist
@@ -7897,6 +8127,50 @@ add_namespace = GEA_news
 		}
 	}
 
+
+	country_event = { #王克敏与华北临时政府
+		id = GEA.828
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.828" }
+		title = GEA.828.t
+		desc = GEA.828.d
+		fire_only_once = yes
+
+		trigger = {
+			tag = GEA
+			NOT = { has_completed_focus = GEA_Submission }
+			QIE = {
+				exists = yes
+				is_subject_of = GEA
+				controls_state = 608 #北京
+			}
+		}
+
+		option = {
+			name = GEA.828.a
+			QIE = {
+				if = {
+					limit = { NOT = { has_character = GEA_Wang_Kemin } }
+					recruit_character = GEA_Wang_Kemin
+				}
+				add_popularity = { ideology = paternal_autocrat popularity = 0.30 }
+				set_politics = { ruling_party = paternal_autocrat elections_allowed = no }
+				promote_character = { character = GEA_Wang_Kemin ideology = kleptocracy_subtype }
+				set_party_name = {
+					ideology = paternal_autocrat
+					name = GEA_QIE_provisional_party
+					long_name = GEA_QIE_provisional_party_long
+				}
+				set_cosmetic_tag = GEA_QIE_provisional
+				remove_all_ministers = yes
+				add_ideas = {
+					QIE_Yan_Huiqing_hog_ade
+					QIE_Bai_Jianwu_for_ade
+					QIE_Gong_Xinzhan_eco_ade
+					QIE_Zhang_Luao_sec_ade
+				}
+			}
+		}
+	}
 
 #经济
 	country_event = { #重点开发

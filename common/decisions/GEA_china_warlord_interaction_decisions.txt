@@ -122,7 +122,7 @@ GEA_china_warlord_interaction = {
 		visible = { has_country_flag = GEA_german_loan_active }
 		available = { has_country_flag = GEA_german_loan_active }
 		cost = 0
-		custom_cost_text = GEA_loan_default_cp_cost
+		custom_cost_text = CP_10
 		custom_cost_trigger = { command_power > 9.99 }
 		ai_will_do = {
 			factor = 10

@@ -1,5 +1,16 @@
 ##
 characters = {
+	GEA_Wang_Kemin = { #王克敏：华北临时政府
+		name = GEA_Wang_Kemin
+		portraits = {
+			civilian = { large = GFX_portrait_Portrait_GEA_Wang_Kemin }
+		}
+		country_leader = {
+			ideology = kleptocracy_subtype
+			traits = { }
+		}
+	}
+
 	GEA_Hellmuth_von_Mucke = { #赫尔穆特·冯·穆克
 		name = GEA_Hellmuth_von_Mucke
 		portraits = {

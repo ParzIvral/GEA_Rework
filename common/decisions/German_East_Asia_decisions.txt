@@ -84,7 +84,7 @@ GEA_pacify_indochina_decisions = {#平定印度支那
 	}
 	GEA_register_loyal_civic_associations = { #登记市民团体
 		icon = GFX_decision_colonial_department
-		cost = 25
+		cost = 15
 		days_remove = 21
 		fire_only_once = yes
 		
@@ -106,7 +106,7 @@ GEA_pacify_indochina_decisions = {#平定印度支那
 	}
 	GEA_secure_saigon_communications = { #确保广播与电报局
 		icon = GFX_decision_generic_operation
-		cost = 35
+		cost = 20
 		days_remove = 14
 		fire_only_once = yes
 
@@ -173,7 +173,7 @@ GEA_pacify_indochina_decisions = {#平定印度支那
 	# 忠诚城市防御工事
 	GEA_map_loyalist_urban_defenses = { #测绘忠诚城市防区
 		icon = GFX_decision_bunker
-		cost = 25
+		cost = 15
 		days_remove = 14
 		fire_only_once = yes
 		visible = {
@@ -191,7 +191,7 @@ GEA_pacify_indochina_decisions = {#平定印度支那
 	}
 	GEA_stockpile_urban_fortification_materials = { #储备城市筑垒材料
 		icon = GFX_decision_bunker
-		cost = 35
+		cost = 20
 		days_remove = 21
 		fire_only_once = yes
 		visible = {
@@ -250,7 +250,7 @@ GEA_pacify_indochina_decisions = {#平定印度支那
 	}
 	GEA_expand_loyalist_recruitment_rolls = { #扩充忠诚人员名册
 		icon = GFX_decision_colonial_department
-		cost = 25
+		cost = 15
 		days_remove = 21
 		fire_only_once = yes
 		visible = {
@@ -288,7 +288,7 @@ GEA_pacify_indochina_decisions = {#平定印度支那
 	}
 	GEA_equip_loyalist_reserve_battalions = { #武装忠诚预备营
 		icon = GFX_decision_generic_equipment
-		cost = 35
+		cost = 20
 		days_remove = 21
 		fire_only_once = yes
 		visible = {
@@ -328,7 +328,7 @@ GEA_pacify_indochina_decisions = {#平定印度支那
 	#反越工行动
 	GEA_infiltrate_unions_and_dock_organizations = { #渗透工会与码头组织
 		icon = GFX_decision_generic_assassination
-		cost = 30
+		cost = 15
 		days_remove = 30
 		fire_only_once = yes
 
@@ -356,7 +356,7 @@ GEA_pacify_indochina_decisions = {#平定印度支那
 	}
 	GEA_support_moderate_national_unions = { #扶植温和民族工会
 		icon = GFX_decision_generic_agriculture
-		cost = 30
+		cost = 15
 		days_remove = 60
 		fire_only_once = yes
 
@@ -385,7 +385,7 @@ GEA_pacify_indochina_decisions = {#平定印度支那
 	}
 	GEA_arrest_radical_labor_leaders = { #逮捕激进劳工领袖
 		icon = GFX_decision_generic_confiscation
-		cost = 40
+		cost = 20
 		days_remove = 21
 		fire_only_once = yes
 
@@ -645,7 +645,7 @@ GEA_pacify_indochina_decisions = {#平定印度支那
 	# 处理印度支那民族主义者
 	GEA_catalogue_nationalist_associations = { #清查民族主义结社
 		icon = GFX_decision_generic_operation
-		cost = 20
+		cost = 10
 		days_remove = 30
 
 		fire_only_once = yes
@@ -673,7 +673,7 @@ GEA_pacify_indochina_decisions = {#平定印度支那
 	}
 	GEA_infiltrate_vnqdd_cells = { #渗透越国党支部
 		icon = GFX_decision_generic_assassination
-		cost = 30
+		cost = 15
 
 		days_remove = 30
 		fire_only_once = yes
@@ -699,7 +699,7 @@ GEA_pacify_indochina_decisions = {#平定印度支那
 	}
 	GEA_monitor_student_press_networks = { #监控学生与报刊网络
 		icon = GFX_decision_generic_operation
-		cost = 30
+		cost = 15
 		days_remove = 45
 		fire_only_once = yes
 
@@ -748,7 +748,7 @@ GEA_pacify_indochina_decisions = {#平定印度支那
 	}
 	GEA_coopt_constitutionalist_elites = { #拉拢立宪派精英
 		icon = GFX_decision_generic_political_address
-		cost = 40
+		cost = 20
 		days_remove = 60
 		fire_only_once = yes
 		
@@ -800,7 +800,7 @@ GEA_decisions = {#德属东亚殖民地决议
 	GEA_Plan_indochina_counteroffensive = { #筹划反攻印度支那
 		icon = GFX_decision_hol_draw_up_staff_plans
 		allowed = { original_tag = GEA }
-		custom_cost_text = GEA_indochina_counteroffensive_cost
+		custom_cost_text = CP_30
 		custom_cost_trigger = { command_power > 29.99 }
 		fire_only_once = yes
 		visible = {
@@ -3520,7 +3520,7 @@ GEA_decisions = {#德属东亚殖民地决议
 		icon = AA_small
 		allowed = { original_tag = GEA }
 
-		custom_cost_text = 1000RIFLE
+		custom_cost_text = 1000_guns
 		custom_cost_trigger = {
 			has_equipment = { infantry_equipment > 1000 }
 		}
@@ -4921,7 +4921,7 @@ GEA_decisions = {#德属东亚殖民地决议
 			political_power_gain = -0.05
 		}
 
-		custom_cost_text = 500RIFLE
+		custom_cost_text = 500_guns
 		custom_cost_trigger = {
 			has_equipment = { infantry_equipment > 500 }
 		}
@@ -7984,7 +7984,7 @@ GEA_indochina_war_decisions = {#印支战争
 			check_variable = { GEA_review_infantry_combat_lessons_count < 3 }
 		}
 
-		custom_cost_text = GEA_cost_10_army_experience
+		custom_cost_text = army_xp_10
 		custom_cost_trigger = { has_army_experience > 9.99 }
 
 		days_remove = 45
@@ -8052,7 +8052,7 @@ GEA_indochina_war_decisions = {#印支战争
 			}
 		}
 
-		custom_cost_text = GEA_cost_25_army_experience
+		custom_cost_text = army_xp_25
 		custom_cost_trigger = { has_army_experience > 24.99 }
 
 		days_remove = 90
@@ -8095,7 +8095,7 @@ GEA_indochina_war_decisions = {#印支战争
 			}
 		}
 
-		custom_cost_text = GEA_cost_30_army_experience
+		custom_cost_text = army_xp_30
 		custom_cost_trigger = { has_army_experience > 29.99 }
 
 		days_remove = 90
@@ -8460,14 +8460,12 @@ GEA_indochina_war_decisions = {#印支战争
 GEA_colonial_decisions = {#帝国殖民事务部决议
 	GEA_steal_manpower_from_home = {
 		available = {
-			FROM = {
+			GER = {
 				has_manpower > 25000
 			}
+			GER = { exists = yes }
 		}
-		targets = { GER }
-		target_trigger = {
-			is_subject_of = FROM
-		}
+
 
 		cost = GEA_colonial_decision_cost_100
 		days_re_enable = GEA_colonial_decision_days_365
@@ -8491,14 +8489,12 @@ GEA_colonial_decisions = {#帝国殖民事务部决议
 				archetype = infantry_equipment
 				ratio < 0.05
 			}
-			FROM = {
+			GER = {
 				has_equipment = { infantry_equipment > 2499 }
 			}
+			GER = { exists = yes }
 		}
-		targets = { GER }
-		target_trigger = {
-			is_subject_of = FROM
-		}
+
 		cost = GEA_colonial_decision_cost_50
 		days_re_enable = GEA_colonial_decision_days_365
 		
@@ -8522,12 +8518,10 @@ GEA_colonial_decisions = {#帝国殖民事务部决议
 			}
 		}
 		visible = {
+			GER = { exists = yes }
 			has_completed_focus = GEA_Seek_assistance_from_the_fatherland
 		}
-		targets = { GER }
-		target_trigger = {
-			is_subject_of = FROM
-		}
+
 		cost = GEA_colonial_decision_cost_25
 		days_re_enable = GEA_colonial_decision_days_180
 		complete_effect = {
@@ -8538,18 +8532,15 @@ GEA_colonial_decisions = {#帝国殖民事务部决议
 	}
 	GEA_ask_for_artillery = {
 		available = {
-			FROM = {
+			GER = {
 				has_equipment = {
 					artillery_equipment > 300
 				}
 			}
 		}
 
-		targets = { GER }
-		target_trigger = {
-			is_subject_of = FROM
-		}
 		visible = {
+			GER = { exists = yes }
 			has_completed_focus = GEA_Seek_assistance_from_the_fatherland
 		}
 		cost = GEA_colonial_decision_cost_50
@@ -8567,19 +8558,17 @@ GEA_colonial_decisions = {#帝国殖民事务部决议
 	}
 	GEA_ask_for_truck = {
 		available = {
-			FROM = {
+			GER = {
 				has_equipment = {
 					motorized_equipment > 300
 				}
 			}
 		}
 		visible = {
+			GER = { exists = yes }
 			has_completed_focus = GEA_Seek_assistance_from_the_fatherland
 		}
-		targets = { GER }
-		target_trigger = {
-			is_subject_of = FROM
-		}
+
 
 		cost = GEA_colonial_decision_cost_50
 		days_re_enable = GEA_colonial_decision_days_180
@@ -8596,7 +8585,7 @@ GEA_colonial_decisions = {#帝国殖民事务部决议
 	}
 	GEA_Demand_supplies = {
 		available = {
-			FROM = {
+			GER = {
 				has_equipment = {
 					support_equipment > 499
 				}
@@ -8604,11 +8593,9 @@ GEA_colonial_decisions = {#帝国殖民事务部决议
 		}
 		visible = {
 			has_completed_focus = GEA_Seek_assistance_from_the_fatherland
+			GER = { exists = yes }
 		}
-		targets = { GER }
-		target_trigger = {
-			is_subject_of = FROM
-		}
+
 
 		cost = GEA_colonial_decision_cost_50
 		days_re_enable = GEA_colonial_decision_days_180
@@ -8626,14 +8613,12 @@ GEA_colonial_decisions = {#帝国殖民事务部决议
 	GEA_Request_bureaucrat = {
 		visible = {
 			has_completed_focus = GEA_Seek_assistance_from_the_fatherland
+			GER = { exists = yes }
 		}
 		available = {
 			owns_state = 336
 		}
-		targets = { GER }
-		target_trigger = {
-			is_subject_of = FROM
-		}
+
 		cost = GEA_colonial_decision_cost_20
 		days_re_enable = GEA_colonial_decision_days_200
 		complete_effect = {
@@ -8647,11 +8632,9 @@ GEA_colonial_decisions = {#帝国殖民事务部决议
 	GEA_Request_field_corps = {
 		visible = {
 			has_completed_focus = GEA_Seek_assistance_from_the_fatherland
+			GER = { exists = yes }
 		}
-		targets = { GER }
-		target_trigger = {
-			is_subject_of = FROM
-		}
+
 		days_remove = GEA_colonial_decision_days_60
 		custom_cost_text = GEA_Request_field_corps_cost_tt
 		custom_cost_trigger = {
@@ -8701,7 +8684,9 @@ GEA_colonial_decisions = {#帝国殖民事务部决议
 GEA_heye_decisions = {#海耶相关决议
 	GEA_heye_request_guns = {#索要步兵装备
 		icon = GFX_decision_GEA_army
+		allowed = { tag = GEA }
 		visible = {
+			GER = { exists = yes }
 			OR = {
 				has_country_flag = GEA_ask_less_support
 				has_country_flag = GEA_ask_support
@@ -8709,13 +8694,9 @@ GEA_heye_decisions = {#海耶相关决议
 			}
 		}
 		available = {
-			FROM = {
+			GER = {
 				has_equipment = { infantry_equipment > 2499 }
 			}
-		}
-		targets = { GER }
-		target_trigger = {
-			is_subject_of = FROM
 		}
 		cost = 50
 		days_re_enable = 180
@@ -8723,7 +8704,7 @@ GEA_heye_decisions = {#海耶相关决议
 			log = "[GetDateText]: [Root.GetName]: Decision GEA_heye_request_guns"
 			custom_effect_tooltip = GEA_heye_receive_guns_tt
 			hidden_effect = {
-				FROM = {
+				GER = {
 					send_equipment = {
 						equipment = infantry_equipment
 						amount = 2500
@@ -8736,7 +8717,9 @@ GEA_heye_decisions = {#海耶相关决议
 
 	GEA_heye_request_artillery = {#索要火炮
 		icon = GFX_goal_generic_artillery
+		allowed = { tag = GEA }
 		visible = {
+			GER = { exists = yes }
 			OR = {
 				has_country_flag = GEA_ask_less_support
 				has_country_flag = GEA_ask_support
@@ -8744,13 +8727,9 @@ GEA_heye_decisions = {#海耶相关决议
 			}
 		}
 		available = {
-			FROM = {
+			GER = {
 				has_equipment = { artillery_equipment > 299 }
 			}
-		}
-		targets = { GER }
-		target_trigger = {
-			is_subject_of = FROM
 		}
 		cost = 50
 		days_re_enable = 180
@@ -8758,7 +8737,7 @@ GEA_heye_decisions = {#海耶相关决议
 			log = "[GetDateText]: [Root.GetName]: Decision GEA_heye_request_artillery"
 			custom_effect_tooltip = GEA_heye_receive_artillery_tt
 			hidden_effect = {
-				FROM = {
+				GER = {
 					send_equipment = {
 						equipment = artillery_equipment
 						amount = 300
@@ -8771,7 +8750,9 @@ GEA_heye_decisions = {#海耶相关决议
 
 	GEA_heye_request_manpower = {#索要人力
 		icon = GFX_decision_Citizen
+		allowed = { tag = GEA }
 		visible = {
+			GER = { exists = yes }
 			OR = {
 				has_country_flag = GEA_ask_less_support
 				has_country_flag = GEA_ask_support
@@ -8779,13 +8760,9 @@ GEA_heye_decisions = {#海耶相关决议
 			}
 		}
 		available = {
-			FROM = {
+			GER = {
 				has_manpower > 24999
 			}
-		}
-		targets = { GER }
-		target_trigger = {
-			is_subject_of = FROM
 		}
 		cost = 50
 		days_re_enable = 180
@@ -8793,7 +8770,7 @@ GEA_heye_decisions = {#海耶相关决议
 			log = "[GetDateText]: [Root.GetName]: Decision GEA_heye_request_manpower"
 			add_manpower = 25000
 			hidden_effect = {
-				FROM = {
+				GER = {
 					add_manpower = -25000
 				}
 			}
@@ -8802,7 +8779,10 @@ GEA_heye_decisions = {#海耶相关决议
 
 	GEA_heye_request_support_equipment = {#索要支援装备
 		icon = GFX_decision_generic_equipment
+		allowed = { tag = GEA }
+
 		visible = {
+			GER = { exists = yes }
 			OR = {
 				has_country_flag = GEA_ask_less_support
 				has_country_flag = GEA_ask_support
@@ -8810,13 +8790,9 @@ GEA_heye_decisions = {#海耶相关决议
 			}
 		}
 		available = {
-			FROM = {
+			GER = {
 				has_equipment = { support_equipment > 499 }
 			}
-		}
-		targets = { GER }
-		target_trigger = {
-			is_subject_of = FROM
 		}
 		cost = 50
 		days_re_enable = 180
@@ -8824,7 +8800,7 @@ GEA_heye_decisions = {#海耶相关决议
 			log = "[GetDateText]: [Root.GetName]: Decision GEA_heye_request_support_equipment"
 			custom_effect_tooltip = GEA_heye_receive_support_equipment_tt
 			hidden_effect = {
-				FROM = {
+				GER = {
 					send_equipment = {
 						equipment = support_equipment
 						amount = 500
@@ -8837,6 +8813,7 @@ GEA_heye_decisions = {#海耶相关决议
 
 	GEA_heye_import_machine_tools = {#进口新机床（基础）
 		icon = GFX_decision_generic_industry
+		allowed = { tag = GEA }
 		visible = { has_country_flag = GEA_ask_less_support }
 		cost = 50
 		days_re_enable = 180
@@ -8848,6 +8825,7 @@ GEA_heye_decisions = {#海耶相关决议
 
 	GEA_heye_import_machine_tools_expanded = {#进口新机床（中等）
 		icon = GFX_decision_generic_industry
+		allowed = { tag = GEA }
 		visible = { has_country_flag = GEA_ask_support }
 		cost = 75
 		days_re_enable = 180
@@ -8859,6 +8837,7 @@ GEA_heye_decisions = {#海耶相关决议
 
 	GEA_heye_import_machine_tools_maximized = {#进口新机床（高等）
 		icon = GFX_decision_generic_industry
+		allowed = { tag = GEA }
 		visible = { has_country_flag = GEA_ask_more_support }
 		cost = 100
 		days_re_enable = 180
@@ -8870,6 +8849,7 @@ GEA_heye_decisions = {#海耶相关决议
 
 	GEA_heye_import_production_line = {#引进新式生产线（基础）
 		icon = GFX_decision_generic_industry
+		allowed = { tag = GEA }
 		visible = { has_country_flag = GEA_ask_less_support }
 		cost = 50
 		days_re_enable = 180
@@ -8881,6 +8861,7 @@ GEA_heye_decisions = {#海耶相关决议
 
 	GEA_heye_import_production_line_expanded = {#引进新式生产线（中等）
 		icon = GFX_decision_generic_industry
+		allowed = { tag = GEA }
 		visible = { has_country_flag = GEA_ask_support }
 		cost = 75
 		days_re_enable = 180
@@ -8892,6 +8873,7 @@ GEA_heye_decisions = {#海耶相关决议
 
 	GEA_heye_import_production_line_maximized = {#引进新式生产线（高等）
 		icon = GFX_decision_generic_industry
+		allowed = { tag = GEA }
 		visible = { has_country_flag = GEA_ask_more_support }
 		cost = 100
 		days_re_enable = 180
@@ -8903,7 +8885,10 @@ GEA_heye_decisions = {#海耶相关决议
 
 	GEA_heye_request_light_tank_support = {#请求装甲车辆支援
 		icon = GFX_decision_generic_tank
+		allowed = { tag = GEA }
 		visible = {
+			GER = { exists = yes }
+			is_subject_of = GER
 			OR = {
 				has_country_flag = GEA_ask_support
 				has_country_flag = GEA_ask_more_support
@@ -8911,10 +8896,8 @@ GEA_heye_decisions = {#海耶相关决议
 		}
 		available = {
 			has_dlc = "No Step Back"
-			FROM = { has_tech = improved_light_tank_chassis }
+			GER = { has_tech = improved_light_tank_chassis }
 		}
-		targets = { GER }
-		target_trigger = { is_subject_of = FROM }
 		cost = 75
 		days_re_enable = 180
 		complete_effect = {
@@ -8923,7 +8906,7 @@ GEA_heye_decisions = {#海耶相关决议
 			hidden_effect = {
 				if = {
 					limit = { NOT = { has_country_flag = GEA_heye_light_tank_variant_created } }
-					FROM = {
+					GER = {
 						create_equipment_variant = {
 							name = "GEA_heye_panzer_ii"
 							type = light_tank_chassis_2
@@ -8960,7 +8943,10 @@ GEA_heye_decisions = {#海耶相关决议
 
 	GEA_heye_request_medium_tank_support = {#请求主战坦克支援
 		icon = GFX_decision_generic_tank
+		allowed = { tag = GEA }
 		visible = {
+			GER = { exists = yes }
+			is_subject_of = GER
 			OR = {
 				has_country_flag = GEA_ask_support
 				has_country_flag = GEA_ask_more_support
@@ -8968,10 +8954,8 @@ GEA_heye_decisions = {#海耶相关决议
 		}
 		available = {
 			has_dlc = "No Step Back"
-			FROM = { has_tech = basic_medium_tank_chassis }
+			GER = { has_tech = basic_medium_tank_chassis }
 		}
-		targets = { GER }
-		target_trigger = { is_subject_of = FROM }
 		cost = 75
 		days_re_enable = 180
 		complete_effect = {
@@ -8980,7 +8964,7 @@ GEA_heye_decisions = {#海耶相关决议
 			hidden_effect = {
 				if = {
 					limit = { NOT = { has_country_flag = GEA_heye_medium_tank_variant_created } }
-					FROM = {
+					GER = {
 						create_equipment_variant = {
 							name = "GEA_heye_panzer_iii"
 							type = medium_tank_chassis_1
@@ -9017,22 +9001,23 @@ GEA_heye_decisions = {#海耶相关决议
 
 	GEA_heye_request_light_aircraft_support = {#请求轻型飞机支援
 		icon = GFX_decision_generic_air
+		allowed = { tag = GEA }
 		visible = {
+			GER = { exists = yes }
+			is_subject_of = GER
 			OR = {
 				has_country_flag = GEA_ask_support
 				has_country_flag = GEA_ask_more_support
 			}
 		}
 		available = {
-			FROM = {
+			GER = {
 				OR = {
 					has_tech = basic_small_airframe
 					has_tech = fighter1
 				}
 			}
 		}
-		targets = { GER }
-		target_trigger = { is_subject_of = FROM }
 		cost = 75
 		days_re_enable = 180
 		complete_effect = {
@@ -9061,15 +9046,16 @@ GEA_heye_decisions = {#海耶相关决议
 
 	GEA_heye_request_truck_support = {#请求卡车支援
 		icon = GFX_decision_generic_equipment
+		allowed = { tag = GEA }
 		visible = {
+			GER = { exists = yes }
+			is_subject_of = GER
 			OR = {
 				has_country_flag = GEA_ask_support
 				has_country_flag = GEA_ask_more_support
 			}
 		}
-		available = { FROM = { has_tech = motorised_infantry } }
-		targets = { GER }
-		target_trigger = { is_subject_of = FROM }
+		available = { GER = { has_tech = motorised_infantry } }
 		cost = 75
 		days_re_enable = 180
 		complete_effect = {
@@ -9087,15 +9073,16 @@ GEA_heye_decisions = {#海耶相关决议
 
 	GEA_heye_request_mechanized_support = {#请求机械化载具支援
 		icon = GFX_decision_generic_equipment
+		allowed = { tag = GEA }
 		visible = {
+			GER = { exists = yes }
+			is_subject_of = GER
 			OR = {
 				has_country_flag = GEA_ask_support
 				has_country_flag = GEA_ask_more_support
 			}
 		}
-		available = { FROM = { has_tech = mechanised_infantry } }
-		targets = { GER }
-		target_trigger = { is_subject_of = FROM }
+		available = { GER = { has_tech = mechanised_infantry } }
 		cost = 75
 		days_re_enable = 180
 		complete_effect = {
@@ -9113,22 +9100,23 @@ GEA_heye_decisions = {#海耶相关决议
 
 	GEA_heye_request_cas_support = {#请求近距支援机
 		icon = GFX_decision_generic_air
+		allowed = { tag = GEA }
 		visible = {
+			GER = { exists = yes }
+			is_subject_of = GER
 			OR = {
 				has_country_flag = GEA_ask_support
 				has_country_flag = GEA_ask_more_support
 			}
 		}
 		available = {
-			FROM = {
+			GER = {
 				OR = {
 					has_tech = basic_small_airframe
 					has_tech = CAS1
 				}
 			}
 		}
-		targets = { GER }
-		target_trigger = { is_subject_of = FROM }
 		cost = 75
 		days_re_enable = 180
 		complete_effect = {
@@ -9157,9 +9145,10 @@ GEA_heye_decisions = {#海耶相关决议
 
 	GEA_heye_request_mainline_infantry_divisions = {#请求主力步兵师
 		icon = GFX_decision_GEA_army
-		visible = { has_country_flag = GEA_ask_more_support }
-		targets = { GER }
-		target_trigger = { is_subject_of = FROM }
+		allowed = { tag = GEA }
+		visible = {
+			GER = { exists = yes }
+			is_subject_of = GER has_country_flag = GEA_ask_more_support }
 		cost = 100
 		days_re_enable = 180
 		complete_effect = {
@@ -9210,9 +9199,10 @@ GEA_heye_decisions = {#海耶相关决议
 
 	GEA_heye_request_motorized_divisions = {#请求摩托化师
 		icon = GFX_decision_generic_equipment
-		visible = { has_country_flag = GEA_ask_more_support }
-		targets = { GER }
-		target_trigger = { is_subject_of = FROM }
+		allowed = { tag = GEA }
+		visible = {
+			GER = { exists = yes }
+			is_subject_of = GER has_country_flag = GEA_ask_more_support }
 		cost = 100
 		days_re_enable = 180
 		complete_effect = {
@@ -9259,13 +9249,14 @@ GEA_heye_decisions = {#海耶相关决议
 
 	GEA_heye_request_armored_kampfgruppen = {#请求装甲战斗群
 		icon = GFX_decision_generic_tank
-		visible = { has_country_flag = GEA_ask_more_support }
+		allowed = { tag = GEA }
+		visible = {
+			GER = { exists = yes }
+			is_subject_of = GER has_country_flag = GEA_ask_more_support }
 		available = {
 			has_dlc = "No Step Back"
-			FROM = { has_tech = basic_medium_tank_chassis }
+			GER = { has_tech = basic_medium_tank_chassis }
 		}
-		targets = { GER }
-		target_trigger = { is_subject_of = FROM }
 		cost = 100
 		days_re_enable = 180
 		complete_effect = {
@@ -9387,7 +9378,6 @@ GEA_focus_china_decisions = {#第二次对华远征
 			transfer_state = 803 #温州
 			transfer_state = 1075 #南通
 			transfer_state = 802 #厦门
-			transfer_state = 592 #广州
 			add_state_core = 803
 			add_state_core = 1075
 			add_state_core = 802
@@ -9637,7 +9627,7 @@ GEA_focus_china_decisions = {#第二次对华远征
 		}
 	}
 
-GEA_Dispatch_Military_Advisers = { #派驻军事顾问团
+    GEA_Dispatch_Military_Advisers = { #派驻军事顾问团
 		icon = GFX_GEA_Dispatch_Military_Advisers_decision
 		allowed = { original_tag = GEA }
 
@@ -10325,7 +10315,14 @@ GEA_Dispatch_Military_Advisers = { #派驻军事顾问团
 		}
 
 		available = {
-			GEA_east_china_coup_threshold_trigger = yes
+			custom_trigger_tooltip = {
+				tooltip = GEA_lep_capital_influence_above_90_tt
+				check_variable = { var = GEA_china_lep_capital_influence value = 90 compare = greater_than }
+			}
+			custom_trigger_tooltip = {
+				tooltip = GEA_lep_military_projection_above_90_tt
+				check_variable = { var = GEA_china_lep_military_projection value = 90 compare = greater_than }
+			}
 			NOT = { has_war_with = FROM }
 			FROM = {
 				is_subject = no
@@ -10686,7 +10683,7 @@ GEA_Dispatch_Military_Advisers = { #派驻军事顾问团
 		cost = 0
 		days_remove = 60
 		days_re_enable = 90
-		custom_cost_text = GEA_credit_liquidation_cp_cost
+		custom_cost_text = CP_10
 		custom_cost_trigger = { command_power > 9.99 }
 		visible = {
 			FROM = { GEA_china_warlord_can_interact_trigger = yes }
@@ -11351,7 +11348,7 @@ GEA_Dispatch_Military_Advisers = { #派驻军事顾问团
 		allowed = { original_tag = GEA }
 		priority = 10001
 		cost = 0
-		custom_cost_text = GEA_shandong_expedition_cp_cost
+		custom_cost_text = CP_100
 		custom_cost_trigger = { command_power > 99.99 }
 		days_remove = 45
 		fire_only_once = yes
@@ -14714,7 +14711,7 @@ political_actions = {
 		icon = generic_prepare_civil_war
 		allowed = { original_tag = GEA }
 
-		custom_cost_text = GEA_war_plan_meyer_waldeck_cp_cost
+		custom_cost_text = CP_10
 		custom_cost_trigger = { command_power > 9.99 }
 
 		days_remove = 45
@@ -14770,7 +14767,7 @@ political_actions = {
 	GEA_War_plan_Ocean_Heart = { #战争计划：大洋之心
 		icon = generic_prepare_civil_war
 		allowed = { original_tag = GEA }
-		custom_cost_text = GEA_war_plan_meyer_waldeck_cp_cost
+		custom_cost_text = CP_10
 		custom_cost_trigger = { command_power > 9.99 }
 		days_remove = 45
 		fire_only_once = yes
@@ -14824,7 +14821,7 @@ political_actions = {
 	GEA_War_operation_Rumphius = { #战争行动：龙菲乌斯
 		icon = generic_prepare_civil_war
 		allowed = { original_tag = GEA }
-		custom_cost_text = GEA_war_plan_meyer_waldeck_cp_cost
+		custom_cost_text = CP_10
 		custom_cost_trigger = { command_power > 9.99 }
 		days_remove = 45
 		fire_only_once = yes
@@ -14877,7 +14874,7 @@ political_actions = {
 	GEA_War_operation_Leichhardt = { #战争行动：莱希哈特
 		icon = generic_prepare_civil_war
 		allowed = { original_tag = GEA }
-		custom_cost_text = GEA_war_plan_meyer_waldeck_cp_cost
+		custom_cost_text = CP_10
 		custom_cost_trigger = { command_power > 9.99 }
 		days_remove = 45
 		fire_only_once = yes
@@ -14927,7 +14924,7 @@ political_actions = {
 	GEA_War_operation_Forty_Years = { #战争行动：四十年的未竟之事
 		icon = generic_prepare_civil_war
 		allowed = { original_tag = GEA }
-		custom_cost_text = GEA_war_plan_meyer_waldeck_cp_cost
+		custom_cost_text = CP_10
 		custom_cost_trigger = { command_power > 9.99 }
 		days_remove = 45
 		fire_only_once = yes
@@ -14977,7 +14974,7 @@ political_actions = {
 	GEA_War_operation_Eulenburg = { #战争行动：欧伦堡
 		icon = generic_prepare_civil_war
 		allowed = { original_tag = GEA }
-		custom_cost_text = GEA_war_plan_meyer_waldeck_cp_cost
+		custom_cost_text = CP_10
 		custom_cost_trigger = { command_power > 9.99 }
 		days_remove = 45
 		fire_only_once = yes
@@ -15027,7 +15024,7 @@ political_actions = {
 	GEA_War_operation_Helfer = { #战争行动：黑尔弗
 		icon = generic_prepare_civil_war
 		allowed = { original_tag = GEA }
-		custom_cost_text = GEA_war_plan_meyer_waldeck_cp_cost
+		custom_cost_text = CP_10
 		custom_cost_trigger = { command_power > 9.99 }
 		days_remove = 45
 		fire_only_once = yes
@@ -16134,7 +16131,7 @@ GEA_luckner_decisions = {
 	GEA_Sabotage_enemy_naval_ports = { #潜入破坏海军军港
 		allowed = { original_tag = GEA }
 		icon = GFX_decision_GEA_Raid_coastal_arsenals
-		custom_cost_text = GEA_wartime_pirate_raid_cost
+		custom_cost_text = CP_50
 		custom_cost_trigger = { command_power > 49.99 }
 		days_remove = 60
 		days_re_enable = 90
@@ -16203,7 +16200,7 @@ GEA_luckner_decisions = {
 	GEA_Attack_enemy_civilian_shipping = { #打击民用航线
 		allowed = { original_tag = GEA }
 		icon = generic_naval
-		custom_cost_text = GEA_wartime_pirate_raid_cost
+		custom_cost_text = CP_50
 		custom_cost_trigger = { command_power > 49.99 }
 		days_remove = 60
 		days_re_enable = 90
@@ -16272,7 +16269,7 @@ GEA_luckner_decisions = {
 	GEA_Harass_enemy_fleet = { #袭扰敌方舰队
 		allowed = { original_tag = GEA }
 		icon = GFX_GEA_Expand_the_pirate_fleet
-		custom_cost_text = GEA_wartime_pirate_raid_cost
+		custom_cost_text = CP_50
 		custom_cost_trigger = { command_power > 49.99 }
 		days_remove = 60
 		days_re_enable = 90

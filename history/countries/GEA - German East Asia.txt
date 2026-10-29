@@ -210,7 +210,7 @@ country_event = { #1936.04.25 东京大罢工
 
 country_event = { 
 	id = GEA.31
-	days = 137
+	days = 220
 }
 
 country_event = { 
@@ -223,6 +223,11 @@ country_event = {
 	days = 175
 }
 
+country_event = { #顺化奇人请愿：1936年7月上旬
+	id = GEA.60
+	days = 190
+}
+
 country_event = { 
 	id = GEA.18
 	days = 204
@@ -230,17 +235,27 @@ country_event = {
 
 country_event = { 
 	id = GEA.33
-	days = 162
+	days = 285
 }
 
 country_event = { #宵禁之后：安排在逮捕事件与南圻局势事件之间
 	id = GEA.53
-	days = 230
+	days = 365
+}
+
+country_event = { #乂安警报：1936年9月上旬
+	id = GEA.58
+	days = 250
+}
+
+country_event = { #北圻大饥荒：1936年11月下旬
+	id = GEA.59
+	days = 330
 }
 
 country_event = { 
 	id = GEA.20
-	days = 260 
+	days = 411 
 }
 
 set_politics = {

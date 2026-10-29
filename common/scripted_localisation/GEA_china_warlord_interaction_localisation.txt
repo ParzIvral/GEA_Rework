@@ -339,3 +339,14 @@ defined_text = {
 		localization_key = CP_30
 	}
 }
+
+defined_text = {
+	name = GetGEALepExportCommandPowerCostBlocked
+	text = {
+		trigger = { has_completed_focus = GEA_The_usiness_expansion_of_AOG }
+		localization_key = CP_20_blocked
+	}
+	text = {
+		localization_key = CP_30_blocked
+	}
+}

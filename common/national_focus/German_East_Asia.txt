@@ -6991,7 +6991,7 @@ focus_tree = {
 	focus = { #以钢铁与混凝土重塑东方
 		id = GEA_Reconstructing_the_East_with_Steel_and_Concrete
 		icon = GFX_GEA_Reconstructing_the_East_with_Steel_and_Concrete
-		cost = 5
+		cost = 3
 		x = 0
 		y = 1
 		ai_will_do = {
@@ -15930,6 +15930,7 @@ focus_tree = {
 		relative_position_id = GEA_The_second_expedition_to_China
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_marionettes_in_the_Forbidden_City"
+			add_stability = 0.03
 		}	
 	}
 
@@ -16381,6 +16382,9 @@ focus_tree = {
 			factor = 100
 		}
 		available = {
+			SQI = {
+				exists = yes
+			}
 			GEA_shandong_non_anti_concession_controller_trigger = yes
 		}
 		prerequisite = {
@@ -16407,7 +16411,9 @@ focus_tree = {
 			factor = 100
 		}
 		available = {
-
+			SQI = {
+				exists = yes
+			}
 		}			
 		prerequisite = {
 			focus = GEA_Build_the_peninsula
@@ -16454,8 +16460,8 @@ focus_tree = {
 		}
 		available = {
 			OR = {
-				744 = { owner = { OR = { tag = GER tag = GEA } } }
-				996 = { owner = { OR = { tag = GER tag = GEA } } }
+				744 = { owner = { tag = GEA } }
+				996 = { owner = { tag = GEA } } 
 			}
 		}
 		prerequisite = {
