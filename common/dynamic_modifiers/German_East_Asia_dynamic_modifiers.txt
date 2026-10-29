@@ -615,3 +615,11 @@ GEA_jungle_mud_pit_modifier = {
 	enemy_truck_attrition_factor = -0.1
 	enemy_attrition = -0.1
 }
+
+# 山东租界工业区
+GEA_Jiaozhou_industrial_zone_modifier = {
+	enable = { always = yes }
+	remove_trigger = { NOT = { owner = { OR = { tag = GER tag = GEA } } } }
+	local_building_slots_factor = 0.10
+	state_production_speed_buildings_factor = 0.15
+}

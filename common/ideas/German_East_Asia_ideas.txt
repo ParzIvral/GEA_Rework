@@ -2449,7 +2449,34 @@ ideas = {
 		}
 #air
 #外交
-		GEA_mark_trade_settlement = { #马克贸易结算：由QIE向GEA提供民用工业
+		GEA_zhili_great_wall = { #直隶长城
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_zhili_great_wall" }
+			picture = GER_Deeds_Throne
+			allowed = { always = no }
+			modifier = {
+				army_core_defence_factor = 0.1
+				production_speed_bunker_factor = 0.15
+				army_org_factor = 0.1
+				war_support_factor = 0.1
+				max_dig_in = 2
+			}
+		}
+		GEA_german_controlled_economic_market = { #德控经济市场
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_german_controlled_economic_market" }
+			picture = GER_Bank_Controls
+			allowed = { always = no }
+			modifier = {
+				production_speed_buildings_factor = 0.2
+				consumer_goods_factor = -0.2
+				industrial_capacity_factory = 0.1
+			}
+			targeted_modifier = {
+				tag = GEA
+				cic_to_target_factor = 0.4
+				mic_to_target_factor = 0.4
+			}
+		}
+		GEA_mark_trade_settlement = { #马克贸易结算
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_mark_trade_settlement" }
 			picture = GER_Bank_Controls
 			allowed = { always = no }

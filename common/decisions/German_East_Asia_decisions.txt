@@ -6486,7 +6486,7 @@ GEA_decisions = {#德属东亚殖民地决议
 		}
 	}
 	#山东租借地
-	GEA_Jiaozhou_Bay_development_plan = {
+	GEA_Jiaozhou_Bay_development_plan = { #胶州湾发展计划
 		icon = GFX_decision_generic_industry
 		allowed = { original_tag = GEA }
 		cost = 50
@@ -6503,19 +6503,7 @@ GEA_decisions = {#德属东亚殖民地决议
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Jiaozhou_Bay_development_plan"
 			744 = {
-				if = {
-					limit = {
-						OR = {
-							has_state_category = zero
-							has_state_category = one
-							has_state_category = two
-							has_state_category = three
-							has_state_category = four
-							has_state_category = five
-						}
-					}
-					set_state_category = six
-				}
+				increase_state_category_by_one_level = yes
 				add_extra_state_shared_building_slots = 4
 				add_building_construction = { type = arms_factory level = 2 instant_build = yes }
 				add_building_construction = { type = industrial_complex level = 2 instant_build = yes }
@@ -6525,7 +6513,7 @@ GEA_decisions = {#德属东亚殖民地决议
 		}
 	}
 
-	GEA_Weihaiwei_coastal_defence = {
+	GEA_Weihaiwei_coastal_defence = { #威海卫海防建设
 		icon = GFX_decision_generic_naval_base
 		allowed = { original_tag = GEA }
 		cost = 50
@@ -9415,7 +9403,6 @@ GEA_focus_china_decisions = {#第二次对华远征
 
 		visible = {
 			FROM = { GEA_china_warlord_can_interact_trigger = yes }
-			#has_completed_focus = GEA_Nanjing_xpress
 			has_country_flag = GEA_east_china_investment_unlocked
 			has_country_flag = LEP_OPEN
 		}
@@ -9462,9 +9449,8 @@ GEA_focus_china_decisions = {#第二次对华远征
 
 		visible = {
 			FROM = { GEA_china_warlord_can_interact_trigger = yes }
-			#has_completed_focus = GEA_Nanjing_xpress
 			has_country_flag = GEA_east_china_investment_unlocked
-			has_country_flag = LEP_OPEN
+			has_country_flag = LEP_OPEN 
 		}
 
 		targets_dynamic = yes
@@ -9515,9 +9501,8 @@ GEA_focus_china_decisions = {#第二次对华远征
 
 		visible = {
 			FROM = { GEA_china_warlord_can_interact_trigger = yes }
-			#has_completed_focus = GEA_Nanjing_xpress
 			has_country_flag = GEA_east_china_investment_unlocked
-			has_country_flag = LEP_OPEN
+			has_country_flag = LEP_OPEN 
 		}
 
 		targets_dynamic = yes
@@ -11018,6 +11003,570 @@ GEA_Dispatch_Military_Advisers = { #派驻军事顾问团
 		}
 	}
 
+	GEA_sqi_invest_in_shandong = {
+		icon = GFX_GEA_Invest_in_East_China_decision
+		allowed = { original_tag = GEA }
+		cost = 20
+		days_remove = 30
+		days_re_enable = 60
+		cancel_if_not_visible = no
+		visible = {
+			has_completed_focus = GEA_Copy_the_Qingdao_model
+			has_country_flag = SQI_OPEN
+			SQI = { exists = yes GEA_china_warlord_can_interact_trigger = yes }
+		}
+		targets = { SQI }
+		target_root_trigger = {
+			has_completed_focus = GEA_Copy_the_Qingdao_model
+			has_country_flag = SQI_OPEN
+		}
+		available = {
+			NOT = { has_war_with = SQI }
+			SQI = { exists = yes GEA_china_warlord_can_interact_trigger = yes }
+		}
+		cancel_trigger = {
+			OR = {
+				NOT = { country_exists = SQI }
+				has_war_with = SQI
+				SQI = { GEA_china_warlord_cannot_interact_trigger = yes }
+			}
+		}
+		ai_will_do = { factor = 30 }
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_sqi_invest_in_shandong"
+			SQI = {
+				add_political_power = 30
+				add_stability = 0.02
+			}
+			custom_effect_tooltip = GEA_china_shandong_name_tt
+			add_to_variable = {
+				GEA_china_sqi_attitude = 3
+				tooltip = GEA_china_attitude_change_tt
+			}
+			add_to_variable = {
+				GEA_china_sqi_capital_influence = 3
+				tooltip = GEA_china_capital_influence_change_tt
+			}
+			hidden_effect = {
+				clamp_variable = { var = GEA_china_sqi_attitude min = 0 max = 100 }
+				clamp_variable = { var = GEA_china_sqi_capital_influence min = 0 max = 100 }
+			}
+		}
+	}
+
+	GEA_sqi_establish_german_enterprises = {
+		icon = GFX_GEA_Invest_in_East_China_decision
+		allowed = { original_tag = GEA }
+		cost = 40
+		days_remove = 60
+		days_re_enable = 120
+		cancel_if_not_visible = no
+		visible = {
+			has_completed_focus = GEA_Copy_the_Qingdao_model
+			has_country_flag = SQI_OPEN
+			SQI = { exists = yes GEA_china_warlord_can_interact_trigger = yes }
+		}
+		targets = { SQI }
+		target_root_trigger = {
+			has_completed_focus = GEA_Copy_the_Qingdao_model
+			has_country_flag = SQI_OPEN
+		}
+		available = {
+			NOT = { has_war_with = SQI }
+			SQI = { exists = yes GEA_china_warlord_can_interact_trigger = yes }
+			SQI = { any_owned_state = { is_controlled_by = SQI is_core_of = SQI } }
+		}
+		cancel_trigger = {
+			OR = {
+				NOT = { country_exists = SQI }
+				has_war_with = SQI
+				SQI = { GEA_china_warlord_cannot_interact_trigger = yes }
+			}
+		}
+		ai_will_do = { factor = 30 }
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_sqi_establish_german_enterprises"
+			SQI = {
+				random_owned_controlled_state = {
+					limit = { is_core_of = SQI }
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+				}
+				add_stability = 0.02
+			}
+			custom_effect_tooltip = GEA_china_shandong_name_tt
+			add_to_variable = {
+				GEA_china_sqi_attitude = 4
+				tooltip = GEA_china_attitude_change_tt
+			}
+			add_to_variable = {
+				GEA_china_sqi_capital_influence = 4
+				tooltip = GEA_china_capital_influence_change_tt
+			}
+			hidden_effect = {
+				clamp_variable = { var = GEA_china_sqi_attitude min = 0 max = 100 }
+				clamp_variable = { var = GEA_china_sqi_capital_influence min = 0 max = 100 }
+			}
+		}
+	}
+
+	GEA_sqi_dispatch_military_advisers = {
+		icon = GFX_GEA_Dispatch_Military_Advisers_decision
+		allowed = { original_tag = GEA }
+		cost = 35
+		days_remove = 45
+		days_re_enable = 90
+		cancel_if_not_visible = no
+		visible = {
+			has_completed_focus = GEA_Copy_the_Qingdao_model
+			has_country_flag = SQI_OPEN
+			SQI = { exists = yes GEA_china_warlord_can_interact_trigger = yes }
+		}
+		targets = { SQI }
+		target_root_trigger = {
+			has_completed_focus = GEA_Copy_the_Qingdao_model
+			has_country_flag = SQI_OPEN
+		}
+		available = {
+			NOT = { has_war_with = SQI }
+			SQI = { exists = yes GEA_china_warlord_can_interact_trigger = yes }
+		}
+		cancel_trigger = {
+			OR = {
+				NOT = { country_exists = SQI }
+				has_war_with = SQI
+				SQI = { GEA_china_warlord_cannot_interact_trigger = yes }
+			}
+		}
+		ai_will_do = { factor = 30 }
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_sqi_dispatch_military_advisers"
+			SQI = { army_experience = 15 }
+			custom_effect_tooltip = GEA_china_shandong_name_tt
+			add_to_variable = {
+				GEA_china_sqi_attitude = 3
+				tooltip = GEA_china_attitude_change_tt
+			}
+			add_to_variable = {
+				GEA_china_sqi_military_projection = 4
+				tooltip = GEA_china_military_projection_change_tt
+			}
+			hidden_effect = {
+				clamp_variable = { var = GEA_china_sqi_attitude min = 0 max = 100 }
+				clamp_variable = { var = GEA_china_sqi_military_projection min = 0 max = 100 }
+			}
+		}
+	}
+
+	GEA_sqi_expand_jinan_arsenal = {
+		icon = GFX_GEA_Invest_in_East_China_decision
+		allowed = { original_tag = GEA }
+		cost = 60
+		days_remove = 180
+		fire_only_once = yes
+		cancel_if_not_visible = no
+		visible = {
+			has_completed_focus = GEA_Copy_the_Qingdao_model
+			has_country_flag = SQI_OPEN
+			SQI = { exists = yes GEA_china_warlord_can_interact_trigger = yes }
+		}
+		targets = { SQI }
+		target_root_trigger = {
+			has_completed_focus = GEA_Copy_the_Qingdao_model
+			has_country_flag = SQI_OPEN
+		}
+		available = {
+			NOT = { has_war_with = SQI }
+			SQI = { exists = yes GEA_china_warlord_can_interact_trigger = yes }
+			597 = { is_owned_and_controlled_by = SQI }
+		}
+		cancel_trigger = {
+			OR = {
+				NOT = { country_exists = SQI }
+				has_war_with = SQI
+				SQI = { GEA_china_warlord_cannot_interact_trigger = yes }
+				597 = { NOT = { is_owned_and_controlled_by = SQI } }
+			}
+		}
+		ai_will_do = { factor = 30 }
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_sqi_expand_jinan_arsenal"
+			597 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = { type = arms_factory level = 2 instant_build = yes }
+			}
+			custom_effect_tooltip = GEA_china_shandong_name_tt
+			add_to_variable = {
+				GEA_china_sqi_attitude = 7
+				tooltip = GEA_china_attitude_change_tt
+			}
+			add_to_variable = {
+				GEA_china_sqi_capital_influence = 7
+				tooltip = GEA_china_capital_influence_change_tt
+			}
+			add_to_variable = {
+				GEA_china_sqi_military_projection = 10
+				tooltip = GEA_china_military_projection_change_tt
+			}
+			hidden_effect = {
+				clamp_variable = { var = GEA_china_sqi_attitude min = 0 max = 100 }
+				clamp_variable = { var = GEA_china_sqi_capital_influence min = 0 max = 100 }
+				clamp_variable = { var = GEA_china_sqi_military_projection min = 0 max = 100 }
+			}
+		}
+	}
+
+	GEA_sqi_upgrade_jiaoji_railway = {
+		icon = GFX_GEA_Invest_in_East_China_decision
+		allowed = { original_tag = GEA }
+		cost = 50
+		days_remove = 180
+		fire_only_once = yes
+		cancel_if_not_visible = no
+		visible = {
+			has_completed_focus = GEA_Copy_the_Qingdao_model
+			has_country_flag = SQI_OPEN
+			SQI = { exists = yes GEA_china_warlord_can_interact_trigger = yes }
+		}
+		targets = { SQI }
+		target_root_trigger = {
+			has_completed_focus = GEA_Copy_the_Qingdao_model
+			has_country_flag = SQI_OPEN
+		}
+		available = {
+			NOT = { has_war_with = SQI }
+			SQI = { exists = yes GEA_china_warlord_can_interact_trigger = yes }
+			597 = { is_owned_and_controlled_by = SQI }
+			744 = { owner = { OR = { tag = GEA tag = GER } } controller = { OR = { tag = GEA tag = GER } } }
+			can_build_railway = {
+				start_province = 13669
+				target_province = 1069
+				controller_priority = {
+					base = -1
+					modifier = { add = 2 OR = { tag = GEA tag = GER tag = SQI } }
+				}
+			}
+		}
+		cancel_trigger = {
+			OR = {
+				NOT = { country_exists = SQI }
+				has_war_with = SQI
+				SQI = { GEA_china_warlord_cannot_interact_trigger = yes }
+				597 = { NOT = { is_owned_and_controlled_by = SQI } }
+				744 = { NOT = { controller = { OR = { tag = GEA tag = GER } } } }
+			}
+		}
+		ai_will_do = { factor = 30 }
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_sqi_upgrade_jiaoji_railway"
+			597 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			build_railway = {
+				level = 3
+				start_province = 13669
+				target_province = 1069
+				controller_priority = {
+					base = -1
+					modifier = { add = 2 OR = { tag = GEA tag = GER tag = SQI } }
+				}
+			}
+			custom_effect_tooltip = GEA_china_shandong_name_tt
+			add_to_variable = {
+				GEA_china_sqi_attitude = 7
+				tooltip = GEA_china_attitude_change_tt
+			}
+			add_to_variable = {
+				GEA_china_sqi_capital_influence = 10
+				tooltip = GEA_china_capital_influence_change_tt
+			}
+			add_to_variable = {
+				GEA_china_sqi_military_projection = 5
+				tooltip = GEA_china_military_projection_change_tt
+			}
+			hidden_effect = {
+				clamp_variable = { var = GEA_china_sqi_attitude min = 0 max = 100 }
+				clamp_variable = { var = GEA_china_sqi_capital_influence min = 0 max = 100 }
+				clamp_variable = { var = GEA_china_sqi_military_projection min = 0 max = 100 }
+			}
+		}
+	}
+
+	GEA_sqi_german_officer_school = {
+		icon = GFX_GEA_Dispatch_Military_Advisers_decision
+		allowed = { original_tag = GEA }
+		cost = 50
+		days_remove = 120
+		fire_only_once = yes
+		cancel_if_not_visible = no
+		visible = {
+			has_completed_focus = GEA_Copy_the_Qingdao_model
+			has_country_flag = SQI_OPEN
+			SQI = { exists = yes GEA_china_warlord_can_interact_trigger = yes }
+		}
+		targets = { SQI }
+		target_root_trigger = {
+			has_completed_focus = GEA_Copy_the_Qingdao_model
+			has_country_flag = SQI_OPEN
+		}
+		available = {
+			NOT = { has_war_with = SQI }
+			SQI = { exists = yes GEA_china_warlord_can_interact_trigger = yes }
+		}
+		cancel_trigger = {
+			OR = {
+				NOT = { country_exists = SQI }
+				has_war_with = SQI
+				SQI = { GEA_china_warlord_cannot_interact_trigger = yes }
+			}
+		}
+		ai_will_do = { factor = 30 }
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_sqi_german_officer_school"
+			SQI = {
+				army_experience = 30
+				add_doctrine_cost_reduction = {
+					name = GEA_sqi_german_officer_school
+					cost_reduction = 0.25
+					uses = 1
+					category = land_doctrine
+				}
+			}
+			custom_effect_tooltip = GEA_china_shandong_name_tt
+			add_to_variable = {
+				GEA_china_sqi_attitude = 7
+				tooltip = GEA_china_attitude_change_tt
+			}
+			add_to_variable = {
+				GEA_china_sqi_military_projection = 12
+				tooltip = GEA_china_military_projection_change_tt
+			}
+			hidden_effect = {
+				clamp_variable = { var = GEA_china_sqi_attitude min = 0 max = 100 }
+				clamp_variable = { var = GEA_china_sqi_military_projection min = 0 max = 100 }
+			}
+		}
+	}
+
+	GEA_Shandong_Expedition_Diederichs = { #山东远征：迪德里希行动
+		icon = GFX_GEA_Intervene_in_East_China_decision
+		allowed = { original_tag = GEA }
+		priority = 10001
+		cost = 0
+		custom_cost_text = GEA_shandong_expedition_cp_cost
+		custom_cost_trigger = { command_power > 99.99 }
+		days_remove = 45
+		fire_only_once = yes
+		cancel_if_not_visible = no
+		visible = {
+			has_completed_focus = GEA_deal_with_the_shandong_clique
+			has_country_flag = SQI_OPEN
+			SQI = { exists = yes GEA_china_warlord_cannot_interact_trigger = yes }
+		}
+		targets = { SQI }
+		target_root_trigger = {
+			has_completed_focus = GEA_deal_with_the_shandong_clique
+			has_country_flag = SQI_OPEN
+		}
+		available = {
+			date > 1938.7.1
+			NOT = { has_war_with = SQI }
+			NOT = { is_in_faction_with = SQI }
+			SQI = { exists = yes NOT = { is_subject_of = GEA } GEA_china_warlord_cannot_interact_trigger = yes }
+		}
+		ai_will_do = { factor = 0 }
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_Shandong_Expedition_Diederichs"
+			hidden_effect = { add_command_power = -100 }
+		}
+		cancel_trigger = {
+			OR = {
+				NOT = { country_exists = SQI }
+				has_war_with = SQI
+				is_in_faction_with = SQI
+				SQI = { is_subject_of = GEA }
+				SQI = { GEA_china_warlord_can_interact_trigger = yes }
+			}
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Shandong_Expedition_Diederichs"
+			if = {
+				limit = {
+					SQI = { exists = yes NOT = { is_subject_of = GEA } GEA_china_warlord_cannot_interact_trigger = yes }
+					NOT = { has_war_with = SQI }
+					NOT = { is_in_faction_with = SQI }
+				}
+				declare_war_on = { target = SQI type = annex_everything }
+			}
+		}
+	}
+	GEA_Qingdao_mechanical_industrial_zone = { #青岛机械工业区
+		icon = GFX_decision_generic_industry
+		allowed = { original_tag = GEA }
+
+		cost = 50
+		days_remove = 180
+		fire_only_once = yes
+
+		cancel_if_not_visible = no
+
+		visible = {
+			has_completed_focus = GEA_The_beautiful_Jiaozhou_Bay
+			has_country_flag = Shandong_OPEN
+			744 = { 
+				owner = { 
+					OR = { 
+						tag = GER 
+						tag = GEA 
+					} 
+				}
+			}
+		}
+		available = {
+			744 = { 
+				owner = { 
+					OR = { 
+						tag = GER
+						tag = GEA 
+					}
+				} 
+				controller = { 
+					OR = { 
+						tag = GER 
+						tag = GEA 
+					} 
+				} 
+			} 
+		}
+		cancel_trigger = { 
+			744 = { 
+				NOT = { 
+					owner = { 
+						OR = { 
+							tag = GER
+							tag = GEA 
+						} 
+					} 
+					controller = { 
+						OR = { 
+							tag = GER 
+							tag = GEA 
+						} 
+					} 
+				} 
+			} 
+		}
+
+		ai_will_do = { factor = 30 }
+
+		highlight_states = { highlight_state_targets = { state = 744 } }
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Qingdao_mechanical_industrial_zone"
+			custom_effect_tooltip = GEA_china_shandong_name_tt
+			add_to_variable = {
+				GEA_china_sqi_capital_influence = 10
+				tooltip = GEA_china_capital_influence_change_tt
+			}
+			add_to_variable = {
+				GEA_china_sqi_military_projection = 10
+				tooltip = GEA_china_military_projection_change_tt
+			}
+			hidden_effect = {
+				clamp_variable = { var = GEA_china_sqi_capital_influence min = 0 max = 100 }
+				clamp_variable = { var = GEA_china_sqi_military_projection min = 0 max = 100 }
+			}
+			744 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = { type = industrial_complex level = 2 instant_build = yes }
+			}
+		}
+	}
+
+	GEA_Qingdao_armaments_supply_chain = { #青岛军工配套扩建
+		icon = GFX_decision_generic_industry
+		allowed = { original_tag = GEA }
+
+		cost = 60
+		days_remove = 180
+		fire_only_once = yes
+
+		cancel_if_not_visible = no
+
+		visible = {
+			has_completed_focus = GEA_The_beautiful_Jiaozhou_Bay
+			has_country_flag = Shandong_OPEN
+			744 = { 
+				owner = { 
+					OR = { 
+						tag = GER 
+						tag = GEA 
+					} 
+				} 
+			}
+		}
+		available = { 744 = { owner = { OR = { tag = GER tag = GEA } } controller = { OR = { tag = GER tag = GEA } } } }
+		cancel_trigger = { 744 = { NOT = { owner = { OR = { tag = GER tag = GEA } } controller = { OR = { tag = GER tag = GEA } } } } }
+		ai_will_do = { factor = 30 }
+		highlight_states = { highlight_state_targets = { state = 744 } }
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Qingdao_armaments_supply_chain"
+			custom_effect_tooltip = GEA_china_shandong_name_tt
+			add_to_variable = {
+				GEA_china_sqi_capital_influence = 10
+				tooltip = GEA_china_capital_influence_change_tt
+			}
+			add_to_variable = {
+				GEA_china_sqi_military_projection = 10
+				tooltip = GEA_china_military_projection_change_tt
+			}
+			hidden_effect = {
+				clamp_variable = { var = GEA_china_sqi_capital_influence min = 0 max = 100 }
+				clamp_variable = { var = GEA_china_sqi_military_projection min = 0 max = 100 }
+			}
+			744 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = { type = arms_factory level = 2 instant_build = yes }
+			}
+		}
+	}
+
+	GEA_Weihaiwei_shipbuilding_industry = { #威海卫修造船工业
+		icon = GFX_decision_generic_industry
+		allowed = { original_tag = GEA }
+		cost = 60
+		days_remove = 240
+		fire_only_once = yes
+		cancel_if_not_visible = no
+		visible = {
+			has_completed_focus = GEA_The_beautiful_Jiaozhou_Bay
+			has_country_flag = Shandong_OPEN
+			996 = { owner = { OR = { tag = GER tag = GEA } } }
+		}
+		available = { 996 = { owner = { OR = { tag = GER tag = GEA } } controller = { OR = { tag = GER tag = GEA } } } }
+		cancel_trigger = { 996 = { NOT = { owner = { OR = { tag = GER tag = GEA } } controller = { OR = { tag = GER tag = GEA } } } } }
+		ai_will_do = { factor = 30 }
+		highlight_states = { highlight_state_targets = { state = 996 } }
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Weihaiwei_shipbuilding_industry"
+			custom_effect_tooltip = GEA_china_shandong_name_tt
+			add_to_variable = {
+				GEA_china_sqi_capital_influence = 10
+				tooltip = GEA_china_capital_influence_change_tt
+			}
+			add_to_variable = {
+				GEA_china_sqi_military_projection = 10
+				tooltip = GEA_china_military_projection_change_tt
+			}
+			hidden_effect = {
+				clamp_variable = { var = GEA_china_sqi_capital_influence min = 0 max = 100 }
+				clamp_variable = { var = GEA_china_sqi_military_projection min = 0 max = 100 }
+			}
+			996 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = { type = dockyard level = 2 instant_build = yes }
+				add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+			}
+		}
+	}
 	GEA_North_China_Expedition = { #华北远征
 		icon = GFX_GEA_Intervene_in_East_China_decision
 		allowed = { original_tag = GEA }
@@ -11584,6 +12133,169 @@ GEA_Dispatch_Military_Advisers = { #派驻军事顾问团
 			}
 			add_to_variable = {
 				GEA_china_zhili_capital_influence = 5
+				tooltip = GEA_china_capital_influence_change_tt
+			}
+			hidden_effect = {
+				clamp_variable = { var = GEA_china_zhili_attitude min = 0 max = 100 }
+				clamp_variable = { var = GEA_china_zhili_capital_influence min = 0 max = 100 }
+			}
+		}
+	}
+
+	GEA_qie_promote_pro_german_businessmen = { #扶植亲德工商代表
+		icon = GFX_GEA_Invest_in_East_China_decision
+		allowed = { original_tag = GEA }
+		cost = 25
+		days_remove = 60
+		days_re_enable = 90
+		cancel_if_not_visible = no
+		visible = {
+			has_completed_focus = GEA_Supporting_Prosperity_Alliance
+			has_country_flag = QIE_OPEN
+			QIE = { exists = yes GEA_china_warlord_can_interact_trigger = yes }
+		}
+		targets = { QIE }
+		target_root_trigger = {
+			has_completed_focus = GEA_Supporting_Prosperity_Alliance
+			has_country_flag = QIE_OPEN
+		}
+		available = {
+			NOT = { has_war_with = QIE }
+			QIE = { exists = yes GEA_china_warlord_can_interact_trigger = yes }
+			custom_trigger_tooltip = {
+				tooltip = GEA_qie_promote_pro_german_businessmen_requirements_tt
+				check_variable = { GEA_china_zhili_attitude > 4.99 }
+			}
+		}
+		cancel_trigger = {
+			OR = {
+				QIE = { exists = no }
+				has_war_with = QIE
+				QIE = { GEA_china_warlord_cannot_interact_trigger = yes }
+				check_variable = { GEA_china_zhili_attitude < 5 }
+			}
+		}
+		ai_will_do = { factor = 20 }
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_qie_promote_pro_german_businessmen"
+			QIE = { add_popularity = { ideology = market_liberal popularity = 0.05 } }
+			custom_effect_tooltip = GEA_china_zhili_name_tt
+			add_to_variable = {
+				GEA_china_zhili_attitude = -5
+				tooltip = GEA_china_attitude_change_tt
+			}
+			add_to_variable = {
+				GEA_china_zhili_capital_influence = 5
+				tooltip = GEA_china_capital_influence_change_tt
+			}
+			hidden_effect = {
+				clamp_variable = { var = GEA_china_zhili_attitude min = 0 max = 100 }
+				clamp_variable = { var = GEA_china_zhili_capital_influence min = 0 max = 100 }
+			}
+		}
+	}
+
+	GEA_qie_call_in_prosperity_favours = { #兑现繁荣联盟政治承诺
+		icon = GFX_GEA_Invest_in_East_China_decision
+		allowed = { original_tag = GEA }
+		cost = 0
+		days_remove = 60
+		days_re_enable = 120
+		cancel_if_not_visible = no
+		visible = {
+			has_completed_focus = GEA_Supporting_Prosperity_Alliance
+			has_country_flag = QIE_OPEN
+			QIE = { exists = yes GEA_china_warlord_can_interact_trigger = yes }
+		}
+		targets = { QIE }
+		target_root_trigger = {
+			has_completed_focus = GEA_Supporting_Prosperity_Alliance
+			has_country_flag = QIE_OPEN
+		}
+		available = {
+			NOT = { has_war_with = QIE }
+			QIE = { exists = yes GEA_china_warlord_can_interact_trigger = yes }
+			custom_trigger_tooltip = {
+				tooltip = GEA_qie_call_in_prosperity_favours_requirements_tt
+				check_variable = { GEA_china_zhili_attitude > 7.99 }
+				check_variable = { GEA_china_zhili_capital_influence > 4.99 }
+			}
+		}
+		cancel_trigger = {
+			OR = {
+				QIE = { exists = no }
+				has_war_with = QIE
+				QIE = { GEA_china_warlord_cannot_interact_trigger = yes }
+				check_variable = { GEA_china_zhili_attitude < 8 }
+				check_variable = { GEA_china_zhili_capital_influence < 5 }
+			}
+		}
+		ai_will_do = { factor = 20 }
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_qie_call_in_prosperity_favours"
+			add_political_power = 100
+			custom_effect_tooltip = GEA_china_zhili_name_tt
+			add_to_variable = {
+				GEA_china_zhili_attitude = -8
+				tooltip = GEA_china_attitude_change_tt
+			}
+			add_to_variable = {
+				GEA_china_zhili_capital_influence = -5
+				tooltip = GEA_china_capital_influence_change_tt
+			}
+			hidden_effect = {
+				clamp_variable = { var = GEA_china_zhili_attitude min = 0 max = 100 }
+				clamp_variable = { var = GEA_china_zhili_capital_influence min = 0 max = 100 }
+			}
+		}
+	}
+
+	GEA_qie_redirect_prosperity_investments = { #争取联盟企业赴南洋设厂
+		icon = GFX_GEA_Invest_in_East_China_decision
+		allowed = { original_tag = GEA }
+		cost = 0
+		days_remove = 120
+		days_re_enable = 180
+		cancel_if_not_visible = no
+		visible = {
+			has_completed_focus = GEA_Supporting_Prosperity_Alliance
+			has_country_flag = QIE_OPEN
+			QIE = { exists = yes GEA_china_warlord_can_interact_trigger = yes }
+		}
+		targets = { QIE }
+		target_root_trigger = {
+			has_completed_focus = GEA_Supporting_Prosperity_Alliance
+			has_country_flag = QIE_OPEN
+		}
+		available = {
+			NOT = { has_war_with = QIE }
+			QIE = { exists = yes GEA_china_warlord_can_interact_trigger = yes }
+			custom_trigger_tooltip = {
+				tooltip = GEA_qie_redirect_prosperity_investments_requirements_tt
+				check_variable = { GEA_china_zhili_attitude > 9.99 }
+				check_variable = { GEA_china_zhili_capital_influence > 11.99 }
+			}
+		}
+		cancel_trigger = {
+			OR = {
+				QIE = { exists = no }
+				has_war_with = QIE
+				QIE = { GEA_china_warlord_cannot_interact_trigger = yes }
+				check_variable = { GEA_china_zhili_attitude < 10 }
+				check_variable = { GEA_china_zhili_capital_influence < 12 }
+			}
+		}
+		ai_will_do = { factor = 20 }
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_qie_redirect_prosperity_investments"
+			add_offsite_building = { type = industrial_complex level = 1 }
+			custom_effect_tooltip = GEA_china_zhili_name_tt
+			add_to_variable = {
+				GEA_china_zhili_attitude = -10
+				tooltip = GEA_china_attitude_change_tt
+			}
+			add_to_variable = {
+				GEA_china_zhili_capital_influence = -12
 				tooltip = GEA_china_capital_influence_change_tt
 			}
 			hidden_effect = {

@@ -15678,6 +15678,9 @@ focus_tree = {
 
 	focus = { #查封他国门户
 		id = GEA_Seal_off_the_borders_of_other_countries
+		bypass = {
+			NOT = { country_exists = LEC }
+		}
 		icon = GFX_goal_NYC_Bolito_King_Controls_Rackets
 		cost = 5
 		x = -4
@@ -15686,14 +15689,39 @@ focus_tree = {
 			factor = 100
 		}
 		available = {
-			always = no
-		}			
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = GEA_legation_cities_collapsed_tt
+					OR = {
+						NOT = { country_exists = LEC }
+						has_global_flag = LEC_bankrupt
+						LEC = {
+							OR = {
+								has_country_flag = LEC_bankrupt
+								has_country_flag = LEC_dead_to_china
+							}
+						}
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = GEA_japanese_legation_high_commissioner_tt
+					LEC = { has_country_leader = { name = "Katsuo Okazaki" ruling_only = yes } }
+				}
+			}
+		}
 		prerequisite = {
 			focus = GEA_The_second_expedition_to_China
 		}
 		relative_position_id = GEA_The_second_expedition_to_China
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Seal_off_the_borders_of_other_countries"
+			if = {
+				limit = {
+					country_exists = LEC
+					NOT = { has_war_with = LEC }
+				}
+				declare_war_on = { target = LEC type = annex_everything }
+			}
 		}	
 	}
 
@@ -15889,14 +15917,9 @@ focus_tree = {
 				QIE = {
 					exists = yes
 					OR = {
-						has_country_flag = QIE_wu_backs_chen
-						has_country_flag = QIE_wu_backs_qi
 						has_country_flag = wu_intervenes_proANQ
 						has_country_flag = wu_intervenes_proLEP
-						has_country_flag = QIE_not_backs_qi
 						has_country_flag = wu_no_intervene
-						has_country_flag = QIE_coup_failed
-						has_country_flag = QIE_manchu_restoration
 					}
 				}
 			}
@@ -16035,6 +16058,26 @@ focus_tree = {
 		relative_position_id = GEA_The_embers_of_the_declining_empire
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Supporting_Prosperity_Alliance"
+			QIE = {
+				add_popularity = { ideology = market_liberal popularity = 0.08 }
+				add_stability = 0.04
+			}
+			custom_effect_tooltip = GEA_china_zhili_name_tt
+			add_to_variable = {
+				GEA_china_zhili_attitude = -5
+				tooltip = GEA_china_attitude_change_tt
+			}
+			add_to_variable = {
+				GEA_china_zhili_capital_influence = 5
+				tooltip = GEA_china_capital_influence_change_tt
+			}
+			hidden_effect = {
+				clamp_variable = { var = GEA_china_zhili_attitude min = 0 max = 100 }
+				clamp_variable = { var = GEA_china_zhili_capital_influence min = 0 max = 100 }
+			}
+			unlock_decision_tooltip = GEA_qie_promote_pro_german_businessmen
+			unlock_decision_tooltip = GEA_qie_call_in_prosperity_favours
+			unlock_decision_tooltip = GEA_qie_redirect_prosperity_investments
 		}	
 	}
 
@@ -16213,6 +16256,16 @@ focus_tree = {
 		relative_position_id = GEA_Tighten_the_reins
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Submission"
+			set_autonomy = {
+				target = QIE
+				autonomy_state = kr_default_puppet
+				end_wars = no
+				end_civil_wars = no
+			}
+			QIE = {
+				add_marlib_to_coalition = yes
+				add_ideas = GEA_german_controlled_economic_market
+			}
 		}	
 	}
 
@@ -16246,6 +16299,41 @@ focus_tree = {
 		relative_position_id = GEA_Tighten_the_reins
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_Great_Wall_of_Zhili_Province"
+			QIE = {
+				add_ideas = GEA_zhili_great_wall
+				add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 5000 producer = GEA }
+				if = {
+					limit = {
+						NOT = { has_war_with = FNG }
+						FNG = { exists = yes NOT = { has_country_flag = FNG_QIE_War } }
+					}
+					custom_effect_tooltip = GEA_zhili_great_wall_forts_tt
+					hidden_effect = {
+						every_owned_state = {
+							limit = { is_controlled_by = QIE }
+							add_building_construction = {
+								type = bunker
+								level = 2
+								instant_build = yes
+								province = {
+									all_provinces = yes
+									limit_to_border_country = FNG
+								}
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = { QIE = { NOT = { is_in_faction_with = GER } } }
+				QIE = {
+					if = {
+						limit = { is_in_faction = yes }
+						leave_faction = yes
+					}
+				}
+				GER = { add_to_faction = QIE }
+			}
 		}	
 	}
 
@@ -16259,35 +16347,54 @@ focus_tree = {
 			factor = 100
 		}
 		available = {
-			always = no
-		}			
+			OR = {
+				744 = { owner = { OR = { tag = GER tag = GEA } } }
+				996 = { owner = { OR = { tag = GER tag = GEA } } }
+			}
+		}
 		prerequisite = {
 			focus = GEA_The_second_expedition_to_China
 		}
 		relative_position_id = GEA_The_second_expedition_to_China
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Build_the_peninsula"
+			every_state = {
+				limit = {
+					OR = { state = 744 state = 996 }
+					owner = { OR = { tag = GER tag = GEA } }
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes }
+				add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+			}
+			
 		}	
 	}
 
 	focus = { #复制青岛模式
 		id = GEA_Copy_the_Qingdao_model
 		icon = GFX_GEA_Copy_the_Qingdao_model
-		cost = 3
+		cost = 4
 		x = 0
 		y = 1
 		ai_will_do = {
 			factor = 100
 		}
 		available = {
-
-		}			
+			GEA_shandong_non_anti_concession_controller_trigger = yes
+		}
 		prerequisite = {
 			focus = GEA_Build_the_peninsula
 		}
 		relative_position_id = GEA_Build_the_peninsula
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Copy_the_Qingdao_model"
+			unlock_decision_tooltip = GEA_sqi_invest_in_shandong
+			unlock_decision_tooltip = GEA_sqi_establish_german_enterprises
+			unlock_decision_tooltip = GEA_sqi_dispatch_military_advisers
+			unlock_decision_tooltip = GEA_sqi_expand_jinan_arsenal
+			unlock_decision_tooltip = GEA_sqi_upgrade_jiaoji_railway
+			unlock_decision_tooltip = GEA_sqi_german_officer_school
 		}	
 	}
 	focus = { #处理“两张会”
@@ -16308,27 +16415,68 @@ focus_tree = {
 		relative_position_id = GEA_Build_the_peninsula
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_deal_with_the_shandong_clique"
+			if = {
+				limit = { SQI = { exists = yes GEA_china_warlord_cannot_interact_trigger = yes } }
+				unlock_decision_tooltip = GEA_Shandong_Expedition_Diederichs
+			}
+			else_if = {
+				limit = { SQI = { exists = yes GEA_china_warlord_can_interact_trigger = yes } }
+				custom_effect_tooltip = GEA_china_shandong_name_tt
+				add_to_variable = {
+					GEA_china_sqi_capital_influence = 15
+					tooltip = GEA_china_capital_influence_change_tt
+				}
+				add_to_variable = {
+					GEA_china_sqi_military_projection = 15
+					tooltip = GEA_china_military_projection_change_tt
+				}
+				hidden_effect = {
+					clamp_variable = { var = GEA_china_sqi_capital_influence min = 0 max = 100 }
+					clamp_variable = { var = GEA_china_sqi_military_projection min = 0 max = 100 }
+				}
+				SQI = {
+					add_stability = 0.10
+					add_political_power = 50
+					increase_ruling_party_popularity_by_10 = yes
+				}
+			}
 		}	
 	}
 
 	focus = { #美丽的胶州湾
 		id = GEA_The_beautiful_Jiaozhou_Bay
 		icon = GFX_GEA_The_beautiful_Jiaozhou_Bay
-		cost = 3
+		cost = 4
 		x = 1
 		y = 2
 		ai_will_do = {
 			factor = 100
 		}
 		available = {
-
-		}			
+			OR = {
+				744 = { owner = { OR = { tag = GER tag = GEA } } }
+				996 = { owner = { OR = { tag = GER tag = GEA } } }
+			}
+		}
 		prerequisite = {
 			focus = GEA_Build_the_peninsula
 		}
 		relative_position_id = GEA_Build_the_peninsula
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_beautiful_Jiaozhou_Bay"
+			every_state = {
+			
+				limit = {
+					OR = { state = 744 state = 996 }
+					owner = { OR = { tag = GER tag = GEA } }
+				}
+				add_extra_state_shared_building_slots = 2
+				increase_state_category_by_one_level = yes
+				add_dynamic_modifier = { modifier = GEA_Jiaozhou_industrial_zone_modifier }
+			}
+			unlock_decision_tooltip = GEA_Qingdao_mechanical_industrial_zone
+			unlock_decision_tooltip = GEA_Qingdao_armaments_supply_chain
+			unlock_decision_tooltip = GEA_Weihaiwei_shipbuilding_industry
 		}	
 	}
 	

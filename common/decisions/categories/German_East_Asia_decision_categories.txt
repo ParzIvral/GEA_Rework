@@ -41,7 +41,7 @@ GEA_focus_china_decisions = {
 	visible = {
 		has_country_flag = GEA_nanjing_crisis
 	}
-	priority = 1300
+	priority = 1301
 	visible_when_empty = yes
 	scripted_gui = GEA_CHINA_MAP_DECISION_UI
 }

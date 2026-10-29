@@ -7860,26 +7860,7 @@ add_namespace = GEA_news
 		desc = GEA.825.d
 
 		fire_only_once = yes
-		trigger = {
-			tag = GEA
-			QIE = {
-				exists = yes
-				NOT = {
-					OR = {
-						has_country_flag = QIE_wu_backs_qi
-						has_country_flag = wu_intervenes_proLEP
-					}
-				}
-				OR = {
-					has_country_flag = QIE_wu_backs_chen
-					has_country_flag = wu_intervenes_proANQ
-					has_country_flag = QIE_not_backs_qi
-					has_country_flag = wu_no_intervene
-					has_country_flag = QIE_coup_failed
-					has_country_flag = QIE_manchu_restoration
-				}
-			}
-		}
+		is_triggered_only = yes
 
 		option = { name = GEA.825.a }
 	}
@@ -8407,6 +8388,28 @@ add_namespace = GEA_news
 			}
 		}
 	}
+
+	country_event = { #烈焰吞噬丛林
+		id = GEA.1112
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.1112" }
+		title = GEA.1112.t
+		desc = GEA.1112.d
+		picture = GFX_GEA_67
+
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = GEA.1112.a
+			custom_effect_tooltip = GEA_flamethrower_tt
+			hidden_effect = {
+				GEA = {
+					set_technology = { EAE_flamethrower_tech = 1 }
+				}
+			}
+		}
+	}
+
 
 #陆军事件
 	country_event = {
@@ -8957,6 +8960,26 @@ add_namespace = GEA_news
 	}
 
 #隐藏事件
+	country_event = { #北京立场变化：延迟两天通知德属东亚
+		id = GEA.12003
+		hidden = yes
+		fire_only_once = yes
+		trigger = {
+			tag = GEA
+			QIE = {
+				exists = yes
+				NOT = { has_country_flag = wu_intervenes_proLEP } #未支持南京
+				OR = {
+					has_country_flag = wu_intervenes_proANQ #支持安庆
+					has_country_flag = wu_no_intervene #双方都不支持
+				}
+			}
+		}
+		immediate = {
+			country_event = { id = GEA.825 days = 2 }
+		}
+	}
+
 	country_event = { #舍尔纳：完全控制最终宣称范围后授予核心
 		id = GEA.12002
 		hidden = yes

@@ -1,5 +1,6 @@
 technologies = {
 
+	# GEA additions
 	GEA_hutier_tactics_tech = {
 		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech GEA_hutier_tactics_tech" }
 		research_cost = 1
@@ -27,6 +28,162 @@ technologies = {
 			river = { attack = 0.05 defence = 0.05 }
 		}
 	}
+
+	GEA_jungle_warfare_experience_tech = { #效果：轻步兵类部队在丛林攻击/防御+10%，森林攻击/防御+5%
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech GEA_jungle_warfare_experience_tech" }
+
+		research_cost = 1
+
+		# only added by effect
+		allow = {
+			always = no
+		}
+
+		category_light_infantry = {
+			jungle = {
+				attack = 0.10
+				defence = 0.10
+			}
+			forest = {
+				attack = 0.05
+				defence = 0.05
+			}
+		}
+	}
+
+	GEA_penal_assault_tech = { #效果：惩戒营要塞/城市攻击+15%，HP+50%，补给消耗-10%
+		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech GEA_penal_assault_tech" }
+
+		research_cost = 1
+
+		# only added by effect
+		allow = {
+			always = no
+		}
+
+		penal_battalion = {
+			max_strength = 10
+			supply_consumption_factor = -0.10
+			fort = {
+				attack = 0.15
+			}
+			urban = {
+				attack = 0.15
+			}
+		}
+	}
+
+	improved_military_police = { #效果：宪兵镇压+10%、补给消耗-10%、主动性+10%，城市攻击+10%
+
+		research_cost = 1
+
+		# only from focus!!! #####
+		allow = {
+			always = no
+		}
+
+		military_police = {
+			suppression_factor = 0.1
+			supply_consumption_factor = -0.1
+			initiative = 0.1
+			urban = {
+				attack = 0.1
+			}
+		}
+	}
+
+	improved_military_police1 = { #效果：宪兵软攻+15%、补给消耗-5%、兵力+2、组织度+5，森林攻击+10%、防御+5%
+
+		research_cost = 1
+
+		# only from focus!!! #####
+		allow = {
+			always = no
+		}
+
+		military_police = {
+			soft_attack = 0.15
+			supply_consumption_factor = -0.05
+			max_strength = 2
+		    max_organisation = 5
+			forest = {
+				attack = 0.10
+				defence = 0.05
+			}
+		}
+	}
+
+	expanded_engineer_corps_tech1 = { #效果：工兵堑壕+3，对要塞攻击+20%、防御+15%
+
+		research_cost = 1
+
+		allow = {
+			always = no
+		}
+		engineer = {
+			entrenchment = 3
+			fort = {
+				defence = 0.15
+				attack = 0.20
+			}
+		}
+	}
+
+	improved_recon_units_tech1 = { #效果：侦察类支援连侦察+2、突破+2，丘陵/山地/河流/平原攻击+5%、移动+5%
+		research_cost = 1
+		allow = {
+			always = no
+		}
+		category_recon = {
+			recon = 2
+			breakthrough = 2
+
+			hills = {
+				attack = 0.05
+				movement = 0.05
+			}
+			mountain = {
+				attack = 0.05
+				movement = 0.05
+			}
+			river = {
+				attack = 0.05
+				movement = 0.05
+			}
+			plains = {
+				attack = 0.05
+				movement = 0.05
+			}
+		}
+	}
+
+	EAE_flamethrower_tech = { #效果：轻步兵类部队软攻+10%，城市攻击+10%/防御+1%，森林攻击+20%/防御+5%，要塞攻击+10%/防御+1%
+
+		research_cost = 1
+
+		allow = {
+			always = no
+		}
+		category_light_infantry = {
+			soft_attack = 0.1
+			urban = {
+				attack = 0.10
+				defence = 0.01
+			}
+			forest = {
+				attack = 0.20
+				defence = 0.05
+			}
+			fort = {
+				attack = 0.10
+				defence = 0.01
+			}
+		}
+	}
+
+	# KX hidden technologies
+
+
 
 	camel_corps_tech = {
 
@@ -1018,155 +1175,10 @@ technologies = {
 			hard_attack = 0.10
 		}
 	}
-	GEA_jungle_warfare_experience_tech = { #效果：轻步兵类部队在丛林攻击/防御+10%，森林攻击/防御+5%
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech GEA_jungle_warfare_experience_tech" }
 
-		research_cost = 1
 
-		# only added by effect
-		allow = {
-			always = no
-		}
 
-		category_light_infantry = {
-			jungle = {
-				attack = 0.10
-				defence = 0.10
-			}
-			forest = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-	}
 
-	GEA_penal_assault_tech = { #效果：惩戒营要塞/城市攻击+15%，HP+50%，补给消耗-10%
-		on_research_complete = { log = "[GetDateText]: [Root.GetName]: add tech GEA_penal_assault_tech" }
 
-		research_cost = 1
 
-		# only added by effect
-		allow = {
-			always = no
-		}
-
-		penal_battalion = {
-			max_strength = 10
-			supply_consumption_factor = -0.10
-			fort = {
-				attack = 0.15
-			}
-			urban = {
-				attack = 0.15
-			}
-		}
-	}
-
-	improved_military_police = { #效果：宪兵镇压+10%、补给消耗-10%、主动性+10%，城市攻击+10%
-
-		research_cost = 1
-
-		# only from focus!!! #####
-		allow = {
-			always = no
-		}
-
-		military_police = {
-			suppression_factor = 0.1
-			supply_consumption_factor = -0.1
-			initiative = 0.1
-			urban = {
-				attack = 0.1
-			}
-		}
-	}
-
-	improved_military_police1 = { #效果：宪兵软攻+15%、补给消耗-5%、兵力+2、组织度+5，森林攻击+10%、防御+5%
-
-		research_cost = 1
-
-		# only from focus!!! #####
-		allow = {
-			always = no
-		}
-
-		military_police = {
-			soft_attack = 0.15
-			supply_consumption_factor = -0.05
-			max_strength = 2
-		    max_organisation = 5
-			forest = {
-				attack = 0.10
-				defence = 0.05
-			}
-		}
-	}
-
-	expanded_engineer_corps_tech1 = { #效果：工兵堑壕+3，对要塞攻击+20%、防御+15%
-
-		research_cost = 1
-
-		allow = {
-			always = no
-		}
-		engineer = {
-			entrenchment = 3
-			fort = {
-				defence = 0.15
-				attack = 0.20
-			}
-		}
-	}
-
-	improved_recon_units_tech1 = { #效果：侦察类支援连侦察+2、突破+2，丘陵/山地/河流/平原攻击+5%、移动+5%
-		research_cost = 1
-		allow = {
-			always = no
-		}
-		category_recon = {
-			recon = 2
-			breakthrough = 2
-
-			hills = {
-				attack = 0.05
-				movement = 0.05
-			}
-			mountain = {
-				attack = 0.05
-				movement = 0.05
-			}
-			river = {
-				attack = 0.05
-				movement = 0.05
-			}
-			plains = {
-				attack = 0.05
-				movement = 0.05
-			}
-		}
-	}
-
-	flamethrower = { #效果：轻步兵类部队软攻+10%，城市攻击+10%/防御+1%，森林攻击+20%/防御+5%，要塞攻击+10%/防御+1%
-
-		research_cost = 1
-
-		allow = {
-			always = no
-		}
-		category_light_infantry = {
-			soft_attack = 0.1
-			urban = {
-				attack = 0.10
-				defence = 0.01
-			}
-			forest = {
-				attack = 0.20
-				defence = 0.05
-			}
-			fort = {
-				attack = 0.10
-				defence = 0.01
-			}
-		}
-	}
 }

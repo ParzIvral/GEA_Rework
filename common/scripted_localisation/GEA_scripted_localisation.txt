@@ -532,7 +532,7 @@ defined_text = {
 	}
 }
 
-#直系地块：按实际对德政策与接管事件判断，反租界立场优先。
+#直系地块
 defined_text = {
 	name = GetGEAZhiliCooperation
 	text = {

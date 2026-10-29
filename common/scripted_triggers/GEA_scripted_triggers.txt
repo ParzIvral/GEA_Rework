@@ -18,7 +18,15 @@ GEA_nanjing_non_anti_concession_controller_trigger = {
 		}
 	}
 }
-
+#判断山东
+GEA_shandong_non_anti_concession_controller_trigger = {
+	custom_trigger_tooltip = {
+		tooltip = GEA_shandong_non_anti_concession_controller_tt
+		SQI = {
+			GEA_china_warlord_can_interact_trigger = yes
+		}
+	}
+}
 
 GEA_china_warlord_eligible_trigger = { #能互动的军阀
 	OR = {
@@ -54,7 +62,12 @@ GEA_china_warlord_can_interact_trigger = {#即时判断
 	NOT = { GEA_china_warlord_cannot_interact_trigger = yes }
 }
 GEA_china_warlord_positive_cooperation_trigger = {#积极合作的军阀判定
-	GEA_china_warlord_can_interact_trigger = yes
+	NOT = {
+		OR = {
+			has_country_flag = GEA_china_warlord_interaction_blocked #禁止互动
+			has_country_flag = GEA_german_coup_defeated #德国政变失败
+		}
+	}
 	OR = {
 		original_tag = LEP #德国人的狗
 		AND = {
@@ -67,24 +80,7 @@ GEA_china_warlord_positive_cooperation_trigger = {#积极合作的军阀判定
 		}
 		AND = {
 			original_tag = QIE
-			NOT = {
-				OR = {
-					has_country_flag = wu_intervenes_proANQ
-					has_country_flag = QIE_manchu_restoration
-					has_country_flag = QIE_yiguandao_couped
-					has_focus_tree = QIE_manchu
-					has_completed_focus = QIE_nationalize_germans
-					has_completed_focus = QIE_endconcessions
-					has_completed_focus = QIE_destroy_concessions
-					has_completed_focus = QIE_destroy_germany
-					has_completed_focus = QIE_YGD_destroy_concessions
-				}
-			}
-			OR = {
-				has_country_flag = wu_intervenes_proLEP
-				has_country_flag = full_german_support
-				has_completed_focus = QIE_request_german_bailout
-			}
+			has_country_flag = wu_intervenes_proLEP #正式支持南京
 		}
 		AND = {
 			original_tag = SZC
@@ -93,7 +89,7 @@ GEA_china_warlord_positive_cooperation_trigger = {#积极合作的军阀判定
 			NOT = { has_completed_focus = SZC_Eradicate_The_Concessions }
 			OR = {
 				has_country_leader = { name = "Yang Sen" ruling_only = yes } #杨森
-				has_country_leader = { name = "Liu Cunhou" ruling_only = yes } #谁？
+				has_country_leader = { name = "Liu Cunhou" ruling_only = yes } #留存后
 				has_completed_focus = SZC_Contact_An_Old_Ally
 			}
 		}
