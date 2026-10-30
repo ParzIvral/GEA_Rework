@@ -843,6 +843,14 @@ ideas = {
 			}
 		}
 #约西亚斯
+		GEA_Schleicher_secret_liaison_idea = { #柏林—新加坡秘密联络线
+			picture = USA_strategy_submarine
+			allowed = { always = no }
+			modifier = {
+				intel_network_gain_factor = 0.10
+				intelligence_agency_defense = 1
+			}
+		}
 		GEA_Nikolaus_noble_officer_loyalty = { #贵族军官团的效忠
 			picture = GEA_colonial_question_josias
 			allowed = { always = no }
@@ -2650,6 +2658,193 @@ ideas = {
 	}
 #隐藏精神
 	hidden_ideas = {
+		GEA_Josias_Hermann_Siemens_communications_maintenance_idea = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				supply_consumption_factor = -0.05
+				army_org_regain = 0.05
+			}
+		}
+		GEA_Josias_Hermann_Siemens_radio_supplies_idea = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				army_org_factor = 0.05
+			}
+		}
+		GEA_Josias_Hermann_Siemens_precision_equipment_idea = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				production_factory_max_efficiency_factor = 0.05
+				industrial_capacity_factory = 0.05
+			}
+		}
+		GEA_Josias_Otto_Jeidels_shipping_insurance_idea = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				industrial_capacity_dockyard = 0.075
+			}
+		}
+		GEA_Josias_Otto_Jeidels_trade_credit_idea = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				consumer_goods_factor = -0.075
+				production_speed_industrial_complex_factor = 0.1
+			}
+		}
+		GEA_Josias_Otto_Jeidels_overseas_finance_idea = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				consumer_goods_factor = -0.05
+				improve_relations_maintain_cost_factor = -0.15
+			}
+		}
+		GEA_Josias_Alfred_Krupp_military_technicians_idea = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				industrial_capacity_factory = 0.1
+				production_factory_efficiency_gain_factor = 0.1
+			}
+		}
+		GEA_Josias_Alfred_Krupp_steel_utilization_idea = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				production_lack_of_resource_penalty_factor = -0.1
+				line_change_production_efficiency_factor = 0.05
+			}
+		}
+		GEA_Josias_Josef_Abs_trade_guarantees_idea = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				consumer_goods_factor = -0.075
+			}
+		}
+		GEA_Josias_Josef_Abs_equipment_installments_idea = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				production_speed_industrial_complex_factor = 0.1
+				production_speed_arms_factory_factor = 0.1
+			}
+		}
+		GEA_Josias_Josef_Abs_government_credit_idea = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_factor = 0.075
+				production_factory_start_efficiency_factor = 0.05
+			}
+		}
+		GEA_Josias_Fritz_Meer_chemical_engineers_idea = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				production_speed_synthetic_refinery_factor = 0.15
+				production_oil_factor = 0.1
+			}
+		}
+		GEA_Josias_Fritz_Meer_raw_material_processing_idea = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				local_resources_factor = 0.15
+			}
+		}
+		GEA_Josias_Fritz_Meer_production_review_idea = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.15
+				industrial_capacity_factory = 0.05
+			}
+		}
+		GEA_Josias_Hermann_Bucher_maintenance_teams_idea = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				industry_repair_factor = 0.25
+				industry_free_repair_factor = 0.1
+			}
+		}
+		GEA_Josias_Hermann_Bucher_industrial_automation_idea = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				industrial_capacity_factory = 0.075
+				production_factory_efficiency_gain_factor = 0.1
+			}
+		}
+		GEA_Josias_Hermann_Bucher_technician_training_idea = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				line_change_production_efficiency_factor = 0.1
+				production_factory_start_efficiency_factor = 0.05
+			}
+		}
+		GEA_Josias_Hermann_Bucher_equipment_standards_idea = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				line_change_production_efficiency_factor = 0.075
+				production_factory_start_efficiency_factor = 0.05
+			}
+		}
+		GEA_Elard_conservative_committee_idea = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_factor = 0.05
+				drift_defence_factor = 0.10
+			}
+		}
+		GEA_Hugenberg_news_agency_idea = {
+			allowed = { always = no }
+			modifier = {
+				political_power_factor = 0.05
+				drift_defence_factor = 0.10
+			}
+		}
+		GEA_Werner_business_consultations_idea = {
+			allowed = { always = no }
+			modifier = {
+				consumer_goods_factor = -0.05
+			}
+		}
+		GEA_Werner_private_liaison_idea = {
+			allowed = { always = no }
+			modifier = {
+				political_power_factor = 0.05
+				improve_relations_maintain_cost_factor = -0.15
+			}
+		}
 		GEA_Repaying_German_Loan = {
 			allowed = { always = no }
 			modifier = { political_power_cost = 0.02 }

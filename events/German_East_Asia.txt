@@ -1315,7 +1315,7 @@ add_namespace = GEA_news
 				if = {
 					limit = {
 						has_country_flag = { flag = GEA_Indochinese_Anger value < 7 }
-						has_country_flag = { flag = GEA_Indochinese_Stability value > 14 }
+						has_country_flag = { flag = GEA_Indochinese_Stability value > 10 }
 						has_army_manpower = { size > 300000 }
 					}
 					hidden_effect = {

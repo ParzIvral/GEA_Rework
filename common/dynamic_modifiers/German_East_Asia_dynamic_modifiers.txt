@@ -551,3 +551,6 @@ GEA_Jiaozhou_industrial_zone_modifier = {
 	local_building_slots_factor = 0.10
 	state_production_speed_buildings_factor = 0.15
 }
+
+
+
