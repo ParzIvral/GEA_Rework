@@ -109,6 +109,9 @@ scripted_gui = {
 					}
 				}
 			}
+			Indochina_Map_click_enabled = { 
+				GEA_indochina_can_interact_trigger = yes 
+			}
 			Indochina_Map_visible = {
 				GEA = {
 					OR = {

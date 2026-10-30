@@ -9348,6 +9348,7 @@ focus_tree = {
 		}
 		prerequisite = {
 			focus = GEA_Ostasiatische_Heer
+			focus = GEA_emergency_meeting
 		}
 		relative_position_id = GEA_Ostasiatische_Heer
 		bypass = {
@@ -9380,6 +9381,7 @@ focus_tree = {
 		}
 		prerequisite = {
 			focus = GEA_Ostasiatische_Heer
+			focus = GEA_emergency_meeting
 		}
 		relative_position_id = GEA_Ostasiatische_Heer
 		bypass = {

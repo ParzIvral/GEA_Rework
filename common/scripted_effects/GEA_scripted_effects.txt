@@ -1,6 +1,7 @@
 GEA_Indochina_click_effect = { #印度支那点击互动
 	if = {
 		limit = {
+			GEA_indochina_can_interact_trigger = yes
 			NOT = {
 				has_country_flag = Indochina_OPEN
 			}

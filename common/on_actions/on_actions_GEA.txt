@@ -1,7 +1,17 @@
 on_actions = {
 	# 舍尔纳路线的独立抵抗度：每日仅校正范围，不自动增减
-	on_daily_GEA = {
+	on_monthly_GEA = {
 		effect = {
+			#失去印支的实际控制后清理旧地图选择，也修复旧存档残留标记
+			if = {
+				limit = { 
+					has_country_flag = Indochina_OPEN 
+					NOT = { 
+						GEA_indochina_can_interact_trigger = yes 
+					} 
+				}
+				clr_country_flag = Indochina_OPEN
+			}
 			if = {
 				limit = { has_variable = GEA_indochina_resistance }
 				clamp_variable = { var = GEA_indochina_resistance min = 0 max = 100 }

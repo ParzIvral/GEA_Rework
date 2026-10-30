@@ -1,3 +1,24 @@
+#印度支那地图互动
+GEA_indochina_can_interact_trigger = {
+	custom_trigger_tooltip = {
+		tooltip = GEA_indochina_still_be_controlled_tt
+		GEA = {
+			any_owned_state = {
+				OR = { 
+					state = 857 
+					state = 671 
+					state = 827 
+					state = 670 
+					state = 826 
+					state = 286 
+					state = 856 
+				}
+				is_controlled_by = GEA
+			}
+		}
+	}
+}
+
 #与整合印度支那决议一致的七个地区均已拥有并核心化
 GEA_indochina_fully_pacified_trigger = {
 	857 = { is_owned_by = GEA is_core_of = GEA }
@@ -14,7 +35,9 @@ GEA_nanjing_non_anti_concession_controller_trigger = {
 	custom_trigger_tooltip = {
 		tooltip = GEA_nanjing_non_anti_concession_controller_tt
 		613 = {
-			controller = { GEA_china_warlord_can_interact_trigger = yes }
+			controller = { 
+				GEA_china_warlord_can_interact_trigger = yes 
+			}
 		}
 	}
 }
@@ -27,7 +50,15 @@ GEA_shandong_non_anti_concession_controller_trigger = {
 		}
 	}
 }
-
+GEA_qie_non_anti_concession_controller_trigger = {
+	custom_trigger_tooltip = {
+		tooltip = GEA_shandong_non_anti_concession_controller_tt
+		QIE = {
+			exists = yes
+			GEA_china_warlord_can_interact_trigger = yes
+		}
+	}
+}
 GEA_china_warlord_eligible_trigger = { #能互动的军阀
 	OR = {
 		original_tag = SQI

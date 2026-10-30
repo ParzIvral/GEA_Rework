@@ -245,11 +245,7 @@ GEA_The_private_estate_of_Josias_modifier = {
 
 GEA_CARL_EDWARD_modifier = {
 	enable = { always = yes }
-	remove_trigger = { 
-		NOT = { 
-			is_owned_by = GEA
-		}
-	}	
+	remove_trigger = { always = no }	
 	political_power_factor = GEA_CARL_EDWARD_political_power								#政治点数 5%
 	stability_factor = GEA_CARL_EDWARD_stability											#稳定度	10%
 	opinion_gain_monthly_factor = GEA_CARL_EDWARD_opinion_gain_monthly_factor				#改善关系 15%
@@ -257,11 +253,7 @@ GEA_CARL_EDWARD_modifier = {
 
 GEA_NIKOLAUS_modifier = {
 	enable = { always = yes }
-	remove_trigger = { 
-		NOT = { 
-			is_owned_by = GEA
-		}
-	}	
+	remove_trigger = { always = no }	
 	political_power_factor = GEA_NIKOLAUS_political_power									#政治点数 5%
 	war_support_factor = GEA_NIKOLAUS_war_support											#战争支持度 10%
 	mobilization_speed = GEA_NIKOLAUS_mobilization_speed									#动员速度 10%
@@ -269,11 +261,7 @@ GEA_NIKOLAUS_modifier = {
 
 GEA_ELARD_VON_OLDENBURG_modifier = {
 	enable = { always = yes }
-	remove_trigger = { 
-		NOT = { 
-			is_owned_by = GEA
-		}
-	}	
+	remove_trigger = { always = no }	
 	offensive_war_stability_factor = GEA_ELARD_VON_OLDENBURG_offensive_war_stability_factor	#战争进攻对稳定度修正 20%
 	war_support_factor = GEA_ELARD_VON_OLDENBURG_war_support								#战争支持度 10%
 	conscription_factor = GEA_ELARD_VON_OLDENBURG_conscription_factor 						#适役人口修正 10%
@@ -281,11 +269,7 @@ GEA_ELARD_VON_OLDENBURG_modifier = {
 
 GEA_SCHLEICHER_modifier = {
 	enable = { always = yes }
-	remove_trigger = { 
-		NOT = { 
-			is_owned_by = GEA
-		}
-	}	
+	remove_trigger = { always = no }	
 	political_power_gain = GEA_SCHLEICHER_political_power_gain								#每日政治点数增长 0.05
 	army_attack_factor = GEA_SCHLEICHER_army_attack_factor									#陆军攻击 10%
 	conscription = GEA_SCHLEICHER_conscription 												#适役人口 5%
@@ -293,11 +277,7 @@ GEA_SCHLEICHER_modifier = {
 
 GEA_HUGENBERG_modifier = {
 	enable = { always = yes }
-	remove_trigger = { 
-		NOT = { 
-			is_owned_by = GEA
-		}
-	}	
+	remove_trigger = { always = no }	
 	political_power_gain = GEA_HUGENBERG_political_power_gain								#每日政治点数增长 0.05
 	war_support_weekly = GEA_HUGENBERG_war_support_weekly									#每周战争支持度增长 0.005
 	drift_defence_factor = GEA_HUGENBERG_drift_defence_factor								#意识形态抵制力度 20%
@@ -305,11 +285,7 @@ GEA_HUGENBERG_modifier = {
 
 GEA_WERNER_VON_ALVENSLEBEN_modifier = {
 	enable = { always = yes }
-	remove_trigger = { 
-		NOT = { 
-			is_owned_by = GEA
-		}
-	}	
+	remove_trigger = { always = no }	
 	monthly_population = GEA_WERNER_VON_ALVENSLEBEN_monthly_population										#每月人口（百分比）15%
 	production_speed_arms_factory_factor = GEA_WERNER_VON_ALVENSLEBEN_production_speed_arms_factory_factor	#军用工厂建造速度 10%
 	party_popularity_stability_factor = GEA_WERNER_VON_ALVENSLEBEN_party_popularity_stability_factor		#党派支持度对稳定度修正 15%
@@ -317,11 +293,7 @@ GEA_WERNER_VON_ALVENSLEBEN_modifier = {
 
 GEA_Carl_Schmitt_modifier = {
 	enable = { always = yes }
-	remove_trigger = { 
-		NOT = { 
-			is_owned_by = GEA
-		}
-	}	
+	remove_trigger = { always = no }	
 	local_resources_factor = GEA_Carl_Schmitt_local_resources_factor									#战略资源获取率 10%
 	production_speed_buildings_factor = GEA_Carl_Schmitt_production_production_speed_buildings_factor	#建造速度 10%
 	justify_war_goal_time = GEA_Carl_Schmitt_justify_war_goal_time										#正当化战争目标所需时间 -25%
@@ -329,11 +301,7 @@ GEA_Carl_Schmitt_modifier = {
 
 GEA_Dorpmuller_modifier = {
 	enable = { always = yes }
-	remove_trigger = { 
-		NOT = { 
-			is_owned_by = GEA
-		}
-	}	
+	remove_trigger = { always = no }	
 	production_speed_infrastructure_factor = GEA_Dorpmuller_production_speed_infrastructure_factor		#基础设施建造速度 10%
 	production_speed_rail_way_factor = GEA_Dorpmuller_production_speed_rail_way_factor					#铁路建造速度 10%
 	army_speed_factor = GEA_Dorpmuller_army_speed_factor												#陆军师速度 10%
@@ -341,11 +309,7 @@ GEA_Dorpmuller_modifier = {
 
 GEA_Emil_Helfferich_modifier = {
 	enable = { always = yes }
-	remove_trigger = { 
-		NOT = { 
-			is_owned_by = GEA
-		}
-	}	
+	remove_trigger = { always = no }	
 	production_speed_dockyard_factor = GEA_Emil_Helfferich_production_speed_dockyard_factor			#海军船坞建造速度 10%
 	industrial_capacity_dockyard = GEA_Emil_Helfferich_industrial_capacity_dockyard					#海军船坞产出 10%
 	autonomy_gain = GEA_Emil_Helfferich_autonomy_gain												#贸易自治度增长 15%
@@ -353,11 +317,7 @@ GEA_Emil_Helfferich_modifier = {
 
 GEA_Fritz_Thyssen_modifier = {
 	enable = { always = yes }
-	remove_trigger = { 
-		NOT = { 
-			is_owned_by = GEA
-		}
-	}	
+	remove_trigger = { always = no }	
 	industrial_capacity_factory = GEA_Fritz_Thyssen_industrial_capacity_factory				#工厂产出 10%
 	local_resources_factor = GEA_Fritz_Thyssen_local_resources_factor						#战略资源获取率 10%
 	conversion_cost_civ_to_mil_factor = GEA_Fritz_Thyssen_conversion_cost_civ_to_mil_factor	#民转军花费 -20%
@@ -365,11 +325,7 @@ GEA_Fritz_Thyssen_modifier = {
 
 GEA_Hermann_Goring_modifier = {
 	enable = { always = yes }
-	remove_trigger = { 
-		NOT = { 
-			is_owned_by = GEA
-		}
-	}		
+	remove_trigger = { always = no }		
 	conscription = GEA_Hermann_Goring_conscription										#适役人口 10%
 	army_org_factor = GEA_Hermann_Goring_army_org_factor								#部队组织度（百分比）10%
 	experience_gain_air_factor = GEA_Hermann_Goring_experience_gain_air_factor			#空军经验获取（百分比）10%
@@ -377,11 +333,7 @@ GEA_Hermann_Goring_modifier = {
 
 GEA_Siegmund_Bodenheimer_modifier = {
 	enable = { always = yes }
-	remove_trigger = { 
-		NOT = { 
-			is_owned_by = GEA
-		}
-	}		
+	remove_trigger = { always = no }		
 	political_power_gain = GEA_Siegmund_Bodenheimer_political_power_gain					#每日政治点数增长 0.05
 	consumer_goods_factor = GEA_Siegmund_Bodenheimer_consumer_goods_factor					#生活消费品工厂 -10%
 	local_building_slots_factor = GEA_Siegmund_Bodenheimer_local_building_slots_factor		#地区最大工业值 10%
@@ -389,11 +341,7 @@ GEA_Siegmund_Bodenheimer_modifier = {
 
 GEA_Josef_Abs_modifier = {
 	enable = { always = yes }
-	remove_trigger = { 
-		NOT = { 
-			is_owned_by = GEA
-		}
-	}		
+	remove_trigger = { always = no }		
 	production_factory_start_efficiency_factor = GEA_Josef_Abs_production_factory_start_efficiency_factor	#基础生产效率 10%
 	consumer_goods_factor = GEA_Josef_Abs_consumer_goods_factor												#生活消费品工厂 -10%
 	stability_factor = GEA_Josef_Abs_stability_factor														#稳定度 10%
@@ -401,11 +349,7 @@ GEA_Josef_Abs_modifier = {
 
 GEA_Fritz_Meer_modifier = {
 	enable = { always = yes }
-	remove_trigger = { 
-		NOT = { 
-			is_owned_by = GEA
-		}
-	}		
+	remove_trigger = { always = no }		
 	production_factory_max_efficiency_factor = GEA_Fritz_Meer_production_factory_max_efficiency_factor	#生产效率上限 10%
 	production_speed_synthetic_refinery_factor = GEA_Fritz_Meer_production_speed_synthetic_refinery_factor	#合成炼油厂建造速度 10%
 	local_resources_factor = GEA_Fritz_Meer_local_resources_factor										#战略资源获取率 5%
@@ -413,11 +357,7 @@ GEA_Fritz_Meer_modifier = {
 
 GEA_Hermann_Bucher_modifier = {
 	enable = { always = yes }
-	remove_trigger = { 
-		NOT = { 
-			is_owned_by = GEA
-		}
-	}		
+	remove_trigger = { always = no }		
 	line_change_production_efficiency_factor = GEA_Hermann_Bucher_line_change_production_efficiency_factor	#生产效率保持 10%
 	production_speed_infrastructure_factor = GEA_Hermann_Bucher_production_speed_infrastructure_factor		#基础设施建造速度 10%
 	research_speed_factor = GEA_Hermann_Bucher_research_speed_factor										#科研速度 5%
@@ -425,11 +365,7 @@ GEA_Hermann_Bucher_modifier = {
 
 GEA_Hermann_Siemens_modifier = {
 	enable = { always = yes }
-	remove_trigger = { 
-		NOT = { 
-			is_owned_by = GEA
-		}
-	}		
+	remove_trigger = { always = no }		
 	production_factory_efficiency_gain_factor = GEA_Hermann_Siemens_production_factory_efficiency_gain_factor	#生产效率增长 10%
 	production_speed_radar_station_factor = GEA_Hermann_Siemens_production_speed_radar_station_factor			#雷达站建造速度 15%
 	research_speed_factor = GEA_Hermann_Siemens_research_speed_factor											#科研速度 5%
@@ -437,11 +373,7 @@ GEA_Hermann_Siemens_modifier = {
 
 GEA_Otto_Jeidels_modifier = {
 	enable = { always = yes }
-	remove_trigger = { 
-		NOT = { 
-			is_owned_by = GEA
-		}
-	}		
+	remove_trigger = { always = no }		
 	consumer_goods_factor = GEA_Otto_Jeidels_consumer_goods_factor													#生活消费品工厂 -10%
 	production_speed_industrial_complex_factor = GEA_Otto_Jeidels_production_speed_industrial_complex_factor		#民用工厂建造速度 10%
 	local_building_slots_factor = GEA_Otto_Jeidels_local_building_slots_factor										#地区最大工业值 10%
@@ -449,11 +381,7 @@ GEA_Otto_Jeidels_modifier = {
 
 GEA_Alfred_Krupp_modifier = {
 	enable = { always = yes }
-	remove_trigger = { 
-		NOT = { 
-			is_owned_by = GEA
-		}
-	}		
+	remove_trigger = { always = no }		
 	production_speed_arms_factory_factor = GEA_Alfred_Krupp_production_speed_arms_factory_factor			#军用工厂建造速度 10%
 	industrial_capacity_factory = GEA_Alfred_Krupp_industrial_capacity_factory								#工厂产出 10%
 	conversion_cost_civ_to_mil_factor = GEA_Alfred_Krupp_conversion_cost_civ_to_mil_factor					#民转军花费 -20%

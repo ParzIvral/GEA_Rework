@@ -238,9 +238,9 @@ country_event = {
 	days = 285
 }
 
-country_event = { #宵禁之后：安排在逮捕事件与南圻局势事件之间
+country_event = { #宵禁之后：安排在南圻局势事件与西贡码头大罢工之间
 	id = GEA.53
-	days = 365
+	days = 345
 }
 
 country_event = { #乂安警报：1936年9月上旬
@@ -248,14 +248,14 @@ country_event = { #乂安警报：1936年9月上旬
 	days = 250
 }
 
-country_event = { #北圻大饥荒：1936年11月下旬
+country_event = { #北圻大饥荒：1936年10月下旬
 	id = GEA.59
-	days = 330
+	days = 300
 }
 
 country_event = { 
 	id = GEA.20
-	days = 411 
+	days = 323 
 }
 
 set_politics = {
