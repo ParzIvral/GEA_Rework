@@ -117,6 +117,8 @@ GEA_gea_army = {
 	conscription_factor = GEA_army_conscription_factor 								#适役人口修正
 	army_org_factor = GEA_army_army_org_factor 										#组织度
 	army_morale_factor = GEA_army_army_morale_factor 								#组织度恢复
+	war_support_factor = GEA_army_war_support_factor					#战争支持度
+	army_core_defence_factor = GEA_army_core_defence_factor			#核心领土防御
 	# FROM FOCUS #
 	mobilization_speed = GEA_army_mobilization_speed 								#动员速度
 	production_speed_rail_way_factor = GEA_army_production_speed_rail_way_factor 	#铁路建造速度

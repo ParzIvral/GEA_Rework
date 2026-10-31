@@ -1224,6 +1224,23 @@ ideas = {
 				mobilization_speed = 0.075
 			}			
 		}
+		GEA_supreme_governor_2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_supreme_governor_2"}
+			name = GEA_supreme_governor
+		    picture = GEA_supreme_governor
+			allowed = { always = no }
+			modifier = {
+				political_power_factor = 0.15
+				conscription = 0.01
+				conscription_factor = 0.1
+				stability_weekly = 0.005
+				war_support_weekly = 0.005
+				party_popularity_stability_factor = 0.05
+				authoritarian_democrat_drift = 0.04
+				paternal_autocrat_drift = 0.02
+				mobilization_speed = 0.075
+			}			
+		}
 		GEA_production_subsidies = { #生产补贴
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_production_subsidies"}
 			picture = GER_Clamped_Industrialist_Excess
@@ -2463,7 +2480,83 @@ ideas = {
 				naval_doctrine_cost_factor = -0.05
 			}
 		}
-#air
+#流亡
+		GEA_desperate_last_stand = {
+			picture = GER_quenched_militarism
+			allowed = {
+				always = no
+			}
+			modifier = {
+				war_support_factor = 0.10
+				industrial_capacity_factory = 0.15
+			}
+			targeted_modifier = {
+				tag = JAP
+				attack_bonus_against = 0.10
+				defense_bonus_against = 0.10
+			}
+		}
+		GEA_Live_frugally = { #节衣缩食
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_naval_attache_idea" }
+			picture = GER_Desperate_Struggle_Third
+			allowed = { always = no }
+			modifier = {
+				war_support_factor = -0.15
+				monthly_population = 0.05
+				mobilization_speed = -0.1
+			}
+		}
+		GEA_Sour_failure = { #苦涩的失败
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_naval_attache_idea" }
+			picture = GER_quenched_militarism
+			allowed = { always = no }
+			modifier = {
+				political_power_factor = -0.1
+				industrial_capacity_factory = 0.1
+				consumer_goods_factor = -0.05
+				production_speed_buildings_factor = 0.03
+				local_resources_factor = 0.04
+			}
+		}
+		GEA_Sour_failure_2 = { #苦涩的失败
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_naval_attache_idea_2" }
+			name = GEA_Sour_failure
+			picture = GER_quenched_militarism
+			allowed = { always = no }
+			modifier = {
+				war_support_factor = -0.10
+				monthly_population = 0.05
+				mobilization_speed = -0.05
+				non_core_manpower = 0.05
+				conscription_factor = 0.15
+			}
+		}
+		GEA_Sour_failure_3 = { #苦涩的失败
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_naval_attache_idea_3" }
+			picture = GER_quenched_militarism
+			allowed = { always = no }
+			modifier = {
+				monthly_population = 0.05
+				non_core_manpower = 0.05
+				conscription_factor = 0.15
+			}
+		}
+		GEA_Sour_failure_4 = { #苦涩的失败
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_naval_attache_idea_4" }
+			name = GEA_Goodbye_sweet_Europa
+			picture = GER_quenched_militarism
+			allowed = { always = no }
+			modifier = {
+				party_popularity_stability_factor = 0.1
+				drift_defence_factor = 0.05
+				training_time_army_factor = -0.05
+				monthly_population = 0.05
+				non_core_manpower = 0.05
+				conscription_factor = 0.15
+				army_core_attack_factor = 0.1
+				army_core_defence_factor = 0.1
+			}
+		}
 #外交
 		GEA_zhili_great_wall = { #直隶长城
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_zhili_great_wall" }
@@ -2658,6 +2751,129 @@ ideas = {
 	}
 #隐藏精神
 	hidden_ideas = {
+		GEA_Josias_Carl_Schmitt_colonial_jurists_idea = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_factor = 0.1
+				drift_defence_factor = 0.1
+			}
+		}
+		GEA_Josias_Carl_Schmitt_governor_sovereignty_idea = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_factor = 0.05
+				stability_factor = 0.05
+				justify_war_goal_time = -0.1
+			}
+		}
+		GEA_Josias_Dorpmuller_railway_maintenance_idea = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				repair_speed_rail_way_factor = 0.25
+			}
+		}
+		GEA_Josias_Dorpmuller_transport_dispatch_idea = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				supply_consumption_factor = -0.075
+				truck_attrition_factor = -0.1
+			}
+		}
+		GEA_Josias_Dorpmuller_transport_school_idea = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				production_speed_rail_way_factor = 0.1
+			}
+		}
+		GEA_Josias_Emil_Helfferich_ship_repairs_idea = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				repair_speed_factor = 0.15
+				industrial_capacity_dockyard = 0.05
+			}
+		}
+		GEA_Josias_Emil_Helfferich_shipping_association_idea = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				industrial_capacity_dockyard = 0.05
+				production_speed_naval_base_factor = 0.15
+			}
+		}
+		GEA_Josias_Fritz_Thyssen_smelting_equipment_idea = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				local_resources_steel_factor = 0.15
+				industrial_capacity_factory = 0.05
+			}
+		}
+		GEA_Josias_Fritz_Thyssen_ore_transport_idea = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				local_resources_factor = 0.1
+				production_lack_of_resource_penalty_factor = -0.1
+			}
+		}
+		GEA_Josias_Hermann_Goring_imperial_air_show_idea = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				experience_gain_air_factor = 0.1
+			}
+		}
+		GEA_Josias_Hermann_Goring_africa_asia_air_route_idea = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				air_range_factor = 0.05
+				air_accidents_factor = -0.1
+			}
+		}
+		GEA_Josias_Siegmund_Bodenheimer_merchant_remittances_idea = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				consumer_goods_factor = -0.075
+			}
+		}
+		GEA_Josias_Siegmund_Bodenheimer_business_loans_idea = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				production_speed_industrial_complex_factor = 0.15
+				production_factory_efficiency_gain_factor = 0.05
+			}
+		}
+		GEA_Josias_Siegmund_Bodenheimer_commercial_bank_idea = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_factor = 0.05
+				consumer_goods_factor = -0.05
+			}
+		}
 		GEA_Josias_Hermann_Siemens_communications_maintenance_idea = {
 			allowed = {
 				always = no

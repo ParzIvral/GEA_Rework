@@ -613,6 +613,7 @@ scripted_gui = {
 			}
 
 			GEA_Josias_candidate_Nikolaus_visible = {
+				has_completed_focus = GEA_The_close_bond_of_dual_in-laws
 				OR = {
 					has_country_flag = GEA_Josias_selecting_frame_1
 					has_country_flag = GEA_Josias_selecting_frame_2
@@ -626,6 +627,7 @@ scripted_gui = {
 			}
 
 			GEA_Josias_candidate_Carl_Edward_visible = {
+				has_completed_focus = GEA_Brotherly_affection
 				OR = {
 					has_country_flag = GEA_Josias_selecting_frame_1
 					has_country_flag = GEA_Josias_selecting_frame_2
@@ -639,6 +641,7 @@ scripted_gui = {
 			}
 
 			GEA_Josias_candidate_Elard_von_Oldenburg_visible = {
+				has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
 				OR = {
 					has_country_flag = GEA_Josias_selecting_frame_1
 					has_country_flag = GEA_Josias_selecting_frame_2
@@ -652,6 +655,7 @@ scripted_gui = {
 			}
 
 			GEA_Josias_candidate_Schleicher_visible = {
+				has_completed_focus = GEA_The_Secret_Party_of_the_General
 				OR = {
 					has_country_flag = GEA_Josias_selecting_frame_1
 					has_country_flag = GEA_Josias_selecting_frame_2
@@ -665,6 +669,7 @@ scripted_gui = {
 			}
 
 			GEA_Josias_candidate_Hugenberg_visible = {
+				has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
 				OR = {
 					has_country_flag = GEA_Josias_selecting_frame_1
 					has_country_flag = GEA_Josias_selecting_frame_2
@@ -698,6 +703,7 @@ scripted_gui = {
 			}
 
 			GEA_Josias_candidate_Werner_von_Alvensleben_visible = {
+				has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
 				OR = {
 					has_country_flag = GEA_Josias_selecting_frame_1
 					has_country_flag = GEA_Josias_selecting_frame_2
@@ -848,6 +854,7 @@ scripted_gui = {
 			}
 
 			GEA_Josias_industry_candidate_Alfred_Krupp_visible = {
+				has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
 				OR = {
 					has_country_flag = GEA_Josias_selecting_frame_3
 					has_country_flag = GEA_Josias_selecting_frame_4
@@ -1016,115 +1023,145 @@ scripted_gui = {
 			GEA_Josias_candidate_Nikolaus_click = {
 				if = {
 					limit = {
-						has_country_flag = GEA_Josias_selecting_frame_1
+						has_completed_focus = GEA_The_close_bond_of_dual_in-laws
 					}
-					set_country_flag = GEA_Josias_frame_1_Nikolaus
-					clr_country_flag = GEA_Josias_selecting_frame_1
-					clr_country_flag = GEA_Josias_selecting_frame_2
-					clr_country_flag = GEA_Josias_selecting_frame_3
+					if = {
+						limit = {
+							has_country_flag = GEA_Josias_selecting_frame_1
+						}
+						set_country_flag = GEA_Josias_frame_1_Nikolaus
+						clr_country_flag = GEA_Josias_selecting_frame_1
+						clr_country_flag = GEA_Josias_selecting_frame_2
+						clr_country_flag = GEA_Josias_selecting_frame_3
+					}
+					else = {
+						set_country_flag = GEA_Josias_frame_2_Nikolaus
+						clr_country_flag = GEA_Josias_selecting_frame_1
+						clr_country_flag = GEA_Josias_selecting_frame_2
+						clr_country_flag = GEA_Josias_selecting_frame_3
+					}
+					GEA_Josias_add_15_Nikolaus_effect = yes
 				}
-				else = {
-					set_country_flag = GEA_Josias_frame_2_Nikolaus
-					clr_country_flag = GEA_Josias_selecting_frame_1
-					clr_country_flag = GEA_Josias_selecting_frame_2
-					clr_country_flag = GEA_Josias_selecting_frame_3
-				}
-				GEA_Josias_add_15_Nikolaus_effect = yes
 			}
 
 			GEA_Josias_candidate_Carl_Edward_click = {
 				if = {
 					limit = {
-						has_country_flag = GEA_Josias_selecting_frame_1
+						has_completed_focus = GEA_Brotherly_affection
 					}
-					set_country_flag = GEA_Josias_frame_1_Carl_Edward
-					clr_country_flag = GEA_Josias_selecting_frame_1
-					clr_country_flag = GEA_Josias_selecting_frame_2
-					clr_country_flag = GEA_Josias_selecting_frame_3
+					if = {
+						limit = {
+							has_country_flag = GEA_Josias_selecting_frame_1
+						}
+						set_country_flag = GEA_Josias_frame_1_Carl_Edward
+						clr_country_flag = GEA_Josias_selecting_frame_1
+						clr_country_flag = GEA_Josias_selecting_frame_2
+						clr_country_flag = GEA_Josias_selecting_frame_3
+					}
+					else = {
+						set_country_flag = GEA_Josias_frame_2_Carl_Edward
+						clr_country_flag = GEA_Josias_selecting_frame_1
+						clr_country_flag = GEA_Josias_selecting_frame_2
+						clr_country_flag = GEA_Josias_selecting_frame_3
+					}
+					GEA_Josias_add_15_Carl_Edward_effect = yes
 				}
-				else = {
-					set_country_flag = GEA_Josias_frame_2_Carl_Edward
-					clr_country_flag = GEA_Josias_selecting_frame_1
-					clr_country_flag = GEA_Josias_selecting_frame_2
-					clr_country_flag = GEA_Josias_selecting_frame_3
-				}
-				GEA_Josias_add_15_Carl_Edward_effect = yes
 			}
 
 			GEA_Josias_candidate_Elard_von_Oldenburg_click = {
 				if = {
 					limit = {
-						has_country_flag = GEA_Josias_selecting_frame_1
+						has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
 					}
-					set_country_flag = GEA_Josias_frame_1_Elard_von_Oldenburg
-					clr_country_flag = GEA_Josias_selecting_frame_1
-					clr_country_flag = GEA_Josias_selecting_frame_2
-					clr_country_flag = GEA_Josias_selecting_frame_3
+					if = {
+						limit = {
+							has_country_flag = GEA_Josias_selecting_frame_1
+						}
+						set_country_flag = GEA_Josias_frame_1_Elard_von_Oldenburg
+						clr_country_flag = GEA_Josias_selecting_frame_1
+						clr_country_flag = GEA_Josias_selecting_frame_2
+						clr_country_flag = GEA_Josias_selecting_frame_3
+					}
+					else = {
+						set_country_flag = GEA_Josias_frame_2_Elard_von_Oldenburg
+						clr_country_flag = GEA_Josias_selecting_frame_1
+						clr_country_flag = GEA_Josias_selecting_frame_2
+						clr_country_flag = GEA_Josias_selecting_frame_3
+					}
+					GEA_Josias_add_15_Elard_von_Oldenburg_effect = yes
 				}
-				else = {
-					set_country_flag = GEA_Josias_frame_2_Elard_von_Oldenburg
-					clr_country_flag = GEA_Josias_selecting_frame_1
-					clr_country_flag = GEA_Josias_selecting_frame_2
-					clr_country_flag = GEA_Josias_selecting_frame_3
-				}
-				GEA_Josias_add_15_Elard_von_Oldenburg_effect = yes
 			}
 
 			GEA_Josias_candidate_Schleicher_click = {
 				if = {
 					limit = {
-						has_country_flag = GEA_Josias_selecting_frame_1
+						has_completed_focus = GEA_The_Secret_Party_of_the_General
 					}
-					set_country_flag = GEA_Josias_frame_1_Schleicher
-					clr_country_flag = GEA_Josias_selecting_frame_1
-					clr_country_flag = GEA_Josias_selecting_frame_2
-					clr_country_flag = GEA_Josias_selecting_frame_3
+					if = {
+						limit = {
+							has_country_flag = GEA_Josias_selecting_frame_1
+						}
+						set_country_flag = GEA_Josias_frame_1_Schleicher
+						clr_country_flag = GEA_Josias_selecting_frame_1
+						clr_country_flag = GEA_Josias_selecting_frame_2
+						clr_country_flag = GEA_Josias_selecting_frame_3
+					}
+					else = {
+						set_country_flag = GEA_Josias_frame_2_Schleicher
+						clr_country_flag = GEA_Josias_selecting_frame_1
+						clr_country_flag = GEA_Josias_selecting_frame_2
+						clr_country_flag = GEA_Josias_selecting_frame_3
+					}
+					GEA_Josias_add_15_Schleicher_effect = yes
 				}
-				else = {
-					set_country_flag = GEA_Josias_frame_2_Schleicher
-					clr_country_flag = GEA_Josias_selecting_frame_1
-					clr_country_flag = GEA_Josias_selecting_frame_2
-					clr_country_flag = GEA_Josias_selecting_frame_3
-				}
-				GEA_Josias_add_15_Schleicher_effect = yes
 			}
 
 			GEA_Josias_candidate_Hugenberg_click = {
 				if = {
 					limit = {
-						has_country_flag = GEA_Josias_selecting_frame_1
+						has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
 					}
-					set_country_flag = GEA_Josias_frame_1_Hugenberg
-					clr_country_flag = GEA_Josias_selecting_frame_1
-					clr_country_flag = GEA_Josias_selecting_frame_2
-					clr_country_flag = GEA_Josias_selecting_frame_3
+					if = {
+						limit = {
+							has_country_flag = GEA_Josias_selecting_frame_1
+						}
+						set_country_flag = GEA_Josias_frame_1_Hugenberg
+						clr_country_flag = GEA_Josias_selecting_frame_1
+						clr_country_flag = GEA_Josias_selecting_frame_2
+						clr_country_flag = GEA_Josias_selecting_frame_3
+					}
+					else = {
+						set_country_flag = GEA_Josias_frame_2_Hugenberg
+						clr_country_flag = GEA_Josias_selecting_frame_1
+						clr_country_flag = GEA_Josias_selecting_frame_2
+						clr_country_flag = GEA_Josias_selecting_frame_3
+					}
+					GEA_Josias_add_15_Hugenberg_effect = yes
 				}
-				else = {
-					set_country_flag = GEA_Josias_frame_2_Hugenberg
-					clr_country_flag = GEA_Josias_selecting_frame_1
-					clr_country_flag = GEA_Josias_selecting_frame_2
-					clr_country_flag = GEA_Josias_selecting_frame_3
-				}
-				GEA_Josias_add_15_Hugenberg_effect = yes
 			}
 
 			GEA_Josias_candidate_Werner_von_Alvensleben_click = {
 				if = {
 					limit = {
-						has_country_flag = GEA_Josias_selecting_frame_1
+						has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
 					}
-					set_country_flag = GEA_Josias_frame_1_Werner_von_Alvensleben
-					clr_country_flag = GEA_Josias_selecting_frame_1
-					clr_country_flag = GEA_Josias_selecting_frame_2
-					clr_country_flag = GEA_Josias_selecting_frame_3
+					if = {
+						limit = {
+							has_country_flag = GEA_Josias_selecting_frame_1
+						}
+						set_country_flag = GEA_Josias_frame_1_Werner_von_Alvensleben
+						clr_country_flag = GEA_Josias_selecting_frame_1
+						clr_country_flag = GEA_Josias_selecting_frame_2
+						clr_country_flag = GEA_Josias_selecting_frame_3
+					}
+					else = {
+						set_country_flag = GEA_Josias_frame_2_Werner_von_Alvensleben
+						clr_country_flag = GEA_Josias_selecting_frame_1
+						clr_country_flag = GEA_Josias_selecting_frame_2
+						clr_country_flag = GEA_Josias_selecting_frame_3
+					}
+					GEA_Josias_add_15_Werner_von_Alvensleben_effect = yes
 				}
-				else = {
-					set_country_flag = GEA_Josias_frame_2_Werner_von_Alvensleben
-					clr_country_flag = GEA_Josias_selecting_frame_1
-					clr_country_flag = GEA_Josias_selecting_frame_2
-					clr_country_flag = GEA_Josias_selecting_frame_3
-				}
-				GEA_Josias_add_15_Werner_von_Alvensleben_effect = yes
 			}
 
 			GEA_Josias_colonial_candidate_Carl_Schmitt_click = {
@@ -1317,18 +1354,23 @@ scripted_gui = {
 			GEA_Josias_industry_candidate_Alfred_Krupp_click = {
 				if = {
 					limit = {
-						has_country_flag = GEA_Josias_selecting_frame_3
+						has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
 					}
-					set_country_flag = GEA_Josias_frame_3_Alfred_Krupp
-					clr_country_flag = GEA_Josias_selecting_frame_3
-					clr_country_flag = GEA_Josias_selecting_frame_4
+					if = {
+						limit = {
+							has_country_flag = GEA_Josias_selecting_frame_3
+						}
+						set_country_flag = GEA_Josias_frame_3_Alfred_Krupp
+						clr_country_flag = GEA_Josias_selecting_frame_3
+						clr_country_flag = GEA_Josias_selecting_frame_4
+					}
+					else = {
+						set_country_flag = GEA_Josias_frame_4_Alfred_Krupp
+						clr_country_flag = GEA_Josias_selecting_frame_3
+						clr_country_flag = GEA_Josias_selecting_frame_4
+					}
+					GEA_Josias_add_15_Alfred_Krupp_effect = yes
 				}
-				else = {
-					set_country_flag = GEA_Josias_frame_4_Alfred_Krupp
-					clr_country_flag = GEA_Josias_selecting_frame_3
-					clr_country_flag = GEA_Josias_selecting_frame_4
-				}
-				GEA_Josias_add_15_Alfred_Krupp_effect = yes
 			}
 		}
 	}
@@ -1353,6 +1395,9 @@ scripted_gui = {
 		}
 
 		effects = {
+			GEA_YUN_Map_click = {
+				GEA_Yun_click_effect = yes
+			}
 			GEA_Lep_Map_click = {
 				GEA_Lep_click_effect = yes
 			}

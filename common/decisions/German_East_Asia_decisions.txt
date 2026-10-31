@@ -943,13 +943,16 @@ GEA_decisions = {#德属东亚殖民地决议
 		}
 		available = {
 			GEA_indochina_can_interact_trigger = yes
-			owns_state = 857
-			owns_state = 671
-			owns_state = 827
-			owns_state = 670
-			owns_state = 826
-			owns_state = 286
-			owns_state = 856
+			custom_trigger_tooltip = {
+				tooltip = GEA_indochina_all_states_owned_tt
+				owns_state = 857
+				owns_state = 671
+				owns_state = 827
+				owns_state = 670
+				owns_state = 826
+				owns_state = 286
+				owns_state = 856
+			}
 			OR = {
 				AND = { #舍尔纳：独立抵抗度不高于10，不检测顺从度
 					has_country_flag = GEA_Governor_Schorner_flag
@@ -965,14 +968,17 @@ GEA_decisions = {#德属东亚殖民地决议
 				}
 				AND = { #其他路线：保留原有顺从度条件
 					NOT = { has_country_flag = GEA_Governor_Schorner_flag }
-					OR = {
-						857 = { compliance > 75 }
-						671 = { compliance > 75 }
-						827 = { compliance > 75 }
-						670 = { compliance > 75 }
-						826 = { compliance > 75 }
-						286 = { compliance > 75 }
-						856 = { compliance > 75 }
+					custom_trigger_tooltip = {
+						tooltip = GEA_indochina_any_state_compliance_tt
+						OR = {
+							857 = { compliance > 75 }
+							671 = { compliance > 75 }
+							827 = { compliance > 75 }
+							670 = { compliance > 75 }
+							826 = { compliance > 75 }
+							286 = { compliance > 75 }
+							856 = { compliance > 75 }
+						}
 					}
 				}
 			}
@@ -11111,6 +11117,445 @@ GEA_focus_china_decisions = {#第二次对华远征
 		}
 	}
 
+	GEA_yun_trade_delegation = { #组织赴滇商团
+		allowed = {
+			original_tag = GEA
+		}
+		icon = GFX_GEA_Invest_in_East_China_decision
+
+		visible = {
+			has_completed_focus = GEA_Deep_into_the_mountains
+			has_country_flag = YUN_OPEN
+			GEA_yunnan_non_anti_concession_controller_trigger = yes
+		}
+		available = {
+			GEA_yunnan_non_anti_concession_controller_trigger = yes
+			NOT = {
+				has_war_with = YUN
+			}
+		}
+		targets = { YUN }
+		target_root_trigger = {
+			has_completed_focus = GEA_Deep_into_the_mountains
+			has_country_flag = YUN_OPEN
+		}
+
+		cost = 25
+		days_remove = 30
+		days_re_enable = 90
+		cancel_if_not_visible = no
+		cancel_trigger = {
+			NOT = {
+				AND = {
+					GEA_yunnan_non_anti_concession_controller_trigger = yes
+					NOT = {
+						has_war_with = YUN
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 30
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					GEA_yunnan_non_anti_concession_controller_trigger = yes
+					NOT = {
+						has_war_with = YUN
+					}
+				}
+				log = "[GetDateText]: [Root.GetName]: Decision remove GEA_yun_trade_delegation"
+				YUN = {
+					add_political_power = 25
+				}
+				custom_effect_tooltip = GEA_china_yun_name_tt
+				add_to_variable = {
+					GEA_china_yun_attitude = 5
+					tooltip = GEA_china_attitude_change_tt
+				}
+				add_to_variable = {
+					GEA_china_yun_capital_influence = 10
+					tooltip = GEA_china_capital_influence_change_tt
+				}
+				hidden_effect = {
+					clamp_variable = {
+						var = GEA_china_yun_attitude
+						min = 0
+						max = 100
+					}
+					clamp_variable = {
+						var = GEA_china_yun_capital_influence
+						min = 0
+						max = 100
+					}
+				}
+			}
+		}
+	}
+
+	GEA_yun_military_instructors = { #派遣军事教官
+		allowed = {
+			original_tag = GEA
+		}
+		icon = GFX_GEA_Dispatch_Military_Advisers_decision
+
+		visible = {
+			has_completed_focus = GEA_Deep_into_the_mountains
+			has_country_flag = YUN_OPEN
+			GEA_yunnan_non_anti_concession_controller_trigger = yes
+		}
+		available = {
+			GEA_yunnan_non_anti_concession_controller_trigger = yes
+			NOT = {
+				has_war_with = YUN
+			}
+		}
+		targets = { YUN }
+		target_root_trigger = {
+			has_completed_focus = GEA_Deep_into_the_mountains
+			has_country_flag = YUN_OPEN
+		}
+
+		cost = 30
+		days_remove = 45
+		days_re_enable = 120
+		cancel_if_not_visible = no
+		custom_cost_text = GEA_yun_support_equipment_100_cost
+		custom_cost_trigger = {
+			has_equipment = {
+				support_equipment > 99
+			}
+		}
+		cancel_trigger = {
+			NOT = {
+				AND = {
+					GEA_yunnan_non_anti_concession_controller_trigger = yes
+					NOT = {
+						has_war_with = YUN
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 30
+		}
+		complete_effect = {
+			hidden_effect = {
+				add_equipment_to_stockpile = {
+					type = support_equipment
+					amount = -100
+				}
+			}
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					GEA_yunnan_non_anti_concession_controller_trigger = yes
+					NOT = {
+						has_war_with = YUN
+					}
+				}
+				log = "[GetDateText]: [Root.GetName]: Decision remove GEA_yun_military_instructors"
+				YUN = {
+					army_experience = 10
+					add_mastery_bonus = {
+						name = GEA_yun_military_instructors
+						bonus = 0.05
+						days = 90
+						folder = land
+						track = operations
+					}
+				}
+				custom_effect_tooltip = GEA_china_yun_name_tt
+				add_to_variable = {
+					GEA_china_yun_attitude = 5
+					tooltip = GEA_china_attitude_change_tt
+				}
+				add_to_variable = {
+					GEA_china_yun_military_projection = 10
+					tooltip = GEA_china_military_projection_change_tt
+				}
+				hidden_effect = {
+					clamp_variable = {
+						var = GEA_china_yun_attitude
+						min = 0
+						max = 100
+					}
+					clamp_variable = {
+						var = GEA_china_yun_military_projection
+						min = 0
+						max = 100
+					}
+				}
+			}
+		}
+	}
+
+	GEA_yun_border_smuggling = { #协查边境走私
+		allowed = {
+			original_tag = GEA
+		}
+		icon = GFX_GEA_Dispatch_Military_Advisers_decision
+
+		visible = {
+			has_completed_focus = GEA_Deep_into_the_mountains
+			has_country_flag = YUN_OPEN
+			GEA_yunnan_non_anti_concession_controller_trigger = yes
+		}
+		available = {
+			GEA_yunnan_non_anti_concession_controller_trigger = yes
+			NOT = {
+				has_war_with = YUN
+			}
+			GEA_indochina_can_interact_trigger = yes
+		}
+		targets = { YUN }
+		target_root_trigger = {
+			has_completed_focus = GEA_Deep_into_the_mountains
+			has_country_flag = YUN_OPEN
+		}
+
+		cost = 20
+		days_remove = 30
+		days_re_enable = 90
+		cancel_if_not_visible = no
+		cancel_trigger = {
+			NOT = {
+				AND = {
+					GEA_yunnan_non_anti_concession_controller_trigger = yes
+					NOT = {
+						has_war_with = YUN
+					}
+					GEA_indochina_can_interact_trigger = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 30
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					GEA_yunnan_non_anti_concession_controller_trigger = yes
+					NOT = {
+						has_war_with = YUN
+					}
+					GEA_indochina_can_interact_trigger = yes
+				}
+				log = "[GetDateText]: [Root.GetName]: Decision remove GEA_yun_border_smuggling"
+				if = {
+					limit = {
+						GEA_indochina_can_interact_trigger = yes
+						has_country_flag = GEA_Indochinese_Stability
+						check_variable = {
+							GEA_yun_border_stability_rewards < 2
+						}
+					}
+					custom_effect_tooltip = GEA_Indochina_Stability_Up
+					hidden_effect = {
+						modify_country_flag = {
+							flag = GEA_Indochinese_Stability
+							value = 1
+						}
+						add_to_variable = {
+							GEA_Indochinese_Stability_display = 1
+						}
+						add_to_variable = {
+							GEA_yun_border_stability_rewards = 1
+						}
+					}
+				}
+				custom_effect_tooltip = GEA_china_yun_name_tt
+				add_to_variable = {
+					GEA_china_yun_attitude = 5
+					tooltip = GEA_china_attitude_change_tt
+				}
+				add_to_variable = {
+					GEA_china_yun_military_projection = 5
+					tooltip = GEA_china_military_projection_change_tt
+				}
+				hidden_effect = {
+					clamp_variable = {
+						var = GEA_china_yun_attitude
+						min = 0
+						max = 100
+					}
+					clamp_variable = {
+						var = GEA_china_yun_military_projection
+						min = 0
+						max = 100
+					}
+				}
+			}
+		}
+	}
+
+	GEA_yun_fudian_credit = { #提供富滇银行信用担保
+		allowed = {
+			original_tag = GEA
+		}
+		icon = GFX_GEA_Invest_in_East_China_decision
+
+		visible = {
+			has_completed_focus = GEA_Deep_into_the_mountains
+			has_country_flag = YUN_OPEN
+			GEA_yunnan_non_anti_concession_controller_trigger = yes
+		}
+		available = {
+			GEA_yunnan_non_anti_concession_controller_trigger = yes
+			NOT = {
+				has_war_with = YUN
+			}
+		}
+		targets = { YUN }
+		target_root_trigger = {
+			has_completed_focus = GEA_Deep_into_the_mountains
+			has_country_flag = YUN_OPEN
+		}
+
+		cost = 50
+		days_remove = 120
+		fire_only_once = yes
+		cancel_if_not_visible = no
+		cancel_trigger = {
+			NOT = {
+				AND = {
+					GEA_yunnan_non_anti_concession_controller_trigger = yes
+					NOT = {
+						has_war_with = YUN
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 30
+		}
+		modifier = {
+			consumer_goods_factor = -0.05
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					GEA_yunnan_non_anti_concession_controller_trigger = yes
+					NOT = {
+						has_war_with = YUN
+					}
+				}
+				log = "[GetDateText]: [Root.GetName]: Decision remove GEA_yun_fudian_credit"
+				YUN = {
+					add_political_power = 50
+					add_stability = 0.05
+				}
+				custom_effect_tooltip = GEA_china_yun_name_tt
+				add_to_variable = {
+					GEA_china_yun_attitude = 10
+					tooltip = GEA_china_attitude_change_tt
+				}
+				add_to_variable = {
+					GEA_china_yun_capital_influence = 15
+					tooltip = GEA_china_capital_influence_change_tt
+				}
+				hidden_effect = {
+					clamp_variable = {
+						var = GEA_china_yun_attitude
+						min = 0
+						max = 100
+					}
+					clamp_variable = {
+						var = GEA_china_yun_capital_influence
+						min = 0
+						max = 100
+					}
+				}
+			}
+		}
+	}
+
+	GEA_yun_kunming_liaison = { #设立昆明联络处
+		allowed = {
+			original_tag = GEA
+		}
+		icon = GFX_GEA_Dispatch_Military_Advisers_decision
+
+		visible = {
+			has_completed_focus = GEA_Deep_into_the_mountains
+			has_country_flag = YUN_OPEN
+			GEA_yunnan_non_anti_concession_controller_trigger = yes
+		}
+		available = {
+			GEA_yunnan_non_anti_concession_controller_trigger = yes
+			NOT = {
+				has_war_with = YUN
+			}
+		}
+		targets = { YUN }
+		target_root_trigger = {
+			has_completed_focus = GEA_Deep_into_the_mountains
+			has_country_flag = YUN_OPEN
+		}
+
+		cost = 40
+		days_remove = 45
+		fire_only_once = yes
+		cancel_if_not_visible = no
+		cancel_trigger = {
+			NOT = {
+				AND = {
+					GEA_yunnan_non_anti_concession_controller_trigger = yes
+					NOT = {
+						has_war_with = YUN
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 30
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					GEA_yunnan_non_anti_concession_controller_trigger = yes
+					NOT = {
+						has_war_with = YUN
+					}
+				}
+				log = "[GetDateText]: [Root.GetName]: Decision remove GEA_yun_kunming_liaison"
+				add_command_power = 20
+				custom_effect_tooltip = GEA_china_yun_name_tt
+				add_to_variable = {
+					GEA_china_yun_attitude = 10
+					tooltip = GEA_china_attitude_change_tt
+				}
+				add_to_variable = {
+					GEA_china_yun_capital_influence = 5
+					tooltip = GEA_china_capital_influence_change_tt
+				}
+				add_to_variable = {
+					GEA_china_yun_military_projection = 15
+					tooltip = GEA_china_military_projection_change_tt
+				}
+				hidden_effect = {
+					clamp_variable = {
+						var = GEA_china_yun_attitude
+						min = 0
+						max = 100
+					}
+					clamp_variable = {
+						var = GEA_china_yun_capital_influence
+						min = 0
+						max = 100
+					}
+					clamp_variable = {
+						var = GEA_china_yun_military_projection
+						min = 0
+						max = 100
+					}
+				}
+			}
+		}
+	}
+
 	GEA_sqi_invest_in_shandong = {
 		icon = GFX_GEA_Invest_in_East_China_decision
 		allowed = { original_tag = GEA }
@@ -11121,7 +11566,7 @@ GEA_focus_china_decisions = {#第二次对华远征
 		visible = {
 			has_completed_focus = GEA_Copy_the_Qingdao_model
 			has_country_flag = SQI_OPEN
-			SQI = { exists = yes GEA_china_warlord_can_interact_trigger = yes }
+			GEA_shandong_non_anti_concession_controller_trigger = yes
 		}
 		targets = { SQI }
 		target_root_trigger = {
@@ -11130,13 +11575,13 @@ GEA_focus_china_decisions = {#第二次对华远征
 		}
 		available = {
 			NOT = { has_war_with = SQI }
-			SQI = { exists = yes GEA_china_warlord_can_interact_trigger = yes }
+			GEA_shandong_non_anti_concession_controller_trigger = yes
 		}
 		cancel_trigger = {
 			OR = {
 				NOT = { country_exists = SQI }
 				has_war_with = SQI
-				SQI = { GEA_china_warlord_cannot_interact_trigger = yes }
+				NOT = { GEA_shandong_non_anti_concession_controller_trigger = yes }
 			}
 		}
 		ai_will_do = { factor = 30 }
@@ -11172,7 +11617,7 @@ GEA_focus_china_decisions = {#第二次对华远征
 		visible = {
 			has_completed_focus = GEA_Copy_the_Qingdao_model
 			has_country_flag = SQI_OPEN
-			SQI = { exists = yes GEA_china_warlord_can_interact_trigger = yes }
+			GEA_shandong_non_anti_concession_controller_trigger = yes
 		}
 		targets = { SQI }
 		target_root_trigger = {
@@ -11181,14 +11626,14 @@ GEA_focus_china_decisions = {#第二次对华远征
 		}
 		available = {
 			NOT = { has_war_with = SQI }
-			SQI = { exists = yes GEA_china_warlord_can_interact_trigger = yes }
+			GEA_shandong_non_anti_concession_controller_trigger = yes
 			SQI = { any_owned_state = { is_controlled_by = SQI is_core_of = SQI } }
 		}
 		cancel_trigger = {
 			OR = {
 				NOT = { country_exists = SQI }
 				has_war_with = SQI
-				SQI = { GEA_china_warlord_cannot_interact_trigger = yes }
+				NOT = { GEA_shandong_non_anti_concession_controller_trigger = yes }
 			}
 		}
 		ai_will_do = { factor = 30 }
@@ -11228,7 +11673,7 @@ GEA_focus_china_decisions = {#第二次对华远征
 		visible = {
 			has_completed_focus = GEA_Copy_the_Qingdao_model
 			has_country_flag = SQI_OPEN
-			SQI = { exists = yes GEA_china_warlord_can_interact_trigger = yes }
+			GEA_shandong_non_anti_concession_controller_trigger = yes
 		}
 		targets = { SQI }
 		target_root_trigger = {
@@ -11237,13 +11682,13 @@ GEA_focus_china_decisions = {#第二次对华远征
 		}
 		available = {
 			NOT = { has_war_with = SQI }
-			SQI = { exists = yes GEA_china_warlord_can_interact_trigger = yes }
+			GEA_shandong_non_anti_concession_controller_trigger = yes
 		}
 		cancel_trigger = {
 			OR = {
 				NOT = { country_exists = SQI }
 				has_war_with = SQI
-				SQI = { GEA_china_warlord_cannot_interact_trigger = yes }
+				NOT = { GEA_shandong_non_anti_concession_controller_trigger = yes }
 			}
 		}
 		ai_will_do = { factor = 30 }
@@ -11276,7 +11721,7 @@ GEA_focus_china_decisions = {#第二次对华远征
 		visible = {
 			has_completed_focus = GEA_Copy_the_Qingdao_model
 			has_country_flag = SQI_OPEN
-			SQI = { exists = yes GEA_china_warlord_can_interact_trigger = yes }
+			GEA_shandong_non_anti_concession_controller_trigger = yes
 		}
 		targets = { SQI }
 		target_root_trigger = {
@@ -11285,14 +11730,14 @@ GEA_focus_china_decisions = {#第二次对华远征
 		}
 		available = {
 			NOT = { has_war_with = SQI }
-			SQI = { exists = yes GEA_china_warlord_can_interact_trigger = yes }
+			GEA_shandong_non_anti_concession_controller_trigger = yes
 			597 = { is_owned_and_controlled_by = SQI }
 		}
 		cancel_trigger = {
 			OR = {
 				NOT = { country_exists = SQI }
 				has_war_with = SQI
-				SQI = { GEA_china_warlord_cannot_interact_trigger = yes }
+				NOT = { GEA_shandong_non_anti_concession_controller_trigger = yes }
 				597 = { NOT = { is_owned_and_controlled_by = SQI } }
 			}
 		}
@@ -11334,7 +11779,7 @@ GEA_focus_china_decisions = {#第二次对华远征
 		visible = {
 			has_completed_focus = GEA_Copy_the_Qingdao_model
 			has_country_flag = SQI_OPEN
-			SQI = { exists = yes GEA_china_warlord_can_interact_trigger = yes }
+			GEA_shandong_non_anti_concession_controller_trigger = yes
 		}
 		targets = { SQI }
 		target_root_trigger = {
@@ -11343,15 +11788,18 @@ GEA_focus_china_decisions = {#第二次对华远征
 		}
 		available = {
 			NOT = { has_war_with = SQI }
-			SQI = { exists = yes GEA_china_warlord_can_interact_trigger = yes }
+			GEA_shandong_non_anti_concession_controller_trigger = yes
 			597 = { is_owned_and_controlled_by = SQI }
 			744 = { owner = { OR = { tag = GEA tag = GER } } controller = { OR = { tag = GEA tag = GER } } }
-			can_build_railway = {
-				start_province = 13669
-				target_province = 1069
-				controller_priority = {
-					base = -1
-					modifier = { add = 2 OR = { tag = GEA tag = GER tag = SQI } }
+			custom_trigger_tooltip = {
+				tooltip = GEA_jiaoji_railway_can_build_tt
+				can_build_railway = {
+					start_province = 13669
+					target_province = 1069
+					controller_priority = {
+						base = -1
+						modifier = { add = 2 OR = { tag = GEA tag = GER tag = SQI } }
+					}
 				}
 			}
 		}
@@ -11359,7 +11807,7 @@ GEA_focus_china_decisions = {#第二次对华远征
 			OR = {
 				NOT = { country_exists = SQI }
 				has_war_with = SQI
-				SQI = { GEA_china_warlord_cannot_interact_trigger = yes }
+				NOT = { GEA_shandong_non_anti_concession_controller_trigger = yes }
 				597 = { NOT = { is_owned_and_controlled_by = SQI } }
 				744 = { NOT = { controller = { OR = { tag = GEA tag = GER } } } }
 			}
@@ -11408,7 +11856,7 @@ GEA_focus_china_decisions = {#第二次对华远征
 		visible = {
 			has_completed_focus = GEA_Copy_the_Qingdao_model
 			has_country_flag = SQI_OPEN
-			SQI = { exists = yes GEA_china_warlord_can_interact_trigger = yes }
+			GEA_shandong_non_anti_concession_controller_trigger = yes
 		}
 		targets = { SQI }
 		target_root_trigger = {
@@ -11417,13 +11865,13 @@ GEA_focus_china_decisions = {#第二次对华远征
 		}
 		available = {
 			NOT = { has_war_with = SQI }
-			SQI = { exists = yes GEA_china_warlord_can_interact_trigger = yes }
+			GEA_shandong_non_anti_concession_controller_trigger = yes
 		}
 		cancel_trigger = {
 			OR = {
 				NOT = { country_exists = SQI }
 				has_war_with = SQI
-				SQI = { GEA_china_warlord_cannot_interact_trigger = yes }
+				NOT = { GEA_shandong_non_anti_concession_controller_trigger = yes }
 			}
 		}
 		ai_will_do = { factor = 30 }
@@ -11467,7 +11915,8 @@ GEA_focus_china_decisions = {#第二次对华远征
 		visible = {
 			has_completed_focus = GEA_deal_with_the_shandong_clique
 			has_country_flag = SQI_OPEN
-			SQI = { exists = yes GEA_china_warlord_cannot_interact_trigger = yes }
+			SQI = { exists = yes }
+			NOT = { GEA_shandong_non_anti_concession_controller_trigger = yes }
 		}
 		targets = { SQI }
 		target_root_trigger = {
@@ -11478,7 +11927,8 @@ GEA_focus_china_decisions = {#第二次对华远征
 			date > 1938.7.1
 			NOT = { has_war_with = SQI }
 			NOT = { is_in_faction_with = SQI }
-			SQI = { exists = yes NOT = { is_subject_of = GEA } GEA_china_warlord_cannot_interact_trigger = yes }
+			SQI = { exists = yes NOT = { is_subject_of = GEA } }
+			NOT = { GEA_shandong_non_anti_concession_controller_trigger = yes }
 		}
 		ai_will_do = { factor = 0 }
 		complete_effect = {
@@ -11491,14 +11941,15 @@ GEA_focus_china_decisions = {#第二次对华远征
 				has_war_with = SQI
 				is_in_faction_with = SQI
 				SQI = { is_subject_of = GEA }
-				SQI = { GEA_china_warlord_can_interact_trigger = yes }
+				GEA_shandong_non_anti_concession_controller_trigger = yes
 			}
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Shandong_Expedition_Diederichs"
 			if = {
 				limit = {
-					SQI = { exists = yes NOT = { is_subject_of = GEA } GEA_china_warlord_cannot_interact_trigger = yes }
+					SQI = { exists = yes NOT = { is_subject_of = GEA } }
+					NOT = { GEA_shandong_non_anti_concession_controller_trigger = yes }
 					NOT = { has_war_with = SQI }
 					NOT = { is_in_faction_with = SQI }
 				}
@@ -12740,10 +13191,14 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_The_close_bond_of_dual_in-laws
 			OR = {
 				has_country_flag = GEA_Josias_frame_1_Nikolaus
 				has_country_flag = GEA_Josias_frame_2_Nikolaus
 			}
+		}
+		available = {
+			has_completed_focus = GEA_The_close_bond_of_dual_in-laws
 		}
 
 		cost = 0
@@ -12758,15 +13213,17 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_The_close_bond_of_dual_in-laws
 			has_country_flag = GEA_Josias_decision_view_Nikolaus
 		}
 		available = {
+			has_completed_focus = GEA_The_close_bond_of_dual_in-laws
 			check_variable = {
 				GEA_NIKOLAUS_friendship < 100
 			}
 		}
 
-		cost = 10
+		cost = GEA_Josias_social_cost_10?10
 		days_remove = 30
 		days_re_enable = 20
 
@@ -12780,10 +13237,14 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_Brotherly_affection
 			OR = {
 				has_country_flag = GEA_Josias_frame_1_Carl_Edward
 				has_country_flag = GEA_Josias_frame_2_Carl_Edward
 			}
+		}
+		available = {
+			has_completed_focus = GEA_Brotherly_affection
 		}
 
 		cost = 0
@@ -12798,15 +13259,17 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_Brotherly_affection
 			has_country_flag = GEA_Josias_decision_view_Carl_Edward
 		}
 		available = {
+			has_completed_focus = GEA_Brotherly_affection
 			check_variable = {
 				GEA_CARL_EDWARD_friendship < 100
 			}
 		}
 
-		cost = 10
+		cost = GEA_Josias_social_cost_10?10
 		days_remove = 30
 		days_re_enable = 20
 
@@ -12820,10 +13283,14 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
 			OR = {
 				has_country_flag = GEA_Josias_frame_1_Elard_von_Oldenburg
 				has_country_flag = GEA_Josias_frame_2_Elard_von_Oldenburg
 			}
+		}
+		available = {
+			has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
 		}
 
 		cost = 0
@@ -12838,15 +13305,17 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
 			has_country_flag = GEA_Josias_decision_view_Elard_von_Oldenburg
 		}
 		available = {
+			has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
 			check_variable = {
 				GEA_ELARD_VON_OLDENBURG_friendship < 100
 			}
 		}
 
-		cost = 10
+		cost = GEA_Josias_social_cost_10?10
 		days_remove = 30
 		days_re_enable = 20
 
@@ -12860,10 +13329,14 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_The_Secret_Party_of_the_General
 			OR = {
 				has_country_flag = GEA_Josias_frame_1_Schleicher
 				has_country_flag = GEA_Josias_frame_2_Schleicher
 			}
+		}
+		available = {
+			has_completed_focus = GEA_The_Secret_Party_of_the_General
 		}
 
 		cost = 0
@@ -12878,15 +13351,17 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_The_Secret_Party_of_the_General
 			has_country_flag = GEA_Josias_decision_view_Schleicher
 		}
 		available = {
+			has_completed_focus = GEA_The_Secret_Party_of_the_General
 			check_variable = {
 				GEA_SCHLEICHER_friendship < 100
 			}
 		}
 
-		cost = 10
+		cost = GEA_Josias_social_cost_10?10
 		days_remove = 30
 		days_re_enable = 20
 
@@ -12900,10 +13375,14 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
 			OR = {
 				has_country_flag = GEA_Josias_frame_1_Hugenberg
 				has_country_flag = GEA_Josias_frame_2_Hugenberg
 			}
+		}
+		available = {
+			has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
 		}
 
 		cost = 0
@@ -12918,15 +13397,17 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
 			has_country_flag = GEA_Josias_decision_view_Hugenberg
 		}
 		available = {
+			has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
 			check_variable = {
 				GEA_HUGENBERG_friendship < 100
 			}
 		}
 
-		cost = 10
+		cost = GEA_Josias_social_cost_10?10
 		days_remove = 30
 		days_re_enable = 20
 
@@ -12940,10 +13421,14 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
 			OR = {
 				has_country_flag = GEA_Josias_frame_1_Werner_von_Alvensleben
 				has_country_flag = GEA_Josias_frame_2_Werner_von_Alvensleben
 			}
+		}
+		available = {
+			has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
 		}
 
 		cost = 0
@@ -12958,15 +13443,17 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
 			has_country_flag = GEA_Josias_decision_view_Werner_von_Alvensleben
 		}
 		available = {
+			has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
 			check_variable = {
 				GEA_WERNER_VON_ALVENSLEBEN_friendship < 100
 			}
 		}
 
-		cost = 10
+		cost = GEA_Josias_social_cost_10?10
 		days_remove = 30
 		days_re_enable = 20
 
@@ -13006,7 +13493,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 10
+		cost = GEA_Josias_social_cost_10?10
 		days_remove = 30
 		days_re_enable = 20
 
@@ -13046,7 +13533,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 10
+		cost = GEA_Josias_social_cost_10?10
 		days_remove = 30
 		days_re_enable = 20
 
@@ -13086,7 +13573,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 10
+		cost = GEA_Josias_social_cost_10?10
 		days_remove = 30
 		days_re_enable = 20
 
@@ -13126,7 +13613,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 10
+		cost = GEA_Josias_social_cost_10?10
 		days_remove = 30
 		days_re_enable = 20
 
@@ -13166,7 +13653,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 10
+		cost = GEA_Josias_social_cost_10?10
 		days_remove = 30
 		days_re_enable = 20
 
@@ -13180,10 +13667,14 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
 			OR = {
 				has_country_flag = GEA_Josias_frame_3_Alfred_Krupp
 				has_country_flag = GEA_Josias_frame_4_Alfred_Krupp
 			}
+		}
+		available = {
+			has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
 		}
 
 		cost = 0
@@ -13198,15 +13689,17 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
 			has_country_flag = GEA_Josias_decision_view_Alfred_Krupp
 		}
 		available = {
+			has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
 			check_variable = {
 				GEA_Alfred_Krupp_friendship < 100
 			}
 		}
 
-		cost = 10
+		cost = GEA_Josias_social_cost_10?10
 		days_remove = 30
 		days_re_enable = 20
 
@@ -13246,7 +13739,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 10
+		cost = GEA_Josias_social_cost_10?10
 		days_remove = 30
 		days_re_enable = 20
 
@@ -13286,7 +13779,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 10
+		cost = GEA_Josias_social_cost_10?10
 		days_remove = 30
 		days_re_enable = 20
 
@@ -13326,7 +13819,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 10
+		cost = GEA_Josias_social_cost_10?10
 		days_remove = 30
 		days_re_enable = 20
 
@@ -13366,7 +13859,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 10
+		cost = GEA_Josias_social_cost_10?10
 		days_remove = 30
 		days_re_enable = 20
 
@@ -13406,7 +13899,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 10
+		cost = GEA_Josias_social_cost_10?10
 		days_remove = 30
 		days_re_enable = 20
 
@@ -13446,7 +13939,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 10
+		cost = GEA_Josias_social_cost_10?10
 		days_remove = 30
 		days_re_enable = 20
 
@@ -13460,15 +13953,17 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_The_close_bond_of_dual_in-laws
 			has_country_flag = GEA_Josias_decision_view_Nikolaus
 		}
 		available = {
+			has_completed_focus = GEA_The_close_bond_of_dual_in-laws
 			check_variable = {
 				GEA_NIKOLAUS_friendship < 100
 			}
 		}
 
-		cost = 25
+		cost = GEA_Josias_social_cost_25?25
 		days_remove = 7
 		days_re_enable = 60
 
@@ -13487,15 +13982,17 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_The_close_bond_of_dual_in-laws
 			has_country_flag = GEA_Josias_decision_view_Nikolaus
 		}
 		available = {
+			has_completed_focus = GEA_The_close_bond_of_dual_in-laws
 			check_variable = {
 				GEA_NIKOLAUS_friendship < 100
 			}
 		}
 
-		cost = 30
+		cost = GEA_Josias_social_cost_30?30
 		days_remove = 30
 		days_re_enable = 30
 
@@ -13511,15 +14008,17 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_The_close_bond_of_dual_in-laws
 			has_country_flag = GEA_Josias_decision_view_Nikolaus
 		}
 		available = {
+			has_completed_focus = GEA_The_close_bond_of_dual_in-laws
 			check_variable = {
 				GEA_NIKOLAUS_friendship < 100
 			}
 		}
 
-		cost = 20
+		cost = GEA_Josias_social_cost_20?20
 		days_remove = 14
 		cancel_if_not_visible = no
 		days_re_enable = 90
@@ -13539,15 +14038,17 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_The_close_bond_of_dual_in-laws
 			has_country_flag = GEA_Josias_decision_view_Nikolaus
 		}
 		available = {
+			has_completed_focus = GEA_The_close_bond_of_dual_in-laws
 			check_variable = {
 				GEA_NIKOLAUS_friendship < 100
 			}
 		}
 
-		cost = 30
+		cost = GEA_Josias_social_cost_30?30
 		days_remove = 30
 		cancel_if_not_visible = no
 		days_re_enable = 90
@@ -13564,15 +14065,17 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_The_close_bond_of_dual_in-laws
 			has_country_flag = GEA_Josias_decision_view_Nikolaus
 		}
 		available = {
+			has_completed_focus = GEA_The_close_bond_of_dual_in-laws
 			check_variable = {
 				GEA_NIKOLAUS_friendship < 100
 			}
 		}
 
-		cost = 30
+		cost = GEA_Josias_social_cost_30?30
 		days_remove = 45
 		cancel_if_not_visible = no
 		days_re_enable = 120
@@ -13589,9 +14092,11 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_The_close_bond_of_dual_in-laws
 			has_country_flag = GEA_Josias_decision_view_Nikolaus
 		}
 		available = {
+			has_completed_focus = GEA_The_close_bond_of_dual_in-laws
 			check_variable = {
 				GEA_NIKOLAUS_friendship < 100
 			}
@@ -13601,7 +14106,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 30
+		cost = GEA_Josias_social_cost_30?30
 		days_remove = 60
 		cancel_if_not_visible = no
 		days_re_enable = 120
@@ -13643,15 +14148,17 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_The_close_bond_of_dual_in-laws
 			has_country_flag = GEA_Josias_decision_view_Nikolaus
 		}
 		available = {
+			has_completed_focus = GEA_The_close_bond_of_dual_in-laws
 			check_variable = {
 				GEA_NIKOLAUS_friendship < 100
 			}
 		}
 
-		cost = 75
+		cost = GEA_Josias_social_cost_75?75
 		days_remove = 90
 		cancel_if_not_visible = no
 		fire_only_once = yes
@@ -13672,15 +14179,17 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_The_close_bond_of_dual_in-laws
 			has_country_flag = GEA_Josias_decision_view_Nikolaus
 		}
 		available = {
+			has_completed_focus = GEA_The_close_bond_of_dual_in-laws
 			check_variable = {
 				GEA_NIKOLAUS_friendship < 100
 			}
 		}
 
-		cost = 60
+		cost = GEA_Josias_social_cost_60?60
 		days_remove = 60
 		cancel_if_not_visible = no
 		fire_only_once = yes
@@ -13696,15 +14205,17 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_Brotherly_affection
 			has_country_flag = GEA_Josias_decision_view_Carl_Edward
 		}
 		available = {
+			has_completed_focus = GEA_Brotherly_affection
 			check_variable = {
 				GEA_CARL_EDWARD_friendship < 100
 			}
 		}
 
-		cost = 15
+		cost = GEA_Josias_social_cost_15?15
 		days_remove = 30
 		days_re_enable = 60
 
@@ -13720,15 +14231,17 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_Brotherly_affection
 			has_country_flag = GEA_Josias_decision_view_Carl_Edward
 		}
 		available = {
+			has_completed_focus = GEA_Brotherly_affection
 			check_variable = {
 				GEA_CARL_EDWARD_friendship < 100
 			}
 		}
 
-		cost = 25
+		cost = GEA_Josias_social_cost_25?25
 		days_remove = 30
 		days_re_enable = 60
 
@@ -13747,15 +14260,17 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_Brotherly_affection
 			has_country_flag = GEA_Josias_decision_view_Carl_Edward
 		}
 		available = {
+			has_completed_focus = GEA_Brotherly_affection
 			check_variable = {
 				GEA_CARL_EDWARD_friendship < 100
 			}
 		}
 
-		cost = 20
+		cost = GEA_Josias_social_cost_20?20
 		days_remove = 14
 		cancel_if_not_visible = no
 		days_re_enable = 90
@@ -13775,15 +14290,17 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_Brotherly_affection
 			has_country_flag = GEA_Josias_decision_view_Carl_Edward
 		}
 		available = {
+			has_completed_focus = GEA_Brotherly_affection
 			check_variable = {
 				GEA_CARL_EDWARD_friendship < 100
 			}
 		}
 
-		cost = 30
+		cost = GEA_Josias_social_cost_30?30
 		days_remove = 30
 		cancel_if_not_visible = no
 		days_re_enable = 120
@@ -13800,15 +14317,17 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_Brotherly_affection
 			has_country_flag = GEA_Josias_decision_view_Carl_Edward
 		}
 		available = {
+			has_completed_focus = GEA_Brotherly_affection
 			check_variable = {
 				GEA_CARL_EDWARD_friendship < 100
 			}
 		}
 
-		cost = 30
+		cost = GEA_Josias_social_cost_30?30
 		days_remove = 45
 		cancel_if_not_visible = no
 		days_re_enable = 120
@@ -13829,9 +14348,11 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_Brotherly_affection
 			has_country_flag = GEA_Josias_decision_view_Carl_Edward
 		}
 		available = {
+			has_completed_focus = GEA_Brotherly_affection
 			check_variable = {
 				GEA_CARL_EDWARD_friendship < 100
 			}
@@ -13840,7 +14361,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 30
+		cost = GEA_Josias_social_cost_30?30
 		days_remove = 60
 		cancel_if_not_visible = no
 		days_re_enable = 180
@@ -13877,15 +14398,17 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_Brotherly_affection
 			has_country_flag = GEA_Josias_decision_view_Carl_Edward
 		}
 		available = {
+			has_completed_focus = GEA_Brotherly_affection
 			check_variable = {
 				GEA_CARL_EDWARD_friendship < 100
 			}
 		}
 
-		cost = 60
+		cost = GEA_Josias_social_cost_60?60
 		days_remove = 60
 		cancel_if_not_visible = no
 		fire_only_once = yes
@@ -13906,15 +14429,17 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
 			has_country_flag = GEA_Josias_decision_view_Elard_von_Oldenburg
 		}
 		available = {
+			has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
 			check_variable = {
 				GEA_ELARD_VON_OLDENBURG_friendship < 100
 			}
 		}
 
-		cost = 20
+		cost = GEA_Josias_social_cost_20?20
 		days_remove = 14
 		days_re_enable = 45
 
@@ -13943,15 +14468,17 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
 			has_country_flag = GEA_Josias_decision_view_Elard_von_Oldenburg
 		}
 		available = {
+			has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
 			check_variable = {
 				GEA_ELARD_VON_OLDENBURG_friendship < 100
 			}
 		}
 
-		cost = 30
+		cost = GEA_Josias_social_cost_30?30
 		days_remove = 14
 		days_re_enable = 60
 
@@ -13972,9 +14499,11 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
 			has_country_flag = GEA_Josias_decision_view_Elard_von_Oldenburg
 		}
 		available = {
+			has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
 			check_variable = {
 				GEA_ELARD_VON_OLDENBURG_friendship < 100
 			}
@@ -13995,7 +14524,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 				has_war_with = GER
 			}
 		}
-		cost = 25
+		cost = GEA_Josias_social_cost_25?25
 		days_remove = 30
 		days_re_enable = 90
 
@@ -14026,16 +14555,18 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
 			has_country_flag = GEA_Josias_decision_view_Elard_von_Oldenburg
 		}
 		available = {
+			has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
 			check_variable = {
 				GEA_ELARD_VON_OLDENBURG_friendship < 100
 			}
 		}
 
 		cancel_if_not_visible = no
-		cost = 20
+		cost = GEA_Josias_social_cost_20?20
 		days_remove = 30
 		days_re_enable = 90
 
@@ -14054,9 +14585,11 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
 			has_country_flag = GEA_Josias_decision_view_Elard_von_Oldenburg
 		}
 		available = {
+			has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
 			check_variable = {
 				GEA_ELARD_VON_OLDENBURG_friendship < 100
 			}
@@ -14077,7 +14610,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 				has_war_with = GER
 			}
 		}
-		cost = 30
+		cost = GEA_Josias_social_cost_30?30
 		days_remove = 45
 		days_re_enable = 120
 
@@ -14109,16 +14642,18 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
 			has_country_flag = GEA_Josias_decision_view_Elard_von_Oldenburg
 		}
 		available = {
+			has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
 			check_variable = {
 				GEA_ELARD_VON_OLDENBURG_friendship < 100
 			}
 		}
 
 		cancel_if_not_visible = no
-		cost = 60
+		cost = GEA_Josias_social_cost_60?60
 		days_remove = 60
 		fire_only_once = yes
 
@@ -14133,9 +14668,11 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
 			has_country_flag = GEA_Josias_decision_view_Elard_von_Oldenburg
 		}
 		available = {
+			has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
 			check_variable = {
 				GEA_ELARD_VON_OLDENBURG_friendship < 100
 			}
@@ -14156,7 +14693,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 				has_war_with = GER
 			}
 		}
-		cost = 75
+		cost = GEA_Josias_social_cost_75?75
 		days_remove = 90
 		fire_only_once = yes
 
@@ -14192,15 +14729,17 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_The_Secret_Party_of_the_General
 			has_country_flag = GEA_Josias_decision_view_Schleicher
 		}
 		available = {
+			has_completed_focus = GEA_The_Secret_Party_of_the_General
 			check_variable = {
 				GEA_SCHLEICHER_friendship < 100
 			}
 		}
 
-		cost = 10
+		cost = GEA_Josias_social_cost_10?10
 		days_remove = 15
 		days_re_enable = 40
 
@@ -14219,15 +14758,17 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_The_Secret_Party_of_the_General
 			has_country_flag = GEA_Josias_decision_view_Schleicher
 		}
 		available = {
+			has_completed_focus = GEA_The_Secret_Party_of_the_General
 			check_variable = {
 				GEA_SCHLEICHER_friendship < 100
 			}
 		}
 
-		cost = 25
+		cost = GEA_Josias_social_cost_25?25
 		days_remove = 30
 		days_re_enable = 50
 
@@ -14243,9 +14784,11 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = investigation
 
 		visible = {
+			has_completed_focus = GEA_The_Secret_Party_of_the_General
 			has_country_flag = GEA_Josias_decision_view_Schleicher
 		}
 		available = {
+			has_completed_focus = GEA_The_Secret_Party_of_the_General
 			num_of_civilian_factories_available_for_projects > 0
 			check_variable = {
 				GEA_SCHLEICHER_friendship < 100
@@ -14285,9 +14828,11 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_The_Secret_Party_of_the_General
 			has_country_flag = GEA_Josias_decision_view_Schleicher
 		}
 		available = {
+			has_completed_focus = GEA_The_Secret_Party_of_the_General
 			check_variable = {
 				GEA_SCHLEICHER_friendship < 100
 			}
@@ -14299,7 +14844,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 30
+		cost = GEA_Josias_social_cost_30?30
 		days_remove = 30
 		cancel_if_not_visible = no
 		days_re_enable = 120
@@ -14340,15 +14885,17 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_The_Secret_Party_of_the_General
 			has_country_flag = GEA_Josias_decision_view_Schleicher
 		}
 		available = {
+			has_completed_focus = GEA_The_Secret_Party_of_the_General
 			check_variable = {
 				GEA_SCHLEICHER_friendship < 100
 			}
 		}
 
-		cost = 25
+		cost = GEA_Josias_social_cost_25?25
 		days_remove = 30
 		cancel_if_not_visible = no
 		days_re_enable = 90
@@ -14369,15 +14916,17 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_The_Secret_Party_of_the_General
 			has_country_flag = GEA_Josias_decision_view_Schleicher
 		}
 		available = {
+			has_completed_focus = GEA_The_Secret_Party_of_the_General
 			check_variable = {
 				GEA_SCHLEICHER_friendship < 100
 			}
 		}
 
-		cost = 30
+		cost = GEA_Josias_social_cost_30?30
 		days_remove = 45
 		days_re_enable = 120
 		cancel_if_not_visible = no
@@ -14396,9 +14945,11 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = investigation
 
 		visible = {
+			has_completed_focus = GEA_The_Secret_Party_of_the_General
 			has_country_flag = GEA_Josias_decision_view_Schleicher
 		}
 		available = {
+			has_completed_focus = GEA_The_Secret_Party_of_the_General
 			check_variable = {
 				GEA_SCHLEICHER_friendship < 100
 			}
@@ -14412,7 +14963,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			has_intelligence_agency = yes
 		}
 
-		cost = 60
+		cost = GEA_Josias_social_cost_60?60
 		days_remove = 60
 		cancel_if_not_visible = no
 		fire_only_once = yes
@@ -14451,9 +15002,11 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_The_Secret_Party_of_the_General
 			has_country_flag = GEA_Josias_decision_view_Schleicher
 		}
 		available = {
+			has_completed_focus = GEA_The_Secret_Party_of_the_General
 			check_variable = {
 				GEA_SCHLEICHER_friendship < 100
 			}
@@ -14465,7 +15018,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 75
+		cost = GEA_Josias_social_cost_75?75
 		days_remove = 90
 		cancel_if_not_visible = no
 		fire_only_once = yes
@@ -14507,15 +15060,17 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
 			has_country_flag = GEA_Josias_decision_view_Hugenberg
 		}
 		available = {
+			has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
 			check_variable = {
 				GEA_HUGENBERG_friendship < 100
 			}
 		}
 
-		cost = 20
+		cost = GEA_Josias_social_cost_20?20
 		days_remove = 7
 		days_re_enable = 70
 
@@ -14530,15 +15085,17 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
 			has_country_flag = GEA_Josias_decision_view_Hugenberg
 		}
 		available = {
+			has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
 			check_variable = {
 				GEA_HUGENBERG_friendship < 100
 			}
 		}
 
-		cost = 25
+		cost = GEA_Josias_social_cost_25?25
 		days_remove = 30
 		days_re_enable = 45
 
@@ -14561,16 +15118,18 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
 			has_country_flag = GEA_Josias_decision_view_Hugenberg
 		}
 		available = {
+			has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
 			check_variable = {
 				GEA_HUGENBERG_friendship < 100
 			}
 		}
 
 		cancel_if_not_visible = no
-		cost = 20
+		cost = GEA_Josias_social_cost_20?20
 		days_remove = 30
 		days_re_enable = 90
 
@@ -14585,16 +15144,18 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
 			has_country_flag = GEA_Josias_decision_view_Hugenberg
 		}
 		available = {
+			has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
 			check_variable = {
 				GEA_HUGENBERG_friendship < 100
 			}
 		}
 
 		cancel_if_not_visible = no
-		cost = 25
+		cost = GEA_Josias_social_cost_25?25
 		days_remove = 30
 		days_re_enable = 90
 
@@ -14610,16 +15171,18 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
 			has_country_flag = GEA_Josias_decision_view_Hugenberg
 		}
 		available = {
+			has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
 			check_variable = {
 				GEA_HUGENBERG_friendship < 100
 			}
 		}
 
 		cancel_if_not_visible = no
-		cost = 30
+		cost = GEA_Josias_social_cost_30?30
 		days_remove = 45
 		days_re_enable = 120
 
@@ -14639,16 +15202,18 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
 			has_country_flag = GEA_Josias_decision_view_Hugenberg
 		}
 		available = {
+			has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
 			check_variable = {
 				GEA_HUGENBERG_friendship < 100
 			}
 		}
 
 		cancel_if_not_visible = no
-		cost = 60
+		cost = GEA_Josias_social_cost_60?60
 		days_remove = 60
 		fire_only_once = yes
 
@@ -14663,16 +15228,18 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
 			has_country_flag = GEA_Josias_decision_view_Hugenberg
 		}
 		available = {
+			has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
 			check_variable = {
 				GEA_HUGENBERG_friendship < 100
 			}
 		}
 
 		cancel_if_not_visible = no
-		cost = 75
+		cost = GEA_Josias_social_cost_75?75
 		days_remove = 90
 		fire_only_once = yes
 
@@ -14692,15 +15259,17 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
 			has_country_flag = GEA_Josias_decision_view_Werner_von_Alvensleben
 		}
 		available = {
+			has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
 			check_variable = {
 				GEA_WERNER_VON_ALVENSLEBEN_friendship < 100
 			}
 		}
 
-		cost = 40
+		cost = GEA_Josias_social_cost_40?40
 		fire_only_once = yes
 		days_remove = 50
 
@@ -14729,15 +15298,17 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
 			has_country_flag = GEA_Josias_decision_view_Werner_von_Alvensleben
 		}
 		available = {
+			has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
 			check_variable = {
 				GEA_WERNER_VON_ALVENSLEBEN_friendship < 100
 			}
 		}
 
-		cost = 25
+		cost = GEA_Josias_social_cost_25?25
 		days_remove = 30
 		days_re_enable = 45
 
@@ -14759,16 +15330,18 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
 			has_country_flag = GEA_Josias_decision_view_Werner_von_Alvensleben
 		}
 		available = {
+			has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
 			check_variable = {
 				GEA_WERNER_VON_ALVENSLEBEN_friendship < 100
 			}
 		}
 
 		cancel_if_not_visible = no
-		cost = 20
+		cost = GEA_Josias_social_cost_20?20
 		days_remove = 14
 		days_re_enable = 90
 
@@ -14783,16 +15356,18 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
 			has_country_flag = GEA_Josias_decision_view_Werner_von_Alvensleben
 		}
 		available = {
+			has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
 			check_variable = {
 				GEA_WERNER_VON_ALVENSLEBEN_friendship < 100
 			}
 		}
 
 		cancel_if_not_visible = no
-		cost = 25
+		cost = GEA_Josias_social_cost_25?25
 		days_remove = 30
 		days_re_enable = 90
 
@@ -14811,16 +15386,18 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
 			has_country_flag = GEA_Josias_decision_view_Werner_von_Alvensleben
 		}
 		available = {
+			has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
 			check_variable = {
 				GEA_WERNER_VON_ALVENSLEBEN_friendship < 100
 			}
 		}
 
 		cancel_if_not_visible = no
-		cost = 30
+		cost = GEA_Josias_social_cost_30?30
 		days_remove = 45
 		days_re_enable = 120
 
@@ -14838,16 +15415,18 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
 			has_country_flag = GEA_Josias_decision_view_Werner_von_Alvensleben
 		}
 		available = {
+			has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
 			check_variable = {
 				GEA_WERNER_VON_ALVENSLEBEN_friendship < 100
 			}
 		}
 
 		cancel_if_not_visible = no
-		cost = 60
+		cost = GEA_Josias_social_cost_60?60
 		days_remove = 60
 		fire_only_once = yes
 
@@ -14862,9 +15441,11 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
 			has_country_flag = GEA_Josias_decision_view_Werner_von_Alvensleben
 		}
 		available = {
+			has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
 			check_variable = {
 				GEA_WERNER_VON_ALVENSLEBEN_friendship < 100
 			}
@@ -14885,7 +15466,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 				has_war_with = GER
 			}
 		}
-		cost = 75
+		cost = GEA_Josias_social_cost_75?75
 		days_remove = 90
 		fire_only_once = yes
 
@@ -14926,7 +15507,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 10
+		cost = GEA_Josias_social_cost_10?10
 		days_remove = 45
 		days_re_enable = 60
 
@@ -14956,7 +15537,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 30
+		cost = GEA_Josias_social_cost_30?30
 		days_remove = 25
 		days_re_enable = 60
 		cancel_trigger = {
@@ -15000,7 +15581,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 30
+		cost = GEA_Josias_social_cost_30?30
 		days_remove = 30
 		days_re_enable = 90
 		cancel_if_not_visible = no
@@ -15025,7 +15606,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 40
+		cost = GEA_Josias_social_cost_40?40
 		days_remove = 45
 		days_re_enable = 120
 		cancel_if_not_visible = no
@@ -15052,7 +15633,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 45
+		cost = GEA_Josias_social_cost_45?45
 		days_remove = 60
 		days_re_enable = 120
 		cancel_if_not_visible = no
@@ -15095,7 +15676,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 100
+		cost = GEA_Josias_social_cost_100?100
 		days_remove = 90
 		fire_only_once = yes
 		cancel_if_not_visible = no
@@ -15203,7 +15784,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 80
+		cost = GEA_Josias_social_cost_80?80
 		days_remove = 60
 		fire_only_once = yes
 		cancel_if_not_visible = no
@@ -15236,7 +15817,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 30
+		cost = GEA_Josias_social_cost_30?30
 		days_remove = 60
 		days_re_enable = 60
 		cancel_trigger = {
@@ -15284,7 +15865,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 30
+		cost = GEA_Josias_social_cost_30?30
 		days_remove = 80
 		days_re_enable = 120
 
@@ -15312,7 +15893,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 35
+		cost = GEA_Josias_social_cost_35?35
 		days_remove = 45
 		days_re_enable = 90
 		cancel_if_not_visible = no
@@ -15339,7 +15920,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 40
+		cost = GEA_Josias_social_cost_40?40
 		days_remove = 45
 		days_re_enable = 120
 		cancel_if_not_visible = no
@@ -15366,7 +15947,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 40
+		cost = GEA_Josias_social_cost_40?40
 		days_remove = 45
 		days_re_enable = 120
 		cancel_if_not_visible = no
@@ -15393,7 +15974,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 80
+		cost = GEA_Josias_social_cost_80?80
 		days_remove = 60
 		fire_only_once = yes
 		cancel_if_not_visible = no
@@ -15444,7 +16025,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 100
+		cost = GEA_Josias_social_cost_100?100
 		days_remove = 90
 		fire_only_once = yes
 		cancel_if_not_visible = no
@@ -15559,7 +16140,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 60
+		cost = GEA_Josias_social_cost_60?60
 		days_remove = 60
 		fire_only_once = yes
 		cancel_trigger = {
@@ -15628,7 +16209,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 30
+		cost = GEA_Josias_social_cost_30?30
 		days_remove = 30
 		days_re_enable = 60
 
@@ -15661,7 +16242,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 30
+		cost = GEA_Josias_social_cost_30?30
 		days_remove = 30
 		days_re_enable = 90
 		cancel_if_not_visible = no
@@ -15688,7 +16269,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 40
+		cost = GEA_Josias_social_cost_40?40
 		days_remove = 45
 		days_re_enable = 120
 		cancel_if_not_visible = no
@@ -15720,7 +16301,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 45
+		cost = GEA_Josias_social_cost_45?45
 		days_remove = 60
 		days_re_enable = 120
 		cancel_if_not_visible = no
@@ -15747,7 +16328,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 80
+		cost = GEA_Josias_social_cost_80?80
 		days_remove = 60
 		fire_only_once = yes
 		cancel_if_not_visible = no
@@ -15792,7 +16373,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 100
+		cost = GEA_Josias_social_cost_100?100
 		days_remove = 90
 		fire_only_once = yes
 		cancel_if_not_visible = no
@@ -15907,7 +16488,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 60
+		cost = GEA_Josias_social_cost_60?60
 		days_remove = 60
 		fire_only_once = yes
 		cancel_trigger = {
@@ -15980,7 +16561,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 40
+		cost = GEA_Josias_social_cost_40?40
 		days_remove = 30
 		days_re_enable = 75
 		cancel_trigger = {
@@ -16035,7 +16616,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 30
+		cost = GEA_Josias_social_cost_30?30
 		days_remove = 30
 		days_re_enable = 90
 		cancel_if_not_visible = no
@@ -16062,7 +16643,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 45
+		cost = GEA_Josias_social_cost_45?45
 		days_remove = 45
 		days_re_enable = 120
 		cancel_if_not_visible = no
@@ -16089,7 +16670,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 35
+		cost = GEA_Josias_social_cost_35?35
 		days_remove = 45
 		days_re_enable = 120
 		cancel_if_not_visible = no
@@ -16116,7 +16697,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 80
+		cost = GEA_Josias_social_cost_80?80
 		days_remove = 60
 		fire_only_once = yes
 		cancel_if_not_visible = no
@@ -16162,7 +16743,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 100
+		cost = GEA_Josias_social_cost_100?100
 		days_remove = 90
 		fire_only_once = yes
 		cancel_if_not_visible = no
@@ -16273,7 +16854,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 30
+		cost = GEA_Josias_social_cost_30?30
 		days_remove = 30
 		days_re_enable = 75
 		cancel_trigger = {
@@ -16328,7 +16909,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 30
+		cost = GEA_Josias_social_cost_30?30
 		days_remove = 60
 		days_re_enable = 120
 
@@ -16363,7 +16944,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 35
+		cost = GEA_Josias_social_cost_35?35
 		days_remove = 45
 		days_re_enable = 120
 		cancel_if_not_visible = no
@@ -16388,7 +16969,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 40
+		cost = GEA_Josias_social_cost_40?40
 		days_remove = 45
 		days_re_enable = 120
 		cancel_if_not_visible = no
@@ -16420,7 +17001,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 45
+		cost = GEA_Josias_social_cost_45?45
 		days_remove = 60
 		days_re_enable = 120
 		cancel_if_not_visible = no
@@ -16447,7 +17028,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 80
+		cost = GEA_Josias_social_cost_80?80
 		days_remove = 60
 		fire_only_once = yes
 		cancel_if_not_visible = no
@@ -16489,7 +17070,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 100
+		cost = GEA_Josias_social_cost_100?100
 		days_remove = 90
 		fire_only_once = yes
 		cancel_if_not_visible = no
@@ -16596,15 +17177,17 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
 			has_country_flag = GEA_Josias_decision_view_Alfred_Krupp
 		}
 		available = {
+			has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
 			check_variable = {
 				GEA_Alfred_Krupp_friendship < 100
 			}
 		}
 
-		cost = 45
+		cost = GEA_Josias_social_cost_45?45
 		days_re_enable = 180
 
 		complete_effect = {
@@ -16621,9 +17204,11 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
 			has_country_flag = GEA_Josias_decision_view_Alfred_Krupp
 		}
 		available = {
+			has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
 			671 = {
 				is_owned_and_controlled_by = GEA
 			}
@@ -16636,7 +17221,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 75
+		cost = GEA_Josias_social_cost_75?75
 		days_remove = 60
 		fire_only_once = yes
 		cancel_trigger = {
@@ -16706,9 +17291,11 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
 			has_country_flag = GEA_Josias_decision_view_Alfred_Krupp
 		}
 		available = {
+			has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
 			any_owned_state = {
 				is_controlled_by = GEA
 			}
@@ -16717,7 +17304,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 50
+		cost = GEA_Josias_social_cost_50?50
 		days_remove = 45
 		days_re_enable = 75
 		cancel_trigger = {
@@ -16754,15 +17341,17 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
 			has_country_flag = GEA_Josias_decision_view_Alfred_Krupp
 		}
 		available = {
+			has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
 			check_variable = {
 				GEA_Alfred_Krupp_friendship < 100
 			}
 		}
 
-		cost = 40
+		cost = GEA_Josias_social_cost_40?40
 		days_remove = 45
 		days_re_enable = 120
 		cancel_if_not_visible = no
@@ -16841,15 +17430,17 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
 			has_country_flag = GEA_Josias_decision_view_Alfred_Krupp
 		}
 		available = {
+			has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
 			check_variable = {
 				GEA_Alfred_Krupp_friendship < 100
 			}
 		}
 
-		cost = 45
+		cost = GEA_Josias_social_cost_45?45
 		days_remove = 45
 		days_re_enable = 120
 		cancel_if_not_visible = no
@@ -16868,15 +17459,17 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
 			has_country_flag = GEA_Josias_decision_view_Alfred_Krupp
 		}
 		available = {
+			has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
 			check_variable = {
 				GEA_Alfred_Krupp_friendship < 100
 			}
 		}
 
-		cost = 35
+		cost = GEA_Josias_social_cost_35?35
 		days_remove = 45
 		days_re_enable = 120
 		cancel_if_not_visible = no
@@ -16895,15 +17488,17 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
 			has_country_flag = GEA_Josias_decision_view_Alfred_Krupp
 		}
 		available = {
+			has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
 			check_variable = {
 				GEA_Alfred_Krupp_friendship < 100
 			}
 		}
 
-		cost = 80
+		cost = GEA_Josias_social_cost_80?80
 		days_remove = 60
 		fire_only_once = yes
 		cancel_if_not_visible = no
@@ -16925,9 +17520,11 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
 			has_country_flag = GEA_Josias_decision_view_Alfred_Krupp
 		}
 		available = {
+			has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
 			check_variable = {
 				GEA_Alfred_Krupp_friendship < 100
 			}
@@ -16941,7 +17538,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 110
+		cost = GEA_Josias_social_cost_110?110
 		days_remove = 90
 		fire_only_once = yes
 		cancel_if_not_visible = no
@@ -17033,7 +17630,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 20
+		cost = GEA_Josias_social_cost_20?20
 		days_remove = 14
 		days_re_enable = 60
 
@@ -17060,7 +17657,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 20
+		cost = GEA_Josias_social_cost_20?20
 		days_remove = 60
 		days_re_enable = 75
 
@@ -17079,6 +17676,365 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		}
 	}
 
+	GEA_Josias_Carl_Schmitt_sovereigntist_contacts = { #与主权派交换政见
+		icon = GFX_decision_generic_political_address
+
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Carl_Schmitt
+		}
+		available = {
+			check_variable = {
+				GEA_Carl_Schmitt_friendship < 100
+			}
+			MAF = {
+				exists = yes
+			}
+			NOT = {
+				has_war_with = MAF
+			}
+			MAF = {
+				OR = {
+					has_government = national_populist
+					AND = {
+						NOT = {
+							has_country_flag = Hermann_von_Goering_dead
+						}
+						NOT = {
+							has_country_flag = MAF_full_reform
+						}
+					}
+				}
+			}
+		}
+
+		cost = GEA_Josias_social_cost_25?25
+		days_remove = 30
+		days_re_enable = 90
+		cancel_if_not_visible = no
+		cancel_trigger = {
+			NOT = {
+				AND = {
+					MAF = {
+						exists = yes
+					}
+					NOT = {
+						has_war_with = MAF
+					}
+					MAF = {
+						OR = {
+							has_government = national_populist
+							AND = {
+								NOT = {
+									has_country_flag = Hermann_von_Goering_dead
+								}
+								NOT = {
+									has_country_flag = MAF_full_reform
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Carl_Schmitt_sovereigntist_contacts"
+			if = {
+				limit = {
+					MAF = {
+						exists = yes
+					}
+					NOT = {
+						has_war_with = MAF
+					}
+					MAF = {
+						OR = {
+							has_government = national_populist
+							AND = {
+								NOT = {
+									has_country_flag = Hermann_von_Goering_dead
+								}
+								NOT = {
+									has_country_flag = MAF_full_reform
+								}
+							}
+						}
+					}
+				}
+				add_popularity = {
+					ideology = paternal_autocrat
+					popularity = 0.02
+				}
+				MAF = {
+					increase_ruling_party_popularity_by_2 = yes
+				}
+				GEA_Josias_add_5_Carl_Schmitt_effect = yes
+			}
+		}
+	}
+
+	GEA_Josias_Carl_Schmitt_sovereigntist_press = { #资助主权派刊物
+		icon = GFX_decision_generic_political_address
+
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Carl_Schmitt
+		}
+		available = {
+			check_variable = {
+				GEA_Carl_Schmitt_friendship < 100
+			}
+			MAF = {
+				exists = yes
+			}
+			NOT = {
+				has_war_with = MAF
+			}
+			MAF = {
+				OR = {
+					has_government = national_populist
+					AND = {
+						NOT = {
+							has_country_flag = Hermann_von_Goering_dead
+						}
+						NOT = {
+							has_country_flag = MAF_full_reform
+						}
+					}
+				}
+			}
+		}
+
+		cost = GEA_Josias_social_cost_30?30
+		days_remove = 45
+		days_re_enable = 120
+		cancel_if_not_visible = no
+		cancel_trigger = {
+			NOT = {
+				AND = {
+					MAF = {
+						exists = yes
+					}
+					NOT = {
+						has_war_with = MAF
+					}
+					MAF = {
+						OR = {
+							has_government = national_populist
+							AND = {
+								NOT = {
+									has_country_flag = Hermann_von_Goering_dead
+								}
+								NOT = {
+									has_country_flag = MAF_full_reform
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Carl_Schmitt_sovereigntist_press"
+			if = {
+				limit = {
+					MAF = {
+						exists = yes
+					}
+					NOT = {
+						has_war_with = MAF
+					}
+					MAF = {
+						OR = {
+							has_government = national_populist
+							AND = {
+								NOT = {
+									has_country_flag = Hermann_von_Goering_dead
+								}
+								NOT = {
+									has_country_flag = MAF_full_reform
+								}
+							}
+						}
+					}
+				}
+				MAF = {
+					add_popularity = {
+						ideology = national_populist
+						popularity = 0.03
+					}
+					add_political_power = 30
+				}
+				add_war_support = 0.02
+				GEA_Josias_add_10_Carl_Schmitt_effect = yes
+			}
+		}
+	}
+
+	GEA_Josias_Carl_Schmitt_colonial_jurists = { #邀请殖民法学家
+		icon = GFX_decision_generic_political_address
+
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Carl_Schmitt
+		}
+		available = {
+			check_variable = {
+				GEA_Carl_Schmitt_friendship < 100
+			}
+		}
+
+		cost = GEA_Josias_social_cost_30?30
+		days_remove = 45
+		days_re_enable = 120
+		cancel_if_not_visible = no
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Carl_Schmitt_colonial_jurists"
+			add_timed_idea = {
+				idea = GEA_Josias_Carl_Schmitt_colonial_jurists_idea
+				days = 120
+			}
+			if = {
+				limit = {
+					GEA_indochina_can_interact_trigger = yes
+					has_country_flag = GEA_Indochinese_Stability
+				}
+				modify_country_flag = {
+					flag = GEA_Indochinese_Stability
+					value = 1
+				}
+				add_to_variable = {
+					GEA_Indochinese_Stability_display = 1
+				}
+				custom_effect_tooltip = GEA_Indochina_Stability_Up
+			}
+			GEA_Josias_add_10_Carl_Schmitt_effect = yes
+		}
+	}
+
+	GEA_Josias_Carl_Schmitt_colonial_conference = { #召开殖民主权会议
+		icon = GFX_decision_generic_political_address
+
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Carl_Schmitt
+		}
+		available = {
+			check_variable = {
+				GEA_Carl_Schmitt_friendship < 100
+			}
+			MAF = {
+				exists = yes
+			}
+			NOT = {
+				has_war_with = MAF
+			}
+			MAF = {
+				OR = {
+					has_government = national_populist
+					AND = {
+						NOT = {
+							has_country_flag = Hermann_von_Goering_dead
+						}
+						NOT = {
+							has_country_flag = MAF_full_reform
+						}
+					}
+				}
+			}
+		}
+
+		cost = GEA_Josias_social_cost_75?75
+		days_remove = 60
+		fire_only_once = yes
+		cancel_if_not_visible = no
+		cancel_trigger = {
+			NOT = {
+				AND = {
+					MAF = {
+						exists = yes
+					}
+					NOT = {
+						has_war_with = MAF
+					}
+					MAF = {
+						OR = {
+							has_government = national_populist
+							AND = {
+								NOT = {
+									has_country_flag = Hermann_von_Goering_dead
+								}
+								NOT = {
+									has_country_flag = MAF_full_reform
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Carl_Schmitt_colonial_conference"
+			if = {
+				limit = {
+					MAF = {
+						exists = yes
+					}
+					NOT = {
+						has_war_with = MAF
+					}
+					MAF = {
+						OR = {
+							has_government = national_populist
+							AND = {
+								NOT = {
+									has_country_flag = Hermann_von_Goering_dead
+								}
+								NOT = {
+									has_country_flag = MAF_full_reform
+								}
+							}
+						}
+					}
+				}
+				add_political_power = 100
+				add_stability = 0.05
+				MAF = {
+					add_political_power = 50
+					add_popularity = {
+						ideology = national_populist
+						popularity = 0.05
+					}
+				}
+				GEA_Josias_add_20_Carl_Schmitt_effect = yes
+			}
+		}
+	}
+
+	GEA_Josias_Carl_Schmitt_governor_sovereignty = { #确立总督主权原则
+		icon = GFX_decision_generic_political_address
+
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Carl_Schmitt
+		}
+		available = {
+			check_variable = {
+				GEA_Carl_Schmitt_friendship < 100
+			}
+		}
+
+		cost = GEA_Josias_social_cost_80?80
+		days_remove = 90
+		fire_only_once = yes
+		cancel_if_not_visible = no
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Carl_Schmitt_governor_sovereignty"
+			add_ideas = GEA_Josias_Carl_Schmitt_governor_sovereignty_idea
+			GEA_Josias_add_20_Carl_Schmitt_effect = yes
+		}
+	}
+
 	GEA_Josias_Dorpmuller_official_investment = { #加大官方投资
 		icon = GFX_decision_gre_paying_ifc_debt
 
@@ -17094,7 +18050,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 30
+		cost = GEA_Josias_social_cost_30?30
 		days_remove = 60
 		days_re_enable = 60
 		cancel_trigger = {
@@ -17155,7 +18111,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 				}
 			}
 		}
-		cost = 40
+		cost = GEA_Josias_social_cost_40?40
 		days_remove = 120
 		fire_only_once = yes
 
@@ -17214,7 +18170,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 				}
 			}
 		}
-		cost = 40
+		cost = GEA_Josias_social_cost_40?40
 		days_remove = 120
 		fire_only_once = yes
 
@@ -17239,6 +18195,309 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		}
 	}
 
+	GEA_Josias_Dorpmuller_railway_maintenance = { #检修殖民地铁路
+		icon = GFX_decision_generic_political_address
+
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Dorpmuller
+		}
+		available = {
+			check_variable = {
+				GEA_Dorpmuller_friendship < 100
+			}
+		}
+
+		cost = GEA_Josias_social_cost_30?30
+		days_remove = 30
+		days_re_enable = 90
+		cancel_if_not_visible = no
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Dorpmuller_railway_maintenance"
+			add_timed_idea = {
+				idea = GEA_Josias_Dorpmuller_railway_maintenance_idea
+				days = 120
+			}
+			GEA_Josias_add_5_Dorpmuller_effect = yes
+		}
+	}
+
+	GEA_Josias_Dorpmuller_transport_vehicles = { #调拨运输车辆
+		icon = GFX_decision_generic_political_address
+
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Dorpmuller
+		}
+		available = {
+			check_variable = {
+				GEA_Dorpmuller_friendship < 100
+			}
+		}
+
+		cost = GEA_Josias_social_cost_40?40
+		days_remove = 45
+		days_re_enable = 120
+		cancel_if_not_visible = no
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Dorpmuller_transport_vehicles"
+			add_equipment_to_stockpile = {
+				type = train_equipment_1
+				amount = 30
+				producer = GEA
+			}
+			add_equipment_to_stockpile = {
+				type = motorized_equipment_1
+				amount = 200
+				producer = GEA
+			}
+			GEA_Josias_add_10_Dorpmuller_effect = yes
+		}
+	}
+
+	GEA_Josias_Dorpmuller_transport_dispatch = { #统一运输调度
+		icon = GFX_decision_generic_political_address
+
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Dorpmuller
+		}
+		available = {
+			check_variable = {
+				GEA_Dorpmuller_friendship < 100
+			}
+		}
+
+		cost = GEA_Josias_social_cost_40?40
+		days_remove = 45
+		days_re_enable = 120
+		cancel_if_not_visible = no
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Dorpmuller_transport_dispatch"
+			add_timed_idea = {
+				idea = GEA_Josias_Dorpmuller_transport_dispatch_idea
+				days = 120
+			}
+			if = {
+				limit = {
+					GEA_indochina_can_interact_trigger = yes
+					has_country_flag = GEA_Indochinese_Stability
+				}
+				modify_country_flag = {
+					flag = GEA_Indochinese_Stability
+					value = 1
+				}
+				add_to_variable = {
+					GEA_Indochinese_Stability_display = 1
+				}
+				custom_effect_tooltip = GEA_Indochina_Stability_Up
+			}
+			GEA_Josias_add_10_Dorpmuller_effect = yes
+		}
+	}
+
+	GEA_Josias_Dorpmuller_transport_school = { #成立运输技术学校
+		icon = GFX_decision_generic_political_address
+
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Dorpmuller
+		}
+		available = {
+			check_variable = {
+				GEA_Dorpmuller_friendship < 100
+			}
+		}
+
+		cost = GEA_Josias_social_cost_80?80
+		days_remove = 60
+		fire_only_once = yes
+		cancel_if_not_visible = no
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Dorpmuller_transport_school"
+			add_ideas = GEA_Josias_Dorpmuller_transport_school_idea
+			add_tech_bonus = {
+				name = GEA_Josias_Dorpmuller_transport_school
+				bonus = 1.0
+				uses = 2
+				category = train_tech
+			}
+			GEA_Josias_add_20_Dorpmuller_effect = yes
+		}
+	}
+
+	GEA_Josias_Dorpmuller_railway_hubs = { #扩建铁路枢纽
+		icon = GFX_decision_generic_political_address
+
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Dorpmuller
+		}
+		available = {
+			check_variable = {
+				GEA_Dorpmuller_friendship < 100
+			}
+			any_owned_state = {
+				is_controlled_by = GEA
+				free_building_slots = {
+					building = infrastructure
+					size > 0
+				}
+				ROOT = {
+					any_owned_state = {
+						is_controlled_by = GEA
+						free_building_slots = {
+							building = infrastructure
+							size > 0
+						}
+						NOT = {
+							state = PREV.PREV
+						}
+					}
+				}
+			}
+			846 = {
+				is_owned_and_controlled_by = GEA
+				free_building_slots = {
+					building = supply_node
+					size > 0
+					province = 1364
+				}
+			}
+		}
+
+		cost = GEA_Josias_social_cost_90?90
+		days_remove = 90
+		fire_only_once = yes
+		cancel_if_not_visible = no
+		cancel_trigger = {
+			NOT = {
+				AND = {
+					any_owned_state = {
+						is_controlled_by = GEA
+						free_building_slots = {
+							building = infrastructure
+							size > 0
+						}
+						ROOT = {
+							any_owned_state = {
+								is_controlled_by = GEA
+								free_building_slots = {
+									building = infrastructure
+									size > 0
+								}
+								NOT = {
+									state = PREV.PREV
+								}
+							}
+						}
+					}
+					846 = {
+						is_owned_and_controlled_by = GEA
+						free_building_slots = {
+							building = supply_node
+							size > 0
+							province = 1364
+						}
+					}
+				}
+			}
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Dorpmuller_railway_hubs"
+			if = {
+				limit = {
+					any_owned_state = {
+						is_controlled_by = GEA
+						free_building_slots = {
+							building = infrastructure
+							size > 0
+						}
+						ROOT = {
+							any_owned_state = {
+								is_controlled_by = GEA
+								free_building_slots = {
+									building = infrastructure
+									size > 0
+								}
+								NOT = {
+									state = PREV.PREV
+								}
+							}
+						}
+					}
+					846 = {
+						is_owned_and_controlled_by = GEA
+						free_building_slots = {
+							building = supply_node
+							size > 0
+							province = 1364
+						}
+					}
+				}
+				every_owned_state = {
+					clr_state_flag = GEA_Josias_Dorpmuller_railway_hubs_selected
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = infrastructure
+							size > 0
+						}
+					}
+					set_state_flag = GEA_Josias_Dorpmuller_railway_hubs_selected
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = infrastructure
+							size > 0
+						}
+						NOT = {
+							has_state_flag = GEA_Josias_Dorpmuller_railway_hubs_selected
+						}
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+				every_owned_state = {
+					clr_state_flag = GEA_Josias_Dorpmuller_railway_hubs_selected
+				}
+				846 = {
+					add_building_construction = {
+						type = supply_node
+						level = 1
+						instant_build = yes
+						province = 1364
+					}
+				}
+				if = {
+					limit = {
+						GEA_indochina_can_interact_trigger = yes
+						has_country_flag = GEA_Indochinese_Anger
+					}
+					modify_country_flag = {
+						flag = GEA_Indochinese_Anger
+						value = -1
+					}
+					add_to_variable = {
+						GEA_Indochinese_Anger_display = -1
+					}
+					custom_effect_tooltip = GEA_Indochina_Anger_Down
+				}
+				GEA_Josias_add_20_Dorpmuller_effect = yes
+			}
+		}
+	}
+
 	GEA_Josias_Emil_Helfferich_shipping_routes = { #扩展航路规模
 		icon = GFX_decision_generic_political_address
 
@@ -17251,7 +18510,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 20
+		cost = GEA_Josias_social_cost_20?20
 		days_remove = 30
 		days_re_enable = 45
 
@@ -17284,7 +18543,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 50
+		cost = GEA_Josias_social_cost_50?50
 		days_remove = 60
 		days_re_enable = 120
 		cancel_trigger = {
@@ -17332,6 +18591,288 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		}
 	}
 
+	GEA_Josias_Emil_Helfferich_merchant_crews = { #招募商船船员
+		icon = GFX_decision_generic_political_address
+
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Emil_Helfferich
+		}
+		available = {
+			check_variable = {
+				GEA_Emil_Helfferich_friendship < 100
+			}
+		}
+
+		cost = GEA_Josias_social_cost_30?30
+		days_remove = 30
+		days_re_enable = 90
+		cancel_if_not_visible = no
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Emil_Helfferich_merchant_crews"
+			add_manpower = 1000
+			navy_experience = 10
+			GEA_Josias_add_5_Emil_Helfferich_effect = yes
+		}
+	}
+
+	GEA_Josias_Emil_Helfferich_ship_repairs = { #签订船舶维修合同
+		icon = GFX_decision_generic_political_address
+
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Emil_Helfferich
+		}
+		available = {
+			check_variable = {
+				GEA_Emil_Helfferich_friendship < 100
+			}
+		}
+
+		cost = GEA_Josias_social_cost_40?40
+		days_remove = 45
+		days_re_enable = 120
+		cancel_if_not_visible = no
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Emil_Helfferich_ship_repairs"
+			add_timed_idea = {
+				idea = GEA_Josias_Emil_Helfferich_ship_repairs_idea
+				days = 120
+			}
+			GEA_Josias_add_10_Emil_Helfferich_effect = yes
+		}
+	}
+
+	GEA_Josias_Emil_Helfferich_coastal_freight = { #扩充沿海货运
+		icon = GFX_decision_generic_political_address
+
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Emil_Helfferich
+		}
+		available = {
+			check_variable = {
+				GEA_Emil_Helfferich_friendship < 100
+			}
+		}
+
+		cost = GEA_Josias_social_cost_40?40
+		days_remove = 60
+		days_re_enable = 120
+		cancel_if_not_visible = no
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Emil_Helfferich_coastal_freight"
+			add_equipment_to_stockpile = {
+				type = convoy_1
+				amount = 75
+				producer = GEA
+			}
+			GEA_Josias_add_10_Emil_Helfferich_effect = yes
+		}
+	}
+
+	GEA_Josias_Emil_Helfferich_shipping_association = { #组建南洋航运联合会
+		icon = GFX_decision_generic_political_address
+
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Emil_Helfferich
+		}
+		available = {
+			check_variable = {
+				GEA_Emil_Helfferich_friendship < 100
+			}
+		}
+
+		cost = GEA_Josias_social_cost_80?80
+		days_remove = 60
+		fire_only_once = yes
+		cancel_if_not_visible = no
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Emil_Helfferich_shipping_association"
+			add_ideas = GEA_Josias_Emil_Helfferich_shipping_association_idea
+			GEA_Josias_add_20_Emil_Helfferich_effect = yes
+		}
+	}
+
+	GEA_Josias_Emil_Helfferich_transshipment_port = { #建设转运港
+		icon = GFX_decision_generic_political_address
+
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Emil_Helfferich
+		}
+		available = {
+			check_variable = {
+				GEA_Emil_Helfferich_friendship < 100
+			}
+			any_owned_state = {
+				is_controlled_by = GEA
+				is_coastal = yes
+				free_building_slots = {
+					building = dockyard
+					size > 2
+					include_locked = yes
+				}
+			}
+			any_owned_state = {
+				is_controlled_by = GEA
+				is_coastal = yes
+				free_building_slots = {
+					building = industrial_complex
+					size > 2
+					include_locked = yes
+				}
+			}
+			333 = {
+				is_owned_and_controlled_by = GEA
+				free_building_slots = {
+					building = naval_base
+					size > 1
+					province = 7371
+				}
+			}
+		}
+
+		cost = GEA_Josias_social_cost_100?100
+		days_remove = 90
+		fire_only_once = yes
+		cancel_if_not_visible = no
+		cancel_trigger = {
+			NOT = {
+				AND = {
+					any_owned_state = {
+						is_controlled_by = GEA
+						is_coastal = yes
+						free_building_slots = {
+							building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+					any_owned_state = {
+						is_controlled_by = GEA
+						is_coastal = yes
+						free_building_slots = {
+							building = industrial_complex
+							size > 2
+							include_locked = yes
+						}
+					}
+					333 = {
+						is_owned_and_controlled_by = GEA
+						free_building_slots = {
+							building = naval_base
+							size > 1
+							province = 7371
+						}
+					}
+				}
+			}
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Emil_Helfferich_transshipment_port"
+			if = {
+				limit = {
+					any_owned_state = {
+						is_controlled_by = GEA
+						is_coastal = yes
+						free_building_slots = {
+							building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+					any_owned_state = {
+						is_controlled_by = GEA
+						is_coastal = yes
+						free_building_slots = {
+							building = industrial_complex
+							size > 2
+							include_locked = yes
+						}
+					}
+					333 = {
+						is_owned_and_controlled_by = GEA
+						free_building_slots = {
+							building = naval_base
+							size > 1
+							province = 7371
+						}
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						is_coastal = yes
+						free_building_slots = {
+							building = dockyard
+							size > 0
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = dockyard
+						level = 1
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						is_coastal = yes
+						free_building_slots = {
+							building = dockyard
+							size > 0
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = dockyard
+						level = 1
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						is_coastal = yes
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				333 = {
+					add_building_construction = {
+						type = naval_base
+						level = 2
+						instant_build = yes
+						province = 7371
+					}
+				}
+				if = {
+					limit = {
+						333 = {
+							is_owned_and_controlled_by = GEA
+						}
+					}
+					add_to_variable = {
+						GEA_Borneo_development = 1
+					}
+					custom_effect_tooltip = GEA_development_in_Borneo_tt
+				}
+				GEA_Josias_add_20_Emil_Helfferich_effect = yes
+			}
+		}
+	}
+
 	GEA_Josias_Fritz_Thyssen_mining_contracts = { #扩大矿业合同
 		icon = GFX_decision_hol_draw_up_staff_plans
 
@@ -17353,7 +18894,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 30
+		cost = GEA_Josias_social_cost_30?30
 		days_remove = 60
 		days_re_enable = 70
 		cancel_trigger = {
@@ -17426,7 +18967,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 50
+		cost = GEA_Josias_social_cost_50?50
 		days_remove = 60
 		days_re_enable = 90
 		cancel_trigger = {
@@ -17487,6 +19028,322 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		}
 	}
 
+	GEA_Josias_Fritz_Thyssen_mineral_surveys = { #派遣矿业勘探队
+		icon = GFX_decision_generic_political_address
+
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Fritz_Thyssen
+		}
+		available = {
+			check_variable = {
+				GEA_Fritz_Thyssen_friendship < 100
+			}
+			any_owned_state = {
+				is_controlled_by = GEA
+				OR = {
+					state = 846
+					state = 333
+					state = 827
+					state = 671
+				}
+			}
+			check_variable = {
+				GEA_Josias_Thyssen_survey_count < 3
+				tooltip = GEA_Josias_Thyssen_survey_limit_tt
+			}
+		}
+
+		cost = GEA_Josias_social_cost_35?35
+		days_remove = 45
+		days_re_enable = 120
+		cancel_if_not_visible = no
+		cancel_trigger = {
+			NOT = {
+				AND = {
+					any_owned_state = {
+						is_controlled_by = GEA
+						OR = {
+							state = 846
+							state = 333
+							state = 827
+							state = 671
+						}
+					}
+				}
+			}
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Fritz_Thyssen_mineral_surveys"
+			if = {
+				limit = {
+					any_owned_state = {
+						is_controlled_by = GEA
+						OR = {
+							state = 846
+							state = 333
+							state = 827
+							state = 671
+						}
+					}
+					check_variable = {
+						GEA_Josias_Thyssen_survey_count < 3
+						tooltip = GEA_Josias_Thyssen_survey_limit_tt
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						OR = {
+							state = 846
+							state = 333
+							state = 827
+							state = 671
+						}
+					}
+					random_list = {
+						50 = {
+							add_resource = {
+								type = steel
+								amount = 6
+							}
+						}
+						50 = {
+							add_resource = {
+								type = aluminium
+								amount = 4
+							}
+						}
+					}
+				}
+				add_to_variable = {
+					GEA_Josias_Thyssen_survey_count = 1
+				}
+				GEA_Josias_add_5_Fritz_Thyssen_effect = yes
+			}
+		}
+	}
+
+	GEA_Josias_Fritz_Thyssen_smelting_equipment = { #引进冶炼设备
+		icon = GFX_decision_generic_political_address
+
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Fritz_Thyssen
+		}
+		available = {
+			check_variable = {
+				GEA_Fritz_Thyssen_friendship < 100
+			}
+		}
+
+		cost = GEA_Josias_social_cost_45?45
+		days_remove = 60
+		days_re_enable = 120
+		cancel_if_not_visible = no
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Fritz_Thyssen_smelting_equipment"
+			add_timed_idea = {
+				idea = GEA_Josias_Fritz_Thyssen_smelting_equipment_idea
+				days = 120
+			}
+			GEA_Josias_add_10_Fritz_Thyssen_effect = yes
+		}
+	}
+
+	GEA_Josias_Fritz_Thyssen_ore_transport = { #整顿矿石运输
+		icon = GFX_decision_generic_political_address
+
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Fritz_Thyssen
+		}
+		available = {
+			check_variable = {
+				GEA_Fritz_Thyssen_friendship < 100
+			}
+		}
+
+		cost = GEA_Josias_social_cost_35?35
+		days_remove = 45
+		days_re_enable = 120
+		cancel_if_not_visible = no
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Fritz_Thyssen_ore_transport"
+			add_timed_idea = {
+				idea = GEA_Josias_Fritz_Thyssen_ore_transport_idea
+				days = 120
+			}
+			GEA_Josias_add_10_Fritz_Thyssen_effect = yes
+		}
+	}
+
+	GEA_Josias_Fritz_Thyssen_metallurgy_institute = { #成立冶金研究所
+		icon = GFX_decision_generic_political_address
+
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Fritz_Thyssen
+		}
+		available = {
+			check_variable = {
+				GEA_Fritz_Thyssen_friendship < 100
+			}
+		}
+
+		cost = GEA_Josias_social_cost_80?80
+		days_remove = 60
+		fire_only_once = yes
+		cancel_if_not_visible = no
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Fritz_Thyssen_metallurgy_institute"
+			add_tech_bonus = {
+				name = GEA_Josias_Fritz_Thyssen_metallurgy_institute
+				bonus = 1.0
+				uses = 2
+				category = industry
+			}
+			GEA_Josias_add_20_Fritz_Thyssen_effect = yes
+		}
+	}
+
+	GEA_Josias_Fritz_Thyssen_steel_complex = { #建设钢铁联合企业
+		icon = GFX_decision_generic_political_address
+
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Fritz_Thyssen
+		}
+		available = {
+			check_variable = {
+				GEA_Fritz_Thyssen_friendship < 100
+			}
+			any_owned_state = {
+				is_controlled_by = GEA
+				free_building_slots = {
+					building = arms_factory
+					size > 2
+					include_locked = yes
+				}
+			}
+			any_owned_state = {
+				is_controlled_by = GEA
+				free_building_slots = {
+					building = industrial_complex
+					size > 2
+					include_locked = yes
+				}
+			}
+		}
+
+		cost = GEA_Josias_social_cost_110?110
+		days_remove = 90
+		fire_only_once = yes
+		cancel_if_not_visible = no
+		cancel_trigger = {
+			NOT = {
+				AND = {
+					any_owned_state = {
+						is_controlled_by = GEA
+						free_building_slots = {
+							building = arms_factory
+							size > 2
+							include_locked = yes
+						}
+					}
+					any_owned_state = {
+						is_controlled_by = GEA
+						free_building_slots = {
+							building = industrial_complex
+							size > 2
+							include_locked = yes
+						}
+					}
+				}
+			}
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Fritz_Thyssen_steel_complex"
+			if = {
+				limit = {
+					any_owned_state = {
+						is_controlled_by = GEA
+						free_building_slots = {
+							building = arms_factory
+							size > 2
+							include_locked = yes
+						}
+					}
+					any_owned_state = {
+						is_controlled_by = GEA
+						free_building_slots = {
+							building = industrial_complex
+							size > 2
+							include_locked = yes
+						}
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = arms_factory
+							size > 0
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+					add_resource = {
+						type = steel
+						amount = 4
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = arms_factory
+							size > 0
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+					add_resource = {
+						type = steel
+						amount = 4
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+					add_resource = {
+						type = steel
+						amount = 4
+					}
+				}
+				GEA_Josias_add_20_Fritz_Thyssen_effect = yes
+			}
+		}
+	}
+
 	GEA_Josias_Hermann_Goring_steppe_hunt = { #草原寻猎
 		icon = GFX_decision_generic_political_address
 
@@ -17499,7 +19356,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 15
+		cost = GEA_Josias_social_cost_15?15
 		days_remove = 30
 		days_re_enable = 45
 
@@ -17527,7 +19384,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 20
+		cost = GEA_Josias_social_cost_20?20
 		days_remove = 14
 		days_re_enable = 60
 
@@ -17539,6 +19396,357 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 				popularity = 0.02
 			}
 			add_war_support = 0.02
+		}
+	}
+
+	GEA_Josias_Hermann_Goring_aviation_instructors = { #邀请航空教官
+		icon = GFX_decision_generic_political_address
+
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Hermann_Goring
+		}
+		available = {
+			check_variable = {
+				GEA_Hermann_Goring_friendship < 100
+			}
+		}
+
+		cost = GEA_Josias_social_cost_30?30
+		days_remove = 30
+		days_re_enable = 90
+		cancel_if_not_visible = no
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Hermann_Goring_aviation_instructors"
+			air_experience = 20
+			GEA_Josias_add_5_Hermann_Goring_effect = yes
+		}
+	}
+
+	GEA_Josias_Hermann_Goring_african_hunting_contacts = { #借用非洲狩猎人脉
+		icon = GFX_decision_generic_political_address
+
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Hermann_Goring
+		}
+		available = {
+			check_variable = {
+				GEA_Hermann_Goring_friendship < 100
+			}
+			MAF = {
+				exists = yes
+			}
+			NOT = {
+				has_war_with = MAF
+			}
+		}
+
+		cost = GEA_Josias_social_cost_30?30
+		days_remove = 30
+		days_re_enable = 90
+		cancel_if_not_visible = no
+		cancel_trigger = {
+			NOT = {
+				AND = {
+					MAF = {
+						exists = yes
+					}
+					NOT = {
+						has_war_with = MAF
+					}
+				}
+			}
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Hermann_Goring_african_hunting_contacts"
+			if = {
+				limit = {
+					MAF = {
+						exists = yes
+					}
+					NOT = {
+						has_war_with = MAF
+					}
+				}
+				add_command_power = 15
+				add_war_support = 0.03
+				MAF = {
+					add_political_power = 25
+				}
+				GEA_Josias_add_10_Hermann_Goring_effect = yes
+			}
+		}
+	}
+
+	GEA_Josias_Hermann_Goring_african_arms_dealers = { #接洽中央非洲军械商
+		icon = GFX_decision_generic_political_address
+
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Hermann_Goring
+		}
+		available = {
+			check_variable = {
+				GEA_Hermann_Goring_friendship < 100
+			}
+			MAF = {
+				exists = yes
+			}
+			NOT = {
+				has_war_with = MAF
+			}
+		}
+
+		cost = GEA_Josias_social_cost_40?40
+		days_remove = 45
+		days_re_enable = 120
+		cancel_if_not_visible = no
+		cancel_trigger = {
+			NOT = {
+				AND = {
+					MAF = {
+						exists = yes
+					}
+					NOT = {
+						has_war_with = MAF
+					}
+				}
+			}
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Hermann_Goring_african_arms_dealers"
+			if = {
+				limit = {
+					MAF = {
+						exists = yes
+					}
+					NOT = {
+						has_war_with = MAF
+					}
+				}
+				if = {
+					limit = {
+						has_tech = advanced_infantry_weapons
+					}
+					add_equipment_to_stockpile = {
+						type = infantry_equipment_3
+						amount = 1000
+						producer = GEA
+					}
+				}
+				else_if = {
+					limit = {
+						has_tech = improved_infantry_weapons
+					}
+					add_equipment_to_stockpile = {
+						type = infantry_equipment_2
+						amount = 1000
+						producer = GEA
+					}
+				}
+				else_if = {
+					limit = {
+						has_tech = infantry_weapons1
+					}
+					add_equipment_to_stockpile = {
+						type = infantry_equipment_1
+						amount = 1000
+						producer = GEA
+					}
+				}
+				else = {
+					add_equipment_to_stockpile = {
+						type = infantry_equipment_0
+						amount = 1000
+						producer = GEA
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = support_equipment_1
+					amount = 150
+					producer = GEA
+				}
+				MAF = {
+					add_political_power = 30
+				}
+				GEA_Josias_add_10_Hermann_Goring_effect = yes
+			}
+		}
+	}
+
+	GEA_Josias_Hermann_Goring_imperial_air_show = { #举办帝国航空展
+		icon = GFX_decision_generic_political_address
+
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Hermann_Goring
+		}
+		available = {
+			check_variable = {
+				GEA_Hermann_Goring_friendship < 100
+			}
+		}
+
+		cost = GEA_Josias_social_cost_90?90
+		days_remove = 90
+		fire_only_once = yes
+		cancel_if_not_visible = no
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Hermann_Goring_imperial_air_show"
+			add_ideas = GEA_Josias_Hermann_Goring_imperial_air_show_idea
+			add_tech_bonus = {
+				name = GEA_Josias_Hermann_Goring_imperial_air_show
+				bonus = 1.0
+				uses = 2
+				category = air_equipment
+			}
+			air_experience = 30
+			GEA_Josias_add_20_Hermann_Goring_effect = yes
+		}
+	}
+
+	GEA_Josias_Hermann_Goring_africa_asia_air_route = { #建立非洲—南洋航空线
+		icon = GFX_decision_generic_political_address
+
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Hermann_Goring
+		}
+		available = {
+			check_variable = {
+				GEA_Hermann_Goring_friendship < 100
+			}
+			MAF = {
+				exists = yes
+			}
+			NOT = {
+				has_war_with = MAF
+			}
+			any_owned_state = {
+				is_controlled_by = GEA
+				free_building_slots = {
+					building = air_base
+					size > 1
+				}
+			}
+			MAF = {
+				any_owned_state = {
+					is_controlled_by = MAF
+					free_building_slots = {
+						building = air_base
+						size > 1
+					}
+				}
+			}
+		}
+
+		cost = GEA_Josias_social_cost_100?100
+		days_remove = 90
+		fire_only_once = yes
+		cancel_if_not_visible = no
+		cancel_trigger = {
+			NOT = {
+				AND = {
+					MAF = {
+						exists = yes
+					}
+					NOT = {
+						has_war_with = MAF
+					}
+					any_owned_state = {
+						is_controlled_by = GEA
+						free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+					MAF = {
+						any_owned_state = {
+							is_controlled_by = MAF
+							free_building_slots = {
+								building = air_base
+								size > 1
+							}
+						}
+					}
+				}
+			}
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Hermann_Goring_africa_asia_air_route"
+			if = {
+				limit = {
+					MAF = {
+						exists = yes
+					}
+					NOT = {
+						has_war_with = MAF
+					}
+					any_owned_state = {
+						is_controlled_by = GEA
+						free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+					MAF = {
+						any_owned_state = {
+							is_controlled_by = MAF
+							free_building_slots = {
+								building = air_base
+								size > 1
+							}
+						}
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+				}
+				MAF = {
+					random_owned_controlled_state = {
+						limit = {
+							free_building_slots = {
+								building = air_base
+								size > 1
+							}
+						}
+						add_building_construction = {
+							type = air_base
+							level = 2
+							instant_build = yes
+						}
+					}
+				}
+				add_ideas = GEA_Josias_Hermann_Goring_africa_asia_air_route_idea
+				if = {
+					limit = {
+						OR = {
+							336 = {
+								is_owned_and_controlled_by = GEA
+							}
+							846 = {
+								is_owned_and_controlled_by = GEA
+							}
+						}
+					}
+					add_to_variable = {
+						GEA_singapore_development = 1
+					}
+					custom_effect_tooltip = GEA_development_in_singapore_tt
+				}
+				GEA_Josias_add_20_Hermann_Goring_effect = yes
+			}
 		}
 	}
 
@@ -17561,7 +19769,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 20
+		cost = GEA_Josias_social_cost_20?20
 		days_remove = 60
 		days_re_enable = 60
 		cancel_trigger = {
@@ -17616,7 +19824,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 
-		cost = 75
+		cost = GEA_Josias_social_cost_75?75
 		days_remove = 360
 		fire_only_once = yes
 
@@ -17633,6 +19841,335 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 		}
 	}
+	GEA_Josias_Siegmund_Bodenheimer_commercial_bills = { #扩大商业票据贴现
+		icon = GFX_decision_generic_political_address
+
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Siegmund_Bodenheimer
+		}
+		available = {
+			check_variable = {
+				GEA_Siegmund_Bodenheimer_friendship < 100
+			}
+		}
+
+		cost = GEA_Josias_social_cost_35?35
+		days_remove = 45
+		days_re_enable = 120
+		cancel_if_not_visible = no
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Siegmund_Bodenheimer_commercial_bills"
+			add_political_power = 70
+			add_stability = 0.02
+			GEA_Josias_add_5_Siegmund_Bodenheimer_effect = yes
+		}
+	}
+
+	GEA_Josias_Siegmund_Bodenheimer_merchant_remittances = { #协调侨商汇款
+		icon = GFX_decision_generic_political_address
+
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Siegmund_Bodenheimer
+		}
+		available = {
+			check_variable = {
+				GEA_Siegmund_Bodenheimer_friendship < 100
+			}
+		}
+
+		cost = GEA_Josias_social_cost_40?40
+		days_remove = 45
+		days_re_enable = 120
+		cancel_if_not_visible = no
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Siegmund_Bodenheimer_merchant_remittances"
+			add_timed_idea = {
+				idea = GEA_Josias_Siegmund_Bodenheimer_merchant_remittances_idea
+				days = 120
+			}
+			GEA_Josias_add_10_Siegmund_Bodenheimer_effect = yes
+		}
+	}
+
+	GEA_Josias_Siegmund_Bodenheimer_business_loans = { #为中小企业提供贷款
+		icon = GFX_decision_generic_political_address
+
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Siegmund_Bodenheimer
+		}
+		available = {
+			check_variable = {
+				GEA_Siegmund_Bodenheimer_friendship < 100
+			}
+		}
+
+		cost = GEA_Josias_social_cost_45?45
+		days_remove = 60
+		days_re_enable = 120
+		cancel_if_not_visible = no
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Siegmund_Bodenheimer_business_loans"
+			add_timed_idea = {
+				idea = GEA_Josias_Siegmund_Bodenheimer_business_loans_idea
+				days = 120
+			}
+			GEA_Josias_add_10_Siegmund_Bodenheimer_effect = yes
+		}
+	}
+
+	GEA_Josias_Siegmund_Bodenheimer_commercial_bank = { #成立南洋商业银行
+		icon = GFX_decision_generic_political_address
+
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Siegmund_Bodenheimer
+		}
+		available = {
+			check_variable = {
+				GEA_Siegmund_Bodenheimer_friendship < 100
+			}
+		}
+
+		cost = GEA_Josias_social_cost_80?80
+		days_remove = 60
+		fire_only_once = yes
+		cancel_if_not_visible = no
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Siegmund_Bodenheimer_commercial_bank"
+			add_ideas = GEA_Josias_Siegmund_Bodenheimer_commercial_bank_idea
+			if = {
+				limit = {
+					OR = {
+						336 = {
+							is_owned_and_controlled_by = GEA
+						}
+						846 = {
+							is_owned_and_controlled_by = GEA
+						}
+					}
+				}
+				add_to_variable = {
+					GEA_singapore_development = 1
+				}
+				custom_effect_tooltip = GEA_development_in_singapore_tt
+			}
+			GEA_Josias_add_20_Siegmund_Bodenheimer_effect = yes
+		}
+	}
+
+	GEA_Josias_Siegmund_Bodenheimer_urban_investment = { #投资殖民城市建设
+		icon = GFX_decision_generic_political_address
+
+		visible = {
+			has_country_flag = GEA_Josias_decision_view_Siegmund_Bodenheimer
+		}
+		available = {
+			check_variable = {
+				GEA_Siegmund_Bodenheimer_friendship < 100
+			}
+			custom_trigger_tooltip = {
+				tooltip = GEA_urban_investment_two_states_tt
+				any_owned_state = {
+					is_controlled_by = GEA
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					ROOT = {
+						any_owned_state = {
+							is_controlled_by = GEA
+							free_building_slots = {
+								building = infrastructure
+								size > 0
+							}
+							free_building_slots = {
+								building = industrial_complex
+								size > 0
+								include_locked = yes
+							}
+							NOT = {
+								state = PREV.PREV
+							}
+						}
+					}
+				}
+			}
+		}
+
+		cost = GEA_Josias_social_cost_100?100
+		days_remove = 90
+		fire_only_once = yes
+		cancel_if_not_visible = no
+		cancel_trigger = {
+			NOT = {
+				AND = {
+					any_owned_state = {
+						is_controlled_by = GEA
+						free_building_slots = {
+							building = infrastructure
+							size > 0
+						}
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = yes
+						}
+						ROOT = {
+							any_owned_state = {
+								is_controlled_by = GEA
+								free_building_slots = {
+									building = infrastructure
+									size > 0
+								}
+								free_building_slots = {
+									building = industrial_complex
+									size > 0
+									include_locked = yes
+								}
+								NOT = {
+									state = PREV.PREV
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Josias_Siegmund_Bodenheimer_urban_investment"
+			if = {
+				limit = {
+					any_owned_state = {
+						is_controlled_by = GEA
+						free_building_slots = {
+							building = infrastructure
+							size > 0
+						}
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = yes
+						}
+						ROOT = {
+							any_owned_state = {
+								is_controlled_by = GEA
+								free_building_slots = {
+									building = infrastructure
+									size > 0
+								}
+								free_building_slots = {
+									building = industrial_complex
+									size > 0
+									include_locked = yes
+								}
+								NOT = {
+									state = PREV.PREV
+								}
+							}
+						}
+					}
+				}
+				every_owned_state = {
+					clr_state_flag = GEA_Josias_Siegmund_Bodenheimer_urban_investment_selected
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = infrastructure
+							size > 0
+						}
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = yes
+						}
+					}
+					set_state_flag = GEA_Josias_Siegmund_Bodenheimer_urban_investment_selected
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = infrastructure
+							size > 0
+						}
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = yes
+						}
+						NOT = {
+							has_state_flag = GEA_Josias_Siegmund_Bodenheimer_urban_investment_selected
+						}
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+				every_owned_state = {
+					clr_state_flag = GEA_Josias_Siegmund_Bodenheimer_urban_investment_selected
+				}
+				if = {
+					limit = {
+						GEA_indochina_can_interact_trigger = yes
+						has_country_flag = GEA_Indochinese_Anger
+					}
+					modify_country_flag = {
+						flag = GEA_Indochinese_Anger
+						value = -1
+					}
+					add_to_variable = {
+						GEA_Indochinese_Anger_display = -1
+					}
+					custom_effect_tooltip = GEA_Indochina_Anger_Down
+				}
+				if = {
+					limit = {
+						GEA_indochina_can_interact_trigger = yes
+						has_country_flag = GEA_Indochinese_Stability
+					}
+					modify_country_flag = {
+						flag = GEA_Indochinese_Stability
+						value = 1
+					}
+					add_to_variable = {
+						GEA_Indochinese_Stability_display = 1
+					}
+					custom_effect_tooltip = GEA_Indochina_Stability_Up
+				}
+				GEA_Josias_add_20_Siegmund_Bodenheimer_effect = yes
+			}
+		}
+	}
+
+
 }
 
 GEA_Naval_decisions = { #送船
@@ -17918,6 +20455,121 @@ GEA_Naval_decisions = { #送船
 }
 
 political_actions = {
+	GEA_military_expansion_mission = { #年度扩军计划
+		icon = GFX_decision_generic_military
+		allowed = {
+			original_tag = GEA
+		}
+
+		visible = {
+			has_country_flag = GEA_military_expansion_active
+		}
+		activation = {
+			always = no
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = GEA_military_expansion_target_tt
+				check_variable = {
+					deployed_army_manpower_k >= GEA_military_expansion_target_k
+				}
+			}
+		}
+
+		days_mission_timeout = 365
+		selectable_mission = no
+		fire_only_once = yes
+		is_good = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Mission complete GEA_military_expansion_mission"
+			clr_country_flag = GEA_military_expansion_active
+			add_war_support = 0.10
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_gea_army
+			}
+			add_to_variable = {
+				GEA_army_conscription_factor = 0.10
+				tooltip = conscription_factor_tt
+			}
+			add_to_variable = {
+				GEA_army_army_org_factor = 0.05
+				tooltip = army_org_factor_tt
+			}
+			if = {
+				limit = {
+					has_tech = advanced_infantry_weapons
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_3
+					amount = 5000
+					producer = GEA
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_infantry_weapons
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_2
+					amount = 5000
+					producer = GEA
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = infantry_weapons1
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_1
+					amount = 5000
+					producer = GEA
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_0
+					amount = 5000
+					producer = GEA
+				}
+			}
+			if = {
+				limit = {
+					has_tech = artillery4
+				}
+				add_equipment_to_stockpile = {
+					type = artillery_equipment_3
+					amount = 500
+					producer = GEA
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = artillery1
+				}
+				add_equipment_to_stockpile = {
+					type = artillery_equipment_2
+					amount = 500
+					producer = GEA
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = {
+					type = artillery_equipment_1
+					amount = 500
+					producer = GEA
+				}
+			}
+		}
+
+		timeout_effect = {
+			log = "[GetDateText]: [Root.GetName]: Mission timeout GEA_military_expansion_mission"
+			clr_country_flag = GEA_military_expansion_active
+		}
+	}
+
 	GEA_War_plan_Meyer_Waldeck = { #战争计划：迈耶-瓦尔德克
 		icon = generic_prepare_civil_war
 		allowed = { original_tag = GEA }

@@ -1720,6 +1720,14 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_To_liberate_the_market_for_cartels"
 			custom_effect_tooltip = GEA_To_liberate_the_market_for_cartels_tt
+			hidden_effect = {
+				GEA_Josias_add_15_Josef_Abs_effect = yes
+				GEA_Josias_add_15_Fritz_Meer_effect = yes
+				GEA_Josias_add_15_Hermann_Bucher_effect = yes
+				GEA_Josias_add_15_Hermann_Siemens_effect = yes
+				GEA_Josias_add_15_Otto_Jeidels_effect = yes
+				GEA_Josias_add_15_Alfred_Krupp_effect = yes
+			}
 			if = {
 				limit = {
 					has_country_flag = GEA_Restrictive_Cartel_flag
@@ -1844,6 +1852,71 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Supreme_authority_of_the_prince"
 			custom_effect_tooltip = GEA_Supreme_authority_of_the_prince_tt
+			hidden_effect = {
+				GEA_Josias_add_10_Nikolaus_effect = yes
+				GEA_Josias_add_10_Carl_Edward_effect = yes
+				GEA_Josias_add_10_Elard_von_Oldenburg_effect = yes
+				GEA_Josias_add_10_Schleicher_effect = yes
+				GEA_Josias_add_10_Hugenberg_effect = yes
+				GEA_Josias_add_10_Werner_von_Alvensleben_effect = yes
+				GEA_Josias_add_10_Josef_Abs_effect = yes
+				GEA_Josias_add_10_Fritz_Meer_effect = yes
+				GEA_Josias_add_10_Hermann_Bucher_effect = yes
+				GEA_Josias_add_10_Hermann_Siemens_effect = yes
+				GEA_Josias_add_10_Otto_Jeidels_effect = yes
+				GEA_Josias_add_10_Alfred_Krupp_effect = yes
+				GEA_Josias_add_10_Carl_Schmitt_effect = yes
+				GEA_Josias_add_10_Dorpmuller_effect = yes
+				GEA_Josias_add_10_Emil_Helfferich_effect = yes
+				GEA_Josias_add_10_Fritz_Thyssen_effect = yes
+				GEA_Josias_add_10_Hermann_Goring_effect = yes
+				GEA_Josias_add_10_Siegmund_Bodenheimer_effect = yes
+				set_variable = {
+					GEA_Josias_social_cost_10 = 0
+				}
+				set_variable = {
+					GEA_Josias_social_cost_15 = 5
+				}
+				set_variable = {
+					GEA_Josias_social_cost_20 = 10
+				}
+				set_variable = {
+					GEA_Josias_social_cost_25 = 15
+				}
+				set_variable = {
+					GEA_Josias_social_cost_30 = 20
+				}
+				set_variable = {
+					GEA_Josias_social_cost_35 = 25
+				}
+				set_variable = {
+					GEA_Josias_social_cost_40 = 30
+				}
+				set_variable = {
+					GEA_Josias_social_cost_45 = 35
+				}
+				set_variable = {
+					GEA_Josias_social_cost_50 = 40
+				}
+				set_variable = {
+					GEA_Josias_social_cost_60 = 50
+				}
+				set_variable = {
+					GEA_Josias_social_cost_75 = 65
+				}
+				set_variable = {
+					GEA_Josias_social_cost_80 = 70
+				}
+				set_variable = {
+					GEA_Josias_social_cost_90 = 80
+				}
+				set_variable = {
+					GEA_Josias_social_cost_100 = 90
+				}
+				set_variable = {
+					GEA_Josias_social_cost_110 = 100
+				}
+			}
 			add_ideas = GEA_supreme_governor
 		}
 	}
@@ -2500,6 +2573,12 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Prinz_Kaiser_Deutschland"
+			add_stability = 0.1
+			increase_ruling_party_popularity_by_10 = yes
+			swap_ideas = {
+				remove_idea = GEA_supreme_governor
+				add_idea = GEA_supreme_governor_2
+			}
 		}
 	}
 #威廉·海耶
@@ -9504,6 +9583,24 @@ focus_tree = {
 		
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_All_for_the_purpose_of_defending"
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_gea_army
+			}
+			add_to_variable = {
+				GEA_army_war_support_factor = 0.05
+				tooltip = war_support_factor_tt
+			}
+			add_to_variable = {
+				GEA_army_dig_in_speed_factor = 0.10
+				tooltip = dig_in_speed_factor_tt
+			}
+			add_to_variable = {
+				GEA_army_core_defence_factor = 0.05
+				tooltip = army_core_defence_factor_tt
+			}
+		
 		}		
 	}
 	focus = {#扩军计划
@@ -9527,6 +9624,62 @@ focus_tree = {
 		
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Military_expansion_plan"
+			custom_effect_tooltip = GEA_military_expansion_plan_unlock_tt
+			hidden_effect = {
+				set_variable = {
+					GEA_military_expansion_target_k = deployed_army_manpower_k
+				}
+				add_to_variable = {
+					GEA_military_expansion_target_k = 30
+				}
+				if = {
+					limit = {
+						date < 1938.1.1
+					}
+					set_variable = {
+						GEA_military_expansion_year_floor_k = 200
+					}
+				}
+				else_if = {
+					limit = {
+						date < 1939.1.1
+					}
+					set_variable = {
+						GEA_military_expansion_year_floor_k = 250
+					}
+				}
+				else_if = {
+					limit = {
+						date < 1940.1.1
+					}
+					set_variable = {
+						GEA_military_expansion_year_floor_k = 400
+					}
+				}
+				else = {
+					set_variable = {
+						GEA_military_expansion_year_floor_k = 600
+					}
+				}
+				if = {
+					limit = {
+						check_variable = {
+							GEA_military_expansion_target_k < GEA_military_expansion_year_floor_k
+						}
+					}
+					set_variable = {
+						GEA_military_expansion_target_k = GEA_military_expansion_year_floor_k
+					}
+				}
+				set_variable = {
+					GEA_military_expansion_target = GEA_military_expansion_target_k
+				}
+				multiply_variable = {
+					GEA_military_expansion_target = 1000
+				}
+				set_country_flag = GEA_military_expansion_active
+				activate_mission = GEA_military_expansion_mission
+			}
 		}		
 	}
 	focus = {#施陶芬贝格的策略
@@ -16498,7 +16651,7 @@ focus_tree = {
 			factor = 100
 		}
 		available = {
-			always = no
+			GEA_yunnan_non_anti_concession_controller_trigger = yes
 		}			
 		prerequisite = {
 			focus = GEA_The_second_expedition_to_China
@@ -16506,6 +16659,11 @@ focus_tree = {
 		relative_position_id = GEA_The_second_expedition_to_China
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Deep_into_the_mountains"
+			unlock_decision_tooltip = GEA_yun_trade_delegation
+			unlock_decision_tooltip = GEA_yun_military_instructors
+			unlock_decision_tooltip = GEA_yun_border_smuggling
+			unlock_decision_tooltip = GEA_yun_fudian_credit
+			unlock_decision_tooltip = GEA_yun_kunming_liaison
 		}	
 	}
 
@@ -16519,6 +16677,7 @@ focus_tree = {
 			factor = 100
 		}
 		available = {
+			GEA_yunnan_non_anti_concession_controller_trigger = yes
 
 		}			
 		prerequisite = {
@@ -16540,6 +16699,7 @@ focus_tree = {
 			factor = 100
 		}
 		available = {
+			GEA_yunnan_non_anti_concession_controller_trigger = yes
 
 		}			
 		prerequisite = {
@@ -16561,6 +16721,7 @@ focus_tree = {
 			factor = 100
 		}
 		available = {
+			GEA_yunnan_non_anti_concession_controller_trigger = yes
 
 		}			
 		prerequisite = {
@@ -16582,6 +16743,7 @@ focus_tree = {
 			factor = 100
 		}
 		available = {
+			GEA_yunnan_non_anti_concession_controller_trigger = yes
 
 		}			
 		prerequisite = {
@@ -16777,7 +16939,7 @@ focus_tree = {
 	focus = { #至暗时刻
 		id = GEA_THE_DH
 		icon = GFX_goal_GER_Desperate_Struggle
-		cost = 5
+		cost = 2
 		x = -13
 		y = 20
 		ai_will_do = {
@@ -16792,6 +16954,10 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_THE_DH"
+			add_ideas = GEA_Sour_failure
+			add_stability = 0.1
+			add_war_support = 0.1
+			add_political_power = 100
 		}	
 	}
 
@@ -16805,7 +16971,10 @@ focus_tree = {
 			factor = 100
 		}
 		available = {
-
+			custom_trigger_tooltip = {
+				tooltip = GEX_fled_to_us_tooltip
+				GEX_fled_to_us = yes
+			}
 		}			
 		prerequisite = {
 			focus = GEA_THE_DH
@@ -16813,6 +16982,33 @@ focus_tree = {
 		relative_position_id = GEA_THE_DH
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Summon_the_wise_and_capable_individuals"
+			custom_effect_tooltip = GEA_Summon_the_wise_and_capable_individuals_officers_tt
+			hidden_effect = {
+				every_possible_country = {
+					limit = {
+						OR = {
+							tag = GER
+							tag = GEX
+							tag = ANT
+						}
+						NOT = {
+							tag = ROOT
+						}
+					}
+					every_army_leader = {
+						limit = {
+							OR = {
+								has_id = 6884
+								has_id = 6885
+								has_id = 22051
+								has_id = 22052
+								has_id = 22053
+							}
+						}
+						set_nationality = ROOT
+					}
+				}
+			}
 		}	
 	}
 
@@ -16826,7 +17022,10 @@ focus_tree = {
 			factor = 100
 		}
 		available = {
-
+			custom_trigger_tooltip = {
+				tooltip = GEX_fled_to_us_tooltip
+				GEX_fled_to_us = yes
+			}
 		}			
 		prerequisite = {
 			focus = GEA_THE_DH
@@ -16834,6 +17033,167 @@ focus_tree = {
 		relative_position_id = GEA_THE_DH
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Consume_the_embers"
+			custom_effect_tooltip = GEA_Consume_the_embers_units_tt
+			hidden_effect = {
+				if = {
+					limit = {
+						NOT = {
+							has_template = "Reichs-Sicherungsdivision"
+						}
+					}
+					division_template = {
+						name = "Reichs-Sicherungsdivision"
+						priority = 0
+						regiments = {
+							infantry = {
+								x = 0
+								y = 0
+							}
+							infantry = {
+								x = 0
+								y = 1
+							}
+							infantry = {
+								x = 0
+								y = 2
+							}
+							infantry = {
+								x = 1
+								y = 0
+							}
+							infantry = {
+								x = 1
+								y = 1
+							}
+							infantry = {
+								x = 1
+								y = 2
+							}
+							infantry = {
+								x = 2
+								y = 0
+							}
+							infantry = {
+								x = 2
+								y = 1
+							}
+							infantry = {
+								x = 2
+								y = 2
+							}
+							artillery_brigade = {
+								x = 3
+								y = 0
+							}
+						}
+						support = {
+							engineer = {
+								x = 0
+								y = 0
+							}
+							recon = {
+								x = 0
+								y = 1
+							}
+							artillery = {
+								x = 0
+								y = 2
+							}
+						}
+					}
+				}
+				random_owned_controlled_state = {
+					prioritize = {
+						336
+						846
+					}
+					create_unit = {
+						division = "name = \"1. Sicherungs-Division\" division_template = \"Reichs-Sicherungsdivision\" start_experience_factor = 0.3 start_equipment_factor = 1.0 start_manpower_factor = 1.0"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"2. Sicherungs-Division\" division_template = \"Reichs-Sicherungsdivision\" start_experience_factor = 0.3 start_equipment_factor = 1.0 start_manpower_factor = 1.0"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"3. Sicherungs-Division\" division_template = \"Reichs-Sicherungsdivision\" start_experience_factor = 0.3 start_equipment_factor = 1.0 start_manpower_factor = 1.0"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"4. Sicherungs-Division\" division_template = \"Reichs-Sicherungsdivision\" start_experience_factor = 0.3 start_equipment_factor = 1.0 start_manpower_factor = 1.0"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"5. Sicherungs-Division\" division_template = \"Reichs-Sicherungsdivision\" start_experience_factor = 0.3 start_equipment_factor = 1.0 start_manpower_factor = 1.0"
+						owner = ROOT
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_tech = advanced_infantry_weapons
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_3
+					amount = 5000
+					producer = ROOT
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_infantry_weapons
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_2
+					amount = 5000
+					producer = ROOT
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = infantry_weapons1
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_1
+					amount = 5000
+					producer = ROOT
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_0
+					amount = 5000
+					producer = ROOT
+				}
+			}
+			if = {
+				limit = {
+					has_tech = artillery4
+				}
+				add_equipment_to_stockpile = {
+					type = artillery_equipment_3
+					amount = 200
+					producer = ROOT
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = artillery1
+				}
+				add_equipment_to_stockpile = {
+					type = artillery_equipment_2
+					amount = 200
+					producer = ROOT
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = {
+					type = artillery_equipment_1
+					amount = 200
+					producer = ROOT
+				}
+			}
+
 		}	
 	}
 
@@ -16847,7 +17207,10 @@ focus_tree = {
 			factor = 100
 		}
 		available = {
-
+			custom_trigger_tooltip = {
+				tooltip = GEX_fled_to_us_tooltip
+				GEX_fled_to_us = yes
+			}
 		}			
 		prerequisite = {
 			focus = GEA_THE_DH
@@ -16855,21 +17218,35 @@ focus_tree = {
 		relative_position_id = GEA_THE_DH
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Expand_conscription"
+			add_manpower = 30000
+			swap_ideas = {
+				remove_idea = GEA_Sour_failure
+				add_idea = GEA_Sour_failure_2
+			}
 		}	
 	}
 
 	focus = { #苦涩和平
 		id = GEA_Sourness_and_Peace
 		icon = GFX_goal_GER_Let_Birds_Go_Free
-		cost = 5
+		cost = 1
 		x = 1
 		y = 1
 		ai_will_do = {
 			factor = 100
 		}
 		available = {
-
+			has_war_with = JAP
+			custom_trigger_tooltip = {
+				tooltip = GEX_fled_to_us_tooltip
+				GEX_fled_to_us = yes
+			}
 		}	
+		bypass = {
+			NOT = {
+				has_war_with = JAP
+			}
+		}
 		prerequisite = {
 			focus = GEA_Expand_conscription
 		}
@@ -16885,20 +17262,35 @@ focus_tree = {
 		relative_position_id = GEA_Summon_the_wise_and_capable_individuals
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Sourness_and_Peace"
+			if = {
+				limit = {
+					has_war_with = JAP
+				}
+				JAP = {
+					country_event = {
+						id = GEA.1202
+						days = 1
+					}
+				}
+			}
 		}	
 	}
 
 	focus = { #殊死一搏
 		id = GEA_A_desperate_last_ditch_effort
 		icon = GFX_goal_GER_Perpetual_Harassment
-		cost = 5
+		cost = 1
 		x = 3
 		y = 1
 		ai_will_do = {
 			factor = 100
 		}
 		available = {
-
+			has_war_with = JAP
+			custom_trigger_tooltip = {
+				tooltip = GEX_fled_to_us_tooltip
+				GEX_fled_to_us = yes
+			}
 		}	
 		prerequisite = {
 			focus = GEA_Expand_conscription
@@ -16915,6 +17307,10 @@ focus_tree = {
 		relative_position_id = GEA_Summon_the_wise_and_capable_individuals
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_A_desperate_last_ditch_effort"
+			add_timed_idea = {
+				idea = GEA_desperate_last_stand
+				days = 180
+			}
 		}	
 	}
 
@@ -16928,7 +17324,14 @@ focus_tree = {
 			factor = 100
 		}
 		available = {
-
+			JAP = {
+				exists = yes
+				is_subject_of = ROOT
+			}
+			custom_trigger_tooltip = {
+				tooltip = GEX_fled_to_us_tooltip
+				GEX_fled_to_us = yes
+			}
 		}	
 		prerequisite = {
 			focus = GEA_A_desperate_last_ditch_effort
@@ -16936,6 +17339,47 @@ focus_tree = {
 		relative_position_id = GEA_A_desperate_last_ditch_effort
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Conscript_the_Combined_Fleet"
+			custom_effect_tooltip = GEA_Conscript_the_Combined_Fleet_tt
+			hidden_effect = {
+				if = {
+					limit = {
+						JAP = {
+							exists = yes
+							is_subject_of = ROOT
+						}
+					}
+					JAP = {
+						if = {
+							limit = {
+								NOT = {
+									has_country_flag = GEA_seized_yamato_design_created
+								}
+							}
+							create_equipment_variant = {
+								name = "Yamato Class"
+								type = ship_hull_super_heavy_1
+								allow_without_tech = yes
+								parent_version = 0
+								modules = {
+									fixed_ship_battery_slot = ship_super_heavy_battery_1
+									fixed_ship_anti_air_slot = ship_anti_air_2
+									fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+									fixed_ship_radar_slot = ship_radar_1
+									fixed_ship_engine_slot = heavy_ship_engine_3
+									fixed_ship_secondaries_slot = ship_secondaries_2
+									fixed_ship_armor_slot = ship_armor_shbb
+									front_1_custom_slot = ship_anti_air_2
+									mid_1_custom_slot = ship_airplane_launcher_1
+									mid_2_custom_slot = dp_ship_secondaries_1
+									rear_1_custom_slot = ship_super_heavy_battery_1
+								}
+							}
+							set_country_flag = GEA_seized_yamato_design_created
+						}
+					}
+					load_oob = GEA_seized_combined_fleet
+				}
+			}
 		}	
 	}
 
@@ -16949,7 +17393,10 @@ focus_tree = {
 			factor = 100
 		}
 		available = {
-
+			custom_trigger_tooltip = {
+				tooltip = GEX_fled_to_us_tooltip
+				GEX_fled_to_us = yes
+			}
 		}	
 		prerequisite = {
 			focus = GEA_Sourness_and_Peace
@@ -16957,6 +17404,10 @@ focus_tree = {
 		relative_position_id = GEA_A_desperate_last_ditch_effort
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Struggling_to_survive_in_the_face_of_harsh_reality"
+			swap_ideas = {
+				remove_idea = GEA_Sour_failure_2
+				add_idea = GEA_Sour_failure_3
+			}
 		}	
 	}
 
@@ -16970,7 +17421,10 @@ focus_tree = {
 			factor = 100
 		}
 		available = {
-
+			custom_trigger_tooltip = {
+				tooltip = GEX_fled_to_us_tooltip
+				GEX_fled_to_us = yes
+			}
 		}	
 		prerequisite = {
 			focus = GEA_Sourness_and_Peace
@@ -16979,6 +17433,24 @@ focus_tree = {
 		relative_position_id = GEA_A_desperate_last_ditch_effort
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Summarize_the_lessons_learned_from_the_war"
+			add_mastery_bonus = {
+				name = GEA_Summarize_the_lessons_learned_from_the_war
+				bonus = 0.10
+				days = 365
+				folder = land
+			}
+			add_mastery_bonus = {
+				name = GEA_Summarize_the_lessons_learned_from_the_war
+				bonus = 0.05
+				days = 365
+				folder = naval
+			}
+			add_mastery_bonus = {
+				name = GEA_Summarize_the_lessons_learned_from_the_war
+				bonus = 0.05
+				days = 365
+				folder = air
+			}
 		}	
 	}
 
@@ -17001,6 +17473,27 @@ focus_tree = {
 		relative_position_id = GEA_A_desperate_last_ditch_effort
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_A_small_but_highly_efficient_force"
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_gea_army
+			}
+			add_to_variable = {
+				GEA_army_conscription = -0.02
+				tooltip = conscription_tt
+			}
+			add_to_variable = {
+				GEA_army_army_org_factor = 0.20
+				tooltip = army_org_factor_tt
+			}
+			add_to_variable = {
+				GEA_army_breakthrough_factor = 0.10
+				tooltip = breakthrough_factor_tt
+			}
+			add_to_variable = {
+				GEA_army_supply_consumption_factor = -0.15
+				tooltip = supply_consumption_factor_tt
+			}
 		}	
 	}
 
@@ -17023,6 +17516,7 @@ focus_tree = {
 		relative_position_id = GEA_A_desperate_last_ditch_effort
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_tighten_the_belt"
+			add_ideas = GEA_Live_frugally
 		}	
 	}
 
@@ -17036,7 +17530,39 @@ focus_tree = {
 			factor = 100
 		}
 		available = {
-
+			is_subject = no
+			ENT = {
+				exists = yes
+				is_faction_leader = yes
+			}
+			NOT = {
+				has_war_with = ENT
+			}
+			custom_trigger_tooltip = {
+				tooltip = GEA_returnees_not_home_tt
+				OR = {
+					CAN = {
+						exists = yes
+						is_in_faction_with = ENT
+						NOT = {
+							has_global_flag = UK_restoration
+						}
+					}
+					NFA = {
+						exists = yes
+						is_in_faction_with = ENT
+						NOT = {
+							has_country_flag = NFA_france_free
+						}
+					}
+				}
+			}
+			NOT = {
+				OR = {
+					has_completed_focus = GEA_Crossing_mountains_and_rivers
+					has_completed_focus = GEA_Goodbye_sweet_Europa
+				}
+			}
 		}	
 		prerequisite = {
 			focus = GEA_A_small_but_highly_efficient_force
@@ -17050,6 +17576,68 @@ focus_tree = {
 		relative_position_id = GEA_A_small_but_highly_efficient_force
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_consensus_of_the_returnees"
+			if = {
+				limit = {
+					ENT = {
+						exists = yes
+						is_faction_leader = yes
+					}
+					NOT = {
+						has_war_with = ENT
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							is_in_faction_with = ENT
+						}
+					}
+					if = {
+						limit = {
+							is_in_faction = yes
+						}
+						leave_faction = yes
+					}
+					ENT = {
+						add_to_faction = ROOT
+					}
+				}
+			}
+			if = {
+				limit = {
+					CAN = {
+						exists = yes
+					}
+				}
+				add_opinion_modifier = {
+					target = CAN
+					modifier = committed_to_return_home
+				}
+				CAN = {
+					add_opinion_modifier = {
+						target = ROOT
+						modifier = committed_to_return_home
+					}
+				}
+			}
+			if = {
+				limit = {
+					NFA = {
+						exists = yes
+					}
+				}
+				add_opinion_modifier = {
+					target = NFA
+					modifier = committed_to_return_home
+				}
+				NFA = {
+					add_opinion_modifier = {
+						target = ROOT
+						modifier = committed_to_return_home
+					}
+				}
+			}
+			
 		}	
 	}
 
@@ -17063,7 +17651,12 @@ focus_tree = {
 			factor = 100
 		}
 		available = {
-
+			NOT = {
+				OR = {
+					has_completed_focus = GEA_The_consensus_of_the_returnees
+					has_completed_focus = GEA_Goodbye_sweet_Europa
+				}
+			}
 		}	
 		prerequisite = {
 			focus = GEA_A_small_but_highly_efficient_force
@@ -17090,7 +17683,12 @@ focus_tree = {
 			factor = 100
 		}
 		available = {
-
+			NOT = {
+				OR = {
+					has_completed_focus = GEA_The_consensus_of_the_returnees
+					has_completed_focus = GEA_Crossing_mountains_and_rivers
+				}
+			}
 		}	
 		prerequisite = {
 			focus = GEA_A_small_but_highly_efficient_force
@@ -17104,6 +17702,10 @@ focus_tree = {
 		relative_position_id = GEA_A_small_but_highly_efficient_force
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Goodbye_sweet_Europa"
+			swap_ideas = {
+				remove_idea = GEA_Sour_failure_3
+				add_idea = GEA_Sour_failure_4
+			}
 		}	
 	}
 }

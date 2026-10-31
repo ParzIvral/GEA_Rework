@@ -2048,12 +2048,30 @@ GEA_add_pirate_loot = {
 	set_temp_variable = { GEA_pirate_loot_change_amount = GEA_raid_reward_multiplier }
 	GEA_change_pirate_loot_effect = yes
 }
+GEA_Yun_click_effect = { #云南
+	if = {
+		limit = {
+			has_country_flag = YUN_OPEN
+		}
+		clr_country_flag = YUN_OPEN
+	}
+	else = {
+		set_country_flag = YUN_OPEN
+		clr_country_flag = LEP_OPEN
+		clr_country_flag = SQI_OPEN
+		clr_country_flag = GXC_OPEN
+		clr_country_flag = QIE_OPEN
+		clr_country_flag = LEC_OPEN
+	}
+}
+
 GEA_Lep_click_effect = { #华东
 	if = {
 		limit = { has_country_flag = LEP_OPEN }
 		clr_country_flag = LEP_OPEN
 	}
 	else = {
+		clr_country_flag = YUN_OPEN
 		set_country_flag = LEP_OPEN
 		clr_country_flag = SQI_OPEN
 		clr_country_flag = GXC_OPEN
@@ -2068,6 +2086,7 @@ GEA_Sqi_click_effect = { #山东
 		clr_country_flag = SQI_OPEN
 	}
 	else = {
+		clr_country_flag = YUN_OPEN
 		set_country_flag = SQI_OPEN
 		clr_country_flag = LEP_OPEN
 		clr_country_flag = GXC_OPEN
@@ -2082,6 +2101,7 @@ GEA_Gxc_click_effect = { #两广
 		clr_country_flag = GXC_OPEN
 	}
 	else = {
+		clr_country_flag = YUN_OPEN
 		set_country_flag = GXC_OPEN
 		clr_country_flag = LEP_OPEN
 		clr_country_flag = SQI_OPEN
@@ -2096,6 +2116,7 @@ GEA_Zhili_click_effect = { #直隶
 		clr_country_flag = QIE_OPEN
 	}
 	else = {
+		clr_country_flag = YUN_OPEN
 		set_country_flag = QIE_OPEN
 		clr_country_flag = LEP_OPEN
 		clr_country_flag = SQI_OPEN
@@ -2110,6 +2131,7 @@ GEA_Lec_click_effect = { #使馆城市
 		clr_country_flag = LEC_OPEN
 	}
 	else = {
+		clr_country_flag = YUN_OPEN
 		set_country_flag = LEC_OPEN
 		clr_country_flag = LEP_OPEN
 		clr_country_flag = SQI_OPEN
