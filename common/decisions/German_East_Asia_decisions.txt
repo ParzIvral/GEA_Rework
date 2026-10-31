@@ -9446,9 +9446,6 @@ GEA_focus_china_decisions = {#第二次对华远征
 		}
 
 		targets = { LEP }
-		target_root_trigger = { 
-			has_completed_focus = GEA_Nanjing_xpress 
-		}
 
 		cost = 5
 		fire_only_once = yes
@@ -9501,17 +9498,13 @@ GEA_focus_china_decisions = {#第二次对华远征
 		days_re_enable = GEA_lep_investment_cooldown?60
 
 		visible = {
+			has_completed_focus = GEA_Nanjing_xpress
 			FROM = { GEA_china_warlord_can_interact_trigger = yes }
 			has_country_flag = GEA_east_china_investment_unlocked
 			has_country_flag = LEP_OPEN
 		}
 
 		targets_dynamic = yes
-		target_root_trigger = {
-			has_completed_focus = GEA_Nanjing_xpress
-			has_country_flag = GEA_east_china_investment_unlocked
-			has_country_flag = LEP_OPEN
-		}
 		target_trigger = {
 			FROM = { owns_state = 613 }
 		}
@@ -9547,17 +9540,13 @@ GEA_focus_china_decisions = {#第二次对华远征
 		days_re_enable = GEA_lep_enterprise_cooldown?100
 
 		visible = {
+			has_completed_focus = GEA_Nanjing_xpress
 			FROM = { GEA_china_warlord_can_interact_trigger = yes }
 			has_country_flag = GEA_east_china_investment_unlocked
 			has_country_flag = LEP_OPEN 
 		}
 
 		targets_dynamic = yes
-		target_root_trigger = {
-			has_completed_focus = GEA_Nanjing_xpress
-			has_country_flag = GEA_east_china_investment_unlocked
-			has_country_flag = LEP_OPEN
-		}
 		target_trigger = {
 			FROM = { owns_state = 613 }
 		}
@@ -9599,17 +9588,13 @@ GEA_focus_china_decisions = {#第二次对华远征
 		days_re_enable = GEA_lep_enterprise_cooldown?100
 
 		visible = {
+			has_completed_focus = GEA_Nanjing_xpress
 			FROM = { GEA_china_warlord_can_interact_trigger = yes }
 			has_country_flag = GEA_east_china_investment_unlocked
 			has_country_flag = LEP_OPEN 
 		}
 
 		targets_dynamic = yes
-		target_root_trigger = {
-			has_completed_focus = GEA_Nanjing_xpress
-			has_country_flag = GEA_east_china_investment_unlocked
-			has_country_flag = LEP_OPEN
-		}
 		target_trigger = {
 			FROM = { owns_state = 613 }
 		}
@@ -9658,10 +9643,6 @@ GEA_focus_china_decisions = {#第二次对华远征
 			has_country_flag = LEP_OPEN
 		}
 		targets_dynamic = yes
-		target_root_trigger = {
-			has_country_flag = GEA_eight_provinces_war_resolved
-			has_country_flag = LEP_OPEN
-		}
 		target_trigger = { FROM = { owns_state = 613 } }
 		available = {
 			FROM = {
@@ -9751,10 +9732,6 @@ GEA_focus_china_decisions = {#第二次对华远征
 			FROM = { GEA_china_warlord_can_interact_trigger = yes }
 		}
 		targets_dynamic = yes
-		target_root_trigger = {
-			has_country_flag = GEA_east_china_investment_unlocked
-			has_country_flag = LEP_OPEN
-		}
 		target_trigger = { FROM = { owns_state = 613 } }
 		available = {
 			NOT = { has_war_with = FROM }
@@ -9818,10 +9795,6 @@ GEA_focus_china_decisions = {#第二次对华远征
 			FROM = { GEA_china_warlord_can_interact_trigger = yes }
 		}
 		targets_dynamic = yes
-		target_root_trigger = {
-			has_country_flag = GEA_east_china_investment_unlocked
-			has_country_flag = LEP_OPEN
-		}
 		target_trigger = { FROM = { owns_state = 613 } }
 		available = {
 			NOT = { has_war_with = FROM }
@@ -9907,11 +9880,6 @@ GEA_focus_china_decisions = {#第二次对华远征
 		}
 
 		targets_dynamic = yes
-		target_root_trigger = {
-			has_completed_focus = GEA_Goods_out_money_in
-			has_country_flag = GEA_east_china_investment_unlocked
-			has_country_flag = LEP_OPEN
-		}
 		target_trigger = {
 			FROM = { owns_state = 613 }
 		}
@@ -9991,11 +9959,6 @@ GEA_focus_china_decisions = {#第二次对华远征
 		}
 
 		targets_dynamic = yes
-		target_root_trigger = {
-			has_completed_focus = GEA_Goods_out_money_in
-			has_country_flag = GEA_east_china_investment_unlocked
-			has_country_flag = LEP_OPEN
-		}
 		target_trigger = {
 			FROM = { owns_state = 613 }
 		}
@@ -10063,11 +10026,6 @@ GEA_focus_china_decisions = {#第二次对华远征
 		}
 
 		targets_dynamic = yes
-		target_root_trigger = {
-			has_completed_focus = GEA_Goods_out_money_in
-			has_country_flag = GEA_east_china_investment_unlocked
-			has_country_flag = LEP_OPEN
-		}
 		target_trigger = {
 			FROM = { owns_state = 613 }
 		}
@@ -10129,11 +10087,6 @@ GEA_focus_china_decisions = {#第二次对华远征
 		}
 
 		targets_dynamic = yes
-		target_root_trigger = {
-			has_completed_focus = GEA_Best_regards_to_our_mining_operation
-			has_country_flag = GEA_east_china_investment_unlocked
-			has_country_flag = LEP_OPEN
-		}
 		target_trigger = {
 			FROM = { owns_state = 613 }
 		}
@@ -10189,11 +10142,6 @@ GEA_focus_china_decisions = {#第二次对华远征
 			has_country_flag = LEP_OPEN
 		}
 		targets_dynamic = yes
-		target_root_trigger = {
-			has_completed_focus = GEA_Best_regards_to_our_mining_operation
-			has_country_flag = GEA_east_china_investment_unlocked
-			has_country_flag = LEP_OPEN
-		}
 		target_trigger = { FROM = { owns_state = 613 } }
 		available = {
 			FROM = {
@@ -10238,11 +10186,6 @@ GEA_focus_china_decisions = {#第二次对华远征
 			has_country_flag = LEP_OPEN
 		}
 		targets_dynamic = yes
-		target_root_trigger = {
-			has_completed_focus = GEA_Best_regards_to_our_mining_operation
-			has_country_flag = GEA_east_china_investment_unlocked
-			has_country_flag = LEP_OPEN
-		}
 		target_trigger = { FROM = { owns_state = 613 } }
 		available = {
 			FROM = {
@@ -10286,11 +10229,6 @@ GEA_focus_china_decisions = {#第二次对华远征
 			has_country_flag = LEP_OPEN
 		}
 		targets_dynamic = yes
-		target_root_trigger = {
-			has_completed_focus = GEA_Best_regards_to_our_mining_operation
-			has_country_flag = GEA_east_china_investment_unlocked
-			has_country_flag = LEP_OPEN
-		}
 		target_trigger = { FROM = { owns_state = 613 } }
 		available = {
 			FROM = {
@@ -10334,11 +10272,6 @@ GEA_focus_china_decisions = {#第二次对华远征
 			has_country_flag = LEP_OPEN
 		}
 		targets_dynamic = yes
-		target_root_trigger = {
-			has_completed_focus = GEA_Best_regards_to_our_mining_operation
-			has_country_flag = GEA_east_china_investment_unlocked
-			has_country_flag = LEP_OPEN
-		}
 		target_trigger = { FROM = { owns_state = 613 } }
 		available = {
 			FROM = {
@@ -10379,10 +10312,6 @@ GEA_focus_china_decisions = {#第二次对华远征
 			has_country_flag = LEP_OPEN
 		}
 		targets_dynamic = yes
-		target_root_trigger = {
-			has_completed_focus = GEA_The_tricks_of_financiers
-			has_country_flag = LEP_OPEN
-		}
 		target_trigger = {
 			FROM = { owns_state = 613 GEA_china_warlord_can_interact_trigger = yes }
 		}
@@ -10421,9 +10350,6 @@ GEA_focus_china_decisions = {#第二次对华远征
 		}
 		
 		targets_dynamic = yes
-		target_root_trigger = { 
-			has_country_flag = LEP_OPEN 
-		}
 		target_trigger = { 
 			FROM = { 
 				owns_state = 613 
@@ -10479,7 +10405,6 @@ GEA_focus_china_decisions = {#第二次对华远征
 			}
 		}
 		targets_dynamic = yes
-		target_root_trigger = { has_country_flag = LEP_OPEN }
 		target_trigger = {
 			FROM = {
 				owns_state = 613
@@ -10553,10 +10478,6 @@ GEA_focus_china_decisions = {#第二次对华远征
 		}
 
 		targets_dynamic = yes
-		target_root_trigger = {
-			has_completed_focus = GEA_Manage_the_grain_storage_facility
-			has_country_flag = LEP_OPEN
-		}
 		target_trigger = { FROM = { owns_state = 613 } }
 
 		available = {
@@ -10615,10 +10536,6 @@ GEA_focus_china_decisions = {#第二次对华远征
 			FROM = { GEA_china_warlord_can_interact_trigger = yes }
 		}
 		targets_dynamic = yes
-		target_root_trigger = {
-			has_completed_focus = GEA_Manage_the_grain_storage_facility
-			has_country_flag = LEP_OPEN
-		}
 		target_trigger = { FROM = { owns_state = 613 } }
 		available = {
 			NOT = { has_war_with = FROM }
@@ -10681,10 +10598,6 @@ GEA_focus_china_decisions = {#第二次对华远征
 			FROM = { GEA_china_warlord_can_interact_trigger = yes }
 		}
 		targets_dynamic = yes
-		target_root_trigger = {
-			has_completed_focus = GEA_Manage_the_grain_storage_facility
-			has_country_flag = LEP_OPEN
-		}
 		target_trigger = { FROM = { owns_state = 613 } }
 		available = {
 			NOT = { has_war_with = FROM }
@@ -10749,10 +10662,6 @@ GEA_focus_china_decisions = {#第二次对华远征
 			has_country_flag = LEP_OPEN
 		}
 		targets_dynamic = yes
-		target_root_trigger = {
-			has_completed_focus = GEA_The_tricks_of_financiers
-			has_country_flag = LEP_OPEN
-		}
 		target_trigger = { FROM = { owns_state = 613 } }
 		available = {
 			NOT = { has_war_with = FROM }
@@ -10808,10 +10717,6 @@ GEA_focus_china_decisions = {#第二次对华远征
 			has_country_flag = LEP_OPEN
 		}
 		targets_dynamic = yes
-		target_root_trigger = {
-			has_completed_focus = GEA_The_tricks_of_financiers
-			has_country_flag = LEP_OPEN
-		}
 		target_trigger = { FROM = { owns_state = 613 } }
 		available = {
 			NOT = { has_war_with = FROM }
@@ -10866,10 +10771,6 @@ GEA_focus_china_decisions = {#第二次对华远征
 		}
 
 		targets_dynamic = yes
-		target_root_trigger = {
-			has_completed_focus = GEA_The_tricks_of_financiers
-			has_country_flag = LEP_OPEN
-		}
 		target_trigger = { FROM = { owns_state = 613 } }
 
 		available = {
@@ -10916,12 +10817,6 @@ GEA_focus_china_decisions = {#第二次对华远征
 			NOT = { has_country_flag = GEA_railway_huning_completed }
 		}
 		targets_dynamic = yes
-		target_root_trigger = {
-			has_completed_focus = GEA_Building_a_road_network_in_Southeast_provinces
-			has_country_flag = GEA_east_china_investment_unlocked
-			has_country_flag = LEP_OPEN
-			NOT = { has_country_flag = GEA_railway_huning_completed }
-		}
 		target_trigger = { FROM = { owns_state = 613 } }
 		available = {
 			NOT = { has_war_with = FROM }
@@ -10984,12 +10879,6 @@ GEA_focus_china_decisions = {#第二次对华远征
 			NOT = { has_country_flag = GEA_railway_hangjiang_completed }
 		}
 		targets_dynamic = yes
-		target_root_trigger = {
-			has_completed_focus = GEA_Building_a_road_network_in_Southeast_provinces
-			has_country_flag = GEA_east_china_investment_unlocked
-			has_country_flag = LEP_OPEN
-			NOT = { has_country_flag = GEA_railway_hangjiang_completed }
-		}
 		target_trigger = { FROM = { owns_state = 613 } }
 		available = {
 			NOT = { has_war_with = FROM }
@@ -11058,12 +10947,6 @@ GEA_focus_china_decisions = {#第二次对华远征
 			NOT = { has_country_flag = GEA_railway_zhegan_completed }
 		}
 		targets_dynamic = yes
-		target_root_trigger = {
-			has_completed_focus = GEA_Building_a_road_network_in_Southeast_provinces
-			has_country_flag = GEA_east_china_investment_unlocked
-			has_country_flag = LEP_OPEN
-			NOT = { has_country_flag = GEA_railway_zhegan_completed }
-		}
 		target_trigger = { FROM = { owns_state = 613 } }
 		available = {
 			NOT = { has_war_with = FROM }
@@ -11135,10 +11018,6 @@ GEA_focus_china_decisions = {#第二次对华远征
 			}
 		}
 		targets = { YUN }
-		target_root_trigger = {
-			has_completed_focus = GEA_Deep_into_the_mountains
-			has_country_flag = YUN_OPEN
-		}
 
 		cost = 25
 		days_remove = 30
@@ -11212,10 +11091,6 @@ GEA_focus_china_decisions = {#第二次对华远征
 			}
 		}
 		targets = { YUN }
-		target_root_trigger = {
-			has_completed_focus = GEA_Deep_into_the_mountains
-			has_country_flag = YUN_OPEN
-		}
 
 		cost = 30
 		days_remove = 45
@@ -11311,10 +11186,6 @@ GEA_focus_china_decisions = {#第二次对华远征
 			GEA_indochina_can_interact_trigger = yes
 		}
 		targets = { YUN }
-		target_root_trigger = {
-			has_completed_focus = GEA_Deep_into_the_mountains
-			has_country_flag = YUN_OPEN
-		}
 
 		cost = 20
 		days_remove = 30
@@ -11409,10 +11280,6 @@ GEA_focus_china_decisions = {#第二次对华远征
 			}
 		}
 		targets = { YUN }
-		target_root_trigger = {
-			has_completed_focus = GEA_Deep_into_the_mountains
-			has_country_flag = YUN_OPEN
-		}
 
 		cost = 50
 		days_remove = 120
@@ -11490,10 +11357,6 @@ GEA_focus_china_decisions = {#第二次对华远征
 			}
 		}
 		targets = { YUN }
-		target_root_trigger = {
-			has_completed_focus = GEA_Deep_into_the_mountains
-			has_country_flag = YUN_OPEN
-		}
 
 		cost = 40
 		days_remove = 45
@@ -11556,6 +11419,323 @@ GEA_focus_china_decisions = {#第二次对华远征
 		}
 	}
 
+	GEA_yun_expand_gejiu_mines = { #个旧矿区扩建
+		allowed = {
+			original_tag = GEA
+		}
+		icon = GFX_GEA_Investment_in_smelting_technology_decision
+
+		visible = {
+			has_completed_focus = GEA_Renegotiation_of_Yunnan-Guizhou_Mining_Company
+			has_country_flag = YUN_OPEN
+			GEA_yunnan_non_anti_concession_controller_trigger = yes
+		}
+		available = {
+			GEA_yunnan_non_anti_concession_controller_trigger = yes
+			NOT = {
+				has_war_with = YUN
+			}
+			325 = {
+				is_owned_and_controlled_by = YUN
+			}
+			325 = {
+				free_building_slots = {
+					building = industrial_complex
+					size > 0
+					include_locked = yes
+				}
+			}
+		}
+		targets = { YUN }
+
+		cost = 50
+		days_remove = 120
+		fire_only_once = yes
+		cancel_if_not_visible = no
+		cancel_trigger = {
+			NOT = {
+				AND = {
+					GEA_yunnan_non_anti_concession_controller_trigger = yes
+					NOT = {
+						has_war_with = YUN
+					}
+					325 = {
+						is_owned_and_controlled_by = YUN
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 30
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					GEA_yunnan_non_anti_concession_controller_trigger = yes
+					NOT = {
+						has_war_with = YUN
+					}
+					325 = {
+						is_owned_and_controlled_by = YUN
+					}
+				}
+				log = "[GetDateText]: [Root.GetName]: Decision remove GEA_yun_expand_gejiu_mines"
+				325 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+					if = {
+						limit = {
+							infrastructure < 5
+						}
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+				add_resource = {
+					type = tungsten
+					amount = 16
+					state = 325
+				}
+				custom_effect_tooltip = GEA_china_yun_name_tt
+				add_to_variable = {
+					GEA_china_yun_attitude = 5
+					tooltip = GEA_china_attitude_change_tt
+				}
+				add_to_variable = {
+					GEA_china_yun_capital_influence = 15
+					tooltip = GEA_china_capital_influence_change_tt
+				}
+				hidden_effect = {
+					clamp_variable = {
+						var = GEA_china_yun_attitude
+						min = 0
+						max = 100
+					}
+					clamp_variable = {
+						var = GEA_china_yun_capital_influence
+						min = 0
+						max = 100
+					}
+				}
+			}
+		}
+	}
+
+	GEA_yun_develop_western_mines = { #滇西矿业开发
+		allowed = {
+			original_tag = GEA
+		}
+		icon = GFX_GEA_Investment_in_smelting_technology_decision
+
+		visible = {
+			has_completed_focus = GEA_Renegotiation_of_Yunnan-Guizhou_Mining_Company
+			has_country_flag = YUN_OPEN
+			GEA_yunnan_non_anti_concession_controller_trigger = yes
+		}
+		available = {
+			GEA_yunnan_non_anti_concession_controller_trigger = yes
+			NOT = {
+				has_war_with = YUN
+			}
+			816 = {
+				is_owned_and_controlled_by = YUN
+			}
+			816 = {
+				free_building_slots = {
+					building = industrial_complex
+					size > 0
+					include_locked = yes
+				}
+			}
+		}
+		targets = { YUN }
+
+		cost = 50
+		days_remove = 120
+		fire_only_once = yes
+		cancel_if_not_visible = no
+		cancel_trigger = {
+			NOT = {
+				AND = {
+					GEA_yunnan_non_anti_concession_controller_trigger = yes
+					NOT = {
+						has_war_with = YUN
+					}
+					816 = {
+						is_owned_and_controlled_by = YUN
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 30
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					GEA_yunnan_non_anti_concession_controller_trigger = yes
+					NOT = {
+						has_war_with = YUN
+					}
+					816 = {
+						is_owned_and_controlled_by = YUN
+					}
+				}
+				log = "[GetDateText]: [Root.GetName]: Decision remove GEA_yun_develop_western_mines"
+				816 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+					if = {
+						limit = {
+							infrastructure < 5
+						}
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+				add_resource = {
+					type = steel
+					amount = 8
+					state = 816
+				}
+				add_resource = {
+					type = tungsten
+					amount = 8
+					state = 816
+				}
+				custom_effect_tooltip = GEA_china_yun_name_tt
+				add_to_variable = {
+					GEA_china_yun_attitude = 5
+					tooltip = GEA_china_attitude_change_tt
+				}
+				add_to_variable = {
+					GEA_china_yun_capital_influence = 15
+					tooltip = GEA_china_capital_influence_change_tt
+				}
+				hidden_effect = {
+					clamp_variable = {
+						var = GEA_china_yun_attitude
+						min = 0
+						max = 100
+					}
+					clamp_variable = {
+						var = GEA_china_yun_capital_influence
+						min = 0
+						max = 100
+					}
+				}
+			}
+		}
+	}
+
+	GEA_yun_force_purchase_gejiu_rights = { #强购个旧矿权
+		allowed = {
+			original_tag = GEA
+		}
+		icon = GFX_GEA_Investment_in_smelting_technology_decision
+
+		visible = {
+			has_completed_focus = GEA_Renegotiation_of_Yunnan-Guizhou_Mining_Company
+			has_country_flag = YUN_OPEN
+			GEA_yunnan_non_anti_concession_controller_trigger = yes
+		}
+		available = {
+			GEA_yunnan_non_anti_concession_controller_trigger = yes
+			NOT = {
+				has_war_with = YUN
+			}
+			325 = {
+				is_owned_and_controlled_by = YUN
+			}
+			custom_trigger_tooltip = {
+				tooltip = GEA_yun_mining_capital_at_least_30_tt
+				check_variable = {
+					var = GEA_china_yun_capital_influence
+					value = 30
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		targets = { YUN }
+
+		cost = 60
+		days_remove = 60
+		fire_only_once = yes
+		cancel_if_not_visible = no
+		cancel_trigger = {
+			NOT = {
+				AND = {
+					GEA_yunnan_non_anti_concession_controller_trigger = yes
+					NOT = {
+						has_war_with = YUN
+					}
+					325 = {
+						is_owned_and_controlled_by = YUN
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 30
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					GEA_yunnan_non_anti_concession_controller_trigger = yes
+					NOT = {
+						has_war_with = YUN
+					}
+					325 = {
+						is_owned_and_controlled_by = YUN
+					}
+				}
+				log = "[GetDateText]: [Root.GetName]: Decision remove GEA_yun_force_purchase_gejiu_rights"
+				YUN = {
+					give_resource_rights = {
+						receiver = ROOT
+						state = 325
+						resources = { tungsten }
+					}
+				}
+				custom_effect_tooltip = GEA_china_yun_name_tt
+				add_to_variable = {
+					GEA_china_yun_attitude = -10
+					tooltip = GEA_china_attitude_change_tt
+				}
+				add_to_variable = {
+					GEA_china_yun_capital_influence = 20
+					tooltip = GEA_china_capital_influence_change_tt
+				}
+				hidden_effect = {
+					clamp_variable = {
+						var = GEA_china_yun_attitude
+						min = 0
+						max = 100
+					}
+					clamp_variable = {
+						var = GEA_china_yun_capital_influence
+						min = 0
+						max = 100
+					}
+				}
+			}
+		}
+	}
+
 	GEA_sqi_invest_in_shandong = {
 		icon = GFX_GEA_Invest_in_East_China_decision
 		allowed = { original_tag = GEA }
@@ -11569,10 +11749,6 @@ GEA_focus_china_decisions = {#第二次对华远征
 			GEA_shandong_non_anti_concession_controller_trigger = yes
 		}
 		targets = { SQI }
-		target_root_trigger = {
-			has_completed_focus = GEA_Copy_the_Qingdao_model
-			has_country_flag = SQI_OPEN
-		}
 		available = {
 			NOT = { has_war_with = SQI }
 			GEA_shandong_non_anti_concession_controller_trigger = yes
@@ -11620,10 +11796,6 @@ GEA_focus_china_decisions = {#第二次对华远征
 			GEA_shandong_non_anti_concession_controller_trigger = yes
 		}
 		targets = { SQI }
-		target_root_trigger = {
-			has_completed_focus = GEA_Copy_the_Qingdao_model
-			has_country_flag = SQI_OPEN
-		}
 		available = {
 			NOT = { has_war_with = SQI }
 			GEA_shandong_non_anti_concession_controller_trigger = yes
@@ -11676,10 +11848,6 @@ GEA_focus_china_decisions = {#第二次对华远征
 			GEA_shandong_non_anti_concession_controller_trigger = yes
 		}
 		targets = { SQI }
-		target_root_trigger = {
-			has_completed_focus = GEA_Copy_the_Qingdao_model
-			has_country_flag = SQI_OPEN
-		}
 		available = {
 			NOT = { has_war_with = SQI }
 			GEA_shandong_non_anti_concession_controller_trigger = yes
@@ -11724,10 +11892,6 @@ GEA_focus_china_decisions = {#第二次对华远征
 			GEA_shandong_non_anti_concession_controller_trigger = yes
 		}
 		targets = { SQI }
-		target_root_trigger = {
-			has_completed_focus = GEA_Copy_the_Qingdao_model
-			has_country_flag = SQI_OPEN
-		}
 		available = {
 			NOT = { has_war_with = SQI }
 			GEA_shandong_non_anti_concession_controller_trigger = yes
@@ -11782,10 +11946,6 @@ GEA_focus_china_decisions = {#第二次对华远征
 			GEA_shandong_non_anti_concession_controller_trigger = yes
 		}
 		targets = { SQI }
-		target_root_trigger = {
-			has_completed_focus = GEA_Copy_the_Qingdao_model
-			has_country_flag = SQI_OPEN
-		}
 		available = {
 			NOT = { has_war_with = SQI }
 			GEA_shandong_non_anti_concession_controller_trigger = yes
@@ -11859,10 +12019,6 @@ GEA_focus_china_decisions = {#第二次对华远征
 			GEA_shandong_non_anti_concession_controller_trigger = yes
 		}
 		targets = { SQI }
-		target_root_trigger = {
-			has_completed_focus = GEA_Copy_the_Qingdao_model
-			has_country_flag = SQI_OPEN
-		}
 		available = {
 			NOT = { has_war_with = SQI }
 			GEA_shandong_non_anti_concession_controller_trigger = yes
@@ -11919,10 +12075,6 @@ GEA_focus_china_decisions = {#第二次对华远征
 			NOT = { GEA_shandong_non_anti_concession_controller_trigger = yes }
 		}
 		targets = { SQI }
-		target_root_trigger = {
-			has_completed_focus = GEA_deal_with_the_shandong_clique
-			has_country_flag = SQI_OPEN
-		}
 		available = {
 			date > 1938.7.1
 			NOT = { has_war_with = SQI }
@@ -12142,10 +12294,6 @@ GEA_focus_china_decisions = {#第二次对华远征
 			QIE = { exists = yes }
 		}
 		targets = { QIE }
-		target_root_trigger = {
-			has_completed_focus = GEA_Protect_our_property_rights
-			has_country_flag = QIE_OPEN
-		}
 
 		available = {
 			NOT = { has_war_with = QIE }
@@ -12207,10 +12355,6 @@ GEA_focus_china_decisions = {#第二次对华远征
 		}
 
 		targets = { QIE }
-		target_root_trigger = {
-			has_completed_focus = GEA_Establish_a_development_special_zone
-			has_country_flag = QIE_OPEN
-		}
 
 		available = {
 			custom_trigger_tooltip = {
@@ -12306,10 +12450,6 @@ GEA_focus_china_decisions = {#第二次对华远征
 			GEA_qie_non_anti_concession_controller_trigger = yes
 		}
 		targets = { QIE }
-		target_root_trigger = {
-			has_completed_focus = GEA_Establish_a_development_special_zone
-			has_country_flag = QIE_OPEN
-		}
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = GEA_qie_no_development_in_progress_tt
@@ -12397,10 +12537,6 @@ GEA_focus_china_decisions = {#第二次对华远征
 			GEA_qie_non_anti_concession_controller_trigger = yes
 		}
 		targets = { QIE }
-		target_root_trigger = {
-			has_completed_focus = GEA_Establish_a_development_special_zone
-			has_country_flag = QIE_OPEN
-		}
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = GEA_qie_no_development_in_progress_tt
@@ -12489,10 +12625,6 @@ GEA_focus_china_decisions = {#第二次对华远征
 			GEA_qie_non_anti_concession_controller_trigger = yes
 		}
 		targets = { QIE }
-		target_root_trigger = {
-			has_completed_focus = GEA_Tighten_the_reins
-			has_country_flag = QIE_OPEN
-		}
 		available = {
 			NOT = { has_war_with = QIE }
 			GEA_qie_non_anti_concession_controller_trigger = yes
@@ -12543,10 +12675,6 @@ GEA_focus_china_decisions = {#第二次对华远征
 				}
 		}
 		targets = { QIE }
-		target_root_trigger = {
-			has_completed_focus = GEA_Tighten_the_reins
-			has_country_flag = QIE_OPEN
-		}
 
 		available = {
 			NOT = { has_war_with = QIE }
@@ -12605,10 +12733,6 @@ GEA_focus_china_decisions = {#第二次对华远征
 			GEA_qie_non_anti_concession_controller_trigger = yes
 		}
 		targets = { QIE }
-		target_root_trigger = {
-			has_completed_focus = GEA_Tighten_the_reins
-			has_country_flag = QIE_OPEN
-		}
 		available = {
 			NOT = { has_war_with = QIE }
 			GEA_qie_non_anti_concession_controller_trigger = yes
@@ -12664,10 +12788,6 @@ GEA_focus_china_decisions = {#第二次对华远征
 			GEA_qie_non_anti_concession_controller_trigger = yes
 		}
 		targets = { QIE }
-		target_root_trigger = {
-			has_completed_focus = GEA_Tighten_the_reins
-			has_country_flag = QIE_OPEN
-		}
 		available = {
 			NOT = { has_war_with = QIE }
 			GEA_qie_non_anti_concession_controller_trigger = yes
@@ -12724,10 +12844,6 @@ GEA_focus_china_decisions = {#第二次对华远征
 			GEA_qie_non_anti_concession_controller_trigger = yes
 		}
 		targets = { QIE }
-		target_root_trigger = {
-			has_completed_focus = GEA_Supporting_Prosperity_Alliance
-			has_country_flag = QIE_OPEN
-		}
 		available = {
 			NOT = { has_war_with = QIE }
 			GEA_qie_non_anti_concession_controller_trigger = yes
@@ -12777,10 +12893,6 @@ GEA_focus_china_decisions = {#第二次对华远征
 			GEA_qie_non_anti_concession_controller_trigger = yes
 		}
 		targets = { QIE }
-		target_root_trigger = {
-			has_completed_focus = GEA_Supporting_Prosperity_Alliance
-			has_country_flag = QIE_OPEN
-		}
 		available = {
 			NOT = { has_war_with = QIE }
 			GEA_qie_non_anti_concession_controller_trigger = yes
@@ -12837,10 +12949,6 @@ GEA_focus_china_decisions = {#第二次对华远征
 			GEA_qie_non_anti_concession_controller_trigger = yes
 		}
 		targets = { QIE }
-		target_root_trigger = {
-			has_completed_focus = GEA_Supporting_Prosperity_Alliance
-			has_country_flag = QIE_OPEN
-		}
 		available = {
 			NOT = { has_war_with = QIE }
 			GEA_qie_non_anti_concession_controller_trigger = yes
@@ -12894,10 +13002,6 @@ GEA_focus_china_decisions = {#第二次对华远征
 			GEA_qie_non_anti_concession_controller_trigger = yes
 		}
 		targets = { QIE }
-		target_root_trigger = {
-			has_completed_focus = GEA_Loyalty_has_its_rewards
-			has_country_flag = QIE_OPEN
-		}
 		available = {
 			NOT = { has_war_with = QIE }
 			GEA_qie_non_anti_concession_controller_trigger = yes
@@ -12957,10 +13061,6 @@ GEA_focus_china_decisions = {#第二次对华远征
 			GEA_qie_non_anti_concession_controller_trigger = yes
 		}
 		targets = { QIE }
-		target_root_trigger = {
-			has_completed_focus = GEA_Loyalty_has_its_rewards
-			has_country_flag = QIE_OPEN
-		}
 		available = {
 			NOT = { has_war_with = QIE }
 			GEA_qie_non_anti_concession_controller_trigger = yes
@@ -13024,10 +13124,6 @@ GEA_focus_china_decisions = {#第二次对华远征
 		}
 
 		targets = { QIE }
-		target_root_trigger = {
-			has_completed_focus = GEA_Loyalty_has_its_rewards
-			has_country_flag = QIE_OPEN
-		}
 		available = {
 			NOT = { has_war_with = QIE }
 			GEA_qie_non_anti_concession_controller_trigger = yes
@@ -13080,7 +13176,7 @@ GEA_focus_china_decisions = {#第二次对华远征
 			NOT = {
 				country_exists = LEC
 			}
-			has_completed_focus = GEA_Dissolution_of_lec
+			has_completed_focus = GEA_Seal_off_the_borders_of_other_countries
 		}
 		available = {
 			owns_state = 743
@@ -13111,7 +13207,7 @@ GEA_focus_china_decisions = {#第二次对华远征
 					owns_state = 729
 				}
 			}
-			has_completed_focus = GEA_Capture_of_Macau
+			has_completed_focus = GEA_Lisbon_Hotline
 		}
 		available = {
 			owns_state = 729
@@ -14519,7 +14615,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		cancel_trigger = {
 			OR = {
 				NOT = {
-					exists = GER
+					country_exists = GER
 				}
 				has_war_with = GER
 			}
@@ -14605,7 +14701,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		cancel_trigger = {
 			OR = {
 				NOT = {
-					exists = GER
+					country_exists = GER
 				}
 				has_war_with = GER
 			}
@@ -14688,7 +14784,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		cancel_trigger = {
 			OR = {
 				NOT = {
-					exists = GER
+					country_exists = GER
 				}
 				has_war_with = GER
 			}
@@ -15461,7 +15557,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		cancel_trigger = {
 			OR = {
 				NOT = {
-					exists = GER
+					country_exists = GER
 				}
 				has_war_with = GER
 			}
@@ -20471,7 +20567,9 @@ political_actions = {
 			custom_trigger_tooltip = {
 				tooltip = GEA_military_expansion_target_tt
 				check_variable = {
-					deployed_army_manpower_k >= GEA_military_expansion_target_k
+					var = deployed_army_manpower_k
+					value = GEA_military_expansion_target_k
+					compare = greater_than_or_equals
 				}
 			}
 		}
