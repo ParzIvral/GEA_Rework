@@ -6669,6 +6669,9 @@ focus_tree = {
 					GEA_support_times < GEA_support_capcity
 				}
 			}
+			NOT = {
+				has_completed_focus = GEA_IG_fraben_brought_progress
+			}
 		}
 		relative_position_id = GEA_The_Pillar_of_the_Far_East
 		prerequisite = {
@@ -6765,6 +6768,9 @@ focus_tree = {
 					GEA_support_times < GEA_support_capcity
 				}
 			}
+			NOT = {
+				has_completed_focus = GEA_Krupp_brought_armaments
+			}
 		}
 		relative_position_id = GEA_The_Pillar_of_the_Far_East
 		prerequisite = {
@@ -6795,6 +6801,9 @@ focus_tree = {
 			add_to_variable = {
 				GEA_Economic_research_speed = 0.08
 				tooltip = research_speed_factor_tt
+			}
+			add_to_variable = {
+				GEA_support_times = 1
 			}
 		}
 	}
@@ -6915,6 +6924,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Malicious_poison"
+			unlock_decision_tooltip = GEA_Use_poison_gas
 			custom_effect_tooltip = GEA_Malicious_poison_army_tt_2
 			custom_effect_tooltip = tooltip_white_line
 			custom_effect_tooltip = {
@@ -7179,6 +7189,9 @@ focus_tree = {
 			add_to_variable = {
 				GEA_Economic_industrial_capacity_factory_powered = 0.09
 				tooltip = industrial_capacity_factory_powered_tt
+			}
+			add_to_variable = {
+				GEA_support_times = 1
 			}
 		}
 	}
@@ -7835,6 +7848,9 @@ focus_tree = {
 				GEA_Economic_consumer_goods = -0.05
 				tooltip = consumer_goods_factor_tt
 			}
+			add_to_variable = {
+				GEA_support_times = 1
+			}
 		}
 	}
 	focus = { #放宽信贷
@@ -7954,6 +7970,18 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Tighten_control_of_the_eastern_railway_network"
+			custom_effect_tooltip = {
+				localization_key = tooltip_modify_dynmod
+				DYNMOD = GEA_Economic_modifier
+			}
+			add_to_variable = {
+				GEA_Economic_infrastructure_speed = 0.04
+				tooltip = production_speed_infrastructure_factor_tt
+			}
+			add_to_variable = {
+				GEA_Economic_railway_speed = 0.11
+				tooltip = production_speed_rail_way_factor_tt
+			}	
 			if = {
 				limit = {
 					country_exists = LEP
@@ -7971,19 +7999,6 @@ focus_tree = {
 					}
 				}
 			}			
-			custom_effect_tooltip = tooltip_white_line
-			custom_effect_tooltip = {
-				localization_key = tooltip_modify_dynmod
-				DYNMOD = GEA_Economic_modifier
-			}
-			add_to_variable = {
-				GEA_Economic_infrastructure_speed = 0.04
-				tooltip = production_speed_infrastructure_factor_tt
-			}
-			add_to_variable = {
-				GEA_Economic_railway_speed = 0.11
-				tooltip = production_speed_rail_way_factor_tt
-			}
 		}
 	}
 	focus = { #清算东亚不良资产
@@ -8130,6 +8145,9 @@ focus_tree = {
 			add_to_variable = {
 				GEA_Economic_stability_weekly = 0.003
 				tooltip = stability_weekly_tooltip
+			}
+			add_to_variable = {
+				GEA_support_times = 1
 			}
 		}
 	}
@@ -9738,12 +9756,12 @@ focus_tree = {
 		}
 		prerequisite = {
 			focus = GEA_Ostasiatische_Heer
+			focus = GEA_emergency_meeting
 		}
 		relative_position_id = GEA_Ostasiatische_Heer
 		available = {
 
 		}
-		
 		search_filters = { FOCUS_FILTER_MANPOWER }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Rebuild_the_mobilization_system"
@@ -9776,6 +9794,7 @@ focus_tree = {
 		}
 		prerequisite = {
 			focus = GEA_Ostasiatische_Heer
+			focus = GEA_emergency_meeting
 		}
 		relative_position_id = GEA_Ostasiatische_Heer
 		available = {
@@ -9799,6 +9818,7 @@ focus_tree = {
 		}
 		prerequisite = {
 			focus = GEA_Ostasiatische_Heer
+			focus = GEA_emergency_meeting
 		}
 		relative_position_id = GEA_Ostasiatische_Heer
 		available = {
@@ -15596,6 +15616,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Head_for_the_center_of_the_Pacific_Ocean"
+			custom_effect_tooltip = GEA_Head_for_the_center_of_the_Pacific_Ocean_tt
 			if = {
 				limit = {
 					OR = {
@@ -15611,11 +15632,21 @@ focus_tree = {
 				}
 			}
 			else_if = {
-				limit = { HAW = { exists = yes is_in_faction = no } }
+				limit = { 
+					HAW = { 
+						exists = yes 
+						is_in_faction = no 
+					} 
+				}
 				HAW = { country_event = { id = GEA.807 } }
 			}
 			else_if = {
-				limit = { HAW = { exists = yes is_in_faction = yes } }
+				limit = { 
+					HAW = { 
+						exists = yes 
+						is_in_faction = yes 
+					} 
+				}
 				set_country_flag = GEA_ocean_heart_war_plan_unlocked
 				unlock_decision_tooltip = GEA_War_plan_Ocean_Heart
 			}
@@ -17036,7 +17067,7 @@ focus_tree = {
 		}
 		available = {
 			GEA_yunnan_non_anti_concession_controller_trigger = yes
-
+			GEA_indochina_can_interact_trigger = yes
 		}			
 		prerequisite = {
 			focus = GEA_Deep_into_the_mountains
@@ -17044,6 +17075,76 @@ focus_tree = {
 		relative_position_id = GEA_Deep_into_the_mountains
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Open_Yunnan-Vietnam_communication_line"
+			325 = {
+				if = {
+					limit = {
+						is_owned_and_controlled_by = YUN
+						infrastructure < 5
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			670 = {
+				if = {
+					limit = {
+						owner = {
+							tag = GEA
+						}
+						controller = {
+							tag = GEA
+						}
+						infrastructure < 5
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			671 = {
+				if = {
+					limit = {
+						owner = {
+							tag = GEA
+						}
+						controller = {
+							tag = GEA
+						}
+						infrastructure < 5
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			857 = {
+				if = {
+					limit = {
+						owner = {
+							tag = GEA
+						}
+						controller = {
+							tag = GEA
+						}
+						infrastructure < 5
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			unlock_decision_tooltip = GEA_yun_haiphong_hanoi_railway
+			unlock_decision_tooltip = GEA_yun_hanoi_laocai_railway
+			unlock_decision_tooltip = GEA_yun_hekou_kunming_railway
 		}	
 	}
 
@@ -17067,6 +17168,199 @@ focus_tree = {
 		relative_position_id = GEA_Deep_into_the_mountains
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Opening_up_the_mainland"
+			custom_effect_tooltip = GEA_Opening_up_the_mainland_reward_tt
+				if = {
+					limit = {
+						check_variable = {
+							var = GEA_china_yun_capital_influence
+							value = 80
+							compare = greater_than_or_equals
+						}
+						check_variable = {
+							var = GEA_china_yun_attitude
+							value = 80
+							compare = greater_than_or_equals
+						}
+					}
+					add_political_power = 150
+					YUN = {
+						add_ideas = GEA_german_controlled_economic_market_Yun_5
+					}
+					if = {
+						limit = {
+							any_owned_state = {
+								is_controlled_by = ROOT
+								free_building_slots = {
+									building = industrial_complex
+									size > 3
+									include_locked = yes
+								}
+							}
+						}
+						random_owned_controlled_state = {
+							limit = {
+								free_building_slots = {
+									building = industrial_complex
+									size > 3
+									include_locked = yes
+								}
+							}
+							add_extra_state_shared_building_slots = 4
+							add_building_construction = {
+								type = industrial_complex
+								level = 2
+								instant_build = yes
+							}
+							add_building_construction = {
+								type = arms_factory
+								level = 2
+								instant_build = yes
+							}
+						}
+					}
+					else = {
+						add_offsite_building = {
+							type = industrial_complex
+							level = 2
+						}
+						add_offsite_building = {
+							type = arms_factory
+							level = 2
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						check_variable = {
+							var = GEA_china_yun_capital_influence
+							value = 60
+							compare = greater_than_or_equals
+						}
+						check_variable = {
+							var = GEA_china_yun_attitude
+							value = 60
+							compare = greater_than_or_equals
+						}
+					}
+					add_political_power = 100
+					YUN = {
+						add_ideas = GEA_german_controlled_economic_market_Yun_4
+					}
+					if = {
+						limit = {
+							any_owned_state = {
+								is_controlled_by = ROOT
+								free_building_slots = {
+									building = industrial_complex
+									size > 1
+									include_locked = yes
+								}
+							}
+						}
+						random_owned_controlled_state = {
+							limit = {
+								free_building_slots = {
+									building = industrial_complex
+									size > 1
+									include_locked = yes
+								}
+							}
+							add_extra_state_shared_building_slots = 2
+							add_building_construction = {
+								type = industrial_complex
+								level = 1
+								instant_build = yes
+							}
+							add_building_construction = {
+								type = arms_factory
+								level = 1
+								instant_build = yes
+							}
+						}
+					}
+					else = {
+						add_offsite_building = {
+							type = industrial_complex
+							level = 1
+						}
+						add_offsite_building = {
+							type = arms_factory
+							level = 1
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						check_variable = {
+							var = GEA_china_yun_capital_influence
+							value = 40
+							compare = greater_than_or_equals
+						}
+					}
+					add_political_power = 75
+					YUN = {
+						add_ideas = GEA_german_controlled_economic_market_Yun_3
+					}
+				}
+				else_if = {
+					limit = {
+						check_variable = {
+							var = GEA_china_yun_capital_influence
+							value = 20
+							compare = greater_than_or_equals
+						}
+					}
+					add_political_power = 50
+					YUN = {
+						add_ideas = GEA_german_controlled_economic_market_Yun_2
+					}
+				}
+				else = {
+					add_political_power = 25
+					YUN = {
+						add_ideas = GEA_german_controlled_economic_market_Yun_1
+					}
+				}
+				if = {
+					limit = {
+						check_variable = {
+							var = GEA_china_yun_military_projection
+							value = 70
+							compare = greater_than_or_equals
+						}
+						check_variable = {
+							var = GEA_china_yun_attitude
+							value = 60
+							compare = greater_than_or_equals
+						}
+					}
+					army_experience = 30
+					YUN = {
+						give_military_access = ROOT
+					}
+					add_doctrine_cost_reduction = {
+						name = GEA_Opening_up_the_mainland
+						cost_reduction = 0.50
+						uses = 1
+						category = land_doctrine
+					}
+				}
+				else_if = {
+					limit = {
+						check_variable = {
+							var = GEA_china_yun_military_projection
+							value = 40
+							compare = greater_than_or_equals
+						}
+					}
+					army_experience = 20
+					YUN = {
+						give_military_access = ROOT
+					}
+				}
+				else = {
+					army_experience = 10
+				}
 		}	
 	}
 
@@ -17765,6 +18059,7 @@ focus_tree = {
 		relative_position_id = GEA_A_desperate_last_ditch_effort
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Summarize_the_lessons_learned_from_the_war"
+			army_experience = 50
 			add_mastery_bonus = {
 				name = GEA_Summarize_the_lessons_learned_from_the_war
 				bonus = 0.10
@@ -17797,7 +18092,10 @@ focus_tree = {
 			factor = 100
 		}
 		available = {
-
+			custom_trigger_tooltip = {
+				tooltip = GEX_fled_to_us_tooltip
+				GEX_fled_to_us = yes
+			}
 		}	
 		prerequisite = {
 			focus = GEA_Sourness_and_Peace
@@ -17812,7 +18110,7 @@ focus_tree = {
 				DYNMOD = GEA_gea_army
 			}
 			add_to_variable = {
-				GEA_army_conscription = -0.02
+				GEA_army_conscription = -0.01
 				tooltip = conscription_tt
 			}
 			add_to_variable = {
@@ -17841,7 +18139,10 @@ focus_tree = {
 			factor = 100
 		}
 		available = {
-
+			custom_trigger_tooltip = {
+				tooltip = GEX_fled_to_us_tooltip
+				GEX_fled_to_us = yes
+			}
 		}	
 		prerequisite = {
 			focus = GEA_Sourness_and_Peace
@@ -17865,6 +18166,10 @@ focus_tree = {
 			factor = 100
 		}
 		available = {
+			custom_trigger_tooltip = {
+				tooltip = GEX_fled_to_us_tooltip
+				GEX_fled_to_us = yes
+			}
 			is_subject = no
 			ENT = {
 				exists = yes
@@ -17993,6 +18298,10 @@ focus_tree = {
 					has_completed_focus = GEA_Goodbye_sweet_Europa
 				}
 			}
+			custom_trigger_tooltip = {
+				tooltip = GEX_fled_to_us_tooltip
+				GEX_fled_to_us = yes
+			}
 		}	
 		prerequisite = {
 			focus = GEA_A_small_but_highly_efficient_force
@@ -18006,6 +18315,7 @@ focus_tree = {
 		relative_position_id = GEA_A_small_but_highly_efficient_force
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Crossing_mountains_and_rivers"
+			add_ideas = GEA_Crossing_mountains_and_rivers_idea
 		}	
 	}
 
@@ -18020,6 +18330,10 @@ focus_tree = {
 			factor = 100
 		}
 		available = {
+			custom_trigger_tooltip = {
+				tooltip = GEX_fled_to_us_tooltip
+				GEX_fled_to_us = yes
+			}
 			NOT = {
 				OR = {
 					has_completed_focus = GEA_The_consensus_of_the_returnees

@@ -2481,6 +2481,20 @@ ideas = {
 			}
 		}
 #流亡
+		GEA_Crossing_mountains_and_rivers_idea = { #跋山涉水
+			picture = GER_Guderian_Secondary_Spirit
+			allowed = {
+				always = no
+			}
+			modifier = {
+				justify_war_goal_time = -0.75
+				invasion_preparation = -0.50
+				navy_max_range_factor = 0.08
+				naval_invasion_capacity = 20
+				amphibious_invasion = 0.20
+				naval_invasion_penalty = -0.20
+			}
+		}
 		GEA_desperate_last_stand = {
 			picture = GER_quenched_militarism
 			allowed = {
@@ -2501,9 +2515,12 @@ ideas = {
 			picture = GER_Desperate_Struggle_Third
 			allowed = { always = no }
 			modifier = {
-				war_support_factor = -0.15
-				monthly_population = 0.05
-				mobilization_speed = -0.1
+				political_power_factor = -0.1
+				industrial_capacity_factory = 0.1
+				consumer_goods_factor = -0.05
+				production_speed_buildings_factor = 0.03
+				local_resources_factor = 0.04
+
 			}
 		}
 		GEA_Sour_failure = { #苦涩的失败
@@ -2511,11 +2528,9 @@ ideas = {
 			picture = GER_quenched_militarism
 			allowed = { always = no }
 			modifier = {
-				political_power_factor = -0.1
-				industrial_capacity_factory = 0.1
-				consumer_goods_factor = -0.05
-				production_speed_buildings_factor = 0.03
-				local_resources_factor = 0.04
+				war_support_factor = -0.15
+				monthly_population = 0.05
+				mobilization_speed = -0.1
 			}
 		}
 		GEA_Sour_failure_2 = { #苦涩的失败
@@ -2649,6 +2664,92 @@ ideas = {
 				tag = LEP
 				attack_bonus_against = -0.05
 				defense_bonus_against = -0.05
+			}
+		}
+		GEA_german_controlled_economic_market_Yun_1 = { #对德市场开放
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_german_controlled_economic_market_Yun_1" }
+			picture = GER_Bank_Controls
+			allowed = { always = no }
+			modifier = {
+				political_power_cost = 0.02
+				production_speed_buildings_factor = 0.05
+				consumer_goods_factor = -0.05
+				industrial_capacity_factory = 0.05
+			}
+			targeted_modifier = {
+				tag = GEA
+				cic_to_target_factor = 0.1
+				mic_to_target_factor = 0.1
+			}
+		}
+		GEA_german_controlled_economic_market_Yun_2 = { #对德市场开放
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_german_controlled_economic_market_Yun_2" }
+			name = GEA_german_controlled_economic_market_Yun_1
+			picture = GER_Bank_Controls
+			allowed = { always = no }
+			modifier = {
+				political_power_cost = 0.04
+				production_speed_buildings_factor = 0.075
+				consumer_goods_factor = -0.05
+				industrial_capacity_factory = 0.08
+			}
+			targeted_modifier = {
+				tag = GEA
+				cic_to_target_factor = 0.15
+				mic_to_target_factor = 0.15
+			}
+		}
+		GEA_german_controlled_economic_market_Yun_3 = { #对德市场开放
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_german_controlled_economic_market_Yun_3" }
+			name = GEA_german_controlled_economic_market_Yun_1
+			picture = GER_Bank_Controls
+			allowed = { always = no }
+			modifier = {
+				political_power_cost = 0.06
+				production_speed_buildings_factor = 0.1
+				consumer_goods_factor = -0.1
+				industrial_capacity_factory = 0.08
+			}
+			targeted_modifier = {
+				tag = GEA
+				cic_to_target_factor = 0.2
+				mic_to_target_factor = 0.2
+			}
+		}
+		GEA_german_controlled_economic_market_Yun_4 = { #对德市场开放
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_german_controlled_economic_market_Yun_4" }
+			name = GEA_german_controlled_economic_market_Yun_1
+			picture = GER_Bank_Controls
+			allowed = { always = no }
+			modifier = {
+				political_power_cost = 0.08
+				production_speed_buildings_factor = 0.12
+				consumer_goods_factor = -0.1
+				industrial_capacity_factory = 0.1
+			}
+			targeted_modifier = {
+				tag = GEA
+				cic_to_target_factor = 0.2
+				mic_to_target_factor = 0.2
+				trade_cost_for_target_factor = -0.25
+			}
+		}
+		GEA_german_controlled_economic_market_Yun_5 = { #对德市场开放
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_german_controlled_economic_market_Yun_5" }
+			name = GEA_german_controlled_economic_market_Yun_1
+			picture = GER_Bank_Controls
+			allowed = { always = no }
+			modifier = {
+				political_power_cost = 0.1
+				production_speed_buildings_factor = 0.15
+				consumer_goods_factor = -0.15
+				industrial_capacity_factory = 0.15
+			}
+			targeted_modifier = {
+				tag = GEA
+				cic_to_target_factor = 0.25
+				mic_to_target_factor = 0.25
+				trade_cost_for_target_factor = -0.5
 			}
 		}
 #

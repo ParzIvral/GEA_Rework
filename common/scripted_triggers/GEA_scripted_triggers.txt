@@ -166,3 +166,31 @@ GEA_east_china_coup_threshold_trigger = {#可政变条件
 		}
 	}
 }
+GEA_yunnan_vietnam_railway_access_trigger = {
+	custom_trigger_tooltip = {
+		tooltip = GEA_yun_vietnam_railway_access_tt
+		GEA_yunnan_non_anti_concession_controller_trigger = yes
+		NOT = {
+			has_war_with = YUN
+		}
+		325 = {
+			is_owned_and_controlled_by = YUN
+		}
+		671 = {
+			owner = {
+				tag = GEA
+			}
+			controller = {
+				tag = GEA
+			}
+		}
+		857 = {
+			owner = {
+				tag = GEA
+			}
+			controller = {
+				tag = GEA
+			}
+		}
+	}
+}

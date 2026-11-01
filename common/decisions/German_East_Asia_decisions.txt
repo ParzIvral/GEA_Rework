@@ -11736,6 +11736,135 @@ GEA_focus_china_decisions = {#第二次对华远征
 		}
 	}
 
+	GEA_yun_haiphong_hanoi_railway = { #海防—河内联运改造
+		allowed = {
+			original_tag = GEA
+		}
+		icon = railroad
+
+		visible = {
+			has_completed_focus = GEA_Open_Yunnan-Vietnam_communication_line
+			has_country_flag = YUN_OPEN
+			GEA_yunnan_non_anti_concession_controller_trigger = yes
+		}
+		available = {
+			GEA_yunnan_vietnam_railway_access_trigger = yes
+		}
+		targets = { YUN }
+
+		cost = 30
+		days_remove = 60
+		fire_only_once = yes
+		cancel_if_not_visible = no
+		cancel_trigger = {
+			NOT = {
+				GEA_yunnan_vietnam_railway_access_trigger = yes
+			}
+		}
+		ai_will_do = {
+			factor = 30
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					GEA_yunnan_vietnam_railway_access_trigger = yes
+				}
+				log = "[GetDateText]: [Root.GetName]: Decision remove GEA_yun_haiphong_hanoi_railway"
+				build_railway = {
+					level = 3
+					build_only_on_allied = no
+					path = { 4119 12048 4075 }
+				}
+			}
+		}
+	}
+
+	GEA_yun_hanoi_laocai_railway = { #整修河内—老街铁路
+		allowed = {
+			original_tag = GEA
+		}
+		icon = railroad
+
+		visible = {
+			has_completed_focus = GEA_Open_Yunnan-Vietnam_communication_line
+			has_country_flag = YUN_OPEN
+			GEA_yunnan_non_anti_concession_controller_trigger = yes
+		}
+		available = {
+			GEA_yunnan_vietnam_railway_access_trigger = yes
+		}
+		targets = { YUN }
+
+		cost = 40
+		days_remove = 90
+		fire_only_once = yes
+		cancel_if_not_visible = no
+		cancel_trigger = {
+			NOT = {
+				GEA_yunnan_vietnam_railway_access_trigger = yes
+			}
+		}
+		ai_will_do = {
+			factor = 30
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					GEA_yunnan_vietnam_railway_access_trigger = yes
+				}
+				log = "[GetDateText]: [Root.GetName]: Decision remove GEA_yun_hanoi_laocai_railway"
+				build_railway = {
+					level = 3
+					build_only_on_allied = no
+					path = { 4075 12048 1073 12008 }
+				}
+			}
+		}
+	}
+
+	GEA_yun_hekou_kunming_railway = { #扩建河口—昆明铁路
+		allowed = {
+			original_tag = GEA
+		}
+		icon = railroad
+
+		visible = {
+			has_completed_focus = GEA_Open_Yunnan-Vietnam_communication_line
+			has_country_flag = YUN_OPEN
+			GEA_yunnan_non_anti_concession_controller_trigger = yes
+		}
+		available = {
+			GEA_yunnan_vietnam_railway_access_trigger = yes
+		}
+		targets = { YUN }
+
+		cost = 50
+		days_remove = 120
+		fire_only_once = yes
+		cancel_if_not_visible = no
+		cancel_trigger = {
+			NOT = {
+				GEA_yunnan_vietnam_railway_access_trigger = yes
+			}
+		}
+		ai_will_do = {
+			factor = 30
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					GEA_yunnan_vietnam_railway_access_trigger = yes
+				}
+				log = "[GetDateText]: [Root.GetName]: Decision remove GEA_yun_hekou_kunming_railway"
+				build_railway = {
+					level = 3
+					build_only_on_allied = no
+					path = { 12008 1114 4501 7446 1319 }
+				}
+			}
+		}
+	}
+
 	GEA_sqi_invest_in_shandong = {
 		icon = GFX_GEA_Invest_in_East_China_decision
 		allowed = { original_tag = GEA }
@@ -20551,6 +20680,37 @@ GEA_Naval_decisions = { #送船
 }
 
 political_actions = {
+	GEA_Use_poison_gas = { #使用毒气
+		allowed = {
+			original_tag = GEA
+		}
+		icon = bomber
+
+		visible = {
+			has_completed_focus = GEA_Malicious_poison
+		}
+		available = {
+			has_war = yes
+		}
+
+		cost = 30
+		days_remove = 120
+		days_re_enable = 120
+		cancel_if_not_visible = no
+
+		modifier = {
+			army_attack_factor = 0.10
+			army_defence_factor = -0.10
+			breakthrough_factor = 0.05
+		}
+		ai_will_do = {
+			factor = 30
+		}
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_Use_poison_gas"
+		}
+	}
+
 	GEA_military_expansion_mission = { #年度扩军计划
 		icon = GFX_decision_generic_military
 		allowed = {

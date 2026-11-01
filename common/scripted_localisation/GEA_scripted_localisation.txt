@@ -684,3 +684,4 @@ defined_text = {
 		localization_key = GEA_Indochina_Stability_value_4
 	}
 }
+
