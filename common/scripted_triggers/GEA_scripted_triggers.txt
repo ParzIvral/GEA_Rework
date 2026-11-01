@@ -78,14 +78,10 @@ GEA_china_warlord_eligible_trigger = { #能互动的军阀
 		tooltip = GEA_china_warlord_eligible_tt
 		OR = {
 			original_tag = SQI
-			original_tag = QIE
 			original_tag = LEP
-			original_tag = ANQ
-			original_tag = HNN
 			original_tag = GXC
 			original_tag = YUN
 			original_tag = SZC
-			original_tag = SHX
 		}
 	}
 }
@@ -191,6 +187,82 @@ GEA_yunnan_vietnam_railway_access_trigger = {
 			controller = {
 				tag = GEA
 			}
+		}
+	}
+}
+
+#四川军阀互动
+GEA_sichuan_non_anti_concession_controller_trigger = {
+	custom_trigger_tooltip = {
+		tooltip = GEA_sichuan_non_anti_concession_controller_tt
+		SZC = {
+			exists = yes
+			GEA_china_warlord_can_interact_trigger = yes
+		}
+	}
+}
+
+#四川大饥荒：恢复期民族精神不计入
+GEA_sichuan_famine_active_trigger = {
+	custom_trigger_tooltip = {
+		tooltip = GEA_sichuan_famine_active_tt
+		SZC = {
+			exists = yes
+			has_idea = SZC_famine_idea
+		}
+	}
+}
+
+#川滇国内的国民党执政身份；不使用全局阵营对齐判定
+GEA_szc_yun_kmt_government_trigger = {
+	custom_trigger_tooltip = {
+		tooltip = GEA_szc_yun_kmt_government_tt
+		OR = {
+			has_country_leader_ideology = tot_tridemism_subtype
+			has_country_leader_ideology = syn_tridemism_subtype
+			has_country_leader_ideology = radsoc_tridemism_subtype
+			has_country_leader_ideology = socdem_tridemism_subtype
+			has_country_leader_ideology = soclib_tridemism_subtype
+			has_country_leader_ideology = marlib_tridemism_subtype
+			has_country_leader_ideology = soccon_tridemism_subtype
+			has_country_leader_ideology = authdem_tridemism_subtype
+			has_country_leader_ideology = pataut_tridemism_subtype
+			has_country_leader_ideology = natpop_tridemism_subtype
+		}
+	}
+}
+
+#AI完成所选政治路线与经济收尾后，再提高对华经营优先级
+GEA_ai_domestic_main_focuses_completed_trigger = {
+	has_completed_focus = GEA_On_the_colonial_crown_the_pearl_is_shining
+	OR = {
+		AND = {
+			has_country_flag = GEA_Governor_Hahl_flag
+			has_completed_focus = GEA_Even_closer_to_a_model_colony
+		}
+		AND = {
+			has_country_flag = GEA_Governor_Josias_flag
+			has_completed_focus = GEA_Prinz_Kaiser_Deutschland
+		}
+		AND = {
+			has_country_flag = GEA_Governor_Heye_flag
+			has_completed_focus = GEA_Die_Wacht_im_Fernen_Osten
+		}
+		AND = {
+			has_country_flag = GEA_Governor_Tilo_flag
+			has_completed_focus = GEA_The_factorys_thick_smoke_wealth_and_German_East_Asia
+		}
+		AND = {
+			has_country_flag = GEA_Governor_Meer_flag
+			has_completed_focus = GEA_The_factorys_thick_smoke_wealth_and_German_East_Asia
+		}
+		AND = {
+			has_country_flag = GEA_Governor_Luckner_flag
+			has_completed_focus = GEA_The_ocean_demon_conquers_the_seven_seas
+		}
+		AND = {
+			has_country_flag = GEA_Governor_Schorner_flag
+			has_completed_focus = GEA_Let_loose_the_blood-stained_black_eagle
 		}
 	}
 }

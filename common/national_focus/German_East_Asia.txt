@@ -6259,6 +6259,54 @@ focus_tree = {
 		y = 12
 		ai_will_do = {
 			factor = 1000
+			modifier = {
+				factor = 2
+				date > 1936.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1936.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
 		}
 		select_effect = {
 			hidden_effect = {
@@ -6293,6 +6341,54 @@ focus_tree = {
 		y = 1
 		ai_will_do = {
 			factor = 50
+			modifier = {
+				factor = 2
+				date > 1936.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1936.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
 		}
 		available = {
 
@@ -6392,6 +6488,61 @@ focus_tree = {
 		y = 1
 		ai_will_do = {
 			factor = 50
+			modifier = {
+				factor = 4
+				has_game_rule = {
+					rule = GEA_future
+					option = GEA_FUTURE_REVOLT_NO
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1936.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1936.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
 		}
 		available = {
 
@@ -6416,6 +6567,54 @@ focus_tree = {
 		y = 1
 		ai_will_do = {
 			factor = 50
+			modifier = {
+				factor = 2
+				date > 1936.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1936.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
 		}
 		available = {
 
@@ -6440,6 +6639,54 @@ focus_tree = {
 		y = 2
 		ai_will_do = {
 			factor = 50
+			modifier = {
+				factor = 2
+				date > 1936.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1936.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
 		}
 		available = {
 
@@ -6506,6 +6753,54 @@ focus_tree = {
 		y = 1
 		ai_will_do = {
 			factor = 50
+			modifier = {
+				factor = 2
+				date > 1936.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1936.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
 		}
 		available = {
 
@@ -6530,6 +6825,54 @@ focus_tree = {
 		y = 2
 		ai_will_do = {
 			factor = 50
+			modifier = {
+				factor = 2
+				date > 1936.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1936.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
 		}
 		available = {
 
@@ -6571,6 +6914,54 @@ focus_tree = {
 		y = 1
 		ai_will_do = {
 			factor = 50
+			modifier = {
+				factor = 2
+				date > 1936.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1936.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
 		}
 		available = {
 
@@ -6609,6 +7000,54 @@ focus_tree = {
 		y = 1
 		ai_will_do = {
 			factor = 50
+			modifier = {
+				factor = 2
+				date > 1936.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1936.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
 		}
 		available = {
 
@@ -6661,6 +7100,62 @@ focus_tree = {
 		y = 1
 		ai_will_do = {
 			factor = 50
+			modifier = {
+				factor = 6
+				has_country_flag = GEA_Governor_Tilo_flag
+			}
+			modifier = {
+				factor = 2
+				date > 1936.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1936.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = GEA_Governor_Meer_flag
+			}
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -6723,6 +7218,14 @@ focus_tree = {
 		y = 2
 		ai_will_do = {
 			factor = 50
+			modifier = {
+				factor = 6
+				has_country_flag = GEA_Governor_Tilo_flag
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = GEA_Governor_Meer_flag
+			}
 		}
 		available = {
 
@@ -6760,6 +7263,62 @@ focus_tree = {
 		y = 1
 		ai_will_do = {
 			factor = 50
+			modifier = {
+				factor = 6
+				has_country_flag = GEA_Governor_Meer_flag
+			}
+			modifier = {
+				factor = 2
+				date > 1936.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1936.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = GEA_Governor_Tilo_flag
+			}
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -6816,6 +7375,62 @@ focus_tree = {
 		y = 1
 		ai_will_do = {
 			factor = 50
+			modifier = {
+				factor = 6
+				has_country_flag = GEA_Governor_Meer_flag
+			}
+			modifier = {
+				factor = 2
+				date > 1936.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1936.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = GEA_Governor_Tilo_flag
+			}
 		}
 		available = {
 
@@ -6876,6 +7491,62 @@ focus_tree = {
 		y = 1
 		ai_will_do = {
 			factor = 50
+			modifier = {
+				factor = 6
+				has_country_flag = GEA_Governor_Meer_flag
+			}
+			modifier = {
+				factor = 2
+				date > 1936.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1936.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = GEA_Governor_Tilo_flag
+			}
 		}
 		available = {
 
@@ -6914,6 +7585,62 @@ focus_tree = {
 		y = 2
 		ai_will_do = {
 			factor = 50
+			modifier = {
+				factor = 6
+				has_country_flag = GEA_Governor_Meer_flag
+			}
+			modifier = {
+				factor = 2
+				date > 1936.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1936.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = GEA_Governor_Tilo_flag
+			}
 		}
 		available = {
 
@@ -6954,6 +7681,62 @@ focus_tree = {
 		y = 1
 		ai_will_do = {
 			factor = 50
+			modifier = {
+				factor = 6
+				has_country_flag = GEA_Governor_Meer_flag
+			}
+			modifier = {
+				factor = 2
+				date > 1936.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1936.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = GEA_Governor_Tilo_flag
+			}
 		}
 		available = {
 
@@ -7009,6 +7792,62 @@ focus_tree = {
 		y = 2
 		ai_will_do = {
 			factor = 50
+			modifier = {
+				factor = 6
+				has_country_flag = GEA_Governor_Meer_flag
+			}
+			modifier = {
+				factor = 2
+				date > 1936.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1936.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = GEA_Governor_Tilo_flag
+			}
 		}
 		available = {
 
@@ -7053,6 +7892,62 @@ focus_tree = {
 		y = 1
 		ai_will_do = {
 			factor = 50
+			modifier = {
+				factor = 6
+				has_country_flag = GEA_Governor_Meer_flag
+			}
+			modifier = {
+				factor = 2
+				date > 1936.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1936.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = GEA_Governor_Tilo_flag
+			}
 		}
 		available = {
 
@@ -7079,6 +7974,62 @@ focus_tree = {
 		y = 1
 		ai_will_do = {
 			factor = 50
+			modifier = {
+				factor = 6
+				has_country_flag = GEA_Governor_Meer_flag
+			}
+			modifier = {
+				factor = 2
+				date > 1936.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1936.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = GEA_Governor_Tilo_flag
+			}
 		}
 		available = {
 
@@ -7123,6 +8074,54 @@ focus_tree = {
 		y = 1
 		ai_will_do = {
 			factor = 50
+			modifier = {
+				factor = 2
+				date > 1936.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1936.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -7204,6 +8203,54 @@ focus_tree = {
 		y = 1
 		ai_will_do = {
 			factor = 50
+			modifier = {
+				factor = 2
+				date > 1936.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1936.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
 		}
 		available = {
 
@@ -7259,6 +8306,54 @@ focus_tree = {
 		y = 1
 		ai_will_do = {
 			factor = 50
+			modifier = {
+				factor = 2
+				date > 1936.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1936.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
 		}
 		available = {
 
@@ -7325,6 +8420,54 @@ focus_tree = {
 		y = 1
 		ai_will_do = {
 			factor = 50
+			modifier = {
+				factor = 2
+				date > 1936.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1936.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
 		}
 		available = {
 
@@ -7364,6 +8507,54 @@ focus_tree = {
 		y = 1
 		ai_will_do = {
 			factor = 50
+			modifier = {
+				factor = 2
+				date > 1936.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1936.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
 		}
 		available = {
 
@@ -7401,6 +8592,54 @@ focus_tree = {
 		y = 1
 		ai_will_do = {
 			factor = 50
+			modifier = {
+				factor = 2
+				date > 1936.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1936.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
 		}
 		available = {
 			OR = {
@@ -7456,6 +8695,54 @@ focus_tree = {
 		y = 1
 		ai_will_do = {
 			factor = 50
+			modifier = {
+				factor = 2
+				date > 1936.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1936.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
 		}
 		available = {
 
@@ -7528,6 +8815,54 @@ focus_tree = {
 		y = 1
 		ai_will_do = {
 			factor = 50
+			modifier = {
+				factor = 2
+				date > 1936.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1936.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
 		}
 		available = {
 
@@ -7573,6 +8908,54 @@ focus_tree = {
 		y = 1
 		ai_will_do = {
 			factor = 50
+			modifier = {
+				factor = 2
+				date > 1936.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1936.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
 		}
 		available = {
 
@@ -7629,6 +9012,54 @@ focus_tree = {
 		y = 1
 		ai_will_do = {
 			factor = 50
+			modifier = {
+				factor = 2
+				date > 1936.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1936.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
 		}
 		available = {
 			NOT = {
@@ -7674,6 +9105,54 @@ focus_tree = {
 		y = 2
 		ai_will_do = {
 			factor = 50
+			modifier = {
+				factor = 2
+				date > 1936.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1936.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
 		}
 		available = {
 			NOT = {
@@ -7707,6 +9186,54 @@ focus_tree = {
 		y = 1
 		ai_will_do = {
 			factor = 50
+			modifier = {
+				factor = 2
+				date > 1936.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1936.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
 		}
 		available = {
 
@@ -7753,6 +9280,54 @@ focus_tree = {
 		y = 1
 		ai_will_do = {
 			factor = 50
+			modifier = {
+				factor = 2
+				date > 1936.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1936.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
 		}
 		available = {
 
@@ -7814,6 +9389,54 @@ focus_tree = {
 		y = 1
 		ai_will_do = {
 			factor = 50
+			modifier = {
+				factor = 2
+				date > 1936.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1936.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -7862,6 +9485,54 @@ focus_tree = {
 		y = 1
 		ai_will_do = {
 			factor = 50
+			modifier = {
+				factor = 2
+				date > 1936.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1936.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
 		}
 		available = {
 
@@ -7920,6 +9591,54 @@ focus_tree = {
 		y = 2
 		ai_will_do = {
 			factor = 50
+			modifier = {
+				factor = 2
+				date > 1936.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1936.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
 		}
 		available = {
 
@@ -7960,6 +9679,54 @@ focus_tree = {
 		y = 1
 		ai_will_do = {
 			factor = 50
+			modifier = {
+				factor = 2
+				date > 1936.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1936.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
 		}
 		available = {
 
@@ -8010,6 +9777,54 @@ focus_tree = {
 		y = 2
 		ai_will_do = {
 			factor = 50
+			modifier = {
+				factor = 2
+				date > 1936.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1936.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
 		}
 		available = {
 
@@ -8064,6 +9879,54 @@ focus_tree = {
 		y = 1
 		ai_will_do = {
 			factor = 50
+			modifier = {
+				factor = 2
+				date > 1936.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1936.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
 		}
 		available = {
 
@@ -8089,6 +9952,61 @@ focus_tree = {
 		y = 1
 		ai_will_do = {
 			factor = 50
+			modifier = {
+				factor = 8
+				has_game_rule = {
+					rule = GEA_future
+					option = GEA_FUTURE_REVOLT_NO
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1936.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1936.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -8160,6 +10078,61 @@ focus_tree = {
 		y = 1
 		ai_will_do = {
 			factor = 50
+			modifier = {
+				factor = 8
+				has_game_rule = {
+					rule = GEA_future
+					option = GEA_FUTURE_REVOLT_NO
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1936.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1936.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
 		}
 		available = {
 
@@ -8170,6 +10143,12 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Implement_corporate_regulations"
+			modify_country_flag = {
+				flag = GEA_Indochinese_Anger
+				value = -1
+			}
+			add_to_variable = { GEA_Indochinese_Anger_display = -1 }
+			custom_effect_tooltip = GEA_Indochina_Anger_Down
 			add_political_power = 30
 			custom_effect_tooltip = tooltip_white_line
 			custom_effect_tooltip = {
@@ -8199,6 +10178,61 @@ focus_tree = {
 		y = 1
 		ai_will_do = {
 			factor = 50
+			modifier = {
+				factor = 8
+				has_game_rule = {
+					rule = GEA_future
+					option = GEA_FUTURE_REVOLT_NO
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1936.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1936.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
 		}
 		available = {
 
@@ -8236,6 +10270,61 @@ focus_tree = {
 		y = 1
 		ai_will_do = {
 			factor = 50
+			modifier = {
+				factor = 8
+				has_game_rule = {
+					rule = GEA_future
+					option = GEA_FUTURE_REVOLT_NO
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1936.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1936.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
 		}
 		available = {
 
@@ -8246,6 +10335,12 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Ordering_a_cartel"
+			modify_country_flag = {
+				flag = GEA_Indochinese_Anger
+				value = -1
+			}
+			add_to_variable = { GEA_Indochinese_Anger_display = -1 }
+			custom_effect_tooltip = GEA_Indochina_Anger_Down
 			add_stability = 0.04
 			add_political_power = 60
 			custom_effect_tooltip = tooltip_white_line
@@ -8276,6 +10371,61 @@ focus_tree = {
 		y = 1
 		ai_will_do = {
 			factor = 50
+			modifier = {
+				factor = 8
+				has_game_rule = {
+					rule = GEA_future
+					option = GEA_FUTURE_REVOLT_NO
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1936.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1936.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
 		}
 		available = {
 
@@ -8286,6 +10436,12 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Guarantee_for_investors"
+			modify_country_flag = {
+				flag = GEA_Indochinese_Stability
+				value = 1
+			}
+			add_to_variable = { GEA_Indochinese_Stability_display = 1 }
+			custom_effect_tooltip = GEA_Indochina_Stability_Up
 			add_stability = 0.08
 			random_owned_state = {
 				add_extra_state_shared_building_slots = 1
@@ -8323,6 +10479,61 @@ focus_tree = {
 		y = 1
 		ai_will_do = {
 			factor = 50
+			modifier = {
+				factor = 8
+				has_game_rule = {
+					rule = GEA_future
+					option = GEA_FUTURE_REVOLT_NO
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1936.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1936.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
 		}
 		available = {
 
@@ -8362,6 +10573,61 @@ focus_tree = {
 		y = 1
 		ai_will_do = {
 			factor = 50
+			modifier = {
+				factor = 8
+				has_game_rule = {
+					rule = GEA_future
+					option = GEA_FUTURE_REVOLT_NO
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1936.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1936.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
 		}
 		available = {
 
@@ -8372,6 +10638,12 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Consumption_brings_order"
+			modify_country_flag = {
+				flag = GEA_Indochinese_Stability
+				value = 1
+			}
+			add_to_variable = { GEA_Indochinese_Stability_display = 1 }
+			custom_effect_tooltip = GEA_Indochina_Stability_Up
 			add_stability = 0.08
 			custom_effect_tooltip = tooltip_white_line
 			custom_effect_tooltip = {
@@ -8405,6 +10677,61 @@ focus_tree = {
 		y = 1
 		ai_will_do = {
 			factor = 50
+			modifier = {
+				factor = 8
+				has_game_rule = {
+					rule = GEA_future
+					option = GEA_FUTURE_REVOLT_NO
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1936.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1936.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
 		}
 		available = {
 
@@ -8418,6 +10745,12 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_era_of_the_middle_class"
+			modify_country_flag = {
+				flag = GEA_Indochinese_Stability
+				value = 2
+			}
+			add_to_variable = { GEA_Indochinese_Stability_display = 2 }
+			custom_effect_tooltip = GEA_Indochina_Stability_Up_More
 			random_owned_state = {
 				add_extra_state_shared_building_slots = 2
 				increase_state_category_by_one_level = yes 
@@ -8490,6 +10823,62 @@ focus_tree = {
 		y = 1
 		ai_will_do = {
 			factor = 50
+			modifier = {
+				factor = 6
+				has_country_flag = GEA_Governor_Tilo_flag
+			}
+			modifier = {
+				factor = 2
+				date > 1936.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1936.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = GEA_Governor_Meer_flag
+			}
 		}
 		available = {
 
@@ -8536,6 +10925,62 @@ focus_tree = {
 		y = 2
 		ai_will_do = {
 			factor = 50
+			modifier = {
+				factor = 6
+				has_country_flag = GEA_Governor_Tilo_flag
+			}
+			modifier = {
+				factor = 2
+				date > 1936.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1936.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = GEA_Governor_Meer_flag
+			}
 		}
 		available = {
 
@@ -8586,6 +11031,62 @@ focus_tree = {
 		y = 1
 		ai_will_do = {
 			factor = 50
+			modifier = {
+				factor = 6
+				has_country_flag = GEA_Governor_Tilo_flag
+			}
+			modifier = {
+				factor = 2
+				date > 1936.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1936.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = GEA_Governor_Meer_flag
+			}
 		}
 		available = {
 
@@ -8628,6 +11129,62 @@ focus_tree = {
 		y = 3
 		ai_will_do = {
 			factor = 50
+			modifier = {
+				factor = 6
+				has_country_flag = GEA_Governor_Tilo_flag
+			}
+			modifier = {
+				factor = 2
+				date > 1936.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1936.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = GEA_Governor_Meer_flag
+			}
 		}
 		available = {
 
@@ -8686,6 +11243,62 @@ focus_tree = {
 		y = 1
 		ai_will_do = {
 			factor = 50
+			modifier = {
+				factor = 6
+				has_country_flag = GEA_Governor_Tilo_flag
+			}
+			modifier = {
+				factor = 2
+				date > 1936.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1936.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.6.30
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 2
+				date > 1937.12.31
+				OR = {
+					has_idea = GEA_black_monday_idea
+					has_idea = GEA_black_monday_idea_2
+					has_idea = GEA_black_monday_idea_3
+					has_idea = GEA_collapsing_colonial_finances
+					has_idea = GEA_collapsing_colonial_finances_2
+					has_idea = GEA_collapsing_colonial_finances_3
+				}
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = GEA_Governor_Meer_flag
+			}
 		}
 		available = {
 
@@ -12638,7 +15251,32 @@ focus_tree = {
 		cost = 5
 		x = 40
 		y = 23
-		ai_will_do = {factor = 100}
+		ai_will_do = {
+			factor = 35
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 4
+				OR = { has_war_with = JAP has_war_with = USA }
+			}
+			modifier = {
+				factor = 3
+				any_enemy_country = { is_actual_major = yes }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 1.25
+				date > 1936.12.31
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
+			}
+		}
 		available = {
 			OR = {
 				has_country_flag = GEA_Defeated_Uprising
@@ -12664,7 +15302,30 @@ focus_tree = {
 		x = -1
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 30
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 4
+				OR = { has_war_with = JAP has_war_with = USA }
+			}
+			modifier = {
+				factor = 3
+				any_enemy_country = { is_actual_major = yes }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 1.25
+				date > 1936.12.31
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
+			}
 		}
 		available = {
 		}	
@@ -12706,7 +15367,30 @@ focus_tree = {
 		x = 0
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 40
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 2
+				OR = { has_war_with = JAP has_war_with = USA }
+			}
+			modifier = {
+				factor = 2
+				any_enemy_country = { is_actual_major = yes }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 1.25
+				date > 1936.12.31
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
+			}
 		}
 		available = {
 		}	
@@ -12771,7 +15455,30 @@ focus_tree = {
 		x = -2
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 25
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 3
+				OR = { has_war_with = JAP has_war_with = USA }
+			}
+			modifier = {
+				factor = 2
+				any_enemy_country = { is_actual_major = yes }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 1.25
+				date > 1936.12.31
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
+			}
 		}
 		available = {
 		}	
@@ -12794,7 +15501,30 @@ focus_tree = {
 		x = 1
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 30
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 4
+				OR = { has_war_with = JAP has_war_with = USA }
+			}
+			modifier = {
+				factor = 3
+				any_enemy_country = { is_actual_major = yes }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 1.25
+				date > 1936.12.31
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
+			}
 		}
 		available = {
 		}	
@@ -12828,7 +15558,30 @@ focus_tree = {
 		x = 0
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 30
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 4
+				OR = { has_war_with = JAP has_war_with = USA }
+			}
+			modifier = {
+				factor = 3
+				any_enemy_country = { is_actual_major = yes }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 1.25
+				date > 1936.12.31
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
+			}
 		}
 		available = {
 		}	
@@ -12865,7 +15618,30 @@ focus_tree = {
 		x = 2
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 30
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 2
+				OR = { has_war_with = JAP has_war_with = USA }
+			}
+			modifier = {
+				factor = 2
+				any_enemy_country = { is_actual_major = yes }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 1.25
+				date > 1936.12.31
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
+			}
 		}
 		available = {
 		}	
@@ -12906,7 +15682,30 @@ focus_tree = {
 		x = 1
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 30
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 4
+				OR = { has_war_with = JAP has_war_with = USA }
+			}
+			modifier = {
+				factor = 3
+				any_enemy_country = { is_actual_major = yes }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 1.25
+				date > 1936.12.31
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
+			}
 		}
 		available = {
 		}	
@@ -12940,13 +15739,29 @@ focus_tree = {
 		x = -7
 		y = 1
 		ai_will_do = {
-			factor = 10
+			factor = 25
 			modifier = {
-				factor = 20
-				OR = {
-					has_war_with = JAP
-					has_war_with = USA
-				}
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 4
+				OR = { has_war_with = JAP has_war_with = USA }
+			}
+			modifier = {
+				factor = 3
+				any_enemy_country = { is_actual_major = yes }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 1.25
+				date > 1936.12.31
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
 			}
 		}
 		available = {
@@ -12992,13 +15807,29 @@ focus_tree = {
 		x = -3
 		y = 1
 		ai_will_do = {
-			factor = 10
+			factor = 20
 			modifier = {
-				factor = 20
-				OR = {
-					has_war_with = JAP
-					has_war_with = USA
-				}
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 4
+				OR = { has_war_with = JAP has_war_with = USA }
+			}
+			modifier = {
+				factor = 3
+				any_enemy_country = { is_actual_major = yes }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 1.25
+				date > 1936.12.31
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
 			}
 		}
 		available = {
@@ -13023,13 +15854,29 @@ focus_tree = {
 		x = 3
 		y = 1
 		ai_will_do = {
-			factor = 10
+			factor = 20
 			modifier = {
-				factor = 20
-				OR = {
-					has_war_with = JAP
-					has_war_with = USA
-				}
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 4
+				OR = { has_war_with = JAP has_war_with = USA }
+			}
+			modifier = {
+				factor = 3
+				any_enemy_country = { is_actual_major = yes }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 1.25
+				date > 1936.12.31
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
 			}
 		}
 		available = {
@@ -13064,13 +15911,29 @@ focus_tree = {
 		x = 1
 		y = 1
 		ai_will_do = {
-			factor = 10
+			factor = 20
 			modifier = {
-				factor = 20
-				OR = {
-					has_war_with = JAP
-					has_war_with = USA
-				}
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 4
+				OR = { has_war_with = JAP has_war_with = USA }
+			}
+			modifier = {
+				factor = 3
+				any_enemy_country = { is_actual_major = yes }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 1.25
+				date > 1936.12.31
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
 			}
 		}
 		available = {
@@ -13111,13 +15974,29 @@ focus_tree = {
 		x = -1
 		y = 1
 		ai_will_do = {
-			factor = 10
+			factor = 15
 			modifier = {
-				factor = 20
-				OR = {
-					has_war_with = JAP
-					has_war_with = USA
-				}
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 3
+				OR = { has_war_with = JAP has_war_with = USA }
+			}
+			modifier = {
+				factor = 2
+				any_enemy_country = { is_actual_major = yes }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 1.25
+				date > 1936.12.31
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
 			}
 		}
 		available = {
@@ -13167,13 +16046,29 @@ focus_tree = {
 		x = 1
 		y = 1
 		ai_will_do = {
-			factor = 10
+			factor = 20
 			modifier = {
-				factor = 20
-				OR = {
-					has_war_with = JAP
-					has_war_with = USA
-				}
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 4
+				OR = { has_war_with = JAP has_war_with = USA }
+			}
+			modifier = {
+				factor = 3
+				any_enemy_country = { is_actual_major = yes }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 1.25
+				date > 1936.12.31
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
 			}
 		}
 		available = {
@@ -13218,13 +16113,29 @@ focus_tree = {
 		x = -1
 		y = 1
 		ai_will_do = {
-			factor = 10
+			factor = 20
 			modifier = {
-				factor = 20
-				OR = {
-					has_war_with = JAP
-					has_war_with = USA
-				}
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 4
+				OR = { has_war_with = JAP has_war_with = USA }
+			}
+			modifier = {
+				factor = 3
+				any_enemy_country = { is_actual_major = yes }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 1.25
+				date > 1936.12.31
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
 			}
 		}
 		available = {
@@ -13265,13 +16176,29 @@ focus_tree = {
 		x = 1
 		y = 1
 		ai_will_do = {
-			factor = 10
+			factor = 20
 			modifier = {
-				factor = 20
-				OR = {
-					has_war_with = JAP
-					has_war_with = USA
-				}
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 4
+				OR = { has_war_with = JAP has_war_with = USA }
+			}
+			modifier = {
+				factor = 3
+				any_enemy_country = { is_actual_major = yes }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 1.25
+				date > 1936.12.31
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
 			}
 		}
 		available = {
@@ -13316,13 +16243,29 @@ focus_tree = {
 		x = 0
 		y = 2
 		ai_will_do = {
-			factor = 10
+			factor = 30
 			modifier = {
-				factor = 20
-				OR = {
-					has_war_with = JAP
-					has_war_with = USA
-				}
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 4
+				OR = { has_war_with = JAP has_war_with = USA }
+			}
+			modifier = {
+				factor = 3
+				any_enemy_country = { is_actual_major = yes }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 1.25
+				date > 1936.12.31
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
 			}
 		}
 		available = {
@@ -13361,13 +16304,29 @@ focus_tree = {
 		x = 0
 		y = 2
 		ai_will_do = {
-			factor = 10
+			factor = 15
 			modifier = {
-				factor = 20
-				OR = {
-					has_war_with = JAP
-					has_war_with = USA
-				}
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 3
+				OR = { has_war_with = JAP has_war_with = USA }
+			}
+			modifier = {
+				factor = 2
+				any_enemy_country = { is_actual_major = yes }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 1.25
+				date > 1936.12.31
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
 			}
 		}
 		available = {
@@ -13401,13 +16360,29 @@ focus_tree = {
 		x = 7
 		y = 1
 		ai_will_do = {
-			factor = 10
+			factor = 25
 			modifier = {
-				factor = 20
-				OR = {
-					has_war_with = JAP
-					has_war_with = USA
-				}
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 4
+				OR = { has_war_with = JAP has_war_with = USA }
+			}
+			modifier = {
+				factor = 3
+				any_enemy_country = { is_actual_major = yes }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 1.25
+				date > 1936.12.31
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
 			}
 		}
 		available = {
@@ -13458,13 +16433,29 @@ focus_tree = {
 		x = -1
 		y = 1
 		ai_will_do = {
-			factor = 10
+			factor = 30
 			modifier = {
-				factor = 20
-				OR = {
-					has_war_with = JAP
-					has_war_with = USA
-				}
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 4
+				OR = { has_war_with = JAP has_war_with = USA }
+			}
+			modifier = {
+				factor = 3
+				any_enemy_country = { is_actual_major = yes }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 1.25
+				date > 1936.12.31
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
 			}
 		}
 		available = {
@@ -13508,13 +16499,29 @@ focus_tree = {
 		x = 1
 		y = 1
 		ai_will_do = {
-			factor = 10
+			factor = 25
 			modifier = {
-				factor = 20
-				OR = {
-					has_war_with = JAP
-					has_war_with = USA
-				}
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 4
+				OR = { has_war_with = JAP has_war_with = USA }
+			}
+			modifier = {
+				factor = 3
+				any_enemy_country = { is_actual_major = yes }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 1.25
+				date > 1936.12.31
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
 			}
 		}
 		available = {
@@ -13555,13 +16562,29 @@ focus_tree = {
 		x = -1
 		y = 1
 		ai_will_do = {
-			factor = 10
+			factor = 20
 			modifier = {
-				factor = 20
-				OR = {
-					has_war_with = JAP
-					has_war_with = USA
-				}
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 4
+				OR = { has_war_with = JAP has_war_with = USA }
+			}
+			modifier = {
+				factor = 3
+				any_enemy_country = { is_actual_major = yes }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 1.25
+				date > 1936.12.31
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
 			}
 		}
 		available = {
@@ -13602,13 +16625,29 @@ focus_tree = {
 		x = -1
 		y = 1
 		ai_will_do = {
-			factor = 10
+			factor = 15
 			modifier = {
-				factor = 20
-				OR = {
-					has_war_with = JAP
-					has_war_with = USA
-				}
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 3
+				OR = { has_war_with = JAP has_war_with = USA }
+			}
+			modifier = {
+				factor = 2
+				any_enemy_country = { is_actual_major = yes }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 1.25
+				date > 1936.12.31
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
 			}
 		}
 		available = {
@@ -13651,13 +16690,29 @@ focus_tree = {
 		x = 1
 		y = 1
 		ai_will_do = {
-			factor = 10
+			factor = 15
 			modifier = {
-				factor = 20
-				OR = {
-					has_war_with = JAP
-					has_war_with = USA
-				}
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 3
+				OR = { has_war_with = JAP has_war_with = USA }
+			}
+			modifier = {
+				factor = 2
+				any_enemy_country = { is_actual_major = yes }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 1.25
+				date > 1936.12.31
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
 			}
 		}
 		available = {
@@ -13708,13 +16763,29 @@ focus_tree = {
 		x = -3
 		y = 1
 		ai_will_do = {
-			factor = 10
+			factor = 20
 			modifier = {
-				factor = 20
-				OR = {
-					has_war_with = JAP
-					has_war_with = USA
-				}
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 4
+				OR = { has_war_with = JAP has_war_with = USA }
+			}
+			modifier = {
+				factor = 3
+				any_enemy_country = { is_actual_major = yes }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 1.25
+				date > 1936.12.31
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
 			}
 		}
 		available = {
@@ -13758,13 +16829,29 @@ focus_tree = {
 		x = 0
 		y = 2
 		ai_will_do = {
-			factor = 10
+			factor = 20
 			modifier = {
-				factor = 20
-				OR = {
-					has_war_with = JAP
-					has_war_with = USA
-				}
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 4
+				OR = { has_war_with = JAP has_war_with = USA }
+			}
+			modifier = {
+				factor = 3
+				any_enemy_country = { is_actual_major = yes }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 1.25
+				date > 1936.12.31
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
 			}
 		}
 		available = {
@@ -13808,13 +16895,29 @@ focus_tree = {
 		x = 3
 		y = 1
 		ai_will_do = {
-			factor = 10
+			factor = 25
 			modifier = {
-				factor = 20
-				OR = {
-					has_war_with = JAP
-					has_war_with = USA
-				}
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 4
+				OR = { has_war_with = JAP has_war_with = USA }
+			}
+			modifier = {
+				factor = 3
+				any_enemy_country = { is_actual_major = yes }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 1.25
+				date > 1936.12.31
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
 			}
 		}
 		available = {
@@ -13852,13 +16955,29 @@ focus_tree = {
 		x = 0
 		y = 2
 		ai_will_do = {
-			factor = 10
+			factor = 30
 			modifier = {
-				factor = 20
-				OR = {
-					has_war_with = JAP
-					has_war_with = USA
-				}
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 4
+				OR = { has_war_with = JAP has_war_with = USA }
+			}
+			modifier = {
+				factor = 3
+				any_enemy_country = { is_actual_major = yes }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 1.25
+				date > 1936.12.31
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
 			}
 		}
 		available = {
@@ -13896,13 +17015,29 @@ focus_tree = {
 		x = 0
 		y = 2
 		ai_will_do = {
-			factor = 10
+			factor = 25
 			modifier = {
-				factor = 20
-				OR = {
-					has_war_with = JAP
-					has_war_with = USA
-				}
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 4
+				OR = { has_war_with = JAP has_war_with = USA }
+			}
+			modifier = {
+				factor = 3
+				any_enemy_country = { is_actual_major = yes }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 1.25
+				date > 1936.12.31
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
 			}
 		}
 		available = {
@@ -13946,13 +17081,29 @@ focus_tree = {
 		x = -1
 		y = 1
 		ai_will_do = {
-			factor = 10
+			factor = 15
 			modifier = {
-				factor = 20
-				OR = {
-					has_war_with = JAP
-					has_war_with = USA
-				}
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 3
+				OR = { has_war_with = JAP has_war_with = USA }
+			}
+			modifier = {
+				factor = 2
+				any_enemy_country = { is_actual_major = yes }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 1.25
+				date > 1936.12.31
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
 			}
 		}
 		available = {
@@ -13990,13 +17141,29 @@ focus_tree = {
 		x = 1
 		y = 1
 		ai_will_do = {
-			factor = 10
+			factor = 15
 			modifier = {
-				factor = 20
-				OR = {
-					has_war_with = JAP
-					has_war_with = USA
-				}
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 3
+				OR = { has_war_with = JAP has_war_with = USA }
+			}
+			modifier = {
+				factor = 2
+				any_enemy_country = { is_actual_major = yes }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 1.25
+				date > 1936.12.31
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
 			}
 		}
 		available = {
@@ -14038,13 +17205,29 @@ focus_tree = {
 		x = 1
 		y = 1
 		ai_will_do = {
-			factor = 10
+			factor = 15
 			modifier = {
-				factor = 20
-				OR = {
-					has_war_with = JAP
-					has_war_with = USA
-				}
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 3
+				OR = { has_war_with = JAP has_war_with = USA }
+			}
+			modifier = {
+				factor = 2
+				any_enemy_country = { is_actual_major = yes }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 1.25
+				date > 1936.12.31
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
 			}
 		}
 		available = {
@@ -14085,13 +17268,29 @@ focus_tree = {
 		x = 0
 		y = 1
 		ai_will_do = {
-			factor = 10
+			factor = 30
 			modifier = {
-				factor = 20
-				OR = {
-					has_war_with = JAP
-					has_war_with = USA
-				}
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 4
+				OR = { has_war_with = JAP has_war_with = USA }
+			}
+			modifier = {
+				factor = 3
+				any_enemy_country = { is_actual_major = yes }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 1.25
+				date > 1936.12.31
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
 			}
 		}
 		available = {
@@ -14145,7 +17344,29 @@ focus_tree = {
 		x = 60
 		y = 24
 		ai_will_do = {
-			factor = 100
+			factor = 35
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+			}
+			modifier = {
+				factor = 3
+				any_enemy_country = { is_actual_major = yes }
+			}
+			modifier = {
+				factor = 1.5
+				has_war = yes
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+			}
+			modifier = {
+				factor = 1.25
+				date > 1936.12.31
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
+			}
 		}
 		available = {
 			OR = {
@@ -14176,7 +17397,29 @@ focus_tree = {
 		x = 1
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 25
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+			}
+			modifier = {
+				factor = 3
+				any_enemy_country = { is_actual_major = yes }
+			}
+			modifier = {
+				factor = 1.5
+				has_war = yes
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+			}
+			modifier = {
+				factor = 1.25
+				date > 1936.12.31
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
+			}
 		}
 		available = {
 		}			
@@ -14205,7 +17448,29 @@ focus_tree = {
 		x = -1
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 30
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+			}
+			modifier = {
+				factor = 2
+				any_enemy_country = { is_actual_major = yes }
+			}
+			modifier = {
+				factor = 1.5
+				has_war = yes
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+			}
+			modifier = {
+				factor = 1.25
+				date > 1936.12.31
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
+			}
 		}
 		available = {
 		}			
@@ -14245,7 +17510,29 @@ focus_tree = {
 		x = 1
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 20
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+			}
+			modifier = {
+				factor = 3
+				any_enemy_country = { is_actual_major = yes }
+			}
+			modifier = {
+				factor = 1.5
+				has_war = yes
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+			}
+			modifier = {
+				factor = 1.25
+				date > 1936.12.31
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
+			}
 		}
 		available = {
 		}			
@@ -14275,7 +17562,36 @@ focus_tree = {
 		x = -5
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 20
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 4
+				OR = { has_war_with = JAP has_war_with = USA }
+			}
+			modifier = {
+				factor = 3
+				any_enemy_country = { is_actual_major = yes }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 1.5
+				has_war = yes
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 1.25
+				date > 1936.12.31
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
+			}
 		}
 		available = {
 		}			
@@ -14321,7 +17637,36 @@ focus_tree = {
 		x = -1
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 20
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 4
+				OR = { has_war_with = JAP has_war_with = USA }
+			}
+			modifier = {
+				factor = 3
+				any_enemy_country = { is_actual_major = yes }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 1.5
+				has_war = yes
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 1.25
+				date > 1936.12.31
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
+			}
 		}
 		available = {
 		}			
@@ -14353,7 +17698,36 @@ focus_tree = {
 		x = 0
 		y = 2
 		ai_will_do = {
-			factor = 100
+			factor = 15
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 4
+				OR = { has_war_with = JAP has_war_with = USA }
+			}
+			modifier = {
+				factor = 3
+				any_enemy_country = { is_actual_major = yes }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 1.5
+				has_war = yes
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 1.25
+				date > 1936.12.31
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
+			}
 		}
 		available = {
 		}			
@@ -14388,7 +17762,36 @@ focus_tree = {
 		x = 1
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 20
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 4
+				OR = { has_war_with = JAP has_war_with = USA }
+			}
+			modifier = {
+				factor = 3
+				any_enemy_country = { is_actual_major = yes }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 1.5
+				has_war = yes
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 1.25
+				date > 1936.12.31
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
+			}
 		}
 		available = {
 		}			
@@ -14420,7 +17823,36 @@ focus_tree = {
 		x = 0
 		y = 2
 		ai_will_do = {
-			factor = 100
+			factor = 20
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 4
+				OR = { has_war_with = JAP has_war_with = USA }
+			}
+			modifier = {
+				factor = 3
+				any_enemy_country = { is_actual_major = yes }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 1.5
+				has_war = yes
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 1.25
+				date > 1936.12.31
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
+			}
 		}
 		available = {
 		}			
@@ -14446,7 +17878,36 @@ focus_tree = {
 		x = 0
 		y = 2
 		ai_will_do = {
-			factor = 100
+			factor = 20
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 4
+				OR = { has_war_with = JAP has_war_with = USA }
+			}
+			modifier = {
+				factor = 3
+				any_enemy_country = { is_actual_major = yes }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 1.5
+				has_war = yes
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 1.25
+				date > 1936.12.31
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
+			}
 		}
 		available = {
 		}			
@@ -14479,7 +17940,36 @@ focus_tree = {
 		x = 0
 		y = 2
 		ai_will_do = {
-			factor = 100
+			factor = 30
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 4
+				OR = { has_war_with = JAP has_war_with = USA }
+			}
+			modifier = {
+				factor = 3
+				any_enemy_country = { is_actual_major = yes }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 1.5
+				has_war = yes
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+				NOT = { OR = { has_war_with = JAP has_war_with = USA } }
+			}
+			modifier = {
+				factor = 1.25
+				date > 1936.12.31
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
+			}
 		}
 		available = {
 		}			
@@ -14513,7 +18003,29 @@ focus_tree = {
 		x = 0
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 25
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+			}
+			modifier = {
+				factor = 3
+				any_enemy_country = { is_actual_major = yes }
+			}
+			modifier = {
+				factor = 1.5
+				has_war = yes
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+			}
+			modifier = {
+				factor = 1.25
+				date > 1936.12.31
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
+			}
 		}
 		available = {
 		}			
@@ -14561,7 +18073,29 @@ focus_tree = {
 		x = 1
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 20
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+			}
+			modifier = {
+				factor = 3
+				any_enemy_country = { is_actual_major = yes }
+			}
+			modifier = {
+				factor = 1.5
+				has_war = yes
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+			}
+			modifier = {
+				factor = 1.25
+				date > 1936.12.31
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
+			}
 		}
 		available = {
 		}			
@@ -14594,7 +18128,29 @@ focus_tree = {
 		x = 0
 		y = 2
 		ai_will_do = {
-			factor = 100
+			factor = 20
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+			}
+			modifier = {
+				factor = 3
+				any_enemy_country = { is_actual_major = yes }
+			}
+			modifier = {
+				factor = 1.5
+				has_war = yes
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+			}
+			modifier = {
+				factor = 1.25
+				date > 1936.12.31
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
+			}
 		}
 		available = {
 		}			
@@ -14621,7 +18177,29 @@ focus_tree = {
 		x = 0
 		y = 2
 		ai_will_do = {
-			factor = 100
+			factor = 20
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+			}
+			modifier = {
+				factor = 3
+				any_enemy_country = { is_actual_major = yes }
+			}
+			modifier = {
+				factor = 1.5
+				has_war = yes
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+			}
+			modifier = {
+				factor = 1.25
+				date > 1936.12.31
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
+			}
 		}
 		available = {
 		}			
@@ -14656,7 +18234,29 @@ focus_tree = {
 		x = -1
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 10
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+			}
+			modifier = {
+				factor = 2
+				any_enemy_country = { is_actual_major = yes }
+			}
+			modifier = {
+				factor = 1.5
+				has_war = yes
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+			}
+			modifier = {
+				factor = 1.25
+				date > 1936.12.31
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
+			}
 		}
 		available = {
 		}			
@@ -14676,7 +18276,29 @@ focus_tree = {
 		x = 0
 		y = 2
 		ai_will_do = {
-			factor = 100
+			factor = 25
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+			}
+			modifier = {
+				factor = 2
+				any_enemy_country = { is_actual_major = yes }
+			}
+			modifier = {
+				factor = 1.5
+				has_war = yes
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+			}
+			modifier = {
+				factor = 1.25
+				date > 1936.12.31
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
+			}
 		}
 		available = {
 		}			
@@ -14704,7 +18326,29 @@ focus_tree = {
 		x = 0
 		y = 2
 		ai_will_do = {
-			factor = 100
+			factor = 15
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+			}
+			modifier = {
+				factor = 3
+				any_enemy_country = { is_actual_major = yes }
+			}
+			modifier = {
+				factor = 1.5
+				has_war = yes
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+			}
+			modifier = {
+				factor = 1.25
+				date > 1936.12.31
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
+			}
 		}
 		available = {
 		}			
@@ -14738,7 +18382,29 @@ focus_tree = {
 		x = 5
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 30
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+			}
+			modifier = {
+				factor = 3
+				any_enemy_country = { is_actual_major = yes }
+			}
+			modifier = {
+				factor = 1.5
+				has_war = yes
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+			}
+			modifier = {
+				factor = 1.25
+				date > 1936.12.31
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
+			}
 		}
 		available = {
 		}			
@@ -14771,7 +18437,29 @@ focus_tree = {
 		x = 0
 		y = 2
 		ai_will_do = {
-			factor = 100
+			factor = 25
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+			}
+			modifier = {
+				factor = 3
+				any_enemy_country = { is_actual_major = yes }
+			}
+			modifier = {
+				factor = 1.5
+				has_war = yes
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+			}
+			modifier = {
+				factor = 1.25
+				date > 1936.12.31
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
+			}
 		}
 		available = {
 		}			
@@ -14806,7 +18494,29 @@ focus_tree = {
 		x = -1
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 20
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+			}
+			modifier = {
+				factor = 3
+				any_enemy_country = { is_actual_major = yes }
+			}
+			modifier = {
+				factor = 1.5
+				has_war = yes
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+			}
+			modifier = {
+				factor = 1.25
+				date > 1936.12.31
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
+			}
 		}
 		available = {
 		}			
@@ -14839,7 +18549,29 @@ focus_tree = {
 		x = 0
 		y = 2
 		ai_will_do = {
-			factor = 100
+			factor = 20
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+			}
+			modifier = {
+				factor = 3
+				any_enemy_country = { is_actual_major = yes }
+			}
+			modifier = {
+				factor = 1.5
+				has_war = yes
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+			}
+			modifier = {
+				factor = 1.25
+				date > 1936.12.31
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
+			}
 		}
 		available = {
 		}			
@@ -14867,7 +18599,29 @@ focus_tree = {
 		x = 1
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 25
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+			}
+			modifier = {
+				factor = 3
+				any_enemy_country = { is_actual_major = yes }
+			}
+			modifier = {
+				factor = 1.5
+				has_war = yes
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+			}
+			modifier = {
+				factor = 1.25
+				date > 1936.12.31
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
+			}
 		}
 		available = {
 		}			
@@ -14900,7 +18654,29 @@ focus_tree = {
 		x = 0
 		y = 2
 		ai_will_do = {
-			factor = 100
+			factor = 20
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+			}
+			modifier = {
+				factor = 3
+				any_enemy_country = { is_actual_major = yes }
+			}
+			modifier = {
+				factor = 1.5
+				has_war = yes
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+			}
+			modifier = {
+				factor = 1.25
+				date > 1936.12.31
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
+			}
 		}
 		available = {
 		}			
@@ -14927,7 +18703,29 @@ focus_tree = {
 		x = 0
 		y = 2
 		ai_will_do = {
-			factor = 100
+			factor = 30
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+			}
+			modifier = {
+				factor = 3
+				any_enemy_country = { is_actual_major = yes }
+			}
+			modifier = {
+				factor = 1.5
+				has_war = yes
+				NOT = { any_enemy_country = { is_actual_major = yes } }
+			}
+			modifier = {
+				factor = 1.25
+				date > 1936.12.31
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
+			}
 		}
 		available = {
 		}			
@@ -15000,6 +18798,11 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Burst_the_illusions_of_the_exiles"
+			add_political_power = 20
+			add_command_power = 20
+			country_event = {
+				id = GEA.829
+			}
 		}	
 	}
 	focus = { #拯救莱希哈特
@@ -15206,7 +19009,10 @@ focus_tree = {
 			factor = 25
 		}
 		available = {
-
+			BRM = {
+				exists = yes
+				NOT = { has_socialist_government = yes }
+			}
 		}			
 
 		prerequisite = {
@@ -15216,6 +19022,38 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Taking_care_of_peacocks"
+			BRM = {
+				add_stability = 0.10
+				if = {
+					limit = {
+						any_owned_state = {
+							is_controlled_by = PREV
+							free_building_slots = { building = industrial_complex size = 3 include_locked = yes }
+						}
+					}
+					random_owned_state = {
+						limit = {
+							is_controlled_by = PREV
+							free_building_slots = { building = industrial_complex size = 3 include_locked = yes }
+						}
+						add_extra_state_shared_building_slots = 3
+						add_building_construction = {
+							type = industrial_complex
+							level = 2
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = arms_factory
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+				else = {
+					add_offsite_building = { type = industrial_complex level = 2 }
+					add_offsite_building = { type = arms_factory level = 1 }
+				}
+			}
 		}	
 	}
 
@@ -15228,7 +19066,7 @@ focus_tree = {
 		y = 1
 
 		ai_will_do = {
-			factor = 25
+			factor = 10
 		}
 		available = {
 			BRM = {
@@ -15261,7 +19099,14 @@ focus_tree = {
 			factor = 25
 		}
 		available = {
-
+			SIA = { exists = yes }
+			BRM = {
+				exists = yes
+				has_war_with = SIA
+			}
+		}
+		bypass = {
+			NOT = { BRM = { has_war_with = SIA } }
 		}			
 
 		prerequisite = {
@@ -15271,6 +19116,15 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Mediating_the_Siam-Myanmar_War"
+			custom_effect_tooltip = GEA_Mediating_the_Siam-Myanmar_War_tt
+			if = {
+				limit = { SIA = { has_offensive_war_with = BRM } }
+				SIA = { country_event = { id = GEA.1113 } }
+			}
+			else_if = {
+				limit = { BRM = { has_offensive_war_with = SIA } }
+				BRM = { country_event = { id = GEA.1113 } }
+			}
 		}	
 	}
 
@@ -15283,7 +19137,7 @@ focus_tree = {
 		y = 1
 
 		ai_will_do = {
-			factor = 25
+			factor = 10
 		}
 		available = {
 			SIA = {
@@ -15316,7 +19170,7 @@ focus_tree = {
 			factor = 25
 		}
 		available = {
-
+			country_exists = DEI
 		}			
 
 		prerequisite = {
@@ -15326,6 +19180,11 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Test_the_sea_charioteer"
+			add_stability = 0.05
+			DEI = {
+				add_political_power = 10
+				add_stability = 0.05
+			}
 		}	
 	}
 
@@ -15713,6 +19572,24 @@ focus_tree = {
 		y = 25
 		ai_will_do = {
 			factor = 100
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+			}
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
+				GEA_ai_domestic_main_focuses_completed_trigger = yes
+			}
+			modifier = {
+				factor = 1.5
+				date > 1938.12.31
+				GEA_ai_domestic_main_focuses_completed_trigger = yes
+			}
 		}
 		available = {
 
@@ -15738,7 +19615,25 @@ focus_tree = {
 		x = 0
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 75
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+			}
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
+				GEA_ai_domestic_main_focuses_completed_trigger = yes
+			}
+			modifier = {
+				factor = 1.5
+				date > 1938.12.31
+				GEA_ai_domestic_main_focuses_completed_trigger = yes
+			}
 		}
 		available = {
 			GEA_nanjing_non_anti_concession_controller_trigger = yes
@@ -15768,7 +19663,25 @@ focus_tree = {
 		x = -1
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 50
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+			}
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
+				GEA_ai_domestic_main_focuses_completed_trigger = yes
+			}
+			modifier = {
+				factor = 1.5
+				date > 1938.12.31
+				GEA_ai_domestic_main_focuses_completed_trigger = yes
+			}
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -15803,7 +19716,15 @@ focus_tree = {
 		x = 1
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 25
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+			}
+			modifier = {
+				factor = 0
+				613 = { owner = { is_ai = no } }
+			}
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -15835,7 +19756,25 @@ focus_tree = {
 		x = -3
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 50
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+			}
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
+				GEA_ai_domestic_main_focuses_completed_trigger = yes
+			}
+			modifier = {
+				factor = 1.5
+				date > 1938.12.31
+				GEA_ai_domestic_main_focuses_completed_trigger = yes
+			}
 		}
 		available = {
 			GEA_nanjing_non_anti_concession_controller_trigger = yes
@@ -15872,7 +19811,25 @@ focus_tree = {
 		x = -1
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 50
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+			}
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
+				GEA_ai_domestic_main_focuses_completed_trigger = yes
+			}
+			modifier = {
+				factor = 1.5
+				date > 1938.12.31
+				GEA_ai_domestic_main_focuses_completed_trigger = yes
+			}
 		}
 		available = {
 			GEA_nanjing_non_anti_concession_controller_trigger = yes
@@ -15903,7 +19860,25 @@ focus_tree = {
 		x = 1
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 50
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+			}
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
+				GEA_ai_domestic_main_focuses_completed_trigger = yes
+			}
+			modifier = {
+				factor = 1.5
+				date > 1938.12.31
+				GEA_ai_domestic_main_focuses_completed_trigger = yes
+			}
 		}
 		available = {
 			GEA_nanjing_non_anti_concession_controller_trigger = yes
@@ -15932,7 +19907,15 @@ focus_tree = {
 		x = 3
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 10
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+			}
+			modifier = {
+				factor = 0
+				613 = { owner = { is_ai = no } }
+			}
 		}
 		available = {
 			GEA_nanjing_non_anti_concession_controller_trigger = yes
@@ -15963,7 +19946,25 @@ focus_tree = {
 		x = 5
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 50
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+			}
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
+				GEA_ai_domestic_main_focuses_completed_trigger = yes
+			}
+			modifier = {
+				factor = 1.5
+				date > 1938.12.31
+				GEA_ai_domestic_main_focuses_completed_trigger = yes
+			}
 		}
 		available = {
 			GEA_nanjing_non_anti_concession_controller_trigger = yes
@@ -16008,7 +20009,15 @@ focus_tree = {
 		x = 0
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 75
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+			}
+			modifier = {
+				factor = 0
+				613 = { owner = { is_ai = no } }
+			}
 		}
 		available = {
 			GEA_nanjing_non_anti_concession_controller_trigger = yes
@@ -16084,7 +20093,15 @@ focus_tree = {
 		x = 4
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 1
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+			}
+			modifier = {
+				factor = 0
+				CHI = { exists = yes is_ai = no }
+			}
 		}
 		available = {
 			country_exists = CHI
@@ -16120,7 +20137,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 0
 		}
 		available = {
 			date > 1938.9.1
@@ -16157,7 +20174,7 @@ focus_tree = {
 		x = -4
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 0
 		}
 		available = {
 			OR = {
@@ -16204,7 +20221,7 @@ focus_tree = {
 		x = -6
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 0
 		}
 		available = {
 			always = no
@@ -16226,7 +20243,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 0
 		}
 		available = {
 
@@ -16248,7 +20265,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 0
 		}
 		available = {
 
@@ -16270,7 +20287,7 @@ focus_tree = {
 		x = -3
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 0
 		}
 		available = {
 
@@ -16292,7 +20309,7 @@ focus_tree = {
 		x = -5
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 0
 		}
 		available = {
 
@@ -16314,7 +20331,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 0
 		}
 		available = {
 
@@ -16339,7 +20356,7 @@ focus_tree = {
 		x = -5
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 0
 		}
 		available = {
 
@@ -16364,7 +20381,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 0
 		}
 		available = {
 
@@ -16389,7 +20406,25 @@ focus_tree = {
 		x = 9
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 75
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+			}
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
+				GEA_ai_domestic_main_focuses_completed_trigger = yes
+			}
+			modifier = {
+				factor = 1.5
+				date > 1938.12.31
+				GEA_ai_domestic_main_focuses_completed_trigger = yes
+			}
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -16422,7 +20457,15 @@ focus_tree = {
 		x = 2
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 2
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+			}
+			modifier = {
+				factor = 0
+				QIE = { exists = yes is_ai = no }
+			}
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -16471,7 +20514,15 @@ focus_tree = {
 		x = -1
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 2
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+			}
+			modifier = {
+				factor = 0
+				QIE = { exists = yes is_ai = no }
+			}
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -16524,7 +20575,15 @@ focus_tree = {
 		x = 2
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 1
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+			}
+			modifier = {
+				factor = 0
+				QIE = { exists = yes is_ai = no }
+			}
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -16573,7 +20632,15 @@ focus_tree = {
 		x = 0
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 1
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+			}
+			modifier = {
+				factor = 0
+				QIE = { exists = yes is_ai = no }
+			}
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -16606,7 +20673,15 @@ focus_tree = {
 		x = -2
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 5
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+			}
+			modifier = {
+				factor = 0
+				QIE = { exists = yes is_ai = no }
+			}
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -16655,7 +20730,25 @@ focus_tree = {
 		x = 1
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 50
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+			}
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
+				GEA_ai_domestic_main_focuses_completed_trigger = yes
+			}
+			modifier = {
+				factor = 1.5
+				date > 1938.12.31
+				GEA_ai_domestic_main_focuses_completed_trigger = yes
+			}
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -16710,7 +20803,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 0
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -16766,7 +20859,18 @@ focus_tree = {
 		x = 2
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 1
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					QIE = { exists = yes is_ai = no }
+					FNG = { exists = yes is_ai = no }
+				}
+			}
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -16835,7 +20939,25 @@ focus_tree = {
 		x = 14
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 75
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+			}
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
+				GEA_ai_domestic_main_focuses_completed_trigger = yes
+			}
+			modifier = {
+				factor = 1.5
+				date > 1938.12.31
+				GEA_ai_domestic_main_focuses_completed_trigger = yes
+			}
 		}
 		available = {
 			OR = {
@@ -16870,7 +20992,25 @@ focus_tree = {
 		x = 0
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 50
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+			}
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
+				GEA_ai_domestic_main_focuses_completed_trigger = yes
+			}
+			modifier = {
+				factor = 1.5
+				date > 1938.12.31
+				GEA_ai_domestic_main_focuses_completed_trigger = yes
+			}
 		}
 		available = {
 			SQI = {
@@ -16900,7 +21040,19 @@ focus_tree = {
 		x = 2
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 50
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+			}
+			modifier = {
+				factor = 0.02
+				SQI = { GEA_china_warlord_cannot_interact_trigger = yes }
+			}
+			modifier = {
+				factor = 0
+				SQI = { exists = yes is_ai = no }
+			}
 		}
 		available = {
 			SQI = {
@@ -16949,7 +21101,25 @@ focus_tree = {
 		x = 1
 		y = 2
 		ai_will_do = {
-			factor = 100
+			factor = 75
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+			}
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
+				GEA_ai_domestic_main_focuses_completed_trigger = yes
+			}
+			modifier = {
+				factor = 1.5
+				date > 1938.12.31
+				GEA_ai_domestic_main_focuses_completed_trigger = yes
+			}
 		}
 		available = {
 			OR = {
@@ -16987,7 +21157,25 @@ focus_tree = {
 		x = -3
 		y = 4
 		ai_will_do = {
-			factor = 100
+			factor = 75
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+			}
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
+				GEA_ai_domestic_main_focuses_completed_trigger = yes
+			}
+			modifier = {
+				factor = 1.5
+				date > 1938.12.31
+				GEA_ai_domestic_main_focuses_completed_trigger = yes
+			}
 		}
 		available = {
 			GEA_yunnan_non_anti_concession_controller_trigger = yes
@@ -17014,7 +21202,15 @@ focus_tree = {
 		x = 0
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 25
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+			}
+			modifier = {
+				factor = 0
+				YUN = { exists = yes is_ai = no }
+			}
 		}
 		available = {
 			GEA_yunnan_non_anti_concession_controller_trigger = yes
@@ -17040,7 +21236,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 0
 		}
 		available = {
 			GEA_yunnan_non_anti_concession_controller_trigger = yes
@@ -17063,7 +21259,25 @@ focus_tree = {
 		x = 1
 		y = 2
 		ai_will_do = {
-			factor = 100
+			factor = 50
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+			}
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
+				GEA_ai_domestic_main_focuses_completed_trigger = yes
+			}
+			modifier = {
+				factor = 1.5
+				date > 1938.12.31
+				GEA_ai_domestic_main_focuses_completed_trigger = yes
+			}
 		}
 		available = {
 			GEA_yunnan_non_anti_concession_controller_trigger = yes
@@ -17156,7 +21370,15 @@ focus_tree = {
 		x = -1
 		y = 2
 		ai_will_do = {
-			factor = 100
+			factor = 5
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+			}
+			modifier = {
+				factor = 0
+				YUN = { exists = yes is_ai = no }
+			}
 		}
 		available = {
 			GEA_yunnan_non_anti_concession_controller_trigger = yes
@@ -17372,10 +21594,28 @@ focus_tree = {
 		x = 3
 		y = 4
 		ai_will_do = {
-			factor = 100
+			factor = 75
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+			}
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
+				GEA_ai_domestic_main_focuses_completed_trigger = yes
+			}
+			modifier = {
+				factor = 1.5
+				date > 1938.12.31
+				GEA_ai_domestic_main_focuses_completed_trigger = yes
+			}
 		}
 		available = {
-			always = no
+			GEA_sichuan_non_anti_concession_controller_trigger = yes
 		}			
 		prerequisite = {
 			focus = GEA_The_second_expedition_to_China
@@ -17383,21 +21623,48 @@ focus_tree = {
 		relative_position_id = GEA_The_second_expedition_to_China
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_Land_of_Abundance"
+			unlock_decision_tooltip = GEA_szc_business_talks
+			unlock_decision_tooltip = GEA_szc_military_instructors
+			unlock_decision_tooltip = GEA_szc_yangtze_transport
+			unlock_decision_tooltip = GEA_szc_chongqing_trade_office
+			unlock_decision_tooltip = GEA_szc_liaison_mission
 		}	
 	}
 
 	focus = { #饥者得食
 		id = GEA_The_hungry_are_fed
 		icon = GFX_goal_AUS_field_over_factory
-		search_filters = { FOCUS_FILTER_STABILITY }
+		search_filters = { FOCUS_FILTER_STABILITY } 
 		cost = 5
 		x = 0
 		y = 1
 		ai_will_do = {
 			factor = 100
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+			}
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
+				GEA_ai_domestic_main_focuses_completed_trigger = yes
+			}
+			modifier = {
+				factor = 1.5
+				date > 1938.12.31
+				GEA_ai_domestic_main_focuses_completed_trigger = yes
+			}
 		}
 		available = {
-
+			GEA_sichuan_famine_active_trigger = yes
+			GEA_sichuan_non_anti_concession_controller_trigger = yes
+			NOT = {
+				has_war_with = SZC
+			}
 		}			
 		prerequisite = {
 			focus = GEA_The_Land_of_Abundance
@@ -17405,6 +21672,11 @@ focus_tree = {
 		relative_position_id = GEA_The_Land_of_Abundance
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_hungry_are_fed"
+			unlock_decision_tooltip = GEA_szc_famine_fundraising
+			unlock_decision_tooltip = GEA_szc_famine_rice_shipments
+			unlock_decision_tooltip = GEA_szc_famine_relief_advisers
+			unlock_decision_tooltip = GEA_szc_famine_grain_depots
+			unlock_decision_tooltip = GEA_szc_famine_relief_loan
 		}	
 	}
 
@@ -17416,7 +21688,18 @@ focus_tree = {
 		x = -3
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 1
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					SZC = { exists = yes is_ai = no }
+					YUN = { exists = yes is_ai = no }
+				}
+			}
 		}
 		available = {
 
@@ -17428,6 +21711,34 @@ focus_tree = {
 		relative_position_id = GEA_The_Land_of_Abundance
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_suppress_nationalism"
+			SZC = {
+				if = {
+					limit = {
+						exists = yes
+					}
+					add_stability = 0.10
+					add_war_support = 0.05
+					add_popularity = {
+						ideology = national_populist
+						popularity = -0.20
+					}
+					add_political_power = 30
+				}
+			}
+			YUN = {
+				if = {
+					limit = {
+						exists = yes
+					}
+					add_stability = 0.10
+					add_war_support = 0.05
+					add_popularity = {
+						ideology = national_populist
+						popularity = -0.20
+					}
+					add_political_power = 30
+				}
+			}
 		}	
 	}
 
@@ -17439,10 +21750,37 @@ focus_tree = {
 		x = 0
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 1
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					SZC = { exists = yes is_ai = no }
+					YUN = { exists = yes is_ai = no }
+				}
+			}
 		}
 		available = {
-
+			custom_trigger_tooltip = {
+				tooltip = GEA_szc_yun_at_least_one_non_kmt_tt
+				OR = {
+					SZC = {
+						exists = yes
+						NOT = {
+							GEA_szc_yun_kmt_government_trigger = yes
+						}
+					}
+					YUN = {
+						exists = yes
+						NOT = {
+							GEA_szc_yun_kmt_government_trigger = yes
+						}
+					}
+				}
+			}
 		}			
 		prerequisite = {
 			focus = GEA_suppress_nationalism
@@ -17450,6 +21788,52 @@ focus_tree = {
 		relative_position_id = GEA_suppress_nationalism
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Assist_in_the_search_for_fugitives"
+			SZC = {
+				if = {
+					limit = {
+						exists = yes
+						NOT = {
+							GEA_szc_yun_kmt_government_trigger = yes
+						}
+					}
+					add_stability = 0.05
+					if = {
+						limit = {
+							NOT = {
+								has_government = social_democrat
+							}
+						}
+						add_popularity = {
+							ideology = social_democrat
+							popularity = -0.10
+						}
+					}
+					increase_ruling_party_popularity_by_5 = yes
+				}
+			}
+			YUN = {
+				if = {
+					limit = {
+						exists = yes
+						NOT = {
+							GEA_szc_yun_kmt_government_trigger = yes
+						}
+					}
+					add_stability = 0.05
+					if = {
+						limit = {
+							NOT = {
+								has_government = social_liberal
+							}
+						}
+						add_popularity = {
+							ideology = social_liberal
+							popularity = -0.10
+						}
+					}
+					increase_ruling_party_popularity_by_5 = yes
+				}
+			}
 		}	
 	}
 
@@ -17461,10 +21845,13 @@ focus_tree = {
 		x = 2
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 0
 		}
 		available = {
-
+			GEA_sichuan_non_anti_concession_controller_trigger = yes
+			NOT = {
+				has_war_with = SZC
+			}
 		}			
 		prerequisite = {
 			focus = GEA_The_Land_of_Abundance
@@ -17473,6 +21860,11 @@ focus_tree = {
 		relative_position_id = GEA_The_Land_of_Abundance
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Draining_the_pond_to_catch_all_the_fish"
+			unlock_decision_tooltip = GEA_szc_liquidate_german_assets
+			unlock_decision_tooltip = GEA_szc_requisition_army_stocks
+			unlock_decision_tooltip = GEA_szc_relocate_armament_lines
+			unlock_decision_tooltip = GEA_szc_recruit_technical_personnel
+			unlock_decision_tooltip = GEA_szc_conscript_labourers
 		}	
 	}
 
@@ -17484,10 +21876,28 @@ focus_tree = {
 		x = 1
 		y = 2
 		ai_will_do = {
-			factor = 100
+			factor = 75
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+			}
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
+				GEA_ai_domestic_main_focuses_completed_trigger = yes
+			}
+			modifier = {
+				factor = 1.5
+				date > 1938.12.31
+				GEA_ai_domestic_main_focuses_completed_trigger = yes
+			}
 		}
 		available = {
-
+			GEA_sichuan_non_anti_concession_controller_trigger = yes
 		}			
 		prerequisite = {
 			focus = GEA_The_Land_of_Abundance
@@ -17496,6 +21906,88 @@ focus_tree = {
 		relative_position_id = GEA_The_Land_of_Abundance
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Promoting_limited_modernization"
+			650 = {
+				if = {
+					limit = {
+						is_owned_and_controlled_by = SZC
+					}
+					increase_state_category_by_one_level = yes
+					add_extra_state_shared_building_slots = 2
+					if = {
+						limit = {
+							infrastructure < 5
+						}
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					}
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			605 = {
+				if = {
+					limit = {
+						is_owned_and_controlled_by = SZC
+					}
+					increase_state_category_by_one_level = yes
+					add_extra_state_shared_building_slots = 2
+					if = {
+						limit = {
+							infrastructure < 5
+						}
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					}
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			661 = {
+				if = {
+					limit = {
+						is_owned_and_controlled_by = SZC
+					}
+					increase_state_category_by_one_level = yes
+					add_extra_state_shared_building_slots = 1
+					if = {
+						limit = {
+							infrastructure < 5
+						}
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					}
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
 		}	
 	}
 	focus = { #造不如买
@@ -17506,10 +21998,31 @@ focus_tree = {
 		x = -1
 		y = 2
 		ai_will_do = {
-			factor = 100
+			factor = 50
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+			}
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
+				GEA_ai_domestic_main_focuses_completed_trigger = yes
+			}
+			modifier = {
+				factor = 1.5
+				date > 1938.12.31
+				GEA_ai_domestic_main_focuses_completed_trigger = yes
+			}
 		}
 		available = {
-
+			GEA_sichuan_non_anti_concession_controller_trigger = yes
+			NOT = {
+				has_war_with = SZC
+			}
 		}			
 		prerequisite = {
 			focus = GEA_The_Land_of_Abundance
@@ -17518,6 +22031,9 @@ focus_tree = {
 		relative_position_id = GEA_The_Land_of_Abundance
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Buy_Buy_Buy"
+			unlock_decision_tooltip = GEA_szc_sell_rifles
+			unlock_decision_tooltip = GEA_szc_sell_artillery
+			unlock_decision_tooltip = GEA_szc_sell_logistical_equipment
 		}	
 	}
 
@@ -17525,14 +22041,35 @@ focus_tree = {
 		id = GEA_Look_brand-new
 		icon = GFX_GEA_Look_brand-new
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		cost = 5
+		cost = 7
 		x = 0
 		y = 1
 		ai_will_do = {
-			factor = 100
+			factor = 75
+			modifier = {
+				factor = 0.5
+				NOT = { GEA_ai_domestic_main_focuses_completed_trigger = yes }
+			}
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+			modifier = {
+				factor = 1.5
+				date > 1937.12.31
+				GEA_ai_domestic_main_focuses_completed_trigger = yes
+			}
+			modifier = {
+				factor = 1.5
+				date > 1938.12.31
+				GEA_ai_domestic_main_focuses_completed_trigger = yes
+			}
 		}
 		available = {
-
+			OR = {
+				country_exists = SZC
+				country_exists = YUN
+			}
 		}			
 		prerequisite = {
 			focus = GEA_To_get_a_share_of_the_tobacco_trade
@@ -17549,6 +22086,708 @@ focus_tree = {
 		relative_position_id = GEA_Assist_in_the_search_for_fugitives
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Look_brand-new"
+			if = {
+				limit = {
+					SZC = {
+						exists = yes
+					}
+				}
+				if = {
+					limit = {
+						check_variable = {
+							var = GEA_china_szc_capital_influence
+							value = 80
+							compare = greater_than_or_equals
+						}
+					}
+					add_political_power = 100
+					add_stability = 0.05
+					if = {
+						limit = {
+							any_owned_state = {
+								is_controlled_by = PREV
+								free_building_slots = {
+									building = industrial_complex
+									size > 2
+									include_locked = yes
+								}
+							}
+						}
+						random_owned_controlled_state = {
+							limit = {
+								free_building_slots = {
+									building = industrial_complex
+									size > 2
+									include_locked = yes
+								}
+							}
+							add_extra_state_shared_building_slots = 3
+							add_building_construction = {
+								type = industrial_complex
+								level = 2
+								instant_build = yes
+							}
+							add_building_construction = {
+								type = arms_factory
+								level = 1
+								instant_build = yes
+							}
+						}
+					}
+					else = {
+						add_offsite_building = {
+							type = industrial_complex
+							level = 2
+						}
+						add_offsite_building = {
+							type = arms_factory
+							level = 1
+						}
+					}
+					SZC = {
+						add_political_power = 125
+						add_stability = 0.06
+						if = {
+							limit = {
+								any_owned_state = {
+									is_controlled_by = PREV
+									free_building_slots = {
+										building = industrial_complex
+										size > 3
+										include_locked = yes
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 3
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 4
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}
+								add_building_construction = {
+									type = arms_factory
+									level = 2
+									instant_build = yes
+								}
+							}
+						}
+						else = {
+							add_offsite_building = {
+								type = industrial_complex
+								level = 2
+							}
+							add_offsite_building = {
+								type = arms_factory
+								level = 2
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						check_variable = {
+							var = GEA_china_szc_capital_influence
+							value = 60
+							compare = greater_than_or_equals
+						}
+					}
+					add_political_power = 80
+					add_stability = 0.04
+					if = {
+						limit = {
+							any_owned_state = {
+								is_controlled_by = PREV
+								free_building_slots = {
+									building = industrial_complex
+									size > 1
+									include_locked = yes
+								}
+							}
+						}
+						random_owned_controlled_state = {
+							limit = {
+								free_building_slots = {
+									building = industrial_complex
+									size > 1
+									include_locked = yes
+								}
+							}
+							add_extra_state_shared_building_slots = 2
+							add_building_construction = {
+								type = industrial_complex
+								level = 1
+								instant_build = yes
+							}
+							add_building_construction = {
+								type = arms_factory
+								level = 1
+								instant_build = yes
+							}
+						}
+					}
+					else = {
+						add_offsite_building = {
+							type = industrial_complex
+							level = 1
+						}
+						add_offsite_building = {
+							type = arms_factory
+							level = 1
+						}
+					}
+					SZC = {
+						add_political_power = 100
+						add_stability = 0.05
+						if = {
+							limit = {
+								any_owned_state = {
+									is_controlled_by = PREV
+									free_building_slots = {
+										building = industrial_complex
+										size > 2
+										include_locked = yes
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 2
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}
+								add_building_construction = {
+									type = arms_factory
+									level = 1
+									instant_build = yes
+								}
+							}
+						}
+						else = {
+							add_offsite_building = {
+								type = industrial_complex
+								level = 2
+							}
+							add_offsite_building = {
+								type = arms_factory
+								level = 1
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						check_variable = {
+							var = GEA_china_szc_capital_influence
+							value = 40
+							compare = greater_than_or_equals
+						}
+					}
+					add_political_power = 60
+					add_stability = 0.03
+					if = {
+						limit = {
+							any_owned_state = {
+								is_controlled_by = PREV
+								free_building_slots = {
+									building = industrial_complex
+									size > 0
+									include_locked = yes
+								}
+							}
+						}
+						random_owned_controlled_state = {
+							limit = {
+								free_building_slots = {
+									building = industrial_complex
+									size > 0
+									include_locked = yes
+								}
+							}
+							add_extra_state_shared_building_slots = 1
+							add_building_construction = {
+								type = industrial_complex
+								level = 1
+								instant_build = yes
+							}
+						}
+					}
+					else = {
+						add_offsite_building = {
+							type = industrial_complex
+							level = 1
+						}
+					}
+					SZC = {
+						add_political_power = 75
+						add_stability = 0.04
+						if = {
+							limit = {
+								any_owned_state = {
+									is_controlled_by = PREV
+									free_building_slots = {
+										building = industrial_complex
+										size > 1
+										include_locked = yes
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 1
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}
+								add_building_construction = {
+									type = arms_factory
+									level = 1
+									instant_build = yes
+								}
+							}
+						}
+						else = {
+							add_offsite_building = {
+								type = industrial_complex
+								level = 1
+							}
+							add_offsite_building = {
+								type = arms_factory
+								level = 1
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						check_variable = {
+							var = GEA_china_szc_capital_influence
+							value = 20
+							compare = greater_than_or_equals
+						}
+					}
+					add_political_power = 40
+					add_stability = 0.02
+					SZC = {
+						add_political_power = 50
+						add_stability = 0.03
+						if = {
+							limit = {
+								any_owned_state = {
+									is_controlled_by = PREV
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}
+							}
+						}
+						else = {
+							add_offsite_building = {
+								type = industrial_complex
+								level = 1
+							}
+						}
+					}
+				}
+				else = {
+					add_political_power = 25
+					add_stability = 0.01
+					SZC = {
+						add_political_power = 25
+						add_stability = 0.02
+					}
+				}
+			}
+			if = {
+				limit = {
+					YUN = {
+						exists = yes
+					}
+				}
+				if = {
+					limit = {
+						check_variable = {
+							var = GEA_china_yun_capital_influence
+							value = 80
+							compare = greater_than_or_equals
+						}
+					}
+					add_political_power = 100
+					add_stability = 0.05
+					if = {
+						limit = {
+							any_owned_state = {
+								is_controlled_by = PREV
+								free_building_slots = {
+									building = industrial_complex
+									size > 2
+									include_locked = yes
+								}
+							}
+						}
+						random_owned_controlled_state = {
+							limit = {
+								free_building_slots = {
+									building = industrial_complex
+									size > 2
+									include_locked = yes
+								}
+							}
+							add_extra_state_shared_building_slots = 3
+							add_building_construction = {
+								type = industrial_complex
+								level = 2
+								instant_build = yes
+							}
+							add_building_construction = {
+								type = arms_factory
+								level = 1
+								instant_build = yes
+							}
+						}
+					}
+					else = {
+						add_offsite_building = {
+							type = industrial_complex
+							level = 2
+						}
+						add_offsite_building = {
+							type = arms_factory
+							level = 1
+						}
+					}
+					YUN = {
+						add_political_power = 125
+						add_stability = 0.06
+						if = {
+							limit = {
+								any_owned_state = {
+									is_controlled_by = PREV
+									free_building_slots = {
+										building = industrial_complex
+										size > 3
+										include_locked = yes
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 3
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 4
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}
+								add_building_construction = {
+									type = arms_factory
+									level = 2
+									instant_build = yes
+								}
+							}
+						}
+						else = {
+							add_offsite_building = {
+								type = industrial_complex
+								level = 2
+							}
+							add_offsite_building = {
+								type = arms_factory
+								level = 2
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						check_variable = {
+							var = GEA_china_yun_capital_influence
+							value = 60
+							compare = greater_than_or_equals
+						}
+					}
+					add_political_power = 80
+					add_stability = 0.04
+					if = {
+						limit = {
+							any_owned_state = {
+								is_controlled_by = PREV
+								free_building_slots = {
+									building = industrial_complex
+									size > 1
+									include_locked = yes
+								}
+							}
+						}
+						random_owned_controlled_state = {
+							limit = {
+								free_building_slots = {
+									building = industrial_complex
+									size > 1
+									include_locked = yes
+								}
+							}
+							add_extra_state_shared_building_slots = 2
+							add_building_construction = {
+								type = industrial_complex
+								level = 1
+								instant_build = yes
+							}
+							add_building_construction = {
+								type = arms_factory
+								level = 1
+								instant_build = yes
+							}
+						}
+					}
+					else = {
+						add_offsite_building = {
+							type = industrial_complex
+							level = 1
+						}
+						add_offsite_building = {
+							type = arms_factory
+							level = 1
+						}
+					}
+					YUN = {
+						add_political_power = 100
+						add_stability = 0.05
+						if = {
+							limit = {
+								any_owned_state = {
+									is_controlled_by = PREV
+									free_building_slots = {
+										building = industrial_complex
+										size > 2
+										include_locked = yes
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 2
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}
+								add_building_construction = {
+									type = arms_factory
+									level = 1
+									instant_build = yes
+								}
+							}
+						}
+						else = {
+							add_offsite_building = {
+								type = industrial_complex
+								level = 2
+							}
+							add_offsite_building = {
+								type = arms_factory
+								level = 1
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						check_variable = {
+							var = GEA_china_yun_capital_influence
+							value = 40
+							compare = greater_than_or_equals
+						}
+					}
+					add_political_power = 60
+					add_stability = 0.03
+					if = {
+						limit = {
+							any_owned_state = {
+								is_controlled_by = PREV
+								free_building_slots = {
+									building = industrial_complex
+									size > 0
+									include_locked = yes
+								}
+							}
+						}
+						random_owned_controlled_state = {
+							limit = {
+								free_building_slots = {
+									building = industrial_complex
+									size > 0
+									include_locked = yes
+								}
+							}
+							add_extra_state_shared_building_slots = 1
+							add_building_construction = {
+								type = industrial_complex
+								level = 1
+								instant_build = yes
+							}
+						}
+					}
+					else = {
+						add_offsite_building = {
+							type = industrial_complex
+							level = 1
+						}
+					}
+					YUN = {
+						add_political_power = 75
+						add_stability = 0.04
+						if = {
+							limit = {
+								any_owned_state = {
+									is_controlled_by = PREV
+									free_building_slots = {
+										building = industrial_complex
+										size > 1
+										include_locked = yes
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 1
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}
+								add_building_construction = {
+									type = arms_factory
+									level = 1
+									instant_build = yes
+								}
+							}
+						}
+						else = {
+							add_offsite_building = {
+								type = industrial_complex
+								level = 1
+							}
+							add_offsite_building = {
+								type = arms_factory
+								level = 1
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						check_variable = {
+							var = GEA_china_yun_capital_influence
+							value = 20
+							compare = greater_than_or_equals
+						}
+					}
+					add_political_power = 40
+					add_stability = 0.02
+					YUN = {
+						add_political_power = 50
+						add_stability = 0.03
+						if = {
+							limit = {
+								any_owned_state = {
+									is_controlled_by = PREV
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}
+							}
+						}
+						else = {
+							add_offsite_building = {
+								type = industrial_complex
+								level = 1
+							}
+						}
+					}
+				}
+				else = {
+					add_political_power = 25
+					add_stability = 0.01
+					YUN = {
+						add_political_power = 25
+						add_stability = 0.02
+					}
+				}
+			}
 		}	
 	}
 

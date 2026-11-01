@@ -2048,6 +2048,24 @@ GEA_add_pirate_loot = {
 	set_temp_variable = { GEA_pirate_loot_change_amount = GEA_raid_reward_multiplier }
 	GEA_change_pirate_loot_effect = yes
 }
+GEA_Szc_click_effect = { #四川
+	if = {
+		limit = {
+			has_country_flag = SZC_OPEN
+		}
+		clr_country_flag = SZC_OPEN
+	}
+	else = {
+		set_country_flag = SZC_OPEN
+		clr_country_flag = YUN_OPEN
+		clr_country_flag = LEP_OPEN
+		clr_country_flag = SQI_OPEN
+		clr_country_flag = GXC_OPEN
+		clr_country_flag = QIE_OPEN
+		clr_country_flag = LEC_OPEN
+	}
+}
+
 GEA_Yun_click_effect = { #云南
 	if = {
 		limit = {
@@ -2056,6 +2074,7 @@ GEA_Yun_click_effect = { #云南
 		clr_country_flag = YUN_OPEN
 	}
 	else = {
+		clr_country_flag = SZC_OPEN
 		set_country_flag = YUN_OPEN
 		clr_country_flag = LEP_OPEN
 		clr_country_flag = SQI_OPEN
@@ -2071,6 +2090,7 @@ GEA_Lep_click_effect = { #华东
 		clr_country_flag = LEP_OPEN
 	}
 	else = {
+		clr_country_flag = SZC_OPEN
 		clr_country_flag = YUN_OPEN
 		set_country_flag = LEP_OPEN
 		clr_country_flag = SQI_OPEN
@@ -2086,6 +2106,7 @@ GEA_Sqi_click_effect = { #山东
 		clr_country_flag = SQI_OPEN
 	}
 	else = {
+		clr_country_flag = SZC_OPEN
 		clr_country_flag = YUN_OPEN
 		set_country_flag = SQI_OPEN
 		clr_country_flag = LEP_OPEN
@@ -2101,6 +2122,7 @@ GEA_Gxc_click_effect = { #两广
 		clr_country_flag = GXC_OPEN
 	}
 	else = {
+		clr_country_flag = SZC_OPEN
 		clr_country_flag = YUN_OPEN
 		set_country_flag = GXC_OPEN
 		clr_country_flag = LEP_OPEN
@@ -2116,6 +2138,7 @@ GEA_Zhili_click_effect = { #直隶
 		clr_country_flag = QIE_OPEN
 	}
 	else = {
+		clr_country_flag = SZC_OPEN
 		clr_country_flag = YUN_OPEN
 		set_country_flag = QIE_OPEN
 		clr_country_flag = LEP_OPEN
@@ -2131,6 +2154,7 @@ GEA_Lec_click_effect = { #使馆城市
 		clr_country_flag = LEC_OPEN
 	}
 	else = {
+		clr_country_flag = SZC_OPEN
 		clr_country_flag = YUN_OPEN
 		set_country_flag = LEC_OPEN
 		clr_country_flag = LEP_OPEN
@@ -2164,5 +2188,41 @@ GEA_Economic_Recovery = {
 			has_idea = GEA_collapsing_colonial_finances_3
 		}
 		remove_ideas = GEA_collapsing_colonial_finances_3
+	}
+}
+#四川中幅救济：沿用KX数值，仅在达到结束标准后调用其完整结算
+GEA_szc_relieve_famine_medium_effect = {
+	if = {
+		limit = {
+			has_idea = SZC_famine_idea
+			has_dynamic_modifier = {
+				modifier = SZC_famine_modifier
+			}
+			has_variable = SZC_famine_monthly_population
+		}
+		custom_effect_tooltip = SZC_reduce_famine_moderate_tooltip
+		hidden_effect = {
+			add_to_variable = {
+				SZC_famine_monthly_population = 0.1
+			}
+			add_to_variable = {
+				SZC_famine_stability_factor = 0.01
+			}
+			add_to_variable = {
+				SZC_famine_war_support_factor = 0.04
+			}
+			subtract_from_variable = {
+				SZC_famine_consumer_goods_factor = 0.01
+			}
+			force_update_dynamic_modifier = yes
+			if = {
+				limit = {
+					check_variable = {
+						SZC_famine_monthly_population > -0.01
+					}
+				}
+				SZC_end_famine = yes
+			}
+		}
 	}
 }

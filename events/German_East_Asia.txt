@@ -8127,6 +8127,130 @@ add_namespace = GEA_news
 		}
 	}
 
+	country_event = { #山东接管：本土三州由GEA完全控制后决定统治形式
+		id = GEA.827
+		title = GEA.827.t
+		desc = GEA.827.d
+		fire_only_once = yes
+		trigger = {
+			tag = GEA
+			controls_state = 597
+			controls_state = 1064
+			controls_state = 1065
+		}
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.827" }
+
+		option = {
+			name = GEA.827.a
+			ai_chance = { factor = 70 }
+			hidden_effect = {
+				SQI = {
+					transfer_state = 597 #济南
+					transfer_state = 1064 #临沂
+					transfer_state = 1065 #胶东
+					set_capital = { state = 597 remember_old_capital = no }
+					if = {
+						limit = { is_in_faction = yes NOT = { is_in_faction_with = GEA } }
+						leave_faction = yes
+					}
+				}
+				set_autonomy = {
+					target = SQI
+					autonomy_state = kr_default_puppet
+					end_wars = yes
+					end_civil_wars = yes
+				}
+				if = {
+					limit = { is_in_faction = yes SQI = { NOT = { is_in_faction_with = GEA } } }
+					random_country = {
+						limit = { is_faction_leader = yes is_in_faction_with = GEA }
+						add_to_faction = SQI
+					}
+				}
+				SQI = {
+					clr_country_flag = GEA_china_warlord_interaction_blocked
+					clr_country_flag = GEA_german_coup_defeated
+					remove_all_ministers = yes
+					add_ideas = {
+						SQI_Zhu_Qinglan_hog_ade
+						SQI_Ding_Shujing_for_ade
+						SQI_Cao_Fulin_eco_ade
+						SQI_Qu_Yingguang_sec_ade
+					}
+				}
+			}
+			SQI = {
+				if = {
+					limit = { NOT = { has_character = GEA_Tang_Yangdu } }
+					recruit_character = GEA_Tang_Yangdu
+				}
+				add_popularity = { ideology = authoritarian_democrat popularity = 0.30 }
+				set_politics = { ruling_party = authoritarian_democrat elections_allowed = no }
+				promote_character = { character = GEA_Tang_Yangdu ideology = authdem_kleptocracy_subtype }
+				set_party_name = {
+					ideology = authoritarian_democrat
+					name = GEA_SQI_maintenance_party
+					long_name = GEA_SQI_maintenance_party_long
+				}
+				set_cosmetic_tag = GEA_SQI_maintenance
+			}
+		}
+		option = {
+			name = GEA.827.b
+			ai_chance = { factor = 30 }
+			hidden_effect = {
+				SQI = {
+					transfer_state = 597 #济南
+					transfer_state = 1064 #临沂
+					transfer_state = 1065 #胶东
+					set_capital = { state = 597 remember_old_capital = no }
+					if = {
+						limit = { is_in_faction = yes NOT = { is_in_faction_with = GEA } }
+						leave_faction = yes
+					}
+				}
+				set_autonomy = {
+					target = SQI
+					autonomy_state = kr_default_puppet
+					end_wars = yes
+					end_civil_wars = yes
+				}
+				if = {
+					limit = { is_in_faction = yes SQI = { NOT = { is_in_faction_with = GEA } } }
+					random_country = {
+						limit = { is_faction_leader = yes is_in_faction_with = GEA }
+						add_to_faction = SQI
+					}
+				}
+				SQI = {
+					clr_country_flag = GEA_china_warlord_interaction_blocked
+					clr_country_flag = GEA_german_coup_defeated
+					remove_all_ministers = yes
+					add_ideas = {
+						SQI_Zhu_Qinglan_hog_ade
+						SQI_Ding_Shujing_for_ade
+						SQI_Cao_Fulin_eco_ade
+						SQI_Qu_Yingguang_sec_ade
+					}
+				}
+			}
+			SQI = {
+				if = {
+					limit = { NOT = { has_character = GEA_Wilhelm_Hopfner } }
+					recruit_character = GEA_Wilhelm_Hopfner
+				}
+				add_popularity = { ideology = paternal_autocrat popularity = 0.30 }
+				set_politics = { ruling_party = paternal_autocrat elections_allowed = no }
+				promote_character = { character = GEA_Wilhelm_Hopfner ideology = autocratic_colonial_govt_subtype }
+				set_party_name = {
+					ideology = paternal_autocrat
+					name = GEA_SQI_german_party
+					long_name = GEA_SQI_german_party_long
+				}
+				set_cosmetic_tag = GEA_SQI_german
+			}
+		}
+	}
 
 	country_event = { #王克敏与华北临时政府
 		id = GEA.828
@@ -8169,6 +8293,21 @@ add_namespace = GEA_news
 					QIE_Zhang_Luao_sec_ade
 				}
 			}
+		}
+	}
+
+	country_event = { #德国资本加大投资
+		id = GEA.829
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.829" }
+		title = GEA.829.t
+		desc = GEA.829.d
+		
+
+		fire_only_once = yes
+		is_triggered_only = yes
+
+		option = {
+			name = GEA.829.a
 		}
 	}
 
@@ -8684,6 +8823,167 @@ add_namespace = GEA_news
 		}
 	}
 
+
+	country_event = { #调停暹缅战争：向进攻方提出白和平议
+		id = GEA.1113
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.1113" }
+		title = GEA.1113.t
+		desc = GEA.1113.d
+
+		is_triggered_only = yes
+		trigger = {
+			country_exists = GEA
+			OR = {
+				AND = {
+					tag = SIA
+					has_offensive_war_with = BRM
+				}
+				AND = {
+					tag = BRM
+					has_offensive_war_with = SIA
+				}
+			}
+		}
+
+		option = {
+			name = GEA.1113.a
+			ai_chance = { factor = 70 }
+			if = {
+				limit = {
+					tag = SIA
+					has_war_with = BRM
+				}
+				BRM = { save_event_target_as = white_peace_receiver }
+				white_peace_with_TARGET = yes
+				if = {
+					limit = {
+						BRM = { 
+							exists = yes 
+							NOT = { 
+								is_in_faction_with = GER 
+							} 
+						}
+						GER = { 
+							exists = yes 
+							is_in_faction = yes 
+						}
+					}
+					BRM = {
+						if = {
+							limit = { 
+								is_in_faction = yes
+							}
+							leave_faction = yes
+						}
+					}
+					GER = { add_to_faction = BRM }
+				}
+			}
+			else_if = {
+				limit = {
+					tag = BRM
+					has_war_with = SIA
+				}
+				SIA = { save_event_target_as = white_peace_receiver }
+				white_peace_with_TARGET = yes
+				if = {
+					limit = {
+						BRM = { exists = yes NOT = { is_in_faction_with = GER } }
+						GER = { exists = yes is_in_faction = yes }
+					}
+					BRM = {
+						if = {
+							limit = { is_in_faction = yes }
+							leave_faction = yes
+						}
+					}
+					GER = { add_to_faction = BRM }
+				}
+			}
+		}
+		option = {
+			name = GEA.1113.b
+			ai_chance = { factor = 30 }
+			if = {
+				limit = { tag = SIA has_war_with = BRM }
+				GEA = { country_event = { id = GEA.1114 days = 1 } }
+			}
+		}
+	}
+
+	country_event = { #暹罗拒绝调停：向德属东亚回报
+		id = GEA.1114
+		title = GEA.1114.t
+		desc = GEA.1114.d
+		is_triggered_only = yes
+		trigger = {
+			tag = GEA
+			SIA = { exists = yes has_war_with = BRM }
+		}
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.1114" }
+
+		option = {
+			name = GEA.1114.a
+			ai_chance = { factor = 50 }
+		}
+		option = {
+			name = GEA.1114.b
+			trigger = {
+				SIA = { exists = yes has_war_with = BRM }
+				NOT = { has_war_with = SIA }
+			}
+			ai_chance = { factor = 50 }
+			SIA = { country_event = { id = GEA.1115 days = 1 } }
+		}
+	}
+
+	country_event = { #对暹罗的最后通牒
+		id = GEA.1115
+		title = GEA.1115.t
+		desc = GEA.1115.d
+		is_triggered_only = yes
+		trigger = {
+			tag = SIA
+			country_exists = GEA
+			has_war_with = BRM
+			NOT = { has_war_with = GEA }
+		}
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.1115" }
+
+		option = {
+			name = GEA.1115.a
+			ai_chance = { factor = 70 }
+			if = {
+				limit = { has_war_with = BRM }
+				BRM = { save_event_target_as = white_peace_receiver }
+				white_peace_with_TARGET = yes
+				if = {
+					limit = {
+						BRM = { exists = yes NOT = { is_in_faction_with = GER } }
+						GER = { exists = yes is_in_faction = yes }
+					}
+					BRM = {
+						if = {
+							limit = { is_in_faction = yes }
+							leave_faction = yes
+						}
+					}
+					GER = { add_to_faction = BRM }
+				}
+			}
+		}
+		option = {
+			name = GEA.1115.b
+			ai_chance = { factor = 30 }
+			if = {
+				limit = {
+					GEA = { exists = yes NOT = { has_war_with = SIA } }
+					has_war_with = BRM
+				}
+				GEA = { declare_war_on = { target = SIA type = annex_everything } }
+			}
+		}
+	}
 
 #陆军事件
 	country_event = {

@@ -10307,19 +10307,30 @@ GEA_focus_china_decisions = {#第二次对华远征
 		allowed = { original_tag = GEA }
 		cost = 0
 		visible = {
-			FROM = { GEA_china_warlord_can_interact_trigger = yes }
+			FROM = {
+				GEA_china_warlord_eligible_trigger = yes
+				GEA_china_warlord_can_interact_trigger = yes
+			}
 			has_completed_focus = GEA_The_tricks_of_financiers
 			has_country_flag = LEP_OPEN
 		}
 		targets_dynamic = yes
 		target_trigger = {
-			FROM = { owns_state = 613 GEA_china_warlord_can_interact_trigger = yes }
+			FROM = {
+				owns_state = 613
+				GEA_china_warlord_eligible_trigger = yes
+				GEA_china_warlord_can_interact_trigger = yes
+			}
 		}
 		available = {
 			NOT = { has_war_with = FROM }
 			NOT = { has_country_flag = GEA_german_loan_active }
 			NOT = { has_country_flag = GEA_german_loan_offer_pending }
-			FROM = { NOT = { has_country_flag = GEA_german_loan_active } }
+			FROM = {
+				GEA_china_warlord_eligible_trigger = yes
+				GEA_china_warlord_can_interact_trigger = yes
+				NOT = { has_country_flag = GEA_german_loan_active }
+			}
 		}
 		ai_will_do = { factor = 30 }
 		complete_effect = {
@@ -11860,6 +11871,1780 @@ GEA_focus_china_decisions = {#第二次对华远征
 					level = 3
 					build_only_on_allied = no
 					path = { 12008 1114 4501 7446 1319 }
+				}
+			}
+		}
+	}
+
+	GEA_szc_business_talks = { #组织川商洽谈
+		allowed = {
+			original_tag = GEA
+		}
+		icon = GFX_GEA_Invest_in_East_China_decision
+
+		visible = {
+			has_completed_focus = GEA_The_Land_of_Abundance
+			has_country_flag = SZC_OPEN
+			GEA_sichuan_non_anti_concession_controller_trigger = yes
+		}
+		available = {
+			GEA_sichuan_non_anti_concession_controller_trigger = yes
+			NOT = {
+				has_war_with = SZC
+			}
+		}
+		targets = { SZC }
+
+		cost = 25
+		days_remove = 30
+		days_re_enable = 90
+		cancel_if_not_visible = no
+		cancel_trigger = {
+			NOT = {
+				AND = {
+					GEA_sichuan_non_anti_concession_controller_trigger = yes
+					NOT = {
+						has_war_with = SZC
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 30
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					GEA_sichuan_non_anti_concession_controller_trigger = yes
+					NOT = {
+						has_war_with = SZC
+					}
+				}
+				log = "[GetDateText]: [Root.GetName]: Decision remove GEA_szc_business_talks"
+				SZC = {
+					add_political_power = 25
+				}
+				custom_effect_tooltip = GEA_china_szc_name_tt
+				add_to_variable = {
+					GEA_china_szc_attitude = 5
+					tooltip = GEA_china_attitude_change_tt
+				}
+				add_to_variable = {
+					GEA_china_szc_capital_influence = 10
+					tooltip = GEA_china_capital_influence_change_tt
+				}
+				hidden_effect = {
+					clamp_variable = {
+						var = GEA_china_szc_attitude
+						min = 0
+						max = 100
+					}
+					clamp_variable = {
+						var = GEA_china_szc_capital_influence
+						min = 0
+						max = 100
+					}
+				}
+			}
+		}
+	}
+
+	GEA_szc_military_instructors = { #派遣川军教官
+		allowed = {
+			original_tag = GEA
+		}
+		icon = GFX_GEA_Dispatch_Military_Advisers_decision
+
+		visible = {
+			has_completed_focus = GEA_The_Land_of_Abundance
+			has_country_flag = SZC_OPEN
+			GEA_sichuan_non_anti_concession_controller_trigger = yes
+		}
+		available = {
+			GEA_sichuan_non_anti_concession_controller_trigger = yes
+			NOT = {
+				has_war_with = SZC
+			}
+		}
+		targets = { SZC }
+
+		cost = 30
+		days_remove = 45
+		days_re_enable = 120
+		cancel_if_not_visible = no
+		custom_cost_text = GEA_yun_support_equipment_100_cost
+		custom_cost_trigger = {
+			has_equipment = {
+				support_equipment > 99
+			}
+		}
+		cancel_trigger = {
+			NOT = {
+				AND = {
+					GEA_sichuan_non_anti_concession_controller_trigger = yes
+					NOT = {
+						has_war_with = SZC
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 30
+		}
+		complete_effect = {
+			hidden_effect = {
+				add_equipment_to_stockpile = {
+					type = support_equipment
+					amount = -100
+				}
+			}
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					GEA_sichuan_non_anti_concession_controller_trigger = yes
+					NOT = {
+						has_war_with = SZC
+					}
+				}
+				log = "[GetDateText]: [Root.GetName]: Decision remove GEA_szc_military_instructors"
+				SZC = {
+					army_experience = 10
+					add_mastery_bonus = {
+						name = GEA_szc_military_instructors
+						bonus = 0.05
+						days = 90
+						folder = land
+						track = operations
+					}
+				}
+				custom_effect_tooltip = GEA_china_szc_name_tt
+				add_to_variable = {
+					GEA_china_szc_attitude = 5
+					tooltip = GEA_china_attitude_change_tt
+				}
+				add_to_variable = {
+					GEA_china_szc_military_projection = 10
+					tooltip = GEA_china_military_projection_change_tt
+				}
+				hidden_effect = {
+					clamp_variable = {
+						var = GEA_china_szc_attitude
+						min = 0
+						max = 100
+					}
+					clamp_variable = {
+						var = GEA_china_szc_military_projection
+						min = 0
+						max = 100
+					}
+				}
+			}
+		}
+	}
+
+	GEA_szc_yangtze_transport = { #协办川江运输
+		allowed = {
+			original_tag = GEA
+		}
+		icon = GFX_GEA_Dispatch_Military_Advisers_decision
+
+		visible = {
+			has_completed_focus = GEA_The_Land_of_Abundance
+			has_country_flag = SZC_OPEN
+			GEA_sichuan_non_anti_concession_controller_trigger = yes
+		}
+		available = {
+			GEA_sichuan_non_anti_concession_controller_trigger = yes
+			NOT = {
+				has_war_with = SZC
+			}
+		}
+		targets = { SZC }
+
+		cost = 25
+		days_remove = 45
+		days_re_enable = 120
+		cancel_if_not_visible = no
+		cancel_trigger = {
+			NOT = {
+				AND = {
+					GEA_sichuan_non_anti_concession_controller_trigger = yes
+					NOT = {
+						has_war_with = SZC
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 30
+		}
+		complete_effect = {
+			SZC = {
+				add_timed_idea = {
+					idea = GEA_szc_yangtze_transport_idea
+					days = 45
+				}
+			}
+		}
+		cancel_effect = {
+			SZC = {
+				remove_ideas = GEA_szc_yangtze_transport_idea
+			}
+		}
+		remove_effect = {
+			SZC = {
+				remove_ideas = GEA_szc_yangtze_transport_idea
+			}
+			if = {
+				limit = {
+					GEA_sichuan_non_anti_concession_controller_trigger = yes
+					NOT = {
+						has_war_with = SZC
+					}
+				}
+				log = "[GetDateText]: [Root.GetName]: Decision remove GEA_szc_yangtze_transport"
+				custom_effect_tooltip = GEA_china_szc_name_tt
+				add_to_variable = {
+					GEA_china_szc_attitude = 5
+					tooltip = GEA_china_attitude_change_tt
+				}
+				add_to_variable = {
+					GEA_china_szc_capital_influence = 5
+					tooltip = GEA_china_capital_influence_change_tt
+				}
+				add_to_variable = {
+					GEA_china_szc_military_projection = 5
+					tooltip = GEA_china_military_projection_change_tt
+				}
+				hidden_effect = {
+					clamp_variable = {
+						var = GEA_china_szc_attitude
+						min = 0
+						max = 100
+					}
+					clamp_variable = {
+						var = GEA_china_szc_capital_influence
+						min = 0
+						max = 100
+					}
+					clamp_variable = {
+						var = GEA_china_szc_military_projection
+						min = 0
+						max = 100
+					}
+				}
+			}
+		}
+	}
+
+	GEA_szc_chongqing_trade_office = { #开设重庆商务处
+		allowed = {
+			original_tag = GEA
+		}
+		icon = GFX_GEA_Invest_in_East_China_decision
+
+		visible = {
+			has_completed_focus = GEA_The_Land_of_Abundance
+			has_country_flag = SZC_OPEN
+			GEA_sichuan_non_anti_concession_controller_trigger = yes
+		}
+		available = {
+			GEA_sichuan_non_anti_concession_controller_trigger = yes
+			NOT = {
+				has_war_with = SZC
+			}
+			650 = {
+				is_owned_and_controlled_by = SZC
+			}
+		}
+		targets = { SZC }
+
+		cost = 65
+		days_remove = 45
+		fire_only_once = yes
+		cancel_if_not_visible = no
+		cancel_trigger = {
+			NOT = {
+				AND = {
+					GEA_sichuan_non_anti_concession_controller_trigger = yes
+					NOT = {
+						has_war_with = SZC
+					}
+					650 = {
+						is_owned_and_controlled_by = SZC
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 30
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					GEA_sichuan_non_anti_concession_controller_trigger = yes
+					NOT = {
+						has_war_with = SZC
+					}
+					650 = {
+						is_owned_and_controlled_by = SZC
+					}
+				}
+				log = "[GetDateText]: [Root.GetName]: Decision remove GEA_szc_chongqing_trade_office"
+				add_political_power = 50
+				SZC = {
+					add_political_power = 25
+					add_stability = 0.03
+				}
+				650 = {
+					add_extra_state_shared_building_slots = 1
+				}
+				custom_effect_tooltip = GEA_china_szc_name_tt
+				add_to_variable = {
+					GEA_china_szc_attitude = 10
+					tooltip = GEA_china_attitude_change_tt
+				}
+				add_to_variable = {
+					GEA_china_szc_capital_influence = 15
+					tooltip = GEA_china_capital_influence_change_tt
+				}
+				hidden_effect = {
+					clamp_variable = {
+						var = GEA_china_szc_attitude
+						min = 0
+						max = 100
+					}
+					clamp_variable = {
+						var = GEA_china_szc_capital_influence
+						min = 0
+						max = 100
+					}
+				}
+			}
+		}
+	}
+
+	GEA_szc_liaison_mission = { #建立驻川联络团
+		allowed = {
+			original_tag = GEA
+		}
+		icon = GFX_GEA_Dispatch_Military_Advisers_decision
+
+		visible = {
+			has_completed_focus = GEA_The_Land_of_Abundance
+			has_country_flag = SZC_OPEN
+			GEA_sichuan_non_anti_concession_controller_trigger = yes
+		}
+		available = {
+			GEA_sichuan_non_anti_concession_controller_trigger = yes
+			NOT = {
+				has_war_with = SZC
+			}
+		}
+		targets = { SZC }
+
+		cost = 65
+		days_remove = 60
+		fire_only_once = yes
+		cancel_if_not_visible = no
+		cancel_trigger = {
+			NOT = {
+				AND = {
+					GEA_sichuan_non_anti_concession_controller_trigger = yes
+					NOT = {
+						has_war_with = SZC
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 30
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					GEA_sichuan_non_anti_concession_controller_trigger = yes
+					NOT = {
+						has_war_with = SZC
+					}
+				}
+				log = "[GetDateText]: [Root.GetName]: Decision remove GEA_szc_liaison_mission"
+				add_command_power = 20
+				SZC = {
+					add_doctrine_cost_reduction = {
+						name = GEA_szc_liaison_mission
+						cost_reduction = 0.50
+						uses = 1
+						category = land_doctrine
+					}
+				}
+				custom_effect_tooltip = GEA_china_szc_name_tt
+				add_to_variable = {
+					GEA_china_szc_attitude = 10
+					tooltip = GEA_china_attitude_change_tt
+				}
+				add_to_variable = {
+					GEA_china_szc_capital_influence = 5
+					tooltip = GEA_china_capital_influence_change_tt
+				}
+				add_to_variable = {
+					GEA_china_szc_military_projection = 15
+					tooltip = GEA_china_military_projection_change_tt
+				}
+				hidden_effect = {
+					clamp_variable = {
+						var = GEA_china_szc_attitude
+						min = 0
+						max = 100
+					}
+					clamp_variable = {
+						var = GEA_china_szc_capital_influence
+						min = 0
+						max = 100
+					}
+					clamp_variable = {
+						var = GEA_china_szc_military_projection
+						min = 0
+						max = 100
+					}
+				}
+			}
+		}
+	}
+
+	GEA_szc_famine_fundraising = { #筹集赈灾款
+		allowed = {
+			original_tag = GEA
+		}
+		icon = GFX_decision_generic_industry
+
+		visible = {
+			has_completed_focus = GEA_The_hungry_are_fed
+			has_country_flag = SZC_OPEN
+			GEA_sichuan_famine_active_trigger = yes
+			GEA_sichuan_non_anti_concession_controller_trigger = yes
+		}
+		available = {
+			GEA_sichuan_famine_active_trigger = yes
+			GEA_sichuan_non_anti_concession_controller_trigger = yes
+			NOT = {
+				has_war_with = SZC
+			}
+		}
+		targets = { SZC }
+
+		cost = 35
+		days_remove = 30
+		days_re_enable = 90
+		cancel_if_not_visible = no
+		cancel_trigger = {
+			NOT = {
+				AND = {
+					GEA_sichuan_famine_active_trigger = yes
+					GEA_sichuan_non_anti_concession_controller_trigger = yes
+					NOT = {
+						has_war_with = SZC
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 30
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					GEA_sichuan_famine_active_trigger = yes
+					GEA_sichuan_non_anti_concession_controller_trigger = yes
+					NOT = {
+						has_war_with = SZC
+					}
+				}
+				log = "[GetDateText]: [Root.GetName]: Decision remove GEA_szc_famine_fundraising"
+				SZC = {
+					add_to_variable = {
+						SZC_famine_PP = 40
+						tooltip = GEA_szc_famine_relief_funds_change_tt
+					}
+					add_stability = 0.02
+				}
+				custom_effect_tooltip = GEA_china_szc_name_tt
+				add_to_variable = {
+					GEA_china_szc_attitude = 5
+					tooltip = GEA_china_attitude_change_tt
+				}
+				add_to_variable = {
+					GEA_china_szc_capital_influence = 5
+					tooltip = GEA_china_capital_influence_change_tt
+				}
+				hidden_effect = {
+					clamp_variable = {
+						var = GEA_china_szc_attitude
+						min = 0
+						max = 100
+					}
+					clamp_variable = {
+						var = GEA_china_szc_capital_influence
+						min = 0
+						max = 100
+					}
+				}
+			}
+		}
+	}
+
+	GEA_szc_famine_rice_shipments = { #运入南洋稻米
+		allowed = {
+			original_tag = GEA
+		}
+		icon = GFX_decision_generic_industry
+
+		visible = {
+			has_completed_focus = GEA_The_hungry_are_fed
+			has_country_flag = SZC_OPEN
+			GEA_sichuan_famine_active_trigger = yes
+			GEA_sichuan_non_anti_concession_controller_trigger = yes
+		}
+		available = {
+			GEA_sichuan_famine_active_trigger = yes
+			GEA_sichuan_non_anti_concession_controller_trigger = yes
+			NOT = {
+				has_war_with = SZC
+			}
+		}
+		targets = { SZC }
+
+		cost = 45
+		days_remove = 120
+		days_re_enable = 120
+		cancel_if_not_visible = no
+		cancel_trigger = {
+			NOT = {
+				AND = {
+					GEA_sichuan_famine_active_trigger = yes
+					GEA_sichuan_non_anti_concession_controller_trigger = yes
+					NOT = {
+						has_war_with = SZC
+					}
+				}
+			}
+		}
+		modifier = {
+			consumer_goods_factor = -0.05
+		}
+		ai_will_do = {
+			factor = 30
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					GEA_sichuan_famine_active_trigger = yes
+					GEA_sichuan_non_anti_concession_controller_trigger = yes
+					NOT = {
+						has_war_with = SZC
+					}
+				}
+				log = "[GetDateText]: [Root.GetName]: Decision remove GEA_szc_famine_rice_shipments"
+				SZC = {
+					add_stability = 0.03
+					GEA_szc_relieve_famine_medium_effect = yes
+				}
+				custom_effect_tooltip = GEA_china_szc_name_tt
+				add_to_variable = {
+					GEA_china_szc_attitude = 10
+					tooltip = GEA_china_attitude_change_tt
+				}
+				add_to_variable = {
+					GEA_china_szc_capital_influence = 5
+					tooltip = GEA_china_capital_influence_change_tt
+				}
+				hidden_effect = {
+					clamp_variable = {
+						var = GEA_china_szc_attitude
+						min = 0
+						max = 100
+					}
+					clamp_variable = {
+						var = GEA_china_szc_capital_influence
+						min = 0
+						max = 100
+					}
+				}
+			}
+		}
+	}
+
+	GEA_szc_famine_relief_advisers = { #派遣赈务顾问
+		allowed = {
+			original_tag = GEA
+		}
+		icon = GFX_decision_generic_industry
+
+		visible = {
+			has_completed_focus = GEA_The_hungry_are_fed
+			has_country_flag = SZC_OPEN
+			GEA_sichuan_famine_active_trigger = yes
+			GEA_sichuan_non_anti_concession_controller_trigger = yes
+		}
+		available = {
+			GEA_sichuan_famine_active_trigger = yes
+			GEA_sichuan_non_anti_concession_controller_trigger = yes
+			NOT = {
+				has_war_with = SZC
+			}
+		}
+		targets = { SZC }
+
+		cost = 35
+		days_remove = 30
+		days_re_enable = 90
+		cancel_if_not_visible = no
+		cancel_trigger = {
+			NOT = {
+				AND = {
+					GEA_sichuan_famine_active_trigger = yes
+					GEA_sichuan_non_anti_concession_controller_trigger = yes
+					NOT = {
+						has_war_with = SZC
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 30
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					GEA_sichuan_famine_active_trigger = yes
+					GEA_sichuan_non_anti_concession_controller_trigger = yes
+					NOT = {
+						has_war_with = SZC
+					}
+				}
+				log = "[GetDateText]: [Root.GetName]: Decision remove GEA_szc_famine_relief_advisers"
+				add_command_power = 15
+				SZC = {
+					custom_effect_tooltip = SZC_famine_PP_plus_20
+					hidden_effect = {
+						add_to_variable = {
+							SZC_famine_PP = 20
+						}
+					}
+					add_stability = 0.02
+				}
+				custom_effect_tooltip = GEA_china_szc_name_tt
+				add_to_variable = {
+					GEA_china_szc_attitude = 5
+					tooltip = GEA_china_attitude_change_tt
+				}
+				add_to_variable = {
+					GEA_china_szc_capital_influence = 5
+					tooltip = GEA_china_capital_influence_change_tt
+				}
+				add_to_variable = {
+					GEA_china_szc_military_projection = 5
+					tooltip = GEA_china_military_projection_change_tt
+				}
+				hidden_effect = {
+					clamp_variable = {
+						var = GEA_china_szc_attitude
+						min = 0
+						max = 100
+					}
+					clamp_variable = {
+						var = GEA_china_szc_capital_influence
+						min = 0
+						max = 100
+					}
+					clamp_variable = {
+						var = GEA_china_szc_military_projection
+						min = 0
+						max = 100
+					}
+				}
+			}
+		}
+	}
+
+	GEA_szc_famine_grain_depots = { #援建粮运仓储
+		allowed = {
+			original_tag = GEA
+		}
+		icon = GFX_decision_generic_industry
+
+		visible = {
+			has_completed_focus = GEA_The_hungry_are_fed
+			has_country_flag = SZC_OPEN
+			GEA_sichuan_famine_active_trigger = yes
+			GEA_sichuan_non_anti_concession_controller_trigger = yes
+		}
+		available = {
+			GEA_sichuan_famine_active_trigger = yes
+			GEA_sichuan_non_anti_concession_controller_trigger = yes
+			NOT = {
+				has_war_with = SZC
+			}
+			650 = {
+				is_owned_and_controlled_by = SZC
+			}
+		}
+		targets = { SZC }
+
+		cost = 80
+		days_remove = 60
+		fire_only_once = yes
+		cancel_if_not_visible = no
+		cancel_trigger = {
+			NOT = {
+				AND = {
+					GEA_sichuan_famine_active_trigger = yes
+					GEA_sichuan_non_anti_concession_controller_trigger = yes
+					NOT = {
+						has_war_with = SZC
+					}
+					650 = {
+						is_owned_and_controlled_by = SZC
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 30
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					GEA_sichuan_famine_active_trigger = yes
+					GEA_sichuan_non_anti_concession_controller_trigger = yes
+					NOT = {
+						has_war_with = SZC
+					}
+					650 = {
+						is_owned_and_controlled_by = SZC
+					}
+				}
+				log = "[GetDateText]: [Root.GetName]: Decision remove GEA_szc_famine_grain_depots"
+				SZC = {
+					add_to_variable = {
+						SZC_famine_PP = 60
+						tooltip = GEA_szc_famine_relief_funds_change_tt
+					}
+				}
+				650 = {
+					add_extra_state_shared_building_slots = 1
+					if = {
+						limit = {
+							infrastructure < 5
+						}
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+				if = {
+					limit = {
+						any_owned_state = {
+							is_controlled_by = ROOT
+							free_building_slots = {
+								building = industrial_complex
+								size > 0
+								include_locked = yes
+							}
+						}
+					}
+					random_owned_controlled_state = {
+						limit = {
+							free_building_slots = {
+								building = industrial_complex
+								size > 0
+								include_locked = yes
+							}
+						}
+						add_extra_state_shared_building_slots = 1
+						add_building_construction = {
+							type = industrial_complex
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+				else = {
+					add_offsite_building = {
+						type = industrial_complex
+						level = 1
+					}
+				}
+				custom_effect_tooltip = GEA_china_szc_name_tt
+				add_to_variable = {
+					GEA_china_szc_attitude = 10
+					tooltip = GEA_china_attitude_change_tt
+				}
+				add_to_variable = {
+					GEA_china_szc_capital_influence = 15
+					tooltip = GEA_china_capital_influence_change_tt
+				}
+				add_to_variable = {
+					GEA_china_szc_military_projection = 10
+					tooltip = GEA_china_military_projection_change_tt
+				}
+				hidden_effect = {
+					clamp_variable = {
+						var = GEA_china_szc_attitude
+						min = 0
+						max = 100
+					}
+					clamp_variable = {
+						var = GEA_china_szc_capital_influence
+						min = 0
+						max = 100
+					}
+					clamp_variable = {
+						var = GEA_china_szc_military_projection
+						min = 0
+						max = 100
+					}
+				}
+			}
+		}
+	}
+
+	GEA_szc_famine_relief_loan = { #提供赈灾贷款
+		allowed = {
+			original_tag = GEA
+		}
+		icon = GFX_decision_generic_industry
+
+		visible = {
+			has_completed_focus = GEA_The_hungry_are_fed
+			has_country_flag = SZC_OPEN
+			GEA_sichuan_famine_active_trigger = yes
+			GEA_sichuan_non_anti_concession_controller_trigger = yes
+		}
+		available = {
+			GEA_sichuan_famine_active_trigger = yes
+			GEA_sichuan_non_anti_concession_controller_trigger = yes
+			NOT = {
+				has_war_with = SZC
+			}
+		}
+		targets = { SZC }
+
+		cost = 80
+		days_remove = 60
+		fire_only_once = yes
+		cancel_if_not_visible = no
+		cancel_trigger = {
+			NOT = {
+				AND = {
+					GEA_sichuan_famine_active_trigger = yes
+					GEA_sichuan_non_anti_concession_controller_trigger = yes
+					NOT = {
+						has_war_with = SZC
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 30
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					GEA_sichuan_famine_active_trigger = yes
+					GEA_sichuan_non_anti_concession_controller_trigger = yes
+					NOT = {
+						has_war_with = SZC
+					}
+				}
+				log = "[GetDateText]: [Root.GetName]: Decision remove GEA_szc_famine_relief_loan"
+				SZC = {
+					custom_effect_tooltip = SZC_famine_PP_plus_100
+					hidden_effect = {
+						add_to_variable = {
+							SZC_famine_PP = 100
+						}
+					}
+					add_stability = 0.03
+				}
+				add_tech_bonus = {
+					name = GEA_szc_famine_relief_loan
+					bonus = 0.50
+					uses = 1
+					category = industry
+				}
+				custom_effect_tooltip = GEA_china_szc_name_tt
+				add_to_variable = {
+					GEA_china_szc_attitude = 5
+					tooltip = GEA_china_attitude_change_tt
+				}
+				add_to_variable = {
+					GEA_china_szc_capital_influence = 20
+					tooltip = GEA_china_capital_influence_change_tt
+				}
+				hidden_effect = {
+					clamp_variable = {
+						var = GEA_china_szc_attitude
+						min = 0
+						max = 100
+					}
+					clamp_variable = {
+						var = GEA_china_szc_capital_influence
+						min = 0
+						max = 100
+					}
+				}
+			}
+		}
+	}
+
+	GEA_szc_liquidate_german_assets = { #清算德资资产
+		allowed = {
+			original_tag = GEA
+		}
+		icon = GFX_GEA_Invest_in_East_China_decision
+
+		visible = {
+			has_completed_focus = GEA_Draining_the_pond_to_catch_all_the_fish
+			has_country_flag = SZC_OPEN
+			GEA_sichuan_non_anti_concession_controller_trigger = yes
+		}
+		available = {
+			GEA_sichuan_non_anti_concession_controller_trigger = yes
+			NOT = {
+				has_war_with = SZC
+			}
+			custom_trigger_tooltip = {
+				tooltip = GEA_szc_liquidate_german_assets_requirements_tt
+				check_variable = {
+					var = GEA_china_szc_capital_influence
+					value = 20
+					compare = greater_than_or_equals
+				}
+				check_variable = {
+					var = GEA_china_szc_attitude
+					value = 10
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		targets = { SZC }
+
+		cost = 15
+		days_remove = 30
+		days_re_enable = 90
+		cancel_if_not_visible = no
+		cancel_trigger = {
+			NOT = {
+				AND = {
+					GEA_sichuan_non_anti_concession_controller_trigger = yes
+					NOT = {
+						has_war_with = SZC
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		complete_effect = {
+			custom_effect_tooltip = GEA_china_szc_name_tt
+			add_to_variable = {
+				GEA_china_szc_capital_influence = -20
+				tooltip = GEA_china_capital_influence_change_tt
+			}
+			add_to_variable = {
+				GEA_china_szc_attitude = -10
+				tooltip = GEA_china_attitude_change_tt
+			}
+			hidden_effect = {
+				clamp_variable = {
+					var = GEA_china_szc_capital_influence
+					min = 0
+					max = 100
+				}
+				clamp_variable = {
+					var = GEA_china_szc_attitude
+					min = 0
+					max = 100
+				}
+			}
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					GEA_sichuan_non_anti_concession_controller_trigger = yes
+					NOT = {
+						has_war_with = SZC
+					}
+				}
+				log = "[GetDateText]: [Root.GetName]: Decision remove GEA_szc_liquidate_german_assets"
+				add_political_power = 100
+				SZC = {
+					add_stability = -0.02
+				}
+			}
+		}
+	}
+
+	GEA_szc_requisition_army_stocks = { #征用川军储备
+		allowed = {
+			original_tag = GEA
+		}
+		icon = GFX_GEA_Dispatch_Military_Advisers_decision
+
+		visible = {
+			has_completed_focus = GEA_Draining_the_pond_to_catch_all_the_fish
+			has_country_flag = SZC_OPEN
+			GEA_sichuan_non_anti_concession_controller_trigger = yes
+		}
+		available = {
+			GEA_sichuan_non_anti_concession_controller_trigger = yes
+			NOT = {
+				has_war_with = SZC
+			}
+			SZC = {
+				has_equipment = {
+					infantry_equipment > 2499
+				}
+				has_equipment = {
+					artillery_equipment > 149
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = GEA_szc_requisition_army_stocks_requirements_tt
+				check_variable = {
+					var = GEA_china_szc_military_projection
+					value = 20
+					compare = greater_than_or_equals
+				}
+				check_variable = {
+					var = GEA_china_szc_attitude
+					value = 10
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		targets = { SZC }
+
+		cost = 0
+		days_remove = 45
+		days_re_enable = 120
+		cancel_if_not_visible = no
+		custom_cost_text = CP_20
+		custom_cost_trigger = {
+			command_power > 19.99
+		}
+		cancel_trigger = {
+			NOT = {
+				AND = {
+					GEA_sichuan_non_anti_concession_controller_trigger = yes
+					NOT = {
+						has_war_with = SZC
+					}
+					SZC = {
+						has_equipment = {
+							infantry_equipment > 2499
+						}
+						has_equipment = {
+							artillery_equipment > 149
+						}
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		complete_effect = {
+			custom_effect_tooltip = GEA_china_szc_name_tt
+			add_to_variable = {
+				GEA_china_szc_military_projection = -20
+				tooltip = GEA_china_military_projection_change_tt
+			}
+			add_to_variable = {
+				GEA_china_szc_attitude = -10
+				tooltip = GEA_china_attitude_change_tt
+			}
+			hidden_effect = {
+				add_command_power = -20
+				clamp_variable = {
+					var = GEA_china_szc_military_projection
+					min = 0
+					max = 100
+				}
+				clamp_variable = {
+					var = GEA_china_szc_attitude
+					min = 0
+					max = 100
+				}
+			}
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					GEA_sichuan_non_anti_concession_controller_trigger = yes
+					NOT = {
+						has_war_with = SZC
+					}
+					SZC = {
+						has_equipment = {
+							infantry_equipment > 2499
+						}
+						has_equipment = {
+							artillery_equipment > 149
+						}
+					}
+				}
+				log = "[GetDateText]: [Root.GetName]: Decision remove GEA_szc_requisition_army_stocks"
+				SZC = {
+					send_equipment = {
+						target = ROOT
+						type = infantry_equipment
+						amount = 2500
+					}
+					send_equipment = {
+						target = ROOT
+						type = artillery_equipment
+						amount = 150
+					}
+				}
+			}
+		}
+	}
+
+	GEA_szc_relocate_armament_lines = { #迁走军工生产线
+		allowed = {
+			original_tag = GEA
+		}
+		icon = GFX_GEA_Dispatch_Military_Advisers_decision
+
+		visible = {
+			has_completed_focus = GEA_Draining_the_pond_to_catch_all_the_fish
+			has_country_flag = SZC_OPEN
+			GEA_sichuan_non_anti_concession_controller_trigger = yes
+		}
+		available = {
+			GEA_sichuan_non_anti_concession_controller_trigger = yes
+			NOT = {
+				has_war_with = SZC
+			}
+			SZC = {
+				custom_trigger_tooltip = {
+					tooltip = GEA_szc_two_military_factories_available_tt
+					OR = {
+						any_owned_state = {
+							is_controlled_by = SZC
+							arms_factory > 1
+						}
+						any_owned_state = {
+							is_controlled_by = SZC
+							arms_factory > 0
+							SZC = {
+								any_owned_state = {
+									is_controlled_by = SZC
+									arms_factory > 0
+									NOT = {
+										state = PREV.PREV
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = GEA_szc_relocate_armament_lines_requirements_tt
+				check_variable = {
+					var = GEA_china_szc_capital_influence
+					value = 30
+					compare = greater_than_or_equals
+				}
+				check_variable = {
+					var = GEA_china_szc_military_projection
+					value = 20
+					compare = greater_than_or_equals
+				}
+				check_variable = {
+					var = GEA_china_szc_attitude
+					value = 15
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		targets = { SZC }
+
+		cost = 0
+		days_remove = 120
+		fire_only_once = yes
+		cancel_if_not_visible = no
+		custom_cost_text = CP_30
+		custom_cost_trigger = {
+			command_power > 29.99
+		}
+		cancel_trigger = {
+			NOT = {
+				AND = {
+					GEA_sichuan_non_anti_concession_controller_trigger = yes
+					NOT = {
+						has_war_with = SZC
+					}
+					SZC = {
+						custom_trigger_tooltip = {
+							tooltip = GEA_szc_two_military_factories_available_tt
+							OR = {
+								any_owned_state = {
+									is_controlled_by = SZC
+									arms_factory > 1
+								}
+								any_owned_state = {
+									is_controlled_by = SZC
+									arms_factory > 0
+									SZC = {
+										any_owned_state = {
+											is_controlled_by = SZC
+											arms_factory > 0
+											NOT = {
+												state = PREV.PREV
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		complete_effect = {
+			custom_effect_tooltip = GEA_china_szc_name_tt
+			add_to_variable = {
+				GEA_china_szc_capital_influence = -30
+				tooltip = GEA_china_capital_influence_change_tt
+			}
+			add_to_variable = {
+				GEA_china_szc_military_projection = -20
+				tooltip = GEA_china_military_projection_change_tt
+			}
+			add_to_variable = {
+				GEA_china_szc_attitude = -15
+				tooltip = GEA_china_attitude_change_tt
+			}
+			hidden_effect = {
+				add_command_power = -30
+				clamp_variable = {
+					var = GEA_china_szc_capital_influence
+					min = 0
+					max = 100
+				}
+				clamp_variable = {
+					var = GEA_china_szc_military_projection
+					min = 0
+					max = 100
+				}
+				clamp_variable = {
+					var = GEA_china_szc_attitude
+					min = 0
+					max = 100
+				}
+			}
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					GEA_sichuan_non_anti_concession_controller_trigger = yes
+					NOT = {
+						has_war_with = SZC
+					}
+					SZC = {
+						custom_trigger_tooltip = {
+							tooltip = GEA_szc_two_military_factories_available_tt
+							OR = {
+								any_owned_state = {
+									is_controlled_by = SZC
+									arms_factory > 1
+								}
+								any_owned_state = {
+									is_controlled_by = SZC
+									arms_factory > 0
+									SZC = {
+										any_owned_state = {
+											is_controlled_by = SZC
+											arms_factory > 0
+											NOT = {
+												state = PREV.PREV
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				log = "[GetDateText]: [Root.GetName]: Decision remove GEA_szc_relocate_armament_lines"
+				SZC = {
+					random_owned_controlled_state = {
+						limit = {
+							arms_factory > 0
+						}
+						remove_building = {
+							type = arms_factory
+							level = 1
+						}
+					}
+					random_owned_controlled_state = {
+						limit = {
+							arms_factory > 0
+						}
+						remove_building = {
+							type = arms_factory
+							level = 1
+						}
+					}
+				}
+				if = {
+					limit = {
+						any_owned_state = {
+							is_controlled_by = ROOT
+							free_building_slots = {
+								building = arms_factory
+								size > 1
+								include_locked = yes
+							}
+						}
+					}
+					random_owned_controlled_state = {
+						limit = {
+							free_building_slots = {
+								building = arms_factory
+								size > 1
+								include_locked = yes
+							}
+						}
+						add_extra_state_shared_building_slots = 2
+						add_building_construction = {
+							type = arms_factory
+							level = 2
+							instant_build = yes
+						}
+					}
+				}
+				else = {
+					add_offsite_building = {
+						type = arms_factory
+						level = 2
+					}
+				}
+				army_experience = 25
+			}
+		}
+	}
+
+	GEA_szc_recruit_technical_personnel = { #搜罗技术人员
+		allowed = {
+			original_tag = GEA
+		}
+		icon = GFX_GEA_Invest_in_East_China_decision
+
+		visible = {
+			has_completed_focus = GEA_Draining_the_pond_to_catch_all_the_fish
+			has_country_flag = SZC_OPEN
+			GEA_sichuan_non_anti_concession_controller_trigger = yes
+		}
+		available = {
+			GEA_sichuan_non_anti_concession_controller_trigger = yes
+			NOT = {
+				has_war_with = SZC
+			}
+			SZC = {
+				has_manpower > 499
+			}
+			custom_trigger_tooltip = {
+				tooltip = GEA_szc_recruit_technical_personnel_requirements_tt
+				check_variable = {
+					var = GEA_china_szc_capital_influence
+					value = 20
+					compare = greater_than_or_equals
+				}
+				check_variable = {
+					var = GEA_china_szc_attitude
+					value = 10
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		targets = { SZC }
+
+		cost = 20
+		days_remove = 120
+		fire_only_once = yes
+		cancel_if_not_visible = no
+		cancel_trigger = {
+			NOT = {
+				AND = {
+					GEA_sichuan_non_anti_concession_controller_trigger = yes
+					NOT = {
+						has_war_with = SZC
+					}
+					SZC = {
+						has_manpower > 499
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		complete_effect = {
+			custom_effect_tooltip = GEA_china_szc_name_tt
+			add_to_variable = {
+				GEA_china_szc_capital_influence = -20
+				tooltip = GEA_china_capital_influence_change_tt
+			}
+			add_to_variable = {
+				GEA_china_szc_attitude = -10
+				tooltip = GEA_china_attitude_change_tt
+			}
+			hidden_effect = {
+				clamp_variable = {
+					var = GEA_china_szc_capital_influence
+					min = 0
+					max = 100
+				}
+				clamp_variable = {
+					var = GEA_china_szc_attitude
+					min = 0
+					max = 100
+				}
+			}
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					GEA_sichuan_non_anti_concession_controller_trigger = yes
+					NOT = {
+						has_war_with = SZC
+					}
+					SZC = {
+						has_manpower > 499
+					}
+				}
+				log = "[GetDateText]: [Root.GetName]: Decision remove GEA_szc_recruit_technical_personnel"
+				SZC = {
+					add_manpower = -500
+				}
+				add_manpower = 500
+				add_tech_bonus = {
+					name = GEA_szc_recruit_technical_personnel
+					bonus = 0.50
+					uses = 2
+					category = industry
+				}
+			}
+		}
+	}
+
+	GEA_szc_conscript_labourers = { #征发苦力
+		allowed = {
+			original_tag = GEA
+		}
+		icon = GFX_GEA_Dispatch_Military_Advisers_decision
+
+		visible = {
+			has_completed_focus = GEA_Draining_the_pond_to_catch_all_the_fish
+			has_country_flag = SZC_OPEN
+			GEA_sichuan_non_anti_concession_controller_trigger = yes
+		}
+		available = {
+			GEA_sichuan_non_anti_concession_controller_trigger = yes
+			NOT = {
+				has_war_with = SZC
+			}
+			SZC = {
+				has_manpower > 1999
+			}
+			custom_trigger_tooltip = {
+				tooltip = GEA_szc_conscript_labourers_requirements_tt
+				check_variable = {
+					var = GEA_china_szc_military_projection
+					value = 10
+					compare = greater_than_or_equals
+				}
+				check_variable = {
+					var = GEA_china_szc_attitude
+					value = 10
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		targets = { SZC }
+
+		cost = 0
+		days_remove = 90
+		days_re_enable = 120
+		cancel_if_not_visible = no
+		custom_cost_text = CP_15
+		custom_cost_trigger = {
+			command_power > 14.99
+		}
+		cancel_trigger = {
+			NOT = {
+				AND = {
+					GEA_sichuan_non_anti_concession_controller_trigger = yes
+					NOT = {
+						has_war_with = SZC
+					}
+					SZC = {
+						has_manpower > 1999
+					}
+				}
+			}
+		}
+		modifier = {
+			production_speed_buildings_factor = 0.03
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		complete_effect = {
+			custom_effect_tooltip = GEA_china_szc_name_tt
+			add_to_variable = {
+				GEA_china_szc_military_projection = -10
+				tooltip = GEA_china_military_projection_change_tt
+			}
+			add_to_variable = {
+				GEA_china_szc_attitude = -10
+				tooltip = GEA_china_attitude_change_tt
+			}
+			hidden_effect = {
+				add_command_power = -15
+				clamp_variable = {
+					var = GEA_china_szc_military_projection
+					min = 0
+					max = 100
+				}
+				clamp_variable = {
+					var = GEA_china_szc_attitude
+					min = 0
+					max = 100
+				}
+			}
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					GEA_sichuan_non_anti_concession_controller_trigger = yes
+					NOT = {
+						has_war_with = SZC
+					}
+					SZC = {
+						has_manpower > 1999
+					}
+				}
+				log = "[GetDateText]: [Root.GetName]: Decision remove GEA_szc_conscript_labourers"
+				SZC = {
+					add_manpower = -2000
+				}
+				add_manpower = 2000
+			}
+		}
+	}
+
+	GEA_szc_sell_rifles = { #向川系出售步枪
+		allowed = {
+			original_tag = GEA
+		}
+		icon = GFX_GEA_Invest_in_East_China_decision
+
+		visible = {
+			has_completed_focus = GEA_Buy_Buy_Buy
+			has_country_flag = SZC_OPEN
+			GEA_sichuan_non_anti_concession_controller_trigger = yes
+		}
+		available = {
+			GEA_sichuan_non_anti_concession_controller_trigger = yes
+			NOT = {
+				has_war_with = SZC
+			}
+		}
+		targets = { SZC }
+
+		cost = 0
+		days_re_enable = 90
+		custom_cost_text = 1000_guns
+		custom_cost_trigger = {
+			has_equipment = {
+				infantry_equipment > 999
+			}
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_szc_sell_rifles"
+			send_equipment = {
+				target = SZC
+				type = infantry_equipment
+				amount = 1000
+			}
+			add_political_power = 50
+			custom_effect_tooltip = GEA_china_szc_name_tt
+			add_to_variable = {
+				GEA_china_szc_attitude = 2
+				tooltip = GEA_china_attitude_change_tt
+			}
+			add_to_variable = {
+				GEA_china_szc_capital_influence = 2
+				tooltip = GEA_china_capital_influence_change_tt
+			}
+			hidden_effect = {
+				clamp_variable = {
+					var = GEA_china_szc_attitude
+					min = 0
+					max = 100
+				}
+				clamp_variable = {
+					var = GEA_china_szc_capital_influence
+					min = 0
+					max = 100
+				}
+			}
+		}
+	}
+
+	GEA_szc_sell_artillery = { #向川系出售火炮
+		allowed = {
+			original_tag = GEA
+		}
+		icon = GFX_GEA_Invest_in_East_China_decision
+
+		visible = {
+			has_completed_focus = GEA_Buy_Buy_Buy
+			has_country_flag = SZC_OPEN
+			GEA_sichuan_non_anti_concession_controller_trigger = yes
+		}
+		available = {
+			GEA_sichuan_non_anti_concession_controller_trigger = yes
+			NOT = {
+				has_war_with = SZC
+			}
+		}
+		targets = { SZC }
+
+		cost = 0
+		days_re_enable = 90
+		custom_cost_text = GEA_szc_150_artillery_cost
+		custom_cost_trigger = {
+			has_equipment = {
+				artillery_equipment > 149
+			}
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_szc_sell_artillery"
+			send_equipment = {
+				target = SZC
+				type = artillery_equipment
+				amount = 150
+			}
+			add_political_power = 60
+			custom_effect_tooltip = GEA_china_szc_name_tt
+			add_to_variable = {
+				GEA_china_szc_attitude = 2
+				tooltip = GEA_china_attitude_change_tt
+			}
+			add_to_variable = {
+				GEA_china_szc_capital_influence = 2
+				tooltip = GEA_china_capital_influence_change_tt
+			}
+			hidden_effect = {
+				clamp_variable = {
+					var = GEA_china_szc_attitude
+					min = 0
+					max = 100
+				}
+				clamp_variable = {
+					var = GEA_china_szc_capital_influence
+					min = 0
+					max = 100
+				}
+			}
+		}
+	}
+
+	GEA_szc_sell_logistical_equipment = { #向川系出售后勤装备
+		allowed = {
+			original_tag = GEA
+		}
+		icon = GFX_GEA_Invest_in_East_China_decision
+
+		visible = {
+			has_completed_focus = GEA_Buy_Buy_Buy
+			has_country_flag = SZC_OPEN
+			GEA_sichuan_non_anti_concession_controller_trigger = yes
+		}
+		available = {
+			GEA_sichuan_non_anti_concession_controller_trigger = yes
+			NOT = {
+				has_war_with = SZC
+			}
+		}
+		targets = { SZC }
+
+		cost = 0
+		days_re_enable = 90
+		custom_cost_text = GEA_szc_trucks_support_cost
+		custom_cost_trigger = {
+			has_equipment = {
+				motorized_equipment > 99
+			}
+			has_equipment = {
+				support_equipment > 99
+			}
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_szc_sell_logistical_equipment"
+			send_equipment = {
+				target = SZC
+				type = motorized_equipment
+				amount = 100
+			}
+			send_equipment = {
+				target = SZC
+				type = support_equipment
+				amount = 100
+			}
+			add_political_power = 65
+			custom_effect_tooltip = GEA_china_szc_name_tt
+			add_to_variable = {
+				GEA_china_szc_attitude = 2
+				tooltip = GEA_china_attitude_change_tt
+			}
+			add_to_variable = {
+				GEA_china_szc_capital_influence = 2
+				tooltip = GEA_china_capital_influence_change_tt
+			}
+			hidden_effect = {
+				clamp_variable = {
+					var = GEA_china_szc_attitude
+					min = 0
+					max = 100
+				}
+				clamp_variable = {
+					var = GEA_china_szc_capital_influence
+					min = 0
+					max = 100
 				}
 			}
 		}

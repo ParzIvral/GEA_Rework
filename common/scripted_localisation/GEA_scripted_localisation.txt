@@ -96,6 +96,110 @@ defined_text = {
 	text = { localization_key = GEA_Lep_Map_Default_DESC }
 }
 
+#山东地块：独立变量与政权介绍；德国接管后的国号优先于旧领导人判断。
+defined_text = {
+	name = GetGEASqiCooperation
+	text = {
+		trigger = { SQI = { exists = yes GEA_china_warlord_cannot_interact_trigger = yes } }
+		localization_key = GEA_china_cooperation_hostile
+	}
+	text = {
+		trigger = { SQI = { exists = yes is_subject_of = GEA } }
+		localization_key = GEA_china_cooperation_positive
+	}
+	text = { localization_key = GEA_china_cooperation_evasive }
+}
+
+defined_text = {
+	name = GetGEASqiCapitalInfluence
+	text = {
+		trigger = { GEA = { check_variable = { var = GEA_china_sqi_capital_influence value = 67 compare = greater_than_or_equals } } }
+		localization_key = GEA_china_level_high
+	}
+	text = {
+		trigger = { GEA = { check_variable = { var = GEA_china_sqi_capital_influence value = 34 compare = greater_than_or_equals } } }
+		localization_key = GEA_china_level_medium
+	}
+	text = { localization_key = GEA_china_level_low }
+}
+
+defined_text = {
+	name = GetGEASqiMilitaryProjection
+	text = {
+		trigger = { GEA = { check_variable = { var = GEA_china_sqi_military_projection value = 67 compare = greater_than_or_equals } } }
+		localization_key = GEA_china_level_high
+	}
+	text = {
+		trigger = { GEA = { check_variable = { var = GEA_china_sqi_military_projection value = 34 compare = greater_than_or_equals } } }
+		localization_key = GEA_china_level_medium
+	}
+	text = { localization_key = GEA_china_level_low }
+}
+
+defined_text = {
+	name = GetGEASqiAttitudeValue
+	text = {
+		trigger = { GEA = { check_variable = { var = GEA_china_sqi_attitude value = 67 compare = greater_than_or_equals } } }
+		localization_key = GEA_china_sqi_attitude_value_high
+	}
+	text = {
+		trigger = { GEA = { check_variable = { var = GEA_china_sqi_attitude value = 34 compare = greater_than_or_equals } } }
+		localization_key = GEA_china_sqi_attitude_value_medium
+	}
+	text = { localization_key = GEA_china_sqi_attitude_value_low }
+}
+
+defined_text = {
+	name = GetGEASqiCapitalInfluenceValue
+	text = {
+		trigger = { GEA = { check_variable = { var = GEA_china_sqi_capital_influence value = 67 compare = greater_than_or_equals } } }
+		localization_key = GEA_china_sqi_capital_influence_value_high
+	}
+	text = {
+		trigger = { GEA = { check_variable = { var = GEA_china_sqi_capital_influence value = 34 compare = greater_than_or_equals } } }
+		localization_key = GEA_china_sqi_capital_influence_value_medium
+	}
+	text = { localization_key = GEA_china_sqi_capital_influence_value_low }
+}
+
+defined_text = {
+	name = GetGEASqiMilitaryProjectionValue
+	text = {
+		trigger = { GEA = { check_variable = { var = GEA_china_sqi_military_projection value = 67 compare = greater_than_or_equals } } }
+		localization_key = GEA_china_sqi_military_projection_value_high
+	}
+	text = {
+		trigger = { GEA = { check_variable = { var = GEA_china_sqi_military_projection value = 34 compare = greater_than_or_equals } } }
+		localization_key = GEA_china_sqi_military_projection_value_medium
+	}
+	text = { localization_key = GEA_china_sqi_military_projection_value_low }
+}
+
+defined_text = {
+	name = GetGEASqiRegimeDescription
+	text = {
+		trigger = { SQI = { exists = yes has_cosmetic_tag = GEA_SQI_german } }
+		localization_key = GEA_SQI_Map_German_DESC
+	}
+	text = {
+		trigger = { SQI = { exists = yes has_cosmetic_tag = GEA_SQI_maintenance } }
+		localization_key = GEA_SQI_Map_Maintenance_DESC
+	}
+	text = {
+		trigger = { SQI = { exists = yes has_country_leader = { name = "Zhang Tianran" ruling_only = yes } } }
+		localization_key = GEA_SQI_Map_Yiguandao_DESC
+	}
+	text = {
+		trigger = { SQI = { exists = yes has_country_leader = { name = "Song Zheyuan" ruling_only = yes } } }
+		localization_key = GEA_SQI_Map_Song_DESC
+	}
+	text = {
+		trigger = { SQI = { exists = yes has_country_leader = { name = "Zhang Zongchang" ruling_only = yes } } }
+		localization_key = GEA_SQI_Map_Zhang_DESC
+	}
+	text = { localization_key = GEA_SQI_Map_Default_DESC }
+}
+
 #粤系地块：按 GXC 当前执政领袖判断，不与南京地区共用变量。
 defined_text = {
 	name = GetGEAGxcCooperation
@@ -684,4 +788,7 @@ defined_text = {
 		localization_key = GEA_Indochina_Stability_value_4
 	}
 }
+
+
+
 

@@ -160,4 +160,12 @@ spriteTypes = {
 		name = "GFX_portrait_Portrait_GEA_Wang_Kemin"
 		texturefile = "gfx/leaders/GEA/Portrait_GEA_WAng_Kemin.png"
 	}
+	spriteType = {
+		name = "GFX_portrait_Portrait_GEA_Tang_Yangdu"
+		texturefile = "gfx/leaders/GEA/Portrait_GEA_Tang_Yangdu.png"
+	}
+	spriteType = {
+		name = "GFX_portrait_Portrait_GEA_Wilhelm_Hopfner"
+		texturefile = "gfx/leaders/GEA/Portrait_GEA_Wilhelm_Hopfner.png"
+	}
 }

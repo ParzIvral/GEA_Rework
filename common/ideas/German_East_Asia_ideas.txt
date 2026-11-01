@@ -2852,6 +2852,14 @@ ideas = {
 	}
 #隐藏精神
 	hidden_ideas = {
+		GEA_szc_yangtze_transport_idea = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				supply_consumption_factor = -0.05
+			}
+		}
 		GEA_Josias_Carl_Schmitt_colonial_jurists_idea = {
 			allowed = {
 				always = no
