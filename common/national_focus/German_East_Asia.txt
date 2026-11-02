@@ -2401,6 +2401,24 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Introduce_technocrats"
 			add_manpower = 200
 			add_research_slot = 1
+			add_tech_bonus = {
+				name = GEA_Introduce_technocrats
+				ahead_reduction = 1
+				uses = 1
+				category = industry
+			}
+			add_tech_bonus = {
+				name = GEA_Introduce_technocrats
+				ahead_reduction = 1
+				uses = 1
+				category = electronics
+			}
+			add_tech_bonus = {
+				name = GEA_Introduce_technocrats
+				ahead_reduction = 1
+				uses = 1
+				category = armor
+			}
 			custom_effect_tooltip = GEA_Enlightenment_and_the_Mission_of_Education_tt
 			hidden_effect = {
 				country_event = {
