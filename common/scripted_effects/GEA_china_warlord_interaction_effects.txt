@@ -733,3 +733,81 @@ GEA_repay_german_loan_early_effect = {
 		GEA_repay_long_german_loan_effect = yes
 	}
 }
+
+#GEA作用域：三个阶段共用的经营成果计数与精神升级
+GEA_gxc_add_capital_investment_count_effect = {
+	hidden_effect = {
+		add_to_variable = { GEA_gxc_capital_investment_count = 1 }
+		if = {
+			limit = { check_variable = { var = GEA_gxc_capital_investment_count value = 12 compare = greater_than_or_equals } }
+			GXC = {
+				remove_ideas = GEA_gxc_german_capital_1
+				remove_ideas = GEA_gxc_german_capital_2
+				if = {
+					limit = { NOT = { has_idea = GEA_gxc_german_capital_3 } }
+					add_ideas = GEA_gxc_german_capital_3
+				}
+			}
+		}
+		else_if = {
+			limit = { check_variable = { var = GEA_gxc_capital_investment_count value = 8 compare = greater_than_or_equals } }
+			GXC = {
+				remove_ideas = GEA_gxc_german_capital_1
+				remove_ideas = GEA_gxc_german_capital_3
+				if = {
+					limit = { NOT = { has_idea = GEA_gxc_german_capital_2 } }
+					add_ideas = GEA_gxc_german_capital_2
+				}
+			}
+		}
+		else_if = {
+			limit = { check_variable = { var = GEA_gxc_capital_investment_count value = 4 compare = greater_than_or_equals } }
+			GXC = {
+				remove_ideas = GEA_gxc_german_capital_2
+				remove_ideas = GEA_gxc_german_capital_3
+				if = {
+					limit = { NOT = { has_idea = GEA_gxc_german_capital_1 } }
+					add_ideas = GEA_gxc_german_capital_1
+				}
+			}
+		}
+	}
+}
+
+#一阶段四项各贡献一次；依据已完成标记兼容旧存档，重复执行不重复贡献
+GEA_gxc_count_first_stage_investments_effect = {
+	hidden_effect = {
+		if = {
+			limit = {
+				has_country_flag = GEA_gxc_construction_loan_completed
+				NOT = { has_country_flag = GEA_gxc_construction_loan_capital_counted }
+			}
+			set_country_flag = GEA_gxc_construction_loan_capital_counted
+			GEA_gxc_add_capital_investment_count_effect = yes
+		}
+		if = {
+			limit = {
+				has_country_flag = GEA_gxc_guangzhou_enterprises_completed
+				NOT = { has_country_flag = GEA_gxc_guangzhou_enterprises_capital_counted }
+			}
+			set_country_flag = GEA_gxc_guangzhou_enterprises_capital_counted
+			GEA_gxc_add_capital_investment_count_effect = yes
+		}
+		if = {
+			limit = {
+				has_country_flag = GEA_gxc_guangdong_sugar_completed
+				NOT = { has_country_flag = GEA_gxc_guangdong_sugar_capital_counted }
+			}
+			set_country_flag = GEA_gxc_guangdong_sugar_capital_counted
+			GEA_gxc_add_capital_investment_count_effect = yes
+		}
+		if = {
+			limit = {
+				has_country_flag = GEA_gxc_yuehan_railway_completed
+				NOT = { has_country_flag = GEA_gxc_yuehan_railway_capital_counted }
+			}
+			set_country_flag = GEA_gxc_yuehan_railway_capital_counted
+			GEA_gxc_add_capital_investment_count_effect = yes
+		}
+	}
+}

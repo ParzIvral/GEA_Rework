@@ -18888,7 +18888,11 @@ focus_tree = {
 			factor = 25
 		}
 		available = {
-
+			POR = {
+				exists = yes
+				controls_state = 729 #澳门
+				controls_state = 721 #东帝汶
+			}
 		}			
 
 		prerequisite = {
@@ -18898,6 +18902,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Lisbon_Hotline"
+			POR = { country_event = { id = Ostasien.802 } }
 		}	
 	}
 	focus = { #清理后花园杂草
@@ -20242,7 +20247,9 @@ focus_tree = {
 			factor = 0
 		}
 		available = {
-			always = no
+			GEA_liangguang_non_anti_concession_controller_trigger = yes
+			GEA_liangguang_civil_war_resolved_trigger = yes
+			GXC = { NOT = { has_war_with = GEA } }
 		}			
 		prerequisite = {
 			focus = GEA_The_second_expedition_to_China
@@ -20250,6 +20257,10 @@ focus_tree = {
 		relative_position_id = GEA_The_second_expedition_to_China
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_revisit_old_site"
+			unlock_decision_tooltip = GEA_gxc_postwar_relief
+			unlock_decision_tooltip = GEA_gxc_trade_routes
+			unlock_decision_tooltip = GEA_gxc_staff_training
+			unlock_decision_tooltip = GEA_gxc_transport_reconstruction
 		}	
 	}
 
@@ -20257,14 +20268,14 @@ focus_tree = {
 		id = GEA_The_wavering_business_group
 		icon = GFX_GEA_The_wavering_business_group
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		cost = 4
+		cost = 1.5
 		x = 1
 		y = 1
 		ai_will_do = {
 			factor = 0
 		}
 		available = {
-
+			GEA_liangguang_non_anti_concession_controller_trigger = yes
 		}			
 		prerequisite = {
 			focus = GEA_revisit_old_site
@@ -20272,6 +20283,35 @@ focus_tree = {
 		relative_position_id = GEA_revisit_old_site
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_wavering_business_group"
+			if = {
+				limit = { GXC = { has_country_leader = { name = "Chen Lianbo" ruling_only = yes } } }
+				GXC = {
+					add_popularity = { ideology = market_liberal popularity = 0.10 }
+					add_stability = 0.05
+				}
+				custom_effect_tooltip = GEA_china_gxc_name_tt
+				add_to_variable = {
+					GEA_china_gxc_capital_influence = 20
+					tooltip = GEA_china_capital_influence_change_tt
+				}
+				add_to_variable = {
+					GEA_china_gxc_attitude = 15
+					tooltip = GEA_china_attitude_change_tt
+				}
+				add_to_variable = {
+					GEA_china_gxc_military_projection = 15
+					tooltip = GEA_china_military_projection_change_tt
+				}
+				hidden_effect = {
+					clamp_variable = { var = GEA_china_gxc_capital_influence min = 0 max = 100 }
+					clamp_variable = { var = GEA_china_gxc_attitude min = 0 max = 100 }
+					clamp_variable = { var = GEA_china_gxc_military_projection min = 0 max = 100 }
+				}
+			}
+			else = {
+				country_event = { id = GEA.831 }
+			}
+
 		}	
 	}
 
@@ -20279,14 +20319,14 @@ focus_tree = {
 		id = GEA_Eliminate_all_evil_forces
 		icon = GFX_goal_AUS_Disenfranchise_Austromarxism
 		search_filters = { FOCUS_FILTER_RESISTANCE }
-		cost = 4
+		cost = 1.5
 		x = -1
 		y = 1
 		ai_will_do = {
 			factor = 0
 		}
 		available = {
-
+			GEA_liangguang_expedition_target_trigger = yes
 		}			
 		prerequisite = {
 			focus = GEA_revisit_old_site
@@ -20294,8 +20334,10 @@ focus_tree = {
 		relative_position_id = GEA_revisit_old_site
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Eliminate_all_evil_forces"
+			unlock_decision_tooltip = GEA_Liangguang_Expedition
 		}	
 	}
+
 
 	focus = { #金马克的主导权
 		id = GEA_The_dominant_position_of_Golden_Mark
@@ -20308,7 +20350,7 @@ focus_tree = {
 			factor = 0
 		}
 		available = {
-
+			GEA_liangguang_non_anti_concession_controller_trigger = yes
 		}			
 		prerequisite = {
 			focus = GEA_revisit_old_site
@@ -20316,6 +20358,12 @@ focus_tree = {
 		relative_position_id = GEA_revisit_old_site
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_dominant_position_of_Golden_Mark"
+			custom_effect_tooltip = GEA_The_dominant_position_of_Golden_Mark_tt
+			add_political_power = 75
+			unlock_decision_tooltip = GEA_gxc_construction_loan
+			unlock_decision_tooltip = GEA_gxc_guangzhou_enterprises
+			unlock_decision_tooltip = GEA_gxc_guangdong_sugar
+			unlock_decision_tooltip = GEA_gxc_yuehan_railway
 		}	
 	}
 
@@ -20330,7 +20378,7 @@ focus_tree = {
 			factor = 0
 		}
 		available = {
-
+			GEA_liangguang_non_anti_concession_controller_trigger = yes
 		}			
 		prerequisite = {
 			focus = GEA_revisit_old_site
@@ -20338,6 +20386,66 @@ focus_tree = {
 		relative_position_id = GEA_revisit_old_site
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Developing_the_uninhabited_wilderness"
+			add_stability = -0.05
+			add_political_power = -20
+			custom_effect_tooltip = tooltip_white_line
+			GXC = {
+				give_resource_rights = { 
+					receiver = ROOT
+					state = 1055 
+				}
+				give_resource_rights = { 
+					receiver = ROOT
+					state = 1056
+				}
+				give_resource_rights = { 
+					receiver = ROOT
+					state = 594
+				}						
+			}
+			custom_effect_tooltip = tooltip_white_line
+			1055 = {
+				add_resource = {
+					type = coal
+					amount = 4
+				}				
+				add_resource = {
+					type = steel
+					amount = 10
+				}
+				add_resource = {
+					type = aluminium
+					amount = 10
+				}
+				add_resource = {
+					type = tungsten
+					amount = 10
+				}
+			}
+			1056 = {
+				add_resource = {
+					type = steel
+					amount = 10
+				}
+				add_resource = {
+					type = aluminium
+					amount = 10
+				}
+			}
+			594 = {
+				add_resource = {
+					type = steel
+					amount = 10
+				}
+				add_resource = {
+					type = aluminium
+					amount = 10
+				}
+				add_resource = {
+					type = tungsten
+					amount = 10
+				}
+			}		
 		}	
 	}
 
@@ -20351,18 +20459,34 @@ focus_tree = {
 		ai_will_do = {
 			factor = 0
 		}
+		bypass = {
+			OR = {
+				NOT = { country_exists = GXC }
+				GXC = { is_subject_of = GEA }
+			}
+		}
 		available = {
-
+			GEA_liangguang_non_anti_concession_controller_trigger = yes
+			check_variable = {
+				var = GEA_china_gxc_capital_influence
+				value = 95
+				compare = greater_than
+			}
+			check_variable = {
+				var = GEA_china_gxc_military_projection
+				value = 95
+				compare = greater_than
+			}
+			GXC = { market_liberal > 0.20 }
 		}	
 		prerequisite = {
 			focus = GEA_Eliminate_all_evil_forces
-		}		
-		prerequisite = {
 			focus = GEA_The_wavering_business_group
 		}
 		relative_position_id = GEA_The_wavering_business_group
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Reaffirm_our_position"
+			GXC = { country_event = { id = GEA.832 } }
 		}	
 	}
 
@@ -20377,7 +20501,7 @@ focus_tree = {
 			factor = 0
 		}
 		available = {
-
+			GEA_liangguang_non_anti_concession_controller_trigger = yes
 		}	
 		prerequisite = {
 			focus = GEA_Developing_the_uninhabited_wilderness
@@ -20388,6 +20512,23 @@ focus_tree = {
 		relative_position_id = GEA_The_wavering_business_group
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Peace_in_Guangzhou"
+			592 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				custom_effect_tooltip = tooltip_white_line
+				set_demilitarized_zone = yes 
+			}
+			custom_effect_tooltip = tooltip_white_line
+			GXC = {
+				give_resource_rights = { 
+					receiver = ROOT
+					state = 592
+				}
+			}
 		}	
 	}
 
@@ -20402,7 +20543,7 @@ focus_tree = {
 			factor = 0
 		}
 		available = {
-
+			GEA_liangguang_under_german_control_trigger = yes
 		}	
 		prerequisite = {
 			focus = GEA_Reaffirm_our_position
@@ -20413,6 +20554,22 @@ focus_tree = {
 		relative_position_id = GEA_Reaffirm_our_position
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_second_jewel_of_colonial_territory"
+			transfer_state = 592
+			592 = {
+				increase_state_category_by_one_level = yes
+				add_extra_state_shared_building_slots = 6
+				add_state_modifier = {
+					modifier = {
+						state_production_speed_industrial_complex_factor = 0.20
+						state_production_speed_arms_factory_factor = 0.20
+						state_production_speed_dockyard_factor = 0.20
+					}
+				}
+				add_building_construction = { type = industrial_complex level = 3 instant_build = yes }
+				add_building_construction = { type = arms_factory level = 2 instant_build = yes }
+				add_building_construction = { type = dockyard level = 1 instant_build = yes }
+			}
+
 		}	
 	}
 
@@ -22085,8 +22242,8 @@ focus_tree = {
 		}
 		available = {
 			OR = {
-				country_exists = SZC
-				country_exists = YUN
+				GEA_yunnan_non_anti_concession_controller_trigger = yes
+				GEA_sichuan_non_anti_concession_controller_trigger = yes
 			}
 		}			
 		prerequisite = {

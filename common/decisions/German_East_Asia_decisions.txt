@@ -11011,6 +11011,1719 @@ GEA_focus_china_decisions = {#第二次对华远征
 		}
 	}
 
+	GEA_Liangguang_Expedition = { #两广远征
+		allowed = { original_tag = GEA }
+		icon = GFX_GEA_Intervene_in_East_China_decision
+		priority = 10001
+
+		visible = {
+			has_completed_focus = GEA_Eliminate_all_evil_forces
+			has_country_flag = GXC_OPEN
+			country_exists = GXC
+		}
+		available = {
+			GEA_liangguang_expedition_target_trigger = yes
+			NOT = { has_war_with = GXC }
+			NOT = { is_in_faction_with = GXC }
+			GXC = { NOT = { is_subject_of = GEA } }
+		}
+		targets = { GXC }
+
+		cost = 0
+		days_remove = 30
+		fire_only_once = yes
+		cancel_if_not_visible = no
+		cancel_trigger = {
+			NOT = {
+				AND = {
+					GEA_liangguang_expedition_target_trigger = yes
+					NOT = { has_war_with = GXC }
+					NOT = { is_in_faction_with = GXC }
+					GXC = { NOT = { is_subject_of = GEA } }
+				}
+			}
+		}
+
+		ai_will_do = { factor = 0 }
+		remove_effect = {
+			if = {
+				limit = {
+					GEA_liangguang_expedition_target_trigger = yes
+					NOT = { has_war_with = GXC }
+					NOT = { is_in_faction_with = GXC }
+					GXC = { NOT = { is_subject_of = GEA } }
+				}
+				log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Liangguang_Expedition"
+				declare_war_on = { target = GXC type = annex_everything }
+			}
+		}
+	}
+
+	GEA_gxc_pearl_river_customs = { #接管珠江关税收入
+		allowed = { original_tag = GEA }
+		icon = GFX_GEA_Invest_in_East_China_decision
+
+		visible = {
+			has_country_flag = GXC_OPEN
+			country_exists = GXC
+			has_completed_focus = GEA_The_dominant_position_of_Golden_Mark
+			hidden_trigger = { check_variable = { var = GEA_gxc_capital_investment_count value = 8 compare = greater_than_or_equals } }
+		}
+		available = {
+			hidden_trigger = { check_variable = { var = GEA_gxc_capital_investment_count value = 8 compare = greater_than_or_equals } }
+			GEA_liangguang_non_anti_concession_controller_trigger = yes
+			GEA_liangguang_civil_war_resolved_trigger = yes
+			GXC = { NOT = { has_war_with = GEA } }
+			check_variable = { var = GEA_china_gxc_capital_influence value = 70 compare = greater_than }
+			check_variable = { var = GEA_china_gxc_attitude value = 10 compare = greater_than_or_equals }
+		}
+		targets = { GXC }
+
+		cost = 50
+		days_remove = 120
+		days_re_enable = 180
+		cancel_if_not_visible = no
+		cancel_trigger = {
+			NOT = {
+				AND = {
+					GEA_liangguang_non_anti_concession_controller_trigger = yes
+					GEA_liangguang_civil_war_resolved_trigger = yes
+					GXC = { NOT = { has_war_with = GEA } }
+				}
+			}
+		}
+
+		modifier = {
+			political_power_factor = 0.15
+			consumer_goods_factor = -0.05
+		}
+
+		ai_will_do = { factor = 10 }
+		complete_effect = {
+			custom_effect_tooltip = GEA_china_gxc_name_tt
+			add_to_variable = {
+				GEA_china_gxc_attitude = -10
+				tooltip = GEA_china_attitude_change_tt
+			}
+			add_to_variable = {
+				GEA_china_gxc_capital_influence = -10
+				tooltip = GEA_china_capital_influence_change_tt
+			}
+			hidden_effect = {
+				clamp_variable = { var = GEA_china_gxc_attitude min = 0 max = 100 }
+				clamp_variable = { var = GEA_china_gxc_capital_influence min = 0 max = 100 }
+			}
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					GEA_liangguang_non_anti_concession_controller_trigger = yes
+					GEA_liangguang_civil_war_resolved_trigger = yes
+					GXC = { NOT = { has_war_with = GEA } }
+				}
+				add_political_power = 100
+				GXC = { add_stability = -0.03 }
+			}
+		}
+	}
+
+	GEA_gxc_acquire_military_assets = { #收购粤省军工资产
+		allowed = { original_tag = GEA }
+		icon = GFX_GEA_Invest_in_East_China_decision
+
+		visible = {
+			has_country_flag = GXC_OPEN
+			country_exists = GXC
+			has_completed_focus = GEA_The_dominant_position_of_Golden_Mark
+			hidden_trigger = { check_variable = { var = GEA_gxc_capital_investment_count value = 8 compare = greater_than_or_equals } }
+		}
+		available = {
+			hidden_trigger = { check_variable = { var = GEA_gxc_capital_investment_count value = 8 compare = greater_than_or_equals } }
+			GEA_liangguang_non_anti_concession_controller_trigger = yes
+			GEA_liangguang_civil_war_resolved_trigger = yes
+			GXC = { NOT = { has_war_with = GEA } }
+			GXC = { any_owned_state = { is_controlled_by = PREV arms_factory > 0 } }
+			any_owned_state = { is_controlled_by = PREV }
+			hidden_trigger = { check_variable = { var = GEA_gxc_acquire_military_assets_uses value = 3 compare = less_than } }
+			check_variable = { var = GEA_china_gxc_capital_influence value = 70 compare = greater_than }
+			check_variable = { var = GEA_china_gxc_attitude value = 8 compare = greater_than_or_equals }
+		}
+		targets = { GXC }
+
+		cost = 0
+		custom_cost_text = CP_40
+		custom_cost_trigger = { command_power > 39.99 }
+		days_remove = 150
+		days_re_enable = 180
+		cancel_if_not_visible = no
+		cancel_trigger = {
+			NOT = {
+				AND = {
+					GEA_liangguang_non_anti_concession_controller_trigger = yes
+					GEA_liangguang_civil_war_resolved_trigger = yes
+					GXC = { NOT = { has_war_with = GEA } }
+					GXC = { any_owned_state = { is_controlled_by = PREV arms_factory > 0 } }
+					any_owned_state = { is_controlled_by = PREV }
+					hidden_trigger = { check_variable = { var = GEA_gxc_acquire_military_assets_uses value = 3 compare = less_than } }
+				}
+			}
+		}
+
+		ai_will_do = { factor = 10 }
+		complete_effect = {
+			custom_effect_tooltip = GEA_china_gxc_name_tt
+			add_to_variable = {
+				GEA_china_gxc_attitude = -8
+				tooltip = GEA_china_attitude_change_tt
+			}
+			add_to_variable = {
+				GEA_china_gxc_capital_influence = -10
+				tooltip = GEA_china_capital_influence_change_tt
+			}
+			hidden_effect = {
+				clamp_variable = { var = GEA_china_gxc_attitude min = 0 max = 100 }
+				clamp_variable = { var = GEA_china_gxc_capital_influence min = 0 max = 100 }
+				add_command_power = -40
+			}
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					GEA_liangguang_non_anti_concession_controller_trigger = yes
+					GEA_liangguang_civil_war_resolved_trigger = yes
+					GXC = { NOT = { has_war_with = GEA } }
+					GXC = { any_owned_state = { is_controlled_by = PREV arms_factory > 0 } }
+					any_owned_state = { is_controlled_by = PREV }
+					hidden_trigger = { check_variable = { var = GEA_gxc_acquire_military_assets_uses value = 3 compare = less_than } }
+				}
+				GXC = {
+					random_owned_state = {
+						limit = { is_controlled_by = PREV arms_factory > 0 }
+						remove_building = { type = arms_factory level = 1 }
+					}
+					add_political_power = 30
+				}
+				random_owned_state = {
+					limit = { is_controlled_by = PREV }
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = { type = arms_factory level = 1 instant_build = yes }
+				}
+				add_equipment_to_stockpile = { type = infantry_equipment amount = 2000 producer = GEA }
+				add_equipment_to_stockpile = { type = artillery_equipment amount = 150 producer = GEA }
+				hidden_effect = { add_to_variable = { GEA_gxc_acquire_military_assets_uses = 1 } }
+			}
+		}
+	}
+
+	GEA_gxc_recruit_lingnan_workers = { #招募岭南技术工人
+		allowed = { original_tag = GEA }
+		icon = GFX_GEA_Invest_in_East_China_decision
+
+		visible = {
+			has_country_flag = GXC_OPEN
+			country_exists = GXC
+			has_completed_focus = GEA_The_dominant_position_of_Golden_Mark
+			hidden_trigger = { check_variable = { var = GEA_gxc_capital_investment_count value = 8 compare = greater_than_or_equals } }
+		}
+		available = {
+			hidden_trigger = { check_variable = { var = GEA_gxc_capital_investment_count value = 8 compare = greater_than_or_equals } }
+			GEA_liangguang_non_anti_concession_controller_trigger = yes
+			GEA_liangguang_civil_war_resolved_trigger = yes
+			GXC = { NOT = { has_war_with = GEA } }
+			GXC = { has_manpower > 4999 }
+			any_owned_state = { is_controlled_by = PREV }
+			check_variable = { var = GEA_china_gxc_capital_influence value = 70 compare = greater_than }
+			check_variable = { var = GEA_china_gxc_attitude value = 8 compare = greater_than_or_equals }
+		}
+		targets = { GXC }
+
+		cost = 60
+		days_remove = 120
+		days_re_enable = 180
+		cancel_if_not_visible = no
+		cancel_trigger = {
+			NOT = {
+				AND = {
+					GEA_liangguang_non_anti_concession_controller_trigger = yes
+					GEA_liangguang_civil_war_resolved_trigger = yes
+					GXC = { NOT = { has_war_with = GEA } }
+					GXC = { has_manpower > 4999 }
+					any_owned_state = { is_controlled_by = PREV }
+				}
+			}
+		}
+
+		ai_will_do = { factor = 10 }
+		complete_effect = {
+			custom_effect_tooltip = GEA_china_gxc_name_tt
+			add_to_variable = {
+				GEA_china_gxc_attitude = -8
+				tooltip = GEA_china_attitude_change_tt
+			}
+			add_to_variable = {
+				GEA_china_gxc_capital_influence = -5
+				tooltip = GEA_china_capital_influence_change_tt
+			}
+			hidden_effect = {
+				clamp_variable = { var = GEA_china_gxc_attitude min = 0 max = 100 }
+				clamp_variable = { var = GEA_china_gxc_capital_influence min = 0 max = 100 }
+			}
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					GEA_liangguang_non_anti_concession_controller_trigger = yes
+					GEA_liangguang_civil_war_resolved_trigger = yes
+					GXC = { NOT = { has_war_with = GEA } }
+					GXC = { has_manpower > 4999 }
+					any_owned_state = { is_controlled_by = PREV }
+				}
+				GXC = {
+					add_manpower = -5000
+					add_stability = -0.02
+				}
+				add_manpower = 5000
+				random_owned_state = {
+					limit = { is_controlled_by = PREV }
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+				}
+			}
+		}
+	}
+
+	GEA_gxc_lease_whampoa_port = { #承租黄埔军港
+		allowed = { original_tag = GEA }
+		icon = GFX_GEA_Invest_in_East_China_decision
+
+		visible = {
+			has_country_flag = GXC_OPEN
+			country_exists = GXC
+			has_completed_focus = GEA_The_dominant_position_of_Golden_Mark
+			hidden_trigger = { check_variable = { var = GEA_gxc_capital_investment_count value = 8 compare = greater_than_or_equals } }
+		}
+		available = {
+			hidden_trigger = { check_variable = { var = GEA_gxc_capital_investment_count value = 8 compare = greater_than_or_equals } }
+			GEA_liangguang_non_anti_concession_controller_trigger = yes
+			GEA_liangguang_civil_war_resolved_trigger = yes
+			GXC = { NOT = { has_war_with = GEA } }
+			GXC = { any_owned_state = { is_controlled_by = PREV is_coastal = yes } }
+			any_owned_state = { is_controlled_by = PREV is_coastal = yes }
+			check_variable = { var = GEA_china_gxc_capital_influence value = 70 compare = greater_than }
+			check_variable = { var = GEA_china_gxc_attitude value = 15 compare = greater_than_or_equals }
+		}
+		targets = { GXC }
+
+		cost = 100
+		days_remove = 180
+		fire_only_once = yes
+		cancel_if_not_visible = no
+		cancel_trigger = {
+			NOT = {
+				AND = {
+					GEA_liangguang_non_anti_concession_controller_trigger = yes
+					GEA_liangguang_civil_war_resolved_trigger = yes
+					GXC = { NOT = { has_war_with = GEA } }
+					GXC = { any_owned_state = { is_controlled_by = PREV is_coastal = yes } }
+					any_owned_state = { is_controlled_by = PREV is_coastal = yes }
+				}
+			}
+		}
+
+		ai_will_do = { factor = 10 }
+		complete_effect = {
+			custom_effect_tooltip = GEA_china_gxc_name_tt
+			add_to_variable = {
+				GEA_china_gxc_attitude = -15
+				tooltip = GEA_china_attitude_change_tt
+			}
+			add_to_variable = {
+				GEA_china_gxc_capital_influence = -15
+				tooltip = GEA_china_capital_influence_change_tt
+			}
+			hidden_effect = {
+				clamp_variable = { var = GEA_china_gxc_attitude min = 0 max = 100 }
+				clamp_variable = { var = GEA_china_gxc_capital_influence min = 0 max = 100 }
+			}
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					GEA_liangguang_non_anti_concession_controller_trigger = yes
+					GEA_liangguang_civil_war_resolved_trigger = yes
+					GXC = { NOT = { has_war_with = GEA } }
+					GXC = { any_owned_state = { is_controlled_by = PREV is_coastal = yes } }
+					any_owned_state = { is_controlled_by = PREV is_coastal = yes }
+				}
+				random_owned_state = {
+					limit = { is_controlled_by = PREV is_coastal = yes }
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = { type = dockyard level = 2 instant_build = yes }
+				}
+				navy_experience = 20
+				add_equipment_to_stockpile = { type = convoy amount = 30 producer = GEA }
+				GXC = {
+					random_owned_state = {
+						limit = { is_controlled_by = PREV is_coastal = yes }
+						add_extra_state_shared_building_slots = 1
+						add_building_construction = { type = dockyard level = 1 instant_build = yes }
+					}
+					add_stability = -0.05
+				}
+				GEA_gxc_add_capital_investment_count_effect = yes
+				GEA_gxc_add_capital_investment_count_effect = yes
+			}
+		}
+	}
+
+	GEA_gxc_expand_industrial_credit = { #扩大工业信贷
+		allowed = { original_tag = GEA }
+		icon = GFX_GEA_Invest_in_East_China_decision
+
+		visible = {
+			has_country_flag = GXC_OPEN
+			country_exists = GXC
+			has_completed_focus = GEA_The_dominant_position_of_Golden_Mark
+			hidden_trigger = { check_variable = { var = GEA_gxc_capital_investment_count value = 4 compare = greater_than_or_equals } }
+		}
+		available = {
+			hidden_trigger = { check_variable = { var = GEA_gxc_capital_investment_count value = 4 compare = greater_than_or_equals } }
+			GEA_liangguang_non_anti_concession_controller_trigger = yes
+			GEA_liangguang_civil_war_resolved_trigger = yes
+			GXC = { NOT = { has_war_with = GEA } }
+			GXC = { NOT = { has_idea = GEA_gxc_industrial_credit_support } }
+			check_variable = { var = GEA_china_gxc_capital_influence value = 50 compare = greater_than }
+			check_variable = { var = GEA_china_gxc_attitude value = 3 compare = greater_than_or_equals }
+		}
+		targets = { GXC }
+
+		cost = 60
+		days_remove = 120
+		days_re_enable = 120
+		cancel_if_not_visible = no
+		cancel_trigger = {
+			NOT = {
+				AND = {
+					GEA_liangguang_non_anti_concession_controller_trigger = yes
+					GEA_liangguang_civil_war_resolved_trigger = yes
+					GXC = { NOT = { has_war_with = GEA } }
+					GXC = { NOT = { has_idea = GEA_gxc_industrial_credit_support } }
+				}
+			}
+		}
+
+		ai_will_do = { factor = 30 }
+		complete_effect = {
+			custom_effect_tooltip = GEA_china_gxc_name_tt
+			add_to_variable = {
+				GEA_china_gxc_attitude = -3
+				tooltip = GEA_china_attitude_change_tt
+			}
+			add_to_variable = {
+				GEA_china_gxc_capital_influence = -5
+				tooltip = GEA_china_capital_influence_change_tt
+			}
+			hidden_effect = {
+				clamp_variable = { var = GEA_china_gxc_attitude min = 0 max = 100 }
+				clamp_variable = { var = GEA_china_gxc_capital_influence min = 0 max = 100 }
+				clamp_variable = { var = GEA_china_gxc_military_projection min = 0 max = 100 }
+			}
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					GEA_liangguang_non_anti_concession_controller_trigger = yes
+					GEA_liangguang_civil_war_resolved_trigger = yes
+					GXC = { NOT = { has_war_with = GEA } }
+					GXC = { NOT = { has_idea = GEA_gxc_industrial_credit_support } }
+				}
+				GXC = { add_timed_idea = { idea = GEA_gxc_industrial_credit_support days = 120 } }
+				if = {
+					limit = { NOT = { has_country_flag = GEA_gxc_expand_industrial_credit_completed } }
+					GEA_gxc_add_capital_investment_count_effect = yes
+				}
+				set_country_flag = GEA_gxc_expand_industrial_credit_completed
+			}
+		}
+	}
+
+	GEA_gxc_military_contracts = { #承包广东军需生产
+		allowed = { original_tag = GEA }
+		icon = GFX_GEA_Invest_in_East_China_decision
+
+		visible = {
+			has_country_flag = GXC_OPEN
+			country_exists = GXC
+			has_completed_focus = GEA_The_dominant_position_of_Golden_Mark
+			hidden_trigger = { check_variable = { var = GEA_gxc_capital_investment_count value = 4 compare = greater_than_or_equals } }
+		}
+		available = {
+			hidden_trigger = { check_variable = { var = GEA_gxc_capital_investment_count value = 4 compare = greater_than_or_equals } }
+			GEA_liangguang_non_anti_concession_controller_trigger = yes
+			GEA_liangguang_civil_war_resolved_trigger = yes
+			GXC = { NOT = { has_war_with = GEA } }
+			GXC = { any_owned_state = { is_controlled_by = PREV } }
+			check_variable = { var = GEA_china_gxc_capital_influence value = 50 compare = greater_than }
+			check_variable = { var = GEA_china_gxc_attitude value = 5 compare = greater_than_or_equals }
+			command_power > 39.99
+		}
+		targets = { GXC }
+
+		cost = 0
+		custom_cost_text = CP_40
+		custom_cost_trigger = { command_power > 39.99 }
+		days_remove = 90
+		days_re_enable = 120
+		cancel_if_not_visible = no
+		cancel_trigger = {
+			NOT = {
+				AND = {
+					GEA_liangguang_non_anti_concession_controller_trigger = yes
+					GEA_liangguang_civil_war_resolved_trigger = yes
+					GXC = { NOT = { has_war_with = GEA } }
+					GXC = { any_owned_state = { is_controlled_by = PREV } }
+				}
+			}
+		}
+
+		ai_will_do = { factor = 30 }
+		complete_effect = {
+			hidden_effect = { add_command_power = -40 }
+			custom_effect_tooltip = GEA_china_gxc_name_tt
+			add_to_variable = {
+				GEA_china_gxc_attitude = -5
+				tooltip = GEA_china_attitude_change_tt
+			}
+			add_to_variable = {
+				GEA_china_gxc_capital_influence = -8
+				tooltip = GEA_china_capital_influence_change_tt
+			}
+			hidden_effect = {
+				clamp_variable = { var = GEA_china_gxc_attitude min = 0 max = 100 }
+				clamp_variable = { var = GEA_china_gxc_capital_influence min = 0 max = 100 }
+				clamp_variable = { var = GEA_china_gxc_military_projection min = 0 max = 100 }
+			}
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					GEA_liangguang_non_anti_concession_controller_trigger = yes
+					GEA_liangguang_civil_war_resolved_trigger = yes
+					GXC = { NOT = { has_war_with = GEA } }
+					GXC = { any_owned_state = { is_controlled_by = PREV } }
+				}
+				GXC = {
+					random_owned_state = {
+						limit = { is_controlled_by = PREV }
+						add_extra_state_shared_building_slots = 1
+						add_building_construction = { type = arms_factory level = 1 instant_build = yes }
+					}
+				}
+				GXC = {
+					army_experience = 15
+					add_popularity = { ideology = market_liberal popularity = 0.05 }
+				}
+				custom_effect_tooltip = GEA_china_gxc_name_tt
+				add_to_variable = {
+					GEA_china_gxc_military_projection = 10
+					tooltip = GEA_china_military_projection_change_tt
+				}
+				hidden_effect = {
+					clamp_variable = { var = GEA_china_gxc_attitude min = 0 max = 100 }
+					clamp_variable = { var = GEA_china_gxc_capital_influence min = 0 max = 100 }
+					clamp_variable = { var = GEA_china_gxc_military_projection min = 0 max = 100 }
+				}
+				GEA_gxc_add_capital_investment_count_effect = yes
+				set_country_flag = GEA_gxc_military_contracts_completed
+			}
+		}
+	}
+
+	GEA_gxc_pearl_river_industry = { #扩建珠江工业带
+		allowed = { original_tag = GEA }
+		icon = GFX_GEA_Invest_in_East_China_decision
+
+		visible = {
+			has_country_flag = GXC_OPEN
+			country_exists = GXC
+			has_completed_focus = GEA_The_dominant_position_of_Golden_Mark
+			hidden_trigger = { check_variable = { var = GEA_gxc_capital_investment_count value = 4 compare = greater_than_or_equals } }
+		}
+		available = {
+			hidden_trigger = { check_variable = { var = GEA_gxc_capital_investment_count value = 4 compare = greater_than_or_equals } }
+			GEA_liangguang_non_anti_concession_controller_trigger = yes
+			GEA_liangguang_civil_war_resolved_trigger = yes
+			GXC = { NOT = { has_war_with = GEA } }
+			GXC = { any_owned_state = { is_controlled_by = PREV } }
+			check_variable = { var = GEA_china_gxc_capital_influence value = 50 compare = greater_than }
+		}
+		targets = { GXC }
+
+		cost = 100
+		days_remove = 180
+		days_re_enable = 180
+		cancel_if_not_visible = no
+		cancel_trigger = {
+			NOT = {
+				AND = {
+					GEA_liangguang_non_anti_concession_controller_trigger = yes
+					GEA_liangguang_civil_war_resolved_trigger = yes
+					GXC = { NOT = { has_war_with = GEA } }
+					GXC = { any_owned_state = { is_controlled_by = PREV } }
+				}
+			}
+		}
+
+		ai_will_do = { factor = 30 }
+		remove_effect = {
+			if = {
+				limit = {
+					GEA_liangguang_non_anti_concession_controller_trigger = yes
+					GEA_liangguang_civil_war_resolved_trigger = yes
+					GXC = { NOT = { has_war_with = GEA } }
+					GXC = { any_owned_state = { is_controlled_by = PREV } }
+				}
+				GXC = {
+					random_owned_state = {
+						limit = { is_controlled_by = PREV }
+						add_extra_state_shared_building_slots = 4
+						add_building_construction = { type = industrial_complex level = 2 instant_build = yes }
+						add_building_construction = { type = arms_factory level = 2 instant_build = yes }
+					}
+					add_popularity = { ideology = market_liberal popularity = 0.08 }
+				}
+				custom_effect_tooltip = GEA_china_gxc_name_tt
+				add_to_variable = {
+					GEA_china_gxc_attitude = 10
+					tooltip = GEA_china_attitude_change_tt
+				}
+				add_to_variable = {
+					GEA_china_gxc_capital_influence = 10
+					tooltip = GEA_china_capital_influence_change_tt
+				}
+				add_to_variable = {
+					GEA_china_gxc_military_projection = 10
+					tooltip = GEA_china_military_projection_change_tt
+				}
+				hidden_effect = {
+					clamp_variable = { var = GEA_china_gxc_attitude min = 0 max = 100 }
+					clamp_variable = { var = GEA_china_gxc_capital_influence min = 0 max = 100 }
+					clamp_variable = { var = GEA_china_gxc_military_projection min = 0 max = 100 }
+				}
+				GEA_gxc_add_capital_investment_count_effect = yes
+				set_country_flag = GEA_gxc_pearl_river_industry_completed
+			}
+		}
+	}
+
+	GEA_gxc_xijiang_shipping_concession = { #取得西江航运经营特许权
+		allowed = { original_tag = GEA }
+		icon = GFX_GEA_Invest_in_East_China_decision
+
+		visible = {
+			has_country_flag = GXC_OPEN
+			country_exists = GXC
+			has_completed_focus = GEA_The_dominant_position_of_Golden_Mark
+			hidden_trigger = { check_variable = { var = GEA_gxc_capital_investment_count value = 4 compare = greater_than_or_equals } }
+		}
+		available = {
+			hidden_trigger = { check_variable = { var = GEA_gxc_capital_investment_count value = 4 compare = greater_than_or_equals } }
+			GEA_liangguang_non_anti_concession_controller_trigger = yes
+			GEA_liangguang_civil_war_resolved_trigger = yes
+			GXC = { NOT = { has_war_with = GEA } }
+			GXC = { any_owned_state = { is_controlled_by = PREV is_coastal = yes } }
+			check_variable = { var = GEA_china_gxc_capital_influence value = 50 compare = greater_than }
+			check_variable = { var = GEA_china_gxc_attitude value = 15 compare = greater_than_or_equals }
+		}
+		targets = { GXC }
+
+		cost = 75
+		days_remove = 180
+		fire_only_once = yes
+		cancel_if_not_visible = no
+		cancel_trigger = {
+			NOT = {
+				AND = {
+					GEA_liangguang_non_anti_concession_controller_trigger = yes
+					GEA_liangguang_civil_war_resolved_trigger = yes
+					GXC = { NOT = { has_war_with = GEA } }
+					GXC = { any_owned_state = { is_controlled_by = PREV is_coastal = yes } }
+				}
+			}
+		}
+
+		modifier = {
+			consumer_goods_factor = -0.10
+			trade_opinion_factor = 0.50
+			political_power_factor = 0.10
+			local_resources_factor = 0.10
+		}
+
+		ai_will_do = { factor = 30 }
+		complete_effect = {
+			custom_effect_tooltip = GEA_china_gxc_name_tt
+			add_to_variable = {
+				GEA_china_gxc_attitude = -15
+				tooltip = GEA_china_attitude_change_tt
+			}
+			add_to_variable = {
+				GEA_china_gxc_capital_influence = -10
+				tooltip = GEA_china_capital_influence_change_tt
+			}
+			hidden_effect = {
+				clamp_variable = { var = GEA_china_gxc_attitude min = 0 max = 100 }
+				clamp_variable = { var = GEA_china_gxc_capital_influence min = 0 max = 100 }
+				clamp_variable = { var = GEA_china_gxc_military_projection min = 0 max = 100 }
+			}
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					GEA_liangguang_non_anti_concession_controller_trigger = yes
+					GEA_liangguang_civil_war_resolved_trigger = yes
+					GXC = { NOT = { has_war_with = GEA } }
+					GXC = { any_owned_state = { is_controlled_by = PREV is_coastal = yes } }
+				}
+				GXC = {
+					random_owned_state = {
+						limit = { is_controlled_by = PREV is_coastal = yes }
+						add_extra_state_shared_building_slots = 2
+						add_building_construction = { type = dockyard level = 2 instant_build = yes }
+					}
+					add_stability = -0.05
+					add_popularity = { ideology = market_liberal popularity = 0.05 }
+				}
+				GEA_gxc_add_capital_investment_count_effect = yes
+				set_country_flag = GEA_gxc_xijiang_shipping_concession_completed
+			}
+		}
+	}
+
+	GEA_gxc_construction_loan = { #向两广发放建设贷款
+		allowed = { original_tag = GEA }
+		icon = GFX_GEA_Invest_in_East_China_decision
+
+		visible = {
+			has_country_flag = GXC_OPEN
+			country_exists = GXC
+			has_completed_focus = GEA_The_dominant_position_of_Golden_Mark
+		}
+		available = {
+			GEA_liangguang_non_anti_concession_controller_trigger = yes
+			GEA_liangguang_civil_war_resolved_trigger = yes
+			GXC = { NOT = { has_war_with = GEA } }
+		}
+		targets = { GXC }
+
+		cost = 40
+		days_remove = 60
+		days_re_enable = 120
+		cancel_if_not_visible = no
+		cancel_trigger = {
+			NOT = {
+				AND = {
+					GEA_liangguang_non_anti_concession_controller_trigger = yes
+					GEA_liangguang_civil_war_resolved_trigger = yes
+					GXC = { NOT = { has_war_with = GEA } }
+				}
+			}
+		}
+
+		ai_will_do = { factor = 30 }
+		remove_effect = {
+			if = {
+				limit = {
+					GEA_liangguang_non_anti_concession_controller_trigger = yes
+					GEA_liangguang_civil_war_resolved_trigger = yes
+					GXC = { NOT = { has_war_with = GEA } }
+				}
+				GXC = {
+					add_political_power = 50
+					add_stability = 0.02
+				}
+				set_country_flag = GEA_gxc_construction_loan_completed
+				GEA_gxc_count_first_stage_investments_effect = yes
+				custom_effect_tooltip = GEA_china_gxc_name_tt
+				add_to_variable = {
+					GEA_china_gxc_attitude = 5
+					tooltip = GEA_china_attitude_change_tt
+				}
+				add_to_variable = {
+					GEA_china_gxc_capital_influence = 5
+					tooltip = GEA_china_capital_influence_change_tt
+				}
+				hidden_effect = {
+					clamp_variable = { var = GEA_china_gxc_attitude min = 0 max = 100 }
+					clamp_variable = { var = GEA_china_gxc_capital_influence min = 0 max = 100 }
+					clamp_variable = { var = GEA_china_gxc_military_projection min = 0 max = 100 }
+				}
+			}
+		}
+	}
+
+	GEA_gxc_guangzhou_enterprises = { #推动广东电气化
+		allowed = { original_tag = GEA }
+		icon = GFX_GEA_Invest_in_East_China_decision
+
+		visible = {
+			has_country_flag = GXC_OPEN
+			country_exists = GXC
+			has_completed_focus = GEA_The_dominant_position_of_Golden_Mark
+		}
+		available = {
+			check_variable = { var = GEA_gxc_guangzhou_enterprises_count value = 3 compare = less_than }
+count_triggers = {
+				amount = 2
+				592 = {
+					is_owned_by = GXC
+					is_controlled_by = GXC
+					energy_infrastructure < 1
+					industrial_infrastructure < 1
+				}
+				593 = {
+					is_owned_by = GXC
+					is_controlled_by = GXC
+					energy_infrastructure < 1
+					industrial_infrastructure < 1
+				}
+				800 = {
+					is_owned_by = GXC
+					is_controlled_by = GXC
+					energy_infrastructure < 1
+					industrial_infrastructure < 1
+				}
+				801 = {
+					is_owned_by = GXC
+					is_controlled_by = GXC
+					energy_infrastructure < 1
+					industrial_infrastructure < 1
+				}
+				1012 = {
+					is_owned_by = GXC
+					is_controlled_by = GXC
+					energy_infrastructure < 1
+					industrial_infrastructure < 1
+				}
+				591 = {
+					is_owned_by = GXC
+					is_controlled_by = GXC
+					energy_infrastructure < 1
+					industrial_infrastructure < 1
+				}
+			}
+			GEA_liangguang_non_anti_concession_controller_trigger = yes
+			GEA_liangguang_civil_war_resolved_trigger = yes
+			GXC = { NOT = { has_war_with = GEA } }
+		}
+		targets = { GXC }
+
+		cost = 75
+		days_remove = 120
+		days_re_enable = 180
+		cancel_if_not_visible = no
+		cancel_trigger = {
+			NOT = {
+				AND = {
+					check_variable = { var = GEA_gxc_guangzhou_enterprises_count value = 3 compare = less_than }
+count_triggers = {
+						amount = 2
+						592 = {
+							is_owned_by = GXC
+							is_controlled_by = GXC
+							energy_infrastructure < 1
+							industrial_infrastructure < 1
+						}
+						593 = {
+							is_owned_by = GXC
+							is_controlled_by = GXC
+							energy_infrastructure < 1
+							industrial_infrastructure < 1
+						}
+						800 = {
+							is_owned_by = GXC
+							is_controlled_by = GXC
+							energy_infrastructure < 1
+							industrial_infrastructure < 1
+						}
+						801 = {
+							is_owned_by = GXC
+							is_controlled_by = GXC
+							energy_infrastructure < 1
+							industrial_infrastructure < 1
+						}
+						1012 = {
+							is_owned_by = GXC
+							is_controlled_by = GXC
+							energy_infrastructure < 1
+							industrial_infrastructure < 1
+						}
+						591 = {
+							is_owned_by = GXC
+							is_controlled_by = GXC
+							energy_infrastructure < 1
+							industrial_infrastructure < 1
+						}
+					}
+					GEA_liangguang_non_anti_concession_controller_trigger = yes
+					GEA_liangguang_civil_war_resolved_trigger = yes
+					GXC = { NOT = { has_war_with = GEA } }
+				}
+			}
+		}
+
+		ai_will_do = { factor = 30 }
+		remove_effect = {
+			if = {
+				limit = {
+					check_variable = { var = GEA_gxc_guangzhou_enterprises_count value = 3 compare = less_than }
+count_triggers = {
+						amount = 2
+						592 = {
+							is_owned_by = GXC
+							is_controlled_by = GXC
+							energy_infrastructure < 1
+							industrial_infrastructure < 1
+						}
+						593 = {
+							is_owned_by = GXC
+							is_controlled_by = GXC
+							energy_infrastructure < 1
+							industrial_infrastructure < 1
+						}
+						800 = {
+							is_owned_by = GXC
+							is_controlled_by = GXC
+							energy_infrastructure < 1
+							industrial_infrastructure < 1
+						}
+						801 = {
+							is_owned_by = GXC
+							is_controlled_by = GXC
+							energy_infrastructure < 1
+							industrial_infrastructure < 1
+						}
+						1012 = {
+							is_owned_by = GXC
+							is_controlled_by = GXC
+							energy_infrastructure < 1
+							industrial_infrastructure < 1
+						}
+						591 = {
+							is_owned_by = GXC
+							is_controlled_by = GXC
+							energy_infrastructure < 1
+							industrial_infrastructure < 1
+						}
+					}
+					GEA_liangguang_non_anti_concession_controller_trigger = yes
+					GEA_liangguang_civil_war_resolved_trigger = yes
+					GXC = { NOT = { has_war_with = GEA } }
+				}
+				GXC = {
+					random_owned_state = {
+						limit = {
+							OR = { state = 592 state = 593 state = 800 state = 801 state = 1012 state = 591 }
+							is_controlled_by = PREV
+							energy_infrastructure < 1
+							industrial_infrastructure < 1
+						}
+						add_extra_state_shared_building_slots = 1
+						add_building_construction = { type = energy_infrastructure level = 1 instant_build = yes }
+					}
+					random_owned_state = {
+						limit = {
+							OR = { state = 592 state = 593 state = 800 state = 801 state = 1012 state = 591 }
+							is_controlled_by = PREV
+							energy_infrastructure < 1
+							industrial_infrastructure < 1
+						}
+						add_extra_state_shared_building_slots = 1
+						add_building_construction = { type = energy_infrastructure level = 1 instant_build = yes }
+					}
+				}
+				add_to_variable = { GEA_gxc_guangzhou_enterprises_count = 1 }
+				set_country_flag = GEA_gxc_guangzhou_enterprises_completed
+				GEA_gxc_count_first_stage_investments_effect = yes
+				custom_effect_tooltip = GEA_china_gxc_name_tt
+				add_to_variable = {
+					GEA_china_gxc_attitude = 5
+					tooltip = GEA_china_attitude_change_tt
+				}
+				add_to_variable = {
+					GEA_china_gxc_capital_influence = 5
+					tooltip = GEA_china_capital_influence_change_tt
+				}
+				hidden_effect = {
+					clamp_variable = { var = GEA_china_gxc_attitude min = 0 max = 100 }
+					clamp_variable = { var = GEA_china_gxc_capital_influence min = 0 max = 100 }
+					clamp_variable = { var = GEA_china_gxc_military_projection min = 0 max = 100 }
+				}
+			}
+		}
+	}
+
+	GEA_gxc_guangdong_sugar = { #投资广东省营糖业
+		allowed = { original_tag = GEA }
+		icon = GFX_GEA_Invest_in_East_China_decision
+
+		visible = {
+			has_country_flag = GXC_OPEN
+			country_exists = GXC
+			has_completed_focus = GEA_The_dominant_position_of_Golden_Mark
+		}
+		available = {
+			check_variable = { var = GEA_gxc_guangdong_sugar_count value = 3 compare = less_than }
+			GXC = {
+				any_owned_state = {
+					is_controlled_by = PREV
+					free_building_slots = { building = industrial_complex size = 1 include_locked = no }
+				}
+			}
+			GEA_liangguang_non_anti_concession_controller_trigger = yes
+			GEA_liangguang_civil_war_resolved_trigger = yes
+			GXC = { NOT = { has_war_with = GEA } }
+		}
+		targets = { GXC }
+
+		cost = 75
+		days_remove = 150
+		days_re_enable = 120
+		cancel_if_not_visible = no
+		cancel_trigger = {
+			NOT = {
+				AND = {
+					check_variable = { var = GEA_gxc_guangdong_sugar_count value = 3 compare = less_than }
+					GXC = {
+						any_owned_state = {
+							is_controlled_by = PREV
+							free_building_slots = { building = industrial_complex size = 1 include_locked = no }
+						}
+					}
+					GEA_liangguang_non_anti_concession_controller_trigger = yes
+					GEA_liangguang_civil_war_resolved_trigger = yes
+					GXC = { NOT = { has_war_with = GEA } }
+				}
+			}
+		}
+
+		ai_will_do = { factor = 30 }
+		remove_effect = {
+			if = {
+				limit = {
+					check_variable = { var = GEA_gxc_guangdong_sugar_count value = 3 compare = less_than }
+					GXC = {
+						any_owned_state = {
+							is_controlled_by = PREV
+							free_building_slots = { building = industrial_complex size = 1 include_locked = no }
+						}
+					}
+					GEA_liangguang_non_anti_concession_controller_trigger = yes
+					GEA_liangguang_civil_war_resolved_trigger = yes
+					GXC = { NOT = { has_war_with = GEA } }
+				}
+				GXC = {
+					random_owned_state = {
+						limit = {
+							is_controlled_by = PREV
+							free_building_slots = { building = industrial_complex size = 1 include_locked = no }
+						}
+						add_extra_state_shared_building_slots = 1
+						add_building_construction = { type = industrial_complex level = 2 instant_build = yes }
+					}
+					add_political_power = 25
+					add_stability = 0.02
+					add_tech_bonus = { name = GEA_gxc_guangdong_sugar bonus = 0.5 uses = 1 category = industry }
+				}
+				add_to_variable = { GEA_gxc_guangdong_sugar_count = 1 }
+				set_country_flag = GEA_gxc_guangdong_sugar_completed
+				GEA_gxc_count_first_stage_investments_effect = yes
+				custom_effect_tooltip = GEA_china_gxc_name_tt
+				add_to_variable = {
+					GEA_china_gxc_attitude = 5
+					tooltip = GEA_china_attitude_change_tt
+				}
+				add_to_variable = {
+					GEA_china_gxc_capital_influence = 5
+					tooltip = GEA_china_capital_influence_change_tt
+				}
+				hidden_effect = {
+					clamp_variable = { var = GEA_china_gxc_attitude min = 0 max = 100 }
+					clamp_variable = { var = GEA_china_gxc_capital_influence min = 0 max = 100 }
+					clamp_variable = { var = GEA_china_gxc_military_projection min = 0 max = 100 }
+				}
+			}
+		}
+	}
+
+	GEA_gxc_yuehan_railway = { #扩建粤汉铁路广东段
+		allowed = { original_tag = GEA }
+		icon = GFX_GEA_Invest_in_East_China_decision
+
+		visible = {
+			has_country_flag = GXC_OPEN
+			country_exists = GXC
+			has_completed_focus = GEA_The_dominant_position_of_Golden_Mark
+		}
+		available = {
+			GXC = {
+				controls_state = 592
+				controls_state = 593
+				controls_state = 800
+				can_build_railway = {
+					start_province = 1047
+					target_province = 1120
+					build_only_on_allied = yes
+					controller_priority = { base = -1 modifier = { add = 2 tag = GXC } }
+				}
+			}
+			GEA_liangguang_non_anti_concession_controller_trigger = yes
+			GEA_liangguang_civil_war_resolved_trigger = yes
+			GXC = { NOT = { has_war_with = GEA } }
+		}
+		targets = { GXC }
+
+		cost = 65
+		days_remove = 180
+		fire_only_once = yes
+		cancel_if_not_visible = no
+		cancel_trigger = {
+			NOT = {
+				AND = {
+					GXC = {
+						controls_state = 592
+						controls_state = 593
+						controls_state = 800
+						can_build_railway = {
+							start_province = 1047
+							target_province = 1120
+							build_only_on_allied = yes
+							controller_priority = { base = -1 modifier = { add = 2 tag = GXC } }
+						}
+					}
+					GEA_liangguang_non_anti_concession_controller_trigger = yes
+					GEA_liangguang_civil_war_resolved_trigger = yes
+					GXC = { NOT = { has_war_with = GEA } }
+				}
+			}
+		}
+
+		ai_will_do = { factor = 30 }
+		remove_effect = {
+			if = {
+				limit = {
+					GXC = {
+						controls_state = 592
+						controls_state = 593
+						controls_state = 800
+						can_build_railway = {
+							start_province = 1047
+							target_province = 1120
+							build_only_on_allied = yes
+							controller_priority = { base = -1 modifier = { add = 2 tag = GXC } }
+						}
+					}
+					GEA_liangguang_non_anti_concession_controller_trigger = yes
+					GEA_liangguang_civil_war_resolved_trigger = yes
+					GXC = { NOT = { has_war_with = GEA } }
+				}
+				GXC = {
+					build_railway = {
+						level = 3
+						start_province = 1047
+						target_province = 1120
+						build_only_on_allied = yes
+						controller_priority = { base = -1 modifier = { add = 2 tag = GXC } }
+					}
+					add_political_power = 30
+				}
+				set_country_flag = GEA_gxc_yuehan_railway_completed
+				GEA_gxc_count_first_stage_investments_effect = yes
+				custom_effect_tooltip = GEA_china_gxc_name_tt
+				add_to_variable = {
+					GEA_china_gxc_attitude = 5
+					tooltip = GEA_china_attitude_change_tt
+				}
+				add_to_variable = {
+					GEA_china_gxc_capital_influence = 10
+					tooltip = GEA_china_capital_influence_change_tt
+				}
+				hidden_effect = {
+					clamp_variable = { var = GEA_china_gxc_attitude min = 0 max = 100 }
+					clamp_variable = { var = GEA_china_gxc_capital_influence min = 0 max = 100 }
+					clamp_variable = { var = GEA_china_gxc_military_projection min = 0 max = 100 }
+				}
+			}
+		}
+	}
+
+	GEA_gxc_postwar_relief = { #协办战后赈济
+		allowed = { original_tag = GEA }
+		icon = GFX_GEA_Invest_in_East_China_decision
+
+		visible = {
+			has_country_flag = GXC_OPEN
+			country_exists = GXC
+			has_completed_focus = GEA_revisit_old_site
+		}
+		available = {
+			GEA_liangguang_non_anti_concession_controller_trigger = yes
+			GEA_liangguang_civil_war_resolved_trigger = yes
+			GXC = { NOT = { has_war_with = GEA } }
+		}
+		targets = { GXC }
+
+		cost = 35
+		days_remove = 45
+		days_re_enable = 120
+		cancel_if_not_visible = no
+		cancel_trigger = {
+			NOT = {
+				AND = {
+					GEA_liangguang_non_anti_concession_controller_trigger = yes
+					GEA_liangguang_civil_war_resolved_trigger = yes
+					GXC = { NOT = { has_war_with = GEA } }
+				}
+			}
+		}
+
+		ai_will_do = { factor = 30 }
+		remove_effect = {
+			if = {
+				limit = {
+					GEA_liangguang_non_anti_concession_controller_trigger = yes
+					GEA_liangguang_civil_war_resolved_trigger = yes
+					GXC = { NOT = { has_war_with = GEA } }
+				}
+				GXC = { add_stability = 0.03 add_manpower = 1000 }
+				custom_effect_tooltip = GEA_china_gxc_name_tt
+				add_to_variable = {
+					GEA_china_gxc_attitude = 10
+					tooltip = GEA_china_attitude_change_tt
+				}
+				add_to_variable = {
+					GEA_china_gxc_capital_influence = 5
+					tooltip = GEA_china_capital_influence_change_tt
+				}
+				add_to_variable = {
+					GEA_china_gxc_military_projection = 5
+					tooltip = GEA_china_military_projection_change_tt
+				}
+				hidden_effect = {
+					clamp_variable = { var = GEA_china_gxc_attitude min = 0 max = 100 }
+					clamp_variable = { var = GEA_china_gxc_capital_influence min = 0 max = 100 }
+					clamp_variable = { var = GEA_china_gxc_military_projection min = 0 max = 100 }
+				}
+			}
+		}
+	}
+
+	GEA_gxc_trade_routes = { #恢复粤桂商路
+		allowed = { original_tag = GEA }
+		icon = GFX_GEA_Invest_in_East_China_decision
+
+		visible = {
+			has_country_flag = GXC_OPEN
+			country_exists = GXC
+			has_completed_focus = GEA_revisit_old_site
+		}
+		available = {
+			GEA_liangguang_non_anti_concession_controller_trigger = yes
+			GEA_liangguang_civil_war_resolved_trigger = yes
+			GXC = { NOT = { has_war_with = GEA } }
+		}
+		targets = { GXC }
+
+		cost = 40
+		days_remove = 60
+		days_re_enable = 120
+		cancel_if_not_visible = no
+		cancel_trigger = {
+			NOT = {
+				AND = {
+					GEA_liangguang_non_anti_concession_controller_trigger = yes
+					GEA_liangguang_civil_war_resolved_trigger = yes
+					GXC = { NOT = { has_war_with = GEA } }
+				}
+			}
+		}
+
+		ai_will_do = { factor = 30 }
+		remove_effect = {
+			if = {
+				limit = {
+					GEA_liangguang_non_anti_concession_controller_trigger = yes
+					GEA_liangguang_civil_war_resolved_trigger = yes
+					GXC = { NOT = { has_war_with = GEA } }
+				}
+				GXC = { add_political_power = 60 }
+				custom_effect_tooltip = GEA_china_gxc_name_tt
+				add_to_variable = {
+					GEA_china_gxc_attitude = 5
+					tooltip = GEA_china_attitude_change_tt
+				}
+				add_to_variable = {
+					GEA_china_gxc_capital_influence = 5
+					tooltip = GEA_china_capital_influence_change_tt
+				}
+				add_to_variable = {
+					GEA_china_gxc_military_projection = 5
+					tooltip = GEA_china_military_projection_change_tt
+				}
+				hidden_effect = {
+					clamp_variable = { var = GEA_china_gxc_attitude min = 0 max = 100 }
+					clamp_variable = { var = GEA_china_gxc_capital_influence min = 0 max = 100 }
+					clamp_variable = { var = GEA_china_gxc_military_projection min = 0 max = 100 }
+				}
+			}
+		}
+	}
+
+	GEA_gxc_staff_training = { #开办参谋讲习班
+		allowed = { original_tag = GEA }
+		icon = GFX_GEA_Invest_in_East_China_decision
+
+		visible = {
+			has_country_flag = GXC_OPEN
+			country_exists = GXC
+			has_completed_focus = GEA_revisit_old_site
+		}
+		available = {
+			GEA_liangguang_non_anti_concession_controller_trigger = yes
+			GEA_liangguang_civil_war_resolved_trigger = yes
+			GXC = { NOT = { has_war_with = GEA } }
+		}
+		targets = { GXC }
+
+		cost = 50
+		days_remove = 90
+		days_re_enable = 120
+		cancel_if_not_visible = no
+		cancel_trigger = {
+			NOT = {
+				AND = {
+					GEA_liangguang_non_anti_concession_controller_trigger = yes
+					GEA_liangguang_civil_war_resolved_trigger = yes
+					GXC = { NOT = { has_war_with = GEA } }
+				}
+			}
+		}
+
+		ai_will_do = { factor = 30 }
+		remove_effect = {
+			if = {
+				limit = {
+					GEA_liangguang_non_anti_concession_controller_trigger = yes
+					GEA_liangguang_civil_war_resolved_trigger = yes
+					GXC = { NOT = { has_war_with = GEA } }
+				}
+				GXC = {
+					army_experience = 15
+					add_doctrine_cost_reduction = {
+						name = GEA_gxc_staff_training
+						cost_reduction = 0.5
+						uses = 1
+						category = land_doctrine
+					}
+				}
+				custom_effect_tooltip = GEA_china_gxc_name_tt
+				add_to_variable = {
+					GEA_china_gxc_attitude = 5
+					tooltip = GEA_china_attitude_change_tt
+				}
+				add_to_variable = {
+					GEA_china_gxc_capital_influence = 5
+					tooltip = GEA_china_capital_influence_change_tt
+				}
+				add_to_variable = {
+					GEA_china_gxc_military_projection = 15
+					tooltip = GEA_china_military_projection_change_tt
+				}
+				hidden_effect = {
+					clamp_variable = { var = GEA_china_gxc_attitude min = 0 max = 100 }
+					clamp_variable = { var = GEA_china_gxc_capital_influence min = 0 max = 100 }
+					clamp_variable = { var = GEA_china_gxc_military_projection min = 0 max = 100 }
+				}
+			}
+		}
+	}
+
+	GEA_gxc_transport_reconstruction = { #修复粤桂交通
+		allowed = { original_tag = GEA }
+		icon = GFX_GEA_Invest_in_East_China_decision
+
+		visible = {
+			has_country_flag = GXC_OPEN
+			country_exists = GXC
+			has_completed_focus = GEA_revisit_old_site
+		}
+		available = {
+			GEA_liangguang_non_anti_concession_controller_trigger = yes
+			GEA_liangguang_civil_war_resolved_trigger = yes
+			GXC = { NOT = { has_war_with = GEA } }
+		}
+		targets = { GXC }
+
+		cost = 60
+		days_remove = 120
+		fire_only_once = yes
+		cancel_if_not_visible = no
+		cancel_trigger = {
+			NOT = {
+				AND = {
+					GEA_liangguang_non_anti_concession_controller_trigger = yes
+					GEA_liangguang_civil_war_resolved_trigger = yes
+					GXC = { NOT = { has_war_with = GEA } }
+				}
+			}
+		}
+
+		ai_will_do = { factor = 30 }
+		remove_effect = {
+			if = {
+				limit = {
+					GEA_liangguang_non_anti_concession_controller_trigger = yes
+					GEA_liangguang_civil_war_resolved_trigger = yes
+					GXC = { NOT = { has_war_with = GEA } }
+				}
+				GXC = {
+					add_political_power = 30
+					every_owned_state = {
+						limit = {
+							OR = { state = 594 state = 599 }
+							is_controlled_by = PREV
+							infrastructure < 5
+						}
+						add_building_construction = { type = infrastructure level = 1 instant_build = yes }
+					}
+				}
+				GXC = {
+					add_tech_bonus = { name = GEA_gxc_transport_reconstruction bonus = 0.5 uses = 1 category = industry }
+				}
+				custom_effect_tooltip = GEA_china_gxc_name_tt
+				add_to_variable = {
+					GEA_china_gxc_attitude = 10
+					tooltip = GEA_china_attitude_change_tt
+				}
+				add_to_variable = {
+					GEA_china_gxc_capital_influence = 10
+					tooltip = GEA_china_capital_influence_change_tt
+				}
+				add_to_variable = {
+					GEA_china_gxc_military_projection = 10
+					tooltip = GEA_china_military_projection_change_tt
+				}
+				hidden_effect = {
+					clamp_variable = { var = GEA_china_gxc_attitude min = 0 max = 100 }
+					clamp_variable = { var = GEA_china_gxc_capital_influence min = 0 max = 100 }
+					clamp_variable = { var = GEA_china_gxc_military_projection min = 0 max = 100 }
+				}
+			}
+		}
+	}
+
+	GEA_gxc_cantonese_business_talks = { #组织粤商洽谈
+		allowed = { original_tag = GEA }
+		icon = GFX_GEA_Invest_in_East_China_decision
+
+		visible = {
+			has_country_flag = GXC_OPEN
+			country_exists = GXC
+		}
+		available = {
+			GEA_liangguang_peacetime_interaction_trigger = yes
+		}
+		targets = { GXC }
+
+		cost = 25
+		days_remove = 30
+		days_re_enable = 90
+		cancel_if_not_visible = no
+		cancel_trigger = {
+			NOT = { GEA_liangguang_peacetime_interaction_trigger = yes }
+		}
+
+		ai_will_do = { factor = 30 }
+		remove_effect = {
+			if = {
+				limit = { GEA_liangguang_peacetime_interaction_trigger = yes }
+				log = "[GetDateText]: [Root.GetName]: Decision remove GEA_gxc_cantonese_business_talks"
+				add_political_power = 10
+				GXC = { add_political_power = 20 }
+				custom_effect_tooltip = GEA_china_gxc_name_tt
+				add_to_variable = {
+					GEA_china_gxc_attitude = 5
+					tooltip = GEA_china_attitude_change_tt
+				}
+				add_to_variable = {
+					GEA_china_gxc_capital_influence = 5
+					tooltip = GEA_china_capital_influence_change_tt
+				}
+				add_to_variable = {
+					GEA_china_gxc_military_projection = 5
+					tooltip = GEA_china_military_projection_change_tt
+				}
+				hidden_effect = {
+					clamp_variable = { var = GEA_china_gxc_military_projection min = 0 max = 100 }
+					clamp_variable = { var = GEA_china_gxc_attitude min = 0 max = 100 }
+					clamp_variable = { var = GEA_china_gxc_capital_influence min = 0 max = 100 }
+				}
+			}
+		}
+	}
+
+	GEA_gxc_pearl_river_transport = { #协办珠江货运
+		allowed = { original_tag = GEA }
+		icon = GFX_GEA_Invest_in_East_China_decision
+
+		visible = {
+			has_country_flag = GXC_OPEN
+			country_exists = GXC
+		}
+		available = {
+			GEA_liangguang_peacetime_interaction_trigger = yes
+		}
+		targets = { GXC }
+
+		cost = 30
+		days_remove = 45
+		days_re_enable = 120
+		cancel_if_not_visible = no
+		cancel_trigger = {
+			NOT = { GEA_liangguang_peacetime_interaction_trigger = yes }
+		}
+
+		ai_will_do = { factor = 30 }
+		remove_effect = {
+			if = {
+				limit = { GEA_liangguang_peacetime_interaction_trigger = yes }
+				log = "[GetDateText]: [Root.GetName]: Decision remove GEA_gxc_pearl_river_transport"
+				GXC = {
+					add_equipment_to_stockpile = { type = motorized_equipment amount = 100 producer = GEA }
+				}
+				custom_effect_tooltip = GEA_china_gxc_name_tt
+				add_to_variable = {
+					GEA_china_gxc_attitude = 5
+					tooltip = GEA_china_attitude_change_tt
+				}
+				add_to_variable = {
+					GEA_china_gxc_capital_influence = 5
+					tooltip = GEA_china_capital_influence_change_tt
+				}
+				add_to_variable = {
+					GEA_china_gxc_military_projection = 5
+					tooltip = GEA_china_military_projection_change_tt
+				}
+				hidden_effect = {
+					clamp_variable = { var = GEA_china_gxc_attitude min = 0 max = 100 }
+					clamp_variable = { var = GEA_china_gxc_capital_influence min = 0 max = 100 }
+					clamp_variable = { var = GEA_china_gxc_military_projection min = 0 max = 100 }
+				}
+			}
+		}
+	}
+
+	GEA_gxc_military_liaison = { #派遣驻粤联络团
+		allowed = { original_tag = GEA }
+		icon = GFX_GEA_Invest_in_East_China_decision
+
+		visible = {
+			has_country_flag = GXC_OPEN
+			country_exists = GXC
+		}
+		available = {
+			GEA_liangguang_peacetime_interaction_trigger = yes
+		}
+		targets = { GXC }
+
+		cost = 0
+		custom_cost_text = CP_25
+		custom_cost_trigger = { command_power > 24.99 }
+		days_remove = 45
+		days_re_enable = 120
+		cancel_if_not_visible = no
+		cancel_trigger = {
+			NOT = { GEA_liangguang_peacetime_interaction_trigger = yes }
+		}
+
+		ai_will_do = { factor = 30 }
+		complete_effect = {
+			hidden_effect = { add_command_power = -25 }
+		}
+		remove_effect = {
+			if = {
+				limit = { GEA_liangguang_peacetime_interaction_trigger = yes }
+				log = "[GetDateText]: [Root.GetName]: Decision remove GEA_gxc_military_liaison"
+				GXC = {
+					army_experience = 10
+					add_manpower = 500
+				}
+				army_experience = 5
+				custom_effect_tooltip = GEA_china_gxc_name_tt
+				add_to_variable = {
+					GEA_china_gxc_attitude = 5
+					tooltip = GEA_china_attitude_change_tt
+				}
+				add_to_variable = {
+					GEA_china_gxc_military_projection = 10
+					tooltip = GEA_china_military_projection_change_tt
+				}
+				add_to_variable = {
+					GEA_china_gxc_capital_influence = 5
+					tooltip = GEA_china_capital_influence_change_tt
+				}
+				hidden_effect = {
+					clamp_variable = { var = GEA_china_gxc_capital_influence min = 0 max = 100 }
+					clamp_variable = { var = GEA_china_gxc_attitude min = 0 max = 100 }
+					clamp_variable = { var = GEA_china_gxc_military_projection min = 0 max = 100 }
+				}
+			}
+		}
+	}
+
+	GEA_gxc_guangzhou_trade_office = { #开设广州商务处
+		allowed = { original_tag = GEA }
+		icon = GFX_GEA_Invest_in_East_China_decision
+
+		visible = {
+			has_country_flag = GXC_OPEN
+			country_exists = GXC
+		}
+		available = {
+			GEA_liangguang_peacetime_interaction_trigger = yes
+		}
+		targets = { GXC }
+
+		cost = 50
+		days_remove = 75
+		fire_only_once = yes
+		cancel_if_not_visible = no
+		cancel_trigger = {
+			NOT = { GEA_liangguang_peacetime_interaction_trigger = yes }
+		}
+
+		ai_will_do = { factor = 30 }
+		remove_effect = {
+			if = {
+				limit = { GEA_liangguang_peacetime_interaction_trigger = yes }
+				log = "[GetDateText]: [Root.GetName]: Decision remove GEA_gxc_guangzhou_trade_office"
+				add_political_power = 25
+				GXC = {
+					add_political_power = 25
+					add_stability = 0.03
+				}
+				592 = { #广州
+					increase_state_category_by_one_level = yes
+					add_extra_state_shared_building_slots = 1
+				}
+				custom_effect_tooltip = GEA_china_gxc_name_tt
+				add_to_variable = {
+					GEA_china_gxc_attitude = 10
+					tooltip = GEA_china_attitude_change_tt
+				}
+				add_to_variable = {
+					GEA_china_gxc_capital_influence = 10
+					tooltip = GEA_china_capital_influence_change_tt
+				}
+				add_to_variable = {
+					GEA_china_gxc_military_projection = 5
+					tooltip = GEA_china_military_projection_change_tt
+				}
+				hidden_effect = {
+					clamp_variable = { var = GEA_china_gxc_military_projection min = 0 max = 100 }
+					clamp_variable = { var = GEA_china_gxc_attitude min = 0 max = 100 }
+					clamp_variable = { var = GEA_china_gxc_capital_influence min = 0 max = 100 }
+				}
+			}
+		}
+	}
+
+	GEA_gxc_lingnan_industry = { #兴办岭南实业
+		allowed = { original_tag = GEA }
+		icon = GFX_GEA_Invest_in_East_China_decision
+
+		visible = {
+			has_country_flag = GXC_OPEN
+			country_exists = GXC
+		}
+		available = {
+			GEA_liangguang_peacetime_interaction_trigger = yes
+		}
+		targets = { GXC }
+
+		cost = 60
+		days_remove = 90
+		fire_only_once = yes
+		cancel_if_not_visible = no
+		cancel_trigger = {
+			NOT = { GEA_liangguang_peacetime_interaction_trigger = yes }
+		}
+
+		ai_will_do = { factor = 30 }
+		remove_effect = {
+			if = {
+				limit = { GEA_liangguang_peacetime_interaction_trigger = yes }
+				log = "[GetDateText]: [Root.GetName]: Decision remove GEA_gxc_lingnan_industry"
+				GXC = {
+					if = {
+						limit = {
+							any_owned_state = {
+								is_controlled_by = PREV
+								free_building_slots = { building = industrial_complex size = 1 include_locked = yes }
+							}
+						}
+						random_owned_state = {
+							limit = {
+								is_controlled_by = PREV
+								free_building_slots = { building = industrial_complex size = 1 include_locked = yes }
+							}
+							add_extra_state_shared_building_slots = 1
+							add_building_construction = {
+								type = industrial_complex
+								level = 1
+								instant_build = yes
+							}
+						}
+					}
+					else = {
+						add_offsite_building = { type = industrial_complex level = 1 }
+					}
+					random_owned_state = {
+						limit = { is_controlled_by = PREV infrastructure < 5 }
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+				add_tech_bonus = {
+					name = GEA_gxc_lingnan_industry
+					bonus = 0.5
+					uses = 1
+					category = industry
+				}
+				custom_effect_tooltip = GEA_china_gxc_name_tt
+				add_to_variable = {
+					GEA_china_gxc_attitude = 5
+					tooltip = GEA_china_attitude_change_tt
+				}
+				add_to_variable = {
+					GEA_china_gxc_capital_influence = 10
+					tooltip = GEA_china_capital_influence_change_tt
+				}
+				add_to_variable = {
+					GEA_china_gxc_military_projection = 5
+					tooltip = GEA_china_military_projection_change_tt
+				}
+				hidden_effect = {
+					clamp_variable = { var = GEA_china_gxc_attitude min = 0 max = 100 }
+					clamp_variable = { var = GEA_china_gxc_capital_influence min = 0 max = 100 }
+					clamp_variable = { var = GEA_china_gxc_military_projection min = 0 max = 100 }
+				}
+			}
+		}
+	}
+
 	GEA_yun_trade_delegation = { #组织赴滇商团
 		allowed = {
 			original_tag = GEA

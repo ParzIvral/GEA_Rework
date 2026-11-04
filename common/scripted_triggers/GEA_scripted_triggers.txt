@@ -114,6 +114,7 @@ GEA_china_warlord_can_interact_trigger = {#即时判断
 GEA_china_warlord_positive_cooperation_trigger = {#积极合作的军阀判定
 	custom_trigger_tooltip = {
 		tooltip = GEA_china_warlord_positive_cooperation_tt
+		NOT = { GEA_china_warlord_right_kmt_government_trigger = yes }
 		NOT = {
 			OR = {
 				has_country_flag = GEA_china_warlord_interaction_blocked #禁止互动
@@ -263,6 +264,134 @@ GEA_ai_domestic_main_focuses_completed_trigger = {
 		AND = {
 			has_country_flag = GEA_Governor_Schorner_flag
 			has_completed_focus = GEA_Let_loose_the_blood-stained_black_eagle
+		}
+	}
+}
+
+#两广互动
+GEA_liangguang_peacetime_interaction_trigger = {
+	custom_trigger_tooltip = {
+		tooltip = GEA_liangguang_peacetime_interaction_tt
+		GXC = {
+			exists = yes
+			GEA_china_warlord_can_interact_trigger = yes
+			has_civil_war = no
+			NOT = { has_war_with = GEA }
+		}
+		NOT = {
+			AND = {
+				has_global_flag = GXC_had_civil_war
+				NOT = { has_global_flag = GXC_civil_war_over }
+				any_country = {
+					GXC_has_guangdong_government = yes
+					any_enemy_country = { GXC_has_guangxi_government = yes }
+				}
+			}
+		}
+	}
+}
+
+#判断两广
+GEA_liangguang_non_anti_concession_controller_trigger = {
+	custom_trigger_tooltip = {
+		tooltip = GEA_liangguang_non_anti_concession_controller_tt
+		GXC = {
+			exists = yes
+			GEA_china_warlord_can_interact_trigger = yes
+		}
+	}
+}
+
+#两广内战结算包括和平整合；开局尚未发生内战不算结算
+GEA_liangguang_civil_war_resolved_trigger = {
+	custom_trigger_tooltip = {
+		tooltip = GEA_liangguang_civil_war_resolved_tt
+		has_global_flag = GXC_civil_war_over
+		GXC = { has_civil_war = no }
+		NOT = {
+			any_country = {
+				GXC_has_guangdong_government = yes
+				any_enemy_country = { GXC_has_guangxi_government = yes }
+			}
+		}
+	}
+}
+
+#两广：左派执政，或右派执政且已经驱逐德资；不按阵营判定执政身份
+GEA_liangguang_expedition_target_trigger = {
+	custom_trigger_tooltip = {
+		tooltip = GEA_liangguang_expedition_target_tt
+		GXC = {
+			exists = yes
+			OR = {
+				OR = {
+					has_country_leader = { name = "Chen Mingshu" ruling_only = yes }
+					has_country_leader_ideology = tot_tridemism_subtype
+					has_country_leader_ideology = syn_tridemism_subtype
+					has_country_leader_ideology = radsoc_tridemism_subtype
+					has_country_leader_ideology = socdem_tridemism_subtype
+				}
+				AND = {
+					has_country_flag = GEA_china_warlord_interaction_blocked
+					OR = {
+						has_country_leader = { name = "Li Zongren" ruling_only = yes }
+						has_country_leader_ideology = soclib_tridemism_subtype
+						has_country_leader_ideology = marlib_tridemism_subtype
+						has_country_leader_ideology = soccon_tridemism_subtype
+						has_country_leader_ideology = authdem_tridemism_subtype
+						has_country_leader_ideology = pataut_tridemism_subtype
+						has_country_leader_ideology = natpop_tridemism_subtype
+					}
+				}
+			}
+		}
+	}
+}
+
+#国民党右派实际执政身份，不因加入其阵营而改变国内合作态度
+GEA_china_warlord_right_kmt_government_trigger = {
+	OR = {
+		has_country_leader = { name = "Li Zongren" ruling_only = yes }
+		has_country_leader = { name = "Zhu Peide" ruling_only = yes }
+		has_country_leader_ideology = soclib_tridemism_subtype
+		has_country_leader_ideology = marlib_tridemism_subtype
+		has_country_leader_ideology = soccon_tridemism_subtype
+		has_country_leader_ideology = authdem_tridemism_subtype
+		has_country_leader_ideology = pataut_tridemism_subtype
+		has_country_leader_ideology = natpop_tridemism_subtype
+	}
+}
+
+GEA_china_warlord_limited_cooperation_trigger = {
+	GEA_china_warlord_right_kmt_government_trigger = yes
+	NOT = {
+		OR = {
+			has_country_flag = GEA_china_warlord_interaction_blocked
+			has_country_flag = GEA_german_coup_defeated
+		}
+	}
+}
+
+#广东、广西和海南本土地块；不包括香港、澳门、广州湾等外国租界
+GEA_liangguang_under_german_control_trigger = {
+	custom_trigger_tooltip = {
+		tooltip = GEA_liangguang_under_german_control_tt
+		OR = {
+			GXC = { exists = yes is_subject_of = GEA }
+			AND = {
+				591 = { is_controlled_by = GEA }
+				592 = { is_controlled_by = GEA }
+				593 = { is_controlled_by = GEA }
+				594 = { is_controlled_by = GEA }
+				599 = { is_controlled_by = GEA }
+				800 = { is_controlled_by = GEA }
+				801 = { is_controlled_by = GEA }
+				1012 = { is_controlled_by = GEA }
+				1053 = { is_controlled_by = GEA }
+				1054 = { is_controlled_by = GEA }
+				1055 = { is_controlled_by = GEA }
+				1056 = { is_controlled_by = GEA }
+			}
 		}
 	}
 }

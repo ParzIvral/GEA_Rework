@@ -14,6 +14,30 @@ defined_text = {
 	name = GetGEALepCooperation
 	text = {
 		trigger = {
+			613 = {
+				owner = {
+					GEA_china_warlord_right_kmt_government_trigger = yes
+					OR = {
+						has_country_flag = GEA_china_warlord_interaction_blocked
+						has_country_flag = GEA_german_coup_defeated
+					}
+				}
+			}
+		}
+		localization_key = GEA_china_cooperation_hostile
+	}
+	text = {
+		trigger = {
+			613 = {
+				owner = {
+					GEA_china_warlord_limited_cooperation_trigger = yes
+				}
+			}
+		}
+		localization_key = GEA_china_cooperation_limited
+	}
+	text = {
+		trigger = {
 			OR = {
 				SQI = {
 					owns_state = 613
@@ -96,9 +120,29 @@ defined_text = {
 	text = { localization_key = GEA_Lep_Map_Default_DESC }
 }
 
-#山东地块：独立变量与政权介绍；德国接管后的国号优先于旧领导人判断。
+#山东地块
 defined_text = {
 	name = GetGEASqiCooperation
+	text = {
+		trigger = {
+			SQI = {
+				GEA_china_warlord_right_kmt_government_trigger = yes
+				OR = {
+					has_country_flag = GEA_china_warlord_interaction_blocked
+					has_country_flag = GEA_german_coup_defeated
+				}
+			}
+		}
+		localization_key = GEA_china_cooperation_hostile
+	}
+	text = {
+		trigger = {
+			SQI = {
+				GEA_china_warlord_limited_cooperation_trigger = yes
+			}
+		}
+		localization_key = GEA_china_cooperation_limited
+	}
 	text = {
 		trigger = { SQI = { exists = yes GEA_china_warlord_cannot_interact_trigger = yes } }
 		localization_key = GEA_china_cooperation_hostile
@@ -200,9 +244,29 @@ defined_text = {
 	text = { localization_key = GEA_SQI_Map_Default_DESC }
 }
 
-#粤系地块：按 GXC 当前执政领袖判断，不与南京地区共用变量。
+#粤系地块
 defined_text = {
 	name = GetGEAGxcCooperation
+	text = {
+		trigger = {
+			GXC = {
+				GEA_china_warlord_right_kmt_government_trigger = yes
+				OR = {
+					has_country_flag = GEA_china_warlord_interaction_blocked
+					has_country_flag = GEA_german_coup_defeated
+				}
+			}
+		}
+		localization_key = GEA_china_cooperation_hostile
+	}
+	text = {
+		trigger = {
+			GXC = {
+				GEA_china_warlord_limited_cooperation_trigger = yes
+			}
+		}
+		localization_key = GEA_china_cooperation_limited
+	}
 	text = {
 		trigger = {
 			GXC = {
@@ -288,9 +352,29 @@ defined_text = {
 	text = { localization_key = GEA_GXC_Map_Default_DESC }
 }
 
-#云南地块：唐继尧积极合作；朱德社民政府、朱培德反租界；龙云及其他路线虚与委蛇。
+#云南地块
 defined_text = {
 	name = GetGEAYunCooperation
+	text = {
+		trigger = {
+			YUN = {
+				GEA_china_warlord_right_kmt_government_trigger = yes
+				OR = {
+					has_country_flag = GEA_china_warlord_interaction_blocked
+					has_country_flag = GEA_german_coup_defeated
+				}
+			}
+		}
+		localization_key = GEA_china_cooperation_hostile
+	}
+	text = {
+		trigger = {
+			YUN = {
+				GEA_china_warlord_limited_cooperation_trigger = yes
+			}
+		}
+		localization_key = GEA_china_cooperation_limited
+	}
 	text = {
 		trigger = { YUN = { has_country_leader = { name = "Tang Jiyao" ruling_only = yes } } }
 		localization_key = GEA_china_cooperation_positive
@@ -367,9 +451,29 @@ defined_text = {
 	text = { localization_key = GEA_YUN_Map_Default_DESC }
 }
 
-#四川地块：终结租界优先于亲德合作；其余按执政派系判断。
+#四川地块
 defined_text = {
 	name = GetGEASzcCooperation
+	text = {
+		trigger = {
+			SZC = {
+				GEA_china_warlord_right_kmt_government_trigger = yes
+				OR = {
+					has_country_flag = GEA_china_warlord_interaction_blocked
+					has_country_flag = GEA_german_coup_defeated
+				}
+			}
+		}
+		localization_key = GEA_china_cooperation_hostile
+	}
+	text = {
+		trigger = {
+			SZC = {
+				GEA_china_warlord_limited_cooperation_trigger = yes
+			}
+		}
+		localization_key = GEA_china_cooperation_limited
+	}
 	text = {
 		trigger = { SZC = { has_country_leader = { name = "Chen Jiongming" ruling_only = yes } } }
 		localization_key = GEA_china_cooperation_evasive
@@ -639,6 +743,26 @@ defined_text = {
 #直系地块
 defined_text = {
 	name = GetGEAZhiliCooperation
+	text = {
+		trigger = {
+			QIE = {
+				GEA_china_warlord_right_kmt_government_trigger = yes
+				OR = {
+					has_country_flag = GEA_china_warlord_interaction_blocked
+					has_country_flag = GEA_german_coup_defeated
+				}
+			}
+		}
+		localization_key = GEA_china_cooperation_hostile
+	}
+	text = {
+		trigger = {
+			QIE = {
+				GEA_china_warlord_limited_cooperation_trigger = yes
+			}
+		}
+		localization_key = GEA_china_cooperation_limited
+	}
 	text = {
 		trigger = { QIE = { OR = { has_country_flag = wu_intervenes_proANQ has_country_flag = QIE_manchu_restoration has_country_flag = QIE_yiguandao_couped has_focus_tree = QIE_manchu has_completed_focus = QIE_nationalize_germans has_completed_focus = QIE_endconcessions has_completed_focus = QIE_destroy_concessions has_completed_focus = QIE_destroy_germany has_completed_focus = QIE_YGD_destroy_concessions } } }
 		localization_key = GEA_china_cooperation_hostile

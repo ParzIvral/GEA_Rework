@@ -2666,6 +2666,51 @@ ideas = {
 				defense_bonus_against = -0.05
 			}
 		}
+		GEA_gxc_german_capital_1 = { #德国资本投资
+			picture = GER_Bank_Controls
+			allowed = { always = no }
+			modifier = {
+				production_speed_buildings_factor = 0.05
+				industrial_capacity_factory = 0.05
+				production_factory_max_efficiency_factor = 0.025
+			}
+			targeted_modifier = {
+				tag = GEA
+				cic_to_target_factor = 0.05
+				mic_to_target_factor = 0.05
+				trade_cost_for_target_factor = -0.08
+			}
+		}
+		GEA_gxc_german_capital_2 = { #德国资本影响
+			picture = GER_Bank_Controls
+			allowed = { always = no }
+			modifier = {
+				production_speed_buildings_factor = 0.1
+				industrial_capacity_factory = 0.1
+				production_factory_max_efficiency_factor = 0.05
+			}
+			targeted_modifier = {
+				tag = GEA
+				cic_to_target_factor = 0.1
+				mic_to_target_factor = 0.1
+				trade_cost_for_target_factor = -0.15
+			}
+		}
+		GEA_gxc_german_capital_3 = { #德国资本控制
+			picture = GER_Bank_Controls
+			allowed = { always = no }
+			modifier = {
+				production_speed_buildings_factor = 0.15
+				industrial_capacity_factory = 0.15
+				production_factory_max_efficiency_factor = 0.075
+			}
+			targeted_modifier = {
+				tag = GEA
+				cic_to_target_factor = 0.2
+				mic_to_target_factor = 0.2
+				trade_cost_for_target_factor = -0.25
+			}
+		}
 		GEA_german_controlled_economic_market_Yun_1 = { #对德市场开放
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_german_controlled_economic_market_Yun_1" }
 			picture = GER_Bank_Controls
@@ -2852,6 +2897,15 @@ ideas = {
 	}
 #隐藏精神
 	hidden_ideas = {
+		GEA_gxc_industrial_credit_support = {
+			allowed = { always = no }
+			modifier = {
+				political_power_factor = 0.05
+				production_speed_buildings_factor = 0.08
+				production_factory_max_efficiency_factor = 0.04
+			}
+		}
+
 		GEA_szc_yangtze_transport_idea = {
 			allowed = {
 				always = no

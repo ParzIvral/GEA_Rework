@@ -8311,6 +8311,350 @@ add_namespace = GEA_news
 		}
 	}
 
+	country_event = { #干涉两广内战
+		id = GEA.830
+		title = GEA.830.t
+		desc = GEA.830.d
+		picture = GFX_GEA_eight_provience
+
+		fire_only_once = yes
+		trigger = {
+			tag = GEA
+			has_global_flag = GXC_had_civil_war
+			NOT = { has_global_flag = GXC_civil_war_over }
+			any_country = {
+				GXC_has_guangdong_government = yes
+				any_enemy_country = { GXC_has_guangxi_government = yes }
+			}
+		}
+
+		mean_time_to_happen = { days = 2 }
+		
+		immediate = {
+			log = "[GetDateText]: [Root.GetName]: event GEA.830"
+			random_country = {
+				limit = {
+					GXC_has_guangdong_government = yes
+					any_enemy_country = { GXC_has_guangxi_government = yes }
+				}
+				save_global_event_target_as = GEA_liangguang_guangdong
+				random_country = {
+					limit = {
+						GXC_has_guangxi_government = yes
+						has_war_with = PREV
+					}
+					save_global_event_target_as = GEA_liangguang_guangxi
+				}
+			}
+		}
+
+		option = {
+			name = GEA.830.a
+			ai_chance = { factor = 50 }
+			custom_effect_tooltip = GEA_support_guangdong_in_civil_war_tt
+			hidden_effect = {
+				set_country_flag = GEA_support_guangdong_in_civil_war
+				clr_country_flag = GEA_support_guangxi_in_civil_war
+				event_target:GEA_liangguang_guangdong = {
+					save_global_event_target_as = GEA_liangguang_supported_country
+					set_country_flag = GEA_supported_in_liangguang_civil_war
+				}
+				event_target:GEA_liangguang_guangxi = {
+					clr_country_flag = GEA_supported_in_liangguang_civil_war
+				}
+			}
+		}
+		option = {
+			name = GEA.830.b
+			ai_chance = { factor = 50 }
+			custom_effect_tooltip = GEA_support_guangxi_in_civil_war_tt
+			hidden_effect = {
+				set_country_flag = GEA_support_guangxi_in_civil_war
+				clr_country_flag = GEA_support_guangdong_in_civil_war
+				event_target:GEA_liangguang_guangxi = {
+					save_global_event_target_as = GEA_liangguang_supported_country
+					set_country_flag = GEA_supported_in_liangguang_civil_war
+				}
+				event_target:GEA_liangguang_guangdong = {
+					clr_country_flag = GEA_supported_in_liangguang_civil_war
+				}
+			}
+		}
+	}
+
+	country_event = { #珠江彼岸的秘密交易
+		id = GEA.831
+		title = GEA.831.t
+		desc = GEA.831.d
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.831" }
+		option = {
+			name = GEA.831.a
+			ai_chance = { factor = 100 }
+			custom_effect_tooltip = GEA_gxc_merchant_government_promise_tt
+			hidden_effect = { set_country_flag = GEA_guangdong_merchant_government_promised }
+			GXC = {
+				add_popularity = { ideology = market_liberal popularity = 0.10 }
+				add_stability = 0.05
+			}
+			custom_effect_tooltip = GEA_china_gxc_name_tt
+			add_to_variable = {
+				GEA_china_gxc_capital_influence = 15
+				tooltip = GEA_china_capital_influence_change_tt
+			}
+			hidden_effect = {
+				clamp_variable = { var = GEA_china_gxc_capital_influence min = 0 max = 100 }
+			}
+		}
+	}
+
+
+	country_event = { #重申德国在两广的控制权
+		id = GEA.832
+		title = GEA.832.t
+		desc = GEA.832.d
+		picture = GFX_GEA_guangzhou_obey
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.832" }
+		option = {
+			name = GEA.832.a
+			ai_chance = { factor = 75 }
+			if = {
+				limit = { is_in_faction = yes NOT = { is_in_faction_with = GEA } }
+				leave_faction = yes
+			}
+			GEA = {
+				set_autonomy = {
+					target = GXC
+					autonomy_state = kr_default_puppet
+					end_wars = yes
+					end_civil_wars = yes
+				}
+				if = {
+					limit = { is_in_faction = yes }
+					faction_leader = { add_to_faction = GXC }
+				}
+			}
+			hidden_effect = {
+				clr_country_flag = GEA_china_warlord_interaction_blocked
+				clr_country_flag = GEA_german_coup_defeated
+			}
+		}
+		option = {
+			name = GEA.832.b
+			ai_chance = { factor = 25 }
+			GEA = { create_wargoal = { type = annex_everything target = GXC } }
+		}
+	}
+
+
+	country_event = { #两广新政府：按此前承诺选择商团或德国人执政
+		id = GEA.833
+		title = GEA.833.t
+		desc = {
+			trigger = { has_country_flag = GEA_guangdong_merchant_government_promised }
+			text = GEA.833.d.merchants
+		}
+		desc = {
+			trigger = { NOT = { has_country_flag = GEA_guangdong_merchant_government_promised } }
+			text = GEA.833.d
+		}
+		fire_only_once = yes
+		trigger = {
+			tag = GEA
+			GEA_liangguang_under_german_control_trigger = yes
+		}
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.833" }
+
+		option = {
+			name = GEA.833.a
+			trigger = { NOT = { has_country_flag = GEA_guangdong_merchant_government_promised } }
+			hidden_effect = {
+				#广州、海南与外国租界保持原有归属；只将受我方控制的两广其余本土交给傀儡
+				every_state = {
+					limit = {
+						OR = { state = 593 state = 594 state = 599 state = 800 state = 801 state = 1012 state = 1053 state = 1054 state = 1055 state = 1056 }
+						is_controlled_by = GEA
+					}
+					GXC = { transfer_state = PREV }
+				}
+				GXC = {
+					if = {
+						limit = { owns_state = 593 }
+						set_capital = { state = 593 remember_old_capital = no }
+					}
+					if = {
+						limit = { is_in_faction = yes NOT = { is_in_faction_with = GEA } }
+						leave_faction = yes
+					}
+				}
+				set_autonomy = {
+					target = GXC
+					autonomy_state = kr_default_puppet
+					end_wars = yes
+					end_civil_wars = yes
+				}
+				if = {
+					limit = { is_in_faction = yes GXC = { NOT = { is_in_faction_with = GEA } } }
+					faction_leader = { add_to_faction = GXC }
+				}
+				GXC = {
+					clr_country_flag = GEA_china_warlord_interaction_blocked
+					clr_country_flag = GEA_german_coup_defeated
+					set_country_flag = GEA_gxc_german_administration_established
+				}
+			}
+			GXC = {
+				create_country_leader = {
+					name = GEA_Claus_von_Bohlen_und_Halbach
+					desc = POLITICS_CLAUS_VON_BOHLEN_UND_HALBACH_DESC
+					picture = "gfx/leaders/GEA/Portrait_GEA_Claus_von_Bohlen_und_Halbach.png"
+					expire = "1.1.1"
+					ideology = autocratic_colonial_govt_subtype
+					traits = { industrialist }
+				}
+				add_popularity = { ideology = paternal_autocrat popularity = 0.30 }
+				set_politics = { ruling_party = paternal_autocrat elections_allowed = no }
+				set_party_name = {
+					ideology = paternal_autocrat
+					name = GEA_paternal_autocrat_party_gxc
+					long_name = GEA_paternal_autocrat_party_gxc_long
+				}
+				set_cosmetic_tag = GXC_german
+				hidden_effect = { set_ogx_ministers = yes }
+			}
+		}
+		option = {
+			name = GEA.833.b
+			trigger = { has_country_flag = GEA_guangdong_merchant_government_promised }
+			hidden_effect = {
+				#广州、海南与外国租界保持原有归属；只将受我方控制的两广其余本土交给傀儡
+				every_state = {
+					limit = {
+						OR = { state = 593 state = 594 state = 599 state = 800 state = 801 state = 1012 state = 1053 state = 1054 state = 1055 state = 1056 }
+						is_controlled_by = GEA
+					}
+					GXC = { transfer_state = PREV }
+				}
+				GXC = {
+					if = {
+						limit = { owns_state = 593 }
+						set_capital = { state = 593 remember_old_capital = no }
+					}
+					if = {
+						limit = { is_in_faction = yes NOT = { is_in_faction_with = GEA } }
+						leave_faction = yes
+					}
+				}
+				set_autonomy = {
+					target = GXC
+					autonomy_state = kr_default_puppet
+					end_wars = yes
+					end_civil_wars = yes
+				}
+				if = {
+					limit = { is_in_faction = yes GXC = { NOT = { is_in_faction_with = GEA } } }
+					faction_leader = { add_to_faction = GXC }
+				}
+				GXC = {
+					clr_country_flag = GEA_china_warlord_interaction_blocked
+					clr_country_flag = GEA_german_coup_defeated
+					set_country_flag = GEA_gxc_merchant_administration_established
+				}
+			}
+			GXC = {
+				create_country_leader = {
+					name = "Chen Lianbo"
+					desc = "POLITICS_GXC_CHEN_LIANBO_DESC"
+					picture = "gfx/leaders/GXC/Portrait_GXC_Chen_Lianbo.png"
+					expire = "1.1.1"
+					ideology = marlib_warlordism_subtype
+				}
+				add_popularity = { ideology = market_liberal popularity = 0.30 }
+				set_politics = { ruling_party = market_liberal elections_allowed = no }
+				set_party_name = {
+					ideology = market_liberal
+					name = GXC_market_liberal_party
+					long_name = GXC_market_liberal_party_long
+				}
+				hidden_effect = { set_merchant_ministers = yes }
+			}
+		}
+	}
+
+
+	country_event = { #里斯本接受最后通牒
+		id = GEA.834
+		title = GEA.834.t
+		desc = GEA.834.d
+		picture = GFX_GEA_Portuguese_Macau
+		is_triggered_only = yes
+		fire_only_once = yes
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.834" }
+		option = {
+			name = GEA.834.a
+			transfer_state = 729
+			transfer_state = 721
+		}
+	}
+
+	country_event = { #里斯本拒绝最后通牒
+		id = GEA.835
+		title = GEA.835.t
+		desc = GEA.835.d
+		picture = GFX_GEA_Portuguese_Macau
+		is_triggered_only = yes
+		fire_only_once = yes
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.835" }
+		option = {
+			name = GEA.835.a
+			add_state_claim = 729
+			add_state_claim = 721
+			hidden_effect = { set_country_flag = GEA_portuguese_colonial_war }
+			if = {
+				limit = { country_exists = POR NOT = { has_war_with = POR } }
+				declare_war_on = { target = POR type = take_claimed_state }
+			}
+		}
+	}
+
+	country_event = { #澳门与东帝汶失守后的葡萄牙议和
+		id = GEA.836
+		title = GEA.836.t
+		desc = GEA.836.d
+		picture = GFX_GEA_Portuguese_Macau
+		fire_only_once = yes
+		trigger = {
+			tag = POR
+			has_war_with = GEA
+			GEA = {
+				has_country_flag = GEA_portuguese_colonial_war
+				controls_state = 729
+				controls_state = 721
+			}
+		}
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.836" }
+		option = {
+			name = GEA.836.a
+			ai_chance = { factor = 100 }
+			GEA = {
+				transfer_state = 729
+				transfer_state = 721
+				white_peace_with_ROOT = yes
+				hidden_effect = { clr_country_flag = GEA_portuguese_colonial_war }
+			}
+		}
+		option = {
+			name = GEA.836.b
+			ai_chance = { factor = 0 }
+		}
+	}
+
+
 #经济
 	country_event = { #重点开发
 		id = GEA.1000
@@ -9376,45 +9720,24 @@ country_event = {
 			}
 		}
 	}
-	country_event = {
+	country_event = { #里斯本热线：澳门与东帝汶最后通牒
 		id = Ostasien.802
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.802" }
 		title = Ostasien.802.t
 		desc = Ostasien.802.d
 		picture = GFX_GEA_Portuguese_Macau
-
 		fire_only_once = yes
 		is_triggered_only = yes
+		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.802" }
 
-		option = { 
+		option = {
 			name = Ostasien.802.a
-			ai_chance = {
-				factor = 75
-			}
-			GEA = {
-				transfer_state = 729
-				add_state_claim = 729
-				transfer_state = 972
-				add_state_core = 972
-				transfer_state = 721
-				add_state_core = 721
-				transfer_state = 321
-				add_state_core = 321
-			}
+			ai_chance = { factor = 75 }
+			GEA = { country_event = { id = GEA.834 days = 1 } }
 		}
-		option = { 
+		option = {
 			name = Ostasien.802.b
-			ai_chance = {
-			factor = 25
-			}
-			GEA = {
-				add_state_claim = 729
-				create_wargoal = { target = POR type = take_claimed_state }
-				add_state_claim = 729
-				add_state_core = 972
-				add_state_core = 721
-				add_state_core = 321
-			}
+			ai_chance = { factor = 25 }
+			GEA = { country_event = { id = GEA.835 days = 1 } }
 		}
 	}
 	country_event = {
