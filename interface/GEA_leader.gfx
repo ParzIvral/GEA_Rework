@@ -168,4 +168,16 @@ spriteTypes = {
 		name = "GFX_portrait_Portrait_GEA_Wilhelm_Hopfner"
 		texturefile = "gfx/leaders/GEA/Portrait_GEA_Wilhelm_Hopfner.png"
 	}
+	spriteType = {
+		name = "GFX_portrait_GEA_Zhao_Yusong"
+		texturefile = "gfx/leaders/GEA/GEA_Zhao_Yusong.png"
+	}
+	spriteType = {
+		name = "GFX_portrait_GEA_Yao_Zuobin"
+		texturefile = "gfx/leaders/GEA/Portrait_GEA_Yao_Zuobin.png"
+	}
+	spriteType = {
+		name = "GFX_portrait_GEA_Chen_Lianbo"
+		texturefile = "gfx/leaders/GXC/Portrait_GXC_Chen_Lianbo.png"
+	}
 }

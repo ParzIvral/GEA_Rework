@@ -653,5 +653,39 @@ characters = {
 		}
 	}
 
+	GEA_Zhao_Yusong = { #赵毓松
+		name = GEA_Zhao_Yusong
+		portraits = {
+			civilian = { large = GFX_portrait_GEA_Zhao_Yusong }
+		}
+		country_leader = {
+			ideology = kleptocracy_subtype
+			traits = { }
+		}
+	}
+
+	GEA_Yao_Zuobin = { #姚作宾
+		name = GEA_Yao_Zuobin
+		portraits = {
+			civilian = { large = GFX_portrait_GEA_Yao_Zuobin }
+		}
+		country_leader = {
+			ideology = pataut_police_state_subtype
+			traits = { }
+		}
+	}
+
+	GEA_Chen_Lianbo = { #陈廉伯
+		name = GEA_Chen_Lianbo
+		portraits = {
+			civilian = { large = GFX_portrait_GEA_Chen_Lianbo }
+		}
+		country_leader = {
+			ideology = marlib_warlordism_subtype
+			desc = POLITICS_GXC_CHEN_LIANBO_DESC
+			traits = { }
+		}
+	}
+
 }
 

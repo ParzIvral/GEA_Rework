@@ -2586,6 +2586,7 @@ ideas = {
 			}
 		}
 		GEA_german_controlled_economic_market = { #德控经济市场
+			cancel = { GEA_china_warlord_cannot_interact_trigger = yes }
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_german_controlled_economic_market" }
 			picture = GER_Bank_Controls
 			allowed = { always = no }
@@ -2601,6 +2602,7 @@ ideas = {
 			}
 		}
 		GEA_mark_trade_settlement = { #马克贸易结算
+			cancel = { GEA_china_warlord_cannot_interact_trigger = yes }
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_mark_trade_settlement" }
 			picture = GER_Bank_Controls
 			allowed = { always = no }
@@ -2667,6 +2669,7 @@ ideas = {
 			}
 		}
 		GEA_gxc_german_capital_1 = { #德国资本投资
+			cancel = { GEA_china_warlord_cannot_interact_trigger = yes }
 			picture = GER_Bank_Controls
 			allowed = { always = no }
 			modifier = {
@@ -2682,6 +2685,7 @@ ideas = {
 			}
 		}
 		GEA_gxc_german_capital_2 = { #德国资本影响
+			cancel = { GEA_china_warlord_cannot_interact_trigger = yes }
 			picture = GER_Bank_Controls
 			allowed = { always = no }
 			modifier = {
@@ -2697,6 +2701,7 @@ ideas = {
 			}
 		}
 		GEA_gxc_german_capital_3 = { #德国资本控制
+			cancel = { GEA_china_warlord_cannot_interact_trigger = yes }
 			picture = GER_Bank_Controls
 			allowed = { always = no }
 			modifier = {
@@ -2712,6 +2717,7 @@ ideas = {
 			}
 		}
 		GEA_german_controlled_economic_market_Yun_1 = { #对德市场开放
+			cancel = { GEA_china_warlord_cannot_interact_trigger = yes }
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_german_controlled_economic_market_Yun_1" }
 			picture = GER_Bank_Controls
 			allowed = { always = no }
@@ -2728,6 +2734,7 @@ ideas = {
 			}
 		}
 		GEA_german_controlled_economic_market_Yun_2 = { #对德市场开放
+			cancel = { GEA_china_warlord_cannot_interact_trigger = yes }
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_german_controlled_economic_market_Yun_2" }
 			name = GEA_german_controlled_economic_market_Yun_1
 			picture = GER_Bank_Controls
@@ -2745,6 +2752,7 @@ ideas = {
 			}
 		}
 		GEA_german_controlled_economic_market_Yun_3 = { #对德市场开放
+			cancel = { GEA_china_warlord_cannot_interact_trigger = yes }
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_german_controlled_economic_market_Yun_3" }
 			name = GEA_german_controlled_economic_market_Yun_1
 			picture = GER_Bank_Controls
@@ -2762,6 +2770,7 @@ ideas = {
 			}
 		}
 		GEA_german_controlled_economic_market_Yun_4 = { #对德市场开放
+			cancel = { GEA_china_warlord_cannot_interact_trigger = yes }
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_german_controlled_economic_market_Yun_4" }
 			name = GEA_german_controlled_economic_market_Yun_1
 			picture = GER_Bank_Controls
@@ -2780,6 +2789,7 @@ ideas = {
 			}
 		}
 		GEA_german_controlled_economic_market_Yun_5 = { #对德市场开放
+			cancel = { GEA_china_warlord_cannot_interact_trigger = yes }
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_german_controlled_economic_market_Yun_5" }
 			name = GEA_german_controlled_economic_market_Yun_1
 			picture = GER_Bank_Controls
@@ -2897,6 +2907,16 @@ ideas = {
 	}
 #隐藏精神
 	hidden_ideas = {
+		GEA_american_anti_japanese_cooperation = {
+			allowed = { always = no }
+			cancel = { NOT = { has_war_with = JAP } }
+			targeted_modifier = {
+				tag = JAP
+				attack_bonus_against = 0.10
+				defense_bonus_against = 0.10
+			}
+		}
+
 		GEA_gxc_industrial_credit_support = {
 			allowed = { always = no }
 			modifier = {
@@ -3225,6 +3245,26 @@ ideas = {
 			}
 		}
 		GEA_Repaying_German_Loan = {
+			cancel = { GEA_china_warlord_cannot_interact_trigger = yes }
+			on_remove = {
+				if = {
+					limit = { GEA_china_warlord_cannot_interact_trigger = yes }
+					clear_variable = GEA_german_loan_repayment
+					clr_country_flag = GEA_german_loan_active
+					clr_country_flag = GEA_german_loan_offer_pending
+					clr_country_flag = GEA_german_loan_equity_settlement_used
+					remove_mission = GEA_warlord_repay_german_loan_short
+					remove_mission = GEA_warlord_repay_german_loan_medium
+					remove_mission = GEA_warlord_repay_german_loan_long
+					GEA = {
+						clr_country_flag = GEA_german_loan_active
+						clr_country_flag = GEA_german_loan_offer_pending
+						remove_mission = GEA_monitor_german_loan_short
+						remove_mission = GEA_monitor_german_loan_medium
+						remove_mission = GEA_monitor_german_loan_long
+					}
+				}
+			}
 			allowed = { always = no }
 			modifier = { political_power_cost = 0.02 }
 		}

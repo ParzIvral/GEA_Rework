@@ -503,6 +503,8 @@ GEA_china_warlord_interaction = {
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision GEA_warlord_expel_german_investment"
 			set_country_flag = GEA_china_warlord_interaction_blocked
+			GEA_clear_chinese_warlord_exploitation_effect = yes
+			GEA = { GEA_clear_invalid_chinese_railway_revenue_effect = yes }
 		}
 	}
 	GEA_warlord_restrict_german_investment = {

@@ -9658,19 +9658,24 @@ GEA_focus_china_decisions = {#第二次对华远征
 			}
 		}
 		cancel_trigger = {
-			FROM = {
-				OR = {
-					NOT = { owns_state = 613 }
-					NOT = {
-						any_owned_state = {
-							is_controlled_by = FROM
-							arms_factory > 0
-						}
-					}
-					NOT = {
-						any_owned_state = {
-							is_controlled_by = FROM
-							industrial_complex > 0
+			OR = {
+				NOT = { FROM = { exists = yes GEA_china_warlord_can_interact_trigger = yes } }
+				AND = {
+					FROM = {
+						OR = {
+							NOT = { owns_state = 613 }
+							NOT = {
+								any_owned_state = {
+									is_controlled_by = FROM
+									arms_factory > 0
+								}
+							}
+							NOT = {
+								any_owned_state = {
+									is_controlled_by = FROM
+									industrial_complex > 0
+								}
+							}
 						}
 					}
 				}
@@ -9923,6 +9928,9 @@ GEA_focus_china_decisions = {#第二次对华远征
 		cancel_effect = {
 			FROM = { remove_ideas = GEA_German_military_equipment_imports }
 		}
+		cancel_trigger = {
+			NOT = { FROM = { exists = yes GEA_china_warlord_can_interact_trigger = yes } }
+		}
 	}
 	GEA_Expand_the_export_of_strategic_resources = { #扩大战略资源出口
 		icon = GFX_GEA_Invest_in_East_China_decision
@@ -9996,6 +10004,9 @@ GEA_focus_china_decisions = {#第二次对华远征
 		cancel_effect = {
 			FROM = { remove_ideas = GEA_German_East_Asia_resource_trade }
 		}
+		cancel_trigger = {
+			NOT = { FROM = { exists = yes GEA_china_warlord_can_interact_trigger = yes } }
+		}
 	}
 	GEA_Expand_drug_smuggling = { #扩大毒品走私
 		icon = GFX_GEA_Invest_in_East_China_decision
@@ -10068,6 +10079,9 @@ GEA_focus_china_decisions = {#第二次对华远征
 		}
 		cancel_effect = {
 			FROM = { remove_ideas = GEA_Southeast_Asia_opium_epidemic }
+		}
+		cancel_trigger = {
+			NOT = { FROM = { exists = yes GEA_china_warlord_can_interact_trigger = yes } }
 		}
 	}
 
@@ -10663,7 +10677,7 @@ GEA_focus_china_decisions = {#第二次对华远征
 	GEA_Open_Village_and_County_Banks = { # 开设村县银行
 		icon = GFX_GEA_Transfer_German_Enterprises_decision
 		allowed = { original_tag = GEA }
-		cost = 30
+		cost = GEA_china_economic_cost_30?30
 		days_remove = 90
 		days_re_enable = 90
 
@@ -10735,8 +10749,13 @@ GEA_focus_china_decisions = {#第二次对华远征
 		}
 		cancel_trigger = {
 			OR = {
-				has_war_with = FROM
-				FROM = { NOT = { owns_state = 613 } }
+				NOT = { FROM = { exists = yes GEA_china_warlord_can_interact_trigger = yes } }
+				AND = {
+					OR = {
+						has_war_with = FROM
+						FROM = { NOT = { owns_state = 613 } }
+					}
+				}
 			}
 		}
 		modifier = { consumer_goods_factor = -0.05 }
@@ -10810,6 +10829,9 @@ GEA_focus_china_decisions = {#第二次对华远征
 				clamp_variable = { var = GEA_china_lep_attitude min = 0 max = 100 }
 				clamp_variable = { var = GEA_china_lep_capital_influence min = 0 max = 100 }
 			}
+		}
+		cancel_trigger = {
+			NOT = { FROM = { exists = yes GEA_china_warlord_can_interact_trigger = yes } }
 		}
 	}
 
@@ -11011,6 +11033,51 @@ GEA_focus_china_decisions = {#第二次对华远征
 		}
 	}
 
+	GEA_Enforce_the_Liangguang_Ultimatum = { #执行对粤最后通牒
+		allowed = { original_tag = GEA }
+		icon = GFX_GEA_Intervene_in_East_China_decision
+		priority = 10001
+
+		visible = {
+			has_country_flag = GEA_liangguang_ultimatum_refused
+			has_country_flag = GXC_OPEN
+			country_exists = GXC
+		}
+		available = {
+			GXC = { exists = yes NOT = { is_subject_of = GEA } }
+			NOT = { has_war_with = GXC }
+			NOT = { is_in_faction_with = GXC }
+		}
+		targets = { GXC }
+
+		cost = 0
+		days_remove = 30
+		fire_only_once = yes
+		cancel_if_not_visible = no
+		cancel_trigger = {
+			NOT = {
+				AND = {
+					GXC = { exists = yes NOT = { is_subject_of = GEA } }
+					NOT = { has_war_with = GXC }
+					NOT = { is_in_faction_with = GXC }
+				}
+			}
+		}
+
+		ai_will_do = { factor = 0 }
+		remove_effect = {
+			if = {
+				limit = {
+					GXC = { exists = yes NOT = { is_subject_of = GEA } }
+					NOT = { has_war_with = GXC }
+					NOT = { is_in_faction_with = GXC }
+				}
+				declare_war_on = { target = GXC type = annex_everything }
+				hidden_effect = { clr_country_flag = GEA_liangguang_ultimatum_refused }
+			}
+		}
+	}
+
 	GEA_Liangguang_Expedition = { #两广远征
 		allowed = { original_tag = GEA }
 		icon = GFX_GEA_Intervene_in_East_China_decision
@@ -11084,11 +11151,16 @@ GEA_focus_china_decisions = {#第二次对华远征
 		days_re_enable = 180
 		cancel_if_not_visible = no
 		cancel_trigger = {
-			NOT = {
+			OR = {
+				NOT = { GXC = { exists = yes GEA_china_warlord_can_interact_trigger = yes } }
 				AND = {
-					GEA_liangguang_non_anti_concession_controller_trigger = yes
-					GEA_liangguang_civil_war_resolved_trigger = yes
-					GXC = { NOT = { has_war_with = GEA } }
+					NOT = {
+						AND = {
+							GEA_liangguang_non_anti_concession_controller_trigger = yes
+							GEA_liangguang_civil_war_resolved_trigger = yes
+							GXC = { NOT = { has_war_with = GEA } }
+						}
+					}
 				}
 			}
 		}
@@ -11642,12 +11714,17 @@ GEA_focus_china_decisions = {#第二次对华远征
 		fire_only_once = yes
 		cancel_if_not_visible = no
 		cancel_trigger = {
-			NOT = {
+			OR = {
+				NOT = { GXC = { exists = yes GEA_china_warlord_can_interact_trigger = yes } }
 				AND = {
-					GEA_liangguang_non_anti_concession_controller_trigger = yes
-					GEA_liangguang_civil_war_resolved_trigger = yes
-					GXC = { NOT = { has_war_with = GEA } }
-					GXC = { any_owned_state = { is_controlled_by = PREV is_coastal = yes } }
+					NOT = {
+						AND = {
+							GEA_liangguang_non_anti_concession_controller_trigger = yes
+							GEA_liangguang_civil_war_resolved_trigger = yes
+							GXC = { NOT = { has_war_with = GEA } }
+							GXC = { any_owned_state = { is_controlled_by = PREV is_coastal = yes } }
+						}
+					}
 				}
 			}
 		}
@@ -12164,6 +12241,7 @@ count_triggers = {
 			has_country_flag = GXC_OPEN
 			country_exists = GXC
 			has_completed_focus = GEA_revisit_old_site
+			GEA_liangguang_non_anti_concession_controller_trigger = yes
 		}
 		available = {
 			GEA_liangguang_non_anti_concession_controller_trigger = yes
@@ -12225,6 +12303,7 @@ count_triggers = {
 			has_country_flag = GXC_OPEN
 			country_exists = GXC
 			has_completed_focus = GEA_revisit_old_site
+			GEA_liangguang_non_anti_concession_controller_trigger = yes
 		}
 		available = {
 			GEA_liangguang_non_anti_concession_controller_trigger = yes
@@ -12286,6 +12365,7 @@ count_triggers = {
 			has_country_flag = GXC_OPEN
 			country_exists = GXC
 			has_completed_focus = GEA_revisit_old_site
+			GEA_liangguang_non_anti_concession_controller_trigger = yes
 		}
 		available = {
 			GEA_liangguang_non_anti_concession_controller_trigger = yes
@@ -12355,6 +12435,7 @@ count_triggers = {
 			has_country_flag = GXC_OPEN
 			country_exists = GXC
 			has_completed_focus = GEA_revisit_old_site
+			GEA_liangguang_non_anti_concession_controller_trigger = yes
 		}
 		available = {
 			GEA_liangguang_non_anti_concession_controller_trigger = yes
@@ -12434,7 +12515,7 @@ count_triggers = {
 		}
 		targets = { GXC }
 
-		cost = 25
+		cost = GEA_china_economic_cost_25?25
 		days_remove = 30
 		days_re_enable = 90
 		cancel_if_not_visible = no
@@ -12593,7 +12674,7 @@ count_triggers = {
 		}
 		targets = { GXC }
 
-		cost = 50
+		cost = GEA_china_economic_cost_50?50
 		days_remove = 75
 		fire_only_once = yes
 		cancel_if_not_visible = no
@@ -12724,6 +12805,38 @@ count_triggers = {
 		}
 	}
 
+	GEA_yun_ultimatum = { #要求云南服从德国控制
+		allowed = { original_tag = GEA }
+		icon = GFX_GEA_Intervene_in_East_China_decision
+		priority = 10002
+
+		visible = {
+			has_country_flag = YUN_OPEN
+			GEA_yunnan_non_anti_concession_controller_trigger = yes
+			YUN = { exists = yes is_subject = no }
+		}
+		available = {
+			NOT = { has_war_with = YUN }
+			custom_trigger_tooltip = {
+				tooltip = GEA_yun_ultimatum_capital_tt
+				check_variable = { GEA_china_yun_capital_influence > 95 }
+			}
+			custom_trigger_tooltip = {
+				tooltip = GEA_yun_ultimatum_military_tt
+				check_variable = { GEA_china_yun_military_projection > 95 }
+			}
+		}
+		targets = { YUN }
+
+		cost = 0
+		fire_only_once = yes
+
+		ai_will_do = { factor = 5 }
+		complete_effect = {
+			YUN = { country_event = { id = GEA.842 } }
+		}
+	}
+
 	GEA_yun_trade_delegation = { #组织赴滇商团
 		allowed = {
 			original_tag = GEA
@@ -12743,7 +12856,7 @@ count_triggers = {
 		}
 		targets = { YUN }
 
-		cost = 25
+		cost = GEA_china_economic_cost_25?25
 		days_remove = 30
 		days_re_enable = 90
 		cancel_if_not_visible = no
@@ -13005,16 +13118,21 @@ count_triggers = {
 		}
 		targets = { YUN }
 
-		cost = 50
+		cost = GEA_china_economic_cost_50?50
 		days_remove = 120
 		fire_only_once = yes
 		cancel_if_not_visible = no
 		cancel_trigger = {
-			NOT = {
+			OR = {
+				NOT = { YUN = { exists = yes GEA_china_warlord_can_interact_trigger = yes } }
 				AND = {
-					GEA_yunnan_non_anti_concession_controller_trigger = yes
 					NOT = {
-						has_war_with = YUN
+						AND = {
+							GEA_yunnan_non_anti_concession_controller_trigger = yes
+							NOT = {
+								has_war_with = YUN
+							}
+						}
 					}
 				}
 			}
@@ -13589,6 +13707,38 @@ count_triggers = {
 		}
 	}
 
+	GEA_szc_ultimatum = { #要求四川服从德国控制
+		allowed = { original_tag = GEA }
+		icon = GFX_GEA_Intervene_in_East_China_decision
+		priority = 10002
+
+		visible = {
+			has_country_flag = SZC_OPEN
+			GEA_sichuan_non_anti_concession_controller_trigger = yes
+			SZC = { exists = yes is_subject = no }
+		}
+		available = {
+			NOT = { has_war_with = SZC }
+			custom_trigger_tooltip = {
+				tooltip = GEA_szc_ultimatum_capital_tt
+				check_variable = { GEA_china_szc_capital_influence > 95 }
+			}
+			custom_trigger_tooltip = {
+				tooltip = GEA_szc_ultimatum_military_tt
+				check_variable = { GEA_china_szc_military_projection > 95 }
+			}
+		}
+		targets = { SZC }
+
+		cost = 0
+		fire_only_once = yes
+
+		ai_will_do = { factor = 5 }
+		complete_effect = {
+			SZC = { country_event = { id = GEA.843 } }
+		}
+	}
+
 	GEA_szc_business_talks = { #组织川商洽谈
 		allowed = {
 			original_tag = GEA
@@ -13608,7 +13758,7 @@ count_triggers = {
 		}
 		targets = { SZC }
 
-		cost = 25
+		cost = GEA_china_economic_cost_25?25
 		days_remove = 30
 		days_re_enable = 90
 		cancel_if_not_visible = no
@@ -13873,7 +14023,7 @@ count_triggers = {
 		}
 		targets = { SZC }
 
-		cost = 65
+		cost = GEA_china_economic_cost_65?65
 		days_remove = 45
 		fire_only_once = yes
 		cancel_if_not_visible = no
@@ -14133,12 +14283,17 @@ count_triggers = {
 		days_re_enable = 120
 		cancel_if_not_visible = no
 		cancel_trigger = {
-			NOT = {
+			OR = {
+				NOT = { SZC = { exists = yes GEA_china_warlord_can_interact_trigger = yes } }
 				AND = {
-					GEA_sichuan_famine_active_trigger = yes
-					GEA_sichuan_non_anti_concession_controller_trigger = yes
 					NOT = {
-						has_war_with = SZC
+						AND = {
+							GEA_sichuan_famine_active_trigger = yes
+							GEA_sichuan_non_anti_concession_controller_trigger = yes
+							NOT = {
+								has_war_with = SZC
+							}
+						}
 					}
 				}
 			}
@@ -15107,14 +15262,19 @@ count_triggers = {
 			command_power > 14.99
 		}
 		cancel_trigger = {
-			NOT = {
+			OR = {
+				NOT = { SZC = { exists = yes GEA_china_warlord_can_interact_trigger = yes } }
 				AND = {
-					GEA_sichuan_non_anti_concession_controller_trigger = yes
 					NOT = {
-						has_war_with = SZC
-					}
-					SZC = {
-						has_manpower > 1999
+						AND = {
+							GEA_sichuan_non_anti_concession_controller_trigger = yes
+							NOT = {
+								has_war_with = SZC
+							}
+							SZC = {
+								has_manpower > 1999
+							}
+						}
 					}
 				}
 			}
@@ -15366,7 +15526,7 @@ count_triggers = {
 	GEA_sqi_invest_in_shandong = {
 		icon = GFX_GEA_Invest_in_East_China_decision
 		allowed = { original_tag = GEA }
-		cost = 20
+		cost = GEA_china_economic_cost_20?20
 		days_remove = 30
 		days_re_enable = 60
 		cancel_if_not_visible = no
@@ -15413,7 +15573,7 @@ count_triggers = {
 	GEA_sqi_establish_german_enterprises = {
 		icon = GFX_GEA_Invest_in_East_China_decision
 		allowed = { original_tag = GEA }
-		cost = 40
+		cost = GEA_china_economic_cost_40?40
 		days_remove = 60
 		days_re_enable = 120
 		cancel_if_not_visible = no
@@ -15905,6 +16065,134 @@ count_triggers = {
 			}
 		}
 	}
+	GEA_Pacify_HNN = { #平定湘系军阀
+		allowed = { original_tag = GEA }
+		icon = GFX_GEA_Intervene_in_East_China_decision
+		priority = 10001
+
+		visible = {
+			has_country_flag = HNN_OPEN
+			HNN = { exists = yes }
+		}
+		available = {
+			HNN = { exists = yes NOT = { is_subject = yes } NOT = { is_in_faction_with = LEP } }
+			NOT = { has_war_with = HNN }
+			NOT = { is_in_faction_with = HNN }
+			LEP = {
+				exists = yes
+				OR = { is_in_faction_with = GEA is_subject_of = GEA }
+				NOT = { has_war_with = GEA }
+			}
+		}
+		targets = { HNN }
+
+		cost = 0
+		days_remove = 30
+		fire_only_once = yes
+		cancel_if_not_visible = no
+		cancel_trigger = {
+			NOT = {
+				AND = {
+					HNN = { exists = yes NOT = { is_subject = yes } NOT = { is_in_faction_with = LEP } }
+					NOT = { has_war_with = HNN }
+					NOT = { is_in_faction_with = HNN }
+					LEP = {
+						exists = yes
+						OR = { is_in_faction_with = GEA is_subject_of = GEA }
+						NOT = { has_war_with = GEA }
+					}
+				}
+			}
+		}
+
+		ai_will_do = { factor = 0 }
+		remove_effect = {
+			if = {
+				limit = {
+					HNN = { exists = yes NOT = { is_subject = yes } NOT = { is_in_faction_with = LEP } }
+					NOT = { has_war_with = HNN }
+					NOT = { is_in_faction_with = HNN }
+					LEP = {
+						exists = yes
+						OR = { is_in_faction_with = GEA is_subject_of = GEA }
+						NOT = { has_war_with = GEA }
+					}
+				}
+				declare_war_on = { target = HNN type = annex_everything }
+				LEP = {
+					if = {
+						limit = { NOT = { has_war_with = HNN } }
+						add_to_war = { targeted_alliance = GEA enemy = HNN }
+					}
+				}
+			}
+		}
+	}
+
+	GEA_Pacify_SHX = { #平定晋系军阀
+		allowed = { original_tag = GEA }
+		icon = GFX_GEA_Intervene_in_East_China_decision
+		priority = 10001
+
+		visible = {
+			has_country_flag = SHX_OPEN
+			SHX = { exists = yes }
+		}
+		available = {
+			SHX = { exists = yes NOT = { is_subject = yes } NOT = { is_in_faction_with = QIE } }
+			NOT = { has_war_with = SHX }
+			NOT = { is_in_faction_with = SHX }
+			QIE = {
+				exists = yes
+				OR = { is_in_faction_with = GEA is_subject_of = GEA }
+				NOT = { has_war_with = GEA }
+			}
+		}
+		targets = { SHX }
+
+		cost = 0
+		days_remove = 30
+		fire_only_once = yes
+		cancel_if_not_visible = no
+		cancel_trigger = {
+			NOT = {
+				AND = {
+					SHX = { exists = yes NOT = { is_subject = yes } NOT = { is_in_faction_with = QIE } }
+					NOT = { has_war_with = SHX }
+					NOT = { is_in_faction_with = SHX }
+					QIE = {
+						exists = yes
+						OR = { is_in_faction_with = GEA is_subject_of = GEA }
+						NOT = { has_war_with = GEA }
+					}
+				}
+			}
+		}
+
+		ai_will_do = { factor = 0 }
+		remove_effect = {
+			if = {
+				limit = {
+					SHX = { exists = yes NOT = { is_subject = yes } NOT = { is_in_faction_with = QIE } }
+					NOT = { has_war_with = SHX }
+					NOT = { is_in_faction_with = SHX }
+					QIE = {
+						exists = yes
+						OR = { is_in_faction_with = GEA is_subject_of = GEA }
+						NOT = { has_war_with = GEA }
+					}
+				}
+				declare_war_on = { target = SHX type = annex_everything }
+				QIE = {
+					if = {
+						limit = { NOT = { has_war_with = SHX } }
+						add_to_war = { targeted_alliance = GEA enemy = SHX }
+					}
+				}
+			}
+		}
+	}
+
 	GEA_North_China_Expedition = { #华北远征
 		icon = GFX_GEA_Intervene_in_East_China_decision
 		allowed = { original_tag = GEA }
@@ -16429,9 +16717,14 @@ count_triggers = {
 		}
 		cancel_trigger = {
 			OR = {
-				QIE = { exists = no }
-				has_war_with = QIE
-				QIE = { GEA_china_warlord_cannot_interact_trigger = yes }
+				NOT = { QIE = { exists = yes GEA_china_warlord_can_interact_trigger = yes } }
+				AND = {
+					OR = {
+						QIE = { exists = no }
+						has_war_with = QIE
+						QIE = { GEA_china_warlord_cannot_interact_trigger = yes }
+					}
+				}
 			}
 		}
 		ai_will_do = { factor = 20 }
@@ -16461,7 +16754,7 @@ count_triggers = {
 	GEA_qie_promote_pro_german_businessmen = { #扶植亲德工商代表
 		icon = GFX_GEA_Invest_in_East_China_decision
 		allowed = { original_tag = GEA }
-		cost = 25
+		cost = GEA_china_economic_cost_25?25
 		days_remove = 60
 		days_re_enable = 90
 		cancel_if_not_visible = no
@@ -16618,7 +16911,7 @@ count_triggers = {
 		icon = GFX_GEA_Invest_in_East_China_decision
 		allowed = { original_tag = GEA }
 		
-		cost = 30
+		cost = GEA_china_economic_cost_30?30
 		days_remove = 90
 		days_re_enable = 120
 		cancel_if_not_visible = no
@@ -16635,9 +16928,14 @@ count_triggers = {
 		}
 		cancel_trigger = {
 			OR = {
-				QIE = { exists = no }
-				has_war_with = QIE
-				QIE = { GEA_china_warlord_cannot_interact_trigger = yes }
+				NOT = { QIE = { exists = yes GEA_china_warlord_can_interact_trigger = yes } }
+				AND = {
+					OR = {
+						QIE = { exists = no }
+						has_war_with = QIE
+						QIE = { GEA_china_warlord_cannot_interact_trigger = yes }
+					}
+				}
 			}
 		}
 

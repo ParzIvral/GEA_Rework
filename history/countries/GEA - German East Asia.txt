@@ -342,8 +342,6 @@ set_country_flag = GEA_owner_of_nantong
 set_country_flag = GEA_owner_of_weihaiwei
 set_country_flag = GEA_owner_of_qingdao
 add_to_tech_sharing_group = german_research
-set_variable = { GEA_josias_effect_political = 0.3}
-set_variable = { GEA_josias_effect_economy = 0.3}
 set_country_flag = {
 	flag = GEA_Indochinese_Stability
 	value = 2
@@ -355,17 +353,9 @@ set_country_flag = {
 }
 set_variable = { GEA_Indochinese_Anger_display = 2 }
 set_variable = { GEA_singapore_development = 0.5}
-set_variable = { GEA_malaya_development = 0.2}
 set_variable = { GEA_Borneo_development = 0.1}
 set_variable = { GEA_Guinea_development = 0}
-set_variable = { GEA_dei_integration_degree = 0.2}
-set_variable = { GEA_brm_integration_degree = 0.2}
 set_variable = { renovation_times = 0}
-set_variable = { GEA_Progress_of_reform = 0}
-set_variable = { GEA_socialist_power = 35}
-set_variable = { GEA_nationalist_power = 20}
-set_variable = { GEA_mucke_reform_stability = 0.05}
-set_variable = { GEA_mucke_reform_war_support = 0.05}
 set_variable = { GEA_colonial_decision_cost_100 = 100 }
 set_variable = { GEA_colonial_decision_cost_50 = 50 }
 set_variable = { GEA_colonial_decision_cost_25 = 25 }

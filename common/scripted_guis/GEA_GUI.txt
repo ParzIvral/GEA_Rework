@@ -1395,6 +1395,12 @@ scripted_gui = {
 		}
 
 		effects = {
+			GEA_HNN_Map_click = {
+				GEA_Hnn_click_effect = yes
+			}
+			GEA_Shanxi_Map_click = {
+				GEA_Shx_click_effect = yes
+			}
 			GEA_SZC_Map_click = {
 				GEA_Szc_click_effect = yes
 			}

@@ -2057,6 +2057,8 @@ GEA_Szc_click_effect = { #四川
 	}
 	else = {
 		set_country_flag = SZC_OPEN
+		clr_country_flag = HNN_OPEN
+		clr_country_flag = SHX_OPEN
 		clr_country_flag = YUN_OPEN
 		clr_country_flag = LEP_OPEN
 		clr_country_flag = SQI_OPEN
@@ -2076,6 +2078,8 @@ GEA_Yun_click_effect = { #云南
 	else = {
 		clr_country_flag = SZC_OPEN
 		set_country_flag = YUN_OPEN
+		clr_country_flag = HNN_OPEN
+		clr_country_flag = SHX_OPEN
 		clr_country_flag = LEP_OPEN
 		clr_country_flag = SQI_OPEN
 		clr_country_flag = GXC_OPEN
@@ -2093,6 +2097,8 @@ GEA_Lep_click_effect = { #华东
 		clr_country_flag = SZC_OPEN
 		clr_country_flag = YUN_OPEN
 		set_country_flag = LEP_OPEN
+		clr_country_flag = HNN_OPEN
+		clr_country_flag = SHX_OPEN
 		clr_country_flag = SQI_OPEN
 		clr_country_flag = GXC_OPEN
 		clr_country_flag = QIE_OPEN
@@ -2109,6 +2115,8 @@ GEA_Sqi_click_effect = { #山东
 		clr_country_flag = SZC_OPEN
 		clr_country_flag = YUN_OPEN
 		set_country_flag = SQI_OPEN
+		clr_country_flag = HNN_OPEN
+		clr_country_flag = SHX_OPEN
 		clr_country_flag = LEP_OPEN
 		clr_country_flag = GXC_OPEN
 		clr_country_flag = QIE_OPEN
@@ -2125,6 +2133,8 @@ GEA_Gxc_click_effect = { #两广
 		clr_country_flag = SZC_OPEN
 		clr_country_flag = YUN_OPEN
 		set_country_flag = GXC_OPEN
+		clr_country_flag = HNN_OPEN
+		clr_country_flag = SHX_OPEN
 		clr_country_flag = LEP_OPEN
 		clr_country_flag = SQI_OPEN
 		clr_country_flag = QIE_OPEN
@@ -2141,6 +2151,8 @@ GEA_Zhili_click_effect = { #直隶
 		clr_country_flag = SZC_OPEN
 		clr_country_flag = YUN_OPEN
 		set_country_flag = QIE_OPEN
+		clr_country_flag = HNN_OPEN
+		clr_country_flag = SHX_OPEN
 		clr_country_flag = LEP_OPEN
 		clr_country_flag = SQI_OPEN
 		clr_country_flag = GXC_OPEN
@@ -2157,10 +2169,48 @@ GEA_Lec_click_effect = { #使馆城市
 		clr_country_flag = SZC_OPEN
 		clr_country_flag = YUN_OPEN
 		set_country_flag = LEC_OPEN
+		clr_country_flag = HNN_OPEN
+		clr_country_flag = SHX_OPEN
 		clr_country_flag = LEP_OPEN
 		clr_country_flag = SQI_OPEN
 		clr_country_flag = GXC_OPEN
 		clr_country_flag = QIE_OPEN
+	}
+}
+
+GEA_Hnn_click_effect = {
+	if = {
+		limit = { has_country_flag = HNN_OPEN }
+		clr_country_flag = HNN_OPEN
+	}
+	else = {
+		set_country_flag = HNN_OPEN
+		clr_country_flag = SZC_OPEN
+		clr_country_flag = YUN_OPEN
+		clr_country_flag = LEP_OPEN
+		clr_country_flag = SQI_OPEN
+		clr_country_flag = GXC_OPEN
+		clr_country_flag = QIE_OPEN
+		clr_country_flag = LEC_OPEN
+		clr_country_flag = SHX_OPEN
+	}
+}
+
+GEA_Shx_click_effect = {
+	if = {
+		limit = { has_country_flag = SHX_OPEN }
+		clr_country_flag = SHX_OPEN
+	}
+	else = {
+		set_country_flag = SHX_OPEN
+		clr_country_flag = SZC_OPEN
+		clr_country_flag = YUN_OPEN
+		clr_country_flag = LEP_OPEN
+		clr_country_flag = SQI_OPEN
+		clr_country_flag = GXC_OPEN
+		clr_country_flag = QIE_OPEN
+		clr_country_flag = LEC_OPEN
+		clr_country_flag = HNN_OPEN
 	}
 }
 

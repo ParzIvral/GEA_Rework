@@ -1,4 +1,37 @@
 on_actions = {
+	#每日校正一次华东铁路变量
+	on_daily = {
+		effect = {
+			if = {
+				limit = { tag = GEA }
+				GEA_clear_invalid_chinese_railway_revenue_effect = yes
+			}
+		}
+	}
+	on_government_change = {
+		effect = {
+			if = {
+				limit = {
+					GEA_china_warlord_cannot_interact_trigger = yes
+					OR = {
+						has_idea = GEA_german_controlled_economic_market
+						has_idea = GEA_mark_trade_settlement
+						has_idea = GEA_gxc_german_capital_1
+						has_idea = GEA_gxc_german_capital_2
+						has_idea = GEA_gxc_german_capital_3
+						has_idea = GEA_german_controlled_economic_market_Yun_1
+						has_idea = GEA_german_controlled_economic_market_Yun_2
+						has_idea = GEA_german_controlled_economic_market_Yun_3
+						has_idea = GEA_german_controlled_economic_market_Yun_4
+						has_idea = GEA_german_controlled_economic_market_Yun_5
+						has_idea = GEA_Repaying_German_Loan
+					}
+				}
+				GEA_clear_chinese_warlord_exploitation_effect = yes
+			}
+			GEA = { GEA_clear_invalid_chinese_railway_revenue_effect = yes }
+		}
+	}
 	# 舍尔纳路线的独立抵抗度：每日仅校正范围，不自动增减
 	on_monthly_GEA = {
 		effect = {

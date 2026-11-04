@@ -811,3 +811,91 @@ GEA_gxc_count_first_stage_investments_effect = {
 		}
 	}
 }
+
+#实际移除一座工厂，再向GEA提供同类型工厂
+GEA_aog_transfer_one_factory_effect = {
+	if = {
+		limit = { 
+			any_owned_state = { 
+				is_controlled_by = PREV 
+				industrial_complex > 0 
+			} 
+		}
+		random_owned_state = {
+			limit = { 
+				is_controlled_by = PREV 
+				industrial_complex > 0 
+			}
+			remove_building = { 
+				type = industrial_complex 
+				level = 1 
+			}
+		}
+		GEA = {
+			if = {
+				limit = { any_owned_state = { is_controlled_by = PREV free_building_slots = { building = industrial_complex size = 1 include_locked = yes } } }
+				random_owned_state = {
+					limit = { is_controlled_by = PREV free_building_slots = { building = industrial_complex size = 1 include_locked = yes } }
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+				}
+			}
+			else = { add_offsite_building = { type = industrial_complex level = 1 } }
+		}
+	}
+	else_if = {
+		limit = { any_owned_state = { is_controlled_by = PREV arms_factory > 0 } }
+		random_owned_state = {
+			limit = { is_controlled_by = PREV arms_factory > 0 }
+			remove_building = { type = arms_factory level = 1 }
+		}
+		GEA = {
+			if = {
+				limit = { any_owned_state = { is_controlled_by = PREV free_building_slots = { building = arms_factory size = 1 include_locked = yes } } }
+				random_owned_state = {
+					limit = { is_controlled_by = PREV free_building_slots = { building = arms_factory size = 1 include_locked = yes } }
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = { type = arms_factory level = 1 instant_build = yes }
+				}
+			}
+			else = { add_offsite_building = { type = arms_factory level = 1 } }
+		}
+	}
+}
+
+#目标军阀作用域：终止德资剥削收益与未结借贷
+GEA_clear_chinese_warlord_exploitation_effect = {
+	hidden_effect = {
+		remove_ideas = GEA_german_controlled_economic_market
+		remove_ideas = GEA_mark_trade_settlement
+		remove_ideas = GEA_gxc_german_capital_1
+		remove_ideas = GEA_gxc_german_capital_2
+		remove_ideas = GEA_gxc_german_capital_3
+		remove_ideas = GEA_german_controlled_economic_market_Yun_1
+		remove_ideas = GEA_german_controlled_economic_market_Yun_2
+		remove_ideas = GEA_german_controlled_economic_market_Yun_3
+		remove_ideas = GEA_german_controlled_economic_market_Yun_4
+		remove_ideas = GEA_german_controlled_economic_market_Yun_5
+		if = {
+			limit = { OR = { has_idea = GEA_Repaying_German_Loan has_country_flag = GEA_german_loan_active } }
+			GEA_clear_german_loan_effect = yes
+		}
+	}
+}
+
+#GEA作用域：华东实际控制者不可互动时清空铁路收益，防止旧值重新启用
+GEA_clear_invalid_chinese_railway_revenue_effect = {
+	hidden_effect = {
+		if = {
+			limit = {
+				OR = {
+					has_dynamic_modifier = GEA_east_china_railway_revenue
+					check_variable = { GEA_east_china_railway_consumer_goods_factor < 0 }
+				}
+				NOT = { GEA_nanjing_non_anti_concession_controller_trigger = yes }
+			}
+			set_variable = { GEA_east_china_railway_consumer_goods_factor = 0 }
+			remove_dynamic_modifier = GEA_east_china_railway_revenue
+		}
+	}
+}

@@ -4165,6 +4165,273 @@ add_namespace = GEA_news
 			custom_effect_tooltip = GEA_Indochina_Stability_Up
 		}
 	}
+
+	country_event = { #兑现我们的承诺
+		id = GEA.119
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.119" }
+		title = GEA.119.t
+		desc = GEA.119.d
+		
+		picture = GFX_GEA_18
+		fire_only_once = yes
+		
+		trigger = {
+			tag = GEA
+			has_country_flag = GEA_Governor_Hahl_flag
+			has_country_leader = { character = GEA_Albert_Hahl ruling_only = yes }
+			OR = {
+				JAP = {
+					exists = yes
+					OR = {
+						is_subject_of = GER
+						is_subject_of = GEA
+						is_in_faction_with = GEA
+					}
+				}
+				AND = {
+					has_global_flag = JAP_Fading_Sun
+					NOT = { has_war_with = JAP }
+				}
+			}
+		}
+
+		option = {
+			name = GEA.119.a
+			country_event = {
+				id = GEA.120
+				days = 10
+			}
+			add_political_power = -30
+		}
+	}
+
+	country_event = { #土著居民议会？
+		id = GEA.120
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.120" }
+		title = GEA.120.t
+		desc = GEA.120.d
+		
+		picture = GFX_GEA_18
+
+		is_triggered_only = yes
+		fire_only_once = yes
+		trigger = {
+			tag = GEA
+			has_country_flag = GEA_Governor_Hahl_flag
+			has_country_leader = { character = GEA_Albert_Hahl ruling_only = yes }
+		}
+
+		option = {
+			name = GEA.120.a #言必信，行必果。
+			country_event = {
+				id = GEA.121
+				days = 10
+			}
+			add_political_power = -50
+		}
+	}
+
+	country_event = { #呼吁开放选举
+		id = GEA.121
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.121" }
+		title = GEA.121.t
+		desc = GEA.121.d
+		
+		picture = GFX_GEA_17
+
+		is_triggered_only = yes
+		fire_only_once = yes
+		trigger = {
+			tag = GEA
+			has_country_flag = GEA_Governor_Hahl_flag
+			has_country_leader = { character = GEA_Albert_Hahl ruling_only = yes }
+		}
+
+		option = {
+			ai_chance = {
+				factor = 25
+			}
+			name = GEA.121.a # yes
+			country_event = {
+				id = GEA.122
+				days = 30
+			}
+			add_political_power = -100
+			add_stability = -0.04
+
+		}
+		option = {
+			ai_chance = {
+				factor = 75
+			}
+			name = GEA.121.b # no!
+			add_political_power = -200
+			add_stability = -0.08
+		}
+	}
+
+	country_event = { #德属东亚议会第一届大选
+		id = GEA.122
+		title = GEA.122.t
+		desc = GEA.122.d
+		
+		immediate = {
+			log = "[GetDateText]: [Root.GetName]: event GEA.122"
+			hidden_effect = {
+				set_party_name = {
+					ideology = social_conservative
+					name = GEA_social_conservative_party2
+					long_name = GEA_social_conservative_party2_long
+				}
+				set_party_name = {
+					ideology = market_liberal
+					name = GEA_market_liberal_party2
+					long_name = GEA_market_liberal_party2_long
+				}
+				set_party_name = {
+					ideology = social_liberal
+					name = GEA_social_liberal_party2
+					long_name = GEA_social_liberal_party2_long
+				}
+				set_party_name = {
+					ideology = social_democrat
+					name = GEA_social_democrat_party2
+					long_name = GEA_social_democrat_party2_long
+				}
+			}
+		}
+		
+		picture = GFX_report_event_AST_election
+
+		is_triggered_only = yes
+		fire_only_once = yes
+		trigger = {
+			tag = GEA
+			has_country_flag = GEA_Governor_Hahl_flag
+			has_country_leader = { character = GEA_Albert_Hahl ruling_only = yes }
+		}
+
+		option = {	
+			ai_chance = {
+				factor = 30
+			}
+			name = GEA.122.a # soccons
+			set_politics = {
+				ruling_party = social_conservative
+				elections_allowed = no
+			}
+			add_popularity = {
+				ideology = social_conservative
+				popularity = 0.3
+			}
+			set_country_flag = LEADER_GUI_VISIBLE
+			add_country_leader_role = {
+				character = GEA_Albert_Hahl
+				promote_leader = yes
+				country_leader = {
+					ideology = national_conservative_subtype
+					desc = POLITICS_ALBERT_HAHL_DESC
+					traits = { modernizer }
+				}
+			}
+			custom_effect_tooltip = soccon_national_conservative_subtype_swap_tt
+			remove_all_ministers = yes
+			add_ideas = GEA_Ibrahim_of_Johor_hog_sco
+			add_ideas = GEA_Oskar_Trautmann_for_mli
+			add_ideas = GEA_Hans_Walz_eco_sco
+			add_ideas = GEA_Josias_zu_Waldeck_und_Pyrmont_sec_pau
+		}
+		option = {
+			ai_chance = {
+				factor = 20
+			}
+			name = GEA.122.b # marlibs
+			set_politics = {
+				ruling_party = market_liberal
+				elections_allowed = no
+			}
+			add_popularity = {
+				ideology = market_liberal
+				popularity = 0.3
+			}
+			set_country_flag = LEADER_GUI_VISIBLE
+			add_country_leader_role = {
+				character = GEA_Albert_Hahl
+				promote_leader = yes
+				country_leader = {
+					ideology = humanistic_capitalism_subtype
+					desc = POLITICS_ALBERT_HAHL_DESC
+					traits = { modernizer }
+				}
+			}
+			custom_effect_tooltip = marlib_humanistic_capitalism_subtype_swap_tt
+			remove_all_ministers = yes
+			add_ideas = GEA_Le_Phat_An_hog_mli
+			add_ideas = GEA_Oskar_Trautmann_for_mli
+			add_ideas = GEA_Hans_Driesch_eco_mli
+			add_ideas = GEA_Wilhelm_Schrameier_sec_sli
+		}
+		option = {
+			ai_chance = {
+				factor = 20
+			}
+			name = GEA.122.c # soclibs
+			set_politics = {
+				ruling_party = social_liberal
+				elections_allowed = no
+			}
+			add_popularity = {
+				ideology = social_liberal
+				popularity = 0.3
+			}
+			set_country_flag = LEADER_GUI_VISIBLE
+			add_country_leader_role = {
+				character = GEA_Albert_Hahl
+				promote_leader = yes
+				country_leader = {
+					ideology = soclib_popular_patriotism_subtype
+					desc = POLITICS_ALBERT_HAHL_DESC
+					traits = { modernizer }
+				}
+			}
+			custom_effect_tooltip = soclib_soclib_popular_patriotism_subtype_swap_tt
+			remove_all_ministers = yes
+			add_ideas = GEA_Paul_Estebe_hog_sli
+			add_ideas = GEA_Paul_Schneider_for_sde
+			add_ideas = GEA_Hans_Driesch_eco_mli
+			add_ideas = GEA_Wilhelm_Schrameier_sec_sli
+		}
+		option = {
+			ai_chance = {
+				factor = 15
+			}
+			name = GEA.122.d # socdems
+			set_politics = {
+				ruling_party = social_democrat
+				elections_allowed = no
+			}
+			add_popularity = {
+				ideology = social_democrat
+				popularity = 0.3
+			}
+			set_country_flag = LEADER_GUI_VISIBLE
+			add_country_leader_role = {
+				character = GEA_Albert_Hahl
+				promote_leader = yes
+				country_leader = {
+					ideology = socdem_paternal_socialism_subtype
+					desc = POLITICS_ALBERT_HAHL_DESC
+					traits = { modernizer }
+				}
+			}
+			custom_effect_tooltip = socdem_socdem_paternal_socialism_subtype_swap_tt
+			remove_all_ministers = yes
+			add_ideas = GEA_Lim_Yew_Hock_hog_sde
+			add_ideas = GEA_Paul_Schneider_for_sde
+			add_ideas = GEA_Ernst_Boerschmann_eco_sli
+			add_ideas = GEA_Dietrich_Bonhoeffer_sec_sde
+		}
+	}
 #约西亚斯
 	country_event = {#驯服东方卡特尔
 		id = GEA.200
@@ -7922,31 +8189,6 @@ add_namespace = GEA_news
 			add_ideas = GEA_naval_attache_idea
 		}
 	}
-
-	country_event = { # GEA reacts to AOG collapse
-		id = GEA.819
-		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.819" }
-		title = GEA.819.t
-		desc = GEA.819.d
-		picture = GFX_report_event_falkenhausen
-
-		fire_only_once = yes
-
-		trigger = {
-			tag = GEA
-			NOT = {
-				country_exists = AOG
-			}
-		}
-
-		option = {
-			name = GEA.819.a
-			hidden_effect = {
-				GEA = { clr_country_flag = Alexander_von_Falkenhausen_dead }
-				LEP = { set_country_flag = Alexander_von_Falkenhausen_dead }
-			}
-		}
-	}
 	country_event = { #与帝国公约谈和
 		id = GEA.820
 		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.820" }
@@ -8193,6 +8435,9 @@ add_namespace = GEA_news
 					long_name = GEA_SQI_maintenance_party_long
 				}
 				set_cosmetic_tag = GEA_SQI_maintenance
+				hidden_effect = {
+					GEA_Tang_Yangdu = { unit_leader_event = { id = GEA.840 days = 2 } }
+				}
 			}
 		}
 		option = {
@@ -8447,7 +8692,10 @@ add_namespace = GEA_news
 		option = {
 			name = GEA.832.b
 			ai_chance = { factor = 25 }
-			GEA = { create_wargoal = { type = annex_everything target = GXC } }
+			GEA = {
+				hidden_effect = { set_country_flag = GEA_liangguang_ultimatum_refused }
+				unlock_decision_tooltip = GEA_Enforce_the_Liangguang_Ultimatum
+			}
 		}
 	}
 
@@ -8567,12 +8815,9 @@ add_namespace = GEA_news
 				}
 			}
 			GXC = {
-				create_country_leader = {
-					name = "Chen Lianbo"
-					desc = "POLITICS_GXC_CHEN_LIANBO_DESC"
-					picture = "gfx/leaders/GXC/Portrait_GXC_Chen_Lianbo.png"
-					expire = "1.1.1"
-					ideology = marlib_warlordism_subtype
+				if = {
+					limit = { NOT = { has_character = GEA_Chen_Lianbo } }
+					recruit_character = GEA_Chen_Lianbo
 				}
 				add_popularity = { ideology = market_liberal popularity = 0.30 }
 				set_politics = { ruling_party = market_liberal elections_allowed = no }
@@ -8581,11 +8826,329 @@ add_namespace = GEA_news
 					name = GXC_market_liberal_party
 					long_name = GXC_market_liberal_party_long
 				}
-				hidden_effect = { set_merchant_ministers = yes }
+				promote_character = { character = GEA_Chen_Lianbo ideology = marlib_warlordism_subtype }
+				hidden_effect = {
+					set_merchant_ministers = yes
+					GEA_Chen_Lianbo = { unit_leader_event = { id = GEA.841 days = 2 } }
+				}
 			}
 		}
 	}
 
+	country_event = { #里斯本热线：澳门与东帝汶最后通牒
+		id = GEA.837
+		title = GEA.837.t
+		desc = GEA.837.d
+		picture = GFX_GEA_Portuguese_Macau
+		fire_only_once = yes
+		is_triggered_only = yes
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.837" }
+
+		option = {
+			name = GEA.837.a
+			ai_chance = { factor = 75 }
+			GEA = { country_event = { id = GEA.834 days = 1 } }
+		}
+		option = {
+			name = GEA.837.b
+			ai_chance = { factor = 25 }
+			GEA = { country_event = { id = GEA.835 days = 1 } }
+		}
+	}
+
+	unit_leader_event = { #云南省临时政府
+		id = GEA.838
+		title = GEA.838.t
+		desc = GEA.838.d
+		fire_only_once = yes
+		is_triggered_only = yes
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.838" }
+
+		option = {
+			name = GEA.838.a
+			GEA = {
+				hidden_effect = {
+					every_state = {
+						limit = {
+							OR = { state = 325 state = 603 state = 816 state = 1051 }
+							is_controlled_by = GEA
+						}
+						YUN = { transfer_state = PREV }
+					}
+					YUN = {
+						if = {
+							limit = { owns_state = 325 }
+							set_capital = { state = 325 remember_old_capital = no }
+						}
+						if = {
+							limit = { is_in_faction = yes NOT = { is_in_faction_with = GEA } }
+							leave_faction = yes
+						}
+					}
+					set_autonomy = {
+						target = YUN
+						autonomy_state = kr_default_puppet
+						end_wars = yes
+						end_civil_wars = yes
+					}
+					if = {
+						limit = { is_in_faction = yes YUN = { NOT = { is_in_faction_with = GEA } } }
+						faction_leader = { add_to_faction = YUN }
+					}
+					YUN = {
+						clr_country_flag = GEA_china_warlord_interaction_blocked
+						clr_country_flag = GEA_german_coup_defeated
+						set_country_flag = GEA_yun_puppet_administration_established
+					}
+				}
+				YUN = {
+					GEA_Zhao_Yusong = { set_nationality = YUN }
+					add_popularity = { ideology = paternal_autocrat popularity = 0.30 }
+					set_politics = { ruling_party = paternal_autocrat elections_allowed = no }
+					promote_character = { character = GEA_Zhao_Yusong ideology = kleptocracy_subtype }
+					set_party_name = {
+						ideology = paternal_autocrat
+						name = GEA_YUN_german_party
+						long_name = GEA_YUN_german_party_long
+					}
+					set_cosmetic_tag = GEA_YUN_german
+				}
+			}
+		}
+	}
+
+	unit_leader_event = { #四川省维持政府
+		id = GEA.839
+		title = GEA.839.t
+		desc = GEA.839.d
+		fire_only_once = yes
+		is_triggered_only = yes
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.839" }
+
+		option = {
+			name = GEA.839.a
+			GEA = {
+				hidden_effect = {
+					every_state = {
+						limit = {
+							OR = { state = 601 state = 605 state = 650 state = 661 state = 788 }
+							is_controlled_by = GEA
+						}
+						SZC = { transfer_state = PREV }
+					}
+					SZC = {
+						if = {
+							limit = { owns_state = 605 }
+							set_capital = { state = 605 remember_old_capital = no }
+						}
+						if = {
+							limit = { is_in_faction = yes NOT = { is_in_faction_with = GEA } }
+							leave_faction = yes
+						}
+					}
+					set_autonomy = {
+						target = SZC
+						autonomy_state = kr_default_puppet
+						end_wars = yes
+						end_civil_wars = yes
+					}
+					if = {
+						limit = { is_in_faction = yes SZC = { NOT = { is_in_faction_with = GEA } } }
+						faction_leader = { add_to_faction = SZC }
+					}
+					SZC = {
+						clr_country_flag = GEA_china_warlord_interaction_blocked
+						clr_country_flag = GEA_german_coup_defeated
+						set_country_flag = GEA_szc_puppet_administration_established
+					}
+				}
+				SZC = {
+					GEA_Yao_Zuobin = { set_nationality = SZC }
+					add_popularity = { ideology = paternal_autocrat popularity = 0.30 }
+					set_politics = { ruling_party = paternal_autocrat elections_allowed = no }
+					promote_character = { character = GEA_Yao_Zuobin ideology = pataut_police_state_subtype }
+					set_party_name = {
+						ideology = paternal_autocrat
+						name = GEA_SZC_german_party
+						long_name = GEA_SZC_german_party_long
+					}
+					set_cosmetic_tag = GEA_SZC_german
+				}
+			}
+		}
+	}
+
+	unit_leader_event = { #唐仰杜上任后的角色事件
+		id = GEA.840
+		title = GEA.840.t
+		desc = GEA.840.d
+		is_triggered_only = yes
+		fire_only_once = yes
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.840" }
+		option = {
+			name = GEA.840.a
+		}
+	}
+
+	unit_leader_event = { #陈廉伯上任后的角色事件
+		id = GEA.841
+		title = GEA.841.t
+		desc = GEA.841.d
+		is_triggered_only = yes
+		fire_only_once = yes
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.841" }
+		option = {
+			name = GEA.841.a
+		}
+	}
+
+	country_event = { #对云南的最后通牒
+		id = GEA.842
+		title = GEA.842.t
+		desc = GEA.842.d
+		is_triggered_only = yes
+		fire_only_once = yes
+		trigger = {
+			tag = YUN
+			country_exists = GEA
+			is_subject = no
+			NOT = { has_war_with = GEA }
+		}
+		option = {
+			name = GEA.842.a
+			ai_chance = { factor = 75 }
+			if = {
+				limit = { is_in_faction = yes NOT = { is_in_faction_with = GEA } }
+				leave_faction = yes
+			}
+			GEA = {
+				set_autonomy = {
+					target = YUN
+					autonomy_state = kr_default_puppet
+					end_wars = yes
+					end_civil_wars = yes
+				}
+				if = {
+					limit = { is_in_faction = yes }
+					faction_leader = { add_to_faction = YUN }
+				}
+			}
+			hidden_effect = {
+				clr_country_flag = GEA_china_warlord_interaction_blocked
+				clr_country_flag = GEA_german_coup_defeated
+			}
+		}
+		option = {
+			name = GEA.842.b
+			ai_chance = { factor = 25 }
+			set_country_flag = GEA_china_warlord_interaction_blocked
+			GEA_clear_chinese_warlord_exploitation_effect = yes
+			if = {
+				limit = { is_in_faction_with = GEA }
+				leave_faction = yes
+			}
+			GEA = {
+				GEA_clear_invalid_chinese_railway_revenue_effect = yes
+				country_event = { id = GEA.844 }
+			}
+		}
+	}
+
+	country_event = { #对四川的最后通牒
+		id = GEA.843
+		title = GEA.843.t
+		desc = GEA.843.d
+		is_triggered_only = yes
+		fire_only_once = yes
+		trigger = {
+			tag = SZC
+			country_exists = GEA
+			is_subject = no
+			NOT = { has_war_with = GEA }
+		}
+		option = {
+			name = GEA.843.a
+			ai_chance = { factor = 75 }
+			if = {
+				limit = { is_in_faction = yes NOT = { is_in_faction_with = GEA } }
+				leave_faction = yes
+			}
+			GEA = {
+				set_autonomy = {
+					target = SZC
+					autonomy_state = kr_default_puppet
+					end_wars = yes
+					end_civil_wars = yes
+				}
+				if = {
+					limit = { is_in_faction = yes }
+					faction_leader = { add_to_faction = SZC }
+				}
+			}
+			hidden_effect = {
+				clr_country_flag = GEA_china_warlord_interaction_blocked
+				clr_country_flag = GEA_german_coup_defeated
+			}
+		}
+		option = {
+			name = GEA.843.b
+			ai_chance = { factor = 25 }
+			set_country_flag = GEA_china_warlord_interaction_blocked
+			GEA_clear_chinese_warlord_exploitation_effect = yes
+			if = {
+				limit = { is_in_faction_with = GEA }
+				leave_faction = yes
+			}
+			GEA = {
+				GEA_clear_invalid_chinese_railway_revenue_effect = yes
+				country_event = { id = GEA.845 }
+			}
+		}
+	}
+
+	country_event = { #云南拒绝最后通牒
+		id = GEA.844
+		title = GEA.844.t
+		desc = GEA.844.d
+		is_triggered_only = yes
+		fire_only_once = yes
+		option = {
+			name = GEA.844.a
+			ai_chance = { factor = 10 }
+			trigger = {
+				YUN = { exists = yes NOT = { is_subject_of = GEA } }
+				NOT = { has_war_with = YUN }
+				NOT = { is_in_faction_with = YUN }
+			}
+			declare_war_on = { target = YUN type = annex_everything }
+		}
+		option = {
+			name = GEA.844.b
+			ai_chance = { factor = 90 }
+		}
+	}
+
+	country_event = { #四川拒绝最后通牒
+		id = GEA.845
+		title = GEA.845.t
+		desc = GEA.845.d
+		is_triggered_only = yes
+		fire_only_once = yes
+		option = {
+			name = GEA.845.a
+			ai_chance = { factor = 10 }
+			trigger = {
+				SZC = { exists = yes NOT = { is_subject_of = GEA } }
+				NOT = { has_war_with = SZC }
+				NOT = { is_in_faction_with = SZC }
+			}
+			declare_war_on = { target = SZC type = annex_everything }
+		}
+		option = {
+			name = GEA.845.b
+			ai_chance = { factor = 90 }
+		}
+	}
 
 	country_event = { #里斯本接受最后通牒
 		id = GEA.834
@@ -9410,576 +9973,77 @@ add_namespace = GEA_news
         	set_country_flag = GEA_ferdinand_win
 		}
 	}
-country_event = {
-	id = GEA.1202
-	title = GEA.1202.t
-	desc = GEA.1202.d
-	is_triggered_only = yes
-	trigger = {
-		tag = JAP
-		has_war_with = FROM
-	}
-	immediate = {
-		log = "[GetDateText]: [Root.GetName]: event GEA.1202"
-	}
-	option = {
-		name = GEA.1202.a
-		ai_chance = {
-			factor = 50
-		}
-		FROM = {
-			save_event_target_as = white_peace_receiver
-		}
-		white_peace_with_TARGET = yes
-		FROM = {
-			country_event = {
-				id = GEA.1203
-				days = 1
-			}
-		}
-	}
-	option = {
-		name = GEA.1202.b
-		ai_chance = {
-			factor = 50
-		}
-		FROM = {
-			country_event = {
-				id = GEA.1204
-				days = 1
-			}
-		}
-	}
-}
-
-country_event = {
-	id = GEA.1203
-	title = GEA.1203.t
-	desc = GEA.1203.d
-	is_triggered_only = yes
-	option = {
-		name = GEA.1203.a
-	}
-}
-
-country_event = {
-	id = GEA.1204
-	title = GEA.1204.t
-	desc = GEA.1204.d
-	is_triggered_only = yes
-	option = {
-		name = GEA.1204.a
-	}
-}
-
-#事件
 	country_event = {
-		id = Ostasien.135
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.135" }
-		title = Ostasien.135.t
-		desc = Ostasien.135.d
-		picture = GFX_report_event_GER_cons
-
-		fire_only_once = yes
-
+		id = GEA.1202
+		title = GEA.1202.t
+		desc = GEA.1202.d
 		is_triggered_only = yes
-
-		option = {
-			name = Ostasien.135.a
-			ai_chance = {
-				factor = 90
-			}
-			set_country_flag = GEA_has_election		
-			country_event = {
-				id = Ostasien.136
-				days = 10
-			}			
+		trigger = {
+			tag = JAP
+			has_war_with = FROM
 		}
-		
-		option = {
-			name = Ostasien.135.b
-			ai_chance = {
-				factor = 10
-			}
-		}
-	}
-	country_event = {
-		id = Ostasien.136
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.136" }
-		title = Ostasien.136.t
-		desc = Ostasien.136.d
-		picture = GFX_report_event_GER_cons
-
-		fire_only_once = yes
-
-		is_triggered_only = yes
-
-		option = {
-			name = Ostasien.136.a
-			set_party_name = {
-				ideology = social_democrat
-				name = GEA_social_democrat_party_election
-				long_name = GEA_social_democrat_party_election_long
-			}	
-			create_country_leader = {
-				name = "Nguyen Thai Hoc"
-				picture = "gfx/leaders/INC/Portrait_INC_Nguyen_Tai_Hoc.png"
-				expire = "1.1.1"
-				ideology = socdem_left_nationalism_subtype
-				traits = {}
-			}	
-			set_party_name = {
-				ideology = social_liberal
-				name = GEA_social_liberal_party_election
-				long_name = GEA_social_liberal_party_election_long
-			}
-			create_country_leader = {
-				name = "Louis Mountbatten"
-				picture = "gfx/leaders/CAN/Portrait_Canada_Louis_Mountbatten.png"
-				expire = "1.1.1"
-				ideology = soclib_colonial_govt_subtype
-				traits = {}
-			}	
-			set_party_name = {
-				ideology = market_liberal
-				name = GEA_market_liberal_party_election
-				long_name = GEA_market_liberal_party_election_long
-			}	
-			create_country_leader = {
-				name = "Alfried Krupp"
-				picture = "gfx/leaders/GEA/Portrait_GEA_Alfried_Krupp.png"
-				expire = "1.1.1"
-				ideology = free_market_capitalist_subtype
-				traits = {}
-			}
-			set_party_name = {
-				ideology = authoritarian_democrat
-				name = GEA_authoritarian_democrat_party_election
-				long_name = GEA_authoritarian_democrat_party_election_long
-			}	
-			create_country_leader = {
-				name = "Ibrahim I Johor"
-				picture = "gfx/leaders/MLY/Portrait_Malaya_Ibrahim_I_Johor.png"
-				expire = "1.1.1"
-				ideology = oligarchy_subtype
-				traits = {}
-			}
-			set_party_name = {
-				ideology = paternal_autocrat
-				name = GEA_paternal_autocrat_party_election
-				long_name = GEA_paternal_autocrat_party_election_long
-			}
-			set_party_name = {
-				ideology = national_populist
-				name = GEA_national_populist_party_election
-				long_name = GEA_national_populist_party_election_long
-			}		
-		}
-	}
-	country_event = {
-		id = Ostasien.137
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.137" }
-		title = Ostasien.137.t
-		desc = Ostasien.137.d
-		picture = GFX_report_event_AST_election
-
-		fire_only_once = yes
-
-		is_triggered_only = yes
-
-		option = {	
-			ai_chance = {
-				factor = 30
-			}
-			name = Ostasien.137.a # soccons
-			add_popularity = {
-				ideology = social_conservative
-				popularity = 0.2
-			}
-		}
-		option = {	
-			ai_chance = {
-				factor = 20
-			}
-			name = Ostasien.137.b
-			set_politics = {
-				ruling_party = market_liberal
-				elections_allowed = no
-			}
-			add_popularity = {
-				ideology = market_liberal
-				popularity = 0.3
-			}
-			remove_all_ministers = yes
-			add_ideas = GEA_Alfried_Krupp_hog_sco
-			add_ideas = GEA_Oskar_Trautmann_for_mli
-			add_ideas = GEA_Hans_Driesch_eco_mli
-			add_ideas = GEA_Wilhelm_Schrameier_sec_sli
-		}
-		option = {	
-			ai_chance = {
-				factor = 10
-			}
-			name = Ostasien.137.c
-			set_politics = {
-				ruling_party = social_liberal
-				elections_allowed = no
-			}
-			add_popularity = {
-				ideology = social_liberal
-				popularity = 0.3
-			}
-			remove_all_ministers = yes
-			add_ideas = SAR_Sir_Oliver_Wilkinson_hog_mli
-			add_ideas = GEA_Paul_Schneider_for_sde
-			add_ideas = GEA_Hans_Driesch_eco_mli
-			add_ideas = GEA_Wilhelm_Schrameier_sec_sli
-		}
-		option = {	
-			ai_chance = {
-				factor = 20
-			}
-			name = Ostasien.137.e
-			set_politics = {
-				ruling_party = social_democrat
-				elections_allowed = no
-			}
-			add_popularity = {
-				ideology = social_democrat
-				popularity = 0.3
-			}
-			remove_all_ministers = yes
-			add_ideas = GEA_Georg_Weig_hog_sde
-			add_ideas = GEA_Paul_Schneider_for_sde
-			add_ideas = GEA_Ernst_Boerschmann_eco_sli
-			add_ideas = GEA_Dietrich_Bonhoeffer_sec_sde
-		}
-		option = {	
-			ai_chance = {
-				factor = 10
-			}
-			name = Ostasien.137.f
-			set_politics = {
-				ruling_party = authoritarian_democrat
-				elections_allowed = no
-			}
-			add_popularity = {
-				ideology = authoritarian_democrat
-				popularity = 0.3
-			}
-			add_ideas = {
-				MLY_Ibrahim_I_of_Johor_hog_ade
-				GEA_Oskar_Trautmann_for_mli
-				GEA_Hans_Walz_eco_sco
-				GEA_Josias_zu_Waldeck_und_Pyrmont_sec_pau
-			}
-		}
-	}
-#外交事件
-	country_event = {
-		id = Ostasien.801
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.801" }
-		title = Ostasien.801.t
-		desc = Ostasien.801.d
-		picture = GFX_GEA_yunnan_mine
-
-		fire_only_once = yes
-		is_triggered_only = yes
-
-		option = { 
-			name = Ostasien.801.a
-			ai_chance = {
-				factor = 80
-			}
-			YUN = {
-				give_resource_rights = {
-				state = 816
-				receiver = GEA
-				}
-				add_political_power = 100
-				add_offsite_building = { type = industrial_complex level = 1 }
-			}	
-		}
-		option = { 
-			name = Ostasien.801.b
-			ai_chance = {
-				factor = 20
-			}
-			every_state = {
-				limit = {
-					is_core_of = YUN
-				}
-				add_claim_by = GEA
-			}
-			if = {
-				limit = {GEA = { is_ai = no} }
-				create_wargoal = {
-				type = annex_everything
-				target = YUN
-				}
-			}
-		}
-	}
-	country_event = { #里斯本热线：澳门与东帝汶最后通牒
-		id = Ostasien.802
-		title = Ostasien.802.t
-		desc = Ostasien.802.d
-		picture = GFX_GEA_Portuguese_Macau
-		fire_only_once = yes
-		is_triggered_only = yes
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.802" }
-
-		option = {
-			name = Ostasien.802.a
-			ai_chance = { factor = 75 }
-			GEA = { country_event = { id = GEA.834 days = 1 } }
+		immediate = {
+			log = "[GetDateText]: [Root.GetName]: event GEA.1202"
 		}
 		option = {
-			name = Ostasien.802.b
-			ai_chance = { factor = 25 }
-			GEA = { country_event = { id = GEA.835 days = 1 } }
-		}
-	}
-	country_event = {
-		id = Ostasien.809
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.809" }
-		title = Ostasien.809.t
-		desc = Ostasien.809.d
-		picture = GFX_GEA_guangzhou_obey
-
-		fire_only_once = yes
-		is_triggered_only = yes
-
-		option = { 
-			name = Ostasien.809.a
-			ai_chance = {
-			factor = 20
-			}
-			set_cosmetic_tag = GXC_german
-			if = {
-				limit = { GXC = {owns_state = 592 } }
-				GEA = { transfer_state = 592 }
-			}
-			GEA = {
-				set_autonomy = {
-					target = GXC
-					autonomous_state = kr_default_puppet
-				}
-			}
-			set_politics = {
-				ruling_party = paternal_autocrat 
-				elections_allowed = no
-			}
-			hidden_effect = {
-				add_popularity = {
-					ideology = market_liberal
-					popularity = 0.3
-				}
-				add_popularity = {
-					ideology = paternal_autocrat
-					popularity = 0.5
-				}
-				add_ideas = LEP_german_government	
-				remove_ideas = GXC_AOG_leftovers
-				remove_all_ministers = yes
-				add_ideas = {
-					AOG_Alfred_Felix_Alwyn_von_Krupp_von_Bohlen_und_Halbach_pos_gov
-					GXC_Shen_Hongying_for_pau
-					GXC_Tan_Haoming_eco_pau
-					GXC_Chen_Bingkun_sec_pau
-				}
-				create_country_leader = {
-					name = "Dietrich von Saucken"
-					picture = "gfx/leaders/GEA/Portrait_GEA_Dietrich_von_Saucken.png"
-					expire = "1.1.1"
-					ideology = autocratic_colonial_govt_subtype
-					traits = {}
-				}
-				create_country_leader = {
-					name = "Alfried Krupp"
-					picture = "gfx/leaders/GEA/Portrait_GEA_Alfried_Krupp.png"
-					expire = "1.1.1"
-					ideology = free_market_capitalist_subtype
-					traits = {}
-				}	
-				set_party_name = {
-					ideology = market_liberal
-					name = GEA_market_liberal_party_gxc
-					long_name = GEA_market_liberal_party_gxc_long
-				}
-				set_party_name = {
-					ideology = paternal_autocrat
-					name = GEA_paternal_autocrat_party_gxc
-					long_name = GEA_paternal_autocrat_party_gxc_long
-				}	
-			}
-		}
-		option = { 
-			name = Ostasien.809.b
-			ai_chance = {
-			factor = 80
-			}
-			GEA = {
-				create_wargoal = {
-				type = annex_everything
-				target = GXC
-				}
-			}
-		}
-	}
-	country_event = {
-		id = Ostasien.810
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.810" }
-		title = Ostasien.810.t
-		desc = Ostasien.810.d
-
-		fire_only_once = yes
-		is_triggered_only = yes
-
-		option = { 
-			name = Ostasien.810.a
-			ai_chance = {
-				factor = 30
-			}
-			GEA = {
-				annex_country = { target = PHI transfer_troops = no}	
-				every_state = {
-				limit = {
-					is_core_of = PHI
-					}
-					add_core_of = GEA
-				}
-			}
-		}
-		option = { 
-			name = Ostasien.810.b
-			ai_chance = {
-			factor = 70
-			}
-			GEA = {
-				create_wargoal = {
-				type = annex_everything
-				target = PHI
-				}
-			}
-			hidden_effect = {
-				every_state = {
-					limit = {
-						is_core_of = PHI
-					}
-					add_claim_by = GEA
-				}
-			}
-		}
-	}
-	country_event = {
-		id = Ostasien.811
-		immediate = { log = "[GetDateText]: [Root.GetName]: event Ostasien.811" }
-		title = Ostasien.811.t
-		desc = Ostasien.811.d
-
-		fire_only_once = yes
-		is_triggered_only = yes
-
-		option = { 
-			name = Ostasien.811.a
+			name = GEA.1202.a
 			ai_chance = {
 				factor = 50
 			}
-			GEA = {
-				annex_country = { target = HAW transfer_troops = no}	
-				every_state = {
-				limit = {
-					is_core_of = HAW
-					}
-					add_core_of = GEA
+			FROM = {
+				save_event_target_as = white_peace_receiver
+			}
+			white_peace_with_TARGET = yes
+			FROM = {
+				country_event = {
+					id = GEA.1203
+					days = 1
 				}
 			}
 		}
-		option = { 
-			name = Ostasien.811.b
+		option = {
+			name = GEA.1202.b
 			ai_chance = {
-			factor = 50
+				factor = 50
 			}
-			GEA = {
-				create_wargoal = {
-				type = annex_everything
-				target = HAW
-				}
-			}
-			hidden_effect = {
-				every_state = {
-					limit = {
-						is_core_of = HAW
-					}
-					add_claim_by = GEA
+			FROM = {
+				country_event = {
+					id = GEA.1204
+					days = 1
 				}
 			}
 		}
 	}
+
+	country_event = {
+		id = GEA.1203
+		title = GEA.1203.t
+		desc = GEA.1203.d
+		is_triggered_only = yes
+		option = {
+			name = GEA.1203.a
+		}
+	}
+
+	country_event = {
+		id = GEA.1204
+		title = GEA.1204.t
+		desc = GEA.1204.d
+		is_triggered_only = yes
+		option = {
+			name = GEA.1204.a
+		}
+	}
+
 
 #隐藏事件
-	country_event = { #北京立场变化：延迟两天通知德属东亚
-		id = GEA.12003
+	country_event = {
+		id = GEA.10000
+		is_triggered_only = yes
 		hidden = yes
-		fire_only_once = yes
-		trigger = {
-			tag = GEA
-			QIE = {
-				exists = yes
-				NOT = { has_country_flag = wu_intervenes_proLEP } #未支持南京
-				OR = {
-					has_country_flag = wu_intervenes_proANQ #支持安庆
-					has_country_flag = wu_no_intervene #双方都不支持
-				}
-			}
-		}
-		immediate = {
-			country_event = { id = GEA.825 days = 2 }
-		}
-	}
 
-	country_event = { #舍尔纳：完全控制最终宣称范围后授予核心
-		id = GEA.12002
-		hidden = yes
-		fire_only_once = yes
-
-		trigger = {
-			tag = GEA
-			has_country_flag = GEA_Governor_Schorner_flag
-			has_completed_focus = GEA_Let_loose_the_blood-stained_black_eagle
-			NOT = {
-				any_state = {
-					OR = {
-						is_china_claim_area = yes
-						is_mongolia = yes
-						region = 154
-						is_core_of = JAP
-						region = 191
-						is_southeast_asia = yes
-						is_russian_far_east = yes
-					}
-					NOT = { is_fully_controlled_by = ROOT }
-				}
-			}
-		}
-
-		immediate = {
-			log = "[GetDateText]: [Root.GetName]: event GEA.12002: Schorner claims become cores"
-			every_state = {
-				limit = {
-					OR = {
-						is_china_claim_area = yes
-						is_mongolia = yes
-						region = 154
-						is_core_of = JAP
-						region = 191
-						is_southeast_asia = yes
-						is_russian_far_east = yes
-					}
-				}
-				add_core_of = ROOT
-			}
+		option = {
+			add_research_slot = -1
 		}
 	}
 
@@ -10004,16 +10068,6 @@ country_event = {
 		}
 	}
 
-	country_event = {
-		id = GEA.10000
-		is_triggered_only = yes
-		hidden = yes
-
-		option = {
-			add_research_slot = -1
-		}
-	}
-
 	state_event = {
 		id = GEA.12000
 		hidden = yes
@@ -10025,7 +10079,6 @@ country_event = {
 			}
 		}
 	}
-
 
 	country_event = { # 回收新加坡的临时劫掠资源
 		id = GEA.12001
@@ -10088,6 +10141,121 @@ country_event = {
 				clr_country_flag = GEA_raided_resource_coal
 			}
 			clr_country_flag = GEA_raided_resources_doubled
+		}
+	}
+
+	country_event = { #舍尔纳：完全控制最终宣称范围后授予核心
+		id = GEA.12002
+		hidden = yes
+		fire_only_once = yes
+
+		trigger = {
+			tag = GEA
+			has_country_flag = GEA_Governor_Schorner_flag
+			has_completed_focus = GEA_Let_loose_the_blood-stained_black_eagle
+			NOT = {
+				any_state = {
+					OR = {
+						is_china_claim_area = yes
+						is_mongolia = yes
+						region = 154
+						is_core_of = JAP
+						region = 191
+						is_southeast_asia = yes
+						is_russian_far_east = yes
+					}
+					NOT = { is_fully_controlled_by = ROOT }
+				}
+			}
+		}
+
+		immediate = {
+			log = "[GetDateText]: [Root.GetName]: event GEA.12002: Schorner claims become cores"
+			every_state = {
+				limit = {
+					OR = {
+						is_china_claim_area = yes
+						is_mongolia = yes
+						region = 154
+						is_core_of = JAP
+						region = 191
+						is_southeast_asia = yes
+						is_russian_far_east = yes
+					}
+				}
+				add_core_of = ROOT
+			}
+		}
+	}
+
+	country_event = { #北京立场变化：延迟两天通知德属东亚
+		id = GEA.12003
+		hidden = yes
+		fire_only_once = yes
+		trigger = {
+			tag = GEA
+			QIE = {
+				exists = yes
+				NOT = { has_country_flag = wu_intervenes_proLEP } #未支持南京
+				OR = {
+					has_country_flag = wu_intervenes_proANQ #支持安庆
+					has_country_flag = wu_no_intervene #双方都不支持
+				}
+			}
+		}
+		immediate = {
+			country_event = { id = GEA.825 days = 2 }
+		}
+	}
+
+	country_event = { #YUN接管角色事件的自动入口
+		id = GEA.12004
+		hidden = yes
+		fire_only_once = yes
+		trigger = {
+			tag = GEA
+			OR = {
+				YUN = { exists = yes is_subject_of = GEA }
+				AND = {
+					controls_state = 325
+					controls_state = 603
+					controls_state = 816
+					controls_state = 1051
+				}
+			}
+		}
+		immediate = {
+			if = {
+				limit = { NOT = { has_character = GEA_Zhao_Yusong } }
+				recruit_character = GEA_Zhao_Yusong
+			}
+			GEA_Zhao_Yusong = { unit_leader_event = { id = GEA.838 } }
+		}
+	}
+
+	country_event = { #SZC接管角色事件的自动入口
+		id = GEA.12005
+		hidden = yes
+		fire_only_once = yes
+		trigger = {
+			tag = GEA
+			OR = {
+				SZC = { exists = yes is_subject_of = GEA }
+				AND = {
+					controls_state = 601
+					controls_state = 605
+					controls_state = 650
+					controls_state = 661
+					controls_state = 788
+				}
+			}
+		}
+		immediate = {
+			if = {
+				limit = { NOT = { has_character = GEA_Yao_Zuobin } }
+				recruit_character = GEA_Yao_Zuobin
+			}
+			GEA_Yao_Zuobin = { unit_leader_event = { id = GEA.839 } }
 		}
 	}
 
