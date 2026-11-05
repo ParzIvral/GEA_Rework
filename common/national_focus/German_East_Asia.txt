@@ -18461,7 +18461,7 @@ focus_tree = {
 				DYNMOD = GEA_army_air
 			}
 			add_to_variable = { GEA_airforce_air_bombing_targetting = 0.05 tooltip = air_bombing_targetting_tt }
-			add_to_variable = { GEA_airforce_air_close_air_support_org_damage_factor = 0.10 tooltip = air_close_air_support_org_damage_factor_tt }
+			add_to_variable = { GEA_airforce_air_close_air_support_org_damage_factor = 0.10 tooltip = GEA_airforce_air_close_air_support_org_damage_factor_tt }
 			add_equipment_bonus = {
 				name = GEA_Sowing_the_seeds_of_fire
 				bonus = {

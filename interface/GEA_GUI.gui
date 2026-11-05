@@ -178,7 +178,7 @@ guiTypes = {
 			position = { x = -130 y = -190 }
 			spriteType = "GEA_North_Borneo"
 			pdx_tooltip = "GEA_North_Borneo"
-			pdx_tooltip_delayed = "GEA_North_Borneo_DESC"
+			pdx_tooltip_delayed = "GEA_North_Borneo_desc"
 			scale = 0.3235
 		}
 
@@ -187,8 +187,8 @@ guiTypes = {
 			orientation = center
 			position = { x = -130 y = -190 }
 			spriteType = "GEA_South_Borneo"
-			pdx_tooltip = "GEA_North_Borneo"
-			pdx_tooltip_delayed = "GEA_South_Borneo_DESC"
+			pdx_tooltip = "GEA_South_Borneo"
+			pdx_tooltip_delayed = "GEA_South_Borneo_desc"
 			scale = 0.3235
 		}
 
@@ -198,7 +198,7 @@ guiTypes = {
 			position = { x = -130 y = -190 }
 			spriteType = "GEA_Borneo"
 			pdx_tooltip = "GEA_Borneo"
-			pdx_tooltip_delayed = "GEA_Borneo_DESC"
+			pdx_tooltip_delayed = "GEA_Borneo_desc"
 			scale = 0.3235
 		}
 

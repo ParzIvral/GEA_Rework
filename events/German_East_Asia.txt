@@ -3024,6 +3024,24 @@ add_namespace = GEA_news
 			custom_effect_tooltip = GEA_Indochina_Stability_Up_More
 		}
 	}
+
+	country_event = { #大明皇帝的身后事
+		id = GEA.61
+		title = GEA.61.t
+		desc = GEA.61.d
+		picture = GFX_GEA_72
+		fire_only_once = yes
+		trigger = {
+			tag = GEA
+			has_global_flag = LEP_league_war_over
+			LEP = { exists = yes }
+			check_variable = { GEA_china_lep_attitude > 60 }
+		}
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.61" }
+		option = {
+			name = GEA.61.a
+		}
+	}
 #阿尔伯特·哈尔路线
 	country_event = { #驾驭三头驮兽
 		id = GEA.101
@@ -5821,12 +5839,18 @@ add_namespace = GEA_news
 		
 		option = { #威廉·海耶继续执掌殖民地
 			name = GEA.500.a
+			ai_chance = {
+				factor = 50
+			}
 			army_experience = 60
 			add_command_power = 50
 		}
 		
 		option = { #赫尔穆特上台，并放松了其父的家长制作风
 			name = GEA.500.b 
+			ai_chance = {
+				factor = 30
+			}
 			add_political_power = 100
 			set_politics = {
 				ruling_party = authoritarian_democrat
@@ -5862,6 +5886,9 @@ add_namespace = GEA_news
 		
 		option = { #皇帝指定卢克纳尔接任海耶的职责
 			name = GEA.500.c
+			ai_chance = {
+				factor = 20
+			}
 			set_country_flag = GEA_Governor_Luckner_flag
 			set_politics = {
 				ruling_party = paternal_autocrat
@@ -5977,6 +6004,9 @@ add_namespace = GEA_news
 		is_triggered_only = yes
 
 		option = { #费迪南德·舍尔纳将挽救远东危局
+			ai_chance = {
+				factor = 20
+			}
 			name = GEA.503.a
 			clr_country_flag = GEA_Governor_Heye_flag
 			country_event = {
@@ -5986,6 +6016,9 @@ add_namespace = GEA_news
 		}
 
 		option = { #皇帝指定卢克纳尔接任海耶的职责
+			ai_chance = {
+				factor = 80
+			}
 			name = GEA.503.b
 			hidden_effect = { news_event = { id = GEA_news.7 days = 1 } }
 			clr_country_flag = GEA_Governor_Heye_flag
