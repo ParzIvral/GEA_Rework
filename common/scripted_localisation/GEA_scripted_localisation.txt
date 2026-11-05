@@ -326,7 +326,17 @@ defined_text = {
 defined_text = {
 	name = GetGEAGxcRegimeDescription
 	text = {
-		trigger = { GXC = { has_country_leader = { name = "Chen Lianbo" ruling_only = yes } } }
+		trigger = {
+			GXC = {
+				exists = yes
+				is_subject_of = GEA
+				has_country_leader = { character = GEA_Chen_Lianbo ruling_only = yes }
+			}
+		}
+		localization_key = GEA_GXC_Map_Merchant_Puppet_DESC
+	}
+	text = {
+		trigger = { GXC = { OR = { has_country_leader = { name = "Chen Lianbo" ruling_only = yes } has_country_leader = { character = GEA_Chen_Lianbo ruling_only = yes } } } }
 		localization_key = GEA_GXC_Map_Merchants_DESC
 	}
 	text = {
@@ -427,6 +437,16 @@ defined_text = {
 
 defined_text = {
 	name = GetGEAYunRegimeDescription
+	text = {
+		trigger = {
+			YUN = {
+				exists = yes
+				is_subject_of = GEA
+				has_country_leader = { character = GEA_Zhao_Yusong ruling_only = yes }
+			}
+		}
+		localization_key = GEA_YUN_Map_Zhao_Yusong_DESC
+	}
 	text = {
 		trigger = { YUN = { has_country_leader = { name = "Tang Jiyao" ruling_only = yes } } }
 		localization_key = GEA_YUN_Map_Tang_DESC
@@ -532,6 +552,16 @@ defined_text = {
 
 defined_text = {
 	name = GetGEASzcRegimeDescription
+	text = {
+		trigger = {
+			SZC = {
+				exists = yes
+				is_subject_of = GEA
+				has_country_leader = { character = GEA_Yao_Zuobin ruling_only = yes }
+			}
+		}
+		localization_key = GEA_SZC_Map_Yao_Zuobin_DESC
+	}
 	text = {
 		trigger = { SZC = { SZC_zhili_in_exile = yes } }
 		localization_key = GEA_SZC_Map_Zhili_DESC
@@ -847,6 +877,16 @@ defined_text = {
 
 defined_text = {
 	name = GetGEAZhiliRegimeDescription
+	text = {
+		trigger = {
+			QIE = {
+				exists = yes
+				is_subject_of = GEA
+				has_country_leader = { character = GEA_Wang_Kemin ruling_only = yes }
+			}
+		}
+		localization_key = GEA_Zhili_Map_Wang_Kemin_DESC
+	}
 	text = {
 		trigger = { QIE = { has_country_flag = QIE_yiguandao_couped } }
 		localization_key = GEA_Zhili_Map_Yiguandao_DESC

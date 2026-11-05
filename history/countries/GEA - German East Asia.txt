@@ -253,6 +253,11 @@ country_event = { #北圻大饥荒：1936年10月下旬
 	days = 300
 }
 
+country_event = { #1936.11.07 柏林的雨
+	id = GEA.63
+	days = 311
+}
+
 country_event = { 
 	id = GEA.20
 	days = 323 

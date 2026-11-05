@@ -6760,6 +6760,9 @@ focus_tree = {
 				GEA_Economic_production_speed_naval_base_factor = 0.15
 				tooltip = production_speed_naval_base_factor_tt
 			}
+			hidden_effect = {
+				country_event = { id = GEA.1001 days = 3 }
+			}
 		}
 	}
 	focus = { #深掘地下财富
@@ -8599,6 +8602,9 @@ focus_tree = {
 				tooltip = stability_weekly_tooltip
 			}
 			hidden_effect = { country_event = { id = GEA.54 days = 7 } }
+			hidden_effect = {
+				country_event = { id = GEA.62 days = 19 }
+			}
 		}
 	}
 	focus = { #殖民皇冠之上，明珠熠熠生辉
