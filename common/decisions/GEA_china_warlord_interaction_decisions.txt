@@ -309,7 +309,7 @@ GEA_china_warlord_interaction = {
 			OR = {
 				NOT = { country_exists = GEA }
 				has_war_with = GEA
-				NOT = { GEA_china_warlord_can_interact_trigger = yes }
+				GEA_china_warlord_cannot_interact_trigger = yes
 				NOT = { owns_state = 613 }
 				NOT = { controls_state = 613 }
 				GEA = { has_country_flag = GEA_railway_huning_bought_out }
@@ -365,7 +365,7 @@ GEA_china_warlord_interaction = {
 			OR = {
 				NOT = { country_exists = GEA }
 				has_war_with = GEA
-				NOT = { GEA_china_warlord_can_interact_trigger = yes }
+				GEA_china_warlord_cannot_interact_trigger = yes
 				NOT = { owns_state = 596 }
 				NOT = { controls_state = 596 }
 				NOT = { owns_state = 613 }
@@ -424,7 +424,7 @@ GEA_china_warlord_interaction = {
 			OR = {
 				NOT = { country_exists = GEA }
 				has_war_with = GEA
-				NOT = { GEA_china_warlord_can_interact_trigger = yes }
+				GEA_china_warlord_cannot_interact_trigger = yes
 				NOT = { owns_state = 613 }
 				NOT = { owns_state = 1044 }
 				NOT = { controls_state = 1044 }
@@ -466,6 +466,34 @@ GEA_china_warlord_interaction = {
 		}
 		available = {
 			NOT = { has_war_with = GEA }
+			if = {
+				limit = { is_ai = yes }
+				custom_trigger_tooltip = {
+					tooltip = GEA_warlord_expel_low_attitude_tt
+					OR = {
+						AND = {
+							original_tag = LEP
+							GEA = { check_variable = { GEA_china_lep_attitude < 20 } }
+						}
+						AND = {
+							original_tag = SQI
+							GEA = { check_variable = { GEA_china_sqi_attitude < 20 } }
+						}
+						AND = {
+							original_tag = GXC
+							GEA = { check_variable = { GEA_china_gxc_attitude < 20 } }
+						}
+						AND = {
+							original_tag = YUN
+							GEA = { check_variable = { GEA_china_yun_attitude < 20 } }
+						}
+						AND = {
+							original_tag = SZC
+							GEA = { check_variable = { GEA_china_szc_attitude < 20 } }
+						}
+					}
+				}
+			}
 		}
 
 		cost = 0
@@ -549,7 +577,7 @@ GEA_china_warlord_interaction = {
 			OR = {
 				NOT = { country_exists = GEA }
 				has_war_with = GEA
-				NOT = { GEA_china_warlord_can_interact_trigger = yes }
+				GEA_china_warlord_cannot_interact_trigger = yes
 			}
 		}
 
@@ -766,7 +794,7 @@ GEA_china_warlord_interaction = {
 			OR = {
 				NOT = { country_exists = GEA }
 				has_war_with = GEA
-				NOT = { GEA_china_warlord_can_interact_trigger = yes }
+				GEA_china_warlord_cannot_interact_trigger = yes
 			}
 		}
 
@@ -985,7 +1013,7 @@ GEA_china_warlord_interaction = {
 			OR = {
 				NOT = { country_exists = GEA }
 				has_war_with = GEA
-				NOT = { GEA_china_warlord_can_interact_trigger = yes }
+				GEA_china_warlord_cannot_interact_trigger = yes
 			}
 		}
 

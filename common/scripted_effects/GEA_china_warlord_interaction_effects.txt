@@ -895,7 +895,7 @@ GEA_clear_invalid_chinese_railway_revenue_effect = {
 				NOT = { GEA_nanjing_non_anti_concession_controller_trigger = yes }
 			}
 			set_variable = { GEA_east_china_railway_consumer_goods_factor = 0 }
-			remove_dynamic_modifier = GEA_east_china_railway_revenue
+			remove_dynamic_modifier = { modifier = GEA_east_china_railway_revenue }
 		}
 	}
 }

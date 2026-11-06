@@ -230,7 +230,7 @@ focus_tree = {
 		y = 1
 		available = {	
 			NOT = {
-				has_completed_focus = GEA_Our_white_glave
+				has_completed_focus = GEA_Return_to_the_Vietnamese_court
 			}	
 		}
         prerequisite = {
@@ -242,10 +242,7 @@ focus_tree = {
 			factor = 100
 			modifier = {
 				factor = 1000
-				has_game_rule = {
-					rule = GEA_future
-					option = GEA_FUTURE_REVOLT_NO
-				}
+				GEA_indochina_no_revolt_preset = yes
 			}
 		}
 		completion_reward = {
@@ -295,10 +292,7 @@ focus_tree = {
 			factor = 100
 			modifier = {
 				factor = 1000
-				has_game_rule = {
-					rule = GEA_future
-					option = GEA_FUTURE_REVOLT_NO
-				}
+				GEA_indochina_no_revolt_preset = yes
 			}
 		}
 		completion_reward = {
@@ -336,10 +330,7 @@ focus_tree = {
 			factor = 100
 			modifier = {
 				factor = 1000
-				has_game_rule = {
-					rule = GEA_future
-					option = GEA_FUTURE_REVOLT_NO
-				}
+				GEA_indochina_no_revolt_preset = yes
 			}
 		}
 		completion_reward = {
@@ -368,10 +359,7 @@ focus_tree = {
 			factor = 100
 			modifier = {
 				factor = 1000
-				has_game_rule = {
-					rule = GEA_future
-					option = GEA_FUTURE_REVOLT_NO
-				}
+				GEA_indochina_no_revolt_preset = yes
 			}
 		}
 		completion_reward = {
@@ -403,10 +391,7 @@ focus_tree = {
 			factor = 100
 			modifier = {
 				factor = 1000
-				has_game_rule = {
-					rule = GEA_future
-					option = GEA_FUTURE_REVOLT_NO
-				}
+				GEA_indochina_no_revolt_preset = yes
 			}
 		}
 		completion_reward = {
@@ -443,7 +428,7 @@ focus_tree = {
 		id = GEA_German-style_organization_local_employees #德式机构，本地雇员
 		icon = GFX_GEA_German-style_organization_local_employees
 		search_filters = { FOCUS_FILTER_INTERNAL_AFFAIRS }
-		cost = 5	
+		cost = 3	
 		x = 0
 		y = 3
 		available = {		
@@ -457,10 +442,7 @@ focus_tree = {
 			factor = 100
 			modifier = {
 				factor = 1000
-				has_game_rule = {
-					rule = GEA_future
-					option = GEA_FUTURE_REVOLT_NO
-				}
+				GEA_indochina_no_revolt_preset = yes
 			}
 		}
 		completion_reward = {
@@ -468,7 +450,7 @@ focus_tree = {
 			custom_effect_tooltip = GEA_German-style_organization_local_employees_tt
 			if = {
 				limit = {
-					check_variable = { GEA_Bureau_Of_Native_Affairs_Number = 4 }
+					check_variable = { GEA_Bureau_Of_Native_Affairs_Number > 3 }
 				}
 				add_popularity = {
 					ideology = social_conservative
@@ -564,10 +546,7 @@ focus_tree = {
 			factor = 100
 			modifier = {
 				factor = 1000
-				has_game_rule = {
-					rule = GEA_future
-					option = GEA_FUTURE_REVOLT_NO
-				}
+				GEA_indochina_no_revolt_preset = yes
 			}
 		}
 		completion_reward = {
@@ -642,10 +621,7 @@ focus_tree = {
 			factor = 100
 			modifier = {
 				factor = 1000
-				has_game_rule = {
-					rule = GEA_future
-					option = GEA_FUTURE_REVOLT_NO
-				}
+				GEA_indochina_no_revolt_preset = yes
 			}
 		}
 		completion_reward = {
@@ -723,10 +699,7 @@ focus_tree = {
 			factor = 100
 			modifier = {
 				factor = 1000
-				has_game_rule = {
-					rule = GEA_future
-					option = GEA_FUTURE_REVOLT_NO
-				}
+				GEA_indochina_no_revolt_preset = yes
 			}
 		}
 		completion_reward = {
@@ -773,10 +746,7 @@ focus_tree = {
 			factor = 100
 			modifier = {
 				factor = 1000
-				has_game_rule = {
-					rule = GEA_future
-					option = GEA_FUTURE_REVOLT_NO
-				}
+				GEA_indochina_no_revolt_preset = yes
 			}
 		}
 		completion_reward = {
@@ -1076,7 +1046,7 @@ focus_tree = {
 		id = GEA_Enlightenment_and_the_Mission_of_Education  
 		icon = GFX_GEA_Enlightenment_and_the_Mission_of_Education
 		search_filters = { FOCUS_FILTER_RESEARCH }
-		cost = 4	
+		cost = 3	
 		x = 0
 		y = 1
 		available = {		
@@ -1346,7 +1316,7 @@ focus_tree = {
 		id = GEA_Connecting_culture_with_nationality #连结文化与民族性
 		icon = GFX_GEA_Connecting_culture_with_nationality
 		search_filters = { FOCUS_FILTER_STABILITY }
-		cost = 1	
+		cost = 3	
 		x = -1
 		y = 1
 		available = {		
@@ -1359,10 +1329,7 @@ focus_tree = {
 			factor = 100
 			modifier = {
 				factor = 1000
-				has_game_rule = {
-					rule = GEA_future
-					option = GEA_FUTURE_REVOLT_NO
-				}
+				GEA_indochina_no_revolt_preset = yes
 			}
 		}
 		completion_reward = {
@@ -1404,7 +1371,7 @@ focus_tree = {
 		id = GEA_Restore_food_security #恢复粮食保障
 		icon = GFX_GEA_Restore_food_security
 		search_filters = { FOCUS_FILTER_INDUSTRY }
-		cost = 4	
+		cost = 3	
 		x = 0
 		y = 1
 		available = {		
@@ -1584,6 +1551,10 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Josias_Group"
 			custom_effect_tooltip = GEA_Josias_Group_tt
 			unlock_decision_category_tooltip = GEA_josias_decisions
+		
+			hidden_effect = {
+				GEA_ai_manage_josias_contacts_effect = yes
+			}
 		}
 	}
 
@@ -1613,6 +1584,10 @@ focus_tree = {
 			country_event = {
 				id = GEA.206
 			}
+		
+			hidden_effect = {
+				GEA_ai_manage_josias_contacts_effect = yes
+			}
 		}
 	}
 
@@ -1641,6 +1616,10 @@ focus_tree = {
 			}
 			country_event = {
 				id = GEA.209
+			}
+		
+			hidden_effect = {
+				GEA_ai_manage_josias_contacts_effect = yes
 			}
 		}
 	}
@@ -1672,6 +1651,10 @@ focus_tree = {
 			country_event = {
 				id = GEA.207
 			}
+		
+			hidden_effect = {
+				GEA_ai_manage_josias_contacts_effect = yes
+			}
 		}
 	}
 
@@ -1702,6 +1685,10 @@ focus_tree = {
 			country_event = {
 				id = GEA.210
 			}
+		
+			hidden_effect = {
+				GEA_ai_manage_josias_contacts_effect = yes
+			}
 		}
 	}
 
@@ -1730,6 +1717,10 @@ focus_tree = {
 			}
 			country_event = {
 				id = GEA.208
+			}
+		
+			hidden_effect = {
+				GEA_ai_manage_josias_contacts_effect = yes
 			}
 		}
 	}
@@ -6508,10 +6499,7 @@ focus_tree = {
 			factor = 50
 			modifier = {
 				factor = 4
-				has_game_rule = {
-					rule = GEA_future
-					option = GEA_FUTURE_REVOLT_NO
-				}
+				GEA_indochina_no_revolt_preset = yes
 			}
 			modifier = {
 				factor = 2
@@ -10207,10 +10195,7 @@ focus_tree = {
 			factor = 50
 			modifier = {
 				factor = 8
-				has_game_rule = {
-					rule = GEA_future
-					option = GEA_FUTURE_REVOLT_NO
-				}
+				GEA_indochina_no_revolt_preset = yes
 			}
 			modifier = {
 				factor = 2
@@ -10333,10 +10318,7 @@ focus_tree = {
 			factor = 50
 			modifier = {
 				factor = 8
-				has_game_rule = {
-					rule = GEA_future
-					option = GEA_FUTURE_REVOLT_NO
-				}
+				GEA_indochina_no_revolt_preset = yes
 			}
 			modifier = {
 				factor = 2
@@ -10433,10 +10415,7 @@ focus_tree = {
 			factor = 50
 			modifier = {
 				factor = 8
-				has_game_rule = {
-					rule = GEA_future
-					option = GEA_FUTURE_REVOLT_NO
-				}
+				GEA_indochina_no_revolt_preset = yes
 			}
 			modifier = {
 				factor = 2
@@ -10525,10 +10504,7 @@ focus_tree = {
 			factor = 50
 			modifier = {
 				factor = 8
-				has_game_rule = {
-					rule = GEA_future
-					option = GEA_FUTURE_REVOLT_NO
-				}
+				GEA_indochina_no_revolt_preset = yes
 			}
 			modifier = {
 				factor = 2
@@ -10626,10 +10602,7 @@ focus_tree = {
 			factor = 50
 			modifier = {
 				factor = 8
-				has_game_rule = {
-					rule = GEA_future
-					option = GEA_FUTURE_REVOLT_NO
-				}
+				GEA_indochina_no_revolt_preset = yes
 			}
 			modifier = {
 				factor = 2
@@ -10734,10 +10707,7 @@ focus_tree = {
 			factor = 50
 			modifier = {
 				factor = 8
-				has_game_rule = {
-					rule = GEA_future
-					option = GEA_FUTURE_REVOLT_NO
-				}
+				GEA_indochina_no_revolt_preset = yes
 			}
 			modifier = {
 				factor = 2
@@ -10828,10 +10798,7 @@ focus_tree = {
 			factor = 50
 			modifier = {
 				factor = 8
-				has_game_rule = {
-					rule = GEA_future
-					option = GEA_FUTURE_REVOLT_NO
-				}
+				GEA_indochina_no_revolt_preset = yes
 			}
 			modifier = {
 				factor = 2
@@ -10932,10 +10899,7 @@ focus_tree = {
 			factor = 50
 			modifier = {
 				factor = 8
-				has_game_rule = {
-					rule = GEA_future
-					option = GEA_FUTURE_REVOLT_NO
-				}
+				GEA_indochina_no_revolt_preset = yes
 			}
 			modifier = {
 				factor = 2
@@ -12645,6 +12609,10 @@ focus_tree = {
 			add_to_variable = {
 				GEA_army_mobilization_speed = 0.15
 				tooltip = mobilization_speed_tt
+			}
+			add_to_variable = {
+				GEA_army_experience_gain_army = 0.15
+				tooltip = experience_gain_army_tt
 			}
 		}		
 	}
@@ -20818,18 +20786,17 @@ focus_tree = {
 			592 = {
 				increase_state_category_by_one_level = yes
 				add_extra_state_shared_building_slots = 6
+				add_building_construction = { type = industrial_complex level = 3 instant_build = yes }
+				add_building_construction = { type = arms_factory level = 2 instant_build = yes }
+				add_building_construction = { type = dockyard level = 1 instant_build = yes }
 				add_state_modifier = {
 					modifier = {
 						state_production_speed_industrial_complex_factor = 0.20
 						state_production_speed_arms_factory_factor = 0.20
 						state_production_speed_dockyard_factor = 0.20
 					}
-				}
-				add_building_construction = { type = industrial_complex level = 3 instant_build = yes }
-				add_building_construction = { type = arms_factory level = 2 instant_build = yes }
-				add_building_construction = { type = dockyard level = 1 instant_build = yes }
+				}	
 			}
-
 		}	
 	}
 
@@ -21217,7 +21184,23 @@ focus_tree = {
 			factor = 0
 		}
 		available = {
-
+			custom_trigger_tooltip = {
+				tooltip = GEA_zhili_anti_concession_tt
+				QIE = {
+					exists = yes
+					OR = {
+						has_country_flag = wu_intervenes_proANQ
+						has_country_flag = QIE_manchu_restoration
+						has_country_flag = QIE_yiguandao_couped
+						has_focus_tree = QIE_manchu
+						has_completed_focus = QIE_nationalize_germans
+						has_completed_focus = QIE_endconcessions
+						has_completed_focus = QIE_destroy_concessions
+						has_completed_focus = QIE_destroy_germany
+						has_completed_focus = QIE_YGD_destroy_concessions
+					}
+				}
+			}
 		}			
 		prerequisite = {
 			focus = GEA_Pressure_the_Jade_Marshal

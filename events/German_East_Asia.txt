@@ -314,7 +314,6 @@ add_namespace = GEA_news
 		id = GEA.6
 		immediate = {
 			log = "[GetDateText]: [Root.GetName]: event GEA.6"
-			LEP = { transfer_state = 592 } #广州默认交还八省，崩塌后由原版事件交给两广
 			hidden_effect = {
 				add_ideas = GEA_black_monday_idea
 				YUN = { #Yunnan's Black Monday event
@@ -322,9 +321,6 @@ add_namespace = GEA_news
 				}
 				country_event = { id = GEA.814 days = 2 }
 				country_event = { id = GEA.52 days = 30 }
-				hidden_effect = {
-				
-				}
 			}
 		}
 		title = GEA.6.t
@@ -332,6 +328,7 @@ add_namespace = GEA_news
 		picture = GFX_report_event_SIA_German_Economical_Dominance
 
 		is_triggered_only = yes
+		fire_only_once = yes
 
 		option = {
 			name = GEA.6.a
@@ -344,7 +341,10 @@ add_namespace = GEA_news
 				transfer_state = 803
 			}
 			hidden_effect = {
-				LEP = { country_event = lepcollapse.201 }
+				LEP = { 
+					transfer_state = 592 
+					country_event = lepcollapse.201 
+				}
 				country_event = {
 					id = GEA.7 #黑色一周的结束
 					days = 7
@@ -359,7 +359,10 @@ add_namespace = GEA_news
 			}
 			add_political_power = -100
 			hidden_effect = {
-				LEP = { country_event = lepcollapse.201 }
+				LEP = { 
+					transfer_state = 592 
+					country_event = lepcollapse.201 
+				}
 				country_event = {
 					id = GEA.7 #黑色一周的结束
 					days = 7
@@ -461,11 +464,11 @@ add_namespace = GEA_news
 			ai_chance = {
 				factor = 20
 				modifier = {
-					factor = 1000 
-					OR = {
-						has_game_rule = {
-							rule = GEA_governor 
-							option = GEA_GOVERNOR_HAHL
+					factor = 0
+					NOT = {
+						OR = {
+							has_game_rule = { rule = GEA_governor option = DEFAULT }
+							has_game_rule = { rule = GEA_governor option = GEA_GOVERNOR_HAHL }
 						}
 					}
 				}
@@ -522,11 +525,11 @@ add_namespace = GEA_news
 			ai_chance = {
 				factor = 20
 				modifier = {
-					factor = 1000 
-					OR = {
-						has_game_rule = {
-							rule = GEA_governor 
-							option = GEA_GOVERNOR_JOSIAS
+					factor = 0
+					NOT = {
+						OR = {
+							has_game_rule = { rule = GEA_governor option = DEFAULT }
+							has_game_rule = { rule = GEA_governor option = GEA_GOVERNOR_JOSIAS }
 						}
 					}
 				}
@@ -562,13 +565,17 @@ add_namespace = GEA_news
 			ai_chance = {
 				factor = 20
 				modifier = {
-					factor = 1000 
-					OR = {
-						has_game_rule = {
-							rule = GEA_governor 
-							option = GEA_GOVERNOR_HEYE
+					factor = 0
+					NOT = {
+						OR = {
+							has_game_rule = { rule = GEA_governor option = DEFAULT }
+							has_game_rule = { rule = GEA_governor option = GEA_GOVERNOR_HEYE }
 						}
 					}
+				}
+				modifier = {
+					factor = 0
+					GEA_indochina_no_revolt_preset = yes
 				}
 			}
 			set_country_flag = GEA_Governor_Heye_flag
@@ -611,11 +618,11 @@ add_namespace = GEA_news
 			ai_chance = {
 				factor = 20
 				modifier = {
-					factor = 1000
-					OR = {
-						has_game_rule = {
-							rule = GEA_governor
-							option = GEA_GOVERNOR_CORPORATE
+					factor = 0
+					NOT = {
+						OR = {
+							has_game_rule = { rule = GEA_governor option = DEFAULT }
+							has_game_rule = { rule = GEA_governor option = GEA_GOVERNOR_CORPORATE }
 						}
 					}
 				}
@@ -658,11 +665,11 @@ add_namespace = GEA_news
 			ai_chance = {
 				factor = 20
 				modifier = {
-					factor = 1000
-					OR = {
-						has_game_rule = {
-							rule = GEA_governor
-							option = GEA_GOVERNOR_CORPORATE
+					factor = 0
+					NOT = {
+						OR = {
+							has_game_rule = { rule = GEA_governor option = DEFAULT }
+							has_game_rule = { rule = GEA_governor option = GEA_GOVERNOR_CORPORATE }
 						}
 					}
 				}
@@ -738,11 +745,11 @@ add_namespace = GEA_news
 			ai_chance = {
 				factor = 33
 				modifier = {
-					factor = 1000 
-					OR = {
-						has_game_rule = {
-							rule = GEA_future
-							option = GEA_FUTURE_REVOLT_YES
+					factor = 0
+					NOT = {
+						OR = {
+							GEA_indochina_random_preset = yes
+							GEA_indochina_revolt_preset = yes
 						}
 					}
 				}
@@ -776,11 +783,11 @@ add_namespace = GEA_news
 			ai_chance = {
 				factor = 33
 				modifier = {
-					factor = 1000 
-					OR = {
-						has_game_rule = {
-							rule = GEA_future
-							option = GEA_FUTURE_REVOLT_NO
+					factor = 0
+					NOT = {
+						OR = {
+							GEA_indochina_random_preset = yes
+							GEA_indochina_no_revolt_preset = yes
 						}
 					}
 				}
@@ -803,11 +810,11 @@ add_namespace = GEA_news
 			ai_chance = {
 				factor = 33
 				modifier = {
-					factor = 1000 
-					OR = {
-						has_game_rule = {
-							rule = GEA_future
-							option = GEA_FUTURE_REVOLT_YES
+					factor = 0
+					NOT = {
+						OR = {
+							GEA_indochina_random_preset = yes
+							GEA_indochina_revolt_preset = yes
 						}
 					}
 				}
@@ -942,11 +949,11 @@ add_namespace = GEA_news
 			ai_chance = {
 				factor = 50
 				modifier = {
-					factor = 1000 
-					OR = {
-						has_game_rule = {
-							rule = GEA_future
-							option = GEA_FUTURE_REVOLT_YES
+					factor = 0
+					NOT = {
+						OR = {
+							GEA_indochina_random_preset = yes
+							GEA_indochina_revolt_preset = yes
 						}
 					}
 				}
@@ -967,11 +974,11 @@ add_namespace = GEA_news
 			ai_chance = {
 				factor = 50
 				modifier = {
-					factor = 1000 
-					OR = {
-						has_game_rule = {
-							rule = GEA_future
-							option = GEA_FUTURE_REVOLT_YES
+					factor = 0
+					NOT = {
+						OR = {
+							GEA_indochina_random_preset = yes
+							GEA_indochina_no_revolt_preset = yes
 						}
 					}
 				}
@@ -1083,11 +1090,11 @@ add_namespace = GEA_news
 			ai_chance = {
 				factor = 33
 				modifier = {
-					factor = 1000 
-					OR = {
-						has_game_rule = {
-							rule = GEA_future
-							option = GEA_FUTURE_REVOLT_NO
+					factor = 0
+					NOT = {
+						OR = {
+							GEA_indochina_random_preset = yes
+							GEA_indochina_no_revolt_preset = yes
 						}
 					}
 				}
@@ -1112,6 +1119,14 @@ add_namespace = GEA_news
 			name = GEA.19.b
 			ai_chance = {
 				factor = 33
+				modifier = {
+					factor = 0
+					NOT = {
+						OR = {
+							GEA_indochina_random_preset = yes
+						}
+					}
+				}
 			}
 			add_political_power = -40
 			decrease_ruling_party_popularity_by_5 = yes
@@ -1128,11 +1143,11 @@ add_namespace = GEA_news
 			ai_chance = {
 				factor = 33
 				modifier = {
-					factor = 1000 
-					OR = {
-						has_game_rule = {
-							rule = GEA_future
-							option = GEA_FUTURE_REVOLT_YES
+					factor = 0
+					NOT = {
+						OR = {
+							GEA_indochina_random_preset = yes
+							GEA_indochina_revolt_preset = yes
 						}
 					}
 				}
@@ -1193,11 +1208,11 @@ add_namespace = GEA_news
 			ai_chance = {
 				factor = 50
 				modifier = {
-					factor = 1000 
-					OR = {
-						has_game_rule = {
-							rule = GEA_future
-							option = GEA_FUTURE_REVOLT_NO
+					factor = 0
+					NOT = {
+						OR = {
+							GEA_indochina_random_preset = yes
+							GEA_indochina_no_revolt_preset = yes
 						}
 					}
 				}
@@ -1219,11 +1234,11 @@ add_namespace = GEA_news
 			ai_chance = {
 				factor = 50
 				modifier = {
-					factor = 1000 
-					OR = {
-						has_game_rule = {
-							rule = GEA_future
-							option = GEA_FUTURE_REVOLT_YES
+					factor = 0
+					NOT = {
+						OR = {
+							GEA_indochina_random_preset = yes
+							GEA_indochina_revolt_preset = yes
 						}
 					}
 				}
@@ -1281,6 +1296,15 @@ add_namespace = GEA_news
 			name = GEA.23.a
 			ai_chance = {
 				factor = 30
+				modifier = {
+					factor = 0
+					NOT = {
+						OR = {
+							GEA_indochina_random_preset = yes
+							GEA_indochina_revolt_preset = yes
+						}
+					}
+				}
 			}
 			if = {
 				limit = {
@@ -1308,6 +1332,15 @@ add_namespace = GEA_news
 			name = GEA.23.b
 			ai_chance = {
 				factor = 70
+				modifier = {
+					factor = 0
+					NOT = {
+						OR = {
+							GEA_indochina_random_preset = yes
+							GEA_indochina_revolt_preset = yes
+						}
+					}
+				}
 			}
 			add_political_power = -50
 			add_manpower = -3000
@@ -1338,13 +1371,12 @@ add_namespace = GEA_news
 		option = {
 			name = GEA.23.c
 			ai_chance = {
-				factor = 0
+				factor = 100
 				modifier = {
-					factor = 1000 
-					OR = {
-						has_game_rule = {
-							rule = GEA_future
-							option = GEA_FUTURE_REVOLT_NO
+					factor = 0
+					NOT = {
+						OR = {
+							GEA_indochina_no_revolt_preset = yes
 						}
 					}
 				}
@@ -1376,11 +1408,11 @@ add_namespace = GEA_news
 			ai_chance = {
 				factor = 33
 				modifier = {
-					factor = 1000 
-					OR = {
-						has_game_rule = {
-							rule = GEA_future
-							option = GEA_FUTURE_REVOLT_NO
+					factor = 0
+					NOT = {
+						OR = {
+							GEA_indochina_random_preset = yes
+							GEA_indochina_no_revolt_preset = yes
 						}
 					}
 				}
@@ -1399,6 +1431,14 @@ add_namespace = GEA_news
 			name = GEA.24.b
 			ai_chance = {
 				factor = 33
+				modifier = {
+					factor = 0
+					NOT = {
+						OR = {
+							GEA_indochina_random_preset = yes
+						}
+					}
+				}
 			}
 			add_stability = 0.01
 			add_political_power = -10
@@ -1409,11 +1449,11 @@ add_namespace = GEA_news
 			ai_chance = {
 				factor = 33
 				modifier = {
-					factor = 1000 
-					OR = {
-						has_game_rule = {
-							rule = GEA_future
-							option = GEA_FUTURE_REVOLT_YES
+					factor = 0
+					NOT = {
+						OR = {
+							GEA_indochina_random_preset = yes
+							GEA_indochina_revolt_preset = yes
 						}
 					}
 				}
@@ -1505,11 +1545,11 @@ add_namespace = GEA_news
 			ai_chance = {
 				factor = 50
 				modifier = {
-					factor = 1000 
-					OR = {
-						has_game_rule = {
-							rule = GEA_future
-							option = GEA_FUTURE_REVOLT_YES
+					factor = 0
+					NOT = {
+						OR = {
+							GEA_indochina_random_preset = yes
+							GEA_indochina_revolt_preset = yes
 						}
 					}
 				}
@@ -1531,11 +1571,11 @@ add_namespace = GEA_news
 			ai_chance = {
 				factor = 50
 				modifier = {
-					factor = 1000 
-					OR = {
-						has_game_rule = {
-							rule = GEA_future
-							option = GEA_FUTURE_REVOLT_NO
+					factor = 0
+					NOT = {
+						OR = {
+							GEA_indochina_random_preset = yes
+							GEA_indochina_no_revolt_preset = yes
 						}
 					}
 				}
@@ -1567,11 +1607,11 @@ add_namespace = GEA_news
 			ai_chance = {
 				factor = 50
 				modifier = {
-					factor = 1000 
-					OR = {
-						has_game_rule = {
-							rule = GEA_future
-							option = GEA_FUTURE_REVOLT_YES
+					factor = 0
+					NOT = {
+						OR = {
+							GEA_indochina_random_preset = yes
+							GEA_indochina_revolt_preset = yes
 						}
 					}
 				}
@@ -1590,11 +1630,11 @@ add_namespace = GEA_news
 			ai_chance = {
 				factor = 50
 				modifier = {
-					factor = 1000 
-					OR = {
-						has_game_rule = {
-							rule = GEA_future
-							option = GEA_FUTURE_REVOLT_NO
+					factor = 0
+					NOT = {
+						OR = {
+							GEA_indochina_random_preset = yes
+							GEA_indochina_no_revolt_preset = yes
 						}
 					}
 				}
@@ -1666,11 +1706,11 @@ add_namespace = GEA_news
 			ai_chance = {
 				factor = 50
 				modifier = {
-					factor = 1000 
-					OR = {
-						has_game_rule = {
-							rule = GEA_future
-							option = GEA_FUTURE_REVOLT_YES
+					factor = 0
+					NOT = {
+						OR = {
+							GEA_indochina_random_preset = yes
+							GEA_indochina_revolt_preset = yes
 						}
 					}
 				}
@@ -1688,11 +1728,11 @@ add_namespace = GEA_news
 			ai_chance = {
 				factor = 50
 				modifier = {
-					factor = 1000 
-					OR = {
-						has_game_rule = {
-							rule = GEA_future
-							option = GEA_FUTURE_REVOLT_NO
+					factor = 0
+					NOT = {
+						OR = {
+							GEA_indochina_random_preset = yes
+							GEA_indochina_no_revolt_preset = yes
 						}
 					}
 				}
@@ -1814,19 +1854,19 @@ add_namespace = GEA_news
 		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.35" }
 		title = GEA.35.t
 		desc = { #
-			text = GEA.35.storage
+			text = GEA.35.storage.d
 			trigger = {
 				has_country_flag = GEA_Individual_Rations_Storage
 			}
 		}
 		desc = { #
-			text = GEA.35.lightweight
+			text = GEA.35.lightweight.d
 			trigger = {
 				has_country_flag = GEA_Individual_Rations_Weight
 			}
 		}
 		desc = { #
-			text = GEA.35.nutrition
+			text = GEA.35.nutrition.d
 			trigger = {
 				has_country_flag = GEA_Individual_Rations_Nutrition
 			}
@@ -1881,11 +1921,11 @@ add_namespace = GEA_news
 			ai_chance = {
 				factor = 50
 				modifier = {
-					factor = 1000 
-					OR = {
-						has_game_rule = {
-							rule = GEA_future
-							option = GEA_FUTURE_REVOLT_YES
+					factor = 0
+					NOT = {
+						OR = {
+							GEA_indochina_random_preset = yes
+							GEA_indochina_revolt_preset = yes
 						}
 					}
 				}
@@ -1912,11 +1952,11 @@ add_namespace = GEA_news
 			ai_chance = {
 				factor = 30
 				modifier = {
-					factor = 1000 
-					OR = {
-						has_game_rule = {
-							rule = GEA_future
-							option = GEA_FUTURE_REVOLT_NO
+					factor = 0
+					NOT = {
+						OR = {
+							GEA_indochina_random_preset = yes
+							GEA_indochina_no_revolt_preset = yes
 						}
 					}
 				}
@@ -1940,11 +1980,11 @@ add_namespace = GEA_news
 			ai_chance = {
 				factor = 20
 				modifier = {
-					factor = 1000 
-					OR = {
-						has_game_rule = {
-							rule = GEA_future
-							option = GEA_FUTURE_REVOLT_YES
+					factor = 0
+					NOT = {
+						OR = {
+							GEA_indochina_random_preset = yes
+							GEA_indochina_revolt_preset = yes
 						}
 					}
 				}
@@ -2900,6 +2940,13 @@ add_namespace = GEA_news
 
 		option = {#不过是些不长记性的乡下赤匪
 			name = GEA.58.a 
+			ai_chance = {
+				factor = 1
+				modifier = {
+					factor = 0
+					GEA_indochina_no_revolt_preset = yes
+				}
+			}
 			add_political_power = 30
 			modify_country_flag = {
 				flag = GEA_Indochinese_Stability
@@ -2911,6 +2958,13 @@ add_namespace = GEA_news
 
 		option = {#加大镇压投入
 			name = GEA.58.b 
+			ai_chance = {
+				factor = 1
+				modifier = {
+					factor = 0
+					GEA_indochina_revolt_preset = yes
+				}
+			}
 			add_manpower = -100
 			modify_country_flag = {
 				flag = GEA_Indochinese_Stability
@@ -2932,6 +2986,13 @@ add_namespace = GEA_news
 
 		option = {#让屁民们继续饿着吧
 			name = GEA.59.a 
+			ai_chance = {
+				factor = 1
+				modifier = {
+					factor = 0
+					GEA_indochina_no_revolt_preset = yes
+				}
+			}
 			add_political_power = 50
 			modify_country_flag = {
 				flag = GEA_Indochinese_Stability
@@ -2943,6 +3004,13 @@ add_namespace = GEA_news
 
 		option = {#只在城市地区开仓放粮
 			name = GEA.59.b 
+			ai_chance = {
+				factor = 1
+				modifier = {
+					factor = 0
+					GEA_indochina_revolt_preset = yes
+				}
+			}
 			modify_country_flag = {
 				flag = GEA_Indochinese_Stability
 				value = 1
@@ -2953,6 +3021,13 @@ add_namespace = GEA_news
 
 		option = {#只在城市地区开仓放粮
 			name = GEA.59.c 
+			ai_chance = {
+				factor = 1
+				modifier = {
+					factor = 0
+					GEA_indochina_revolt_preset = yes
+				}
+			}
 			add_political_power = -20
 			decrease_ruling_party_popularity_by_2 = yes
 			modify_country_flag = {
@@ -2980,6 +3055,13 @@ add_namespace = GEA_news
 
 		option = {#这些安南官僚应该认清自己的地位
 			name = GEA.60.a 
+			ai_chance = {
+				factor = 1
+				modifier = {
+					factor = 0
+					GEA_indochina_no_revolt_preset = yes
+				}
+			}
 			add_political_power = 100
 			modify_country_flag = {
 				flag = GEA_Indochinese_Anger
@@ -2997,6 +3079,13 @@ add_namespace = GEA_news
 
 		option = {#适当的自治或许能让他们远离革命
 			name = GEA.60.b 
+			ai_chance = {
+				factor = 1
+				modifier = {
+					factor = 0
+					GEA_indochina_revolt_preset = yes
+				}
+			}
 			decrease_ruling_party_popularity_by_3 = yes
 			modify_country_flag = {
 				flag = GEA_Indochinese_Stability
@@ -3008,6 +3097,13 @@ add_namespace = GEA_news
 
 		option = {#改革可以，但权力必须留在德国人手中
 			name = GEA.60.c 
+			ai_chance = {
+				factor = 1
+				modifier = {
+					factor = 0
+					GEA_indochina_revolt_preset = yes
+				}
+			}
 			add_political_power = -20
 			decrease_ruling_party_popularity_by_5 = yes
 			modify_country_flag = {
@@ -3031,15 +3127,19 @@ add_namespace = GEA_news
 		desc = GEA.61.d
 		picture = GFX_GEA_72
 		fire_only_once = yes
+
 		trigger = {
 			tag = GEA
 			has_global_flag = LEP_league_war_over
 			LEP = { exists = yes }
 			check_variable = { GEA_china_lep_attitude > 60 }
+			has_completed_focus = GEA_The_usiness_expansion_of_AOG
 		}
+
 		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.61" }
 		option = {
 			name = GEA.61.a
+			add_political_power = 100
 		}
 	}
 
@@ -3084,16 +3184,15 @@ add_namespace = GEA_news
 			ai_chance = {
 				factor = 33
 				modifier = {
-					factor = 1000 
-					OR = {
-						has_game_rule = {
-							rule = GEA_future
-							option = GEA_FUTURE_REVOLT_YES
+					factor = 0
+					NOT = {
+						OR = {
+							GEA_indochina_random_preset = yes
+							GEA_indochina_revolt_preset = yes
 						}
 					}
 				}
 			}
-			add_stability = -0.03
 			decrease_ruling_party_popularity_by_3 = yes
 			modify_country_flag = {
 				flag = GEA_Indochinese_Anger
@@ -3108,8 +3207,17 @@ add_namespace = GEA_news
 			name = GEA.101.b
 			ai_chance = {
 				factor = 33
+				modifier = {
+					factor = 0
+					NOT = {
+						OR = {
+							GEA_indochina_random_preset = yes
+							GEA_indochina_no_revolt_preset = yes
+						}
+					}
+				}
 			}
-			add_stability = -0.05
+			add_stability = -0.02
 			add_ideas = GEA_Expand_fiscal_and_taxation_sources_wine
 		}
 
@@ -3117,9 +3225,18 @@ add_namespace = GEA_news
 			name = GEA.101.c
 			ai_chance = {
 				factor = 33
+				modifier = {
+					factor = 0
+					NOT = {
+						OR = {
+							GEA_indochina_random_preset = yes
+							GEA_indochina_no_revolt_preset = yes
+						}
+					}
+				}
 			}
-			add_stability = -0.02
-			add_political_power = -10
+			add_stability = -0.05
+			add_political_power = 75
 			add_ideas = GEA_Expand_fiscal_and_taxation_sources_opium
 		}
 	}
@@ -3182,13 +3299,8 @@ add_namespace = GEA_news
 			ai_chance = {
 				factor = 33
 				modifier = {
-					factor = 1000 
-					OR = {
-						has_game_rule = {
-							rule = GEA_future
-							option = GEA_FUTURE_REVOLT_NO
-						}
-					}
+					factor = 0
+					GEA_indochina_revolt_preset = yes
 				}
 			}
 			add_political_power = -40
@@ -3222,13 +3334,8 @@ add_namespace = GEA_news
 			ai_chance = {
 				factor = 33
 				modifier = {
-					factor = 1000 
-					OR = {
-						has_game_rule = {
-							rule = GEA_future
-							option = GEA_FUTURE_REVOLT_NO
-						}
-					}
+					factor = 0
+					GEA_indochina_revolt_preset = yes
 				}
 			}
 			add_stability = 0.02
@@ -3252,13 +3359,8 @@ add_namespace = GEA_news
 			ai_chance = {
 				factor = 33
 				modifier = {
-					factor = 1000 
-					OR = {
-						has_game_rule = {
-							rule = GEA_future
-							option = GEA_FUTURE_REVOLT_YES
-						}
-					}
+					factor = 0
+					GEA_indochina_no_revolt_preset = yes
 				}
 			}
 			add_stability = -0.02
@@ -3285,11 +3387,11 @@ add_namespace = GEA_news
 			ai_chance = {
 				factor = 90
 				modifier = {
-					factor = 1000 
-					OR = {
-						has_game_rule = {
-							rule = GEA_future
-							option = GEA_FUTURE_REVOLT_NO
+					factor = 0
+					NOT = {
+						OR = {
+							GEA_indochina_random_preset = yes
+							GEA_indochina_no_revolt_preset = yes
 						}
 					}
 				}
@@ -3336,9 +3438,18 @@ add_namespace = GEA_news
 			custom_effect_tooltip = GEA_Indochina_Anger_Down
 		}
 		option = { 
-			name = Ostasien.131.b
+			name = GEA.105.b
 			ai_chance = {
 				factor = 10
+				modifier = {
+					factor = 0
+					NOT = {
+						OR = {
+							GEA_indochina_random_preset = yes
+							GEA_indochina_revolt_preset = yes
+						}
+					}
+				}
 			}
 		}
 	}
@@ -3357,11 +3468,11 @@ add_namespace = GEA_news
 			ai_chance = {
 				factor = 30
 				modifier = {
-					factor = 1000 
-					OR = {
-						has_game_rule = {
-							rule = GEA_future
-							option = GEA_FUTURE_REVOLT_NO
+					factor = 0
+					NOT = {
+						OR = {
+							GEA_indochina_random_preset = yes
+							GEA_indochina_no_revolt_preset = yes
 						}
 					}
 				}
@@ -3408,6 +3519,15 @@ add_namespace = GEA_news
 			name = GEA.106.b
 			ai_chance = {
 				factor = 70
+				modifier = {
+					factor = 0
+					NOT = {
+						OR = {
+							GEA_indochina_random_preset = yes
+							GEA_indochina_revolt_preset = yes
+						}
+					}
+				}
 			}
 			add_stability = -0.03
 			add_war_support = -0.06
@@ -3428,6 +3548,15 @@ add_namespace = GEA_news
 			name = GEA.107.a
 			ai_chance = {
 				factor = 0
+				modifier = {
+					factor = 0
+					NOT = {
+						OR = {
+							GEA_indochina_random_preset = yes
+							GEA_indochina_revolt_preset = yes
+						}
+					}
+				}
 			}
 			modify_country_flag = {
 				flag = GEA_Indochinese_Anger
@@ -3575,6 +3704,15 @@ add_namespace = GEA_news
 			name = GEA.107.b
 			ai_chance = {
 				factor = 70
+				modifier = {
+					factor = 0
+					NOT = {
+						OR = {
+							GEA_indochina_random_preset = yes
+							GEA_indochina_revolt_preset = yes
+						}
+					}
+				}
 			}
 			add_political_power = 40
 			add_stability = -0.05
@@ -3584,11 +3722,11 @@ add_namespace = GEA_news
 			ai_chance = {
 				factor = 30
 				modifier = {
-					factor = 1000 
-					OR = {
-						has_game_rule = {
-							rule = GEA_future
-							option = GEA_FUTURE_REVOLT_NO
+					factor = 0
+					NOT = {
+						OR = {
+							GEA_indochina_random_preset = yes
+							GEA_indochina_no_revolt_preset = yes
 						}
 					}
 				}
@@ -3736,6 +3874,15 @@ add_namespace = GEA_news
 			name = GEA.107.e
 			ai_chance = {
 				factor = 5
+				modifier = {
+					factor = 0
+					NOT = {
+						OR = {
+							GEA_indochina_random_preset = yes
+							GEA_indochina_revolt_preset = yes
+						}
+					}
+				}
 			}
 			increase_ruling_party_popularity_by_5 = yes
 			add_political_power = 200
@@ -3794,11 +3941,11 @@ add_namespace = GEA_news
 			ai_chance = {
 				factor = 50
 				modifier = {
-					factor = 1000 
-					OR = {
-						has_game_rule = {
-							rule = GEA_future
-							option = GEA_FUTURE_REVOLT_NO
+					factor = 0
+					NOT = {
+						OR = {
+							GEA_indochina_random_preset = yes
+							GEA_indochina_no_revolt_preset = yes
 						}
 					}
 				}
@@ -3823,11 +3970,11 @@ add_namespace = GEA_news
 			ai_chance = {
 				factor = 50
 				modifier = {
-					factor = 1000 
-					OR = {
-						has_game_rule = {
-							rule = GEA_future
-							option = GEA_FUTURE_REVOLT_NO
+					factor = 0
+					NOT = {
+						OR = {
+							GEA_indochina_random_preset = yes
+							GEA_indochina_revolt_preset = yes
 						}
 					}
 				}
@@ -3857,6 +4004,15 @@ add_namespace = GEA_news
 			name = GEA.110.a
 			ai_chance = {
 				factor = 25
+				modifier = {
+					factor = 0
+					NOT = {
+						OR = {
+							GEA_indochina_random_preset = yes
+							GEA_indochina_no_revolt_preset = yes
+						}
+					}
+				}
 			}
 			add_political_power = -50
 			swap_ideas = {
@@ -3874,6 +4030,15 @@ add_namespace = GEA_news
 			name = GEA.110.b
 			ai_chance = {
 				factor = 25
+				modifier = {
+					factor = 0
+					NOT = {
+						OR = {
+							GEA_indochina_random_preset = yes
+							GEA_indochina_no_revolt_preset = yes
+						}
+					}
+				}
 			}
 			add_political_power = -10
 			swap_ideas = {
@@ -3887,11 +4052,11 @@ add_namespace = GEA_news
 			ai_chance = {
 				factor = 25
 				modifier = {
-					factor = 1000 
-					OR = {
-						has_game_rule = {
-							rule = GEA_future
-							option = GEA_FUTURE_REVOLT_YES
+					factor = 0
+					NOT = {
+						OR = {
+							GEA_indochina_random_preset = yes
+							GEA_indochina_revolt_preset = yes
 						}
 					}
 				}
@@ -3914,11 +4079,11 @@ add_namespace = GEA_news
 			ai_chance = {
 				factor = 25
 				modifier = {
-					factor = 1000 
-					OR = {
-						has_game_rule = {
-							rule = GEA_future
-							option = GEA_FUTURE_REVOLT_YES
+					factor = 0
+					NOT = {
+						OR = {
+							GEA_indochina_random_preset = yes
+							GEA_indochina_revolt_preset = yes
 						}
 					}
 				}
@@ -4049,11 +4214,11 @@ add_namespace = GEA_news
 			ai_chance = {
 				factor = 10
 				modifier = {
-					factor = 1000 
-					OR = {
-						has_game_rule = {
-							rule = GEA_future
-							option = GEA_FUTURE_REVOLT_YES
+					factor = 0
+					NOT = {
+						OR = {
+							GEA_indochina_random_preset = yes
+							GEA_indochina_revolt_preset = yes
 						}
 					}
 				}
@@ -4078,6 +4243,14 @@ add_namespace = GEA_news
 			name = GEA.115.b
 			ai_chance = {
 				factor = 20
+				modifier = {
+					factor = 0
+					NOT = {
+						OR = {
+							GEA_indochina_random_preset = yes
+						}
+					}
+				}
 			}			
 			custom_effect_tooltip = GEA_Affect_Abandoning_the_savage_nature_tt
 			add_war_support = -0.01
@@ -4094,11 +4267,11 @@ add_namespace = GEA_news
 			ai_chance = {
 				factor = 70
 				modifier = {
-					factor = 1000 
-					OR = {
-						has_game_rule = {
-							rule = GEA_future
-							option = GEA_FUTURE_REVOLT_NO
+					factor = 0
+					NOT = {
+						OR = {
+							GEA_indochina_random_preset = yes
+							GEA_indochina_no_revolt_preset = yes
 						}
 					}
 				}
@@ -4447,7 +4620,7 @@ add_namespace = GEA_news
 			ai_chance = {
 				factor = 15
 			}
-			name = GEA.122.d # socdems
+			name = GEA.122.e # socdems
 			set_politics = {
 				ruling_party = social_democrat
 				elections_allowed = no
@@ -5594,6 +5767,13 @@ add_namespace = GEA_news
 
 		option = { 
 			name = GEA.405.a
+			ai_chance = {
+				factor = 1
+				modifier = {
+					factor = 0
+					GEA_indochina_no_revolt_preset = yes
+				}
+			}
 			increase_ruling_party_popularity_by_10 = yes
 			custom_effect_tooltip = tooltip_white_line
 			custom_effect_tooltip = {
@@ -5612,6 +5792,13 @@ add_namespace = GEA_news
 
 		option = { 
 			name = GEA.405.b
+			ai_chance = {
+				factor = 1
+				modifier = {
+					factor = 0
+					GEA_indochina_revolt_preset = yes
+				}
+			}
 			add_stability = 0.1
 			modify_country_flag = {
 				flag = GEA_Indochinese_Anger
@@ -5713,12 +5900,26 @@ add_namespace = GEA_news
 
 		option = { 
 			name = GEA.411.a
+			ai_chance = {
+				factor = 1
+				modifier = {
+					factor = 0
+					GEA_indochina_no_revolt_preset = yes
+				}
+			}
 			add_political_power = -10
 			add_stability = 0.08
 		}
 
 		option = { 
 			name = GEA.411.b
+			ai_chance = {
+				factor = 1
+				modifier = {
+					factor = 0
+					GEA_indochina_revolt_preset = yes
+				}
+			}
 			modify_country_flag = {
 				flag = GEA_Indochinese_Stability
 				value = 1
@@ -5729,6 +5930,13 @@ add_namespace = GEA_news
 
 		option = { 
 			name = GEA.411.c
+			ai_chance = {
+				factor = 1
+				modifier = {
+					factor = 0
+					GEA_indochina_no_revolt_preset = yes
+				}
+			}
 			custom_effect_tooltip = tooltip_white_line
 			custom_effect_tooltip = {
 				localization_key = tooltip_modify_dynmod
@@ -5924,6 +6132,13 @@ add_namespace = GEA_news
 					character = GEA_Felix_von_Luckner
 					ideology = autocratic_colonial_govt_subtype
 				}
+				remove_all_ministers = yes
+				add_ideas = {
+					GEA_Felix_von_Luckner_hog_pau
+					GEA_Ernst_Arthur_Voretzsch_for_pau
+					GEA_Josias_Emil_Helfferich_eco_pau
+					GEA_Nikolaus_Graf_zu_Dohna-Schlodien_sec_pau
+				}
 				add_authdem_to_coalition = yes
 				set_party_name = {
 					ideology = paternal_autocrat
@@ -6052,6 +6267,13 @@ add_namespace = GEA_news
 				promote_character = {
 					character = GEA_Felix_von_Luckner
 					ideology = autocratic_colonial_govt_subtype
+				}
+				remove_all_ministers = yes
+				add_ideas = {
+					GEA_Felix_von_Luckner_hog_pau
+					GEA_Ernst_Arthur_Voretzsch_for_pau
+					GEA_Josias_Emil_Helfferich_eco_pau
+					GEA_Nikolaus_Graf_zu_Dohna-Schlodien_sec_pau
 				}
 				add_authdem_to_coalition = yes
 				set_party_name = {
@@ -8478,11 +8700,15 @@ add_namespace = GEA_news
 					}
 				}
 			}
-			SQI = {
-				if = {
-					limit = { NOT = { has_character = GEA_Tang_Yangdu } }
-					recruit_character = GEA_Tang_Yangdu
+			hidden_effect = {
+				GEA = {
+					if = {
+						limit = { NOT = { SQI = { has_character = GEA_Tang_Yangdu } } }
+						GEA_Tang_Yangdu = { set_nationality = SQI }
+					}
 				}
+			}
+			SQI = {
 				add_popularity = { ideology = authoritarian_democrat popularity = 0.30 }
 				set_politics = { ruling_party = authoritarian_democrat elections_allowed = no }
 				promote_character = { character = GEA_Tang_Yangdu ideology = authdem_kleptocracy_subtype }
@@ -8536,11 +8762,15 @@ add_namespace = GEA_news
 					}
 				}
 			}
-			SQI = {
-				if = {
-					limit = { NOT = { has_character = GEA_Wilhelm_Hopfner } }
-					recruit_character = GEA_Wilhelm_Hopfner
+			hidden_effect = {
+				GEA = {
+					if = {
+						limit = { NOT = { SQI = { has_character = GEA_Wilhelm_Hopfner } } }
+						GEA_Wilhelm_Hopfner = { set_nationality = SQI }
+					}
 				}
+			}
+			SQI = {
 				add_popularity = { ideology = paternal_autocrat popularity = 0.30 }
 				set_politics = { ruling_party = paternal_autocrat elections_allowed = no }
 				promote_character = { character = GEA_Wilhelm_Hopfner ideology = autocratic_colonial_govt_subtype }
@@ -8564,20 +8794,75 @@ add_namespace = GEA_news
 		trigger = {
 			tag = GEA
 			NOT = { has_completed_focus = GEA_Submission }
-			QIE = {
-				exists = yes
-				is_subject_of = GEA
-				controls_state = 608 #北京
+			OR = {
+				QIE = {
+					exists = yes
+					is_subject_of = GEA
+					controls_state = 608 #北京
+				}
+				AND = { #清政府开局直属地块均由德属东亚控制
+					controls_state = 608
+					controls_state = 611
+					controls_state = 614
+					controls_state = 1060
+					controls_state = 1061
+					controls_state = 1062
+					controls_state = 1063
+					controls_state = 607
+					controls_state = 1058
+					controls_state = 1059
+					controls_state = 615
+					controls_state = 799
+					controls_state = 620
+					controls_state = 1048
+				}
 			}
 		}
 
 		option = {
 			name = GEA.828.a
-			QIE = {
-				if = {
-					limit = { NOT = { has_character = GEA_Wang_Kemin } }
-					recruit_character = GEA_Wang_Kemin
+			hidden_effect = {
+				every_state = {
+					limit = {
+						OR = { state = 608 state = 611 state = 614 state = 1060 state = 1061 state = 1062 state = 1063 state = 607 state = 1058 state = 1059 state = 615 state = 799 state = 620 state = 1048 }
+						is_controlled_by = GEA
+					}
+					QIE = { transfer_state = PREV }
 				}
+				QIE = {
+					set_capital = { state = 608 remember_old_capital = no }
+					if = {
+						limit = { is_in_faction = yes NOT = { is_in_faction_with = GEA } }
+						leave_faction = yes
+					}
+				}
+				set_autonomy = {
+					target = QIE
+					autonomy_state = kr_default_puppet
+					end_wars = yes
+					end_civil_wars = yes
+				}
+				if = {
+					limit = { is_in_faction = yes QIE = { NOT = { is_in_faction_with = GEA } } }
+					random_country = {
+						limit = { is_faction_leader = yes is_in_faction_with = GEA }
+						add_to_faction = QIE
+					}
+				}
+				QIE = {
+					clr_country_flag = GEA_china_warlord_interaction_blocked
+					clr_country_flag = GEA_german_coup_defeated
+				}
+			}
+			hidden_effect = {
+				GEA = {
+					if = {
+						limit = { NOT = { QIE = { has_character = GEA_Wang_Kemin } } }
+						GEA_Wang_Kemin = { set_nationality = QIE }
+					}
+				}
+			}
+			QIE = {
 				add_popularity = { ideology = paternal_autocrat popularity = 0.30 }
 				set_politics = { ruling_party = paternal_autocrat elections_allowed = no }
 				promote_character = { character = GEA_Wang_Kemin ideology = kleptocracy_subtype }
@@ -8782,7 +9067,7 @@ add_namespace = GEA_news
 				#广州、海南与外国租界保持原有归属；只将受我方控制的两广其余本土交给傀儡
 				every_state = {
 					limit = {
-						OR = { state = 593 state = 594 state = 599 state = 800 state = 801 state = 1012 state = 1053 state = 1054 state = 1055 state = 1056 }
+						OR = { state = 593 state = 594 state = 599 state = 800 state = 1012 state = 1053 state = 1054 state = 1055 state = 1056 }
 						is_controlled_by = GEA
 					}
 					GXC = { transfer_state = PREV }
@@ -8820,7 +9105,7 @@ add_namespace = GEA_news
 					picture = "gfx/leaders/GEA/Portrait_GEA_Claus_von_Bohlen_und_Halbach.png"
 					expire = "1.1.1"
 					ideology = autocratic_colonial_govt_subtype
-					traits = { industrialist }
+					traits = { captain_of_industry }
 				}
 				add_popularity = { ideology = paternal_autocrat popularity = 0.30 }
 				set_politics = { ruling_party = paternal_autocrat elections_allowed = no }
@@ -8840,7 +9125,7 @@ add_namespace = GEA_news
 				#广州、海南与外国租界保持原有归属；只将受我方控制的两广其余本土交给傀儡
 				every_state = {
 					limit = {
-						OR = { state = 593 state = 594 state = 599 state = 800 state = 801 state = 1012 state = 1053 state = 1054 state = 1055 state = 1056 }
+						OR = { state = 593 state = 594 state = 599 state = 800 state = 1012 state = 1053 state = 1054 state = 1055 state = 1056 }
 						is_controlled_by = GEA
 					}
 					GXC = { transfer_state = PREV }
@@ -8871,11 +9156,15 @@ add_namespace = GEA_news
 					set_country_flag = GEA_gxc_merchant_administration_established
 				}
 			}
-			GXC = {
-				if = {
-					limit = { NOT = { has_character = GEA_Chen_Lianbo } }
-					recruit_character = GEA_Chen_Lianbo
+			hidden_effect = {
+				GEA = {
+					if = {
+						limit = { NOT = { GXC = { has_character = GEA_Chen_Lianbo } } }
+						GEA_Chen_Lianbo = { set_nationality = GXC }
+					}
 				}
+			}
+			GXC = {
 				add_popularity = { ideology = market_liberal popularity = 0.30 }
 				set_politics = { ruling_party = market_liberal elections_allowed = no }
 				set_party_name = {
@@ -8913,12 +9202,23 @@ add_namespace = GEA_news
 		}
 	}
 
-	unit_leader_event = { #云南省临时政府
+	country_event = { #云南省临时政府
 		id = GEA.838
 		title = GEA.838.t
 		desc = GEA.838.d
 		fire_only_once = yes
-		is_triggered_only = yes
+		trigger = {
+			tag = GEA
+			OR = {
+				YUN = { exists = yes is_subject_of = GEA }
+				AND = {
+					controls_state = 325
+					controls_state = 603
+					controls_state = 816
+					controls_state = 1051
+				}
+			}
+		}
 		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.838" }
 
 		option = {
@@ -8958,8 +9258,15 @@ add_namespace = GEA_news
 						set_country_flag = GEA_yun_puppet_administration_established
 					}
 				}
+				hidden_effect = {
+					GEA = {
+						if = {
+							limit = { NOT = { YUN = { has_character = GEA_Zhao_Yusong } } }
+							GEA_Zhao_Yusong = { set_nationality = YUN }
+						}
+					}
+				}
 				YUN = {
-					GEA_Zhao_Yusong = { set_nationality = YUN }
 					add_popularity = { ideology = paternal_autocrat popularity = 0.30 }
 					set_politics = { ruling_party = paternal_autocrat elections_allowed = no }
 					promote_character = { character = GEA_Zhao_Yusong ideology = kleptocracy_subtype }
@@ -8974,12 +9281,24 @@ add_namespace = GEA_news
 		}
 	}
 
-	unit_leader_event = { #四川省维持政府
+	country_event = { #四川省维持政府
 		id = GEA.839
 		title = GEA.839.t
 		desc = GEA.839.d
 		fire_only_once = yes
-		is_triggered_only = yes
+		trigger = {
+			tag = GEA
+			OR = {
+				SZC = { exists = yes is_subject_of = GEA }
+				AND = {
+					controls_state = 601
+					controls_state = 605
+					controls_state = 650
+					controls_state = 661
+					controls_state = 788
+				}
+			}
+		}
 		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.839" }
 
 		option = {
@@ -9019,8 +9338,15 @@ add_namespace = GEA_news
 						set_country_flag = GEA_szc_puppet_administration_established
 					}
 				}
+				hidden_effect = {
+					GEA = {
+						if = {
+							limit = { NOT = { SZC = { has_character = GEA_Yao_Zuobin } } }
+							GEA_Yao_Zuobin = { set_nationality = SZC }
+						}
+					}
+				}
 				SZC = {
-					GEA_Yao_Zuobin = { set_nationality = SZC }
 					add_popularity = { ideology = paternal_autocrat popularity = 0.30 }
 					set_politics = { ruling_party = paternal_autocrat elections_allowed = no }
 					promote_character = { character = GEA_Yao_Zuobin ideology = pataut_police_state_subtype }
@@ -9207,6 +9533,175 @@ add_namespace = GEA_news
 		}
 	}
 
+	country_event = { #华东占领结算：宁系傀儡或通用东亚公司
+		id = GEA.846
+		title = GEA.846.t
+		desc = GEA.846.d
+		fire_only_once = yes
+		trigger = {
+			tag = GEA
+			controls_state = 613
+			controls_state = 598
+			controls_state = 1047
+			controls_state = 606
+			controls_state = 1014
+			controls_state = 1050
+			controls_state = 596
+			controls_state = 1067
+			controls_state = 1068
+			controls_state = 1069
+			controls_state = 600
+			controls_state = 1044
+			controls_state = 1045
+			controls_state = 595
+			controls_state = 1046
+			controls_state = 1066
+		}
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.846" }
+
+		option = {
+			name = GEA.846.a
+			ai_chance = { factor = 70 }
+			hidden_effect = {
+				every_state = {
+					limit = {
+						OR = { state = 613 state = 598 state = 1047 state = 606 state = 1014 state = 1050 state = 596 state = 1067 state = 1068 state = 1069 state = 600 state = 1044 state = 1045 state = 595 state = 1046 state = 1066 }
+						is_controlled_by = GEA
+					}
+					LEP = { transfer_state = PREV }
+				}
+				every_state = {
+					limit = {
+						OR = { state = 602 state = 1013 state = 1049 state = 1052 }
+						is_owned_by = GEA
+					}
+					LEP = { transfer_state = PREV }
+				}
+				LEP = {
+					set_capital = { state = 613 remember_old_capital = no }
+					if = {
+						limit = { is_in_faction = yes NOT = { is_in_faction_with = GEA } }
+						leave_faction = yes
+					}
+				}
+				set_autonomy = {
+					target = LEP
+					autonomy_state = kr_default_puppet
+					end_wars = yes
+					end_civil_wars = yes
+				}
+				if = {
+					limit = { is_in_faction = yes LEP = { NOT = { is_in_faction_with = GEA } } }
+					faction_leader = { add_to_faction = LEP }
+				}
+				LEP = {
+					clr_country_flag = GEA_china_warlord_interaction_blocked
+					clr_country_flag = GEA_german_coup_defeated
+					clr_country_flag = GEA_german_coup_pending
+					set_country_flag = GEA_east_china_puppet_administration_established
+				}
+			}
+			LEP = {
+				hidden_effect = {
+					remove_all_ministers = yes
+					remove_ideas = LEP_german_government
+					clr_country_flag = LEP_AOG_rule
+					set_country_flag = LEP_qi_takes_control
+					add_ideas = {
+						LEP_Tian_Wenbing_hog_pau
+						LEP_Ma_Yuren_for_pau
+						LEP_Ding_Wenjiang_eco_sco
+						LEP_Zhang_Taiyan_sec_ade
+					}
+				}
+				create_country_leader = {
+					name = "Qi Xieyuan"
+					desc = POLITICS_LEP_QI_XIEYUAN_DESC
+					picture = "gfx/leaders/LEP/Portrait_LEP_Qi_Xieyuan.png"
+					expire = "1.1.1"
+					ideology = pataut_warlordism_subtype
+				}
+				add_popularity = { ideology = paternal_autocrat popularity = 0.30 }
+				set_politics = { ruling_party = paternal_autocrat elections_allowed = no }
+				set_party_name = {
+					ideology = paternal_autocrat
+					name = LEP_paternal_autocrat_party
+					long_name = LEP_paternal_autocrat_party_long
+				}
+				set_cosmetic_tag = LEP_NAN
+			}
+		}
+		option = {
+			name = GEA.846.b
+			ai_chance = { factor = 30 }
+			hidden_effect = {
+				every_state = {
+					limit = {
+						OR = { state = 613 state = 598 state = 1047 state = 606 state = 1014 state = 1050 state = 596 state = 1067 state = 1068 state = 1069 state = 600 state = 1044 state = 1045 state = 595 state = 1046 state = 1066 }
+						is_controlled_by = GEA
+					}
+					LEP = { transfer_state = PREV }
+				}
+				every_state = {
+					limit = {
+						OR = { state = 602 state = 1013 state = 1049 state = 1052 }
+						is_owned_by = GEA
+					}
+					LEP = { transfer_state = PREV }
+				}
+				LEP = {
+					set_capital = { state = 613 remember_old_capital = no }
+					if = {
+						limit = { is_in_faction = yes NOT = { is_in_faction_with = GEA } }
+						leave_faction = yes
+					}
+				}
+				set_autonomy = {
+					target = LEP
+					autonomy_state = kr_default_puppet
+					end_wars = yes
+					end_civil_wars = yes
+				}
+				if = {
+					limit = { is_in_faction = yes LEP = { NOT = { is_in_faction_with = GEA } } }
+					faction_leader = { add_to_faction = LEP }
+				}
+				LEP = {
+					clr_country_flag = GEA_china_warlord_interaction_blocked
+					clr_country_flag = GEA_german_coup_defeated
+					clr_country_flag = GEA_german_coup_pending
+					set_country_flag = GEA_east_china_puppet_administration_established
+				}
+			}
+			LEP = {
+				hidden_effect = {
+					remove_all_ministers = yes
+					LEP_SETUP_AOG = yes
+					set_country_flag = LEP_AOG_rule
+					add_ideas = {
+						AOG_Alexander_von_Falkenhausen_hog_ade
+						AOG_He_Fengshang_for_ade
+						AOG_John_Rabe_eco_ade
+						AOG_Lei_Zhong_sec_ade
+					}
+				}
+				add_popularity = { ideology = market_liberal popularity = 0.30 }
+				set_politics = { ruling_party = market_liberal elections_allowed = no }
+				set_party_name = {
+					ideology = market_liberal
+					name = LEP_market_liberal_party
+					long_name = LEP_market_liberal_party_long
+				}
+				set_party_name = {
+					ideology = authoritarian_democrat
+					name = LEP_authoritarian_democrat_party_aog
+					long_name = LEP_authoritarian_democrat_party_aog_long
+				}
+				set_cosmetic_tag = AOG
+			}
+		}
+	}
+
 	country_event = { #里斯本接受最后通牒
 		id = GEA.834
 		title = GEA.834.t
@@ -9290,6 +9785,10 @@ add_namespace = GEA_news
 			name = GEA.1000.a
 			ai_chance = {
 				factor = 33
+				modifier = {
+					factor = 0
+					GEA_indochina_no_revolt_preset = yes
+				}
 			}
 			add_political_power = -75
 			336 = {
@@ -9316,6 +9815,10 @@ add_namespace = GEA_news
 			name = GEA.1000.b
 			ai_chance = {
 				factor = 33
+				modifier = {
+					factor = 0
+					GEA_indochina_revolt_preset = yes
+				}
 			}
 			modify_country_flag = {
 				flag = GEA_Indochinese_Anger
@@ -9356,6 +9859,10 @@ add_namespace = GEA_news
 			name = GEA.1000.c
 			ai_chance = {
 				factor = 33
+				modifier = {
+					factor = 0
+					GEA_indochina_no_revolt_preset = yes
+				}
 			}
 			333 = {
 				add_building_construction = {
@@ -10278,57 +10785,33 @@ add_namespace = GEA_news
 		}
 	}
 
-	country_event = { #YUN接管角色事件的自动入口
-		id = GEA.12004
+
+
+
+
+
+	country_event = { #宁系傀儡接收德属东亚后来取得的湘系地块
+		id = GEA.12006
 		hidden = yes
-		fire_only_once = yes
 		trigger = {
 			tag = GEA
-			OR = {
-				YUN = { exists = yes is_subject_of = GEA }
-				AND = {
-					controls_state = 325
-					controls_state = 603
-					controls_state = 816
-					controls_state = 1051
-				}
+			LEP = {
+				exists = yes
+				is_subject_of = GEA
+				has_country_flag = GEA_east_china_puppet_administration_established
 			}
+			OR = { owns_state = 602 owns_state = 1013 owns_state = 1049 owns_state = 1052 }
 		}
 		immediate = {
-			if = {
-				limit = { NOT = { has_character = GEA_Zhao_Yusong } }
-				recruit_character = GEA_Zhao_Yusong
-			}
-			GEA_Zhao_Yusong = { unit_leader_event = { id = GEA.838 } }
-		}
-	}
-
-	country_event = { #SZC接管角色事件的自动入口
-		id = GEA.12005
-		hidden = yes
-		fire_only_once = yes
-		trigger = {
-			tag = GEA
-			OR = {
-				SZC = { exists = yes is_subject_of = GEA }
-				AND = {
-					controls_state = 601
-					controls_state = 605
-					controls_state = 650
-					controls_state = 661
-					controls_state = 788
+			every_state = {
+				limit = {
+					OR = { state = 602 state = 1013 state = 1049 state = 1052 }
+					is_owned_by = GEA
 				}
+				LEP = { transfer_state = PREV }
 			}
-		}
-		immediate = {
-			if = {
-				limit = { NOT = { has_character = GEA_Yao_Zuobin } }
-				recruit_character = GEA_Yao_Zuobin
-			}
-			GEA_Yao_Zuobin = { unit_leader_event = { id = GEA.839 } }
 		}
 	}
-
 
 #事件保留
 # Syndicalist uprising in Phillipines

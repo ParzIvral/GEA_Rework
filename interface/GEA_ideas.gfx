@@ -33,10 +33,6 @@ spriteTypes = {
 		texturefile = "gfx/interface/ideas/gea/GEA_Essen_Singapore_Constitution.png"
 	}
 	spriteType = {
-		name = "GFX_idea_collapsing_colonial_finances"
-		texturefile = "gfx/interface/ideas/gea/GEA_collapsing_colonial_finances.png"
-	}
-	spriteType = {
 		name = "GFX_idea_AOG_profits_idea"
 		texturefile = "gfx/interface/ideas/gea/GEA_AOG_profits_idea.png"
 	}

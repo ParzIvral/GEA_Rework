@@ -1,0 +1,7 @@
+# Missing icon required by the imported KR MIO templates.
+spriteTypes = {
+	spriteType = {
+		name = "GFX_KR_generic_mio_trait_icon_funds"
+		texturefile = "gfx/interface/military_industrial_organization/trait_icons/generic/funds_icon.png"
+	}
+}

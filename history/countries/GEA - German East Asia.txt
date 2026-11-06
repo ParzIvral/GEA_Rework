@@ -349,9 +349,9 @@ set_country_flag = GEA_owner_of_qingdao
 add_to_tech_sharing_group = german_research
 set_country_flag = {
 	flag = GEA_Indochinese_Stability
-	value = 2
+	value = 5
 }
-set_variable = { GEA_Indochinese_Stability_display = 2 }
+set_variable = { GEA_Indochinese_Stability_display = 5 }
 set_country_flag = {
 	flag = GEA_Indochinese_Anger
 	value = 2
@@ -417,6 +417,14 @@ recruit_character = GEA_Gunther_Pluschow
 recruit_character = GEA_Hellmuth_Heye
 recruit_character = GEA_Conrad_Patzig
 recruit_character = GEA_Ernst_von_Weizsacker
+
+# Administrators appointed to Chinese puppet governments.
+recruit_character = GEA_Tang_Yangdu
+recruit_character = GEA_Wilhelm_Hopfner
+recruit_character = GEA_Wang_Kemin
+recruit_character = GEA_Chen_Lianbo
+recruit_character = GEA_Zhao_Yusong
+recruit_character = GEA_Yao_Zuobin
 GEA_start_naval_variant = yes
 
 # 开局陆军装备生产线

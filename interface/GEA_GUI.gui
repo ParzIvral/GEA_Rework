@@ -911,7 +911,7 @@ guiTypes = {
 	containerWindowType = {
 		name = "GEA_china_map_gui_game"
 		position = { x = 0 y = 0 }
-		size = { width = 275 height = 480 }
+		size = { width = 275 height = 530 }
 		
 		iconType = {
 			name = "GEA_China_background"

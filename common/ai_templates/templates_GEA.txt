@@ -523,8 +523,6 @@ suppression_GEA = {
 		upgrade_prio = { base = 100 }
 		target_template = {
 			regiments = { cavalry = 10 }
-			support = { }
-			regimental_support = { }
 		}
 	}
 }

@@ -18686,28 +18686,6 @@ SIK_war_survivor = {
 
 ### South East Asia and Oceania ###
 
-GEA_future = {
-	name = "GEA_FUTURE"
-	group = "RULE_GROUP_KAISERREICH_RULES_SEA_OCEANIA"
-	option = {
-		name = DEFAULT
-		text = "RULE_OPTION_GEA_FUTURE_RANDOM"
-		desc = "RULE_OPTION_GEA_FUTURE_RANDOM_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = GEA_FUTURE_REVOLT_YES
-		text = "RULE_OPTION_GEA_FUTURE_REVOLT_YES"
-		desc = "RULE_OPTION_GEA_FUTURE_REVOLT_YES_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = GEA_FUTURE_REVOLT_NO
-		text = "RULE_OPTION_GEA_FUTURE_REVOLT_NO"
-		desc = "RULE_OPTION_GEA_FUTURE_REVOLT_NO_DESC"
-		allow_achievements = yes
-	}
-}
 GEA_governor = {
 	name = "GEA_GOVERNOR"
 	group = "RULE_GROUP_KAISERREICH_RULES_SEA_OCEANIA"
@@ -18739,6 +18717,29 @@ GEA_governor = {
 		name = GEA_GOVERNOR_CORPORATE
 		text = "RULE_OPTION_GEA_GOVERNOR_CORPORATE"
 		desc = "RULE_OPTION_GEA_GOVERNOR_CORPORATE_DESC"
+		allow_achievements = yes
+	}
+}
+
+GEA_future = { # The no-revolt preset applies only when Heye is not the selected governor.
+	name = "GEA_REWORK_FUTURE"
+	group = "RULE_GROUP_KAISERREICH_RULES_SEA_OCEANIA"
+	option = {
+		name = DEFAULT
+		text = "GEA_REWORK_FUTURE_RANDOM"
+		desc = "GEA_REWORK_FUTURE_RANDOM_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = GEA_FUTURE_REVOLT_YES
+		text = "RULE_OPTION_GEA_FUTURE_REVOLT_YES"
+		desc = "RULE_OPTION_GEA_FUTURE_REVOLT_YES_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = GEA_FUTURE_REVOLT_NO
+		text = "RULE_OPTION_GEA_FUTURE_REVOLT_NO"
+		desc = "RULE_OPTION_GEA_FUTURE_REVOLT_NO_DESC"
 		allow_achievements = yes
 	}
 }

@@ -71,4 +71,16 @@ spriteTypes = {
 		name = "GFX_idea_GEA_Friedrich_von_Buelow_sec_ade"
 		texturefile = "gfx/interface/ministers/GEA/GEA_Friedrich_von_Buelow_sec_ade.png"
 	}
+	spriteType = {
+		name = "GFX_idea_GEA_Ernst_Arthur_Voretzsch_for_pau"
+		texturefile = "gfx/interface/ministers/GEA/GEA_Ernst_Arthur_Voretzsch_for_pau.png"
+	}
+	spriteType = {
+		name = "GFX_idea_GEA_Josias_Emil_Helfferich_eco_pau"
+		texturefile = "gfx/interface/ministers/GEA/GEA_Josias_Emil_Helfferich_eco_pau.png"
+	}
+	spriteType = {
+		name = "GFX_idea_GEA_Nikolaus_Graf_zu_Dohna-Schlodien_sec_pau"
+		texturefile = "gfx/interface/ministers/GEA/GEA_Nikolaus_Graf_zu_Dohna-Schlodien_sec_pau.png"
+	}
 }

@@ -1,6 +1,14 @@
 on_actions = {
+	on_daily_GEA = {
+		effect = {
+			if = {
+				limit = { tag = GEA is_ai = yes }
+				GEA_ai_update_training_reserves = yes
+			}
+		}
+	}
 	#每日校正一次华东铁路变量
-	on_daily = {
+	on_daily_GEA = {
 		effect = {
 			if = {
 				limit = { tag = GEA }

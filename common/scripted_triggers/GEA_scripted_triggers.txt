@@ -385,7 +385,6 @@ GEA_liangguang_under_german_control_trigger = {
 				594 = { is_controlled_by = GEA }
 				599 = { is_controlled_by = GEA }
 				800 = { is_controlled_by = GEA }
-				801 = { is_controlled_by = GEA }
 				1012 = { is_controlled_by = GEA }
 				1053 = { is_controlled_by = GEA }
 				1054 = { is_controlled_by = GEA }

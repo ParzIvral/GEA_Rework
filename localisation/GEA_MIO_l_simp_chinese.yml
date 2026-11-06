@@ -511,3 +511,9 @@
  GEA_KR_loc_mio_header_tank_construction: "坦克建造"
  GEA_KR_loc_mio_header_weapons: "武器"
  GEA_KR_loc_mio_header_wings: "机翼"
+
+ # Referenced KR localisation absent from KX.
+ generic_refurbishment_repair_dockyard_organization:0 "翻新和维修船坞"
+
+ # 新版游戏的军工机构界面提示
+ INDUSTRIAL_ORG_TRAIT_TOOLTIP_SHIFT_CLICK_ADD_TO_QUEUE_UNLOCK:0 "§GShift+点击§!§Y添加特质到完成队列§!"

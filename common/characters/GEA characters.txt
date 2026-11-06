@@ -127,7 +127,7 @@ characters = {
 			desc = POLITICS_TILO_FREIHERR_VON_WILMOWSKY_DESC
 			ideology = colonial_govt_subtype
 			traits = {
-				industrialist
+				captain_of_industry
 			}
 		}
 	}
@@ -143,7 +143,7 @@ characters = {
 			desc = POLITICS_CLAUS_VON_BOHLEN_UND_HALBACH_DESC
 			ideology = colonial_govt_subtype
 			traits = {
-				industrialist
+				captain_of_industry
 			}
 		}
 	}
@@ -159,7 +159,7 @@ characters = {
 			desc = POLITICS_FRITZ_TER_MEER_DESC
 			ideology = autocratic_colonial_govt_subtype
 			traits = {
-				industrialist
+				captain_of_industry
 			}
 		}
 	}
@@ -175,7 +175,7 @@ characters = {
 			desc = POLITICS_OTTO_AMBROS_DESC
 			ideology = colonial_govt_subtype
 			traits = {
-				industrialist
+				captain_of_industry
 			}
 		}
 	}

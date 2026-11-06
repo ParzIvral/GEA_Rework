@@ -511,3 +511,10 @@
  GEA_KR_loc_mio_header_tank_construction: "Tank Construction"
  GEA_KR_loc_mio_header_weapons: "Weapons"
  GEA_KR_loc_mio_header_wings: "Wings"
+
+ # Referenced KR localisation absent from KX.
+ generic_refurbishment_repair_dockyard_organization:0 "Refurbishment and Repair Dockyard"
+ generic_mio_initial_trait_general_tank_designer:0 "General Tank Designer"
+
+ # MIO interface text added by the current game version
+ INDUSTRIAL_ORG_TRAIT_TOOLTIP_SHIFT_CLICK_ADD_TO_QUEUE_UNLOCK:0 "§GShift+Click§! to §Yadd trait to completion queue§!"

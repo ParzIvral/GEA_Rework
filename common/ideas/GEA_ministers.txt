@@ -14,7 +14,7 @@ ideas = {
 			}
 			traits = {
 				head_of_government
-				social_democrat
+				Progressive_Arbeiterfront
 				hog_political_protege
 			}
 		}
@@ -33,7 +33,7 @@ ideas = {
 			}
 			traits = {
 				head_of_government
-				social_liberal
+				Soziale_Maximalbewegung
 				hog_pacifist_patriot
 			}
 		}
@@ -52,7 +52,7 @@ ideas = {
 			}
 			traits = {
 				head_of_government
-				market_liberal
+				Ehrenwerter_Handelsverband
 				hog_humanitarian
 			}
 		}
@@ -71,7 +71,7 @@ ideas = {
 			}
 			traits = {
 				head_of_government
-				social_conservative
+				Nationale_Organisation_der_Sultane
 				hog_popular_nobleman
 			}
 		}
@@ -188,7 +188,7 @@ ideas = {
 			}
 			traits = {
 				head_of_government
-				paternal_autocrat
+				Dog
 				hog_gentleman_politician
 				dog_good_boy
 			}
@@ -227,7 +227,7 @@ ideas = {
 			}
 			traits = {
 				head_of_government
-				national_populist
+				Deutsche_Reichseisenbahnen
 				hog_corporate_suit
 			}
 		}
@@ -268,7 +268,7 @@ ideas = {
 			}
 			traits = {
 				foreign_minister
-				social_democrat
+				sd_independent
 				for_ideological_crusader
 			}
 		}
@@ -345,6 +345,25 @@ ideas = {
 			}
 		}
 
+		GEA_Ernst_Arthur_Voretzsch_for_pau = {
+			name = GEA_Ernst_Arthur_Voretzsch
+			picture = GEA_Ernst_Arthur_Voretzsch_for_pau
+			allowed = { original_tag = GEA }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Ernst_Arthur_Voretzsch_for_pau" }
+			traits = {
+				foreign_minister
+				pa_independent
+				for_conscientious_diplomat
+			}
+		}
+
 		GEA_Felix_von_Luckner_for_pau = {
 			name = GEA_Felix_von_Luckner
 			allowed = { original_tag = GEA }
@@ -360,7 +379,7 @@ ideas = {
 			}
 			traits = {
 				foreign_minister
-				paternal_autocrat
+				pa_east_asia_navy
 				for_ideological_crusader
 			}
 		}
@@ -404,6 +423,25 @@ ideas = {
 		}
 
 		## Economy Minister ##
+		GEA_Josias_Emil_Helfferich_eco_pau = {
+			name = GEA_Josias_Emil_Helfferich
+			picture = GEA_Josias_Emil_Helfferich_eco_pau
+			allowed = { original_tag = GEA }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Josias_Emil_Helfferich_eco_pau" }
+			traits = {
+				economy_minister
+				pa_independent
+				eco_shipping_baron
+			}
+		}
+
 		GEA_Ernst_Boerschmann_eco_sli = {
 			allowed = { original_tag = GEA }
 			available = {
@@ -418,7 +456,7 @@ ideas = {
 			}
 			traits = {
 				economy_minister
-				social_liberal
+				sl_independent
 				eco_construction_magnate
 			}
 		}
@@ -437,7 +475,7 @@ ideas = {
 			}
 			traits = {
 				economy_minister
-				social_liberal
+				sl_independent
 				eco_laissez_faire_capitalist
 			}
 		}
@@ -456,7 +494,7 @@ ideas = {
 			}
 			traits = {
 				economy_minister
-				social_liberal
+				sl_independent
 				eco_construction_magnate
 			}
 		}
@@ -475,7 +513,7 @@ ideas = {
 			}
 			traits = {
 				economy_minister
-				market_liberal
+				ml_independent
 				eco_theoretical_scientist
 			}
 		}
@@ -494,7 +532,7 @@ ideas = {
 			}
 			traits = {
 				economy_minister
-				social_conservative
+				sc_independent
 				eco_tank_proponent
 			}
 		}
@@ -513,7 +551,7 @@ ideas = {
 			}
 			traits = {
 				economy_minister
-				social_conservative
+				sc_independent
 				eco_laissez_faire_capitalist
 			}
 		}
@@ -532,7 +570,7 @@ ideas = {
 			}
 			traits = {
 				economy_minister
-				social_conservative
+				sc_independent
 				eco_industrial_chemist
 			}
 		}
@@ -551,7 +589,7 @@ ideas = {
 			}
 			traits = {
 				economy_minister
-				social_conservative
+				sc_independent
 				eco_industrialiser
 			}
 		}
@@ -679,7 +717,7 @@ ideas = {
 			}
 			traits = {
 				economy_minister
-				authoritarian_democrat
+				pa_east_asia_navy
 				eco_keynesian_economy
 			}
 		}
@@ -698,7 +736,7 @@ ideas = {
 			}
 			traits = {
 				economy_minister
-				paternal_autocrat
+				pa_east_asia_navy
 				eco_u_boat_proponent
 			}
 		}
@@ -736,7 +774,7 @@ ideas = {
 			}
 			traits = {
 				economy_minister
-				paternal_autocrat
+				pa_east_asia_navy
 				eco_strategic_destruction_proponent
 			}
 		}
@@ -755,7 +793,7 @@ ideas = {
 			}
 			traits = {
 				economy_minister
-				paternal_autocrat
+				pa_colonial_affairs_office
 				eco_infantry_proponent
 			}
 		}
@@ -774,7 +812,7 @@ ideas = {
 			}
 			traits = {
 				economy_minister
-				paternal_autocrat
+				pa_independent
 				eco_bank_president
 			}
 		}
@@ -793,7 +831,7 @@ ideas = {
 			}
 			traits = {
 				economy_minister
-				paternal_autocrat
+				Dog
 				eco_shipping_baron
 				dog_good_boy
 			}
@@ -813,7 +851,7 @@ ideas = {
 			}
 			traits = {
 				economy_minister
-				national_populist
+				Reichsbank
 				eco_railway_magnate
 			}
 		}
@@ -852,7 +890,7 @@ ideas = {
 			}
 			traits = {
 				security_minister
-				social_democrat
+				sd_independent
 				sec_man_of_the_people
 			}
 		}
@@ -871,7 +909,7 @@ ideas = {
 			}
 			traits = {
 				security_minister
-				social_liberal
+				sl_independent
 				sec_man_of_the_people
 			}
 		}
@@ -965,6 +1003,25 @@ ideas = {
 			}
 		}
 
+		GEA_Nikolaus_Graf_zu_Dohna-Schlodien_sec_pau = {
+			name = GEA_Nikolaus_Graf_zu_Dohna_Schlodien
+			picture = GEA_Nikolaus_Graf_zu_Dohna-Schlodien_sec_pau
+			allowed = { original_tag = GEA }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Nikolaus_Graf_zu_Dohna-Schlodien_sec_pau" }
+			traits = {
+				security_minister
+				pa_east_asia_navy
+				sec_elder_aristocrat
+			}
+		}
+
 		GEA_Felix_von_Luckner_sec_pau = {
 			name = GEA_Felix_von_Luckner
 			allowed = { original_tag = GEA }
@@ -980,7 +1037,7 @@ ideas = {
 			}
 			traits = {
 				security_minister
-				paternal_autocrat
+				pa_east_asia_army
 				sec_man_of_the_people
 			}
 		}

@@ -122,7 +122,7 @@ ideas = {
 		}
 		GEA_collapsing_colonial_finances = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_collapsing_colonial_finances"}
-			picture = collapsing_colonial_finances
+			picture = GER_Avert_Decline
 			allowed = { always = no }
 			modifier = {
 				stability_factor = -0.15
@@ -135,7 +135,7 @@ ideas = {
 		}
 		GEA_collapsing_colonial_finances_2 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_collapsing_colonial_finances_2"}
-			picture = collapsing_colonial_finances
+			picture = GER_Avert_Decline
 			allowed = { always = no }
 			modifier = {
 				stability_factor = -0.1
@@ -148,7 +148,7 @@ ideas = {
 		}
 		GEA_collapsing_colonial_finances_3 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_collapsing_colonial_finances_3"}
-			picture = collapsing_colonial_finances
+			picture = GER_Avert_Decline
 			allowed = { always = no }
 			modifier = {
 				stability_factor = -0.05
@@ -456,7 +456,7 @@ ideas = {
 			modifier = {
 				stability_factor = -0.1
 				political_power_factor = 0.075
-				consumer_goods_factor = -0.1
+				consumer_goods_factor = -0.05
 				production_speed_buildings_factor = 0.03
 				industrial_capacity_factory = 0.03
 				local_resources_factor = 0.05
@@ -466,6 +466,7 @@ ideas = {
 		GEA_Fiscal_reform_2 = { #财政改革
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Fiscal_reform_2"}
 			picture = GER_KWS_Investments
+			name = GEA_Fiscal_reform
 			allowed = { always = no }
 			modifier = {
 				political_power_factor = 0.03
@@ -479,24 +480,25 @@ ideas = {
 		GEA_Fiscal_reform_3 = { #财政改革
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Fiscal_reform_3"}
 			picture = GER_KWS_Investments
+			name = GEA_Fiscal_reform
 			allowed = { always = no }
 			modifier = {
 				stability_factor = -0.1
-				political_power_factor = 0.1
-				consumer_goods_factor = 0.05
-				production_speed_buildings_factor = 0.03
-				industrial_capacity_factory = 0.03
+				political_power_factor = 0.12
+				production_speed_buildings_factor = 0.05
+				industrial_capacity_factory = 0.05
 			}
 		}
 		GEA_Fiscal_reform_4 = { #财政改革
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GEA_Fiscal_reform_4"}
 			picture = GER_KWS_Investments
+			name = GEA_Fiscal_reform
 			allowed = { always = no }
 			modifier = {
 				stability_factor = -0.1
-				political_power_factor = 0.1
-				consumer_goods_factor = -0.05
-				production_speed_buildings_factor = 0.05
+				political_power_factor = 0.15
+				consumer_goods_factor = -0.075
+				production_speed_buildings_factor = 0.08
 				resistance_growth = 0.05
 			}
 		}
@@ -506,8 +508,9 @@ ideas = {
 			picture = GER_goldstandard
 			allowed = { always = no }
 			modifier = {
-				political_power_factor = -0.05
+				political_power_factor = 0.05
 				consumer_goods_expected_value = -0.15
+				industrial_factory_donations = 3
 			}
 		}
 		GEA_Expand_fiscal_and_taxation_sources_wine = { #扩大财税来源
@@ -516,8 +519,10 @@ ideas = {
 			picture = GER_goldstandard
 			allowed = { always = no }
 			modifier = {
-				political_power_factor = -0.02
+				political_power_factor = 0.02
+				consumer_goods_factor = -0.05
 				consumer_goods_expected_value = -0.10
+				industrial_factory_donations = 3
 			}
 		}
 		GEA_Expand_fiscal_and_taxation_sources_opium = { #扩大财税来源
@@ -526,10 +531,10 @@ ideas = {
 			picture = GER_goldstandard
 			allowed = { always = no }
 			modifier = {
-				stability_factor = -0.06
 				line_change_production_efficiency_factor = -0.05
-				political_power_factor = -0.03
+				political_power_factor = -0.02
 				consumer_goods_expected_value = -0.15
+				industrial_factory_donations = 5
 			}
 		}
 		GEA_The_garden_of_the_cartel_2 = { #受缚巨兽

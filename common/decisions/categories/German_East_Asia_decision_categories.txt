@@ -39,10 +39,7 @@ GEA_focus_china_decisions = {
 		original_tag = GEA
 	}
 	visible = {
-		OR = {
-			has_country_flag = GEA_nanjing_crisis
-			country_exists = GXC
-		}
+		has_country_flag = GEA_nanjing_crisis
 	}
 	priority = 1301
 	visible_when_empty = yes
