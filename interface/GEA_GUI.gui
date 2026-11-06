@@ -48,7 +48,7 @@ guiTypes = {
 			position = { x = -130 y = -190 }
 			spriteType = "GEA_Hawaii_ger"
 			pdx_tooltip = "GEA_Hawaii_ger"
-			pdx_tooltip_delayed = "GEA_Hawaii_ger_DESC"
+			pdx_tooltip_delayed = "GEA_Hawaii_ger_desc"
 			scale = 0.3235
 		}
 
@@ -97,8 +97,8 @@ guiTypes = {
 			orientation = center
 			position = { x = -130 y = -190 }
 			spriteType = "GEA_Philippines_ger"
-			pdx_tooltip = "GEA_Philippines"
-			pdx_tooltip_delayed = "GEA_Philippines_DESC"
+			pdx_tooltip = "GEA_Philippines_ger"
+			pdx_tooltip_delayed = "GEA_Philippines_ger_desc"
 			scale = 0.3235
 		}
 
@@ -108,7 +108,7 @@ guiTypes = {
 			position = { x = -130 y = -190 }
 			spriteType = "GEA_GER_Guinea"
 			pdx_tooltip = "GEA_GER_Guinea"
-			pdx_tooltip_delayed = "GEA_GER_Guinea_DESC"
+			pdx_tooltip_delayed = "GEA_GER_Guinea_desc"
 			scale = 0.3235
 		}
 
@@ -127,8 +127,8 @@ guiTypes = {
 			orientation = center
 			position = { x = -130 y = -190 }
 			spriteType = "GEA_DEI_ger"
-			pdx_tooltip = "GEA_DEI"
-			pdx_tooltip_delayed = "GEA_DEI_DESC"
+			pdx_tooltip = "GEA_DEI_ger"
+			pdx_tooltip_delayed = "GEA_DEI_ger_desc"
 			scale = 0.3235
 		}
 
@@ -147,8 +147,8 @@ guiTypes = {
 			orientation = center
 			position = { x = -130 y = -190 }
 			spriteType = "GEA_Burma_ger"
-			pdx_tooltip = "GEA_Burma"
-			pdx_tooltip_delayed = "GEA_Burma_DESC"
+			pdx_tooltip = "GEA_Burma_ger"
+			pdx_tooltip_delayed = "GEA_Burma_ger_desc"
 			scale = 0.3235
 		}
 
@@ -167,8 +167,8 @@ guiTypes = {
 			orientation = center
 			position = { x = -130 y = -190 }
 			spriteType = "GEA_Thailand_ger"
-			pdx_tooltip = "GEA_Thailand"
-			pdx_tooltip_delayed = "GEA_Thailand_DESC"
+			pdx_tooltip = "GEA_Thailand_ger"
+			pdx_tooltip_delayed = "GEA_Thailand_ger_desc"
 			scale = 0.3235
 		}
 

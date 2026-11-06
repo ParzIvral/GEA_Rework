@@ -6,6 +6,12 @@ GEA_china_warlord_interaction = {
 		cost = 0
 		visible = { has_country_flag = GEA_german_loan_active }
 		available = {
+			hidden_trigger = {
+				OR = {
+					NOT = { has_variable = GEA_german_loan_extension_count }
+					check_variable = { var = GEA_german_loan_extension_count value = 2 compare = less_than }
+				}
+			}
 			country_exists = GEA
 			OR = {
 				has_active_mission = GEA_warlord_repay_german_loan_short
@@ -21,6 +27,7 @@ GEA_china_warlord_interaction = {
 			hidden_effect = {
 				GEA_ensure_german_loan_repayment_effect = yes
 				GEA_extend_german_loan_effect = yes
+				add_to_variable = { GEA_german_loan_extension_count = 1 }
 				GEA_warlord_add_3_german_capital_influence_effect = yes
 			}
 			custom_effect_tooltip = GEA_loan_extend_60_days_tt
@@ -42,7 +49,7 @@ GEA_china_warlord_interaction = {
 		}
 		available = {
 			country_exists = GEA
-			NOT = { has_country_flag = GEA_german_loan_equity_settlement_used }
+
 			OR = {
 				has_active_mission = GEA_warlord_repay_german_loan_short
 				has_active_mission = GEA_warlord_repay_german_loan_medium
@@ -120,7 +127,7 @@ GEA_china_warlord_interaction = {
 		allowed = { GEA_china_warlord_eligible_trigger = yes }
 		priority = 9000
 		visible = { has_country_flag = GEA_german_loan_active }
-		available = { has_country_flag = GEA_german_loan_active }
+
 		cost = 0
 		custom_cost_text = CP_10
 		custom_cost_trigger = { command_power > 9.99 }

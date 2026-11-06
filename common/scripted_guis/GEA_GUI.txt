@@ -10,6 +10,13 @@ scripted_gui = {
 		}
 
 		triggers = {
+			Hainan_ger_Map_visible = {
+				GEA = { owns_state = 591 }
+			}
+			Hainan_Map_visible = {
+				GEA = { NOT = { owns_state = 591 } }
+			}
+
 			Borneo_Map_visible = {
 				GEA = {
 					owns_state = 333
@@ -353,6 +360,18 @@ scripted_gui = {
 			}
 			GEA_Solomon_click = {
 				GEA_Solomon_click_effect = yes
+			}
+			DEI_Map_click = {
+				GEA_Dei_war_click_effect = yes
+			}
+			Philippines_Map_click = {
+				GEA_Phi_click_effect = yes
+			}
+			Thailand_Map_click = {
+				GEA_Tai_click_effect = yes
+			}
+			Burma_Map_click = {
+				GEA_Bruma_click_effect = yes
 			}
 			Burma_ger_Map_click = {
 				GEA_Bruma_click_effect = yes

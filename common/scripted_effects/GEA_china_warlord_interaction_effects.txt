@@ -329,6 +329,7 @@ GEA_warlord_add_5_german_military_projection_effect = { #增加5军事干涉
 }
 GEA_begin_short_german_loan_effect = { #短期借贷
 	set_variable = { GEA_german_loan_repayment = 50 }
+	set_variable = { GEA_german_loan_extension_count = 0 }
 	clr_country_flag = GEA_german_loan_equity_settlement_used
 	clr_country_flag = GEA_german_loan_offer_pending
 	set_country_flag = GEA_german_loan_active
@@ -353,6 +354,7 @@ GEA_begin_short_german_loan_effect = { #短期借贷
 
 GEA_begin_medium_german_loan_effect = { #中期借贷
 	set_variable = { GEA_german_loan_repayment = 100 }
+	set_variable = { GEA_german_loan_extension_count = 0 }
 	clr_country_flag = GEA_german_loan_equity_settlement_used
 	clr_country_flag = GEA_german_loan_offer_pending
 	set_country_flag = GEA_german_loan_active
@@ -377,6 +379,7 @@ GEA_begin_medium_german_loan_effect = { #中期借贷
 
 GEA_begin_long_german_loan_effect = { #长期借贷
 	set_variable = { GEA_german_loan_repayment = 200 }
+	set_variable = { GEA_german_loan_extension_count = 0 }
 	clr_country_flag = GEA_german_loan_equity_settlement_used
 	clr_country_flag = GEA_german_loan_offer_pending
 	set_country_flag = GEA_german_loan_active
@@ -401,6 +404,7 @@ GEA_begin_long_german_loan_effect = { #长期借贷
 
 GEA_clear_german_loan_effect = { #终结借贷
 	clear_variable = GEA_german_loan_repayment
+	clear_variable = GEA_german_loan_extension_count
 	clr_country_flag = GEA_german_loan_equity_settlement_used
 	clr_country_flag = GEA_german_loan_active
 	clr_country_flag = GEA_german_loan_offer_pending

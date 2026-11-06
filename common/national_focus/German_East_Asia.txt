@@ -9597,7 +9597,7 @@ focus_tree = {
 			}
 			custom_effect_tooltip = GEA_banknote_china_economic_discount_tt
 			hidden_effect = {
-				set_variable = { GEA_china_economic_cost_30 = 20 }
+				set_variable = { GEA_china_economic_cost_30 = 10 }
 				set_variable = { GEA_china_economic_cost_20 = 10 }
 				set_variable = { GEA_china_economic_cost_40 = 30 }
 				set_variable = { GEA_china_economic_cost_25 = 15 }

@@ -89,6 +89,12 @@ on_actions = {
 			if = {
 				limit = { GEA = { exists = yes } }
 				GEA = {
+					if = {
+						limit = { has_completed_focus = GEA_Expand_issuance_of_banknotes }
+						set_variable = { GEA_china_economic_cost_30 = 10 }
+					}
+					clr_country_flag = Dei_OPEN
+					clr_country_flag = Dei_WAR_OPEN
 					set_rule = {
 						can_not_declare_war = yes
 						can_decline_call_to_war = no

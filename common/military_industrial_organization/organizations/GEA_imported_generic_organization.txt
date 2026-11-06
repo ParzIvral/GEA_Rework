@@ -474,7 +474,7 @@ GEA_KR_generic_artillery_organization = {
 	icon = GFX_idea_generic_artillery_manufacturer_2
 
 	allowed = {
-		uses_generic_artillery_mio = yes
+		always = no #only used as archetype
 	}
 
 	equipment_type = {
@@ -1294,7 +1294,7 @@ GEA_KR_generic_escort_ship_organization = {
 	icon = GFX_idea_generic_naval_manufacturer_1
 
 	allowed = {
-		uses_generic_naval_mio = yes
+		always = no #only used as archetype
 	}
 
 	equipment_type = {
@@ -2041,7 +2041,7 @@ GEA_KR_generic_infantry_equipment_organization = {
 	icon = GFX_idea_generic_infantry_equipment_manufacturer_2
 
 	allowed = {
-		uses_generic_infantry_mio = yes
+		always = no #only used as archetype
 	}
 
 	equipment_type = {
@@ -3717,7 +3717,7 @@ GEA_KR_generic_motorized_mechanized_organization = {
 	icon = GFX_idea_generic_motorized_equipment_manufacturer_3
 
 	allowed = {
-		uses_generic_motorised_mio = yes
+		always = no #only used as archetype
 	}
 
 	equipment_type = {
@@ -5560,7 +5560,7 @@ GEA_KR_generic_support_equipment_organization = {
 	icon = GFX_idea_generic_infantry_equipment_manufacturer_1
 
 	allowed = {
-		uses_generic_support_mio = yes
+		always = no #only used as archetype
 	}
 
 	equipment_type = { infantry_equipment support_equipment }
@@ -5818,7 +5818,7 @@ GEA_KR_generic_tank_organization = {
 	icon = GFX_idea_generic_tank_manufacturer_1
 
 	allowed = {
-		uses_generic_armour_mio = yes
+		always = no #only used as archetype
 	}
 
 	equipment_type = { mio_cat_eq_all_light_tank mio_cat_eq_all_medium_tank }

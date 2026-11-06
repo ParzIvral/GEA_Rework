@@ -3957,7 +3957,7 @@ add_namespace = GEA_news
 				value = -1
 			}
 			add_to_variable = { GEA_Indochinese_Anger_display = -1 }
-			custom_effect_tooltip = Gea_Indochina_Anger_Down
+			custom_effect_tooltip = GEA_Indochina_Anger_Down
 			modify_country_flag = {
 				flag = GEA_Indochinese_Stability
 				value = 1
