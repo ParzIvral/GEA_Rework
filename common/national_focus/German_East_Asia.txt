@@ -8665,11 +8665,7 @@ focus_tree = {
 		relative_position_id = GEA_Abolish_unnecessary_institutions
 		prerequisite = {
 			focus = GEA_The_Eastern_Treasure_House_of_the_Empire
-		}
-		prerequisite = {
 			focus = GEA_The_German_cultural_craze
-		}
-		prerequisite = {
 			focus = GEA_Abolish_unnecessary_institutions
 		}
 		completion_reward = {

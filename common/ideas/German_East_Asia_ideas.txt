@@ -190,9 +190,10 @@ ideas = {
 			picture = GEA_Enterprise_Prosperous
 			allowed = { always = no }
 			modifier = {
-				stability_factor = 0.05
-				production_speed_dockyard_factor = -0.05
-				industrial_capacity_dockyard = -0.15
+				political_power_cost = 0.02
+				consumer_goods_factor = -0.05
+				industrial_capacity_factory = 0.04
+				production_speed_buildings_factor = 0.04
 			}
 		}
 		GEA_Individual_Rations_Storage = {

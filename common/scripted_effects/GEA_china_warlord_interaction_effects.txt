@@ -1,3 +1,37 @@
+# 在接受市自支持率变化的国家作用域刷新既有青岛合作，保留原版分档及配套事件。
+GEA_refresh_tsingtau_collaboration_effect = {
+	hidden_effect = {
+		if = {
+			limit = {
+				tag = LEP
+				NOT = { has_country_flag = LEP_AOG_rule }
+				OR = {
+					has_idea = LEP_Tsingtau_Collaboration
+					has_idea = LEP_Tsingtau_Collaboration1
+					has_idea = LEP_Tsingtau_Collaboration2
+					has_idea = LEP_Tsingtau_Collaboration3
+					has_idea = LEP_Tsingtau_Collaboration4
+					has_idea = LEP_Tsingtau_Collaboration5
+					has_idea = LEP_Tsingtau_Collaboration6
+					has_idea = LEP_Tsingtau_Collaboration7
+					has_idea = LEP_Tsingtau_Collaboration8
+					has_idea = LEP_Tsingtau_Collaboration9
+					has_idea = LEP_Tsingtau_Collaboration10
+					has_idea = LEP_Tsingtau_Collaboration11
+					has_idea = LEP_Tsingtau_Collaboration12
+					has_idea = LEP_Tsingtau_Collaboration13
+					has_idea = LEP_Tsingtau_Collaboration14
+					has_idea = LEP_Tsingtau_Collaboration15
+					has_idea = LEP_Tsingtau_Collaboration16
+				}
+			}
+			LEP_remove_tsingtau_spirit = yes
+			LEP_calculate_tsingtau_level = yes
+			LEP_add_tsingtau_spirit = yes
+		}
+	}
+}
+
 #cn军阀效果
 GEA_warlord_add_2_german_influence_effect = {
 	if = {

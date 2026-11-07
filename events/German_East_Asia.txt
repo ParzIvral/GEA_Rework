@@ -3065,16 +3065,16 @@ add_namespace = GEA_news
 			add_political_power = 100
 			modify_country_flag = {
 				flag = GEA_Indochinese_Anger
-				value = -1
+				value = 1
 			}
 			add_to_variable = { GEA_Indochinese_Anger_display = 1 }
-			custom_effect_tooltip = GEA_Indochina_Anger_Down
+			custom_effect_tooltip = GEA_Indochina_Anger_Up
 			modify_country_flag = {
 				flag = GEA_Indochinese_Stability
 				value = -1
 			}
-			add_to_variable = { GEA_Indochinese_Stability_display = 1 }
-			custom_effect_tooltip = GEA_Indochina_Stability_Up
+			add_to_variable = { GEA_Indochinese_Stability_display = -1 }
+			custom_effect_tooltip = GEA_Indochina_Stability_Down
 		}
 
 		option = {#适当的自治或许能让他们远离革命
@@ -9361,6 +9361,94 @@ add_namespace = GEA_news
 		}
 	}
 
+	country_event = { #甘宁青联合自治政府
+		id = GEA.847
+		title = GEA.847.t
+		desc = GEA.847.d
+		fire_only_once = yes
+		trigger = {
+			tag = GEA
+			OR = {
+				XSM = { exists = yes is_subject_of = GEA }
+				AND = {
+					controls_state = 283
+					controls_state = 348
+					controls_state = 353
+					controls_state = 604
+					controls_state = 616
+					controls_state = 621
+					controls_state = 774
+				}
+			}
+		}
+		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.847" }
+
+		option = {
+			name = GEA.847.a
+			hidden_effect = {
+				every_state = {
+					limit = {
+						OR = { state = 283 state = 348 state = 353 state = 604 state = 616 state = 621 state = 774 }
+						is_controlled_by = GEA
+					}
+					XSM = { transfer_state = PREV }
+				}
+				XSM = {
+					if = {
+						limit = { owns_state = 348 }
+						set_capital = { state = 348 remember_old_capital = no }
+					}
+					if = {
+						limit = { is_in_faction = yes NOT = { is_in_faction_with = GEA } }
+						leave_faction = yes
+					}
+				}
+				set_autonomy = {
+					target = XSM
+					autonomy_state = kr_default_puppet
+					end_wars = yes
+					end_civil_wars = yes
+				}
+				if = {
+					limit = { is_in_faction = yes XSM = { NOT = { is_in_faction_with = GEA } } }
+					faction_leader = { add_to_faction = XSM }
+				}
+				XSM = {
+					clr_country_flag = GEA_china_warlord_interaction_blocked
+					clr_country_flag = GEA_german_coup_defeated
+					set_country_flag = GEA_xsm_puppet_administration_established
+				}
+			}
+			hidden_effect = {
+				GEA = {
+					if = {
+						limit = { NOT = { XSM = { has_character = GEA_Ma_Hongkui } } }
+						if = {
+							limit = { NOT = { has_character = GEA_Ma_Hongkui } }
+							recruit_character = GEA_Ma_Hongkui
+						}
+						GEA_Ma_Hongkui = { set_nationality = XSM }
+					}
+				}
+			}
+			XSM = {
+				add_popularity = { ideology = paternal_autocrat popularity = 0.30 }
+				set_politics = { ruling_party = paternal_autocrat elections_allowed = no }
+				promote_character = { character = GEA_Ma_Hongkui ideology = pataut_warlordism_subtype }
+				set_party_name = {
+					ideology = paternal_autocrat
+					name = GEA_XSM_german_party
+					long_name = GEA_XSM_german_party_long
+				}
+				set_cosmetic_tag = GEA_XSM_german
+				hidden_effect = {
+					remove_ideas_with_trait = head_of_government
+					add_ideas = XSM_Ma_Hongkui_hog_pau
+				}
+			}
+		}
+	}
+
 	unit_leader_event = { #唐仰杜上任后的角色事件
 		id = GEA.840
 		title = GEA.840.t
@@ -9811,7 +9899,7 @@ add_namespace = GEA_news
 				}
 			}
 		}
-		option = { 
+		option = {
 			name = GEA.1000.b
 			ai_chance = {
 				factor = 33
@@ -9831,13 +9919,6 @@ add_namespace = GEA_news
 					type = industrial_complex
 					level = 1
 					instant_build = yes
-				}	
-				add_state_modifier = {
-					modifier = { 
-						local_manpower = 0.05
-						local_building_slots = 1
-						state_production_speed_arms_factory_factor = 0.12
-					}
 				}
 			}
 			671 = {
@@ -9845,9 +9926,20 @@ add_namespace = GEA_news
 					type = industrial_complex
 					level = 1
 					instant_build = yes
-				}	
+				}
+			}
+			857 = {
 				add_state_modifier = {
-					modifier = { 
+					modifier = {
+						local_manpower = 0.05
+						local_building_slots = 1
+						state_production_speed_arms_factory_factor = 0.12
+					}
+				}
+			}
+			671 = {
+				add_state_modifier = {
+					modifier = {
 						local_manpower = 0.05
 						local_building_slots = 1
 						state_production_speed_arms_factory_factor = 0.12
@@ -9855,7 +9947,7 @@ add_namespace = GEA_news
 				}
 			}
 		}
-		option = { 
+		option = {
 			name = GEA.1000.c
 			ai_chance = {
 				factor = 33
@@ -9869,14 +9961,28 @@ add_namespace = GEA_news
 					type = infrastructure
 					level = 1
 					instant_build = yes
-				}	
+				}
 				add_building_construction = {
 					type = industrial_complex
 					level = 1
 					instant_build = yes
 				}
+			}
+			828 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			333 = {
 				add_state_modifier = {
-					modifier = { 
+					modifier = {
 						local_building_slots = 4
 						local_resources_factor = 0.12
 						state_production_speed_infrastructure_factor = 0.05
@@ -9885,18 +9991,8 @@ add_namespace = GEA_news
 				}
 			}
 			828 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}	
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
 				add_state_modifier = {
-					modifier = { 
+					modifier = {
 						local_building_slots = 2
 						local_resources_factor = 0.2
 						state_production_speed_infrastructure_factor = 0.05
@@ -10790,25 +10886,60 @@ add_namespace = GEA_news
 
 
 
-	country_event = { #宁系傀儡接收德属东亚后来取得的湘系地块
+	country_event = { #1939年德国将锡兰及其核心地位移交德属东亚
+		id = GEA.12004
+		hidden = yes
+		fire_only_once = yes
+		trigger = {
+			tag = GER
+			date > 1938.12.31
+			GEA = { exists = yes }
+			owns_state = 422
+			controls_state = 422
+		}
+		immediate = {
+			log = "[GetDateText]: [Root.GetName]: event GEA.12004: Ceylon transferred to GEA"
+			GEA = { transfer_state = 422 }
+			422 = { add_core_of = GEA }
+		}
+	}
+
+	country_event = { #德国占领台湾后给予德属东亚宣称
+		id = GEA.12005
+		hidden = yes
+		fire_only_once = yes
+		trigger = {
+			tag = GER
+			GEA = { exists = yes }
+			controls_state = 524
+		}
+		immediate = {
+			log = "[GetDateText]: [Root.GetName]: event GEA.12005: GEA claim on Taiwan"
+			GEA = { add_state_claim = 524 }
+		}
+	}
+
+	country_event = { #华东傀儡一次性接收全部湘系地块
 		id = GEA.12006
 		hidden = yes
+		fire_only_once = yes
 		trigger = {
 			tag = GEA
 			LEP = {
 				exists = yes
 				is_subject_of = GEA
-				has_country_flag = GEA_east_china_puppet_administration_established
 			}
-			OR = { owns_state = 602 owns_state = 1013 owns_state = 1049 owns_state = 1052 }
+			owns_state = 602
+			owns_state = 1013
+			owns_state = 1049
+			owns_state = 1052
 		}
 		immediate = {
-			every_state = {
-				limit = {
-					OR = { state = 602 state = 1013 state = 1049 state = 1052 }
-					is_owned_by = GEA
-				}
-				LEP = { transfer_state = PREV }
+			LEP = {
+				transfer_state = 602
+				transfer_state = 1013
+				transfer_state = 1049
+				transfer_state = 1052
 			}
 		}
 	}

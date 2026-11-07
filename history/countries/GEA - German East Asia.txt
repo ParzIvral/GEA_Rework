@@ -425,6 +425,7 @@ recruit_character = GEA_Wang_Kemin
 recruit_character = GEA_Chen_Lianbo
 recruit_character = GEA_Zhao_Yusong
 recruit_character = GEA_Yao_Zuobin
+recruit_character = GEA_Ma_Hongkui
 GEA_start_naval_variant = yes
 
 # 开局陆军装备生产线

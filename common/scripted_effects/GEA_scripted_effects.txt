@@ -7,6 +7,7 @@ GEA_Indochina_click_effect = { #印度支那点击互动
 			}
 		}
 		set_country_flag = Indochina_OPEN
+		clr_country_flag = Hainan_OPEN
 		clr_country_flag = Malaya_OPEN
 		clr_country_flag = Borneo_OPEN
 		clr_country_flag = Guinea_OPEN
@@ -37,6 +38,7 @@ GEA_Malaya_click_effect = {
 			}
 		}
 		set_country_flag = Malaya_OPEN
+		clr_country_flag = Hainan_OPEN
 		clr_country_flag = Indochina_OPEN
 		clr_country_flag = Borneo_OPEN
 		clr_country_flag = Guinea_OPEN
@@ -66,6 +68,7 @@ GEA_North_Borneo_click_effect = {
 			}
 		}
 		set_country_flag = Borneo_OPEN
+		clr_country_flag = Hainan_OPEN
 		clr_country_flag = Indochina_OPEN
 		clr_country_flag = Malaya_OPEN
 		clr_country_flag = Guinea_OPEN
@@ -95,6 +98,7 @@ GEA_Borneo_click_effect = {
 			}
 		}
 		set_country_flag = Borneo_OPEN
+		clr_country_flag = Hainan_OPEN
 		clr_country_flag = Indochina_OPEN
 		clr_country_flag = Malaya_OPEN
 		clr_country_flag = Guinea_OPEN
@@ -124,6 +128,7 @@ GEA_GER_Guinea_click_effect = {
 			}
 		}
 		set_country_flag = Guinea_OPEN
+		clr_country_flag = Hainan_OPEN
 		clr_country_flag = Indochina_OPEN
 		clr_country_flag = Malaya_OPEN
 		clr_country_flag = Borneo_OPEN
@@ -153,6 +158,7 @@ GEA_Samoa_click_effect = {
 			}
 		}
 		set_country_flag = Samoa_OPEN
+		clr_country_flag = Hainan_OPEN
 		clr_country_flag = Indochina_OPEN
 		clr_country_flag = Malaya_OPEN
 		clr_country_flag = Borneo_OPEN
@@ -182,6 +188,7 @@ GEA_Shandong_click_effect = {
 			}
 		}
 		set_country_flag = Shandong_OPEN
+		clr_country_flag = Hainan_OPEN
 		clr_country_flag = Indochina_OPEN
 		clr_country_flag = Malaya_OPEN
 		clr_country_flag = Borneo_OPEN
@@ -211,6 +218,7 @@ GEA_Solomon_click_effect = {
 			}
 		}
 		set_country_flag = Solomon_OPEN
+		clr_country_flag = Hainan_OPEN
 		clr_country_flag = Indochina_OPEN
 		clr_country_flag = Malaya_OPEN
 		clr_country_flag = Borneo_OPEN
@@ -252,6 +260,7 @@ GEA_Dei_click_effect = {
 			}
 		}
 		set_country_flag = Dei_OPEN
+		clr_country_flag = Hainan_OPEN
 		clr_country_flag = Dei_WAR_OPEN
 		clr_country_flag = Indochina_OPEN
 		clr_country_flag = Malaya_OPEN
@@ -282,6 +291,7 @@ GEA_Dei_war_click_effect = {
 			}
 		}
 		set_country_flag = Dei_WAR_OPEN
+		clr_country_flag = Hainan_OPEN
 		clr_country_flag = Dei_OPEN
 		clr_country_flag = Indochina_OPEN
 		clr_country_flag = Malaya_OPEN
@@ -311,6 +321,7 @@ GEA_Tai_click_effect = {
 			}
 		}
 		set_country_flag = Tai_OPEN
+		clr_country_flag = Hainan_OPEN
 		clr_country_flag = Indochina_OPEN
 		clr_country_flag = Malaya_OPEN
 		clr_country_flag = Borneo_OPEN
@@ -340,6 +351,7 @@ GEA_Bruma_click_effect = {
 			}
 		}
 		set_country_flag = Bruma_OPEN
+		clr_country_flag = Hainan_OPEN
 		clr_country_flag = Indochina_OPEN
 		clr_country_flag = Malaya_OPEN
 		clr_country_flag = Borneo_OPEN
@@ -369,6 +381,7 @@ GEA_Phi_click_effect = {
 			}
 		}
 		set_country_flag = Phi_OPEN
+		clr_country_flag = Hainan_OPEN
 		clr_country_flag = Indochina_OPEN
 		clr_country_flag = Malaya_OPEN
 		clr_country_flag = Borneo_OPEN
@@ -398,6 +411,7 @@ GEA_Hawaii_click_effect = {
 			}
 		}
 		set_country_flag = Hawaii_OPEN
+		clr_country_flag = Hainan_OPEN
 		clr_country_flag = Indochina_OPEN
 		clr_country_flag = Malaya_OPEN
 		clr_country_flag = Borneo_OPEN
@@ -415,6 +429,30 @@ GEA_Hawaii_click_effect = {
 		limit = {
 			has_country_flag = Hawaii_OPEN
 		}
+		clr_country_flag = Hawaii_OPEN
+	}
+}
+
+GEA_Hainan_click_effect = { #德属海南地图互动
+	if = {
+		limit = { has_country_flag = Hainan_OPEN }
+		clr_country_flag = Hainan_OPEN
+	}
+	else_if = {
+		limit = { 591 = { is_owned_and_controlled_by = GEA } }
+		set_country_flag = Hainan_OPEN
+		clr_country_flag = Indochina_OPEN
+		clr_country_flag = Malaya_OPEN
+		clr_country_flag = Borneo_OPEN
+		clr_country_flag = Guinea_OPEN
+		clr_country_flag = Samoa_OPEN
+		clr_country_flag = Shandong_OPEN
+		clr_country_flag = Solomon_OPEN
+		clr_country_flag = Dei_OPEN
+		clr_country_flag = Dei_WAR_OPEN
+		clr_country_flag = Tai_OPEN
+		clr_country_flag = Bruma_OPEN
+		clr_country_flag = Phi_OPEN
 		clr_country_flag = Hawaii_OPEN
 	}
 }
@@ -2112,6 +2150,7 @@ GEA_Szc_click_effect = { #四川
 	}
 	else = {
 		set_country_flag = SZC_OPEN
+		clr_country_flag = TAIWAN_OPEN
 		clr_country_flag = HNN_OPEN
 		clr_country_flag = SHX_OPEN
 		clr_country_flag = YUN_OPEN
@@ -2133,6 +2172,7 @@ GEA_Yun_click_effect = { #云南
 	else = {
 		clr_country_flag = SZC_OPEN
 		set_country_flag = YUN_OPEN
+		clr_country_flag = TAIWAN_OPEN
 		clr_country_flag = HNN_OPEN
 		clr_country_flag = SHX_OPEN
 		clr_country_flag = LEP_OPEN
@@ -2152,6 +2192,7 @@ GEA_Lep_click_effect = { #华东
 		clr_country_flag = SZC_OPEN
 		clr_country_flag = YUN_OPEN
 		set_country_flag = LEP_OPEN
+		clr_country_flag = TAIWAN_OPEN
 		clr_country_flag = HNN_OPEN
 		clr_country_flag = SHX_OPEN
 		clr_country_flag = SQI_OPEN
@@ -2170,6 +2211,7 @@ GEA_Sqi_click_effect = { #山东
 		clr_country_flag = SZC_OPEN
 		clr_country_flag = YUN_OPEN
 		set_country_flag = SQI_OPEN
+		clr_country_flag = TAIWAN_OPEN
 		clr_country_flag = HNN_OPEN
 		clr_country_flag = SHX_OPEN
 		clr_country_flag = LEP_OPEN
@@ -2188,6 +2230,7 @@ GEA_Gxc_click_effect = { #两广
 		clr_country_flag = SZC_OPEN
 		clr_country_flag = YUN_OPEN
 		set_country_flag = GXC_OPEN
+		clr_country_flag = TAIWAN_OPEN
 		clr_country_flag = HNN_OPEN
 		clr_country_flag = SHX_OPEN
 		clr_country_flag = LEP_OPEN
@@ -2206,6 +2249,7 @@ GEA_Zhili_click_effect = { #直隶
 		clr_country_flag = SZC_OPEN
 		clr_country_flag = YUN_OPEN
 		set_country_flag = QIE_OPEN
+		clr_country_flag = TAIWAN_OPEN
 		clr_country_flag = HNN_OPEN
 		clr_country_flag = SHX_OPEN
 		clr_country_flag = LEP_OPEN
@@ -2224,6 +2268,7 @@ GEA_Lec_click_effect = { #使馆城市
 		clr_country_flag = SZC_OPEN
 		clr_country_flag = YUN_OPEN
 		set_country_flag = LEC_OPEN
+		clr_country_flag = TAIWAN_OPEN
 		clr_country_flag = HNN_OPEN
 		clr_country_flag = SHX_OPEN
 		clr_country_flag = LEP_OPEN
@@ -2240,6 +2285,7 @@ GEA_Hnn_click_effect = {
 	}
 	else = {
 		set_country_flag = HNN_OPEN
+		clr_country_flag = TAIWAN_OPEN
 		clr_country_flag = SZC_OPEN
 		clr_country_flag = YUN_OPEN
 		clr_country_flag = LEP_OPEN
@@ -2258,6 +2304,7 @@ GEA_Shx_click_effect = {
 	}
 	else = {
 		set_country_flag = SHX_OPEN
+		clr_country_flag = TAIWAN_OPEN
 		clr_country_flag = SZC_OPEN
 		clr_country_flag = YUN_OPEN
 		clr_country_flag = LEP_OPEN
@@ -2266,6 +2313,25 @@ GEA_Shx_click_effect = {
 		clr_country_flag = QIE_OPEN
 		clr_country_flag = LEC_OPEN
 		clr_country_flag = HNN_OPEN
+	}
+}
+
+GEA_Taiwan_click_effect = { #对华GUI台湾地块
+	if = {
+		limit = { has_country_flag = TAIWAN_OPEN }
+		clr_country_flag = TAIWAN_OPEN
+	}
+	else = {
+		set_country_flag = TAIWAN_OPEN
+		clr_country_flag = SZC_OPEN
+		clr_country_flag = YUN_OPEN
+		clr_country_flag = LEP_OPEN
+		clr_country_flag = SQI_OPEN
+		clr_country_flag = GXC_OPEN
+		clr_country_flag = QIE_OPEN
+		clr_country_flag = LEC_OPEN
+		clr_country_flag = HNN_OPEN
+		clr_country_flag = SHX_OPEN
 	}
 }
 

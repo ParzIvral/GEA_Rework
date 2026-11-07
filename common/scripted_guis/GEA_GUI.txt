@@ -337,6 +337,9 @@ scripted_gui = {
 		}
 
 		effects = {
+			Hainan_ger_Map_click = {
+				GEA_Hainan_click_effect = yes
+			}
 			Indochina_Map_click = {
 				GEA_Indochina_click_effect = yes
 			}
@@ -1414,6 +1417,9 @@ scripted_gui = {
 		}
 
 		effects = {
+			GEA_Jap_Map_click = {
+				GEA_Taiwan_click_effect = yes
+			}
 			GEA_HNN_Map_click = {
 				GEA_Hnn_click_effect = yes
 			}

@@ -180,4 +180,8 @@ spriteTypes = {
 		name = "GFX_portrait_GEA_Chen_Lianbo"
 		texturefile = "gfx/leaders/GXC/Portrait_GXC_Chen_Lianbo.png"
 	}
+	spriteType = {
+		name = "GFX_portrait_GEA_Ma_Hongkui"
+		texturefile = "gfx/leaders/XSM/Portrait_XSM_Ma_Hongkui.png"
+	}
 }

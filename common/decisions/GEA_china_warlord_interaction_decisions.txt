@@ -34,6 +34,7 @@ GEA_china_warlord_interaction = {
 			add_stability = -0.05
 			custom_effect_tooltip = GEA_china_capital_influence_add_3_tt
 			add_popularity = { ideology = market_liberal popularity = 0.015 }
+			GEA_refresh_tsingtau_collaboration_effect = yes
 			GEA = { add_political_power = 20 }
 		}
 	}
@@ -70,6 +71,7 @@ GEA_china_warlord_interaction = {
 			custom_effect_tooltip = GEA_loan_equity_half_repayment_tt
 			custom_effect_tooltip = GEA_china_capital_influence_add_3_tt
 			add_popularity = { ideology = market_liberal popularity = 0.02 }
+			GEA_refresh_tsingtau_collaboration_effect = yes
 			GEA = { add_offsite_building = { type = industrial_complex level = 1 } }
 		}
 	}
@@ -205,6 +207,7 @@ GEA_china_warlord_interaction = {
 			add_political_power = 30
 			add_stability = 0.02
 			add_popularity = { ideology = market_liberal popularity = 0.02 }
+			GEA_refresh_tsingtau_collaboration_effect = yes
 			custom_effect_tooltip = GEA_china_attitude_add_2_tt
 			custom_effect_tooltip = GEA_china_capital_influence_add_2_tt
 			hidden_effect = { GEA_warlord_add_2_german_influence_effect = yes }
@@ -245,6 +248,7 @@ GEA_china_warlord_interaction = {
 			}
 			add_stability = 0.02
 			add_popularity = { ideology = market_liberal popularity = 0.03 }
+			GEA_refresh_tsingtau_collaboration_effect = yes
 			custom_effect_tooltip = GEA_china_attitude_add_3_tt
 			custom_effect_tooltip = GEA_china_capital_influence_add_3_tt
 			hidden_effect = { GEA_warlord_add_3_german_influence_effect = yes }
@@ -286,6 +290,7 @@ GEA_china_warlord_interaction = {
 				20 = { add_equipment_to_stockpile = { type = support_equipment amount = 500 producer = GER } }
 			}
 			add_popularity = { ideology = market_liberal popularity = 0.02 }
+			GEA_refresh_tsingtau_collaboration_effect = yes
 			custom_effect_tooltip = GEA_china_capital_influence_add_5_tt
 			hidden_effect = { GEA_warlord_add_5_german_capital_influence_effect = yes }
 		}

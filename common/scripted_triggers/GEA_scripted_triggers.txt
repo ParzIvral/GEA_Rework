@@ -37,6 +37,22 @@ GEA_indochina_can_interact_trigger = {
 	}
 }
 
+# 东方快车同时覆盖印度支那和马来亚，两个地区均失去控制后取消。
+GEA_indochina_or_malaya_can_interact_trigger = {
+	custom_trigger_tooltip = {
+		tooltip = GEA_indochina_or_malaya_still_be_controlled_tt
+		OR = {
+			GEA_indochina_can_interact_trigger = yes
+			GEA = {
+				any_owned_state = {
+					is_controlled_by = GEA
+					OR = { state = 846 state = 336 }
+				}
+			}
+		}
+	}
+}
+
 #与整合印度支那决议一致的七个地区均已拥有并核心化
 GEA_indochina_fully_pacified_trigger = {
 	custom_trigger_tooltip = {

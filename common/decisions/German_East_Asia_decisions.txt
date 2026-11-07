@@ -1952,7 +1952,6 @@ GEA_decisions = {#德属东亚殖民地决议
 			add_command_power = -50
 		}
 		remove_effect = {
-			limit = { controls_state = 286 controls_state = 856 controls_state = 826 }
 			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_expand_slaughter_in_the_South"
 			add_stability = 0.1
 			add_popularity = {
@@ -2041,12 +2040,7 @@ GEA_decisions = {#德属东亚殖民地决议
 		}
 
 		cancel_trigger = {
-			OR = {
-				NOT = { controls_state = 856 }
-				NOT = {
-					GEA_indochina_can_interact_trigger = yes
-				}
-			}
+			NOT = { GEA_indochina_can_interact_trigger = yes }
 		}
 	}
 	GEA_hahl_register_village_notables = {#编修乡绅名册
@@ -2129,10 +2123,7 @@ GEA_decisions = {#德属东亚殖民地决议
 		}
 
 		cancel_trigger = {
-			OR = {
-				NOT = { OR = { controls_state = 857 controls_state = 671 controls_state = 827 controls_state = 670 controls_state = 826 controls_state = 286 controls_state = 856 } }
-				NOT = { GEA_indochina_can_interact_trigger = yes }
-			}
+			NOT = { GEA_indochina_can_interact_trigger = yes }
 		}
 	}
 	GEA_hahl_disorganize_cao_dai = {#瓦解高台教
@@ -2217,10 +2208,7 @@ GEA_decisions = {#德属东亚殖民地决议
 		}
 
 		cancel_trigger = {
-			OR = {
-				NOT = { OR = { controls_state = 857 controls_state = 671 controls_state = 827 controls_state = 670 controls_state = 826 controls_state = 286 controls_state = 856 } }
-				NOT = { GEA_indochina_can_interact_trigger = yes }
-			}
+			NOT = { GEA_indochina_can_interact_trigger = yes }
 		}
 	}
 	GEA_hahl_Strengthen_Catholic_missionary_work = {#加强天主教传教
@@ -2289,10 +2277,7 @@ GEA_decisions = {#德属东亚殖民地决议
 		}
 
 		cancel_trigger = {
-			OR = {
-				NOT = { OR = { controls_state = 857 controls_state = 671 controls_state = 827 controls_state = 670 controls_state = 826 controls_state = 286 controls_state = 856 } }
-				NOT = { GEA_indochina_can_interact_trigger = yes }
-			}
+			NOT = { GEA_indochina_can_interact_trigger = yes }
 		}
 	}
 	GEA_hahl_Establish_an_Indigenous_Affairs_Bureau_Indochina = {#设立土著事务局
@@ -2381,10 +2366,7 @@ GEA_decisions = {#德属东亚殖民地决议
 		}
 
 		cancel_trigger = {
-			OR = {
-				NOT = { any_owned_state = { is_controlled_by = GEA OR = { state = 857 state = 671 state = 856 state = 670 state = 826 state = 286 state = 827 } } }
-				NOT = { GEA_indochina_can_interact_trigger = yes }
-			}
+			NOT = { GEA_indochina_can_interact_trigger = yes }
 		}
 	}
 	GEA_Halong_Bay_Cruises = {#下龙湾巡游
@@ -2438,10 +2420,7 @@ GEA_decisions = {#德属东亚殖民地决议
 		}
 
 		cancel_trigger = {
-			OR = {
-				NOT = { controls_state = 671 }
-				NOT = { GEA_indochina_can_interact_trigger = yes }
-			}
+			NOT = { GEA_indochina_can_interact_trigger = yes }
 		}
 	}
 	GEA_Saigon_Nightlife = {#西贡的东方夜生活
@@ -2505,10 +2484,7 @@ GEA_decisions = {#德属东亚殖民地决议
 		}
 
 		cancel_trigger = {
-			OR = {
-				NOT = { controls_state = 286 }
-				NOT = { GEA_indochina_can_interact_trigger = yes }
-			}
+			NOT = { GEA_indochina_can_interact_trigger = yes }
 		}
 	}
 	GEA_Hue_Imperial_Tours = {#顺化皇城之旅
@@ -2576,10 +2552,7 @@ GEA_decisions = {#德属东亚殖民地决议
 		}
 
 		cancel_trigger = {
-			OR = {
-				NOT = { controls_state = 827 }
-				NOT = { GEA_indochina_can_interact_trigger = yes }
-			}
+			NOT = { GEA_indochina_can_interact_trigger = yes }
 		}
 	}
 	GEA_Angkor_Expeditions = {#吴哥古迹远征
@@ -2632,10 +2605,7 @@ GEA_decisions = {#德属东亚殖民地决议
 		}
 
 		cancel_trigger = {
-			OR = {
-				NOT = { controls_state = 826 }
-				NOT = { GEA_indochina_can_interact_trigger = yes }
-			}
+			NOT = { GEA_indochina_can_interact_trigger = yes }
 		}
 	}
 	GEA_Mekong_Steamship_Holidays = {#湄公河蒸汽船假日
@@ -2702,10 +2672,7 @@ GEA_decisions = {#德属东亚殖民地决议
 		}
 
 		cancel_trigger = {
-			OR = {
-				NOT = { controls_state = 856 }
-				NOT = { GEA_indochina_can_interact_trigger = yes }
-			}
+			NOT = { GEA_indochina_can_interact_trigger = yes }
 		}
 	}
 	GEA_Orient_Express_East = {#东方的东方快车
@@ -2778,10 +2745,7 @@ GEA_decisions = {#德属东亚殖民地决议
 		}
 
 		cancel_trigger = {
-			OR = {
-				NOT = { any_owned_state = { is_controlled_by = GEA OR = { state = 671 state = 827 state = 856 state = 286 state = 846 state = 336 } } }
-				NOT = { OR = { GEA_indochina_can_interact_trigger = yes GEA = { any_owned_state = { OR = { state = 846 state = 336 } is_controlled_by = GEA } } } }
-			}
+			NOT = { GEA_indochina_or_malaya_can_interact_trigger = yes }
 		}
 	}
  	GEA_Support_local_national_bourgeoisie = {#支持本地民族资产阶级
@@ -2843,10 +2807,7 @@ GEA_decisions = {#德属东亚殖民地决议
 		}
 
 		cancel_trigger = {
-			OR = {
-				NOT = { OR = { controls_state = 857 controls_state = 671 controls_state = 827 controls_state = 670 controls_state = 826 controls_state = 286 controls_state = 856 } }
-				NOT = { GEA_indochina_can_interact_trigger = yes }
-			}
+			NOT = { GEA_indochina_can_interact_trigger = yes }
 		}
 	}
 	GEA_Lower_assembly = {#设立下级议会
@@ -2960,10 +2921,7 @@ GEA_decisions = {#德属东亚殖民地决议
 		}
 
 		cancel_trigger = {
-			OR = {
-				NOT = { OR = { controls_state = 857 controls_state = 671 controls_state = 827 controls_state = 670 controls_state = 826 controls_state = 286 controls_state = 856 } }
-				NOT = { GEA_indochina_can_interact_trigger = yes }
-			}
+			NOT = { GEA_indochina_can_interact_trigger = yes }
 		}
 	}
 	GEA_Abolish_ethnic_hierarchies = {#取消民族等级划分
@@ -3064,10 +3022,7 @@ GEA_decisions = {#德属东亚殖民地决议
 		}
 
 		cancel_trigger = {
-			OR = {
-				NOT = { OR = { controls_state = 857 controls_state = 671 controls_state = 827 controls_state = 670 controls_state = 826 controls_state = 286 controls_state = 856 } }
-				NOT = { GEA_indochina_can_interact_trigger = yes }
-			}
+			NOT = { GEA_indochina_can_interact_trigger = yes }
 		}
 	}
 	GEA_Expand_market_for_agricultural_products = {#为印支农产品打开销路
@@ -3175,10 +3130,7 @@ GEA_decisions = {#德属东亚殖民地决议
 		}
 
 		cancel_trigger = {
-			OR = {
-				NOT = { any_owned_state = { is_controlled_by = GEA OR = { state = 857 state = 671 state = 856 state = 670 state = 826 state = 286 } } }
-				NOT = { GEA_indochina_can_interact_trigger = yes }
-			}
+			NOT = { GEA_indochina_can_interact_trigger = yes }
 		}
 	}
 	GEA_Introduce_local_industries = {#引进本土工业
@@ -3222,25 +3174,7 @@ GEA_decisions = {#德属东亚殖民地决议
 		}
 
 		cancel_trigger = {
-			OR = {
-				NOT = { any_owned_state = { is_controlled_by = GEA OR = { state = 857 state = 671 state = 856 state = 670 state = 826 state = 286 } } }
-				OR = {
-				NOT = { GEA_indochina_can_interact_trigger = yes }
-				FROM = {
-				NOT = {
-					OR = {
-						owns_state = 857 #东北
-						owns_state = 671 #东京
-						owns_state = 856 #湄公河三角洲
-						owns_state = 670 #老挝
-						owns_state = 826 #上丁
-						owns_state = 286 #交趾支那
-						owns_state = 827 #安南
-					}
-				}
-			}
-			}
-			}
+			NOT = { GEA_indochina_can_interact_trigger = yes }
 		}
 
 		modifier = {
@@ -3385,10 +3319,7 @@ GEA_decisions = {#德属东亚殖民地决议
 		}
 
 		cancel_trigger = {
-			OR = {
-				NOT = { OR = { controls_state = 857 controls_state = 671 controls_state = 827 controls_state = 670 controls_state = 826 controls_state = 286 controls_state = 856 } }
-				NOT = { GEA_indochina_can_interact_trigger = yes }
-			}
+			NOT = { GEA_indochina_can_interact_trigger = yes }
 		}
 	}
 	GEA_Make_concessions_to_proletarians = {#对本地人让渡利益
@@ -3483,10 +3414,7 @@ GEA_decisions = {#德属东亚殖民地决议
 		}
 
 		cancel_trigger = {
-			OR = {
-				NOT = { OR = { controls_state = 857 controls_state = 671 controls_state = 827 controls_state = 670 controls_state = 826 controls_state = 286 controls_state = 856 } }
-				NOT = { GEA_indochina_can_interact_trigger = yes }
-			}
+			NOT = { GEA_indochina_can_interact_trigger = yes }
 		}
 	}
 	GEA_we_need_soldier = {#加大征召力度
@@ -3579,10 +3507,7 @@ GEA_decisions = {#德属东亚殖民地决议
 		}
 
 		cancel_trigger = {
-			OR = {
-				NOT = { OR = { controls_state = 857 controls_state = 671 controls_state = 827 controls_state = 670 controls_state = 826 controls_state = 286 controls_state = 856 } }
-				NOT = { GEA_indochina_can_interact_trigger = yes }
-			}
+			NOT = { GEA_indochina_can_interact_trigger = yes }
 		}
 	}
 	GEA_Develop_military_in_village = {#在乡村发展军警
@@ -3669,12 +3594,7 @@ GEA_decisions = {#德属东亚殖民地决议
 		}
 
 		cancel_trigger = {
-			OR = {
-				NOT = { OR = { controls_state = 857 controls_state = 671 controls_state = 827 controls_state = 670 controls_state = 826 controls_state = 286 controls_state = 856 } }
-				NOT = {
-				GEA_indochina_can_interact_trigger = yes
-			}
-			}
+			NOT = { GEA_indochina_can_interact_trigger = yes }
 		}
 	}
 	GEA_Build_a_defense_line = {#筑垒行动
@@ -3720,20 +3640,7 @@ GEA_decisions = {#德属东亚殖民地决议
 		}
 
 		cancel_trigger = {
-			OR = {
-				NOT = { AND = { controls_state = 670 controls_state = 827 } }
-				OR = {
-				NOT = { GEA_indochina_can_interact_trigger = yes }
-				FROM = {
-				NOT = {
-					AND = {
-						owns_state = 670 #老挝
-						owns_state = 827 #安南
-					}
-				}
-			}
-			}
-			}
+			NOT = { GEA_indochina_can_interact_trigger = yes }
 		}
 
 		available = {
@@ -3937,10 +3844,7 @@ GEA_decisions = {#德属东亚殖民地决议
 		}
 
 		cancel_trigger = {
-			OR = {
-				NOT = { FROM = { is_controlled_by = GEA } }
-				NOT = { GEA_indochina_can_interact_trigger = yes }
-			}
+			NOT = { GEA_indochina_can_interact_trigger = yes }
 		}
 	}
 	GEA_Scour_the_jungle = {#扫荡丛林
@@ -4024,10 +3928,7 @@ GEA_decisions = {#德属东亚殖民地决议
 		}
 
 		cancel_trigger = {
-			OR = {
-				NOT = { OR = { controls_state = 857 controls_state = 671 controls_state = 827 controls_state = 670 controls_state = 826 controls_state = 286 controls_state = 856 } }
-				NOT = { GEA_indochina_can_interact_trigger = yes }
-			}
+			NOT = { GEA_indochina_can_interact_trigger = yes }
 		}
 
 		cancel_effect = { clr_country_flag = GEA_Rangers_have_been_put_to_the_task }
@@ -4110,10 +4011,7 @@ GEA_decisions = {#德属东亚殖民地决议
 		}
 
 		cancel_trigger = {
-			OR = {
-				NOT = { OR = { controls_state = 857 controls_state = 671 controls_state = 827 controls_state = 670 controls_state = 826 controls_state = 286 controls_state = 856 } }
-				NOT = { GEA_indochina_can_interact_trigger = yes }
-			}
+			NOT = { GEA_indochina_can_interact_trigger = yes }
 		}
 
 		cancel_effect = { clr_country_flag = GEA_Rangers_have_been_put_to_the_task }
@@ -4231,10 +4129,7 @@ GEA_decisions = {#德属东亚殖民地决议
 		}
 
 		cancel_trigger = {
-			OR = {
-				NOT = { any_owned_state = { is_controlled_by = GEA OR = { state = 857 state = 671 state = 856 state = 670 state = 826 state = 286 } } }
-				NOT = { GEA_indochina_can_interact_trigger = yes }
-			}
+			NOT = { GEA_indochina_can_interact_trigger = yes }
 		}
 
 		cancel_effect = { clr_country_flag = GEA_Rangers_have_been_put_to_the_task }
@@ -4293,14 +4188,6 @@ GEA_decisions = {#德属东亚殖民地决议
 					level = 1
 					instant_build = yes
 				}
-				add_state_modifier = {
-					modifier = {
-						state_production_speed_buildings_factor = 0.1
-						state_production_speed_infrastructure_factor = 0.1
-						local_building_slots_factor = 0.1
-						monthly_population = 0.15
-					}
-				}
 			}
 			846 = {
 				set_state_category = seven
@@ -4320,6 +4207,18 @@ GEA_decisions = {#德属东亚殖民地决议
 					level = 1
 					instant_build = yes
 				}
+			}
+			336 = {
+				add_state_modifier = {
+					modifier = {
+						state_production_speed_buildings_factor = 0.1
+						state_production_speed_infrastructure_factor = 0.1
+						local_building_slots_factor = 0.1
+						monthly_population = 0.15
+					}
+				}
+			}
+			846 = {
 				add_state_modifier = {
 					modifier = {
 						state_production_speed_buildings_factor = 0.1
@@ -8556,6 +8455,70 @@ GEA_decisions = {#德属东亚殖民地决议
 		cancel_trigger = { NOT = { controls_state = 629 } }
 	}
 
+	GEA_Develop_Hainan = { #建设海南港务与工业
+		icon = GFX_decision_generic_construction
+		allowed = { original_tag = GEA }
+		cost = 40
+		days_remove = 90
+		fire_only_once = yes
+		cancel_if_not_visible = no
+
+		visible = {
+			591 = { is_owned_and_controlled_by = GEA }
+			OR = { has_country_flag = Hainan_OPEN is_ai = yes }
+		}
+		available = {
+			num_of_civilian_factories_available_for_projects > 2
+		}
+		modifier = { civilian_factory_use = 3 }
+		highlight_states = {
+			highlight_state_targets = { state = 591 }
+		}
+		cancel_trigger = {
+			591 = { NOT = { is_owned_and_controlled_by = GEA } }
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Develop_Hainan"
+			591 = {
+				set_demilitarized_zone = no
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes }
+				add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+				add_building_construction = { type = naval_base level = 1 instant_build = yes province = 994 }
+			}
+			hidden_effect = { set_country_flag = GEA_hainan_construction_completed }
+		}
+		ai_will_do = { factor = 100 }
+	}
+
+	GEA_Integrate_Hainan = { #整合海南
+		icon = GFX_decision_generic_operation
+		allowed = { original_tag = GEA }
+		cost = 50
+		days_remove = 150
+		fire_only_once = yes
+		cancel_if_not_visible = no
+
+		visible = {
+			591 = {
+				is_owned_and_controlled_by = GEA
+				NOT = { is_core_of = GEA }
+			}
+			OR = { has_country_flag = Hainan_OPEN is_ai = yes }
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 591 }
+		}
+		cancel_trigger = {
+			591 = { NOT = { is_owned_and_controlled_by = GEA } }
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Integrate_Hainan"
+			591 = { add_core_of = GEA }
+		}
+		ai_will_do = { factor = 500 }
+	}
+
 	GEA_War_operation_Rumphius = { #战争行动：龙菲乌斯
 		icon = generic_prepare_civil_war
 		allowed = { original_tag = GEA }
@@ -11962,6 +11925,7 @@ GEA_focus_china_decisions = {#第二次对华远征
 				add_political_power = 30
 				add_stability = 0.02
 				add_popularity = { ideology = market_liberal popularity = 0.02 }
+				GEA_refresh_tsingtau_collaboration_effect = yes
 			}
 			custom_effect_tooltip = GEA_china_lep_name_tt
 			custom_effect_tooltip = GEA_china_attitude_add_2_tt
@@ -12025,6 +11989,7 @@ GEA_focus_china_decisions = {#第二次对华远征
 				}
 				add_stability = 0.02
 				add_popularity = { ideology = market_liberal popularity = 0.03 }
+				GEA_refresh_tsingtau_collaboration_effect = yes
 			}
 			custom_effect_tooltip = GEA_china_lep_name_tt
 			custom_effect_tooltip = GEA_china_attitude_add_3_tt
@@ -12087,6 +12052,7 @@ GEA_focus_china_decisions = {#第二次对华远征
 				}
 				add_stability = 0.02
 				add_popularity = { ideology = market_liberal popularity = 0.03 }
+				GEA_refresh_tsingtau_collaboration_effect = yes
 			}
 			custom_effect_tooltip = GEA_china_lep_name_tt
 			custom_effect_tooltip = GEA_china_attitude_add_3_tt
@@ -12434,6 +12400,7 @@ GEA_focus_china_decisions = {#第二次对华远征
 			FROM = {
 				remove_ideas = GEA_German_military_equipment_imports
 				add_popularity = { ideology = market_liberal popularity = 0.02 }
+				GEA_refresh_tsingtau_collaboration_effect = yes
 			}
 			custom_effect_tooltip = GEA_china_lep_name_tt
 			custom_effect_tooltip = GEA_china_attitude_add_5_tt
@@ -12531,6 +12498,7 @@ GEA_focus_china_decisions = {#第二次对华远征
 			FROM = {
 				remove_ideas = GEA_German_East_Asia_resource_trade
 				add_popularity = { ideology = market_liberal popularity = 0.02 }
+				GEA_refresh_tsingtau_collaboration_effect = yes
 			}
 			custom_effect_tooltip = GEA_china_lep_name_tt
 			custom_effect_tooltip = GEA_china_attitude_add_5_tt
@@ -12628,6 +12596,7 @@ GEA_focus_china_decisions = {#第二次对华远征
 			FROM = {
 				remove_ideas = GEA_Southeast_Asia_opium_epidemic
 				add_popularity = { ideology = market_liberal popularity = 0.02 }
+				GEA_refresh_tsingtau_collaboration_effect = yes
 			}
 			custom_effect_tooltip = GEA_china_lep_name_tt
 			custom_effect_tooltip = GEA_china_attitude_add_5_tt
@@ -12709,6 +12678,7 @@ GEA_focus_china_decisions = {#第二次对华远征
 			}
 			FROM = {
 				add_popularity = { ideology = market_liberal popularity = 0.02 }
+				GEA_refresh_tsingtau_collaboration_effect = yes
 			}
 			custom_effect_tooltip = GEA_china_lep_name_tt
 			add_to_variable = {
@@ -12832,6 +12802,7 @@ GEA_focus_china_decisions = {#第二次对华远征
 			add_resource = { type = tungsten amount = 40 state = 600 }
 			FROM = {
 				add_popularity = { ideology = market_liberal popularity = 0.02 }
+				GEA_refresh_tsingtau_collaboration_effect = yes
 			}
 			custom_effect_tooltip = GEA_china_lep_name_tt
 			add_to_variable = {
@@ -12889,6 +12860,7 @@ GEA_focus_china_decisions = {#第二次对华远征
 			add_resource = { type = tungsten amount = 40 state = 600 }
 			FROM = {
 				add_popularity = { ideology = market_liberal popularity = 0.02 }
+				GEA_refresh_tsingtau_collaboration_effect = yes
 			}
 			custom_effect_tooltip = GEA_china_lep_name_tt
 			add_to_variable = {
@@ -13234,6 +13206,7 @@ GEA_focus_china_decisions = {#第二次对华远征
 				add_manpower = 2000
 				add_stability = 0.02
 				add_popularity = { ideology = market_liberal popularity = 0.01 }
+				GEA_refresh_tsingtau_collaboration_effect = yes
 			}
 			custom_effect_tooltip = GEA_china_lep_name_tt
 			add_to_variable = {
@@ -13380,6 +13353,7 @@ GEA_focus_china_decisions = {#第二次对华远征
 			FROM = {
 				add_stability = 0.03
 				add_popularity = { ideology = market_liberal popularity = 0.02 }
+				GEA_refresh_tsingtau_collaboration_effect = yes
 			}
 			add_political_power = 25
 			custom_effect_tooltip = GEA_china_lep_name_tt
@@ -13428,6 +13402,7 @@ GEA_focus_china_decisions = {#第二次对华远征
 
 			FROM = {
 				add_popularity = { ideology = market_liberal popularity = 0.02 }
+				GEA_refresh_tsingtau_collaboration_effect = yes
 				add_stability = 0.03
 
 			}
@@ -21572,6 +21547,36 @@ count_triggers = {
 		}
 	}
 
+	GEA_Integrate_Taiwan = { #整合台湾
+		icon = GFX_decision_generic_operation
+		allowed = { original_tag = GEA }
+		cost = 50
+		days_remove = 100
+		fire_only_once = yes
+		cancel_if_not_visible = no
+
+		visible = {
+			524 = {
+				is_owned_and_controlled_by = GEA
+				NOT = { is_core_of = GEA }
+			}
+			OR = { has_country_flag = TAIWAN_OPEN is_ai = yes }
+		}
+		available = {
+			524 = { compliance > 60 }
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 524 }
+		}
+		cancel_trigger = {
+			524 = { NOT = { is_owned_and_controlled_by = GEA } }
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Integrate_Taiwan"
+			524 = { add_core_of = GEA }
+		}
+		ai_will_do = { factor = 500 }
+	}
 }
 
 GEA_josias_decisions = { #约西亚斯乞讨决议
@@ -21579,6 +21584,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			NOT = { has_country_flag = GEA_Josias_decision_view_Nikolaus }
 			has_completed_focus = GEA_The_close_bond_of_dual_in-laws
 			OR = {
 				has_country_flag = GEA_Josias_frame_1_Nikolaus
@@ -21632,6 +21638,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			NOT = { has_country_flag = GEA_Josias_decision_view_Carl_Edward }
 			has_completed_focus = GEA_Brotherly_affection
 			OR = {
 				has_country_flag = GEA_Josias_frame_1_Carl_Edward
@@ -21685,6 +21692,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			NOT = { has_country_flag = GEA_Josias_decision_view_Elard_von_Oldenburg }
 			has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
 			OR = {
 				has_country_flag = GEA_Josias_frame_1_Elard_von_Oldenburg
@@ -21738,6 +21746,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			NOT = { has_country_flag = GEA_Josias_decision_view_Schleicher }
 			has_completed_focus = GEA_The_Secret_Party_of_the_General
 			OR = {
 				has_country_flag = GEA_Josias_frame_1_Schleicher
@@ -21791,6 +21800,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			NOT = { has_country_flag = GEA_Josias_decision_view_Hugenberg }
 			has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
 			OR = {
 				has_country_flag = GEA_Josias_frame_1_Hugenberg
@@ -21844,6 +21854,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			NOT = { has_country_flag = GEA_Josias_decision_view_Werner_von_Alvensleben }
 			has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
 			OR = {
 				has_country_flag = GEA_Josias_frame_1_Werner_von_Alvensleben
@@ -21897,6 +21908,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			NOT = { has_country_flag = GEA_Josias_decision_view_Josef_Abs }
 			OR = {
 				has_country_flag = GEA_Josias_frame_3_Josef_Abs
 				has_country_flag = GEA_Josias_frame_4_Josef_Abs
@@ -21948,6 +21960,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			NOT = { has_country_flag = GEA_Josias_decision_view_Fritz_Meer }
 			OR = {
 				has_country_flag = GEA_Josias_frame_3_Fritz_Meer
 				has_country_flag = GEA_Josias_frame_4_Fritz_Meer
@@ -21999,6 +22012,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			NOT = { has_country_flag = GEA_Josias_decision_view_Hermann_Bucher }
 			OR = {
 				has_country_flag = GEA_Josias_frame_3_Hermann_Bucher
 				has_country_flag = GEA_Josias_frame_4_Hermann_Bucher
@@ -22050,6 +22064,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			NOT = { has_country_flag = GEA_Josias_decision_view_Hermann_Siemens }
 			OR = {
 				has_country_flag = GEA_Josias_frame_3_Hermann_Siemens
 				has_country_flag = GEA_Josias_frame_4_Hermann_Siemens
@@ -22101,6 +22116,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			NOT = { has_country_flag = GEA_Josias_decision_view_Otto_Jeidels }
 			OR = {
 				has_country_flag = GEA_Josias_frame_3_Otto_Jeidels
 				has_country_flag = GEA_Josias_frame_4_Otto_Jeidels
@@ -22152,6 +22168,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			NOT = { has_country_flag = GEA_Josias_decision_view_Alfred_Krupp }
 			has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
 			OR = {
 				has_country_flag = GEA_Josias_frame_3_Alfred_Krupp
@@ -22205,6 +22222,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			NOT = { has_country_flag = GEA_Josias_decision_view_Carl_Schmitt }
 			OR = {
 				has_country_flag = GEA_Josias_frame_5_Carl_Schmitt
 				has_country_flag = GEA_Josias_frame_6_Carl_Schmitt
@@ -22256,6 +22274,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			NOT = { has_country_flag = GEA_Josias_decision_view_Dorpmuller }
 			OR = {
 				has_country_flag = GEA_Josias_frame_5_Dorpmuller
 				has_country_flag = GEA_Josias_frame_6_Dorpmuller
@@ -22307,6 +22326,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			NOT = { has_country_flag = GEA_Josias_decision_view_Emil_Helfferich }
 			OR = {
 				has_country_flag = GEA_Josias_frame_5_Emil_Helfferich
 				has_country_flag = GEA_Josias_frame_6_Emil_Helfferich
@@ -22358,6 +22378,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			NOT = { has_country_flag = GEA_Josias_decision_view_Fritz_Thyssen }
 			OR = {
 				has_country_flag = GEA_Josias_frame_5_Fritz_Thyssen
 				has_country_flag = GEA_Josias_frame_6_Fritz_Thyssen
@@ -22409,6 +22430,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			NOT = { has_country_flag = GEA_Josias_decision_view_Hermann_Goring }
 			OR = {
 				has_country_flag = GEA_Josias_frame_5_Hermann_Goring
 				has_country_flag = GEA_Josias_frame_6_Hermann_Goring
@@ -22460,6 +22482,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			NOT = { has_country_flag = GEA_Josias_decision_view_Siegmund_Bodenheimer }
 			OR = {
 				has_country_flag = GEA_Josias_frame_5_Siegmund_Bodenheimer
 				has_country_flag = GEA_Josias_frame_6_Siegmund_Bodenheimer
