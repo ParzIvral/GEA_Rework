@@ -11900,7 +11900,7 @@ GEA_focus_china_decisions = {#第二次对华远征
 		icon = GFX_GEA_Invest_in_East_China_decision
 		allowed = { original_tag = GEA }
 
-		cost = GEA_lep_investment_cost?20
+		cost = GEA_lep_low_yield_investment_cost?10
 		days_remove = 30
 		days_re_enable = GEA_lep_investment_cooldown?60
 
@@ -11957,7 +11957,7 @@ GEA_focus_china_decisions = {#第二次对华远征
 		icon = GFX_GEA_Invest_in_East_China_decision
 		allowed = { original_tag = GEA }
 
-		cost = GEA_lep_enterprise_cost?40
+		cost = GEA_lep_low_yield_enterprise_cost?30
 		days_remove = 60
 		days_re_enable = GEA_lep_enterprise_cooldown?100
 
@@ -12020,7 +12020,7 @@ GEA_focus_china_decisions = {#第二次对华远征
 		icon = GFX_GEA_Invest_in_East_China_decision
 		allowed = { original_tag = GEA }
 
-		cost = GEA_lep_enterprise_cost?40
+		cost = GEA_lep_low_yield_enterprise_cost?30
 		days_remove = 60
 		days_re_enable = GEA_lep_enterprise_cooldown?100
 
@@ -13227,7 +13227,7 @@ GEA_focus_china_decisions = {#第二次对华远征
 	GEA_Restore_Jiangnan_Polder_Dykes = { #整修江南圩田水利
 		icon = GFX_GEA_Subsidise_Seeds_and_Farm_Tools_decision
 		allowed = { original_tag = GEA }
-		cost = 30
+		cost = 20
 		days_remove = 120
 		fire_only_once = yes
 		visible = {
@@ -13375,7 +13375,7 @@ GEA_focus_china_decisions = {#第二次对华远征
 	GEA_Open_Village_and_County_Banks = { # 开设村县银行
 		icon = GFX_GEA_Transfer_German_Enterprises_decision
 		allowed = { original_tag = GEA }
-		cost = GEA_china_economic_cost_30?20
+		cost = GEA_lep_low_yield_bank_cost?10
 		days_remove = 90
 		days_re_enable = 90
 
@@ -21428,18 +21428,28 @@ count_triggers = {
 				country_exists = LEC
 			}
 			has_completed_focus = GEA_Seal_off_the_borders_of_other_countries
-		}
-		available = {
-			owns_state = 743
-			owns_state = 609
-			owns_state = 746
-			owns_state = 747
-			owns_state = 801
-			owns_state = 326
+			743 = { is_owned_and_controlled_by = GEA }
+			609 = { is_owned_and_controlled_by = GEA }
+			746 = { is_owned_and_controlled_by = GEA }
+			747 = { is_owned_and_controlled_by = GEA }
+			801 = { is_owned_and_controlled_by = GEA }
+			326 = { is_owned_and_controlled_by = GEA }
+			OR = { has_country_flag = LEC_OPEN is_ai = yes }
 		}
 		cost = 30
 		days_remove = 30
 		fire_only_once = yes
+		cancel_if_not_visible = no
+		cancel_trigger = {
+			OR = {
+				743 = { NOT = { is_owned_and_controlled_by = GEA } }
+				609 = { NOT = { is_owned_and_controlled_by = GEA } }
+				746 = { NOT = { is_owned_and_controlled_by = GEA } }
+				747 = { NOT = { is_owned_and_controlled_by = GEA } }
+				801 = { NOT = { is_owned_and_controlled_by = GEA } }
+				326 = { NOT = { is_owned_and_controlled_by = GEA } }
+			}
+		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Take_over_embassy_city"
 
@@ -21456,19 +21466,17 @@ count_triggers = {
 	}
 	GEA_Takeover_of_Macau = {
 		visible = {
-			NOT = {
-				POR = {
-					owns_state = 729
-				}
-			}
 			has_completed_focus = GEA_Lisbon_Hotline
-		}
-		available = {
-			owns_state = 729
+			729 = { is_owned_and_controlled_by = GEA }
+			OR = { has_country_flag = LEC_OPEN is_ai = yes }
 		}
 		cost = 10
 		days_remove = 14
 		fire_only_once = yes
+		cancel_if_not_visible = no
+		cancel_trigger = {
+			729 = { NOT = { is_owned_and_controlled_by = GEA } }
+		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Takeover_of_Macau"
 			add_state_core = 729
@@ -21485,59 +21493,22 @@ count_triggers = {
 			}
 		}
 	}
-	GEA_Take_over_Weihaiwei_and_Qingdao_again = {
-		visible = {
-			owns_state = 996
-			owns_state = 744
-			NOT = {
-				996 = { is_core_of = ROOT }
-				744 = { is_core_of = ROOT }
-			}
-		}
-
-		cost = 10
-		days_remove = 14
-		fire_only_once = yes
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Take_over_Weihaiwei_and_Qingdao_again"
-
-			add_state_core = 996
-			add_state_core = 744
-		}
-		ai_will_do = {
-			factor = 500
-		}
-	}
-	GEA_Take_over_Guangzhou = {
-		visible = {
-			owns_state = 592
-			NOT = {
-				592 = { is_core_of = ROOT }
-			}
-		}
-
-		cost = 10
-		days_remove = 14
-		fire_only_once = yes
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Take_over_Guangzhou"
-			add_state_core = 592
-		}
-		ai_will_do = {
-			factor = 500
-		}
-	}
 	GEA_Take_over_dalian = {
 		visible = {
-			owns_state = 745
 			NOT = {
 				745 = { is_core_of = ROOT }
 			}
+			745 = { is_owned_and_controlled_by = GEA }
+			OR = { has_country_flag = LEC_OPEN is_ai = yes }
 		}
 
 		cost = 10
 		days_remove = 14
 		fire_only_once = yes
+		cancel_if_not_visible = no
+		cancel_trigger = {
+			745 = { NOT = { is_owned_and_controlled_by = GEA } }
+		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Take_over_dalian"
 			add_state_core = 745
@@ -21584,6 +21555,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			NOT = { has_country_flag = GEA_Josias_decision_view_Nikolaus }
 			has_completed_focus = GEA_The_close_bond_of_dual_in-laws
 			OR = {
@@ -21607,13 +21579,12 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
-			has_completed_focus = GEA_The_close_bond_of_dual_in-laws
-			OR = { has_country_flag = GEA_Josias_decision_view_Nikolaus AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_1_Nikolaus has_country_flag = GEA_Josias_frame_2_Nikolaus } } }
-		}
-		available = {
+			GER = { exists = yes }
 			check_variable = {
 				GEA_NIKOLAUS_friendship < 100
 			}
+			has_completed_focus = GEA_The_close_bond_of_dual_in-laws
+			OR = { has_country_flag = GEA_Josias_decision_view_Nikolaus AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_1_Nikolaus has_country_flag = GEA_Josias_frame_2_Nikolaus } } }
 		}
 
 		cost = GEA_Josias_social_cost_10?10
@@ -21638,6 +21609,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			NOT = { has_country_flag = GEA_Josias_decision_view_Carl_Edward }
 			has_completed_focus = GEA_Brotherly_affection
 			OR = {
@@ -21661,13 +21633,12 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
-			has_completed_focus = GEA_Brotherly_affection
-			OR = { has_country_flag = GEA_Josias_decision_view_Carl_Edward AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_1_Carl_Edward has_country_flag = GEA_Josias_frame_2_Carl_Edward } } }
-		}
-		available = {
+			GER = { exists = yes }
 			check_variable = {
 				GEA_CARL_EDWARD_friendship < 100
 			}
+			has_completed_focus = GEA_Brotherly_affection
+			OR = { has_country_flag = GEA_Josias_decision_view_Carl_Edward AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_1_Carl_Edward has_country_flag = GEA_Josias_frame_2_Carl_Edward } } }
 		}
 
 		cost = GEA_Josias_social_cost_10?10
@@ -21692,6 +21663,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			NOT = { has_country_flag = GEA_Josias_decision_view_Elard_von_Oldenburg }
 			has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
 			OR = {
@@ -21715,13 +21687,12 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
-			has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
-			OR = { has_country_flag = GEA_Josias_decision_view_Elard_von_Oldenburg AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_1_Elard_von_Oldenburg has_country_flag = GEA_Josias_frame_2_Elard_von_Oldenburg } } }
-		}
-		available = {
+			GER = { exists = yes }
 			check_variable = {
 				GEA_ELARD_VON_OLDENBURG_friendship < 100
 			}
+			has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
+			OR = { has_country_flag = GEA_Josias_decision_view_Elard_von_Oldenburg AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_1_Elard_von_Oldenburg has_country_flag = GEA_Josias_frame_2_Elard_von_Oldenburg } } }
 		}
 
 		cost = GEA_Josias_social_cost_10?10
@@ -21746,6 +21717,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			NOT = { has_country_flag = GEA_Josias_decision_view_Schleicher }
 			has_completed_focus = GEA_The_Secret_Party_of_the_General
 			OR = {
@@ -21769,13 +21741,12 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
-			has_completed_focus = GEA_The_Secret_Party_of_the_General
-			OR = { has_country_flag = GEA_Josias_decision_view_Schleicher AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_1_Schleicher has_country_flag = GEA_Josias_frame_2_Schleicher } } }
-		}
-		available = {
+			GER = { exists = yes }
 			check_variable = {
 				GEA_SCHLEICHER_friendship < 100
 			}
+			has_completed_focus = GEA_The_Secret_Party_of_the_General
+			OR = { has_country_flag = GEA_Josias_decision_view_Schleicher AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_1_Schleicher has_country_flag = GEA_Josias_frame_2_Schleicher } } }
 		}
 
 		cost = GEA_Josias_social_cost_10?10
@@ -21800,6 +21771,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			NOT = { has_country_flag = GEA_Josias_decision_view_Hugenberg }
 			has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
 			OR = {
@@ -21823,13 +21795,12 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
-			has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
-			OR = { has_country_flag = GEA_Josias_decision_view_Hugenberg AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_1_Hugenberg has_country_flag = GEA_Josias_frame_2_Hugenberg } } }
-		}
-		available = {
+			GER = { exists = yes }
 			check_variable = {
 				GEA_HUGENBERG_friendship < 100
 			}
+			has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
+			OR = { has_country_flag = GEA_Josias_decision_view_Hugenberg AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_1_Hugenberg has_country_flag = GEA_Josias_frame_2_Hugenberg } } }
 		}
 
 		cost = GEA_Josias_social_cost_10?10
@@ -21854,6 +21825,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			NOT = { has_country_flag = GEA_Josias_decision_view_Werner_von_Alvensleben }
 			has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
 			OR = {
@@ -21877,13 +21849,12 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
-			has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
-			OR = { has_country_flag = GEA_Josias_decision_view_Werner_von_Alvensleben AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_1_Werner_von_Alvensleben has_country_flag = GEA_Josias_frame_2_Werner_von_Alvensleben } } }
-		}
-		available = {
+			GER = { exists = yes }
 			check_variable = {
 				GEA_WERNER_VON_ALVENSLEBEN_friendship < 100
 			}
+			has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
+			OR = { has_country_flag = GEA_Josias_decision_view_Werner_von_Alvensleben AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_1_Werner_von_Alvensleben has_country_flag = GEA_Josias_frame_2_Werner_von_Alvensleben } } }
 		}
 
 		cost = GEA_Josias_social_cost_10?10
@@ -21908,6 +21879,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			NOT = { has_country_flag = GEA_Josias_decision_view_Josef_Abs }
 			OR = {
 				has_country_flag = GEA_Josias_frame_3_Josef_Abs
@@ -21930,12 +21902,11 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
-			OR = { has_country_flag = GEA_Josias_decision_view_Josef_Abs AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_3_Josef_Abs has_country_flag = GEA_Josias_frame_4_Josef_Abs } } }
-		}
-		available = {
+			GER = { exists = yes }
 			check_variable = {
 				GEA_Josef_Abs_friendship < 100
 			}
+			OR = { has_country_flag = GEA_Josias_decision_view_Josef_Abs AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_3_Josef_Abs has_country_flag = GEA_Josias_frame_4_Josef_Abs } } }
 		}
 
 		cost = GEA_Josias_social_cost_10?10
@@ -21960,6 +21931,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			NOT = { has_country_flag = GEA_Josias_decision_view_Fritz_Meer }
 			OR = {
 				has_country_flag = GEA_Josias_frame_3_Fritz_Meer
@@ -21982,12 +21954,11 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
-			OR = { has_country_flag = GEA_Josias_decision_view_Fritz_Meer AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_3_Fritz_Meer has_country_flag = GEA_Josias_frame_4_Fritz_Meer } } }
-		}
-		available = {
+			GER = { exists = yes }
 			check_variable = {
 				GEA_Fritz_Meer_friendship < 100
 			}
+			OR = { has_country_flag = GEA_Josias_decision_view_Fritz_Meer AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_3_Fritz_Meer has_country_flag = GEA_Josias_frame_4_Fritz_Meer } } }
 		}
 
 		cost = GEA_Josias_social_cost_10?10
@@ -22012,6 +21983,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			NOT = { has_country_flag = GEA_Josias_decision_view_Hermann_Bucher }
 			OR = {
 				has_country_flag = GEA_Josias_frame_3_Hermann_Bucher
@@ -22034,12 +22006,11 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
-			OR = { has_country_flag = GEA_Josias_decision_view_Hermann_Bucher AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_3_Hermann_Bucher has_country_flag = GEA_Josias_frame_4_Hermann_Bucher } } }
-		}
-		available = {
+			GER = { exists = yes }
 			check_variable = {
 				GEA_Hermann_Bucher_friendship < 100
 			}
+			OR = { has_country_flag = GEA_Josias_decision_view_Hermann_Bucher AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_3_Hermann_Bucher has_country_flag = GEA_Josias_frame_4_Hermann_Bucher } } }
 		}
 
 		cost = GEA_Josias_social_cost_10?10
@@ -22064,6 +22035,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			NOT = { has_country_flag = GEA_Josias_decision_view_Hermann_Siemens }
 			OR = {
 				has_country_flag = GEA_Josias_frame_3_Hermann_Siemens
@@ -22086,12 +22058,11 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
-			OR = { has_country_flag = GEA_Josias_decision_view_Hermann_Siemens AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_3_Hermann_Siemens has_country_flag = GEA_Josias_frame_4_Hermann_Siemens } } }
-		}
-		available = {
+			GER = { exists = yes }
 			check_variable = {
 				GEA_Hermann_Siemens_friendship < 100
 			}
+			OR = { has_country_flag = GEA_Josias_decision_view_Hermann_Siemens AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_3_Hermann_Siemens has_country_flag = GEA_Josias_frame_4_Hermann_Siemens } } }
 		}
 
 		cost = GEA_Josias_social_cost_10?10
@@ -22116,6 +22087,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			NOT = { has_country_flag = GEA_Josias_decision_view_Otto_Jeidels }
 			OR = {
 				has_country_flag = GEA_Josias_frame_3_Otto_Jeidels
@@ -22138,12 +22110,11 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
-			OR = { has_country_flag = GEA_Josias_decision_view_Otto_Jeidels AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_3_Otto_Jeidels has_country_flag = GEA_Josias_frame_4_Otto_Jeidels } } }
-		}
-		available = {
+			GER = { exists = yes }
 			check_variable = {
 				GEA_Otto_Jeidels_friendship < 100
 			}
+			OR = { has_country_flag = GEA_Josias_decision_view_Otto_Jeidels AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_3_Otto_Jeidels has_country_flag = GEA_Josias_frame_4_Otto_Jeidels } } }
 		}
 
 		cost = GEA_Josias_social_cost_10?10
@@ -22168,6 +22139,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			NOT = { has_country_flag = GEA_Josias_decision_view_Alfred_Krupp }
 			has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
 			OR = {
@@ -22191,13 +22163,12 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
-			has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
-			OR = { has_country_flag = GEA_Josias_decision_view_Alfred_Krupp AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_3_Alfred_Krupp has_country_flag = GEA_Josias_frame_4_Alfred_Krupp } } }
-		}
-		available = {
+			GER = { exists = yes }
 			check_variable = {
 				GEA_Alfred_Krupp_friendship < 100
 			}
+			has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
+			OR = { has_country_flag = GEA_Josias_decision_view_Alfred_Krupp AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_3_Alfred_Krupp has_country_flag = GEA_Josias_frame_4_Alfred_Krupp } } }
 		}
 
 		cost = GEA_Josias_social_cost_10?10
@@ -22222,6 +22193,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			NOT = { has_country_flag = GEA_Josias_decision_view_Carl_Schmitt }
 			OR = {
 				has_country_flag = GEA_Josias_frame_5_Carl_Schmitt
@@ -22244,12 +22216,11 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
-			OR = { has_country_flag = GEA_Josias_decision_view_Carl_Schmitt AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_5_Carl_Schmitt has_country_flag = GEA_Josias_frame_6_Carl_Schmitt } } }
-		}
-		available = {
+			GER = { exists = yes }
 			check_variable = {
 				GEA_Carl_Schmitt_friendship < 100
 			}
+			OR = { has_country_flag = GEA_Josias_decision_view_Carl_Schmitt AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_5_Carl_Schmitt has_country_flag = GEA_Josias_frame_6_Carl_Schmitt } } }
 		}
 
 		cost = GEA_Josias_social_cost_10?10
@@ -22274,6 +22245,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			NOT = { has_country_flag = GEA_Josias_decision_view_Dorpmuller }
 			OR = {
 				has_country_flag = GEA_Josias_frame_5_Dorpmuller
@@ -22296,12 +22268,11 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
-			OR = { has_country_flag = GEA_Josias_decision_view_Dorpmuller AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_5_Dorpmuller has_country_flag = GEA_Josias_frame_6_Dorpmuller } } }
-		}
-		available = {
+			GER = { exists = yes }
 			check_variable = {
 				GEA_Dorpmuller_friendship < 100
 			}
+			OR = { has_country_flag = GEA_Josias_decision_view_Dorpmuller AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_5_Dorpmuller has_country_flag = GEA_Josias_frame_6_Dorpmuller } } }
 		}
 
 		cost = GEA_Josias_social_cost_10?10
@@ -22326,6 +22297,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			NOT = { has_country_flag = GEA_Josias_decision_view_Emil_Helfferich }
 			OR = {
 				has_country_flag = GEA_Josias_frame_5_Emil_Helfferich
@@ -22348,12 +22320,11 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
-			OR = { has_country_flag = GEA_Josias_decision_view_Emil_Helfferich AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_5_Emil_Helfferich has_country_flag = GEA_Josias_frame_6_Emil_Helfferich } } }
-		}
-		available = {
+			GER = { exists = yes }
 			check_variable = {
 				GEA_Emil_Helfferich_friendship < 100
 			}
+			OR = { has_country_flag = GEA_Josias_decision_view_Emil_Helfferich AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_5_Emil_Helfferich has_country_flag = GEA_Josias_frame_6_Emil_Helfferich } } }
 		}
 
 		cost = GEA_Josias_social_cost_10?10
@@ -22378,6 +22349,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			NOT = { has_country_flag = GEA_Josias_decision_view_Fritz_Thyssen }
 			OR = {
 				has_country_flag = GEA_Josias_frame_5_Fritz_Thyssen
@@ -22400,12 +22372,11 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
-			OR = { has_country_flag = GEA_Josias_decision_view_Fritz_Thyssen AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_5_Fritz_Thyssen has_country_flag = GEA_Josias_frame_6_Fritz_Thyssen } } }
-		}
-		available = {
+			GER = { exists = yes }
 			check_variable = {
 				GEA_Fritz_Thyssen_friendship < 100
 			}
+			OR = { has_country_flag = GEA_Josias_decision_view_Fritz_Thyssen AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_5_Fritz_Thyssen has_country_flag = GEA_Josias_frame_6_Fritz_Thyssen } } }
 		}
 
 		cost = GEA_Josias_social_cost_10?10
@@ -22430,6 +22401,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			NOT = { has_country_flag = GEA_Josias_decision_view_Hermann_Goring }
 			OR = {
 				has_country_flag = GEA_Josias_frame_5_Hermann_Goring
@@ -22452,12 +22424,11 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
-			OR = { has_country_flag = GEA_Josias_decision_view_Hermann_Goring AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_5_Hermann_Goring has_country_flag = GEA_Josias_frame_6_Hermann_Goring } } }
-		}
-		available = {
+			GER = { exists = yes }
 			check_variable = {
 				GEA_Hermann_Goring_friendship < 100
 			}
+			OR = { has_country_flag = GEA_Josias_decision_view_Hermann_Goring AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_5_Hermann_Goring has_country_flag = GEA_Josias_frame_6_Hermann_Goring } } }
 		}
 
 		cost = GEA_Josias_social_cost_10?10
@@ -22482,6 +22453,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			NOT = { has_country_flag = GEA_Josias_decision_view_Siegmund_Bodenheimer }
 			OR = {
 				has_country_flag = GEA_Josias_frame_5_Siegmund_Bodenheimer
@@ -22504,12 +22476,11 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
-			OR = { has_country_flag = GEA_Josias_decision_view_Siegmund_Bodenheimer AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_5_Siegmund_Bodenheimer has_country_flag = GEA_Josias_frame_6_Siegmund_Bodenheimer } } }
-		}
-		available = {
+			GER = { exists = yes }
 			check_variable = {
 				GEA_Siegmund_Bodenheimer_friendship < 100
 			}
+			OR = { has_country_flag = GEA_Josias_decision_view_Siegmund_Bodenheimer AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_5_Siegmund_Bodenheimer has_country_flag = GEA_Josias_frame_6_Siegmund_Bodenheimer } } }
 		}
 
 		cost = GEA_Josias_social_cost_10?10
@@ -22534,13 +22505,9 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			has_completed_focus = GEA_The_close_bond_of_dual_in-laws
 			OR = { has_country_flag = GEA_Josias_decision_view_Nikolaus AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_1_Nikolaus has_country_flag = GEA_Josias_frame_2_Nikolaus } } }
-		}
-		available = {
-			check_variable = {
-				GEA_NIKOLAUS_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_25?25
@@ -22570,13 +22537,9 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			has_completed_focus = GEA_The_close_bond_of_dual_in-laws
 			OR = { has_country_flag = GEA_Josias_decision_view_Nikolaus AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_1_Nikolaus has_country_flag = GEA_Josias_frame_2_Nikolaus } } }
-		}
-		available = {
-			check_variable = {
-				GEA_NIKOLAUS_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_30?30
@@ -22603,13 +22566,9 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			has_completed_focus = GEA_The_close_bond_of_dual_in-laws
 			OR = { has_country_flag = GEA_Josias_decision_view_Nikolaus AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_1_Nikolaus has_country_flag = GEA_Josias_frame_2_Nikolaus } } }
-		}
-		available = {
-			check_variable = {
-				GEA_NIKOLAUS_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_20?20
@@ -22640,13 +22599,9 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			has_completed_focus = GEA_The_close_bond_of_dual_in-laws
 			OR = { has_country_flag = GEA_Josias_decision_view_Nikolaus AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_1_Nikolaus has_country_flag = GEA_Josias_frame_2_Nikolaus } } }
-		}
-		available = {
-			check_variable = {
-				GEA_NIKOLAUS_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_30?30
@@ -22674,13 +22629,9 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			has_completed_focus = GEA_The_close_bond_of_dual_in-laws
 			OR = { has_country_flag = GEA_Josias_decision_view_Nikolaus AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_1_Nikolaus has_country_flag = GEA_Josias_frame_2_Nikolaus } } }
-		}
-		available = {
-			check_variable = {
-				GEA_NIKOLAUS_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_30?30
@@ -22708,13 +22659,11 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			has_completed_focus = GEA_The_close_bond_of_dual_in-laws
 			OR = { has_country_flag = GEA_Josias_decision_view_Nikolaus AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_1_Nikolaus has_country_flag = GEA_Josias_frame_2_Nikolaus } } }
 		}
 		available = {
-			check_variable = {
-				GEA_NIKOLAUS_friendship < 100
-			}
 			any_owned_state = {
 				is_controlled_by = GEA
 				infrastructure < 5
@@ -22771,13 +22720,9 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			has_completed_focus = GEA_The_close_bond_of_dual_in-laws
 			OR = { has_country_flag = GEA_Josias_decision_view_Nikolaus AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_1_Nikolaus has_country_flag = GEA_Josias_frame_2_Nikolaus } } }
-		}
-		available = {
-			check_variable = {
-				GEA_NIKOLAUS_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_75?75
@@ -22809,13 +22754,9 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			has_completed_focus = GEA_The_close_bond_of_dual_in-laws
 			OR = { has_country_flag = GEA_Josias_decision_view_Nikolaus AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_1_Nikolaus has_country_flag = GEA_Josias_frame_2_Nikolaus } } }
-		}
-		available = {
-			check_variable = {
-				GEA_NIKOLAUS_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_60?60
@@ -22842,13 +22783,9 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			has_completed_focus = GEA_Brotherly_affection
 			OR = { has_country_flag = GEA_Josias_decision_view_Carl_Edward AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_1_Carl_Edward has_country_flag = GEA_Josias_frame_2_Carl_Edward } } }
-		}
-		available = {
-			check_variable = {
-				GEA_CARL_EDWARD_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_15?15
@@ -22875,13 +22812,9 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			has_completed_focus = GEA_Brotherly_affection
 			OR = { has_country_flag = GEA_Josias_decision_view_Carl_Edward AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_1_Carl_Edward has_country_flag = GEA_Josias_frame_2_Carl_Edward } } }
-		}
-		available = {
-			check_variable = {
-				GEA_CARL_EDWARD_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_25?25
@@ -22911,13 +22844,9 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			has_completed_focus = GEA_Brotherly_affection
 			OR = { has_country_flag = GEA_Josias_decision_view_Carl_Edward AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_1_Carl_Edward has_country_flag = GEA_Josias_frame_2_Carl_Edward } } }
-		}
-		available = {
-			check_variable = {
-				GEA_CARL_EDWARD_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_20?20
@@ -22948,13 +22877,9 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			has_completed_focus = GEA_Brotherly_affection
 			OR = { has_country_flag = GEA_Josias_decision_view_Carl_Edward AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_1_Carl_Edward has_country_flag = GEA_Josias_frame_2_Carl_Edward } } }
-		}
-		available = {
-			check_variable = {
-				GEA_CARL_EDWARD_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_30?30
@@ -22982,13 +22907,9 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			has_completed_focus = GEA_Brotherly_affection
 			OR = { has_country_flag = GEA_Josias_decision_view_Carl_Edward AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_1_Carl_Edward has_country_flag = GEA_Josias_frame_2_Carl_Edward } } }
-		}
-		available = {
-			check_variable = {
-				GEA_CARL_EDWARD_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_30?30
@@ -23020,13 +22941,11 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			has_completed_focus = GEA_Brotherly_affection
 			OR = { has_country_flag = GEA_Josias_decision_view_Carl_Edward AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_1_Carl_Edward has_country_flag = GEA_Josias_frame_2_Carl_Edward } } }
 		}
 		available = {
-			check_variable = {
-				GEA_CARL_EDWARD_friendship < 100
-			}
 			any_owned_state = {
 				is_controlled_by = GEA
 			}
@@ -23070,13 +22989,9 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			has_completed_focus = GEA_Brotherly_affection
 			OR = { has_country_flag = GEA_Josias_decision_view_Carl_Edward AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_1_Carl_Edward has_country_flag = GEA_Josias_frame_2_Carl_Edward } } }
-		}
-		available = {
-			check_variable = {
-				GEA_CARL_EDWARD_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_60?60
@@ -23108,13 +23023,9 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
 			OR = { has_country_flag = GEA_Josias_decision_view_Elard_von_Oldenburg AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_1_Elard_von_Oldenburg has_country_flag = GEA_Josias_frame_2_Elard_von_Oldenburg } } }
-		}
-		available = {
-			check_variable = {
-				GEA_ELARD_VON_OLDENBURG_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_20?20
@@ -23161,13 +23072,9 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
 			OR = { has_country_flag = GEA_Josias_decision_view_Elard_von_Oldenburg AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_1_Elard_von_Oldenburg has_country_flag = GEA_Josias_frame_2_Elard_von_Oldenburg } } }
-		}
-		available = {
-			check_variable = {
-				GEA_ELARD_VON_OLDENBURG_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_30?30
@@ -23206,13 +23113,11 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
 			OR = { has_country_flag = GEA_Josias_decision_view_Elard_von_Oldenburg AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_1_Elard_von_Oldenburg has_country_flag = GEA_Josias_frame_2_Elard_von_Oldenburg } } }
 		}
 		available = {
-			check_variable = {
-				GEA_ELARD_VON_OLDENBURG_friendship < 100
-			}
 			GER = {
 				exists = yes
 			}
@@ -23276,13 +23181,9 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
 			OR = { has_country_flag = GEA_Josias_decision_view_Elard_von_Oldenburg AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_1_Elard_von_Oldenburg has_country_flag = GEA_Josias_frame_2_Elard_von_Oldenburg } } }
-		}
-		available = {
-			check_variable = {
-				GEA_ELARD_VON_OLDENBURG_friendship < 100
-			}
 		}
 
 		cancel_if_not_visible = no
@@ -23313,13 +23214,11 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
 			OR = { has_country_flag = GEA_Josias_decision_view_Elard_von_Oldenburg AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_1_Elard_von_Oldenburg has_country_flag = GEA_Josias_frame_2_Elard_von_Oldenburg } } }
 		}
 		available = {
-			check_variable = {
-				GEA_ELARD_VON_OLDENBURG_friendship < 100
-			}
 			GER = {
 				exists = yes
 			}
@@ -23384,13 +23283,9 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
 			OR = { has_country_flag = GEA_Josias_decision_view_Elard_von_Oldenburg AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_1_Elard_von_Oldenburg has_country_flag = GEA_Josias_frame_2_Elard_von_Oldenburg } } }
-		}
-		available = {
-			check_variable = {
-				GEA_ELARD_VON_OLDENBURG_friendship < 100
-			}
 		}
 
 		cancel_if_not_visible = no
@@ -23417,13 +23312,11 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
 			OR = { has_country_flag = GEA_Josias_decision_view_Elard_von_Oldenburg AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_1_Elard_von_Oldenburg has_country_flag = GEA_Josias_frame_2_Elard_von_Oldenburg } } }
 		}
 		available = {
-			check_variable = {
-				GEA_ELARD_VON_OLDENBURG_friendship < 100
-			}
 			GER = {
 				exists = yes
 			}
@@ -23492,13 +23385,9 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			has_completed_focus = GEA_The_Secret_Party_of_the_General
 			OR = { has_country_flag = GEA_Josias_decision_view_Schleicher AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_1_Schleicher has_country_flag = GEA_Josias_frame_2_Schleicher } } }
-		}
-		available = {
-			check_variable = {
-				GEA_SCHLEICHER_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_10?10
@@ -23528,13 +23417,9 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			has_completed_focus = GEA_The_Secret_Party_of_the_General
 			OR = { has_country_flag = GEA_Josias_decision_view_Schleicher AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_1_Schleicher has_country_flag = GEA_Josias_frame_2_Schleicher } } }
-		}
-		available = {
-			check_variable = {
-				GEA_SCHLEICHER_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_25?25
@@ -23561,14 +23446,12 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = investigation
 
 		visible = {
+			GER = { exists = yes }
 			has_completed_focus = GEA_The_Secret_Party_of_the_General
 			OR = { has_country_flag = GEA_Josias_decision_view_Schleicher AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_1_Schleicher has_country_flag = GEA_Josias_frame_2_Schleicher } } }
 		}
 		available = {
 			num_of_civilian_factories_available_for_projects > 0
-			check_variable = {
-				GEA_SCHLEICHER_friendship < 100
-			}
 		}
 
 		custom_cost_text = CP_50
@@ -23620,13 +23503,11 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			has_completed_focus = GEA_The_Secret_Party_of_the_General
 			OR = { has_country_flag = GEA_Josias_decision_view_Schleicher AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_1_Schleicher has_country_flag = GEA_Josias_frame_2_Schleicher } } }
 		}
 		available = {
-			check_variable = {
-				GEA_SCHLEICHER_friendship < 100
-			}
 			GER = {
 				exists = yes
 			}
@@ -23691,13 +23572,9 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			has_completed_focus = GEA_The_Secret_Party_of_the_General
 			OR = { has_country_flag = GEA_Josias_decision_view_Schleicher AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_1_Schleicher has_country_flag = GEA_Josias_frame_2_Schleicher } } }
-		}
-		available = {
-			check_variable = {
-				GEA_SCHLEICHER_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_25?25
@@ -23729,13 +23606,9 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			has_completed_focus = GEA_The_Secret_Party_of_the_General
 			OR = { has_country_flag = GEA_Josias_decision_view_Schleicher AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_1_Schleicher has_country_flag = GEA_Josias_frame_2_Schleicher } } }
-		}
-		available = {
-			check_variable = {
-				GEA_SCHLEICHER_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_30?30
@@ -23765,13 +23638,11 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = investigation
 
 		visible = {
+			GER = { exists = yes }
 			has_completed_focus = GEA_The_Secret_Party_of_the_General
 			OR = { has_country_flag = GEA_Josias_decision_view_Schleicher AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_1_Schleicher has_country_flag = GEA_Josias_frame_2_Schleicher } } }
 		}
 		available = {
-			check_variable = {
-				GEA_SCHLEICHER_friendship < 100
-			}
 			GER = {
 				exists = yes
 			}
@@ -23836,13 +23707,11 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			has_completed_focus = GEA_The_Secret_Party_of_the_General
 			OR = { has_country_flag = GEA_Josias_decision_view_Schleicher AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_1_Schleicher has_country_flag = GEA_Josias_frame_2_Schleicher } } }
 		}
 		available = {
-			check_variable = {
-				GEA_SCHLEICHER_friendship < 100
-			}
 			GER = {
 				exists = yes
 			}
@@ -23908,13 +23777,9 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
 			OR = { has_country_flag = GEA_Josias_decision_view_Hugenberg AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_1_Hugenberg has_country_flag = GEA_Josias_frame_2_Hugenberg } } }
-		}
-		available = {
-			check_variable = {
-				GEA_HUGENBERG_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_20?20
@@ -23940,13 +23805,9 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
 			OR = { has_country_flag = GEA_Josias_decision_view_Hugenberg AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_1_Hugenberg has_country_flag = GEA_Josias_frame_2_Hugenberg } } }
-		}
-		available = {
-			check_variable = {
-				GEA_HUGENBERG_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_25?25
@@ -23980,13 +23841,9 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
 			OR = { has_country_flag = GEA_Josias_decision_view_Hugenberg AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_1_Hugenberg has_country_flag = GEA_Josias_frame_2_Hugenberg } } }
-		}
-		available = {
-			check_variable = {
-				GEA_HUGENBERG_friendship < 100
-			}
 		}
 
 		cancel_if_not_visible = no
@@ -24013,13 +23870,9 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
 			OR = { has_country_flag = GEA_Josias_decision_view_Hugenberg AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_1_Hugenberg has_country_flag = GEA_Josias_frame_2_Hugenberg } } }
-		}
-		available = {
-			check_variable = {
-				GEA_HUGENBERG_friendship < 100
-			}
 		}
 
 		cancel_if_not_visible = no
@@ -24047,13 +23900,9 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
 			OR = { has_country_flag = GEA_Josias_decision_view_Hugenberg AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_1_Hugenberg has_country_flag = GEA_Josias_frame_2_Hugenberg } } }
-		}
-		available = {
-			check_variable = {
-				GEA_HUGENBERG_friendship < 100
-			}
 		}
 
 		cancel_if_not_visible = no
@@ -24085,13 +23934,9 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
 			OR = { has_country_flag = GEA_Josias_decision_view_Hugenberg AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_1_Hugenberg has_country_flag = GEA_Josias_frame_2_Hugenberg } } }
-		}
-		available = {
-			check_variable = {
-				GEA_HUGENBERG_friendship < 100
-			}
 		}
 
 		cancel_if_not_visible = no
@@ -24118,13 +23963,9 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
 			OR = { has_country_flag = GEA_Josias_decision_view_Hugenberg AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_1_Hugenberg has_country_flag = GEA_Josias_frame_2_Hugenberg } } }
-		}
-		available = {
-			check_variable = {
-				GEA_HUGENBERG_friendship < 100
-			}
 		}
 
 		cancel_if_not_visible = no
@@ -24156,13 +23997,9 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
 			OR = { has_country_flag = GEA_Josias_decision_view_Werner_von_Alvensleben AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_1_Werner_von_Alvensleben has_country_flag = GEA_Josias_frame_2_Werner_von_Alvensleben } } }
-		}
-		available = {
-			check_variable = {
-				GEA_WERNER_VON_ALVENSLEBEN_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_40?40
@@ -24209,13 +24046,9 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
 			OR = { has_country_flag = GEA_Josias_decision_view_Werner_von_Alvensleben AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_1_Werner_von_Alvensleben has_country_flag = GEA_Josias_frame_2_Werner_von_Alvensleben } } }
-		}
-		available = {
-			check_variable = {
-				GEA_WERNER_VON_ALVENSLEBEN_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_25?25
@@ -24255,13 +24088,9 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
 			OR = { has_country_flag = GEA_Josias_decision_view_Werner_von_Alvensleben AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_1_Werner_von_Alvensleben has_country_flag = GEA_Josias_frame_2_Werner_von_Alvensleben } } }
-		}
-		available = {
-			check_variable = {
-				GEA_WERNER_VON_ALVENSLEBEN_friendship < 100
-			}
 		}
 
 		cancel_if_not_visible = no
@@ -24288,13 +24117,9 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
 			OR = { has_country_flag = GEA_Josias_decision_view_Werner_von_Alvensleben AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_1_Werner_von_Alvensleben has_country_flag = GEA_Josias_frame_2_Werner_von_Alvensleben } } }
-		}
-		available = {
-			check_variable = {
-				GEA_WERNER_VON_ALVENSLEBEN_friendship < 100
-			}
 		}
 
 		cancel_if_not_visible = no
@@ -24325,13 +24150,9 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
 			OR = { has_country_flag = GEA_Josias_decision_view_Werner_von_Alvensleben AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_1_Werner_von_Alvensleben has_country_flag = GEA_Josias_frame_2_Werner_von_Alvensleben } } }
-		}
-		available = {
-			check_variable = {
-				GEA_WERNER_VON_ALVENSLEBEN_friendship < 100
-			}
 		}
 
 		cancel_if_not_visible = no
@@ -24361,13 +24182,9 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
 			OR = { has_country_flag = GEA_Josias_decision_view_Werner_von_Alvensleben AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_1_Werner_von_Alvensleben has_country_flag = GEA_Josias_frame_2_Werner_von_Alvensleben } } }
-		}
-		available = {
-			check_variable = {
-				GEA_WERNER_VON_ALVENSLEBEN_friendship < 100
-			}
 		}
 
 		cancel_if_not_visible = no
@@ -24394,13 +24211,11 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			has_completed_focus = GEA_The_wise_men_of_the_sovereignty_faction
 			OR = { has_country_flag = GEA_Josias_decision_view_Werner_von_Alvensleben AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_1_Werner_von_Alvensleben has_country_flag = GEA_Josias_frame_2_Werner_von_Alvensleben } } }
 		}
 		available = {
-			check_variable = {
-				GEA_WERNER_VON_ALVENSLEBEN_friendship < 100
-			}
 			GER = {
 				exists = yes
 			}
@@ -24466,12 +24281,8 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Josef_Abs AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_3_Josef_Abs has_country_flag = GEA_Josias_frame_4_Josef_Abs } } }
-		}
-		available = {
-			check_variable = {
-				GEA_Josef_Abs_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_10?10
@@ -24501,14 +24312,12 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Josef_Abs AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_3_Josef_Abs has_country_flag = GEA_Josias_frame_4_Josef_Abs } } }
 		}
 		available = {
 			any_owned_state = {
 				is_controlled_by = GEA
-			}
-			check_variable = {
-				GEA_Josef_Abs_friendship < 100
 			}
 		}
 
@@ -24549,12 +24358,8 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Josef_Abs AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_3_Josef_Abs has_country_flag = GEA_Josias_frame_4_Josef_Abs } } }
-		}
-		available = {
-			check_variable = {
-				GEA_Josef_Abs_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_30?30
@@ -24582,12 +24387,8 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Josef_Abs AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_3_Josef_Abs has_country_flag = GEA_Josias_frame_4_Josef_Abs } } }
-		}
-		available = {
-			check_variable = {
-				GEA_Josef_Abs_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_40?40
@@ -24617,12 +24418,8 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Josef_Abs AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_3_Josef_Abs has_country_flag = GEA_Josias_frame_4_Josef_Abs } } }
-		}
-		available = {
-			check_variable = {
-				GEA_Josef_Abs_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_45?45
@@ -24652,12 +24449,10 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Josef_Abs AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_3_Josef_Abs has_country_flag = GEA_Josias_frame_4_Josef_Abs } } }
 		}
 		available = {
-			check_variable = {
-				GEA_Josef_Abs_friendship < 100
-			}
 			any_owned_state = {
 				is_controlled_by = GEA
 				free_building_slots = {
@@ -24784,12 +24579,8 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Josef_Abs AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_3_Josef_Abs has_country_flag = GEA_Josias_frame_4_Josef_Abs } } }
-		}
-		available = {
-			check_variable = {
-				GEA_Josef_Abs_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_80?80
@@ -24822,14 +24613,12 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Fritz_Meer AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_3_Fritz_Meer has_country_flag = GEA_Josias_frame_4_Fritz_Meer } } }
 		}
 		available = {
 			any_owned_state = {
 				is_controlled_by = GEA
-			}
-			check_variable = {
-				GEA_Fritz_Meer_friendship < 100
 			}
 		}
 
@@ -24874,12 +24663,8 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Fritz_Meer AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_3_Fritz_Meer has_country_flag = GEA_Josias_frame_4_Fritz_Meer } } }
-		}
-		available = {
-			check_variable = {
-				GEA_Fritz_Meer_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_30?30
@@ -24910,12 +24695,8 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Fritz_Meer AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_3_Fritz_Meer has_country_flag = GEA_Josias_frame_4_Fritz_Meer } } }
-		}
-		available = {
-			check_variable = {
-				GEA_Fritz_Meer_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_35?35
@@ -24945,12 +24726,8 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Fritz_Meer AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_3_Fritz_Meer has_country_flag = GEA_Josias_frame_4_Fritz_Meer } } }
-		}
-		available = {
-			check_variable = {
-				GEA_Fritz_Meer_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_40?40
@@ -24980,12 +24757,8 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Fritz_Meer AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_3_Fritz_Meer has_country_flag = GEA_Josias_frame_4_Fritz_Meer } } }
-		}
-		available = {
-			check_variable = {
-				GEA_Fritz_Meer_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_40?40
@@ -25015,12 +24788,8 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Fritz_Meer AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_3_Fritz_Meer has_country_flag = GEA_Josias_frame_4_Fritz_Meer } } }
-		}
-		available = {
-			check_variable = {
-				GEA_Fritz_Meer_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_80?80
@@ -25058,12 +24827,10 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Fritz_Meer AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_3_Fritz_Meer has_country_flag = GEA_Josias_frame_4_Fritz_Meer } } }
 		}
 		available = {
-			check_variable = {
-				GEA_Fritz_Meer_friendship < 100
-			}
 			any_owned_state = {
 				is_controlled_by = GEA
 				free_building_slots = {
@@ -25190,6 +24957,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = electrify
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Hermann_Siemens AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_3_Hermann_Siemens has_country_flag = GEA_Josias_frame_4_Hermann_Siemens } } }
 		}
 		available = {
@@ -25200,9 +24968,6 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 				is_owned_and_controlled_by = GEA
 			}
 			num_of_civilian_factories_available_for_projects > 1
-			check_variable = {
-				GEA_Hermann_Siemens_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_60?60
@@ -25277,12 +25042,8 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = radio
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Hermann_Siemens AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_3_Hermann_Siemens has_country_flag = GEA_Josias_frame_4_Hermann_Siemens } } }
-		}
-		available = {
-			check_variable = {
-				GEA_Hermann_Siemens_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_30?30
@@ -25325,12 +25086,8 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Hermann_Siemens AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_3_Hermann_Siemens has_country_flag = GEA_Josias_frame_4_Hermann_Siemens } } }
-		}
-		available = {
-			check_variable = {
-				GEA_Hermann_Siemens_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_30?30
@@ -25360,12 +25117,8 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Hermann_Siemens AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_3_Hermann_Siemens has_country_flag = GEA_Josias_frame_4_Hermann_Siemens } } }
-		}
-		available = {
-			check_variable = {
-				GEA_Hermann_Siemens_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_40?40
@@ -25400,12 +25153,8 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Hermann_Siemens AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_3_Hermann_Siemens has_country_flag = GEA_Josias_frame_4_Hermann_Siemens } } }
-		}
-		available = {
-			check_variable = {
-				GEA_Hermann_Siemens_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_45?45
@@ -25435,12 +25184,8 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Hermann_Siemens AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_3_Hermann_Siemens has_country_flag = GEA_Josias_frame_4_Hermann_Siemens } } }
-		}
-		available = {
-			check_variable = {
-				GEA_Hermann_Siemens_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_80?80
@@ -25472,12 +25217,10 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Hermann_Siemens AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_3_Hermann_Siemens has_country_flag = GEA_Josias_frame_4_Hermann_Siemens } } }
 		}
 		available = {
-			check_variable = {
-				GEA_Hermann_Siemens_friendship < 100
-			}
 			any_owned_state = {
 				is_controlled_by = GEA
 				free_building_slots = {
@@ -25604,6 +25347,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = radar
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Hermann_Bucher AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_3_Hermann_Bucher has_country_flag = GEA_Josias_frame_4_Hermann_Bucher } } }
 		}
 		available = {
@@ -25614,9 +25358,6 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 				is_owned_and_controlled_by = GEA
 			}
 			num_of_civilian_factories_available_for_projects > 1
-			check_variable = {
-				GEA_Hermann_Bucher_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_60?60
@@ -25691,6 +25432,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = radio
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Hermann_Bucher AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_3_Hermann_Bucher has_country_flag = GEA_Josias_frame_4_Hermann_Bucher } } }
 		}
 		available = {
@@ -25698,9 +25440,6 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 				is_controlled_by = GEA
 			}
 			num_of_civilian_factories_available_for_projects > 0
-			check_variable = {
-				GEA_Hermann_Bucher_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_40?40
@@ -25751,12 +25490,8 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Hermann_Bucher AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_3_Hermann_Bucher has_country_flag = GEA_Josias_frame_4_Hermann_Bucher } } }
-		}
-		available = {
-			check_variable = {
-				GEA_Hermann_Bucher_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_30?30
@@ -25786,12 +25521,8 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Hermann_Bucher AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_3_Hermann_Bucher has_country_flag = GEA_Josias_frame_4_Hermann_Bucher } } }
-		}
-		available = {
-			check_variable = {
-				GEA_Hermann_Bucher_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_45?45
@@ -25821,12 +25552,8 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Hermann_Bucher AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_3_Hermann_Bucher has_country_flag = GEA_Josias_frame_4_Hermann_Bucher } } }
-		}
-		available = {
-			check_variable = {
-				GEA_Hermann_Bucher_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_35?35
@@ -25856,12 +25583,8 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Hermann_Bucher AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_3_Hermann_Bucher has_country_flag = GEA_Josias_frame_4_Hermann_Bucher } } }
-		}
-		available = {
-			check_variable = {
-				GEA_Hermann_Bucher_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_80?80
@@ -25894,12 +25617,10 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Hermann_Bucher AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_3_Hermann_Bucher has_country_flag = GEA_Josias_frame_4_Hermann_Bucher } } }
 		}
 		available = {
-			check_variable = {
-				GEA_Hermann_Bucher_friendship < 100
-			}
 			any_owned_state = {
 				is_controlled_by = GEA
 				free_building_slots = {
@@ -26026,14 +25747,12 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Otto_Jeidels AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_3_Otto_Jeidels has_country_flag = GEA_Josias_frame_4_Otto_Jeidels } } }
 		}
 		available = {
 			any_owned_state = {
 				is_controlled_by = GEA
-			}
-			check_variable = {
-				GEA_Otto_Jeidels_friendship < 100
 			}
 		}
 
@@ -26092,12 +25811,8 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Otto_Jeidels AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_3_Otto_Jeidels has_country_flag = GEA_Josias_frame_4_Otto_Jeidels } } }
-		}
-		available = {
-			check_variable = {
-				GEA_Otto_Jeidels_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_30?30
@@ -26142,12 +25857,8 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Otto_Jeidels AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_3_Otto_Jeidels has_country_flag = GEA_Josias_frame_4_Otto_Jeidels } } }
-		}
-		available = {
-			check_variable = {
-				GEA_Otto_Jeidels_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_35?35
@@ -26175,12 +25886,8 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Otto_Jeidels AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_3_Otto_Jeidels has_country_flag = GEA_Josias_frame_4_Otto_Jeidels } } }
-		}
-		available = {
-			check_variable = {
-				GEA_Otto_Jeidels_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_40?40
@@ -26215,12 +25922,8 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Otto_Jeidels AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_3_Otto_Jeidels has_country_flag = GEA_Josias_frame_4_Otto_Jeidels } } }
-		}
-		available = {
-			check_variable = {
-				GEA_Otto_Jeidels_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_45?45
@@ -26250,12 +25953,8 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Otto_Jeidels AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_3_Otto_Jeidels has_country_flag = GEA_Josias_frame_4_Otto_Jeidels } } }
-		}
-		available = {
-			check_variable = {
-				GEA_Otto_Jeidels_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_80?80
@@ -26282,12 +25981,10 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Otto_Jeidels AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_3_Otto_Jeidels has_country_flag = GEA_Josias_frame_4_Otto_Jeidels } } }
 		}
 		available = {
-			check_variable = {
-				GEA_Otto_Jeidels_friendship < 100
-			}
 			any_owned_state = {
 				is_controlled_by = GEA
 				is_coastal = yes
@@ -26423,13 +26120,9 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
 			OR = { has_country_flag = GEA_Josias_decision_view_Alfred_Krupp AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_3_Alfred_Krupp has_country_flag = GEA_Josias_frame_4_Alfred_Krupp } } }
-		}
-		available = {
-			check_variable = {
-				GEA_Alfred_Krupp_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_45?45
@@ -26457,6 +26150,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
 			OR = { has_country_flag = GEA_Josias_decision_view_Alfred_Krupp AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_3_Alfred_Krupp has_country_flag = GEA_Josias_frame_4_Alfred_Krupp } } }
 		}
@@ -26468,9 +26162,6 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 				is_owned_and_controlled_by = GEA
 			}
 			num_of_civilian_factories_available_for_projects > 3
-			check_variable = {
-				GEA_Alfred_Krupp_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_75?75
@@ -26561,15 +26252,13 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
 			OR = { has_country_flag = GEA_Josias_decision_view_Alfred_Krupp AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_3_Alfred_Krupp has_country_flag = GEA_Josias_frame_4_Alfred_Krupp } } }
 		}
 		available = {
 			any_owned_state = {
 				is_controlled_by = GEA
-			}
-			check_variable = {
-				GEA_Alfred_Krupp_friendship < 100
 			}
 		}
 
@@ -26611,13 +26300,9 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
 			OR = { has_country_flag = GEA_Josias_decision_view_Alfred_Krupp AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_3_Alfred_Krupp has_country_flag = GEA_Josias_frame_4_Alfred_Krupp } } }
-		}
-		available = {
-			check_variable = {
-				GEA_Alfred_Krupp_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_40?40
@@ -26707,13 +26392,9 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
 			OR = { has_country_flag = GEA_Josias_decision_view_Alfred_Krupp AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_3_Alfred_Krupp has_country_flag = GEA_Josias_frame_4_Alfred_Krupp } } }
-		}
-		available = {
-			check_variable = {
-				GEA_Alfred_Krupp_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_45?45
@@ -26743,13 +26424,9 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
 			OR = { has_country_flag = GEA_Josias_decision_view_Alfred_Krupp AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_3_Alfred_Krupp has_country_flag = GEA_Josias_frame_4_Alfred_Krupp } } }
-		}
-		available = {
-			check_variable = {
-				GEA_Alfred_Krupp_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_35?35
@@ -26779,13 +26456,9 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
 			OR = { has_country_flag = GEA_Josias_decision_view_Alfred_Krupp AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_3_Alfred_Krupp has_country_flag = GEA_Josias_frame_4_Alfred_Krupp } } }
-		}
-		available = {
-			check_variable = {
-				GEA_Alfred_Krupp_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_80?80
@@ -26818,13 +26491,11 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			has_completed_focus = GEA_The_friendship_with_the_publicity_magnate
 			OR = { has_country_flag = GEA_Josias_decision_view_Alfred_Krupp AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_3_Alfred_Krupp has_country_flag = GEA_Josias_frame_4_Alfred_Krupp } } }
 		}
 		available = {
-			check_variable = {
-				GEA_Alfred_Krupp_friendship < 100
-			}
 			any_owned_state = {
 				is_controlled_by = GEA
 				free_building_slots = {
@@ -26927,12 +26598,8 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Carl_Schmitt AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_5_Carl_Schmitt has_country_flag = GEA_Josias_frame_6_Carl_Schmitt } } }
-		}
-		available = {
-			check_variable = {
-				GEA_Carl_Schmitt_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_20?20
@@ -26962,12 +26629,8 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Carl_Schmitt AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_5_Carl_Schmitt has_country_flag = GEA_Josias_frame_6_Carl_Schmitt } } }
-		}
-		available = {
-			check_variable = {
-				GEA_Carl_Schmitt_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_20?20
@@ -27008,12 +26671,10 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Carl_Schmitt AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_5_Carl_Schmitt has_country_flag = GEA_Josias_frame_6_Carl_Schmitt } } }
 		}
 		available = {
-			check_variable = {
-				GEA_Carl_Schmitt_friendship < 100
-			}
 			MAF = {
 				exists = yes
 			}
@@ -27120,12 +26781,10 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Carl_Schmitt AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_5_Carl_Schmitt has_country_flag = GEA_Josias_frame_6_Carl_Schmitt } } }
 		}
 		available = {
-			check_variable = {
-				GEA_Carl_Schmitt_friendship < 100
-			}
 			MAF = {
 				exists = yes
 			}
@@ -27233,12 +26892,8 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Carl_Schmitt AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_5_Carl_Schmitt has_country_flag = GEA_Josias_frame_6_Carl_Schmitt } } }
-		}
-		available = {
-			check_variable = {
-				GEA_Carl_Schmitt_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_30?30
@@ -27295,12 +26950,10 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Carl_Schmitt AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_5_Carl_Schmitt has_country_flag = GEA_Josias_frame_6_Carl_Schmitt } } }
 		}
 		available = {
-			check_variable = {
-				GEA_Carl_Schmitt_friendship < 100
-			}
 			MAF = {
 				exists = yes
 			}
@@ -27409,12 +27062,8 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Carl_Schmitt AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_5_Carl_Schmitt has_country_flag = GEA_Josias_frame_6_Carl_Schmitt } } }
-		}
-		available = {
-			check_variable = {
-				GEA_Carl_Schmitt_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_80?80
@@ -27441,14 +27090,12 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_gre_paying_ifc_debt
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Dorpmuller AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_5_Dorpmuller has_country_flag = GEA_Josias_frame_6_Dorpmuller } } }
 		}
 		available = {
 			any_owned_state = {
 				is_controlled_by = GEA
-			}
-			check_variable = {
-				GEA_Dorpmuller_friendship < 100
 			}
 		}
 
@@ -27489,6 +27136,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = railroad
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Dorpmuller AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_5_Dorpmuller has_country_flag = GEA_Josias_frame_6_Dorpmuller } } }
 		}
 		available = {
@@ -27499,9 +27147,6 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 				is_owned_and_controlled_by = GEA
 			}
 			num_of_civilian_factories_available_for_projects > 2
-			check_variable = {
-				GEA_Dorpmuller_friendship < 100
-			}
 		}
 
 		cancel_trigger = {
@@ -27565,6 +27210,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = railroad
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Dorpmuller AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_5_Dorpmuller has_country_flag = GEA_Josias_frame_6_Dorpmuller } } }
 		}
 		available = {
@@ -27572,9 +27218,6 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 				is_owned_and_controlled_by = GEA
 			}
 			num_of_civilian_factories_available_for_projects > 1
-			check_variable = {
-				GEA_Dorpmuller_friendship < 100
-			}
 		}
 
 		cancel_trigger = {
@@ -27614,12 +27257,8 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Dorpmuller AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_5_Dorpmuller has_country_flag = GEA_Josias_frame_6_Dorpmuller } } }
-		}
-		available = {
-			check_variable = {
-				GEA_Dorpmuller_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_30?30
@@ -27649,12 +27288,8 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Dorpmuller AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_5_Dorpmuller has_country_flag = GEA_Josias_frame_6_Dorpmuller } } }
-		}
-		available = {
-			check_variable = {
-				GEA_Dorpmuller_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_40?40
@@ -27690,12 +27325,8 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Dorpmuller AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_5_Dorpmuller has_country_flag = GEA_Josias_frame_6_Dorpmuller } } }
-		}
-		available = {
-			check_variable = {
-				GEA_Dorpmuller_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_40?40
@@ -27752,12 +27383,8 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Dorpmuller AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_5_Dorpmuller has_country_flag = GEA_Josias_frame_6_Dorpmuller } } }
-		}
-		available = {
-			check_variable = {
-				GEA_Dorpmuller_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_80?80
@@ -27790,12 +27417,10 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Dorpmuller AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_5_Dorpmuller has_country_flag = GEA_Josias_frame_6_Dorpmuller } } }
 		}
 		available = {
-			check_variable = {
-				GEA_Dorpmuller_friendship < 100
-			}
 			any_owned_state = {
 				is_controlled_by = GEA
 				free_building_slots = {
@@ -27983,12 +27608,8 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Emil_Helfferich AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_5_Emil_Helfferich has_country_flag = GEA_Josias_frame_6_Emil_Helfferich } } }
-		}
-		available = {
-			check_variable = {
-				GEA_Emil_Helfferich_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_20?20
@@ -28018,6 +27639,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Emil_Helfferich AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_5_Emil_Helfferich has_country_flag = GEA_Josias_frame_6_Emil_Helfferich } } }
 		}
 		available = {
@@ -28026,9 +27648,6 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 			}
 			331 = {
 				is_owned_and_controlled_by = GEA
-			}
-			check_variable = {
-				GEA_Emil_Helfferich_friendship < 100
 			}
 		}
 
@@ -28082,12 +27701,8 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Emil_Helfferich AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_5_Emil_Helfferich has_country_flag = GEA_Josias_frame_6_Emil_Helfferich } } }
-		}
-		available = {
-			check_variable = {
-				GEA_Emil_Helfferich_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_30?30
@@ -28115,12 +27730,8 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Emil_Helfferich AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_5_Emil_Helfferich has_country_flag = GEA_Josias_frame_6_Emil_Helfferich } } }
-		}
-		available = {
-			check_variable = {
-				GEA_Emil_Helfferich_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_40?40
@@ -28150,12 +27761,8 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Emil_Helfferich AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_5_Emil_Helfferich has_country_flag = GEA_Josias_frame_6_Emil_Helfferich } } }
-		}
-		available = {
-			check_variable = {
-				GEA_Emil_Helfferich_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_40?40
@@ -28186,12 +27793,8 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Emil_Helfferich AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_5_Emil_Helfferich has_country_flag = GEA_Josias_frame_6_Emil_Helfferich } } }
-		}
-		available = {
-			check_variable = {
-				GEA_Emil_Helfferich_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_80?80
@@ -28218,12 +27821,10 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Emil_Helfferich AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_5_Emil_Helfferich has_country_flag = GEA_Josias_frame_6_Emil_Helfferich } } }
 		}
 		available = {
-			check_variable = {
-				GEA_Emil_Helfferich_friendship < 100
-			}
 			any_owned_state = {
 				is_controlled_by = GEA
 				is_coastal = yes
@@ -28404,6 +28005,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_hol_draw_up_staff_plans
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Fritz_Thyssen AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_5_Fritz_Thyssen has_country_flag = GEA_Josias_frame_6_Fritz_Thyssen } } }
 		}
 		available = {
@@ -28415,9 +28017,6 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 					state = 671
 				}
 				is_controlled_by = GEA
-			}
-			check_variable = {
-				GEA_Fritz_Thyssen_friendship < 100
 			}
 		}
 
@@ -28475,6 +28074,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_hol_draw_up_staff_plans
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Fritz_Thyssen AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_5_Fritz_Thyssen has_country_flag = GEA_Josias_frame_6_Fritz_Thyssen } } }
 			check_variable = {
 				GEA_mining_concessions_count < 3
@@ -28483,9 +28083,6 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		available = {
 			846 = {
 				is_owned_and_controlled_by = GEA
-			}
-			check_variable = {
-				GEA_Fritz_Thyssen_friendship < 100
 			}
 		}
 
@@ -28555,12 +28152,10 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Fritz_Thyssen AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_5_Fritz_Thyssen has_country_flag = GEA_Josias_frame_6_Fritz_Thyssen } } }
 		}
 		available = {
-			check_variable = {
-				GEA_Fritz_Thyssen_friendship < 100
-			}
 			any_owned_state = {
 				is_controlled_by = GEA
 				OR = {
@@ -28647,12 +28242,8 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Fritz_Thyssen AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_5_Fritz_Thyssen has_country_flag = GEA_Josias_frame_6_Fritz_Thyssen } } }
-		}
-		available = {
-			check_variable = {
-				GEA_Fritz_Thyssen_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_45?45
@@ -28682,12 +28273,8 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Fritz_Thyssen AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_5_Fritz_Thyssen has_country_flag = GEA_Josias_frame_6_Fritz_Thyssen } } }
-		}
-		available = {
-			check_variable = {
-				GEA_Fritz_Thyssen_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_35?35
@@ -28717,12 +28304,8 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Fritz_Thyssen AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_5_Fritz_Thyssen has_country_flag = GEA_Josias_frame_6_Fritz_Thyssen } } }
-		}
-		available = {
-			check_variable = {
-				GEA_Fritz_Thyssen_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_80?80
@@ -28754,12 +28337,10 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Fritz_Thyssen AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_5_Fritz_Thyssen has_country_flag = GEA_Josias_frame_6_Fritz_Thyssen } } }
 		}
 		available = {
-			check_variable = {
-				GEA_Fritz_Thyssen_friendship < 100
-			}
 			any_owned_state = {
 				is_controlled_by = GEA
 				free_building_slots = {
@@ -28900,12 +28481,8 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Hermann_Goring AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_5_Hermann_Goring has_country_flag = GEA_Josias_frame_6_Hermann_Goring } } }
-		}
-		available = {
-			check_variable = {
-				GEA_Hermann_Goring_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_15?15
@@ -28936,12 +28513,8 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Hermann_Goring AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_5_Hermann_Goring has_country_flag = GEA_Josias_frame_6_Hermann_Goring } } }
-		}
-		available = {
-			check_variable = {
-				GEA_Hermann_Goring_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_20?20
@@ -28971,12 +28544,8 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Hermann_Goring AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_5_Hermann_Goring has_country_flag = GEA_Josias_frame_6_Hermann_Goring } } }
-		}
-		available = {
-			check_variable = {
-				GEA_Hermann_Goring_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_30?30
@@ -29003,12 +28572,10 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Hermann_Goring AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_5_Hermann_Goring has_country_flag = GEA_Josias_frame_6_Hermann_Goring } } }
 		}
 		available = {
-			check_variable = {
-				GEA_Hermann_Goring_friendship < 100
-			}
 			MAF = {
 				exists = yes
 			}
@@ -29074,12 +28641,10 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Hermann_Goring AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_5_Hermann_Goring has_country_flag = GEA_Josias_frame_6_Hermann_Goring } } }
 		}
 		available = {
-			check_variable = {
-				GEA_Hermann_Goring_friendship < 100
-			}
 			MAF = {
 				exists = yes
 			}
@@ -29185,12 +28750,8 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Hermann_Goring AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_5_Hermann_Goring has_country_flag = GEA_Josias_frame_6_Hermann_Goring } } }
-		}
-		available = {
-			check_variable = {
-				GEA_Hermann_Goring_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_90?90
@@ -29224,12 +28785,10 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Hermann_Goring AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_5_Hermann_Goring has_country_flag = GEA_Josias_frame_6_Hermann_Goring } } }
 		}
 		available = {
-			check_variable = {
-				GEA_Hermann_Goring_friendship < 100
-			}
 			MAF = {
 				exists = yes
 			}
@@ -29383,6 +28942,7 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Siegmund_Bodenheimer AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_5_Siegmund_Bodenheimer has_country_flag = GEA_Josias_frame_6_Siegmund_Bodenheimer } } }
 		}
 		available = {
@@ -29393,9 +28953,6 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 				}
 			}
 			num_of_civilian_factories_available_for_projects > 0
-			check_variable = {
-				GEA_Siegmund_Bodenheimer_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_20?20
@@ -29460,12 +29017,8 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Siegmund_Bodenheimer AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_5_Siegmund_Bodenheimer has_country_flag = GEA_Josias_frame_6_Siegmund_Bodenheimer } } }
-		}
-		available = {
-			check_variable = {
-				GEA_Siegmund_Bodenheimer_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_75?75
@@ -29497,12 +29050,8 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Siegmund_Bodenheimer AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_5_Siegmund_Bodenheimer has_country_flag = GEA_Josias_frame_6_Siegmund_Bodenheimer } } }
-		}
-		available = {
-			check_variable = {
-				GEA_Siegmund_Bodenheimer_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_35?35
@@ -29530,12 +29079,8 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Siegmund_Bodenheimer AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_5_Siegmund_Bodenheimer has_country_flag = GEA_Josias_frame_6_Siegmund_Bodenheimer } } }
-		}
-		available = {
-			check_variable = {
-				GEA_Siegmund_Bodenheimer_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_40?40
@@ -29565,12 +29110,8 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Siegmund_Bodenheimer AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_5_Siegmund_Bodenheimer has_country_flag = GEA_Josias_frame_6_Siegmund_Bodenheimer } } }
-		}
-		available = {
-			check_variable = {
-				GEA_Siegmund_Bodenheimer_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_45?45
@@ -29600,12 +29141,8 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Siegmund_Bodenheimer AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_5_Siegmund_Bodenheimer has_country_flag = GEA_Josias_frame_6_Siegmund_Bodenheimer } } }
-		}
-		available = {
-			check_variable = {
-				GEA_Siegmund_Bodenheimer_friendship < 100
-			}
 		}
 
 		cost = GEA_Josias_social_cost_80?80
@@ -29636,12 +29173,10 @@ GEA_josias_decisions = { #约西亚斯乞讨决议
 		icon = GFX_decision_generic_political_address
 
 		visible = {
+			GER = { exists = yes }
 			OR = { has_country_flag = GEA_Josias_decision_view_Siegmund_Bodenheimer AND = { is_ai = yes OR = { has_country_flag = GEA_Josias_frame_5_Siegmund_Bodenheimer has_country_flag = GEA_Josias_frame_6_Siegmund_Bodenheimer } } }
 		}
 		available = {
-			check_variable = {
-				GEA_Siegmund_Bodenheimer_friendship < 100
-			}
 			custom_trigger_tooltip = {
 				tooltip = GEA_urban_investment_two_states_tt
 				any_owned_state = {

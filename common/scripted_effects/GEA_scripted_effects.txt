@@ -1,3 +1,27 @@
+GEA_refresh_lep_low_yield_costs_effect = { #低收益华东合作决议额外减少10政治点数
+	set_variable = { GEA_lep_low_yield_investment_cost = 20 }
+	if = {
+		limit = { has_variable = GEA_lep_investment_cost }
+		set_variable = { GEA_lep_low_yield_investment_cost = GEA_lep_investment_cost }
+	}
+	subtract_from_variable = { GEA_lep_low_yield_investment_cost = 10 }
+	clamp_variable = { var = GEA_lep_low_yield_investment_cost min = 0 max = 10 }
+	set_variable = { GEA_lep_low_yield_enterprise_cost = 40 }
+	if = {
+		limit = { has_variable = GEA_lep_enterprise_cost }
+		set_variable = { GEA_lep_low_yield_enterprise_cost = GEA_lep_enterprise_cost }
+	}
+	subtract_from_variable = { GEA_lep_low_yield_enterprise_cost = 10 }
+	clamp_variable = { var = GEA_lep_low_yield_enterprise_cost min = 0 max = 30 }
+	set_variable = { GEA_lep_low_yield_bank_cost = 20 }
+	if = {
+		limit = { has_variable = GEA_china_economic_cost_30 }
+		set_variable = { GEA_lep_low_yield_bank_cost = GEA_china_economic_cost_30 }
+	}
+	subtract_from_variable = { GEA_lep_low_yield_bank_cost = 10 }
+	clamp_variable = { var = GEA_lep_low_yield_bank_cost min = 0 max = 10 }
+}
+
 GEA_Indochina_click_effect = { #印度支那点击互动
 	if = {
 		limit = {

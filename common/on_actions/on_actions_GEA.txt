@@ -89,10 +89,13 @@ on_actions = {
 			if = {
 				limit = { GEA = { exists = yes } }
 				GEA = {
+					744 = { add_core_of = GEA }
+					996 = { add_core_of = GEA }
 					if = {
 						limit = { has_completed_focus = GEA_Expand_issuance_of_banknotes }
 						set_variable = { GEA_china_economic_cost_30 = 10 }
 					}
+					GEA_refresh_lep_low_yield_costs_effect = yes
 					clr_country_flag = Dei_OPEN
 					clr_country_flag = Dei_WAR_OPEN
 					set_rule = {

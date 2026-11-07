@@ -9605,6 +9605,7 @@ focus_tree = {
 				}
 				subtract_from_variable = { GEA_lep_investment_cost = 10 }
 				clamp_variable = { var = GEA_lep_investment_cost min = 0 max = 20 }
+				GEA_refresh_lep_low_yield_costs_effect = yes
 			}
 		}
 	}
@@ -19948,6 +19949,7 @@ focus_tree = {
 				set_variable = { GEA_lep_investment_cooldown = 46 }
 				set_variable = { GEA_lep_enterprise_cooldown = 86 }
 				set_variable = { GEA_lep_export_cooldown = 106 }
+				GEA_refresh_lep_low_yield_costs_effect = yes
 			}
 		}	
 	}

@@ -10944,6 +10944,23 @@ add_namespace = GEA_news
 		}
 	}
 
+	country_event = { #取得广州后自动给予德属东亚核心
+		id = GEA.12007
+		hidden = yes
+		fire_only_once = yes
+		trigger = {
+			tag = GEA
+			date > 1936.12.31
+			592 = {
+				is_owned_and_controlled_by = GEA
+				NOT = { is_core_of = GEA }
+			}
+		}
+		immediate = {
+			592 = { add_core_of = GEA }
+		}
+	}
+
 #事件保留
 # Syndicalist uprising in Phillipines
 	country_event = { # Help the military
