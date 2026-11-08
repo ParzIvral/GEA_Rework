@@ -586,10 +586,10 @@ add_namespace = GEA_news
 			}
 			modify_country_flag = {
 				flag = GEA_Indochinese_Anger
-				value = 1
+				value = 2
 			}
-			add_to_variable = { GEA_Indochinese_Anger_display = 1 }
-			custom_effect_tooltip = GEA_Indochina_Anger_Up
+			add_to_variable = { GEA_Indochinese_Anger_display = 2 }
+			custom_effect_tooltip = GEA_Indochina_Anger_Up_More
 			hidden_effect = {
 				set_politics = {
 					ruling_party = paternal_autocrat
@@ -1087,6 +1087,7 @@ add_namespace = GEA_news
 
 		option = {
 			name = GEA.19.a
+			trigger = { NOT = { has_country_flag = GEA_Governor_Heye_flag } }
 			ai_chance = {
 				factor = 33
 				modifier = {
@@ -1117,6 +1118,7 @@ add_namespace = GEA_news
 		}
 		option = {
 			name = GEA.19.b
+			trigger = { NOT = { has_country_flag = GEA_Governor_Heye_flag } }
 			ai_chance = {
 				factor = 33
 				modifier = {
@@ -1205,6 +1207,7 @@ add_namespace = GEA_news
 
 		option = {
 			name = GEA.21.a
+			trigger = { NOT = { has_country_flag = GEA_Governor_Heye_flag } }
 			ai_chance = {
 				factor = 50
 				modifier = {
@@ -1627,6 +1630,7 @@ add_namespace = GEA_news
 		}
 		option = { 
 			name = GEA.29.b
+			trigger = { NOT = { has_country_flag = GEA_Governor_Heye_flag } }
 			ai_chance = {
 				factor = 50
 				modifier = {
@@ -3078,7 +3082,8 @@ add_namespace = GEA_news
 		}
 
 		option = {#适当的自治或许能让他们远离革命
-			name = GEA.60.b 
+			name = GEA.60.b
+			trigger = { NOT = { has_country_flag = GEA_Governor_Heye_flag } }
 			ai_chance = {
 				factor = 1
 				modifier = {
@@ -3096,7 +3101,8 @@ add_namespace = GEA_news
 		}
 
 		option = {#改革可以，但权力必须留在德国人手中
-			name = GEA.60.c 
+			name = GEA.60.c
+			trigger = { NOT = { has_country_flag = GEA_Governor_Heye_flag } }
 			ai_chance = {
 				factor = 1
 				modifier = {
@@ -8561,6 +8567,7 @@ add_namespace = GEA_news
 			name = GEA.822.a
 			ai_chance = { factor = 70 }
 			hidden_effect = {
+				GEA_accept_jade_marshal_concessions_effect = yes
 				clr_country_flag = GEA_china_warlord_interaction_blocked
 				GEA = { country_event = { id = GEA.823 } }
 			}
@@ -8577,7 +8584,10 @@ add_namespace = GEA_news
 
 	country_event = { #北京政权允许德资重返华北
 		id = GEA.823
-		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.823" }
+		immediate = {
+			log = "[GetDateText]: [Root.GetName]: event GEA.823"
+			QIE = { GEA_accept_jade_marshal_concessions_effect = yes }
+		}
 		title = GEA.823.t
 		desc = GEA.823.d
 		picture = GFX_GEA_eight_provience
@@ -10583,6 +10593,8 @@ add_namespace = GEA_news
 				factor = 25
 			}
         	set_country_flag = GEA_Stauffenberg_reform
+			hidden_effect = { remove_ideas = GEA_Claus_von_Stauffenberg_carm_ade }
+			add_ideas = GEA_Claus_von_Stauffenberg_cos_ade
 		}
 		option = { 
 			name = GEA.1200.b
@@ -10590,6 +10602,8 @@ add_namespace = GEA_news
 				factor = 25
 			}
         	set_country_flag = GEA_Tresckow_reform
+			hidden_effect = { remove_ideas = GEA_Henning_von_Tresckow_carm_ade }
+			add_ideas = GEA_Henning_von_Tresckow_cos_ade
 		}
 		option = { 
 			name = GEA.1200.c
@@ -10597,6 +10611,8 @@ add_namespace = GEA_news
 				factor = 25
 			}
         	set_country_flag = GEA_Saucken_reform
+			hidden_effect = { remove_ideas = GEA_Dietrich_von_Saucken_carm_ade }
+			add_ideas = GEA_Dietrich_von_Saucken_cos_ade
 		}
 		option = { 
 			name = GEA.1200.e
@@ -10604,6 +10620,8 @@ add_namespace = GEA_news
 				factor = 25
 			}
         	set_country_flag = GEA_ferdinand_win
+			hidden_effect = { remove_ideas = GEA_Ferdinand_Schorner_carm_ade }
+			add_ideas = GEA_Ferdinand_Schorner_cos_ade
 		}
 	}
 	country_event = { 
@@ -10623,6 +10641,8 @@ add_namespace = GEA_news
 				factor = 25
 			}
         	set_country_flag = GEA_Stauffenberg_reform
+			hidden_effect = { remove_ideas = GEA_Claus_von_Stauffenberg_carm_ade }
+			add_ideas = GEA_Claus_von_Stauffenberg_cos_ade
 		}
 		option = { 
 			name = GEA.1201.b
@@ -10630,6 +10650,8 @@ add_namespace = GEA_news
 				factor = 25
 			}
         	set_country_flag = GEA_Tresckow_reform
+			hidden_effect = { remove_ideas = GEA_Henning_von_Tresckow_carm_ade }
+			add_ideas = GEA_Henning_von_Tresckow_cos_ade
 		}
 		option = { 
 			name = GEA.1201.c
@@ -10637,6 +10659,8 @@ add_namespace = GEA_news
 				factor = 25
 			}
         	set_country_flag = GEA_Saucken_reform
+			hidden_effect = { remove_ideas = GEA_Dietrich_von_Saucken_carm_ade }
+			add_ideas = GEA_Dietrich_von_Saucken_cos_ade
 		}
 		option = { 
 			name = GEA.1201.e
@@ -10644,6 +10668,8 @@ add_namespace = GEA_news
 				factor = 25
 			}
         	set_country_flag = GEA_ferdinand_win
+			hidden_effect = { remove_ideas = GEA_Ferdinand_Schorner_carm_ade }
+			add_ideas = GEA_Ferdinand_Schorner_cos_ade
 		}
 	}
 	country_event = {

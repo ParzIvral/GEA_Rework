@@ -1,3 +1,36 @@
+#在华北国家作用域判断当前反租界立场；退让解决旧立场，保留新反德政策与政权变动判断。
+GEA_zhili_anti_concession_trigger = {
+	OR = {
+		AND = {
+			has_country_flag = wu_intervenes_proANQ
+			NOT = { has_country_flag = GEA_jade_marshal_concessions_accepted }
+		}
+		has_country_flag = QIE_manchu_restoration
+		has_country_flag = QIE_yiguandao_couped
+		has_focus_tree = QIE_manchu
+		AND = {
+			has_completed_focus = QIE_nationalize_germans
+			NOT = { has_country_flag = GEA_jade_concession_settled_QIE_nationalize_germans }
+		}
+		AND = {
+			has_completed_focus = QIE_endconcessions
+			NOT = { has_country_flag = GEA_jade_concession_settled_QIE_endconcessions }
+		}
+		AND = {
+			has_completed_focus = QIE_destroy_concessions
+			NOT = { has_country_flag = GEA_jade_concession_settled_QIE_destroy_concessions }
+		}
+		AND = {
+			has_completed_focus = QIE_destroy_germany
+			NOT = { has_country_flag = GEA_jade_concession_settled_QIE_destroy_germany }
+		}
+		AND = {
+			has_completed_focus = QIE_YGD_destroy_concessions
+			NOT = { has_country_flag = GEA_jade_concession_settled_QIE_YGD_destroy_concessions }
+		}
+	}
+}
+
 # Indochina presets: an explicit Heye route takes precedence over the no-revolt preset.
 GEA_indochina_revolt_preset = {
 	OR = {

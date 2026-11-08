@@ -7317,7 +7317,7 @@ GEA_decisions = {#德属东亚殖民地决议
 		modifier = {
 			political_power_gain = -0.01
 			paternal_autocrat_drift = 0.02
-			weekly_manpower = 0.001
+			weekly_manpower = 200
 		}
 
 		remove_effect = {
@@ -30001,7 +30001,10 @@ political_actions = {
 		}
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision GEA_War_operation_Leichhardt"
-			hidden_effect = { add_command_power = -10 }
+			hidden_effect = {
+				add_command_power = -10
+				523 = { add_core_of = GEA }
+			}
 		}
 		cancel_trigger = {
 			OR = {

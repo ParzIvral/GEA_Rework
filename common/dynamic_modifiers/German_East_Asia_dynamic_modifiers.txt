@@ -242,7 +242,7 @@ GEA_SCHLEICHER_modifier = {
 	remove_trigger = { always = no }	
 	political_power_gain = GEA_SCHLEICHER_political_power_gain								#每日政治点数增长 0.05
 	army_attack_factor = GEA_SCHLEICHER_army_attack_factor									#陆军攻击 10%
-	conscription = GEA_SCHLEICHER_conscription 												#适役人口 5%
+	conscription_factor = GEA_SCHLEICHER_conscription 												#适役人口系数 5%
 }
 
 GEA_HUGENBERG_modifier = {
@@ -282,7 +282,7 @@ GEA_Emil_Helfferich_modifier = {
 	remove_trigger = { always = no }	
 	production_speed_dockyard_factor = GEA_Emil_Helfferich_production_speed_dockyard_factor			#海军船坞建造速度 10%
 	industrial_capacity_dockyard = GEA_Emil_Helfferich_industrial_capacity_dockyard					#海军船坞产出 10%
-	autonomy_gain = GEA_Emil_Helfferich_autonomy_gain												#贸易自治度增长 15%
+	autonomy_gain_trade_factor = GEA_Emil_Helfferich_autonomy_gain												#贸易自治度增长 15%
 }
 
 GEA_Fritz_Thyssen_modifier = {
@@ -296,7 +296,7 @@ GEA_Fritz_Thyssen_modifier = {
 GEA_Hermann_Goring_modifier = {
 	enable = { always = yes }
 	remove_trigger = { always = no }		
-	conscription = GEA_Hermann_Goring_conscription										#适役人口 10%
+	conscription_factor = GEA_Hermann_Goring_conscription										#适役人口系数 10%
 	army_org_factor = GEA_Hermann_Goring_army_org_factor								#部队组织度（百分比）10%
 	experience_gain_air_factor = GEA_Hermann_Goring_experience_gain_air_factor			#空军经验获取（百分比）10%
 }

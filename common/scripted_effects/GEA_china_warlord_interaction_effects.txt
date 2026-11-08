@@ -1,3 +1,27 @@
+GEA_accept_jade_marshal_concessions_effect = { #记录此次让步所解决的既有反德政策
+	set_country_flag = GEA_jade_marshal_concessions_accepted
+	if = {
+		limit = { has_completed_focus = QIE_nationalize_germans }
+		set_country_flag = GEA_jade_concession_settled_QIE_nationalize_germans
+	}
+	if = {
+		limit = { has_completed_focus = QIE_endconcessions }
+		set_country_flag = GEA_jade_concession_settled_QIE_endconcessions
+	}
+	if = {
+		limit = { has_completed_focus = QIE_destroy_concessions }
+		set_country_flag = GEA_jade_concession_settled_QIE_destroy_concessions
+	}
+	if = {
+		limit = { has_completed_focus = QIE_destroy_germany }
+		set_country_flag = GEA_jade_concession_settled_QIE_destroy_germany
+	}
+	if = {
+		limit = { has_completed_focus = QIE_YGD_destroy_concessions }
+		set_country_flag = GEA_jade_concession_settled_QIE_YGD_destroy_concessions
+	}
+}
+
 # 在接受市自支持率变化的国家作用域刷新既有青岛合作，保留原版分档及配套事件。
 GEA_refresh_tsingtau_collaboration_effect = {
 	hidden_effect = {

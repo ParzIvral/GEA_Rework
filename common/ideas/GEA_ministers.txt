@@ -1109,7 +1109,7 @@ ideas = {
 			}
 			traits = {
 				chief_of_staff
-				cos_school_of_defence
+				Tactical_defenders
 			}
 			cancel_if_invalid = yes
 		}
@@ -1126,7 +1126,7 @@ ideas = {
 			}
 			traits = {
 				chief_of_staff
-				cos_school_of_psychology
+				Prince_Military_Corps
 			}
 			cancel_if_invalid = yes
 		}
@@ -1190,11 +1190,75 @@ ideas = {
 			}
 			traits = {
 				chief_of_staff
-				cos_school_of_mass_combat
+				Artillery_Observer
 			}
 			cancel_if_invalid = yes
 		}
 
+
+		GEA_Claus_von_Stauffenberg_cos_ade = {
+			name = GEA_Claus_von_Stauffenberg
+			picture = GEA_Claus_von_Stauffenberg_cos_ade
+			allowed = { original_tag = GEA }
+			visible = { has_character = GEA_Claus_von_Stauffenberg }
+			available = { NOT = { has_idea = GEA_Claus_von_Stauffenberg_carm_ade } }
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Claus_von_Stauffenberg_cos_ade"
+			}
+			traits = {
+				chief_of_staff
+				Young_and_vigorous_armored_officers
+			}
+			cancel_if_invalid = yes
+		}
+
+		GEA_Henning_von_Tresckow_cos_ade = {
+			name = GEA_Henning_von_Tresckow
+			picture = GEA_Henning_von_Tresckow_cos_ade
+			allowed = { original_tag = GEA }
+			visible = { has_character = GEA_Henning_von_Tresckow }
+			available = { NOT = { has_idea = GEA_Henning_von_Tresckow_carm_ade } }
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Henning_von_Tresckow_cos_ade"
+			}
+			traits = {
+				chief_of_staff
+				Military_reformer
+			}
+			cancel_if_invalid = yes
+		}
+
+		GEA_Dietrich_von_Saucken_cos_ade = {
+			name = GEA_Dietrich_von_Saucken
+			picture = GEA_Dietrich_von_Saucken_cos_ade
+			allowed = { original_tag = GEA }
+			visible = { has_character = GEA_Dietrich_von_Saucken }
+			available = { NOT = { has_idea = GEA_Dietrich_von_Saucken_carm_ade } }
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Dietrich_von_Saucken_cos_ade"
+			}
+			traits = {
+				chief_of_staff
+				Prussian_officer_tradition
+			}
+			cancel_if_invalid = yes
+		}
+
+		GEA_Ferdinand_Schorner_cos_ade = {
+			name = GEA_Ferdinand_Schorner
+			picture = GEA_Ferdinand_Schorner_cos_ade
+			allowed = { original_tag = GEA }
+			visible = { has_character = GEA_Ferdinand_Schorner }
+			available = { NOT = { has_idea = GEA_Ferdinand_Schorner_carm_ade } }
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Ferdinand_Schorner_cos_ade"
+			}
+			traits = {
+				chief_of_staff
+				Group_offensive_organizer
+			}
+			cancel_if_invalid = yes
+		}
 	}
 
 	chief_of_army = { ### Chief of Army ###
@@ -1263,6 +1327,70 @@ ideas = {
 			cancel_if_invalid = yes
 		}
 
+
+		GEA_Claus_von_Stauffenberg_carm_ade = {
+			name = GEA_Claus_von_Stauffenberg
+			picture = GEA_Claus_von_Stauffenberg_cos_ade
+			allowed = { original_tag = GEA }
+			visible = { has_character = GEA_Claus_von_Stauffenberg }
+			available = { NOT = { has_idea = GEA_Claus_von_Stauffenberg_cos_ade } }
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Claus_von_Stauffenberg_carm_ade"
+			}
+			traits = {
+				chief_of_army
+				RUS_coordination_tanks
+			}
+			cancel_if_invalid = yes
+		}
+
+		GEA_Henning_von_Tresckow_carm_ade = {
+			name = GEA_Henning_von_Tresckow
+			picture = GEA_Henning_von_Tresckow_cos_ade
+			allowed = { original_tag = GEA }
+			visible = { has_character = GEA_Henning_von_Tresckow }
+			available = { NOT = { has_idea = GEA_Henning_von_Tresckow_cos_ade } }
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Henning_von_Tresckow_carm_ade"
+			}
+			traits = {
+				chief_of_army
+				RUS_provident_general
+			}
+			cancel_if_invalid = yes
+		}
+
+		GEA_Dietrich_von_Saucken_carm_ade = {
+			name = GEA_Dietrich_von_Saucken
+			picture = GEA_Dietrich_von_Saucken_cos_ade
+			allowed = { original_tag = GEA }
+			visible = { has_character = GEA_Dietrich_von_Saucken }
+			available = { NOT = { has_idea = GEA_Dietrich_von_Saucken_cos_ade } }
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Dietrich_von_Saucken_carm_ade"
+			}
+			traits = {
+				chief_of_army
+				RUS_corps_professionalism
+			}
+			cancel_if_invalid = yes
+		}
+
+		GEA_Ferdinand_Schorner_carm_ade = {
+			name = GEA_Ferdinand_Schorner
+			picture = GEA_Ferdinand_Schorner_cos_ade
+			allowed = { original_tag = GEA }
+			visible = { has_character = GEA_Ferdinand_Schorner }
+			available = { NOT = { has_idea = GEA_Ferdinand_Schorner_cos_ade } }
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea GEA_Ferdinand_Schorner_carm_ade"
+			}
+			traits = {
+				chief_of_army
+				RUS_assault_school
+			}
+			cancel_if_invalid = yes
+		}
 	}
 
 	chief_of_navy = { ### Chief of Navy ###

@@ -98,5 +98,49 @@ leader_traits = {
 		navy_visibility = -0.1
 		naval_torpedo_reveal_chance_factor = -0.05
 	}
+
+	Prince_Military_Corps = {					#亲王军官团
+		conscription_factor = 0.05
+		experience_loss_factor = -0.08
+		army_org_factor = 0.05
+	}
+
+	Artillery_Observer = {						#炮兵观测官
+		army_artillery_attack_factor = 0.15
+		army_attack_factor = 0.05
+		breakthrough_factor = 0.02
+	}
+
+	Tactical_defenders = {						#战术防守者
+		max_dig_in = 3
+		army_defence_factor = 0.05
+		supply_consumption_factor = -0.075
+	}
+
+	Young_and_vigorous_armored_officers = {		#少壮派装甲军官
+		army_speed_factor = 0.1
+		army_armor_attack_factor = 0.1
+		breakthrough_factor = 0.03
+	}
+
+	Military_reformer = {						#军事改革家
+		experience_gain_army = 0.06
+		experience_gain_army_factor = 0.12
+		army_org_factor = 0.06
+	}
+
+	Prussian_officer_tradition = {				#普鲁士军官传统
+		recon_factor = 0.05
+		max_planning = 0.1
+		experience_gain_army = 0.1
+		army_morale_factor = 0.04
+	}
+
+	Group_offensive_organizer = {				#集团进攻组织者
+		combat_width_factor = -0.075
+		breakthrough_factor = 0.05
+		coordination_bonus = 0.04
+		army_strength_factor = 0.05
+	}
 }
 	

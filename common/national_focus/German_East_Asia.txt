@@ -10047,134 +10047,132 @@ focus_tree = {
 				if = {
 					limit = { GEA_china_warlord_can_interact_trigger = yes }
 					add_popularity = { ideology = market_liberal popularity = 0.10 }
-					GEA = {
-						if = {
-							limit = { PREV = { owns_state = 613 } }
-							custom_effect_tooltip = GEA_china_lep_name_tt
-							add_to_variable = {
-								GEA_china_lep_attitude = 15
-								tooltip = GEA_china_attitude_change_tt
-							}
-							add_to_variable = {
-								GEA_china_lep_capital_influence = 10
-								tooltip = GEA_china_capital_influence_change_tt
-							}
-							add_to_variable = {
-								GEA_china_lep_military_projection = 10
-								tooltip = GEA_china_military_projection_change_tt
-							}
-							hidden_effect = {
-								clamp_variable = { var = GEA_china_lep_attitude min = 0 max = 100 }
-								clamp_variable = { var = GEA_china_lep_capital_influence min = 0 max = 100 }
-								clamp_variable = { var = GEA_china_lep_military_projection min = 0 max = 100 }
-							}
-						}
-						if = {
-							limit = { PREV = { tag = SQI } }
-							custom_effect_tooltip = GEA_china_sqi_name_tt
-							add_to_variable = {
-								GEA_china_sqi_attitude = 15
-								tooltip = GEA_china_attitude_change_tt
-							}
-							add_to_variable = {
-								GEA_china_sqi_capital_influence = 10
-								tooltip = GEA_china_capital_influence_change_tt
-							}
-							add_to_variable = {
-								GEA_china_sqi_military_projection = 10
-								tooltip = GEA_china_military_projection_change_tt
-							}
-							hidden_effect = {
-								clamp_variable = { var = GEA_china_sqi_attitude min = 0 max = 100 }
-								clamp_variable = { var = GEA_china_sqi_capital_influence min = 0 max = 100 }
-								clamp_variable = { var = GEA_china_sqi_military_projection min = 0 max = 100 }
-							}
-						}
-						if = {
-							limit = { PREV = { tag = GXC } }
-							custom_effect_tooltip = GEA_china_gxc_name_tt
-							add_to_variable = {
-								GEA_china_gxc_attitude = 15
-								tooltip = GEA_china_attitude_change_tt
-							}
-							add_to_variable = {
-								GEA_china_gxc_capital_influence = 10
-								tooltip = GEA_china_capital_influence_change_tt
-							}
-							add_to_variable = {
-								GEA_china_gxc_military_projection = 10
-								tooltip = GEA_china_military_projection_change_tt
-							}
-							hidden_effect = {
-								clamp_variable = { var = GEA_china_gxc_attitude min = 0 max = 100 }
-								clamp_variable = { var = GEA_china_gxc_capital_influence min = 0 max = 100 }
-								clamp_variable = { var = GEA_china_gxc_military_projection min = 0 max = 100 }
-							}
-						}
-						if = {
-							limit = { PREV = { tag = YUN } }
-							custom_effect_tooltip = GEA_china_yun_name_tt
-							add_to_variable = {
-								GEA_china_yun_attitude = 15
-								tooltip = GEA_china_attitude_change_tt
-							}
-							add_to_variable = {
-								GEA_china_yun_capital_influence = 10
-								tooltip = GEA_china_capital_influence_change_tt
-							}
-							add_to_variable = {
-								GEA_china_yun_military_projection = 10
-								tooltip = GEA_china_military_projection_change_tt
-							}
-							hidden_effect = {
-								clamp_variable = { var = GEA_china_yun_attitude min = 0 max = 100 }
-								clamp_variable = { var = GEA_china_yun_capital_influence min = 0 max = 100 }
-								clamp_variable = { var = GEA_china_yun_military_projection min = 0 max = 100 }
-							}
-						}
-						if = {
-							limit = { PREV = { tag = SZC } }
-							custom_effect_tooltip = GEA_china_szc_name_tt
-							add_to_variable = {
-								GEA_china_szc_attitude = 15
-								tooltip = GEA_china_attitude_change_tt
-							}
-							add_to_variable = {
-								GEA_china_szc_capital_influence = 10
-								tooltip = GEA_china_capital_influence_change_tt
-							}
-							add_to_variable = {
-								GEA_china_szc_military_projection = 10
-								tooltip = GEA_china_military_projection_change_tt
-							}
-							hidden_effect = {
-								clamp_variable = { var = GEA_china_szc_attitude min = 0 max = 100 }
-								clamp_variable = { var = GEA_china_szc_capital_influence min = 0 max = 100 }
-								clamp_variable = { var = GEA_china_szc_military_projection min = 0 max = 100 }
-							}
-						}
-						if = {
-							limit = { PREV = { tag = QIE } }
-							custom_effect_tooltip = GEA_china_zhili_name_tt
-							add_to_variable = {
-								GEA_china_zhili_attitude = 15
-								tooltip = GEA_china_attitude_change_tt
-							}
-							add_to_variable = {
-								GEA_china_zhili_capital_influence = 10
-								tooltip = GEA_china_capital_influence_change_tt
-							}
-							add_to_variable = {
-								GEA_china_zhili_military_projection = 10
-								tooltip = GEA_china_military_projection_change_tt
-							}
-							hidden_effect = {
-								clamp_variable = { var = GEA_china_zhili_attitude min = 0 max = 100 }
-								clamp_variable = { var = GEA_china_zhili_capital_influence min = 0 max = 100 }
-								clamp_variable = { var = GEA_china_zhili_military_projection min = 0 max = 100 }
-							}
-						}
-					}
+				}
+			}
+			if = {
+				limit = { 613 = { owner = { NOT = { tag = GEA } GEA_china_warlord_can_interact_trigger = yes } } }
+				custom_effect_tooltip = GEA_china_lep_name_tt
+				add_to_variable = {
+					GEA_china_lep_attitude = 15
+					tooltip = GEA_china_attitude_change_tt
+				}
+				add_to_variable = {
+					GEA_china_lep_capital_influence = 10
+					tooltip = GEA_china_capital_influence_change_tt
+				}
+				add_to_variable = {
+					GEA_china_lep_military_projection = 10
+					tooltip = GEA_china_military_projection_change_tt
+				}
+				hidden_effect = {
+					clamp_variable = { var = GEA_china_lep_attitude min = 0 max = 100 }
+					clamp_variable = { var = GEA_china_lep_capital_influence min = 0 max = 100 }
+					clamp_variable = { var = GEA_china_lep_military_projection min = 0 max = 100 }
+				}
+			}
+			if = {
+				limit = { SQI = { exists = yes GEA_china_warlord_can_interact_trigger = yes } }
+				custom_effect_tooltip = GEA_china_sqi_name_tt
+				add_to_variable = {
+					GEA_china_sqi_attitude = 15
+					tooltip = GEA_china_attitude_change_tt
+				}
+				add_to_variable = {
+					GEA_china_sqi_capital_influence = 10
+					tooltip = GEA_china_capital_influence_change_tt
+				}
+				add_to_variable = {
+					GEA_china_sqi_military_projection = 10
+					tooltip = GEA_china_military_projection_change_tt
+				}
+				hidden_effect = {
+					clamp_variable = { var = GEA_china_sqi_attitude min = 0 max = 100 }
+					clamp_variable = { var = GEA_china_sqi_capital_influence min = 0 max = 100 }
+					clamp_variable = { var = GEA_china_sqi_military_projection min = 0 max = 100 }
+				}
+			}
+			if = {
+				limit = { GXC = { exists = yes GEA_china_warlord_can_interact_trigger = yes } }
+				custom_effect_tooltip = GEA_china_gxc_name_tt
+				add_to_variable = {
+					GEA_china_gxc_attitude = 15
+					tooltip = GEA_china_attitude_change_tt
+				}
+				add_to_variable = {
+					GEA_china_gxc_capital_influence = 10
+					tooltip = GEA_china_capital_influence_change_tt
+				}
+				add_to_variable = {
+					GEA_china_gxc_military_projection = 10
+					tooltip = GEA_china_military_projection_change_tt
+				}
+				hidden_effect = {
+					clamp_variable = { var = GEA_china_gxc_attitude min = 0 max = 100 }
+					clamp_variable = { var = GEA_china_gxc_capital_influence min = 0 max = 100 }
+					clamp_variable = { var = GEA_china_gxc_military_projection min = 0 max = 100 }
+				}
+			}
+			if = {
+				limit = { YUN = { exists = yes GEA_china_warlord_can_interact_trigger = yes } }
+				custom_effect_tooltip = GEA_china_yun_name_tt
+				add_to_variable = {
+					GEA_china_yun_attitude = 15
+					tooltip = GEA_china_attitude_change_tt
+				}
+				add_to_variable = {
+					GEA_china_yun_capital_influence = 10
+					tooltip = GEA_china_capital_influence_change_tt
+				}
+				add_to_variable = {
+					GEA_china_yun_military_projection = 10
+					tooltip = GEA_china_military_projection_change_tt
+				}
+				hidden_effect = {
+					clamp_variable = { var = GEA_china_yun_attitude min = 0 max = 100 }
+					clamp_variable = { var = GEA_china_yun_capital_influence min = 0 max = 100 }
+					clamp_variable = { var = GEA_china_yun_military_projection min = 0 max = 100 }
+				}
+			}
+			if = {
+				limit = { SZC = { exists = yes GEA_china_warlord_can_interact_trigger = yes } }
+				custom_effect_tooltip = GEA_china_szc_name_tt
+				add_to_variable = {
+					GEA_china_szc_attitude = 15
+					tooltip = GEA_china_attitude_change_tt
+				}
+				add_to_variable = {
+					GEA_china_szc_capital_influence = 10
+					tooltip = GEA_china_capital_influence_change_tt
+				}
+				add_to_variable = {
+					GEA_china_szc_military_projection = 10
+					tooltip = GEA_china_military_projection_change_tt
+				}
+				hidden_effect = {
+					clamp_variable = { var = GEA_china_szc_attitude min = 0 max = 100 }
+					clamp_variable = { var = GEA_china_szc_capital_influence min = 0 max = 100 }
+					clamp_variable = { var = GEA_china_szc_military_projection min = 0 max = 100 }
+				}
+			}
+			if = {
+				limit = { QIE = { exists = yes GEA_china_warlord_can_interact_trigger = yes } }
+				custom_effect_tooltip = GEA_china_zhili_name_tt
+				add_to_variable = {
+					GEA_china_zhili_attitude = 15
+					tooltip = GEA_china_attitude_change_tt
+				}
+				add_to_variable = {
+					GEA_china_zhili_capital_influence = 10
+					tooltip = GEA_china_capital_influence_change_tt
+				}
+				add_to_variable = {
+					GEA_china_zhili_military_projection = 10
+					tooltip = GEA_china_military_projection_change_tt
+				}
+				hidden_effect = {
+					clamp_variable = { var = GEA_china_zhili_attitude min = 0 max = 100 }
+					clamp_variable = { var = GEA_china_zhili_capital_influence min = 0 max = 100 }
+					clamp_variable = { var = GEA_china_zhili_military_projection min = 0 max = 100 }
 				}
 			}
 
@@ -11443,7 +11441,7 @@ focus_tree = {
 				tooltip = political_power_factor_tt
 			}
 			add_to_variable = {
-				GEA_Economic_factory_output = 0.12
+				GEA_Economic_factory_output = 0.1
 				tooltip = industrial_capacity_factory_tt
 			}
 		}
@@ -11548,7 +11546,7 @@ focus_tree = {
 				tooltip = political_power_factor_tt
 			}
 			add_to_variable = {
-				GEA_Economic_factory_output = 0.07
+				GEA_Economic_factory_output = 0.05
 				tooltip = industrial_capacity_factory_tt
 			}
 			add_to_variable = {
@@ -15160,7 +15158,7 @@ focus_tree = {
 				tooltip = initiative_factor_tt
 			}
 			add_to_variable = {
-				GEA_army_strength_factor = 0.05
+				GEA_army_strength_factor = 0.1
 				tooltip = GEA_modifier_army_strength_factor_tt
 			}
 		}		
@@ -15278,14 +15276,6 @@ focus_tree = {
 				}
 				random_owned_controlled_state = {
 					prioritize = { 336 }
-					create_unit = {
-						division = "division_template = \"GEA_floodwaters_infantry_division\" start_experience_factor = 0.5 start_equipment_factor = 1 start_manpower_factor = 1"
-						owner = ROOT
-					}
-					create_unit = {
-						division = "division_template = \"GEA_floodwaters_infantry_division\" start_experience_factor = 0.5 start_equipment_factor = 1 start_manpower_factor = 1"
-						owner = ROOT
-					}
 					create_unit = {
 						division = "division_template = \"GEA_floodwaters_infantry_division\" start_experience_factor = 0.5 start_equipment_factor = 1 start_manpower_factor = 1"
 						owner = ROOT
@@ -20269,7 +20259,7 @@ focus_tree = {
 			GEA_nanjing_non_anti_concession_controller_trigger = yes
 		}	
 		prerequisite = {
-			focus = GEA_The_usiness_expansion_of_AOG
+			focus = GEA_The_tricks_of_financiers
 			focus = GEA_Best_regards_to_our_mining_operation
 			focus = GEA_Manage_the_grain_storage_facility
 			focus = GEA_Building_a_road_network_in_Southeast_provinces
@@ -21186,17 +21176,7 @@ focus_tree = {
 				tooltip = GEA_zhili_anti_concession_tt
 				QIE = {
 					exists = yes
-					OR = {
-						has_country_flag = wu_intervenes_proANQ
-						has_country_flag = QIE_manchu_restoration
-						has_country_flag = QIE_yiguandao_couped
-						has_focus_tree = QIE_manchu
-						has_completed_focus = QIE_nationalize_germans
-						has_completed_focus = QIE_endconcessions
-						has_completed_focus = QIE_destroy_concessions
-						has_completed_focus = QIE_destroy_germany
-						has_completed_focus = QIE_YGD_destroy_concessions
-					}
+					GEA_zhili_anti_concession_trigger = yes
 				}
 			}
 		}			

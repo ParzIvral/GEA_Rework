@@ -794,7 +794,7 @@ defined_text = {
 		localization_key = GEA_china_cooperation_limited
 	}
 	text = {
-		trigger = { QIE = { OR = { has_country_flag = wu_intervenes_proANQ has_country_flag = QIE_manchu_restoration has_country_flag = QIE_yiguandao_couped has_focus_tree = QIE_manchu has_completed_focus = QIE_nationalize_germans has_completed_focus = QIE_endconcessions has_completed_focus = QIE_destroy_concessions has_completed_focus = QIE_destroy_germany has_completed_focus = QIE_YGD_destroy_concessions } } }
+		trigger = { QIE = { GEA_zhili_anti_concession_trigger = yes } }
 		localization_key = GEA_china_cooperation_hostile
 	}
 	text = {
@@ -896,7 +896,7 @@ defined_text = {
 		localization_key = GEA_Zhili_Map_Manchu_DESC
 	}
 	text = {
-		trigger = { QIE = { OR = { has_country_flag = wu_intervenes_proANQ has_country_flag = QIE_manchu_restoration has_country_flag = QIE_yiguandao_couped has_focus_tree = QIE_manchu has_completed_focus = QIE_nationalize_germans has_completed_focus = QIE_endconcessions has_completed_focus = QIE_destroy_concessions has_completed_focus = QIE_destroy_germany has_completed_focus = QIE_YGD_destroy_concessions } } }
+		trigger = { QIE = { GEA_zhili_anti_concession_trigger = yes } }
 		localization_key = GEA_Zhili_Map_Anti_German_DESC
 	}
 	text = {
