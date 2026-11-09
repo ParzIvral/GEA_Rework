@@ -6825,6 +6825,45 @@ add_namespace = GEA_news
 		option = {
 			name = GEA.520.b
 			custom_effect_tooltip = GEA_Not_completed
+			hidden_effect = {
+				GEA = {
+					leave_faction = yes
+					set_country_leader_ideology = pirate_republic_subtype
+					if = {
+						limit = { has_idea = GEA_colonial_question }
+						swap_ideas = {
+							remove_idea = GEA_colonial_question
+							add_idea = GEA_colonial_question_unrestricted
+						}
+					}
+					if = {
+						limit = { has_idea = GEA_colonial_question_heye }
+						swap_ideas = {
+							remove_idea = GEA_colonial_question_heye
+							add_idea = GEA_colonial_question_heye_unrestricted
+						}
+					}
+					if = {
+						limit = { has_idea = GEA_colonial_question_heye_2 }
+						swap_ideas = {
+							remove_idea = GEA_colonial_question_heye_2
+							add_idea = GEA_colonial_question_heye_2_unrestricted
+						}
+					}
+					if = {
+						limit = { has_idea = GEA_colonial_question_heye_3 }
+						swap_ideas = {
+							remove_idea = GEA_colonial_question_heye_3
+							add_idea = GEA_colonial_question_heye_3_unrestricted
+						}
+					}
+					set_rule = {
+						can_not_declare_war = no
+						can_decline_call_to_war = yes
+					}
+					set_country_flag = GEA_war_rules_unrestricted
+				}
+			}
 		}
 	}
 	country_event = { #封存的卷宗

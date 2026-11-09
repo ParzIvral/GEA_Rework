@@ -4002,6 +4002,10 @@
  GEA_Pacify_SHX_desc:0 ""
 
 # Zhili
+ GEA_Yunnan_Expedition:0 "Yunnan Expedition"
+ GEA_Yunnan_Expedition_desc:0 "The anti-concession stance of [YUN.GetNameWithFlag] threatens German residents, businesses and trade in southwest China. We will prepare an expedition and declare war after §Y30 days§!."
+ GEA_Sichuan_Expedition:0 "Sichuan Expedition"
+ GEA_Sichuan_Expedition_desc:0 "The anti-concession stance of [SZC.GetNameWithFlag] threatens German residents, businesses and trade along the upper Yangtze. We will prepare an expedition and declare war after §Y30 days§!."
  GEA_North_China_Expedition:0 "North China Expedition"
  GEA_North_China_Expedition_desc:0 "To protect German property in North China, we will prepare an expedition against the Beijing government and declare war on [QIE.GetNameWithFlag] after §Y30 days§!."
  GEA_north_china_expedition_support_tt:0 "The government in Shandong, East China or the Legation Cities stands with us"

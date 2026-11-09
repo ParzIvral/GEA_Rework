@@ -16322,6 +16322,42 @@ count_triggers = {
 		}
 	}
 
+	GEA_Yunnan_Expedition = {
+		icon = GFX_GEA_Intervene_in_East_China_decision
+		allowed = { original_tag = GEA }
+		priority = 10001
+		cost = 0
+		days_remove = 30
+		fire_only_once = yes
+		cancel_if_not_visible = no
+
+		visible = {
+			OR = { has_country_flag = YUN_OPEN is_ai = yes }
+			YUN = { exists = yes }
+			NOT = { GEA_yunnan_non_anti_concession_controller_trigger = yes }
+		}
+		targets = { YUN }
+		available = {
+			date > 1938.7.1
+			NOT = { has_war_with = YUN }
+			NOT = { is_in_faction_with = YUN }
+			YUN = { NOT = { is_subject_of = GEA } }
+		}
+		cancel_trigger = {
+			OR = {
+				NOT = { country_exists = YUN }
+				has_war_with = YUN
+				is_in_faction_with = YUN
+				YUN = { is_subject_of = GEA }
+				GEA_yunnan_non_anti_concession_controller_trigger = yes
+			}
+		}
+		ai_will_do = { factor = 0 }
+		remove_effect = {
+			declare_war_on = { target = YUN type = annex_everything }
+		}
+	}
+
 	GEA_yun_ultimatum = { #要求云南服从德国控制
 		allowed = { original_tag = GEA }
 		icon = GFX_GEA_Intervene_in_East_China_decision
@@ -17426,6 +17462,42 @@ count_triggers = {
 					path = { 12008 1114 4501 7446 1319 }
 				}
 			}
+		}
+	}
+
+	GEA_Sichuan_Expedition = {
+		icon = GFX_GEA_Intervene_in_East_China_decision
+		allowed = { original_tag = GEA }
+		priority = 10001
+		cost = 0
+		days_remove = 30
+		fire_only_once = yes
+		cancel_if_not_visible = no
+
+		visible = {
+			OR = { has_country_flag = SZC_OPEN is_ai = yes }
+			SZC = { exists = yes }
+			NOT = { GEA_sichuan_non_anti_concession_controller_trigger = yes }
+		}
+		targets = { SZC }
+		available = {
+			date > 1938.7.1
+			NOT = { has_war_with = SZC }
+			NOT = { is_in_faction_with = SZC }
+			SZC = { NOT = { is_subject_of = GEA } }
+		}
+		cancel_trigger = {
+			OR = {
+				NOT = { country_exists = SZC }
+				has_war_with = SZC
+				is_in_faction_with = SZC
+				SZC = { is_subject_of = GEA }
+				GEA_sichuan_non_anti_concession_controller_trigger = yes
+			}
+		}
+		ai_will_do = { factor = 0 }
+		remove_effect = {
+			declare_war_on = { target = SZC type = annex_everything }
 		}
 	}
 
