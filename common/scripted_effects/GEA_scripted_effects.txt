@@ -1381,9 +1381,9 @@ GEA_add_malaya_coastal_bunkers_effect = { #马来亚驻防
 
 GEA_prepare_Z_class_1936 = {# 按历史早期 Z 系武装创建订购用设计；仅创建一次，后续订单复用。
 	if = {
-		limit = { NOT = { has_country_flag = GEA_Z_class_1936_named_design_created } }
+		limit = { NOT = { has_country_flag = GEA_Z_class_1936_named_design_created_literal_names_v2 } }
 		create_equipment_variant = {
-			name = "GEA_Z_CLASS_1936_ORDERS"
+			name = "Z Class 1936"
 			name_group = GEA_Z_DESTROYER_NAMES
 			allow_without_tech = yes
 			type = ship_hull_light_2
@@ -1400,14 +1400,15 @@ GEA_prepare_Z_class_1936 = {# 按历史早期 Z 系武装创建订购用设计�
 			}
 		}
 		set_country_flag = GEA_Z_class_1936_named_design_created
+		set_country_flag = GEA_Z_class_1936_named_design_created_literal_names_v2
 	}
 }
 
 GEA_prepare_Z_class_1940 = {# 1940 年型只更换船壳，保持原有武装、设备和发动机配置。
 	if = {
-		limit = { NOT = { has_country_flag = GEA_Z_class_1940_named_design_created } }
+		limit = { NOT = { has_country_flag = GEA_Z_class_1940_named_design_created_literal_names_v2 } }
 		create_equipment_variant = {
-			name = "GEA_Z_CLASS_1940_ORDERS"
+			name = "Z Class 1940"
 			name_group = GEA_Z_DESTROYER_NAMES
 			allow_without_tech = yes
 			type = ship_hull_light_3
@@ -1424,14 +1425,15 @@ GEA_prepare_Z_class_1940 = {# 1940 年型只更换船壳，保持原有武装、
 			}
 		}
 		set_country_flag = GEA_Z_class_1940_named_design_created
+		set_country_flag = GEA_Z_class_1940_named_design_created_literal_names_v2
 	}
 }
 
 GEA_prepare_light_cruiser_1936 = { #1936 年型轻巡：参考纽伦堡式轻巡
 	if = {
-		limit = { NOT = { has_country_flag = GEA_light_cruiser_1936_design_created } }
+		limit = { NOT = { has_country_flag = GEA_light_cruiser_1936_design_created_literal_names_v2 } }
 		create_equipment_variant = {
-			name = "GEA_CL_CLASS_1936_ORDERS"
+			name = "Light Cruiser 1936 (Nürnberg Pattern)"
 			name_group = GEA_LIGHT_CRUISER_NAMES
 			allow_without_tech = yes
 			type = ship_hull_cruiser_2
@@ -1451,14 +1453,15 @@ GEA_prepare_light_cruiser_1936 = { #1936 年型轻巡：参考纽伦堡式轻巡
 			}
 		}
 		set_country_flag = GEA_light_cruiser_1936_design_created
+		set_country_flag = GEA_light_cruiser_1936_design_created_literal_names_v2
 	}
 }
 
 GEA_prepare_light_cruiser_1940 = {#1940 年型轻巡：参考 M 级计划
 	if = {
-		limit = { NOT = { has_country_flag = GEA_light_cruiser_1940_design_created } }
+		limit = { NOT = { has_country_flag = GEA_light_cruiser_1940_design_created_literal_names_v2 } }
 		create_equipment_variant = {
-			name = "GEA_CL_CLASS_1940_ORDERS"
+			name = "Light Cruiser 1940 (M-Class Pattern)"
 			name_group = GEA_LIGHT_CRUISER_NAMES
 			allow_without_tech = yes
 			type = ship_hull_cruiser_3
@@ -1478,13 +1481,14 @@ GEA_prepare_light_cruiser_1940 = {#1940 年型轻巡：参考 M 级计划
 			}
 		}
 		set_country_flag = GEA_light_cruiser_1940_design_created
+		set_country_flag = GEA_light_cruiser_1940_design_created_literal_names_v2
 	}
 }
 GEA_prepare_heavy_cruiser_1936 = {# 1936 年型重巡洋舰
 	if = {
-		limit = { NOT = { has_country_flag = GEA_heavy_cruiser_1936_design_created } }
+		limit = { NOT = { has_country_flag = GEA_heavy_cruiser_1936_design_created_literal_names_v2 } }
 		create_equipment_variant = {
-			name = "GEA_CA_CLASS_1936_ORDERS"
+			name = "Heavy Cruiser 1936"
 			name_group = GEA_HEAVY_CRUISER_NAMES
 			allow_without_tech = yes
 			type = ship_hull_cruiser_2
@@ -1504,14 +1508,15 @@ GEA_prepare_heavy_cruiser_1936 = {# 1936 年型重巡洋舰
 			}
 		}
 		set_country_flag = GEA_heavy_cruiser_1936_design_created
+		set_country_flag = GEA_heavy_cruiser_1936_design_created_literal_names_v2
 	}
 }
 
 GEA_prepare_heavy_cruiser_1940 = {# 1940 年型重巡洋舰
 	if = {
-		limit = { NOT = { has_country_flag = GEA_heavy_cruiser_1940_design_created } }
+		limit = { NOT = { has_country_flag = GEA_heavy_cruiser_1940_design_created_literal_names_v2 } }
 		create_equipment_variant = {
-			name = "GEA_CA_CLASS_1940_ORDERS"
+			name = "Heavy Cruiser 1940"
 			name_group = GEA_HEAVY_CRUISER_NAMES
 			allow_without_tech = yes
 			type = ship_hull_cruiser_3
@@ -1532,13 +1537,14 @@ GEA_prepare_heavy_cruiser_1940 = {# 1940 年型重巡洋舰
 			}
 		}
 		set_country_flag = GEA_heavy_cruiser_1940_design_created
+		set_country_flag = GEA_heavy_cruiser_1940_design_created_literal_names_v2
 	}
 }
 GEA_prepare_battleship_1936 = {# 1936 年型战列舰
 	if = {
-		limit = { NOT = { has_country_flag = GEA_battleship_1936_design_created } }
+		limit = { NOT = { has_country_flag = GEA_battleship_1936_design_created_literal_names_v2 } }
 		create_equipment_variant = {
-			name = "GEA_BB_CLASS_1936_ORDERS"
+			name = "Battleship 1936"
 			name_group = GEA_BATTLESHIP_NAMES
 			allow_without_tech = yes
 			type = ship_hull_heavy_2
@@ -1558,13 +1564,14 @@ GEA_prepare_battleship_1936 = {# 1936 年型战列舰
 			}
 		}
 		set_country_flag = GEA_battleship_1936_design_created
+		set_country_flag = GEA_battleship_1936_design_created_literal_names_v2
 	}
 }
 GEA_prepare_battleship_1940 = {# 1940 年型战列舰
 	if = {
-		limit = { NOT = { has_country_flag = GEA_battleship_1940_design_created } }
+		limit = { NOT = { has_country_flag = GEA_battleship_1940_design_created_literal_names_v2 } }
 		create_equipment_variant = {
-			name = "GEA_BB_CLASS_1940_ORDERS"
+			name = "Battleship 1940"
 			name_group = GEA_BATTLESHIP_NAMES
 			allow_without_tech = yes
 			type = ship_hull_heavy_3
@@ -1585,13 +1592,14 @@ GEA_prepare_battleship_1940 = {# 1940 年型战列舰
 			}
 		}
 		set_country_flag = GEA_battleship_1940_design_created
+		set_country_flag = GEA_battleship_1940_design_created_literal_names_v2
 	}
 }
 GEA_prepare_battlecruiser_o_class = {# 1939 年 O 级战列巡洋舰
 	if = {
-		limit = { NOT = { has_country_flag = GEA_battlecruiser_o_class_design_created } }
+		limit = { NOT = { has_country_flag = GEA_battlecruiser_o_class_design_created_literal_names_v2 } }
 		create_equipment_variant = {
-			name = "GEA_BC_CLASS_O_1939"
+			name = "O-Class Battlecruiser"
 			name_group = GEA_BATTLESHIP_NAMES
 			allow_without_tech = yes
 			type = ship_hull_heavy_3
@@ -1611,13 +1619,14 @@ GEA_prepare_battlecruiser_o_class = {# 1939 年 O 级战列巡洋舰
 			}
 		}
 		set_country_flag = GEA_battlecruiser_o_class_design_created
+		set_country_flag = GEA_battlecruiser_o_class_design_created_literal_names_v2
 	}
 }
 GEA_prepare_carrier_1936 = {# 1936 年型航空母舰
 	if = {
-		limit = { NOT = { has_country_flag = GEA_carrier_1936_design_created } }
+		limit = { NOT = { has_country_flag = GEA_carrier_1936_design_created_literal_names_v2 } }
 		create_equipment_variant = {
-			name = "GEA_CV_CLASS_1936_ORDERS"
+			name = "Aircraft Carrier 1936"
 			name_group = GEA_CARRIER_NAMES
 			allow_without_tech = yes
 			type = ship_hull_carrier_1
@@ -1635,14 +1644,15 @@ GEA_prepare_carrier_1936 = {# 1936 年型航空母舰
 			}
 		}
 		set_country_flag = GEA_carrier_1936_design_created
+		set_country_flag = GEA_carrier_1936_design_created_literal_names_v2
 	}
 }
 
 GEA_prepare_carrier_1940 = {# 1940 年型航空母舰
 	if = {
-		limit = { NOT = { has_country_flag = GEA_carrier_1940_design_created } }
+		limit = { NOT = { has_country_flag = GEA_carrier_1940_design_created_literal_names_v2 } }
 		create_equipment_variant = {
-			name = "GEA_CV_CLASS_1940_ORDERS"
+			name = "Aircraft Carrier 1940"
 			name_group = GEA_CARRIER_NAMES
 			allow_without_tech = yes
 			type = ship_hull_carrier_2
@@ -1661,6 +1671,7 @@ GEA_prepare_carrier_1940 = {# 1940 年型航空母舰
 			}
 		}
 		set_country_flag = GEA_carrier_1940_design_created
+		set_country_flag = GEA_carrier_1940_design_created_literal_names_v2
 	}
 }
 
@@ -1703,7 +1714,7 @@ GEA_Shipbuilding_plan_production_effect = { #造船
 			equipment = {
 				type = ship_hull_cruiser_2
 				creator = GEA
-				version_name = "GEA_CA_CLASS_1936_ORDERS"
+				version_name = "Heavy Cruiser 1936"
 			}
 			requested_factories = 5
 			progress = 0.6
@@ -1713,7 +1724,7 @@ GEA_Shipbuilding_plan_production_effect = { #造船
 			equipment = {
 				type = ship_hull_cruiser_2
 				creator = GEA
-				version_name = "GEA_CA_CLASS_1936_ORDERS"
+				version_name = "Heavy Cruiser 1936"
 			}
 			requested_factories = 5
 			progress = 0.6
@@ -1723,7 +1734,7 @@ GEA_Shipbuilding_plan_production_effect = { #造船
 			equipment = {
 				type = ship_hull_cruiser_2
 				creator = GEA
-				version_name = "GEA_CA_CLASS_1936_ORDERS"
+				version_name = "Heavy Cruiser 1936"
 			}
 			requested_factories = 5
 			progress = 0.6
@@ -1733,9 +1744,9 @@ GEA_Shipbuilding_plan_production_effect = { #造船
 			equipment = {
 				type = ship_hull_heavy_2
 				creator = GEA
-				version_name = "GEA_BB_CLASS_1936_ORDERS"
+				version_name = "Battleship 1936"
 			}
-			name = GEA_SHIP_SMS_NECKAR
+			name = "SMS Neckar"
 			requested_factories = 5
 			progress = 0.4
 			amount = 1
@@ -1748,7 +1759,7 @@ GEA_Shipbuilding_plan_production_effect = { #造船
 			equipment = {
 				type = ship_hull_cruiser_3
 				creator = GEA
-				version_name = "GEA_CA_CLASS_1940_ORDERS"
+				version_name = "Heavy Cruiser 1940"
 			}
 			requested_factories = 5
 			progress = 0.6
@@ -1758,7 +1769,7 @@ GEA_Shipbuilding_plan_production_effect = { #造船
 			equipment = {
 				type = ship_hull_cruiser_3
 				creator = GEA
-				version_name = "GEA_CA_CLASS_1940_ORDERS"
+				version_name = "Heavy Cruiser 1940"
 			}
 			requested_factories = 5
 			progress = 0.6
@@ -1768,7 +1779,7 @@ GEA_Shipbuilding_plan_production_effect = { #造船
 			equipment = {
 				type = ship_hull_cruiser_3
 				creator = GEA
-				version_name = "GEA_CA_CLASS_1940_ORDERS"
+				version_name = "Heavy Cruiser 1940"
 			}
 			requested_factories = 5
 			progress = 0.6
@@ -1778,9 +1789,9 @@ GEA_Shipbuilding_plan_production_effect = { #造船
 			equipment = {
 				type = ship_hull_heavy_3
 				creator = GEA
-				version_name = "GEA_BB_CLASS_1940_ORDERS"
+				version_name = "Battleship 1940"
 			}
-			name = GEA_SHIP_SMS_NECKAR
+			name = "SMS Neckar"
 			requested_factories = 5
 			progress = 0.4
 			amount = 1
@@ -2419,5 +2430,31 @@ GEA_szc_relieve_famine_medium_effect = {
 				SZC_end_famine = yes
 			}
 		}
+	}
+}
+
+GEA_install_claus_as_gxc_leader_effect = { #在GXC作用域确保角色转交与正确的家长制领袖身份
+	if = {
+		limit = { NOT = { has_character = GEA_Claus_von_Bohlen_und_Halbach } }
+		GEA = {
+			set_nationality = {
+				target_country = GXC
+				character = GEA_Claus_von_Bohlen_und_Halbach
+			}
+		}
+	}
+	if = {
+		limit = { has_character = GEA_Claus_von_Bohlen_und_Halbach }
+		set_politics = { ruling_party = paternal_autocrat elections_allowed = no }
+		add_country_leader_role = {
+			character = GEA_Claus_von_Bohlen_und_Halbach
+			promote_leader = yes
+			country_leader = {
+				desc = POLITICS_CLAUS_VON_BOHLEN_UND_HALBACH_DESC
+				ideology = autocratic_colonial_govt_subtype
+				traits = { captain_of_industry }
+			}
+		}
+		promote_character = { character = GEA_Claus_von_Bohlen_und_Halbach ideology = autocratic_colonial_govt_subtype }
 	}
 }

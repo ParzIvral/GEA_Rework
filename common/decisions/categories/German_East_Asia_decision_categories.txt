@@ -73,6 +73,8 @@ GEA_pacify_indochina_decisions = {
 		original_tag = GEA
 	}
 	visible = {
+		NOT = { has_country_flag = GEA_Defeated_Uprising }
+		NOT = { has_country_flag = GEA_Lost_Uprising }
 		has_completed_focus = GEA_Strike_hard
 	}
 	priority = 1100
@@ -92,7 +94,7 @@ GEA_Kartel_decisions = {
 }
 
 GEA_Naval_decisions = {
-	icon = GFX_decision_category_mtg_naval_treaties
+	icon = GFX_decision_category_MTG_naval_treaties
 	allowed = {
 		original_tag = GEA
 	}

@@ -314,7 +314,7 @@ GEA_complete_east_china_railway_effect = { #完成铁路决议效果
 		tooltip = GEA_china_capital_influence_change_decimal_tt
 	}
 	add_to_variable = {
-		GEA_china_lep_military_projection = 3
+		GEA_china_lep_military_projection = 10
 		tooltip = GEA_china_military_projection_change_tt
 	}
 	hidden_effect = {

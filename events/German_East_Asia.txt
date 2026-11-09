@@ -2146,6 +2146,17 @@ add_namespace = GEA_news
 			log = "[GetDateText]: [Root.GetName]: event GEA.42"
 			set_global_flag = GEA_Indochina_Uprising_Fired
 			hidden_effect = {
+				# Lift all Indochinese demilitarized zones before transferring states and spawning units.
+				286 = { set_demilitarized_zone = no }
+				827 = { set_demilitarized_zone = no }
+				856 = { set_demilitarized_zone = no }
+				671 = { set_demilitarized_zone = no }
+				857 = { set_demilitarized_zone = no }
+				750 = { set_demilitarized_zone = no }
+				826 = { set_demilitarized_zone = no }
+				825 = { set_demilitarized_zone = no }
+				670 = { set_demilitarized_zone = no }
+				882 = { set_demilitarized_zone = no }
 				country_event = { #现代默示录
 					id = GEA.50
 					days = 40
@@ -2206,54 +2217,6 @@ add_namespace = GEA_news
 							producer = INC
 						}
 					}
-					if = { #The rebellion of local guards
-						limit = {
-							GEA = {
-								NOT = {
-									has_completed_focus = GEA_Return_to_the_Vietnamese_court
-								}
-							}
-						}
-						division_template = {
-							name = "Quan Bao an" #Police Division
-							division_names_group = INC_MLT_01
-							regiments = {
-								militia = { x = 0 y = 0 }
-								militia = { x = 0 y = 1 }
-								militia = { x = 0 y = 2 }
-								militia = { x = 1 y = 0 }
-								militia = { x = 1 y = 1 }
-								militia = { x = 1 y = 2 }
-								militia = { x = 2 y = 0 }
-								militia = { x = 2 y = 1 }
-								militia = { x = 2 y = 2 }
-							}
-						}
-						random_state = {
-							prioritize = { 286 }
-							create_unit = {
-								division = "name = \"Cholon Quan Bao an\" division_template = \"Quan Bao an\" start_experience_factor = 0.8 start_equipment_factor = 0.8"
-								owner = INC
-								prioritize_location = 705
-								allow_spawning_on_enemy_provs = yes
-							}
-							create_unit = {
-								division = "name = \"Nam Bo Quan Bao an\" division_template = \"Quan Bao an\" start_experience_factor = 0.8 start_equipment_factor = 0.8"
-								owner = INC
-								prioritize_location = 7347
-								allow_spawning_on_enemy_provs = yes
-							}
-						}
-						random_state = {
-							prioritize = { 827 }
-							create_unit = {
-								division = "name = \"Da Lat Quan Bao an\" division_template = \"Quan Bao an\" start_experience_factor = 0.8 start_equipment_factor = 0.8"
-								owner = INC
-								prioritize_location = 1605
-								allow_spawning_on_enemy_provs = yes
-							}
-						}
-					}
 					if = {
 						limit = {
 							has_global_flag = INC_BHC_Help
@@ -2290,6 +2253,65 @@ add_namespace = GEA_news
 				declare_war_on = {
 					target = INC
 					type = annex_everything
+				}
+				INC = {
+					if = { #The rebellion of local guards
+						limit = {
+							GEA = {
+								NOT = {
+									has_completed_focus = GEA_Return_to_the_Vietnamese_court
+								}
+							}
+						}
+						division_template = {
+							name = "Quan Bao an" #Police Division
+							division_names_group = INC_MLT_01
+							regiments = {
+								militia = { x = 0 y = 0 }
+								militia = { x = 0 y = 1 }
+								militia = { x = 0 y = 2 }
+								militia = { x = 1 y = 0 }
+								militia = { x = 1 y = 1 }
+								militia = { x = 1 y = 2 }
+								militia = { x = 2 y = 0 }
+								militia = { x = 2 y = 1 }
+								militia = { x = 2 y = 2 }
+							}
+						}
+						286 = {
+							create_unit = {
+								division = "name = \"Cholon Quan Bao an\" division_template = \"Quan Bao an\" start_experience_factor = 0.8 start_equipment_factor = 0.8"
+								owner = INC
+								prioritize_location = 4401
+								allow_spawning_on_enemy_provs = yes
+							}
+							create_unit = {
+								division = "name = \"Nam Bo Quan Bao an\" division_template = \"Quan Bao an\" start_experience_factor = 0.8 start_equipment_factor = 0.8"
+								owner = INC
+								prioritize_location = 7347
+								allow_spawning_on_enemy_provs = yes
+							}
+						}
+						827 = {
+							create_unit = {
+								division = "name = \"Da Lat Quan Bao an\" division_template = \"Quan Bao an\" start_experience_factor = 0.8 start_equipment_factor = 0.8"
+								owner = INC
+								prioritize_location = 1605
+								allow_spawning_on_enemy_provs = yes
+							}
+						}
+					}
+				}
+				INC = {
+					add_war_support = 0.30
+					286 = {
+						create_unit = {
+							division = "division_template = \"Su doan Bo binh\" start_experience_factor = 0.3 start_equipment_factor = 0.8"
+							owner = INC
+							prioritize_location = 4401
+							count = 6
+						}
+					}
 				}
 				GEA_apply_anti_viet_cong_outcome_effect = yes
 				activate_mission = GEA_nationalist_sabotage_cycle
@@ -5289,6 +5311,8 @@ add_namespace = GEA_news
 			name = GEA.309.a
 			custom_effect_tooltip = GEA_loyal_citizens_mobilized_tt
 			hidden_effect = {
+				# The Can Tho uprising establishes a controlled foothold before spawning units.
+				GEA = { set_province_controller = 12133 }
 				division_template = {
 					name = "Städtische Bürgerwehr"
 					division_names_group = GEA_MIL_01
@@ -5301,65 +5325,27 @@ add_namespace = GEA_news
 						militia = { x = 1 y = 2 }
 					}
 				}
-				286 = {
+				856 = {
 					create_unit = {
-						division = "name = \"Bürgerwehr Saigon\" division_template = \"Städtische Bürgerwehr\" start_experience_factor = 0.3 start_equipment_factor = 0.7"
+						division = "name = \"Bürgerwehr Can Tho 1\" division_template = \"Städtische Bürgerwehr\" start_experience_factor = 0.3 start_equipment_factor = 0.7"
 						owner = GEA
-						prioritize_location = 4401
-						allow_spawning_on_enemy_provs = yes
-					}
-				}
-				671 = {
-					create_unit = {
-						division = "name = \"Bürgerwehr Hanoi\" division_template = \"Städtische Bürgerwehr\" start_experience_factor = 0.3 start_equipment_factor = 0.7"
-						owner = GEA
-						prioritize_location = 4075
+						prioritize_location = 12133
 						allow_spawning_on_enemy_provs = yes
 					}
 					create_unit = {
-						division = "name = \"Bürgerwehr Haiphong\" division_template = \"Städtische Bürgerwehr\" start_experience_factor = 0.3 start_equipment_factor = 0.7"
+						division = "name = \"Bürgerwehr Can Tho 2\" division_template = \"Städtische Bürgerwehr\" start_experience_factor = 0.3 start_equipment_factor = 0.7"
 						owner = GEA
-						prioritize_location = 4119
-						allow_spawning_on_enemy_provs = yes
-					}
-				}
-				827 = {
-					create_unit = {
-						division = "name = \"Bürgerwehr Hue\" division_template = \"Städtische Bürgerwehr\" start_experience_factor = 0.3 start_equipment_factor = 0.7"
-						owner = GEA
-						prioritize_location = 4379
+						prioritize_location = 12133
 						allow_spawning_on_enemy_provs = yes
 					}
 				}
 			}
 			if = {
 				limit = { has_country_flag = GEA_loyalist_fortifications_ready }
-				286 = {
+				856 = {
 					add_building_construction = {
 						type = bunker
-						province = 4401
-						level = 3
-						instant_build = yes
-					}
-				}
-				671 = {
-					add_building_construction = {
-						type = bunker
-						province = 4075
-						level = 3
-						instant_build = yes
-					}
-					add_building_construction = {
-						type = bunker
-						province = 4119
-						level = 3
-						instant_build = yes
-					}
-				}
-				827 = {
-					add_building_construction = {
-						type = bunker
-						province = 4379
+						province = 12133
 						level = 3
 						instant_build = yes
 					}
@@ -5627,6 +5613,11 @@ add_namespace = GEA_news
 		id = GEA.318
 		hidden = yes
 		is_triggered_only = yes
+		trigger = {
+			has_war_with = INC
+			NOT = { has_country_flag = GEA_Defeated_Uprising }
+			NOT = { has_country_flag = GEA_Lost_Uprising }
+		}
 
 		immediate = {
 			log = "[GetDateText]: [Root.GetName]: event GEA.318"
@@ -5648,33 +5639,17 @@ add_namespace = GEA_news
 					artillery = { x = 0 y = 0 }
 				}
 			}
-			286 = {
+			856 = {
 				create_unit = {
-					division = "name = \"Saigoner Bereitschaftsdivision\" division_template = \"Städtische Bereitschaftsdivision\" start_experience_factor = 1 start_equipment_factor = 1 start_manpower_factor = 1"
+					division = "name = \"Can Tho Bereitschaftsdivision 1\" division_template = \"Städtische Bereitschaftsdivision\" start_experience_factor = 1 start_equipment_factor = 1 start_manpower_factor = 1"
 					owner = GEA
-					prioritize_location = 4401
-					allow_spawning_on_enemy_provs = yes
-				}
-			}
-			671 = {
-				create_unit = {
-					division = "name = \"Hanoier Bereitschaftsdivision\" division_template = \"Städtische Bereitschaftsdivision\" start_experience_factor = 1 start_equipment_factor = 1 start_manpower_factor = 1"
-					owner = GEA
-					prioritize_location = 4075
+					prioritize_location = 12133
 					allow_spawning_on_enemy_provs = yes
 				}
 				create_unit = {
-					division = "name = \"Haiphonger Bereitschaftsdivision\" division_template = \"Städtische Bereitschaftsdivision\" start_experience_factor = 1 start_equipment_factor = 1 start_manpower_factor = 1"
+					division = "name = \"Can Tho Bereitschaftsdivision 2\" division_template = \"Städtische Bereitschaftsdivision\" start_experience_factor = 1 start_equipment_factor = 1 start_manpower_factor = 1"
 					owner = GEA
-					prioritize_location = 4119
-					allow_spawning_on_enemy_provs = yes
-				}
-			}
-			827 = {
-				create_unit = {
-					division = "name = \"Huéer Bereitschaftsdivision\" division_template = \"Städtische Bereitschaftsdivision\" start_experience_factor = 1 start_equipment_factor = 1 start_manpower_factor = 1"
-					owner = GEA
-					prioritize_location = 4379
+					prioritize_location = 12133
 					allow_spawning_on_enemy_provs = yes
 				}
 			}
@@ -5965,7 +5940,7 @@ add_namespace = GEA_news
 		is_triggered_only = yes
 
 		option = { 
-			name = GEA.4102.a
+			name = GEA.412.a
 			add_stability = 0.04
 		}
 	}
@@ -6447,9 +6422,9 @@ add_namespace = GEA_news
 				equipment = {
 					type = ship_hull_cruiser_2
 					creator = GEA
-					version_name = "GEA_CA_CLASS_1936_ORDERS"
+					version_name = "Heavy Cruiser 1936"
 				}
-				name = GEA_SHIP_SEEADLER
+				name = "Seeadler"
 				requested_factories = 5
 				progress = 0.5
 				amount = 1
@@ -6458,9 +6433,9 @@ add_namespace = GEA_news
 				equipment = {
 					type = ship_hull_cruiser_2
 					creator = GEA
-					version_name = "GEA_CA_CLASS_1936_ORDERS"
+					version_name = "Heavy Cruiser 1936"
 				}
-				name = GEA_SHIP_ORDER_CA_ADMIRAL_HIPPER
+				name = "Admiral Hipper"
 				requested_factories = 5
 				progress = 0.5
 				amount = 1
@@ -6469,9 +6444,9 @@ add_namespace = GEA_news
 				equipment = {
 					type = ship_hull_heavy_2
 					creator = GEA
-					version_name = "GEA_BB_CLASS_1936_ORDERS"
+					version_name = "Battleship 1936"
 				}
-				name = GEA_SHIP_ORDER_BB_TIRPITZ
+				name = "Tirpitz"
 				requested_factories = 5
 				progress = 0.2
 				amount = 1
@@ -6489,9 +6464,9 @@ add_namespace = GEA_news
 				equipment = {
 					type = ship_hull_cruiser_2
 					creator = GEA
-					version_name = "GEA_CA_CLASS_1936_ORDERS"
+					version_name = "Heavy Cruiser 1936"
 				}
-				name = GEA_SHIP_ORDER_CA_ADMIRAL_HIPPER
+				name = "Admiral Hipper"
 				requested_factories = 5
 				progress = 0.5
 				amount = 1
@@ -6500,9 +6475,9 @@ add_namespace = GEA_news
 				equipment = {
 					type = ship_hull_cruiser_2
 					creator = GEA
-					version_name = "GEA_CA_CLASS_1936_ORDERS"
+					version_name = "Heavy Cruiser 1936"
 				}
-				name = GEA_SHIP_ORDER_CA_PRINZ_EUGEN
+				name = "Prinz Eugen"
 				requested_factories = 5
 				progress = 0.5
 				amount = 1
@@ -6511,9 +6486,9 @@ add_namespace = GEA_news
 				equipment = {
 					type = ship_hull_heavy_2
 					creator = GEA
-					version_name = "GEA_BB_CLASS_1936_ORDERS"
+					version_name = "Battleship 1936"
 				}
-				name = GEA_SHIP_SEEADLER
+				name = "Seeadler"
 				requested_factories = 5
 				progress = 0.2
 				amount = 1
@@ -6530,9 +6505,9 @@ add_namespace = GEA_news
 				equipment = {
 					type = ship_hull_heavy_3
 					creator = GEA
-					version_name = "GEA_BC_CLASS_O_1939"
+					version_name = "O-Class Battlecruiser"
 				}
-				name = GEA_SHIP_SEEADLER
+				name = "Seeadler"
 				requested_factories = 5
 				progress = 0.1
 				amount = 1
@@ -6549,9 +6524,9 @@ add_namespace = GEA_news
 				equipment = {
 					type = ship_hull_carrier_1
 					creator = GEA
-					version_name = "GEA_CV_CLASS_1936_ORDERS"
+					version_name = "Aircraft Carrier 1936"
 				}
-				name = GEA_SHIP_SEEADLER
+				name = "Seeadler"
 				requested_factories = 5
 				progress = 0.1
 				amount = 1
@@ -7500,6 +7475,7 @@ add_namespace = GEA_news
 				can_not_declare_war = no
 				can_decline_call_to_war = yes
 			}
+			hidden_effect = { set_country_flag = GEA_war_rules_unrestricted }
 		}
 	}
 	country_event = { #人主
@@ -7976,12 +7952,14 @@ add_namespace = GEA_news
 
 	country_event = {
 		id = GEA.805
+		fire_only_once = yes
 		title = GEA.805.t
 		desc = GEA.805.d
 
 		is_triggered_only = yes
 
-		trigger = { 
+		trigger = {
+			GEA = { NOT = { has_country_flag = GEA_far_east_integrated } }
 			country_exists = GEA 
 			has_country_flag = GEA_german_coup_pending 
 		}
@@ -7991,7 +7969,19 @@ add_namespace = GEA_news
 			ai_chance = { 
 				factor = 100 
 			}
-			GEA_install_falkenhausen_government_effect = yes
+			if = {
+				limit = {
+					hidden_trigger = { GEA = { NOT = { has_country_flag = GEA_far_east_integrated } } }
+				}
+				GEA_install_falkenhausen_government_effect = yes
+				hidden_effect = {
+					GEA = {
+						set_variable = { GEA_china_lep_attitude = 100 }
+						set_variable = { GEA_china_lep_capital_influence = 90 }
+						set_variable = { GEA_china_lep_military_projection = 90 }
+					}
+				}
+			}
 		}
 
 		option = {
@@ -8376,7 +8366,7 @@ add_namespace = GEA_news
 		immediate = { log = "[GetDateText]: [Root.GetName]: event GEA.816" }
 		title = GEA.816.t
 		desc = GEA.816.d
-		picture = GFX_report_event_falkenhausen
+		picture = GFX_report_event_GEA_falkenhausen
 
 		fire_only_once = yes
 
@@ -8664,6 +8654,7 @@ add_namespace = GEA_news
 		desc = GEA.827.d
 		fire_only_once = yes
 		trigger = {
+			GEA = { NOT = { has_country_flag = GEA_far_east_integrated } }
 			tag = GEA
 			controls_state = 597
 			controls_state = 1064
@@ -8674,122 +8665,146 @@ add_namespace = GEA_news
 		option = {
 			name = GEA.827.a
 			ai_chance = { factor = 70 }
-			hidden_effect = {
-				SQI = {
-					transfer_state = 597 #济南
-					transfer_state = 1064 #临沂
-					transfer_state = 1065 #胶东
-					set_capital = { state = 597 remember_old_capital = no }
-					if = {
-						limit = { is_in_faction = yes NOT = { is_in_faction_with = GEA } }
-						leave_faction = yes
-					}
+			if = {
+				limit = {
+					hidden_trigger = { GEA = { NOT = { has_country_flag = GEA_far_east_integrated } } }
 				}
-				set_autonomy = {
-					target = SQI
-					autonomy_state = kr_default_puppet
-					end_wars = yes
-					end_civil_wars = yes
-				}
-				if = {
-					limit = { is_in_faction = yes SQI = { NOT = { is_in_faction_with = GEA } } }
-					random_country = {
-						limit = { is_faction_leader = yes is_in_faction_with = GEA }
-						add_to_faction = SQI
-					}
-				}
-				SQI = {
-					clr_country_flag = GEA_china_warlord_interaction_blocked
-					clr_country_flag = GEA_german_coup_defeated
-					remove_all_ministers = yes
-					add_ideas = {
-						SQI_Zhu_Qinglan_hog_ade
-						SQI_Ding_Shujing_for_ade
-						SQI_Cao_Fulin_eco_ade
-						SQI_Qu_Yingguang_sec_ade
-					}
-				}
-			}
-			hidden_effect = {
-				GEA = {
-					if = {
-						limit = { NOT = { SQI = { has_character = GEA_Tang_Yangdu } } }
-						GEA_Tang_Yangdu = { set_nationality = SQI }
-					}
-				}
-			}
-			SQI = {
-				add_popularity = { ideology = authoritarian_democrat popularity = 0.30 }
-				set_politics = { ruling_party = authoritarian_democrat elections_allowed = no }
-				promote_character = { character = GEA_Tang_Yangdu ideology = authdem_kleptocracy_subtype }
-				set_party_name = {
-					ideology = authoritarian_democrat
-					name = GEA_SQI_maintenance_party
-					long_name = GEA_SQI_maintenance_party_long
-				}
-				set_cosmetic_tag = GEA_SQI_maintenance
 				hidden_effect = {
-					GEA_Tang_Yangdu = { unit_leader_event = { id = GEA.840 days = 2 } }
+					SQI = {
+						transfer_state = 597 #济南
+						transfer_state = 1064 #临沂
+						transfer_state = 1065 #胶东
+						set_capital = { state = 597 remember_old_capital = no }
+						if = {
+							limit = { is_in_faction = yes NOT = { is_in_faction_with = GEA } }
+							leave_faction = yes
+						}
+					}
+					set_autonomy = {
+						target = SQI
+						autonomy_state = kr_default_puppet
+						end_wars = yes
+						end_civil_wars = yes
+					}
+					if = {
+						limit = { is_in_faction = yes SQI = { NOT = { is_in_faction_with = GEA } } }
+						random_country = {
+							limit = { is_faction_leader = yes is_in_faction_with = GEA }
+							add_to_faction = SQI
+						}
+					}
+					SQI = {
+						clr_country_flag = GEA_china_warlord_interaction_blocked
+						clr_country_flag = GEA_german_coup_defeated
+						remove_all_ministers = yes
+						add_ideas = {
+							SQI_Zhu_Qinglan_hog_ade
+							SQI_Ding_Shujing_for_ade
+							SQI_Cao_Fulin_eco_ade
+							SQI_Qu_Yingguang_sec_ade
+						}
+					}
+				}
+				hidden_effect = {
+					GEA = {
+						if = {
+							limit = { NOT = { SQI = { has_character = GEA_Tang_Yangdu } } }
+							GEA_Tang_Yangdu = { set_nationality = SQI }
+						}
+					}
+				}
+				SQI = {
+					add_popularity = { ideology = authoritarian_democrat popularity = 0.30 }
+					set_politics = { ruling_party = authoritarian_democrat elections_allowed = no }
+					promote_character = { character = GEA_Tang_Yangdu ideology = authdem_kleptocracy_subtype }
+					set_party_name = {
+						ideology = authoritarian_democrat
+						name = GEA_SQI_maintenance_party
+						long_name = GEA_SQI_maintenance_party_long
+					}
+					set_cosmetic_tag = GEA_SQI_maintenance
+					hidden_effect = {
+						GEA_Tang_Yangdu = { unit_leader_event = { id = GEA.840 days = 2 } }
+					}
+				}
+				hidden_effect = {
+					GEA = {
+						set_variable = { GEA_china_sqi_attitude = 100 }
+						set_variable = { GEA_china_sqi_capital_influence = 90 }
+						set_variable = { GEA_china_sqi_military_projection = 90 }
+					}
 				}
 			}
 		}
 		option = {
 			name = GEA.827.b
 			ai_chance = { factor = 30 }
-			hidden_effect = {
-				SQI = {
-					transfer_state = 597 #济南
-					transfer_state = 1064 #临沂
-					transfer_state = 1065 #胶东
-					set_capital = { state = 597 remember_old_capital = no }
+			if = {
+				limit = {
+					hidden_trigger = { GEA = { NOT = { has_country_flag = GEA_far_east_integrated } } }
+				}
+				hidden_effect = {
+					SQI = {
+						transfer_state = 597 #济南
+						transfer_state = 1064 #临沂
+						transfer_state = 1065 #胶东
+						set_capital = { state = 597 remember_old_capital = no }
+						if = {
+							limit = { is_in_faction = yes NOT = { is_in_faction_with = GEA } }
+							leave_faction = yes
+						}
+					}
+					set_autonomy = {
+						target = SQI
+						autonomy_state = kr_default_puppet
+						end_wars = yes
+						end_civil_wars = yes
+					}
 					if = {
-						limit = { is_in_faction = yes NOT = { is_in_faction_with = GEA } }
-						leave_faction = yes
+						limit = { is_in_faction = yes SQI = { NOT = { is_in_faction_with = GEA } } }
+						random_country = {
+							limit = { is_faction_leader = yes is_in_faction_with = GEA }
+							add_to_faction = SQI
+						}
+					}
+					SQI = {
+						clr_country_flag = GEA_china_warlord_interaction_blocked
+						clr_country_flag = GEA_german_coup_defeated
+						remove_all_ministers = yes
+						add_ideas = {
+							SQI_Zhu_Qinglan_hog_ade
+							SQI_Ding_Shujing_for_ade
+							SQI_Cao_Fulin_eco_ade
+							SQI_Qu_Yingguang_sec_ade
+						}
 					}
 				}
-				set_autonomy = {
-					target = SQI
-					autonomy_state = kr_default_puppet
-					end_wars = yes
-					end_civil_wars = yes
-				}
-				if = {
-					limit = { is_in_faction = yes SQI = { NOT = { is_in_faction_with = GEA } } }
-					random_country = {
-						limit = { is_faction_leader = yes is_in_faction_with = GEA }
-						add_to_faction = SQI
+				hidden_effect = {
+					GEA = {
+						if = {
+							limit = { NOT = { SQI = { has_character = GEA_Wilhelm_Hopfner } } }
+							GEA_Wilhelm_Hopfner = { set_nationality = SQI }
+						}
 					}
 				}
 				SQI = {
-					clr_country_flag = GEA_china_warlord_interaction_blocked
-					clr_country_flag = GEA_german_coup_defeated
-					remove_all_ministers = yes
-					add_ideas = {
-						SQI_Zhu_Qinglan_hog_ade
-						SQI_Ding_Shujing_for_ade
-						SQI_Cao_Fulin_eco_ade
-						SQI_Qu_Yingguang_sec_ade
+					add_popularity = { ideology = paternal_autocrat popularity = 0.30 }
+					set_politics = { ruling_party = paternal_autocrat elections_allowed = no }
+					promote_character = { character = GEA_Wilhelm_Hopfner ideology = autocratic_colonial_govt_subtype }
+					set_party_name = {
+						ideology = paternal_autocrat
+						name = GEA_SQI_german_party
+						long_name = GEA_SQI_german_party_long
+					}
+					set_cosmetic_tag = GEA_SQI_german
+				}
+				hidden_effect = {
+					GEA = {
+						set_variable = { GEA_china_sqi_attitude = 100 }
+						set_variable = { GEA_china_sqi_capital_influence = 90 }
+						set_variable = { GEA_china_sqi_military_projection = 90 }
 					}
 				}
-			}
-			hidden_effect = {
-				GEA = {
-					if = {
-						limit = { NOT = { SQI = { has_character = GEA_Wilhelm_Hopfner } } }
-						GEA_Wilhelm_Hopfner = { set_nationality = SQI }
-					}
-				}
-			}
-			SQI = {
-				add_popularity = { ideology = paternal_autocrat popularity = 0.30 }
-				set_politics = { ruling_party = paternal_autocrat elections_allowed = no }
-				promote_character = { character = GEA_Wilhelm_Hopfner ideology = autocratic_colonial_govt_subtype }
-				set_party_name = {
-					ideology = paternal_autocrat
-					name = GEA_SQI_german_party
-					long_name = GEA_SQI_german_party_long
-				}
-				set_cosmetic_tag = GEA_SQI_german
 			}
 		}
 	}
@@ -8802,6 +8817,7 @@ add_namespace = GEA_news
 		fire_only_once = yes
 
 		trigger = {
+			GEA = { NOT = { has_country_flag = GEA_far_east_integrated } }
 			tag = GEA
 			NOT = { has_completed_focus = GEA_Submission }
 			OR = {
@@ -8831,63 +8847,75 @@ add_namespace = GEA_news
 
 		option = {
 			name = GEA.828.a
-			hidden_effect = {
-				every_state = {
-					limit = {
-						OR = { state = 608 state = 611 state = 614 state = 1060 state = 1061 state = 1062 state = 1063 state = 607 state = 1058 state = 1059 state = 615 state = 799 state = 620 state = 1048 }
-						is_controlled_by = GEA
+			if = {
+				limit = {
+					hidden_trigger = { GEA = { NOT = { has_country_flag = GEA_far_east_integrated } } }
+				}
+				hidden_effect = {
+					every_state = {
+						limit = {
+							OR = { state = 608 state = 611 state = 614 state = 1060 state = 1061 state = 1062 state = 1063 state = 607 state = 1058 state = 1059 state = 615 state = 799 state = 620 state = 1048 }
+							is_controlled_by = GEA
+						}
+						QIE = { transfer_state = PREV }
 					}
-					QIE = { transfer_state = PREV }
+					QIE = {
+						set_capital = { state = 608 remember_old_capital = no }
+						if = {
+							limit = { is_in_faction = yes NOT = { is_in_faction_with = GEA } }
+							leave_faction = yes
+						}
+					}
+					set_autonomy = {
+						target = QIE
+						autonomy_state = kr_default_puppet
+						end_wars = yes
+						end_civil_wars = yes
+					}
+					if = {
+						limit = { is_in_faction = yes QIE = { NOT = { is_in_faction_with = GEA } } }
+						random_country = {
+							limit = { is_faction_leader = yes is_in_faction_with = GEA }
+							add_to_faction = QIE
+						}
+					}
+					QIE = {
+						clr_country_flag = GEA_china_warlord_interaction_blocked
+						clr_country_flag = GEA_german_coup_defeated
+					}
+				}
+				hidden_effect = {
+					GEA = {
+						if = {
+							limit = { NOT = { QIE = { has_character = GEA_Wang_Kemin } } }
+							GEA_Wang_Kemin = { set_nationality = QIE }
+						}
+					}
 				}
 				QIE = {
-					set_capital = { state = 608 remember_old_capital = no }
-					if = {
-						limit = { is_in_faction = yes NOT = { is_in_faction_with = GEA } }
-						leave_faction = yes
+					add_popularity = { ideology = paternal_autocrat popularity = 0.30 }
+					set_politics = { ruling_party = paternal_autocrat elections_allowed = no }
+					promote_character = { character = GEA_Wang_Kemin ideology = kleptocracy_subtype }
+					set_party_name = {
+						ideology = paternal_autocrat
+						name = GEA_QIE_provisional_party
+						long_name = GEA_QIE_provisional_party_long
+					}
+					set_cosmetic_tag = GEA_QIE_provisional
+					remove_all_ministers = yes
+					add_ideas = {
+						QIE_Yan_Huiqing_hog_ade
+						QIE_Bai_Jianwu_for_ade
+						QIE_Gong_Xinzhan_eco_ade
+						QIE_Zhang_Luao_sec_ade
 					}
 				}
-				set_autonomy = {
-					target = QIE
-					autonomy_state = kr_default_puppet
-					end_wars = yes
-					end_civil_wars = yes
-				}
-				if = {
-					limit = { is_in_faction = yes QIE = { NOT = { is_in_faction_with = GEA } } }
-					random_country = {
-						limit = { is_faction_leader = yes is_in_faction_with = GEA }
-						add_to_faction = QIE
+				hidden_effect = {
+					GEA = {
+						set_variable = { GEA_china_zhili_attitude = 100 }
+						set_variable = { GEA_china_zhili_capital_influence = 90 }
+						set_variable = { GEA_china_zhili_military_projection = 90 }
 					}
-				}
-				QIE = {
-					clr_country_flag = GEA_china_warlord_interaction_blocked
-					clr_country_flag = GEA_german_coup_defeated
-				}
-			}
-			hidden_effect = {
-				GEA = {
-					if = {
-						limit = { NOT = { QIE = { has_character = GEA_Wang_Kemin } } }
-						GEA_Wang_Kemin = { set_nationality = QIE }
-					}
-				}
-			}
-			QIE = {
-				add_popularity = { ideology = paternal_autocrat popularity = 0.30 }
-				set_politics = { ruling_party = paternal_autocrat elections_allowed = no }
-				promote_character = { character = GEA_Wang_Kemin ideology = kleptocracy_subtype }
-				set_party_name = {
-					ideology = paternal_autocrat
-					name = GEA_QIE_provisional_party
-					long_name = GEA_QIE_provisional_party_long
-				}
-				set_cosmetic_tag = GEA_QIE_provisional
-				remove_all_ministers = yes
-				add_ideas = {
-					QIE_Yan_Huiqing_hog_ade
-					QIE_Bai_Jianwu_for_ade
-					QIE_Gong_Xinzhan_eco_ade
-					QIE_Zhang_Luao_sec_ade
 				}
 			}
 		}
@@ -9010,6 +9038,8 @@ add_namespace = GEA_news
 
 	country_event = { #重申德国在两广的控制权
 		id = GEA.832
+		trigger = { GEA = { NOT = { has_country_flag = GEA_far_east_integrated } } }
+		
 		title = GEA.832.t
 		desc = GEA.832.d
 		picture = GFX_GEA_guangzhou_obey
@@ -9021,24 +9051,36 @@ add_namespace = GEA_news
 			name = GEA.832.a
 			ai_chance = { factor = 75 }
 			if = {
-				limit = { is_in_faction = yes NOT = { is_in_faction_with = GEA } }
-				leave_faction = yes
-			}
-			GEA = {
-				set_autonomy = {
-					target = GXC
-					autonomy_state = kr_default_puppet
-					end_wars = yes
-					end_civil_wars = yes
+				limit = {
+					hidden_trigger = { GEA = { NOT = { has_country_flag = GEA_far_east_integrated } } }
 				}
 				if = {
-					limit = { is_in_faction = yes }
-					faction_leader = { add_to_faction = GXC }
+					limit = { is_in_faction = yes NOT = { is_in_faction_with = GEA } }
+					leave_faction = yes
 				}
-			}
-			hidden_effect = {
-				clr_country_flag = GEA_china_warlord_interaction_blocked
-				clr_country_flag = GEA_german_coup_defeated
+				GEA = {
+					set_autonomy = {
+						target = GXC
+						autonomy_state = kr_default_puppet
+						end_wars = yes
+						end_civil_wars = yes
+					}
+					if = {
+						limit = { is_in_faction = yes }
+						faction_leader = { add_to_faction = GXC }
+					}
+				}
+				hidden_effect = {
+					clr_country_flag = GEA_china_warlord_interaction_blocked
+					clr_country_flag = GEA_german_coup_defeated
+				}
+				hidden_effect = {
+					GEA = {
+						set_variable = { GEA_china_gxc_attitude = 100 }
+						set_variable = { GEA_china_gxc_capital_influence = 90 }
+						set_variable = { GEA_china_gxc_military_projection = 90 }
+					}
+				}
 			}
 		}
 		option = {
@@ -9065,6 +9107,7 @@ add_namespace = GEA_news
 		}
 		fire_only_once = yes
 		trigger = {
+			GEA = { NOT = { has_country_flag = GEA_far_east_integrated } }
 			tag = GEA
 			GEA_liangguang_under_german_control_trigger = yes
 		}
@@ -9073,119 +9116,136 @@ add_namespace = GEA_news
 		option = {
 			name = GEA.833.a
 			trigger = { NOT = { has_country_flag = GEA_guangdong_merchant_government_promised } }
-			hidden_effect = {
-				#广州、海南与外国租界保持原有归属；只将受我方控制的两广其余本土交给傀儡
-				every_state = {
-					limit = {
-						OR = { state = 593 state = 594 state = 599 state = 800 state = 1012 state = 1053 state = 1054 state = 1055 state = 1056 }
-						is_controlled_by = GEA
+			if = {
+				limit = {
+					hidden_trigger = { GEA = { NOT = { has_country_flag = GEA_far_east_integrated } } }
+				}
+				hidden_effect = {
+					#广州、海南与外国租界保持原有归属；只将受我方控制的两广其余本土交给傀儡
+					every_state = {
+						limit = {
+							OR = { state = 593 state = 594 state = 599 state = 800 state = 1012 state = 1053 state = 1054 state = 1055 state = 1056 }
+							is_controlled_by = GEA
+						}
+						GXC = { transfer_state = PREV }
 					}
-					GXC = { transfer_state = PREV }
+					GXC = {
+						if = {
+							limit = { owns_state = 593 }
+							set_capital = { state = 593 remember_old_capital = no }
+						}
+						if = {
+							limit = { is_in_faction = yes NOT = { is_in_faction_with = GEA } }
+							leave_faction = yes
+						}
+					}
+					set_autonomy = {
+						target = GXC
+						autonomy_state = kr_default_puppet
+						end_wars = yes
+						end_civil_wars = yes
+					}
+					if = {
+						limit = { is_in_faction = yes GXC = { NOT = { is_in_faction_with = GEA } } }
+						faction_leader = { add_to_faction = GXC }
+					}
+					GXC = {
+						clr_country_flag = GEA_china_warlord_interaction_blocked
+						clr_country_flag = GEA_german_coup_defeated
+						set_country_flag = GEA_gxc_german_administration_established
+					}
 				}
 				GXC = {
-					if = {
-						limit = { owns_state = 593 }
-						set_capital = { state = 593 remember_old_capital = no }
+					add_popularity = { ideology = paternal_autocrat popularity = 0.30 }
+					set_politics = { ruling_party = paternal_autocrat elections_allowed = no }
+						hidden_effect = { GEA_install_claus_as_gxc_leader_effect = yes }
+					set_party_name = {
+						ideology = paternal_autocrat
+						name = GEA_paternal_autocrat_party_gxc
+						long_name = GEA_paternal_autocrat_party_gxc_long
 					}
-					if = {
-						limit = { is_in_faction = yes NOT = { is_in_faction_with = GEA } }
-						leave_faction = yes
+					set_cosmetic_tag = GXC_german
+					hidden_effect = { set_ogx_ministers = yes }
+				}
+				hidden_effect = {
+					GEA = {
+						set_variable = { GEA_china_gxc_attitude = 100 }
+						set_variable = { GEA_china_gxc_capital_influence = 90 }
+						set_variable = { GEA_china_gxc_military_projection = 90 }
 					}
 				}
-				set_autonomy = {
-					target = GXC
-					autonomy_state = kr_default_puppet
-					end_wars = yes
-					end_civil_wars = yes
-				}
-				if = {
-					limit = { is_in_faction = yes GXC = { NOT = { is_in_faction_with = GEA } } }
-					faction_leader = { add_to_faction = GXC }
-				}
-				GXC = {
-					clr_country_flag = GEA_china_warlord_interaction_blocked
-					clr_country_flag = GEA_german_coup_defeated
-					set_country_flag = GEA_gxc_german_administration_established
-				}
-			}
-			GXC = {
-				create_country_leader = {
-					name = GEA_Claus_von_Bohlen_und_Halbach
-					desc = POLITICS_CLAUS_VON_BOHLEN_UND_HALBACH_DESC
-					picture = "gfx/leaders/GEA/Portrait_GEA_Claus_von_Bohlen_und_Halbach.png"
-					expire = "1.1.1"
-					ideology = autocratic_colonial_govt_subtype
-					traits = { captain_of_industry }
-				}
-				add_popularity = { ideology = paternal_autocrat popularity = 0.30 }
-				set_politics = { ruling_party = paternal_autocrat elections_allowed = no }
-				set_party_name = {
-					ideology = paternal_autocrat
-					name = GEA_paternal_autocrat_party_gxc
-					long_name = GEA_paternal_autocrat_party_gxc_long
-				}
-				set_cosmetic_tag = GXC_german
-				hidden_effect = { set_ogx_ministers = yes }
 			}
 		}
 		option = {
 			name = GEA.833.b
 			trigger = { has_country_flag = GEA_guangdong_merchant_government_promised }
-			hidden_effect = {
-				#广州、海南与外国租界保持原有归属；只将受我方控制的两广其余本土交给傀儡
-				every_state = {
-					limit = {
-						OR = { state = 593 state = 594 state = 599 state = 800 state = 1012 state = 1053 state = 1054 state = 1055 state = 1056 }
-						is_controlled_by = GEA
-					}
-					GXC = { transfer_state = PREV }
+			if = {
+				limit = {
+					hidden_trigger = { GEA = { NOT = { has_country_flag = GEA_far_east_integrated } } }
 				}
-				GXC = {
-					if = {
-						limit = { owns_state = 593 }
-						set_capital = { state = 593 remember_old_capital = no }
-					}
-					if = {
-						limit = { is_in_faction = yes NOT = { is_in_faction_with = GEA } }
-						leave_faction = yes
-					}
-				}
-				set_autonomy = {
-					target = GXC
-					autonomy_state = kr_default_puppet
-					end_wars = yes
-					end_civil_wars = yes
-				}
-				if = {
-					limit = { is_in_faction = yes GXC = { NOT = { is_in_faction_with = GEA } } }
-					faction_leader = { add_to_faction = GXC }
-				}
-				GXC = {
-					clr_country_flag = GEA_china_warlord_interaction_blocked
-					clr_country_flag = GEA_german_coup_defeated
-					set_country_flag = GEA_gxc_merchant_administration_established
-				}
-			}
-			hidden_effect = {
-				GEA = {
-					if = {
-						limit = { NOT = { GXC = { has_character = GEA_Chen_Lianbo } } }
-						GEA_Chen_Lianbo = { set_nationality = GXC }
-					}
-				}
-			}
-			GXC = {
-				add_popularity = { ideology = market_liberal popularity = 0.30 }
-				set_politics = { ruling_party = market_liberal elections_allowed = no }
-				set_party_name = {
-					ideology = market_liberal
-					name = GXC_market_liberal_party
-					long_name = GXC_market_liberal_party_long
-				}
-				promote_character = { character = GEA_Chen_Lianbo ideology = marlib_warlordism_subtype }
 				hidden_effect = {
-					set_merchant_ministers = yes
-					GEA_Chen_Lianbo = { unit_leader_event = { id = GEA.841 days = 2 } }
+					#广州、海南与外国租界保持原有归属；只将受我方控制的两广其余本土交给傀儡
+					every_state = {
+						limit = {
+							OR = { state = 593 state = 594 state = 599 state = 800 state = 1012 state = 1053 state = 1054 state = 1055 state = 1056 }
+							is_controlled_by = GEA
+						}
+						GXC = { transfer_state = PREV }
+					}
+					GXC = {
+						if = {
+							limit = { owns_state = 593 }
+							set_capital = { state = 593 remember_old_capital = no }
+						}
+						if = {
+							limit = { is_in_faction = yes NOT = { is_in_faction_with = GEA } }
+							leave_faction = yes
+						}
+					}
+					set_autonomy = {
+						target = GXC
+						autonomy_state = kr_default_puppet
+						end_wars = yes
+						end_civil_wars = yes
+					}
+					if = {
+						limit = { is_in_faction = yes GXC = { NOT = { is_in_faction_with = GEA } } }
+						faction_leader = { add_to_faction = GXC }
+					}
+					GXC = {
+						clr_country_flag = GEA_china_warlord_interaction_blocked
+						clr_country_flag = GEA_german_coup_defeated
+						set_country_flag = GEA_gxc_merchant_administration_established
+					}
+				}
+				hidden_effect = {
+					GEA = {
+						if = {
+							limit = { NOT = { GXC = { has_character = GEA_Chen_Lianbo } } }
+							GEA_Chen_Lianbo = { set_nationality = GXC }
+						}
+					}
+				}
+				GXC = {
+					add_popularity = { ideology = market_liberal popularity = 0.30 }
+					set_politics = { ruling_party = market_liberal elections_allowed = no }
+					set_party_name = {
+						ideology = market_liberal
+						name = GXC_market_liberal_party
+						long_name = GXC_market_liberal_party_long
+					}
+					promote_character = { character = GEA_Chen_Lianbo ideology = marlib_warlordism_subtype }
+					hidden_effect = {
+						set_merchant_ministers = yes
+						GEA_Chen_Lianbo = { unit_leader_event = { id = GEA.841 days = 2 } }
+					}
+				}
+				hidden_effect = {
+					GEA = {
+						set_variable = { GEA_china_gxc_attitude = 100 }
+						set_variable = { GEA_china_gxc_capital_influence = 90 }
+						set_variable = { GEA_china_gxc_military_projection = 90 }
+					}
 				}
 			}
 		}
@@ -9218,6 +9278,7 @@ add_namespace = GEA_news
 		desc = GEA.838.d
 		fire_only_once = yes
 		trigger = {
+			GEA = { NOT = { has_country_flag = GEA_far_east_integrated } }
 			tag = GEA
 			OR = {
 				YUN = { exists = yes is_subject_of = GEA }
@@ -9233,59 +9294,71 @@ add_namespace = GEA_news
 
 		option = {
 			name = GEA.838.a
-			GEA = {
-				hidden_effect = {
-					every_state = {
-						limit = {
-							OR = { state = 325 state = 603 state = 816 state = 1051 }
-							is_controlled_by = GEA
+			if = {
+				limit = {
+					hidden_trigger = { GEA = { NOT = { has_country_flag = GEA_far_east_integrated } } }
+				}
+				GEA = {
+					hidden_effect = {
+						every_state = {
+							limit = {
+								OR = { state = 325 state = 603 state = 816 state = 1051 }
+								is_controlled_by = GEA
+							}
+							YUN = { transfer_state = PREV }
 						}
-						YUN = { transfer_state = PREV }
+						YUN = {
+							if = {
+								limit = { owns_state = 325 }
+								set_capital = { state = 325 remember_old_capital = no }
+							}
+							if = {
+								limit = { is_in_faction = yes NOT = { is_in_faction_with = GEA } }
+								leave_faction = yes
+							}
+						}
+						set_autonomy = {
+							target = YUN
+							autonomy_state = kr_default_puppet
+							end_wars = yes
+							end_civil_wars = yes
+						}
+						if = {
+							limit = { is_in_faction = yes YUN = { NOT = { is_in_faction_with = GEA } } }
+							faction_leader = { add_to_faction = YUN }
+						}
+						YUN = {
+							clr_country_flag = GEA_china_warlord_interaction_blocked
+							clr_country_flag = GEA_german_coup_defeated
+							set_country_flag = GEA_yun_puppet_administration_established
+						}
+					}
+					hidden_effect = {
+						GEA = {
+							if = {
+								limit = { NOT = { YUN = { has_character = GEA_Zhao_Yusong } } }
+								GEA_Zhao_Yusong = { set_nationality = YUN }
+							}
+						}
 					}
 					YUN = {
-						if = {
-							limit = { owns_state = 325 }
-							set_capital = { state = 325 remember_old_capital = no }
+						add_popularity = { ideology = paternal_autocrat popularity = 0.30 }
+						set_politics = { ruling_party = paternal_autocrat elections_allowed = no }
+						promote_character = { character = GEA_Zhao_Yusong ideology = kleptocracy_subtype }
+						set_party_name = {
+							ideology = paternal_autocrat
+							name = GEA_YUN_german_party
+							long_name = GEA_YUN_german_party_long
 						}
-						if = {
-							limit = { is_in_faction = yes NOT = { is_in_faction_with = GEA } }
-							leave_faction = yes
-						}
-					}
-					set_autonomy = {
-						target = YUN
-						autonomy_state = kr_default_puppet
-						end_wars = yes
-						end_civil_wars = yes
-					}
-					if = {
-						limit = { is_in_faction = yes YUN = { NOT = { is_in_faction_with = GEA } } }
-						faction_leader = { add_to_faction = YUN }
-					}
-					YUN = {
-						clr_country_flag = GEA_china_warlord_interaction_blocked
-						clr_country_flag = GEA_german_coup_defeated
-						set_country_flag = GEA_yun_puppet_administration_established
+						set_cosmetic_tag = GEA_YUN_german
 					}
 				}
 				hidden_effect = {
 					GEA = {
-						if = {
-							limit = { NOT = { YUN = { has_character = GEA_Zhao_Yusong } } }
-							GEA_Zhao_Yusong = { set_nationality = YUN }
-						}
+						set_variable = { GEA_china_yun_attitude = 100 }
+						set_variable = { GEA_china_yun_capital_influence = 90 }
+						set_variable = { GEA_china_yun_military_projection = 90 }
 					}
-				}
-				YUN = {
-					add_popularity = { ideology = paternal_autocrat popularity = 0.30 }
-					set_politics = { ruling_party = paternal_autocrat elections_allowed = no }
-					promote_character = { character = GEA_Zhao_Yusong ideology = kleptocracy_subtype }
-					set_party_name = {
-						ideology = paternal_autocrat
-						name = GEA_YUN_german_party
-						long_name = GEA_YUN_german_party_long
-					}
-					set_cosmetic_tag = GEA_YUN_german
 				}
 			}
 		}
@@ -9297,6 +9370,7 @@ add_namespace = GEA_news
 		desc = GEA.839.d
 		fire_only_once = yes
 		trigger = {
+			GEA = { NOT = { has_country_flag = GEA_far_east_integrated } }
 			tag = GEA
 			OR = {
 				SZC = { exists = yes is_subject_of = GEA }
@@ -9313,59 +9387,71 @@ add_namespace = GEA_news
 
 		option = {
 			name = GEA.839.a
-			GEA = {
-				hidden_effect = {
-					every_state = {
-						limit = {
-							OR = { state = 601 state = 605 state = 650 state = 661 state = 788 }
-							is_controlled_by = GEA
+			if = {
+				limit = {
+					hidden_trigger = { GEA = { NOT = { has_country_flag = GEA_far_east_integrated } } }
+				}
+				GEA = {
+					hidden_effect = {
+						every_state = {
+							limit = {
+								OR = { state = 601 state = 605 state = 650 state = 661 state = 788 }
+								is_controlled_by = GEA
+							}
+							SZC = { transfer_state = PREV }
 						}
-						SZC = { transfer_state = PREV }
+						SZC = {
+							if = {
+								limit = { owns_state = 605 }
+								set_capital = { state = 605 remember_old_capital = no }
+							}
+							if = {
+								limit = { is_in_faction = yes NOT = { is_in_faction_with = GEA } }
+								leave_faction = yes
+							}
+						}
+						set_autonomy = {
+							target = SZC
+							autonomy_state = kr_default_puppet
+							end_wars = yes
+							end_civil_wars = yes
+						}
+						if = {
+							limit = { is_in_faction = yes SZC = { NOT = { is_in_faction_with = GEA } } }
+							faction_leader = { add_to_faction = SZC }
+						}
+						SZC = {
+							clr_country_flag = GEA_china_warlord_interaction_blocked
+							clr_country_flag = GEA_german_coup_defeated
+							set_country_flag = GEA_szc_puppet_administration_established
+						}
+					}
+					hidden_effect = {
+						GEA = {
+							if = {
+								limit = { NOT = { SZC = { has_character = GEA_Yao_Zuobin } } }
+								GEA_Yao_Zuobin = { set_nationality = SZC }
+							}
+						}
 					}
 					SZC = {
-						if = {
-							limit = { owns_state = 605 }
-							set_capital = { state = 605 remember_old_capital = no }
+						add_popularity = { ideology = paternal_autocrat popularity = 0.30 }
+						set_politics = { ruling_party = paternal_autocrat elections_allowed = no }
+						promote_character = { character = GEA_Yao_Zuobin ideology = pataut_police_state_subtype }
+						set_party_name = {
+							ideology = paternal_autocrat
+							name = GEA_SZC_german_party
+							long_name = GEA_SZC_german_party_long
 						}
-						if = {
-							limit = { is_in_faction = yes NOT = { is_in_faction_with = GEA } }
-							leave_faction = yes
-						}
-					}
-					set_autonomy = {
-						target = SZC
-						autonomy_state = kr_default_puppet
-						end_wars = yes
-						end_civil_wars = yes
-					}
-					if = {
-						limit = { is_in_faction = yes SZC = { NOT = { is_in_faction_with = GEA } } }
-						faction_leader = { add_to_faction = SZC }
-					}
-					SZC = {
-						clr_country_flag = GEA_china_warlord_interaction_blocked
-						clr_country_flag = GEA_german_coup_defeated
-						set_country_flag = GEA_szc_puppet_administration_established
+						set_cosmetic_tag = GEA_SZC_german
 					}
 				}
 				hidden_effect = {
 					GEA = {
-						if = {
-							limit = { NOT = { SZC = { has_character = GEA_Yao_Zuobin } } }
-							GEA_Yao_Zuobin = { set_nationality = SZC }
-						}
+						set_variable = { GEA_china_szc_attitude = 100 }
+						set_variable = { GEA_china_szc_capital_influence = 90 }
+						set_variable = { GEA_china_szc_military_projection = 90 }
 					}
-				}
-				SZC = {
-					add_popularity = { ideology = paternal_autocrat popularity = 0.30 }
-					set_politics = { ruling_party = paternal_autocrat elections_allowed = no }
-					promote_character = { character = GEA_Yao_Zuobin ideology = pataut_police_state_subtype }
-					set_party_name = {
-						ideology = paternal_autocrat
-						name = GEA_SZC_german_party
-						long_name = GEA_SZC_german_party_long
-					}
-					set_cosmetic_tag = GEA_SZC_german
 				}
 			}
 		}
@@ -9377,6 +9463,7 @@ add_namespace = GEA_news
 		desc = GEA.847.d
 		fire_only_once = yes
 		trigger = {
+			GEA = { NOT = { has_country_flag = GEA_far_east_integrated } }
 			tag = GEA
 			OR = {
 				XSM = { exists = yes is_subject_of = GEA }
@@ -9395,65 +9482,66 @@ add_namespace = GEA_news
 
 		option = {
 			name = GEA.847.a
-			hidden_effect = {
-				every_state = {
-					limit = {
-						OR = { state = 283 state = 348 state = 353 state = 604 state = 616 state = 621 state = 774 }
-						is_controlled_by = GEA
-					}
-					XSM = { transfer_state = PREV }
+			if = {
+				limit = {
+					hidden_trigger = { GEA = { NOT = { has_country_flag = GEA_far_east_integrated } } }
 				}
-				XSM = {
-					if = {
-						limit = { owns_state = 348 }
-						set_capital = { state = 348 remember_old_capital = no }
-					}
-					if = {
-						limit = { is_in_faction = yes NOT = { is_in_faction_with = GEA } }
-						leave_faction = yes
-					}
-				}
-				set_autonomy = {
-					target = XSM
-					autonomy_state = kr_default_puppet
-					end_wars = yes
-					end_civil_wars = yes
-				}
-				if = {
-					limit = { is_in_faction = yes XSM = { NOT = { is_in_faction_with = GEA } } }
-					faction_leader = { add_to_faction = XSM }
-				}
-				XSM = {
-					clr_country_flag = GEA_china_warlord_interaction_blocked
-					clr_country_flag = GEA_german_coup_defeated
-					set_country_flag = GEA_xsm_puppet_administration_established
-				}
-			}
-			hidden_effect = {
-				GEA = {
-					if = {
-						limit = { NOT = { XSM = { has_character = GEA_Ma_Hongkui } } }
-						if = {
-							limit = { NOT = { has_character = GEA_Ma_Hongkui } }
-							recruit_character = GEA_Ma_Hongkui
-						}
-						GEA_Ma_Hongkui = { set_nationality = XSM }
-					}
-				}
-			}
-			XSM = {
-				add_popularity = { ideology = paternal_autocrat popularity = 0.30 }
-				set_politics = { ruling_party = paternal_autocrat elections_allowed = no }
-				promote_character = { character = GEA_Ma_Hongkui ideology = pataut_warlordism_subtype }
-				set_party_name = {
-					ideology = paternal_autocrat
-					name = GEA_XSM_german_party
-					long_name = GEA_XSM_german_party_long
-				}
-				set_cosmetic_tag = GEA_XSM_german
 				hidden_effect = {
-					remove_ideas_with_trait = head_of_government
-					add_ideas = XSM_Ma_Hongkui_hog_pau
+					every_state = {
+						limit = {
+							OR = { state = 283 state = 348 state = 353 state = 604 state = 616 state = 621 state = 774 }
+							is_controlled_by = GEA
+						}
+						XSM = { transfer_state = PREV }
+					}
+					XSM = {
+						if = {
+							limit = { owns_state = 348 }
+							set_capital = { state = 348 remember_old_capital = no }
+						}
+						if = {
+							limit = { is_in_faction = yes NOT = { is_in_faction_with = GEA } }
+							leave_faction = yes
+						}
+					}
+					set_autonomy = {
+						target = XSM
+						autonomy_state = kr_default_puppet
+						end_wars = yes
+						end_civil_wars = yes
+					}
+					if = {
+						limit = { is_in_faction = yes XSM = { NOT = { is_in_faction_with = GEA } } }
+						faction_leader = { add_to_faction = XSM }
+					}
+					XSM = {
+						clr_country_flag = GEA_china_warlord_interaction_blocked
+						clr_country_flag = GEA_german_coup_defeated
+						set_country_flag = GEA_xsm_puppet_administration_established
+					}
+				}
+				hidden_effect = {
+					GEA = {
+						if = {
+							limit = { NOT = { XSM = { has_character = GEA_Ma_Hongkui } } }
+							GEA_Ma_Hongkui = { set_nationality = XSM }
+						}
+					}
+				}
+				XSM = {
+					add_popularity = { ideology = paternal_autocrat popularity = 0.30 }
+					set_politics = { ruling_party = paternal_autocrat elections_allowed = no }
+					promote_character = { character = GEA_Ma_Hongkui ideology = pataut_warlordism_subtype }
+					set_party_name = {
+						ideology = paternal_autocrat
+						name = GEA_XSM_german_party
+						long_name = GEA_XSM_german_party_long
+					}
+					set_cosmetic_tag = GEA_XSM_german
+					hidden_effect = {
+						remove_ideas_with_trait = head_of_government
+						add_ideas = XSM_Ma_Hongkui_hog_pau
+					}
 				}
 			}
 		}
@@ -9490,6 +9578,7 @@ add_namespace = GEA_news
 		is_triggered_only = yes
 		fire_only_once = yes
 		trigger = {
+			GEA = { NOT = { has_country_flag = GEA_far_east_integrated } }
 			tag = YUN
 			country_exists = GEA
 			is_subject = no
@@ -9499,24 +9588,36 @@ add_namespace = GEA_news
 			name = GEA.842.a
 			ai_chance = { factor = 75 }
 			if = {
-				limit = { is_in_faction = yes NOT = { is_in_faction_with = GEA } }
-				leave_faction = yes
-			}
-			GEA = {
-				set_autonomy = {
-					target = YUN
-					autonomy_state = kr_default_puppet
-					end_wars = yes
-					end_civil_wars = yes
+				limit = {
+					hidden_trigger = { GEA = { NOT = { has_country_flag = GEA_far_east_integrated } } }
 				}
 				if = {
-					limit = { is_in_faction = yes }
-					faction_leader = { add_to_faction = YUN }
+					limit = { is_in_faction = yes NOT = { is_in_faction_with = GEA } }
+					leave_faction = yes
 				}
-			}
-			hidden_effect = {
-				clr_country_flag = GEA_china_warlord_interaction_blocked
-				clr_country_flag = GEA_german_coup_defeated
+				GEA = {
+					set_autonomy = {
+						target = YUN
+						autonomy_state = kr_default_puppet
+						end_wars = yes
+						end_civil_wars = yes
+					}
+					if = {
+						limit = { is_in_faction = yes }
+						faction_leader = { add_to_faction = YUN }
+					}
+				}
+				hidden_effect = {
+					clr_country_flag = GEA_china_warlord_interaction_blocked
+					clr_country_flag = GEA_german_coup_defeated
+				}
+				hidden_effect = {
+					GEA = {
+						set_variable = { GEA_china_yun_attitude = 100 }
+						set_variable = { GEA_china_yun_capital_influence = 90 }
+						set_variable = { GEA_china_yun_military_projection = 90 }
+					}
+				}
 			}
 		}
 		option = {
@@ -9542,6 +9643,7 @@ add_namespace = GEA_news
 		is_triggered_only = yes
 		fire_only_once = yes
 		trigger = {
+			GEA = { NOT = { has_country_flag = GEA_far_east_integrated } }
 			tag = SZC
 			country_exists = GEA
 			is_subject = no
@@ -9551,24 +9653,36 @@ add_namespace = GEA_news
 			name = GEA.843.a
 			ai_chance = { factor = 75 }
 			if = {
-				limit = { is_in_faction = yes NOT = { is_in_faction_with = GEA } }
-				leave_faction = yes
-			}
-			GEA = {
-				set_autonomy = {
-					target = SZC
-					autonomy_state = kr_default_puppet
-					end_wars = yes
-					end_civil_wars = yes
+				limit = {
+					hidden_trigger = { GEA = { NOT = { has_country_flag = GEA_far_east_integrated } } }
 				}
 				if = {
-					limit = { is_in_faction = yes }
-					faction_leader = { add_to_faction = SZC }
+					limit = { is_in_faction = yes NOT = { is_in_faction_with = GEA } }
+					leave_faction = yes
 				}
-			}
-			hidden_effect = {
-				clr_country_flag = GEA_china_warlord_interaction_blocked
-				clr_country_flag = GEA_german_coup_defeated
+				GEA = {
+					set_autonomy = {
+						target = SZC
+						autonomy_state = kr_default_puppet
+						end_wars = yes
+						end_civil_wars = yes
+					}
+					if = {
+						limit = { is_in_faction = yes }
+						faction_leader = { add_to_faction = SZC }
+					}
+				}
+				hidden_effect = {
+					clr_country_flag = GEA_china_warlord_interaction_blocked
+					clr_country_flag = GEA_german_coup_defeated
+				}
+				hidden_effect = {
+					GEA = {
+						set_variable = { GEA_china_szc_attitude = 100 }
+						set_variable = { GEA_china_szc_capital_influence = 90 }
+						set_variable = { GEA_china_szc_military_projection = 90 }
+					}
+				}
 			}
 		}
 		option = {
@@ -9637,6 +9751,7 @@ add_namespace = GEA_news
 		desc = GEA.846.d
 		fire_only_once = yes
 		trigger = {
+			GEA = { NOT = { has_country_flag = GEA_far_east_integrated } }
 			tag = GEA
 			controls_state = 613
 			controls_state = 598
@@ -9660,142 +9775,166 @@ add_namespace = GEA_news
 		option = {
 			name = GEA.846.a
 			ai_chance = { factor = 70 }
-			hidden_effect = {
-				every_state = {
-					limit = {
-						OR = { state = 613 state = 598 state = 1047 state = 606 state = 1014 state = 1050 state = 596 state = 1067 state = 1068 state = 1069 state = 600 state = 1044 state = 1045 state = 595 state = 1046 state = 1066 }
-						is_controlled_by = GEA
-					}
-					LEP = { transfer_state = PREV }
+			if = {
+				limit = {
+					hidden_trigger = { GEA = { NOT = { has_country_flag = GEA_far_east_integrated } } }
 				}
-				every_state = {
-					limit = {
-						OR = { state = 602 state = 1013 state = 1049 state = 1052 }
-						is_owned_by = GEA
-					}
-					LEP = { transfer_state = PREV }
-				}
-				LEP = {
-					set_capital = { state = 613 remember_old_capital = no }
-					if = {
-						limit = { is_in_faction = yes NOT = { is_in_faction_with = GEA } }
-						leave_faction = yes
-					}
-				}
-				set_autonomy = {
-					target = LEP
-					autonomy_state = kr_default_puppet
-					end_wars = yes
-					end_civil_wars = yes
-				}
-				if = {
-					limit = { is_in_faction = yes LEP = { NOT = { is_in_faction_with = GEA } } }
-					faction_leader = { add_to_faction = LEP }
-				}
-				LEP = {
-					clr_country_flag = GEA_china_warlord_interaction_blocked
-					clr_country_flag = GEA_german_coup_defeated
-					clr_country_flag = GEA_german_coup_pending
-					set_country_flag = GEA_east_china_puppet_administration_established
-				}
-			}
-			LEP = {
 				hidden_effect = {
-					remove_all_ministers = yes
-					remove_ideas = LEP_german_government
-					clr_country_flag = LEP_AOG_rule
-					set_country_flag = LEP_qi_takes_control
-					add_ideas = {
-						LEP_Tian_Wenbing_hog_pau
-						LEP_Ma_Yuren_for_pau
-						LEP_Ding_Wenjiang_eco_sco
-						LEP_Zhang_Taiyan_sec_ade
+					every_state = {
+						limit = {
+							OR = { state = 613 state = 598 state = 1047 state = 606 state = 1014 state = 1050 state = 596 state = 1067 state = 1068 state = 1069 state = 600 state = 1044 state = 1045 state = 595 state = 1046 state = 1066 }
+							is_controlled_by = GEA
+						}
+						LEP = { transfer_state = PREV }
+					}
+					every_state = {
+						limit = {
+							OR = { state = 602 state = 1013 state = 1049 state = 1052 }
+							is_owned_by = GEA
+						}
+						LEP = { transfer_state = PREV }
+					}
+					LEP = {
+						set_capital = { state = 613 remember_old_capital = no }
+						if = {
+							limit = { is_in_faction = yes NOT = { is_in_faction_with = GEA } }
+							leave_faction = yes
+						}
+					}
+					set_autonomy = {
+						target = LEP
+						autonomy_state = kr_default_puppet
+						end_wars = yes
+						end_civil_wars = yes
+					}
+					if = {
+						limit = { is_in_faction = yes LEP = { NOT = { is_in_faction_with = GEA } } }
+						faction_leader = { add_to_faction = LEP }
+					}
+					LEP = {
+						clr_country_flag = GEA_china_warlord_interaction_blocked
+						clr_country_flag = GEA_german_coup_defeated
+						clr_country_flag = GEA_german_coup_pending
+						set_country_flag = GEA_east_china_puppet_administration_established
 					}
 				}
-				create_country_leader = {
-					name = "Qi Xieyuan"
-					desc = POLITICS_LEP_QI_XIEYUAN_DESC
-					picture = "gfx/leaders/LEP/Portrait_LEP_Qi_Xieyuan.png"
-					expire = "1.1.1"
-					ideology = pataut_warlordism_subtype
+				LEP = {
+					hidden_effect = {
+						remove_all_ministers = yes
+						remove_ideas = LEP_german_government
+						clr_country_flag = LEP_AOG_rule
+						set_country_flag = LEP_qi_takes_control
+						add_ideas = {
+							LEP_Tian_Wenbing_hog_pau
+							LEP_Ma_Yuren_for_pau
+							LEP_Ding_Wenjiang_eco_sco
+							LEP_Zhang_Taiyan_sec_ade
+						}
+					}
+					create_country_leader = {
+						name = "Qi Xieyuan"
+						desc = POLITICS_LEP_QI_XIEYUAN_DESC
+						picture = "gfx/leaders/LEP/Portrait_LEP_Qi_Xieyuan.png"
+						expire = "1.1.1"
+						ideology = pataut_warlordism_subtype
+					}
+					add_popularity = { ideology = paternal_autocrat popularity = 0.30 }
+					set_politics = { ruling_party = paternal_autocrat elections_allowed = no }
+					set_party_name = {
+						ideology = paternal_autocrat
+						name = LEP_paternal_autocrat_party
+						long_name = LEP_paternal_autocrat_party_long
+					}
+					set_cosmetic_tag = LEP_NAN
 				}
-				add_popularity = { ideology = paternal_autocrat popularity = 0.30 }
-				set_politics = { ruling_party = paternal_autocrat elections_allowed = no }
-				set_party_name = {
-					ideology = paternal_autocrat
-					name = LEP_paternal_autocrat_party
-					long_name = LEP_paternal_autocrat_party_long
+				hidden_effect = {
+					GEA = {
+						set_variable = { GEA_china_lep_attitude = 100 }
+						set_variable = { GEA_china_lep_capital_influence = 90 }
+						set_variable = { GEA_china_lep_military_projection = 90 }
+					}
 				}
-				set_cosmetic_tag = LEP_NAN
 			}
 		}
 		option = {
 			name = GEA.846.b
 			ai_chance = { factor = 30 }
-			hidden_effect = {
-				every_state = {
-					limit = {
-						OR = { state = 613 state = 598 state = 1047 state = 606 state = 1014 state = 1050 state = 596 state = 1067 state = 1068 state = 1069 state = 600 state = 1044 state = 1045 state = 595 state = 1046 state = 1066 }
-						is_controlled_by = GEA
-					}
-					LEP = { transfer_state = PREV }
+			if = {
+				limit = {
+					hidden_trigger = { GEA = { NOT = { has_country_flag = GEA_far_east_integrated } } }
 				}
-				every_state = {
-					limit = {
-						OR = { state = 602 state = 1013 state = 1049 state = 1052 }
-						is_owned_by = GEA
-					}
-					LEP = { transfer_state = PREV }
-				}
-				LEP = {
-					set_capital = { state = 613 remember_old_capital = no }
-					if = {
-						limit = { is_in_faction = yes NOT = { is_in_faction_with = GEA } }
-						leave_faction = yes
-					}
-				}
-				set_autonomy = {
-					target = LEP
-					autonomy_state = kr_default_puppet
-					end_wars = yes
-					end_civil_wars = yes
-				}
-				if = {
-					limit = { is_in_faction = yes LEP = { NOT = { is_in_faction_with = GEA } } }
-					faction_leader = { add_to_faction = LEP }
-				}
-				LEP = {
-					clr_country_flag = GEA_china_warlord_interaction_blocked
-					clr_country_flag = GEA_german_coup_defeated
-					clr_country_flag = GEA_german_coup_pending
-					set_country_flag = GEA_east_china_puppet_administration_established
-				}
-			}
-			LEP = {
 				hidden_effect = {
-					remove_all_ministers = yes
-					LEP_SETUP_AOG = yes
-					set_country_flag = LEP_AOG_rule
-					add_ideas = {
-						AOG_Alexander_von_Falkenhausen_hog_ade
-						AOG_He_Fengshang_for_ade
-						AOG_John_Rabe_eco_ade
-						AOG_Lei_Zhong_sec_ade
+					every_state = {
+						limit = {
+							OR = { state = 613 state = 598 state = 1047 state = 606 state = 1014 state = 1050 state = 596 state = 1067 state = 1068 state = 1069 state = 600 state = 1044 state = 1045 state = 595 state = 1046 state = 1066 }
+							is_controlled_by = GEA
+						}
+						LEP = { transfer_state = PREV }
+					}
+					every_state = {
+						limit = {
+							OR = { state = 602 state = 1013 state = 1049 state = 1052 }
+							is_owned_by = GEA
+						}
+						LEP = { transfer_state = PREV }
+					}
+					LEP = {
+						set_capital = { state = 613 remember_old_capital = no }
+						if = {
+							limit = { is_in_faction = yes NOT = { is_in_faction_with = GEA } }
+							leave_faction = yes
+						}
+					}
+					set_autonomy = {
+						target = LEP
+						autonomy_state = kr_default_puppet
+						end_wars = yes
+						end_civil_wars = yes
+					}
+					if = {
+						limit = { is_in_faction = yes LEP = { NOT = { is_in_faction_with = GEA } } }
+						faction_leader = { add_to_faction = LEP }
+					}
+					LEP = {
+						clr_country_flag = GEA_china_warlord_interaction_blocked
+						clr_country_flag = GEA_german_coup_defeated
+						clr_country_flag = GEA_german_coup_pending
+						set_country_flag = GEA_east_china_puppet_administration_established
 					}
 				}
-				add_popularity = { ideology = market_liberal popularity = 0.30 }
-				set_politics = { ruling_party = market_liberal elections_allowed = no }
-				set_party_name = {
-					ideology = market_liberal
-					name = LEP_market_liberal_party
-					long_name = LEP_market_liberal_party_long
+				LEP = {
+					hidden_effect = {
+						remove_all_ministers = yes
+						LEP_SETUP_AOG = yes
+						set_country_flag = LEP_AOG_rule
+						add_ideas = {
+							AOG_Alexander_von_Falkenhausen_hog_ade
+							AOG_He_Fengshang_for_ade
+							AOG_John_Rabe_eco_ade
+							AOG_Lei_Zhong_sec_ade
+						}
+					}
+					add_popularity = { ideology = market_liberal popularity = 0.30 }
+					set_politics = { ruling_party = market_liberal elections_allowed = no }
+					set_party_name = {
+						ideology = market_liberal
+						name = LEP_market_liberal_party
+						long_name = LEP_market_liberal_party_long
+					}
+					set_party_name = {
+						ideology = authoritarian_democrat
+						name = LEP_authoritarian_democrat_party_aog
+						long_name = LEP_authoritarian_democrat_party_aog_long
+					}
+					set_cosmetic_tag = AOG
 				}
-				set_party_name = {
-					ideology = authoritarian_democrat
-					name = LEP_authoritarian_democrat_party_aog
-					long_name = LEP_authoritarian_democrat_party_aog_long
+				hidden_effect = {
+					GEA = {
+						set_variable = { GEA_china_lep_attitude = 100 }
+						set_variable = { GEA_china_lep_capital_influence = 90 }
+						set_variable = { GEA_china_lep_military_projection = 90 }
+					}
 				}
-				set_cosmetic_tag = AOG
 			}
 		}
 	}
@@ -10843,49 +10982,6 @@ add_namespace = GEA_news
 		}
 	}
 
-	country_event = { #舍尔纳：完全控制最终宣称范围后授予核心
-		id = GEA.12002
-		hidden = yes
-		fire_only_once = yes
-
-		trigger = {
-			tag = GEA
-			has_country_flag = GEA_Governor_Schorner_flag
-			has_completed_focus = GEA_Let_loose_the_blood-stained_black_eagle
-			NOT = {
-				any_state = {
-					OR = {
-						is_china_claim_area = yes
-						is_mongolia = yes
-						region = 154
-						is_core_of = JAP
-						region = 191
-						is_southeast_asia = yes
-						is_russian_far_east = yes
-					}
-					NOT = { is_fully_controlled_by = ROOT }
-				}
-			}
-		}
-
-		immediate = {
-			log = "[GetDateText]: [Root.GetName]: event GEA.12002: Schorner claims become cores"
-			every_state = {
-				limit = {
-					OR = {
-						is_china_claim_area = yes
-						is_mongolia = yes
-						region = 154
-						is_core_of = JAP
-						region = 191
-						is_southeast_asia = yes
-						is_russian_far_east = yes
-					}
-				}
-				add_core_of = ROOT
-			}
-		}
-	}
 
 	country_event = { #北京立场变化：延迟两天通知德属东亚
 		id = GEA.12003
@@ -10950,6 +11046,7 @@ add_namespace = GEA_news
 		hidden = yes
 		fire_only_once = yes
 		trigger = {
+			GEA = { NOT = { has_country_flag = GEA_far_east_integrated } }
 			tag = GEA
 			LEP = {
 				exists = yes
@@ -10961,11 +11058,14 @@ add_namespace = GEA_news
 			owns_state = 1052
 		}
 		immediate = {
-			LEP = {
-				transfer_state = 602
-				transfer_state = 1013
-				transfer_state = 1049
-				transfer_state = 1052
+			if = {
+				limit = { GEA = { NOT = { has_country_flag = GEA_far_east_integrated } } }
+				LEP = {
+					transfer_state = 602
+					transfer_state = 1013
+					transfer_state = 1049
+					transfer_state = 1052
+				}
 			}
 		}
 	}
@@ -11249,3 +11349,24 @@ add_namespace = GEA_news
 		}
 	}
 
+
+country_event = { #旧存档：修复德国两广政府的克劳斯角色与家长制领袖身份
+	id = GEA.12009
+	hidden = yes
+	fire_only_once = yes
+	trigger = {
+		tag = GXC
+		is_subject_of = GEA
+		has_country_flag = GEA_gxc_german_administration_established
+		NOT = { has_country_leader = { character = GEA_Claus_von_Bohlen_und_Halbach ruling_only = yes } }
+		OR = {
+			has_character = GEA_Claus_von_Bohlen_und_Halbach
+			GEA = { has_character = GEA_Claus_von_Bohlen_und_Halbach }
+		}
+		GEA = { NOT = { has_country_leader = { character = GEA_Claus_von_Bohlen_und_Halbach ruling_only = yes } } }
+	}
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event GEA.12009: repair GXC Claus character and paternal-autocrat leader role"
+		GEA_install_claus_as_gxc_leader_effect = yes
+	}
+}

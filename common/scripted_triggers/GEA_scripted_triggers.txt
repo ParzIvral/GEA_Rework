@@ -1,5 +1,49 @@
+
+#固定采用当前KX外阿穆尔开局的12个地区，不随其后续领土变化。
+GEA_transamur_initial_states_trigger = {
+	OR = {
+		state = 408
+		state = 409
+		state = 560
+		state = 561
+		state = 562
+		state = 563
+		state = 564
+		state = 565
+		state = 574
+		state = 637
+		state = 657
+		state = 1246
+	}
+}
+
+#舍尔纳最终宣称与核心奖励的地区范围。
+GEA_schorner_far_east_claim_area_trigger = {
+	NOT = { state = 858 } #达旺属于南亚，不纳入远东整合
+	OR = {
+		is_china_claim_area = yes
+		is_mongolia = yes
+		region = 154
+		is_core_of = JAP
+		region = 191
+		is_southeast_asia = yes
+		GEA_transamur_initial_states_trigger = yes
+	}
+}
+
+#地区必须由德属东亚或其直属傀儡拥有，军事占领与普通盟友不计入。
+GEA_or_subject_owns_state_trigger = {
+	owner = {
+		OR = {
+			tag = GEA
+			is_subject_of = GEA
+		}
+	}
+}
+
 #在华北国家作用域判断当前反租界立场；退让解决旧立场，保留新反德政策与政权变动判断。
 GEA_zhili_anti_concession_trigger = {
+	NOT = { is_subject_of = GEA }
 	OR = {
 		AND = {
 			has_country_flag = wu_intervenes_proANQ
@@ -157,6 +201,7 @@ GEA_china_warlord_eligible_trigger = { #能互动的军阀
 
 GEA_china_warlord_cannot_interact_trigger = { #能互动的
 	custom_trigger_tooltip = {
+		NOT = { is_subject_of = GEA }
 		tooltip = GEA_china_warlord_cannot_interact_tt
 		OR = {
 			original_tag = ANQ #新皖系军阀
@@ -181,36 +226,41 @@ GEA_china_warlord_can_interact_trigger = {#即时判断
 GEA_china_warlord_positive_cooperation_trigger = {#积极合作的军阀判定
 	custom_trigger_tooltip = {
 		tooltip = GEA_china_warlord_positive_cooperation_tt
-		NOT = { GEA_china_warlord_right_kmt_government_trigger = yes }
-		NOT = {
-			OR = {
-				has_country_flag = GEA_china_warlord_interaction_blocked #禁止互动
-				has_country_flag = GEA_german_coup_defeated #德国政变失败
-			}
-		}
 		OR = {
-			original_tag = LEP #德国人的狗
+			is_subject_of = GEA
 			AND = {
-				original_tag = GXC
-				has_country_leader = { name = "Chen Lianbo" ruling_only = yes } #老霸道了
-			}
-			AND = {
-				original_tag = YUN
-				has_country_leader = { name = "Tang Jiyao" ruling_only = yes } #弱智大唐
-			}
-			AND = {
-				original_tag = QIE
-				has_country_flag = wu_intervenes_proLEP #正式支持南京
-			}
-			AND = {
-				original_tag = SZC
-				NOT = { has_country_leader = { name = "Chen Jiongming" ruling_only = yes } } #联省逼
-				NOT = { has_country_leader = { name = "Lü Chao" ruling_only = yes } } #吕超
-				NOT = { has_completed_focus = SZC_Eradicate_The_Concessions }
+				NOT = { GEA_china_warlord_right_kmt_government_trigger = yes }
+				NOT = {
+					OR = {
+						has_country_flag = GEA_china_warlord_interaction_blocked #禁止互动
+						has_country_flag = GEA_german_coup_defeated #德国政变失败
+					}
+				}
 				OR = {
-					has_country_leader = { name = "Yang Sen" ruling_only = yes } #杨森
-					has_country_leader = { name = "Liu Cunhou" ruling_only = yes } #留存后
-					has_completed_focus = SZC_Contact_An_Old_Ally
+					original_tag = LEP #德国人的狗
+					AND = {
+						original_tag = GXC
+						has_country_leader = { name = "Chen Lianbo" ruling_only = yes } #老霸道了
+					}
+					AND = {
+						original_tag = YUN
+						has_country_leader = { name = "Tang Jiyao" ruling_only = yes } #弱智大唐
+					}
+					AND = {
+						original_tag = QIE
+						has_country_flag = wu_intervenes_proLEP #正式支持南京
+					}
+					AND = {
+						original_tag = SZC
+						NOT = { has_country_leader = { name = "Chen Jiongming" ruling_only = yes } } #联省逼
+						NOT = { has_country_leader = { name = "Lü Chao" ruling_only = yes } } #吕超
+						NOT = { has_completed_focus = SZC_Eradicate_The_Concessions }
+						OR = {
+							has_country_leader = { name = "Yang Sen" ruling_only = yes } #杨森
+							has_country_leader = { name = "Liu Cunhou" ruling_only = yes } #留存后
+							has_completed_focus = SZC_Contact_An_Old_Ally
+						}
+					}
 				}
 			}
 		}
@@ -426,6 +476,7 @@ GEA_liangguang_expedition_target_trigger = {
 
 #国民党右派实际执政身份，不因加入其阵营而改变国内合作态度
 GEA_china_warlord_right_kmt_government_trigger = {
+	NOT = { is_subject_of = GEA }
 	OR = {
 		has_country_leader = { name = "Li Zongren" ruling_only = yes }
 		has_country_leader = { name = "Zhu Peide" ruling_only = yes }

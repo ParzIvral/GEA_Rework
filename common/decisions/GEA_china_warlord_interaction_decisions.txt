@@ -1,6 +1,6 @@
 GEA_china_warlord_interaction = {
 	GEA_warlord_extend_german_loan = {
-		icon = GFX_decision_generic_political_reform
+		icon = GFX_decision_generic_political_discourse
 		allowed = { GEA_china_warlord_eligible_trigger = yes }
 		priority = 9003
 		cost = 0
@@ -77,7 +77,7 @@ GEA_china_warlord_interaction = {
 	}
 
 	GEA_warlord_repay_german_loan_early = {
-		icon = GFX_decision_generic_political_reform
+		icon = GFX_decision_generic_political_discourse
 		allowed = { GEA_china_warlord_eligible_trigger = yes }
 		priority = 9001
 		cost = 0
@@ -125,7 +125,7 @@ GEA_china_warlord_interaction = {
 	}
 
 	GEA_warlord_default_on_german_loan = {
-		icon = GFX_decision_generic_political_reform
+		icon = GFX_decision_generic_political_discourse
 		allowed = { GEA_china_warlord_eligible_trigger = yes }
 		priority = 9000
 		visible = { has_country_flag = GEA_german_loan_active }
@@ -469,7 +469,7 @@ GEA_china_warlord_interaction = {
 
 
 	GEA_warlord_expel_german_investment = {
-		icon = GFX_decision_generic_political_reform
+		icon = GFX_decision_generic_political_discourse
 		allowed = { GEA_china_warlord_eligible_trigger = yes }
 
 		visible = {
@@ -548,7 +548,7 @@ GEA_china_warlord_interaction = {
 		}
 	}
 	GEA_warlord_restrict_german_investment = {
-		icon = GFX_decision_generic_political_reform
+		icon = GFX_decision_generic_political_discourse
 		allowed = { GEA_china_warlord_eligible_trigger = yes }
 
 		visible = {
@@ -765,7 +765,7 @@ GEA_china_warlord_interaction = {
 	}
 
 	GEA_warlord_investigate_german_enterprises = {
-		icon = GFX_decision_generic_political_reform
+		icon = GFX_decision_generic_political_discourse
 		allowed = { GEA_china_warlord_eligible_trigger = yes }
 
 		visible = {
@@ -982,7 +982,7 @@ GEA_china_warlord_interaction = {
 	}
 
 	GEA_warlord_dismiss_german_advisers = {
-		icon = GFX_decision_generic_political_reform
+		icon = GFX_decision_generic_political_discourse
 		allowed = { GEA_china_warlord_eligible_trigger = yes }
 
 		visible = {

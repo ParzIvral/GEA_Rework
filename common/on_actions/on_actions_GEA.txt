@@ -98,9 +98,20 @@ on_actions = {
 					GEA_refresh_lep_low_yield_costs_effect = yes
 					clr_country_flag = Dei_OPEN
 					clr_country_flag = Dei_WAR_OPEN
-					set_rule = {
-						can_not_declare_war = yes
-						can_decline_call_to_war = no
+					if = {
+						limit = {
+							OR = {
+								has_country_flag = GEA_war_rules_unrestricted
+								has_idea = GEA_colonial_question_unrestricted
+								has_idea = GEA_colonial_question_heye_unrestricted
+								has_idea = GEA_colonial_question_heye_2_unrestricted
+								has_idea = GEA_colonial_question_heye_3_unrestricted
+							}
+						}
+						set_rule = { can_not_declare_war = no can_decline_call_to_war = yes }
+					}
+					else = {
+						set_rule = { can_not_declare_war = yes can_decline_call_to_war = no }
 					}
 				}
 				if = {

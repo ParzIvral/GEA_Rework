@@ -3700,6 +3700,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Fidelity_Service"
+			add_political_power = 100
 			custom_effect_tooltip = GEA_Fidelity_Service_effect_tt
 			show_ideas_tooltip = GEA_krupp2
 			show_ideas_tooltip = GEA_aeg_2
@@ -5134,9 +5135,9 @@ focus_tree = {
 			custom_effect_tooltip = GEA_Dressed_in_a_navy_uniform_marines_tt
 			hidden_effect = {
 				if = {
-					limit = { NOT = { has_template = "GEA_marine_division" } }
+					limit = { NOT = { has_template = "Marine Division" } }
 					division_template = {
-						name = "GEA_marine_division"
+						name = "Marine Division"
 						division_names_group = GEA_MAR_02
 						regiments = {
 							marine = { x = 0 y = 0 }
@@ -5157,11 +5158,11 @@ focus_tree = {
 				}
 				capital_scope = {
 					create_unit = {
-						division = "division_template = \"GEA_marine_division\" start_equipment_factor = 1 start_manpower_factor = 1"
+						division = "division_template = \"Marine Division\" start_equipment_factor = 1 start_manpower_factor = 1"
 						owner = GEA
 					}
 					create_unit = {
-						division = "division_template = \"GEA_marine_division\" start_equipment_factor = 1 start_manpower_factor = 1"
+						division = "division_template = \"Marine Division\" start_equipment_factor = 1 start_manpower_factor = 1"
 						owner = GEA
 					}
 				}
@@ -5408,9 +5409,9 @@ focus_tree = {
 					equipment = {
 						type = ship_hull_heavy_3
 						creator = GEA
-						version_name = "GEA_BB_CLASS_1940_ORDERS"
+						version_name = "Battleship 1940"
 					}
-					name = GEA_SHIP_DOGGERLAND_KRONPRINZ
+					name = "Kronprinz"
 					requested_factories = 5
 					progress = 0.6
 					amount = 1
@@ -5419,9 +5420,9 @@ focus_tree = {
 					equipment = {
 						type = ship_hull_heavy_3
 						creator = GEA
-						version_name = "GEA_BB_CLASS_1940_ORDERS"
+						version_name = "Battleship 1940"
 					}
-					name = GEA_SHIP_DOGGERLAND_KONIG
+					name = "König"
 					requested_factories = 5
 					progress = 0.45
 					amount = 1
@@ -5625,9 +5626,9 @@ focus_tree = {
 			custom_effect_tooltip = GEA_Strength_is_the_foundation_of_an_empire_units_tt
 			hidden_effect = {
 				if = {
-					limit = { NOT = { has_template = "GEA_schorner_elite_infantry_division" } }
+					limit = { NOT = { has_template = "Elite Infantry Division" } }
 					division_template = {
-						name = "GEA_schorner_elite_infantry_division"
+						name = "Elite Infantry Division"
 						regiments = {
 							infantry = { x = 0 y = 0 }
 							infantry = { x = 0 y = 1 }
@@ -5651,27 +5652,27 @@ focus_tree = {
 				}
 				336 = { #新加坡
 					create_unit = {
-						division = "division_template = \"GEA_schorner_elite_infantry_division\" start_experience_factor = 0.3 start_equipment_factor = 1 start_manpower_factor = 1"
+						division = "division_template = \"Elite Infantry Division\" start_experience_factor = 0.3 start_equipment_factor = 1 start_manpower_factor = 1"
 						owner = GEA
 						prioritize_location = 12299
 					}
 					create_unit = {
-						division = "division_template = \"GEA_schorner_elite_infantry_division\" start_experience_factor = 0.3 start_equipment_factor = 1 start_manpower_factor = 1"
+						division = "division_template = \"Elite Infantry Division\" start_experience_factor = 0.3 start_equipment_factor = 1 start_manpower_factor = 1"
 						owner = GEA
 						prioritize_location = 12299
 					}
 					create_unit = {
-						division = "division_template = \"GEA_schorner_elite_infantry_division\" start_experience_factor = 0.3 start_equipment_factor = 1 start_manpower_factor = 1"
+						division = "division_template = \"Elite Infantry Division\" start_experience_factor = 0.3 start_equipment_factor = 1 start_manpower_factor = 1"
 						owner = GEA
 						prioritize_location = 12299
 					}
 					create_unit = {
-						division = "division_template = \"GEA_schorner_elite_infantry_division\" start_experience_factor = 0.3 start_equipment_factor = 1 start_manpower_factor = 1"
+						division = "division_template = \"Elite Infantry Division\" start_experience_factor = 0.3 start_equipment_factor = 1 start_manpower_factor = 1"
 						owner = GEA
 						prioritize_location = 12299
 					}
 					create_unit = {
-						division = "division_template = \"GEA_schorner_elite_infantry_division\" start_experience_factor = 0.3 start_equipment_factor = 1 start_manpower_factor = 1"
+						division = "division_template = \"Elite Infantry Division\" start_experience_factor = 0.3 start_equipment_factor = 1 start_manpower_factor = 1"
 						owner = GEA
 						prioritize_location = 12299
 					}
@@ -6231,6 +6232,8 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Let_loose_the_blood-stained_black_eagle"
+			custom_effect_tooltip = GEA_schorner_claim_entire_far_east_tt
+			unlock_decision_tooltip = GEA_Secure_Far_East_Control
 			hidden_effect = {
 				every_state = {
 					limit = {
@@ -6241,7 +6244,7 @@ focus_tree = {
 							is_core_of = JAP #日本离岛
 							region = 191 #朝鲜
 							is_southeast_asia = yes #东南亚
-							is_russian_far_east = yes #俄国远东
+							GEA_transamur_initial_states_trigger = yes #外阿穆尔开局12个地区
 						}
 					}
 					add_claim_by = ROOT
@@ -6823,6 +6826,9 @@ focus_tree = {
 			unlock_decision_tooltip = GEA_develop_sarawak_oil
 			unlock_decision_tooltip = GEA_more_gold
 			unlock_decision_tooltip = GEA_Tungsten_ore_development
+			unlock_decision_tooltip = GEA_Expand_Indochina_Coal_Mines
+			unlock_decision_tooltip = GEA_Expand_Burma_Coal_Mines
+			unlock_decision_tooltip = GEA_Expand_Siam_Coal_Mines
 		}
 	}
 	focus = { #帝国的东方宝库
@@ -7489,6 +7495,10 @@ focus_tree = {
 				GEA_Economic_efficiency_max = 0.04
 				tooltip = production_factory_max_efficiency_factor_tt
 			}
+			add_to_variable = {
+				GEA_Economic_factory_output = 0.02
+				tooltip = industrial_capacity_factory_tt
+			}
 		}
 	}
 	focus = { #廉价原料
@@ -8071,6 +8081,10 @@ focus_tree = {
 			add_to_variable = {
 				GEA_Economic_efficiency_max = 0.07
 				tooltip = production_factory_max_efficiency_factor_tt
+			}
+			add_to_variable = {
+				GEA_Economic_factory_output = 0.03
+				tooltip = industrial_capacity_factory_tt
 			}
 		}
 	}
@@ -11571,6 +11585,8 @@ focus_tree = {
 		available = {
 			has_global_flag = GEA_Indochina_Uprising_Fired
 		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_Far_East_is_at_war_again"
@@ -11591,8 +11607,15 @@ focus_tree = {
 			factor = 50
 		}
 		available = {
-
+			NOT = {
+				OR = {
+					has_country_flag = GEA_Defeated_Uprising
+					has_country_flag = GEA_Lost_Uprising
+				}
+			}
 		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
 		relative_position_id = GEA_The_Far_East_is_at_war_again
 		prerequisite = {
 			focus = GEA_The_Far_East_is_at_war_again
@@ -11615,8 +11638,15 @@ focus_tree = {
 			factor = 50
 		}
 		available = {
-
+			NOT = {
+				OR = {
+					has_country_flag = GEA_Defeated_Uprising
+					has_country_flag = GEA_Lost_Uprising
+				}
+			}
 		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
 		relative_position_id = GEA_Innovate_and_renew
 		prerequisite = {
 			focus = GEA_Innovate_and_renew
@@ -11657,8 +11687,16 @@ focus_tree = {
 			factor = 50
 		}
 		available = {
+			NOT = {
+				OR = {
+					has_country_flag = GEA_Defeated_Uprising
+					has_country_flag = GEA_Lost_Uprising
+				}
+			}
 
 		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
 		relative_position_id = GEA_Innovate_and_renew
 		prerequisite = {
 			focus = GEA_Innovate_and_renew
@@ -11681,8 +11719,16 @@ focus_tree = {
 			factor = 50
 		}
 		available = {
+			NOT = {
+				OR = {
+					has_country_flag = GEA_Defeated_Uprising
+					has_country_flag = GEA_Lost_Uprising
+				}
+			}
 
 		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
 		relative_position_id = GEA_Improve_the_design_of_weapons
 		prerequisite = {
 			focus = GEA_Improve_the_design_of_weapons
@@ -11719,8 +11765,16 @@ focus_tree = {
 			factor = 50
 		}
 		available = {
+			NOT = {
+				OR = {
+					has_country_flag = GEA_Defeated_Uprising
+					has_country_flag = GEA_Lost_Uprising
+				}
+			}
 
 		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
 		relative_position_id = GEA_Wave_Defense
 		prerequisite = {
 			focus = GEA_Wave_Defense
@@ -11734,7 +11788,7 @@ focus_tree = {
 			hidden_effect = {
 				set_technology = { GEA_penal_assault_tech = 1 popup = no }
 				division_template = {
-					name = "GEA_penal_division"
+					name = "East Asian Penal Division"
 					division_names_group = GEA_INF_01
 					priority = 2
 					force_allow_recruiting = yes
@@ -11757,15 +11811,15 @@ focus_tree = {
 				random_owned_controlled_state = {
 					prioritize = { 336 }
 					create_unit = {
-						division = "name = \"1. Ostasiatische Strafdivision\" division_template = \"GEA_penal_division\" start_experience_factor = 1 start_equipment_factor = 1 start_manpower_factor = 1"
+						division = "name = \"1. Ostasiatische Strafdivision\" division_template = \"East Asian Penal Division\" start_experience_factor = 1 start_equipment_factor = 1 start_manpower_factor = 1"
 						owner = GEA
 					}
 					create_unit = {
-						division = "name = \"2. Ostasiatische Strafdivision\" division_template = \"GEA_penal_division\" start_experience_factor = 1 start_equipment_factor = 1 start_manpower_factor = 1"
+						division = "name = \"2. Ostasiatische Strafdivision\" division_template = \"East Asian Penal Division\" start_experience_factor = 1 start_equipment_factor = 1 start_manpower_factor = 1"
 						owner = GEA
 					}
 					create_unit = {
-						division = "name = \"3. Ostasiatische Strafdivision\" division_template = \"GEA_penal_division\" start_experience_factor = 1 start_equipment_factor = 1 start_manpower_factor = 1"
+						division = "name = \"3. Ostasiatische Strafdivision\" division_template = \"East Asian Penal Division\" start_experience_factor = 1 start_equipment_factor = 1 start_manpower_factor = 1"
 						owner = GEA
 					}
 				}
@@ -11783,8 +11837,16 @@ focus_tree = {
 			factor = 50
 		}
 		available = {
+			NOT = {
+				OR = {
+					has_country_flag = GEA_Defeated_Uprising
+					has_country_flag = GEA_Lost_Uprising
+				}
+			}
 
 		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
 		relative_position_id = GEA_Fear_and_Discipline
 		prerequisite = {
 			focus = GEA_Fear_and_Discipline
@@ -11805,8 +11867,15 @@ focus_tree = {
 			factor = 50
 		}
 		available = {
-
+			NOT = {
+				OR = {
+					has_country_flag = GEA_Defeated_Uprising
+					has_country_flag = GEA_Lost_Uprising
+				}
+			}
 		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
 		relative_position_id = GEA_The_Far_East_is_at_war_again
 		prerequisite = {
 			focus = GEA_The_Far_East_is_at_war_again
@@ -11815,8 +11884,12 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_Seek_assistance_from_the_fatherland"
 			if = {
 				limit = {
-					has_completed_focus = GEA_The_camaraderie_with_the_Dark_Continent
-					has_completed_focus = GEA_self_dependence
+					NOT = {
+						OR = {
+							has_completed_focus = GEA_The_camaraderie_with_the_Dark_Continent
+							has_completed_focus = GEA_self_dependence
+						}
+					}
 				}
 				custom_effect_tooltip = GEA_Seek_assistance_from_the_fatherland_tt_1
 				hidden_effect = {
@@ -11836,7 +11909,7 @@ focus_tree = {
 				hidden_effect = {
 					reduce_focus_completion_cost = {
 						focus = { GEA_self_dependence GEA_Recruit_all_available_soldiers GEA_Never_repeat_the_mistake }
-						cost = -35
+						cost = -21
 					}
 				}
 			}
@@ -11846,7 +11919,7 @@ focus_tree = {
 				hidden_effect = {
 					reduce_focus_completion_cost = {
 						focus = { GEA_The_camaraderie_with_the_Dark_Continent GEA_Invitation_to_Hunters GEA_Eliminate_the_hiding_place }
-						cost = -35
+						cost = -21
 					}
 				}
 			}
@@ -11869,8 +11942,16 @@ focus_tree = {
 			factor = 50
 		}
 		available = {
+			NOT = {
+				OR = {
+					has_country_flag = GEA_Defeated_Uprising
+					has_country_flag = GEA_Lost_Uprising
+				}
+			}
 
 		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
 		relative_position_id = GEA_Seek_assistance_from_the_fatherland
 		prerequisite = {
 			focus = GEA_Seek_assistance_from_the_fatherland
@@ -11924,8 +12005,16 @@ focus_tree = {
 			factor = 50
 		}
 		available = {
+			NOT = {
+				OR = {
+					has_country_flag = GEA_Defeated_Uprising
+					has_country_flag = GEA_Lost_Uprising
+				}
+			}
 
 		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
 		relative_position_id = GEA_Emergency_ammunition
 		prerequisite = {
 			focus = GEA_Emergency_ammunition
@@ -11936,7 +12025,7 @@ focus_tree = {
 			custom_effect_tooltip = GEA_The_Siege_of_Saigon_tt
 			hidden_effect = {
 				division_template = {
-					name = "GEA_siege_of_saigon_infantry_division"
+					name = "Saigon Expeditionary Division"
 					division_names_group = GEA_INF_01
 					regiments = {
 						infantry = { x = 0 y = 0 }
@@ -11967,7 +12056,7 @@ focus_tree = {
 					}
 				}
 				division_template = {
-					name = "GEA_siege_of_saigon_marine_division"
+					name = "Saigon Marine Division"
 					division_names_group = GEA_MAR_02
 					regiments = {
 						marine = { x = 0 y = 0 }
@@ -11987,19 +12076,19 @@ focus_tree = {
 				random_owned_controlled_state = {
 					prioritize = { 336 }
 					create_unit = {
-						division = "division_template = \"GEA_siege_of_saigon_infantry_division\" start_experience_factor = 0.8 start_equipment_factor = 1 start_manpower_factor = 1"
+						division = "division_template = \"Saigon Expeditionary Division\" start_experience_factor = 0.8 start_equipment_factor = 1 start_manpower_factor = 1"
 						owner = ROOT
 					}
 					create_unit = {
-						division = "division_template = \"GEA_siege_of_saigon_infantry_division\" start_experience_factor = 0.8 start_equipment_factor = 1 start_manpower_factor = 1"
+						division = "division_template = \"Saigon Expeditionary Division\" start_experience_factor = 0.8 start_equipment_factor = 1 start_manpower_factor = 1"
 						owner = ROOT
 					}
 					create_unit = {
-						division = "division_template = \"GEA_siege_of_saigon_infantry_division\" start_experience_factor = 0.8 start_equipment_factor = 1 start_manpower_factor = 1"
+						division = "division_template = \"Saigon Expeditionary Division\" start_experience_factor = 0.8 start_equipment_factor = 1 start_manpower_factor = 1"
 						owner = ROOT
 					}
 					create_unit = {
-						division = "division_template = \"GEA_siege_of_saigon_marine_division\" start_experience_factor = 0.8 start_equipment_factor = 1 start_manpower_factor = 1"
+						division = "division_template = \"Saigon Marine Division\" start_experience_factor = 0.8 start_equipment_factor = 1 start_manpower_factor = 1"
 						owner = ROOT
 					}
 				}
@@ -12017,8 +12106,16 @@ focus_tree = {
 			factor = 50
 		}
 		available = {
+			NOT = {
+				OR = {
+					has_country_flag = GEA_Defeated_Uprising
+					has_country_flag = GEA_Lost_Uprising
+				}
+			}
 			country_exists = MAF
 		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
 		relative_position_id = GEA_The_Far_East_is_at_war_again
 		prerequisite = {
 			focus = GEA_The_Far_East_is_at_war_again
@@ -12027,8 +12124,12 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_The_camaraderie_with_the_Dark_Continent"
 			if = {
 				limit = {
-					has_completed_focus = GEA_Seek_assistance_from_the_fatherland
-					has_completed_focus = GEA_self_dependence
+					NOT = {
+						OR = {
+							has_completed_focus = GEA_Seek_assistance_from_the_fatherland
+							has_completed_focus = GEA_self_dependence
+						}
+					}
 				}
 				custom_effect_tooltip = GEA_The_camaraderie_with_the_Dark_Continent_tt_1
 				hidden_effect = {
@@ -12048,7 +12149,7 @@ focus_tree = {
 				hidden_effect = {
 					reduce_focus_completion_cost = {
 						focus = { GEA_self_dependence GEA_Recruit_all_available_soldiers GEA_Never_repeat_the_mistake }
-						cost = -35
+						cost = -21
 					}
 				}
 			}
@@ -12058,7 +12159,7 @@ focus_tree = {
 				hidden_effect = {
 					reduce_focus_completion_cost = {
 						focus = { GEA_Seek_assistance_from_the_fatherland GEA_Emergency_ammunition GEA_The_Siege_of_Saigon }
-						cost = -35
+						cost = -21
 					}
 				}
 			}
@@ -12080,8 +12181,16 @@ focus_tree = {
 			factor = 50
 		}
 		available = {
+			NOT = {
+				OR = {
+					has_country_flag = GEA_Defeated_Uprising
+					has_country_flag = GEA_Lost_Uprising
+				}
+			}
 
 		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
 		relative_position_id = GEA_The_camaraderie_with_the_Dark_Continent
 		prerequisite = {
 			focus = GEA_The_camaraderie_with_the_Dark_Continent
@@ -12133,8 +12242,16 @@ focus_tree = {
 			factor = 50
 		}
 		available = {
+			NOT = {
+				OR = {
+					has_country_flag = GEA_Defeated_Uprising
+					has_country_flag = GEA_Lost_Uprising
+				}
+			}
 
 		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
 		relative_position_id = GEA_Invitation_to_Hunters
 		prerequisite = {
 			focus = GEA_Invitation_to_Hunters
@@ -12166,8 +12283,16 @@ focus_tree = {
 			factor = 50
 		}
 		available = {
+			NOT = {
+				OR = {
+					has_country_flag = GEA_Defeated_Uprising
+					has_country_flag = GEA_Lost_Uprising
+				}
+			}
 
 		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
 		relative_position_id = GEA_The_Far_East_is_at_war_again
 		prerequisite = {
 			focus = GEA_The_Far_East_is_at_war_again
@@ -12176,8 +12301,12 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus GEA_self_dependence"
 			if = {
 				limit = {
-					has_completed_focus = GEA_The_camaraderie_with_the_Dark_Continent
-					has_completed_focus = GEA_Seek_assistance_from_the_fatherland
+					NOT = {
+						OR = {
+							has_completed_focus = GEA_The_camaraderie_with_the_Dark_Continent
+							has_completed_focus = GEA_Seek_assistance_from_the_fatherland
+						}
+					}
 				}
 				custom_effect_tooltip = GEA_self_dependence_tt_1
 				hidden_effect = {
@@ -12197,7 +12326,7 @@ focus_tree = {
 				hidden_effect = {
 					reduce_focus_completion_cost = {
 						focus = { GEA_Seek_assistance_from_the_fatherland GEA_Emergency_ammunition GEA_The_Siege_of_Saigon }
-						cost = -35
+						cost = -21
 					}
 				}
 			}
@@ -12207,7 +12336,7 @@ focus_tree = {
 				hidden_effect = {
 					reduce_focus_completion_cost = {
 						focus = { GEA_The_camaraderie_with_the_Dark_Continent GEA_Invitation_to_Hunters GEA_Eliminate_the_hiding_place }
-						cost = -35
+						cost = -21
 					}
 				}
 			}
@@ -12233,8 +12362,16 @@ focus_tree = {
 			factor = 50
 		}
 		available = {
+			NOT = {
+				OR = {
+					has_country_flag = GEA_Defeated_Uprising
+					has_country_flag = GEA_Lost_Uprising
+				}
+			}
 
 		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
 		relative_position_id = GEA_self_dependence
 		prerequisite = {
 			focus = GEA_self_dependence
@@ -12266,8 +12403,16 @@ focus_tree = {
 			factor = 50
 		}
 		available = {
+			NOT = {
+				OR = {
+					has_country_flag = GEA_Defeated_Uprising
+					has_country_flag = GEA_Lost_Uprising
+				}
+			}
 
 		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
 		relative_position_id = GEA_Recruit_all_available_soldiers
 		prerequisite = {
 			focus = GEA_Recruit_all_available_soldiers
@@ -12293,8 +12438,16 @@ focus_tree = {
 			factor = 50
 		}
 		available = {
+			NOT = {
+				OR = {
+					has_country_flag = GEA_Defeated_Uprising
+					has_country_flag = GEA_Lost_Uprising
+				}
+			}
 
 		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
 		relative_position_id = GEA_Eliminate_the_hiding_place
 		prerequisite = {
 			focus = GEA_The_Siege_of_Saigon
@@ -12318,8 +12471,16 @@ focus_tree = {
 			factor = 50
 		}
 		available = {
+			NOT = {
+				OR = {
+					has_country_flag = GEA_Defeated_Uprising
+					has_country_flag = GEA_Lost_Uprising
+				}
+			}
 
 		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
 		relative_position_id = GEA_Fight_to_the_death
 		prerequisite = {
 			focus = GEA_Fight_to_the_death
@@ -12340,8 +12501,16 @@ focus_tree = {
 			factor = 50
 		}
 		available = {
+			NOT = {
+				OR = {
+					has_country_flag = GEA_Defeated_Uprising
+					has_country_flag = GEA_Lost_Uprising
+				}
+			}
 
 		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
 		relative_position_id = GEA_Fight_to_the_death
 		prerequisite = {
 			focus = GEA_Fight_to_the_death
@@ -12362,8 +12531,16 @@ focus_tree = {
 			factor = 50
 		}
 		available = {
+			NOT = {
+				OR = {
+					has_country_flag = GEA_Defeated_Uprising
+					has_country_flag = GEA_Lost_Uprising
+				}
+			}
 
 		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
 		bypass = {
 			has_global_flag = GFX_report_event_GER_colony_problems
 		}
@@ -12442,7 +12619,15 @@ focus_tree = {
 		relative_position_id = GEA_Ostasiatische_Heer
 		available = {
 			has_global_flag = GEA_Indochina_Uprising_Fired
+			NOT = {
+				OR = {
+					has_country_flag = GEA_Defeated_Uprising
+					has_country_flag = GEA_Lost_Uprising
+				}
+			}
 		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
 		mutually_exclusive = {
 			focus = GEA_Ostasiatische_Heer
 		}
@@ -14276,11 +14461,11 @@ focus_tree = {
 				tooltip = GEA_modifier_max_planning_tt
 			}
 			add_to_variable = {
-				GEA_army_planning_speed = 0.75
+				GEA_army_planning_speed = 0.075
 				tooltip = GEA_modifier_planning_speed_tt
 			}
 			add_to_variable = {
-				GEA_army_strength_factor = 0.6
+				GEA_army_strength_factor = 0.06
 				tooltip = GEA_modifier_army_strength_factor_tt
 			}
 		}		
@@ -14397,7 +14582,7 @@ focus_tree = {
 			custom_effect_tooltip = GEA_Coordinate_the_broad_front_of_the_conflict_units_tt
 			hidden_effect = {
 				division_template = {
-					name = "GEA_broad_front_infantry_division"
+					name = "Frontline Infantry Division"
 					division_names_group = GEA_INF_01
 					regiments = {
 						infantry = { x = 0 y = 0 }
@@ -14429,15 +14614,15 @@ focus_tree = {
 				random_owned_controlled_state = {
 					prioritize = { 336 }
 					create_unit = {
-						division = "division_template = \"GEA_broad_front_infantry_division\" start_experience_factor = 0.8 start_equipment_factor = 1 start_manpower_factor = 1"
+						division = "division_template = \"Frontline Infantry Division\" start_experience_factor = 0.8 start_equipment_factor = 1 start_manpower_factor = 1"
 						owner = ROOT
 					}
 					create_unit = {
-						division = "division_template = \"GEA_broad_front_infantry_division\" start_experience_factor = 0.8 start_equipment_factor = 1 start_manpower_factor = 1"
+						division = "division_template = \"Frontline Infantry Division\" start_experience_factor = 0.8 start_equipment_factor = 1 start_manpower_factor = 1"
 						owner = ROOT
 					}
 					create_unit = {
-						division = "division_template = \"GEA_broad_front_infantry_division\" start_experience_factor = 0.8 start_equipment_factor = 1 start_manpower_factor = 1"
+						division = "division_template = \"Frontline Infantry Division\" start_experience_factor = 0.8 start_equipment_factor = 1 start_manpower_factor = 1"
 						owner = ROOT
 					}
 				}
@@ -15217,7 +15402,7 @@ focus_tree = {
 			custom_effect_tooltip = GEA_Rolling_floodwaters_units_tt
 			hidden_effect = {
 				division_template = {
-					name = "GEA_floodwaters_infantry_division"
+					name = "Infantry Division"
 					division_names_group = GEA_INF_01
 					regiments = {
 						infantry = { x = 0 y = 0 }
@@ -15244,7 +15429,7 @@ focus_tree = {
 					}
 				}
 				division_template = {
-					name = "GEA_floodwaters_armored_division"
+					name = "Assault Armoured Division"
 					regiments = {
 						infantry = { x = 0 y = 0 }
 						infantry = { x = 0 y = 1 }
@@ -15277,31 +15462,31 @@ focus_tree = {
 				random_owned_controlled_state = {
 					prioritize = { 336 }
 					create_unit = {
-						division = "division_template = \"GEA_floodwaters_infantry_division\" start_experience_factor = 0.5 start_equipment_factor = 1 start_manpower_factor = 1"
+						division = "division_template = \"Infantry Division\" start_experience_factor = 0.5 start_equipment_factor = 1 start_manpower_factor = 1"
 						owner = ROOT
 					}
 					create_unit = {
-						division = "division_template = \"GEA_floodwaters_infantry_division\" start_experience_factor = 0.5 start_equipment_factor = 1 start_manpower_factor = 1"
+						division = "division_template = \"Infantry Division\" start_experience_factor = 0.5 start_equipment_factor = 1 start_manpower_factor = 1"
 						owner = ROOT
 					}
 					create_unit = {
-						division = "division_template = \"GEA_floodwaters_infantry_division\" start_experience_factor = 0.5 start_equipment_factor = 1 start_manpower_factor = 1"
+						division = "division_template = \"Infantry Division\" start_experience_factor = 0.5 start_equipment_factor = 1 start_manpower_factor = 1"
 						owner = ROOT
 					}
 					create_unit = {
-						division = "division_template = \"GEA_floodwaters_infantry_division\" start_experience_factor = 0.5 start_equipment_factor = 1 start_manpower_factor = 1"
+						division = "division_template = \"Infantry Division\" start_experience_factor = 0.5 start_equipment_factor = 1 start_manpower_factor = 1"
 						owner = ROOT
 					}
 					create_unit = {
-						division = "division_template = \"GEA_floodwaters_infantry_division\" start_experience_factor = 0.5 start_equipment_factor = 1 start_manpower_factor = 1"
+						division = "division_template = \"Infantry Division\" start_experience_factor = 0.5 start_equipment_factor = 1 start_manpower_factor = 1"
 						owner = ROOT
 					}
 					create_unit = {
-						division = "division_template = \"GEA_floodwaters_infantry_division\" start_experience_factor = 0.5 start_equipment_factor = 1 start_manpower_factor = 1"
+						division = "division_template = \"Infantry Division\" start_experience_factor = 0.5 start_equipment_factor = 1 start_manpower_factor = 1"
 						owner = ROOT
 					}
 					create_unit = {
-						division = "division_template = \"GEA_floodwaters_armored_division\" start_experience_factor = 0.5 start_equipment_factor = 1 start_manpower_factor = 1"
+						division = "division_template = \"Assault Armoured Division\" start_experience_factor = 0.5 start_equipment_factor = 1 start_manpower_factor = 1"
 						owner = ROOT
 					}
 				}

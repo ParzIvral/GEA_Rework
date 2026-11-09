@@ -38,8 +38,8 @@ GEA_pacify_indochina_decisions = {#平定印度支那
 		icon = GFX_decision_bunker
 		allowed = { original_tag = GEA }
 
-		custom_cost_text = CP_30
-		custom_cost_trigger = { command_power > 29.99 }
+		custom_cost_text = CP_10
+		custom_cost_trigger = { command_power > 9.99 }
 
 		visible = {
 			has_completed_focus = GEA_Redraw_the_defense_zone
@@ -67,7 +67,7 @@ GEA_pacify_indochina_decisions = {#平定印度支那
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision GEA_designate_priority_defense_zone"
-			add_command_power = -30
+			add_command_power = -10
 			FROM = {
 				set_state_flag = GEA_priority_defense_zone
 				add_state_modifier = {
@@ -151,8 +151,8 @@ GEA_pacify_indochina_decisions = {#平定印度支那
 	}
 	GEA_reorganize_saigon_police = { #武装城市警察
 		icon = GFX_decision_generic_military
-		custom_cost_text = CP_30
-		custom_cost_trigger = { command_power > 29.99 }
+		custom_cost_text = CP_10
+		custom_cost_trigger = { command_power > 9.99 }
 		days_remove = 21
 		fire_only_once = yes
 
@@ -179,7 +179,7 @@ GEA_pacify_indochina_decisions = {#平定印度支那
 			}
 		}
 		complete_effect = {
-			add_command_power = -30
+			add_command_power = -10
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision GEA_reorganize_saigon_police"
@@ -294,8 +294,8 @@ GEA_pacify_indochina_decisions = {#平定印度支那
 	}
 	GEA_assign_engineers_to_loyalist_cities = { #派驻城市工兵队
 		icon = GFX_decision_generic_military
-		custom_cost_text = CP_30
-		custom_cost_trigger = { command_power > 29.99 }
+		custom_cost_text = CP_10
+		custom_cost_trigger = { command_power > 9.99 }
 		days_remove = 21
 		fire_only_once = yes
 		visible = {
@@ -322,7 +322,7 @@ GEA_pacify_indochina_decisions = {#平定印度支那
 				NOT = { has_political_power > 50 }
 			}
 		}
-		complete_effect = { add_command_power = -30 }
+		complete_effect = { add_command_power = -10 }
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision GEA_assign_engineers_to_loyalist_cities"
 			GEA_loyalist_fortification_progress_effect = yes
@@ -400,8 +400,8 @@ GEA_pacify_indochina_decisions = {#平定印度支那
 	}
 	GEA_train_loyalist_irregular_formations = { #训练忠诚非正规部队
 		icon = GFX_decision_generic_military
-		custom_cost_text = CP_30
-		custom_cost_trigger = { command_power > 29.99 }
+		custom_cost_text = CP_10
+		custom_cost_trigger = { command_power > 9.99 }
 		days_remove = 21
 		fire_only_once = yes
 		visible = {
@@ -428,14 +428,14 @@ GEA_pacify_indochina_decisions = {#平定印度支那
 				NOT = { has_political_power > 50 }
 			}
 		}
-		complete_effect = { add_command_power = -30 }
+		complete_effect = { add_command_power = -10 }
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision GEA_train_loyalist_irregular_formations"
 			GEA_loyalist_reserve_progress_effect = yes
 		}
 	}
 	GEA_equip_loyalist_reserve_battalions = { #武装忠诚预备营
-		icon = GFX_decision_generic_equipment
+		icon = GFX_decision_generic_military
 		cost = 20
 		days_remove = 21
 		fire_only_once = yes
@@ -632,8 +632,8 @@ GEA_pacify_indochina_decisions = {#平定印度支那
 	#
 	GEA_destroy_viet_cong_liaison_network = { #捣毁越工联络网
 		icon = GFX_decision_generic_assassination
-		custom_cost_text = CP_50
-		custom_cost_trigger = { command_power > 49.99 }
+		custom_cost_text = CP_25
+		custom_cost_trigger = { command_power > 24.99 }
 
 		days_remove = 30
 		fire_only_once = yes
@@ -668,7 +668,7 @@ GEA_pacify_indochina_decisions = {#平定印度支那
 		}
 
 		complete_effect = {
-			add_command_power = -50
+			add_command_power = -25
 			log = "[GetDateText]: [Root.GetName]: Decision GEA_destroy_viet_cong_liaison_network"
 		}
 
@@ -681,8 +681,8 @@ GEA_pacify_indochina_decisions = {#平定印度支那
 	GEA_cut_border_arms_smuggling = { #切断边境武器走私
 		icon = GFX_decision_generic_military
 
-		custom_cost_text = CP_60
-		custom_cost_trigger = { command_power > 59.99 }
+		custom_cost_text = CP_35
+		custom_cost_trigger = { command_power > 34.99 }
 
 		days_remove = 60
 		fire_only_once = yes
@@ -716,7 +716,7 @@ GEA_pacify_indochina_decisions = {#平定印度支那
 		}
 
 		complete_effect = {
-			add_command_power = -60
+			add_command_power = -35
 			log = "[GetDateText]: [Root.GetName]: Decision GEA_cut_border_arms_smuggling"
 		}
 
@@ -734,8 +734,8 @@ GEA_pacify_indochina_decisions = {#平定印度支那
 	GEA_launch_large_scale_sweeps = { #大规模扫荡
 		icon = GFX_decision_generic_military
 
-		custom_cost_text = CP_75
-		custom_cost_trigger = { command_power > 74.99 }
+		custom_cost_text = CP_45
+		custom_cost_trigger = { command_power > 44.99 }
 		days_remove = 45
 
 		fire_only_once = yes
@@ -777,7 +777,7 @@ GEA_pacify_indochina_decisions = {#平定印度支那
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision GEA_launch_large_scale_sweeps"
-			add_command_power = -75
+			add_command_power = -45
 		}
 
 		remove_effect = {
@@ -1068,8 +1068,8 @@ GEA_pacify_indochina_decisions = {#平定印度支那
 	GEA_cut_nationalist_foreign_funding = { #切断民族主义者海外资助
 		icon = GFX_decision_generic_military
 
-		custom_cost_text = CP_30
-		custom_cost_trigger = { command_power > 29.99 }
+		custom_cost_text = CP_10
+		custom_cost_trigger = { command_power > 9.99 }
 
 		days_remove = 60
 		fire_only_once = yes
@@ -1099,7 +1099,7 @@ GEA_pacify_indochina_decisions = {#平定印度支那
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision GEA_cut_nationalist_foreign_funding"
-			add_command_power = -30
+			add_command_power = -10
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_cut_nationalist_foreign_funding"
@@ -1144,8 +1144,8 @@ GEA_pacify_indochina_decisions = {#平定印度支那
 	}
 	GEA_raid_nationalist_safehouses = { #捣毁民族主义者安全屋
 		icon = GFX_decision_generic_confiscation
-		custom_cost_text = CP_30
-		custom_cost_trigger = { command_power > 29.99 }
+		custom_cost_text = CP_10
+		custom_cost_trigger = { command_power > 9.99 }
 		days_remove = 45
 		fire_only_once = yes
 		modifier = {
@@ -1177,7 +1177,7 @@ GEA_pacify_indochina_decisions = {#平定印度支那
 			}
 		}
 		complete_effect = {
-			add_command_power = -30
+			add_command_power = -10
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_raid_nationalist_safehouses"
@@ -1186,6 +1186,102 @@ GEA_pacify_indochina_decisions = {#平定印度支那
 	}
 }
 GEA_decisions = {#德属东亚殖民地决议
+	GEA_Secure_Far_East_Control = { #确保远东控制
+		icon = GFX_decision_generic_operation
+		allowed = { original_tag = GEA }
+		cost = 0
+		fire_only_once = yes
+		visible = {
+			has_country_flag = GEA_Governor_Schorner_flag
+			has_completed_focus = GEA_Let_loose_the_blood-stained_black_eagle
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = GEA_far_east_china_controlled_tt
+				NOT = {
+					any_state = {
+						is_china_claim_area = yes
+						NOT = { state = 858 }
+						NOT = { GEA_or_subject_owns_state_trigger = yes }
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = GEA_far_east_mongolia_controlled_tt
+				NOT = {
+					any_state = {
+						is_mongolia = yes
+						NOT = { GEA_or_subject_owns_state_trigger = yes }
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = GEA_far_east_japan_home_controlled_tt
+				NOT = {
+					any_state = {
+						region = 154
+						NOT = { GEA_or_subject_owns_state_trigger = yes }
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = GEA_far_east_japan_cores_controlled_tt
+				NOT = {
+					any_state = {
+						is_core_of = JAP
+						NOT = { GEA_or_subject_owns_state_trigger = yes }
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = GEA_far_east_korea_controlled_tt
+				NOT = {
+					any_state = {
+						region = 191
+						NOT = { GEA_or_subject_owns_state_trigger = yes }
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = GEA_far_east_southeast_asia_controlled_tt
+				NOT = {
+					any_state = {
+						is_southeast_asia = yes
+						NOT = { GEA_or_subject_owns_state_trigger = yes }
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = GEA_far_east_russian_far_east_controlled_tt
+				NOT = {
+					any_state = {
+						GEA_transamur_initial_states_trigger = yes
+						NOT = { GEA_or_subject_owns_state_trigger = yes }
+					}
+				}
+			}
+		}
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GEA_Secure_Far_East_Control"
+			custom_effect_tooltip = GEA_far_east_grant_cores_tt
+			hidden_effect = {
+				set_country_flag = GEA_far_east_integrated
+				every_country = {
+					limit = {
+						is_subject_of = GEA
+						any_owned_state = { GEA_schorner_far_east_claim_area_trigger = yes }
+					}
+					GEA = { annex_country = { target = PREV transfer_troops = yes } }
+				}
+				every_state = {
+					limit = { GEA_schorner_far_east_claim_area_trigger = yes }
+					add_core_of = GEA
+				}
+			}
+		}
+		ai_will_do = { factor = 1000 }
+	}
+
 	GEA_Plan_indochina_counteroffensive = { #筹划反攻印度支那
 		icon = GFX_decision_hol_draw_up_staff_plans
 		allowed = { original_tag = GEA }
@@ -1350,6 +1446,32 @@ GEA_decisions = {#德属东亚殖民地决议
 			}
 		}
 	}
+	GEA_Expand_Indochina_Coal_Mines = {
+		icon = GFX_decision_generic_industry
+		allowed = { original_tag = GEA }
+		cost = 40
+		days_remove = 90
+		fire_only_once = yes
+		cancel_if_not_visible = no
+
+		visible = {
+			has_completed_focus = GEA_Digging_deep_for_underground_resources
+			857 = { is_owned_and_controlled_by = GEA }
+			OR = { has_country_flag = Indochina_OPEN is_ai = yes }
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 857 }
+		}
+		cancel_trigger = {
+			857 = { NOT = { is_owned_and_controlled_by = GEA } }
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Expand_Indochina_Coal_Mines"
+			add_resource = { type = coal amount = 60 state = 857 }
+		}
+		ai_will_do = { factor = 20 }
+	}
+
 	GEA_Integrate_inc = {#整合印度支那
 		icon = eng_trade_unions_demand
 		allowed = { original_tag = GEA }
@@ -1446,7 +1568,9 @@ GEA_decisions = {#德属东亚殖民地决议
 		state_target = yes
 		on_map_mode = map_only
 
+		cancel_if_not_visible = no
 		visible = {
+			OR = { has_country_flag = Indochina_OPEN is_ai = yes }
 			FROM = {
 				is_controlled_by = GEA
 			}
@@ -1512,7 +1636,9 @@ GEA_decisions = {#德属东亚殖民地决议
 		days_remove = 90
 		days_re_enable = 90
 
+		cancel_if_not_visible = no
 		visible = {
+			OR = { has_country_flag = Indochina_OPEN is_ai = yes }
 			OR = {
 				controls_state = 857
 				controls_state = 671
@@ -1561,7 +1687,9 @@ GEA_decisions = {#德属东亚殖民地决议
 			command_power > 39.99
 		}
 		days_remove = 45
+		cancel_if_not_visible = no
 		visible = {
+			OR = { has_country_flag = Indochina_OPEN is_ai = yes }
 			any_owned_state = { is_controlled_by = GEA OR = { state = 857 state = 671 state = 827 state = 670 state = 826 state = 286 state = 856 } }
 			check_variable = { GEA_indochina_resistance > 0 }
 			NOT = { country_exists = INC }
@@ -1632,7 +1760,9 @@ GEA_decisions = {#德属东亚殖民地决议
 			command_power > 39.99
 		}
 		days_remove = 45
+		cancel_if_not_visible = no
 		visible = {
+			OR = { has_country_flag = Indochina_OPEN is_ai = yes }
 			any_owned_state = { 
 				is_controlled_by = GEA 
 				OR = { state = 857 state = 671 state = 827 state = 670 state = 826 state = 286 state = 856 } }
@@ -1744,7 +1874,9 @@ GEA_decisions = {#德属东亚殖民地决议
 		allowed = { original_tag = GEA }
 		cost = 10
 		days_remove = 30
+		cancel_if_not_visible = no
 		visible = {
+			OR = { has_country_flag = Indochina_OPEN is_ai = yes }
 			any_owned_state = { is_controlled_by = GEA OR = { state = 857 state = 671 state = 827 state = 670 state = 826 state = 286 state = 856 } }
 			check_variable = { GEA_indochina_resistance > 0 }
 			NOT = { country_exists = INC }
@@ -1811,7 +1943,9 @@ GEA_decisions = {#德属东亚殖民地决议
 
 		cost = 30
 		days_remove = 90
+		cancel_if_not_visible = no
 		visible = {
+			OR = { has_country_flag = Indochina_OPEN is_ai = yes }
 			any_owned_state = { is_controlled_by = GEA OR = { state = 857 state = 671 state = 827 state = 670 state = 826 state = 286 state = 856 } }
 			check_variable = { GEA_indochina_resistance > 0 }
 			NOT = { country_exists = INC }
@@ -1886,6 +2020,7 @@ GEA_decisions = {#德属东亚殖民地决议
 		}
 		days_remove = 60
 		visible = {
+			OR = { has_country_flag = Indochina_OPEN is_ai = yes }
 			OR = { controls_state = 857 controls_state = 671 controls_state = 827 controls_state = 670 controls_state = 826 controls_state = 286 controls_state = 856 }
 			check_variable = { GEA_indochina_resistance > 0 }
 			NOT = { country_exists = INC }
@@ -1927,7 +2062,9 @@ GEA_decisions = {#德属东亚殖民地决议
 			command_power > 50
 		}
 		days_remove = 120
+		cancel_if_not_visible = no
 		visible = {
+			OR = { has_country_flag = Indochina_OPEN is_ai = yes }
 			check_variable = { GEA_indochina_resistance > 0 }
 			NOT = { country_exists = INC }
 			has_completed_focus = GEA_No_one_is_exempt_no_one_is_spared
@@ -2370,7 +2507,7 @@ GEA_decisions = {#德属东亚殖民地决议
 		}
 	}
 	GEA_Halong_Bay_Cruises = {#下龙湾巡游
-		icon = GFX_decision_generic_trade
+		icon = GFX_decision_category_generic_trade
 		allowed = { original_tag = GEA }
 
 		fire_only_once = yes
@@ -2424,7 +2561,7 @@ GEA_decisions = {#德属东亚殖民地决议
 		}
 	}
 	GEA_Saigon_Nightlife = {#西贡的东方夜生活
-		icon = GFX_decision_generic_trade
+		icon = GFX_decision_category_generic_trade
 		allowed = { original_tag = GEA }
 
 		fire_only_once = yes
@@ -2609,7 +2746,7 @@ GEA_decisions = {#德属东亚殖民地决议
 		}
 	}
 	GEA_Mekong_Steamship_Holidays = {#湄公河蒸汽船假日
-		icon = GFX_decision_generic_trade
+		icon = GFX_decision_category_generic_trade
 		allowed = { original_tag = GEA }
 
 		fire_only_once = yes
@@ -2676,7 +2813,7 @@ GEA_decisions = {#德属东亚殖民地决议
 		}
 	}
 	GEA_Orient_Express_East = {#东方的东方快车
-		icon = GFX_decision_generic_trade
+		icon = GFX_decision_category_generic_trade
 		allowed = { original_tag = GEA }
 
 		fire_only_once = yes
@@ -4318,7 +4455,7 @@ GEA_decisions = {#德属东亚殖民地决议
 		cancel_trigger = { NOT = { AND = { controls_state = 846 controls_state = 336 } } }
 	}
 	GEA_hahl_tin_royalty_bargain = {#锡矿王室分成协议
-		icon = GFX_decision_generic_trade
+		icon = GFX_decision_category_generic_trade
 		allowed = { original_tag = GEA }
 
 		fire_only_once = yes
@@ -4418,7 +4555,7 @@ GEA_decisions = {#德属东亚殖民地决议
 		cancel_trigger = { NOT = { any_owned_state = { is_controlled_by = GEA OR = { state = 846 state = 336 } } } }
 	}
 	GEA_Singapore_Grand_Tour = {#新加坡大都会之旅
-		icon = GFX_decision_generic_trade
+		icon = GFX_decision_category_generic_trade
 		allowed = { original_tag = GEA }
 
 		fire_only_once = yes
@@ -4461,7 +4598,7 @@ GEA_decisions = {#德属东亚殖民地决议
 		cancel_trigger = { NOT = { controls_state = 336 } }
 	}
 	GEA_Cameron_Highlands = {#金马仑高原避暑地
-		icon = GFX_decision_generic_trade
+		icon = GFX_decision_category_generic_trade
 		allowed = { original_tag = GEA }
 
 		fire_only_once = yes
@@ -5189,7 +5326,7 @@ GEA_decisions = {#德属东亚殖民地决议
 		cancel_trigger = { NOT = { any_owned_state = { is_controlled_by = GEA OR = { state = 828 state = 333 state = 1016 state = 334 } } } }
 	}
 	GEA_Brunei_Water_Village = {#文莱-水上之城
-		icon = GFX_decision_generic_trade
+		icon = GFX_decision_category_generic_trade
 		allowed = { original_tag = GEA }
 
 		fire_only_once = yes
@@ -5381,7 +5518,9 @@ GEA_decisions = {#德属东亚殖民地决议
 			num_of_civilian_factories_available_for_projects > 2
 		}
 
+		cancel_if_not_visible = no
 		visible = {
+			OR = { has_country_flag = Borneo_OPEN is_ai = yes }
 			controls_state = 333
 			owns_state = 333
 			controls_state = 333
@@ -6184,7 +6323,7 @@ GEA_decisions = {#德属东亚殖民地决议
 			OR = { has_country_flag = Dei_OPEN is_ai = yes }
 		}
 
-		cost = 100
+		cost = 0
 		days_remove = 200
 		fire_only_once = yes
 		ai_will_do = { factor = 500 }
@@ -6597,6 +6736,34 @@ GEA_decisions = {#德属东亚殖民地决议
 		cancel_trigger = { NOT = { OR = { controls_state = 1023 controls_state = 672 controls_state = 1022 controls_state = 1021 controls_state = 1020 controls_state = 673 controls_state = 335 controls_state = 1019 controls_state = 667 controls_state = 1018 } } }
 	}
 	#暹罗
+	GEA_Expand_Siam_Coal_Mines = {
+		icon = GFX_decision_generic_industry
+		allowed = { original_tag = GEA }
+		cost = 40
+		days_remove = 90
+		fire_only_once = yes
+		cancel_if_not_visible = no
+
+		visible = {
+			has_completed_focus = GEA_Digging_deep_for_underground_resources
+			822 = { is_owned_and_controlled_by = GEA }
+			OR = { has_country_flag = Tai_OPEN is_ai = yes }
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 822 }
+		}
+		cancel_trigger = {
+			822 = { NOT = { is_owned_and_controlled_by = GEA } }
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Expand_Siam_Coal_Mines"
+			add_resource = { type = coal amount = 40 state = 822 }
+			add_to_variable = { GEA_Sai_development = 1 }
+			custom_effect_tooltip = GEA_development_in_Sia_tt
+		}
+		ai_will_do = { factor = 20 }
+	}
+
 	GEA_Integrate_sia = { #整合暹罗
 		icon = GFX_decision_generic_operation
 		allowed = { original_tag = GEA }
@@ -6628,7 +6795,7 @@ GEA_decisions = {#德属东亚殖民地决议
 			}
 		}
 
-		cost = 100
+		cost = 0
 		days_remove = 200
 		fire_only_once = yes
 
@@ -6668,13 +6835,6 @@ GEA_decisions = {#德属东亚殖民地决议
 
 		cost = 35
 
-		available = {
-			SIA = {
-				NOT = {
-					exists = no
-				}
-			}
-		}
 		visible = {
 			OR = { controls_state = 823 controls_state = 825 controls_state = 750 controls_state = 824 controls_state = 882 controls_state = 756 controls_state = 822 controls_state = 289 controls_state = 831 controls_state = 749 controls_state = 724 controls_state = 999 controls_state = 830 controls_state = 751 }
 			OR = { has_country_flag = Tai_OPEN is_ai = yes }
@@ -6751,13 +6911,6 @@ GEA_decisions = {#德属东亚殖民地决议
 		fire_only_once = yes
 		days_remove = 100
 
-		available = {
-			SIA = {
-				NOT = {
-					exists = no
-				}
-			}
-		}
 		visible = {
 			OR = { controls_state = 823 controls_state = 825 controls_state = 750 controls_state = 824 controls_state = 882 controls_state = 756 controls_state = 822 controls_state = 289 controls_state = 831 controls_state = 749 controls_state = 724 controls_state = 999 controls_state = 830 controls_state = 751 }
 			OR = { has_country_flag = Tai_OPEN is_ai = yes }
@@ -7137,6 +7290,34 @@ GEA_decisions = {#德属东亚殖民地决议
 		cancel_trigger = { NOT = { any_owned_state = { is_controlled_by = GEA OR = { state = 823 state = 825 state = 750 state = 824 state = 882 state = 756 state = 822 state = 289 state = 831 state = 749 state = 724 state = 999 state = 830 state = 751 } } } }
 	}
 	#缅甸
+	GEA_Expand_Burma_Coal_Mines = {
+		icon = GFX_decision_generic_industry
+		allowed = { original_tag = GEA }
+		cost = 40
+		days_remove = 90
+		fire_only_once = yes
+		cancel_if_not_visible = no
+
+		visible = {
+			has_completed_focus = GEA_Digging_deep_for_underground_resources
+			72 = { is_owned_and_controlled_by = GEA }
+			OR = { has_country_flag = Bruma_OPEN is_ai = yes }
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 72 }
+		}
+		cancel_trigger = {
+			72 = { NOT = { is_owned_and_controlled_by = GEA } }
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GEA_Expand_Burma_Coal_Mines"
+			add_resource = { type = coal amount = 40 state = 72 }
+			add_to_variable = { GEA_Bruma_development = 1 }
+			custom_effect_tooltip = GEA_development_in_Bruma_tt
+		}
+		ai_will_do = { factor = 20 }
+	}
+
 	GEA_Integrate_brm = { #整合缅甸
 		icon = GFX_decision_generic_operation
 		allowed = { original_tag = GEA }
@@ -7159,7 +7340,7 @@ GEA_decisions = {#德属东亚殖民地决议
 			OR = { has_country_flag = Bruma_OPEN is_ai = yes }
 		}
 
-		cost = 75
+		cost = 0
 		days_remove = 180
 		fire_only_once = yes
 
@@ -7585,7 +7766,7 @@ GEA_decisions = {#德属东亚殖民地决议
 			}
 		}
 
-		cost = 75
+		cost = 0
 		days_remove = 180
 		fire_only_once = yes
 
@@ -9821,6 +10002,10 @@ GEA_indochina_war_decisions = {#印支战争
 	GEA_shelling_on_Saigon = { #炮击西贡
 		icon = generic_naval
 		allowed = { original_tag = GEA }
+		visible = {
+			has_completed_focus = GEA_The_Siege_of_Saigon
+			has_war_with = INC
+		}
 
 		cost = 0
 		fire_only_once = yes
@@ -10193,7 +10378,7 @@ GEA_indochina_war_decisions = {#印支战争
 			custom_effect_tooltip = GEA_adopt_elite_commandos_tt
 			hidden_effect = {
 				division_template = {
-					name = "GEA_elite_commando_division"
+					name = "East Asian Elite Commando Division"
 					division_names_group = GEA_INF_01
 					priority = 2
 					force_allow_recruiting = yes
@@ -10221,7 +10406,7 @@ GEA_indochina_war_decisions = {#印支战争
 				random_owned_controlled_state = {
 					prioritize = { 336 }
 					create_unit = {
-						division = "division_template = \"GEA_elite_commando_division\" start_experience_factor = 0.8 start_equipment_factor = 1 start_manpower_factor = 1"
+						division = "division_template = \"East Asian Elite Commando Division\" start_experience_factor = 0.8 start_equipment_factor = 1 start_manpower_factor = 1"
 						owner = GEA
 					}
 				}
@@ -10972,7 +11157,7 @@ GEA_heye_decisions = {#海耶相关决议
 	}
 
 	GEA_heye_request_artillery = {#索要火炮
-		icon = GFX_goal_generic_artillery
+		icon = GFX_decision_support_equipment
 		allowed = { tag = GEA }
 		visible = {
 			GER = { exists = yes }
@@ -11064,7 +11249,7 @@ GEA_heye_decisions = {#海耶相关决议
 	}
 
 	GEA_heye_request_support_equipment = {#索要支援装备
-		icon = GFX_decision_generic_equipment
+		icon = GFX_decision_generic_military
 		allowed = { tag = GEA }
 
 		visible = {
@@ -11237,7 +11422,6 @@ GEA_heye_decisions = {#海耶相关决议
 		allowed = { tag = GEA }
 		visible = {
 			GER = { exists = yes }
-			is_subject_of = GER
 			OR = {
 				has_country_flag = GEA_ask_support
 				has_country_flag = GEA_ask_more_support
@@ -11310,7 +11494,6 @@ GEA_heye_decisions = {#海耶相关决议
 		allowed = { tag = GEA }
 		visible = {
 			GER = { exists = yes }
-			is_subject_of = GER
 			OR = {
 				has_country_flag = GEA_ask_support
 				has_country_flag = GEA_ask_more_support
@@ -11383,7 +11566,6 @@ GEA_heye_decisions = {#海耶相关决议
 		allowed = { tag = GEA }
 		visible = {
 			GER = { exists = yes }
-			is_subject_of = GER
 			OR = {
 				has_country_flag = GEA_ask_support
 				has_country_flag = GEA_ask_more_support
@@ -11439,11 +11621,10 @@ GEA_heye_decisions = {#海耶相关决议
 	}
 
 	GEA_heye_request_truck_support = {#请求卡车支援
-		icon = GFX_decision_generic_equipment
+		icon = GFX_decision_generic_military
 		allowed = { tag = GEA }
 		visible = {
 			GER = { exists = yes }
-			is_subject_of = GER
 			OR = {
 				has_country_flag = GEA_ask_support
 				has_country_flag = GEA_ask_more_support
@@ -11481,11 +11662,10 @@ GEA_heye_decisions = {#海耶相关决议
 	}
 
 	GEA_heye_request_mechanized_support = {#请求机械化载具支援
-		icon = GFX_decision_generic_equipment
+		icon = GFX_decision_generic_military
 		allowed = { tag = GEA }
 		visible = {
 			GER = { exists = yes }
-			is_subject_of = GER
 			OR = {
 				has_country_flag = GEA_ask_support
 				has_country_flag = GEA_ask_more_support
@@ -11527,7 +11707,6 @@ GEA_heye_decisions = {#海耶相关决议
 		allowed = { tag = GEA }
 		visible = {
 			GER = { exists = yes }
-			is_subject_of = GER
 			OR = {
 				has_country_flag = GEA_ask_support
 				has_country_flag = GEA_ask_more_support
@@ -11587,7 +11766,7 @@ GEA_heye_decisions = {#海耶相关决议
 		allowed = { tag = GEA }
 		visible = {
 			GER = { exists = yes }
-			is_subject_of = GER has_country_flag = GEA_ask_more_support }
+			has_country_flag = GEA_ask_more_support }
 		cost = 100
 		days_re_enable = 180
 		complete_effect = {
@@ -11595,7 +11774,7 @@ GEA_heye_decisions = {#海耶相关决议
 			custom_effect_tooltip = GEA_heye_receive_mainline_infantry_divisions_tt
 			hidden_effect = {
 				division_template = {
-					name = "GEA_heye_mainline_infantry_division"
+					name = "East Asian Mainline Infantry Division"
 					division_names_group = GEA_INF_01
 					regiments = {
 						infantry = { x = 0 y = 0 }
@@ -11624,11 +11803,11 @@ GEA_heye_decisions = {#海耶相关决议
 				}
 				random_owned_controlled_state = {
 					create_unit = {
-						division = "division_template = \"GEA_heye_mainline_infantry_division\" start_experience_factor = 1 start_equipment_factor = 1 start_manpower_factor = 1"
+						division = "division_template = \"East Asian Mainline Infantry Division\" start_experience_factor = 1 start_equipment_factor = 1 start_manpower_factor = 1"
 						owner = GEA
 					}
 					create_unit = {
-						division = "division_template = \"GEA_heye_mainline_infantry_division\" start_experience_factor = 1 start_equipment_factor = 1 start_manpower_factor = 1"
+						division = "division_template = \"East Asian Mainline Infantry Division\" start_experience_factor = 1 start_equipment_factor = 1 start_manpower_factor = 1"
 						owner = GEA
 					}
 				}
@@ -11652,11 +11831,11 @@ GEA_heye_decisions = {#海耶相关决议
 	}
 
 	GEA_heye_request_motorized_divisions = {#请求摩托化师
-		icon = GFX_decision_generic_equipment
+		icon = GFX_decision_generic_military
 		allowed = { tag = GEA }
 		visible = {
 			GER = { exists = yes }
-			is_subject_of = GER has_country_flag = GEA_ask_more_support }
+			has_country_flag = GEA_ask_more_support }
 		cost = 100
 		days_re_enable = 180
 		complete_effect = {
@@ -11664,7 +11843,7 @@ GEA_heye_decisions = {#海耶相关决议
 			custom_effect_tooltip = GEA_heye_receive_motorized_divisions_tt
 			hidden_effect = {
 				division_template = {
-					name = "GEA_heye_motorized_division"
+					name = "East Asian Motorised Division"
 					division_names_group = GEA_MOT_01
 					regiments = {
 						motorized = { x = 0 y = 0 }
@@ -11689,11 +11868,11 @@ GEA_heye_decisions = {#海耶相关决议
 				}
 				random_owned_controlled_state = {
 					create_unit = {
-						division = "division_template = \"GEA_heye_motorized_division\" start_experience_factor = 1 start_equipment_factor = 1 start_manpower_factor = 1"
+						division = "division_template = \"East Asian Motorised Division\" start_experience_factor = 1 start_equipment_factor = 1 start_manpower_factor = 1"
 						owner = GEA
 					}
 					create_unit = {
-						division = "division_template = \"GEA_heye_motorized_division\" start_experience_factor = 1 start_equipment_factor = 1 start_manpower_factor = 1"
+						division = "division_template = \"East Asian Motorised Division\" start_experience_factor = 1 start_equipment_factor = 1 start_manpower_factor = 1"
 						owner = GEA
 					}
 				}
@@ -11721,7 +11900,7 @@ GEA_heye_decisions = {#海耶相关决议
 		allowed = { tag = GEA }
 		visible = {
 			GER = { exists = yes }
-			is_subject_of = GER has_country_flag = GEA_ask_more_support }
+			has_country_flag = GEA_ask_more_support }
 		available = {
 			has_dlc = "No Step Back"
 			GER = { has_tech = basic_medium_tank_chassis }
@@ -11755,7 +11934,7 @@ GEA_heye_decisions = {#海耶相关决议
 					set_country_flag = GEA_heye_armored_panzer_iii_created
 				}
 				division_template = {
-					name = "GEA_heye_armored_kampfgruppe"
+					name = "Armoured Kampfgruppe"
 					division_names_group = GER_TNK_01
 					regiments = {
 						medium_armor = { x = 0 y = 0 }
@@ -11775,11 +11954,11 @@ GEA_heye_decisions = {#海耶相关决议
 				}
 				random_owned_controlled_state = {
 					create_unit = {
-						division = "division_template = \"GEA_heye_armored_kampfgruppe\" start_experience_factor = 1 start_equipment_factor = 1 start_manpower_factor = 1"
+						division = "division_template = \"Armoured Kampfgruppe\" start_experience_factor = 1 start_equipment_factor = 1 start_manpower_factor = 1"
 						owner = GEA
 					}
 					create_unit = {
-						division = "division_template = \"GEA_heye_armored_kampfgruppe\" start_experience_factor = 1 start_equipment_factor = 1 start_manpower_factor = 1"
+						division = "division_template = \"Armoured Kampfgruppe\" start_experience_factor = 1 start_equipment_factor = 1 start_manpower_factor = 1"
 						owner = GEA
 					}
 				}
@@ -12250,7 +12429,7 @@ GEA_focus_china_decisions = {#第二次对华远征
 				tooltip = GEA_china_attitude_change_tt
 			}
 			add_to_variable = {
-				GEA_china_lep_military_projection = 5
+				GEA_china_lep_military_projection = 8
 				tooltip = GEA_china_military_projection_change_tt
 			}
 			hidden_effect = {
@@ -13416,7 +13595,7 @@ GEA_focus_china_decisions = {#第二次对华远征
 				tooltip = GEA_china_capital_influence_change_tt
 			}
 			add_to_variable = {
-				GEA_china_lep_military_projection = 3
+				GEA_china_lep_military_projection = 5
 				tooltip = GEA_china_military_projection_change_tt
 			}
 			hidden_effect = {

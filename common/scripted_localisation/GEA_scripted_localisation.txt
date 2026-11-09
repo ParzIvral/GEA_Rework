@@ -13,6 +13,10 @@ defined_text = {
 defined_text = {
 	name = GetGEALepCooperation
 	text = {
+		trigger = { 613 = { owner = { is_subject_of = GEA } } }
+		localization_key = GEA_china_cooperation_positive
+	}
+	text = {
 		trigger = {
 			613 = {
 				owner = {
@@ -123,6 +127,10 @@ defined_text = {
 #山东地块
 defined_text = {
 	name = GetGEASqiCooperation
+	text = {
+		trigger = { SQI = { exists = yes is_subject_of = GEA } }
+		localization_key = GEA_china_cooperation_positive
+	}
 	text = {
 		trigger = {
 			SQI = {
@@ -248,6 +256,10 @@ defined_text = {
 defined_text = {
 	name = GetGEAGxcCooperation
 	text = {
+		trigger = { GXC = { exists = yes is_subject_of = GEA } }
+		localization_key = GEA_china_cooperation_positive
+	}
+	text = {
 		trigger = {
 			GXC = {
 				GEA_china_warlord_right_kmt_government_trigger = yes
@@ -336,6 +348,10 @@ defined_text = {
 		localization_key = GEA_GXC_Map_Merchant_Puppet_DESC
 	}
 	text = {
+		trigger = { GXC = { exists = yes is_subject_of = GEA has_country_leader = { character = GEA_Claus_von_Bohlen_und_Halbach ruling_only = yes } } }
+		localization_key = GEA_GXC_Map_German_Puppet_DESC
+	}
+	text = {
 		trigger = { GXC = { OR = { has_country_leader = { name = "Chen Lianbo" ruling_only = yes } has_country_leader = { character = GEA_Chen_Lianbo ruling_only = yes } } } }
 		localization_key = GEA_GXC_Map_Merchants_DESC
 	}
@@ -365,6 +381,10 @@ defined_text = {
 #云南地块
 defined_text = {
 	name = GetGEAYunCooperation
+	text = {
+		trigger = { YUN = { exists = yes is_subject_of = GEA } }
+		localization_key = GEA_china_cooperation_positive
+	}
 	text = {
 		trigger = {
 			YUN = {
@@ -474,6 +494,10 @@ defined_text = {
 #四川地块
 defined_text = {
 	name = GetGEASzcCooperation
+	text = {
+		trigger = { SZC = { exists = yes is_subject_of = GEA } }
+		localization_key = GEA_china_cooperation_positive
+	}
 	text = {
 		trigger = {
 			SZC = {
@@ -773,6 +797,10 @@ defined_text = {
 #直系地块
 defined_text = {
 	name = GetGEAZhiliCooperation
+	text = {
+		trigger = { QIE = { exists = yes is_subject_of = GEA } }
+		localization_key = GEA_china_cooperation_positive
+	}
 	text = {
 		trigger = {
 			QIE = {
