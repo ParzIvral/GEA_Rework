@@ -13,6 +13,10 @@ spriteTypes = {
 		textureFile = "gfx/interface/ideas/gea/GEA_Corporation_Rule_Krupp.png"
 	}
 	spriteType = {
+		name = "GFX_KR_generic_mio_trait_icon_funds"
+		texturefile = "gfx/interface/military_industrial_organization/trait_icons/generic/funds_icon.png"
+	}
+	spriteType = {
 		name = "GFX_GEA_Corporation_Rule_IG"
 		textureFile = "gfx/interface/ideas/gea/GEA_Corporation_Rule_IG.png"
 	}
