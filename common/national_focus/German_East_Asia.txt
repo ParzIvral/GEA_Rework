@@ -14390,15 +14390,15 @@ focus_tree = {
 				DYNMOD = GEA_gea_army
 			}
 			add_to_variable = {
-				GEA_army_army_org_factor = 0.03
+				GEA_army_army_org_factor = 0.05
 				tooltip = army_org_factor_tt
 			}
 			add_to_variable = {
-				GEA_army_command_power_gain_mult = 0.08
+				GEA_army_command_power_gain_mult = 0.1
 				tooltip = command_power_gain_mult_tt
 			}
 			add_to_variable = {
-				GEA_army_land_reinforce_rate = 0.75
+				GEA_army_land_reinforce_rate = 0.1
 				tooltip = land_reinforce_rate_tooltip
 			}
 			add_to_variable = {
